@@ -6,7 +6,7 @@ export const siteConfig = {
   taglineKo: "목표 점수까지 가는 가장 확실한 연습.",
   phone: "010-0000-0000",
   email: "hello@c-bridge.com",
-  formspreeEndpoint: "https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT",
+  formspreeEndpoint: "https://formspree.io/f/xeajdzrz",
   hours: "평일 10:00 - 18:00 (KST) / 주말 및 공휴일 휴무",
 };
 
