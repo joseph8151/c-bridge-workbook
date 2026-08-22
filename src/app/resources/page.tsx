@@ -23,7 +23,7 @@ export default function ResourcesPage() {
       <section className="border-b border-purple/10 bg-lavender/20 py-14 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 text-center">
           <p className="text-xs font-bold tracking-[0.14em] text-purple">C-BRIDGE 무료 학습자료</p>
-          <h1 className="mt-3 font-serif text-4xl font-black text-ink md:text-5xl">
+          <h1 className="mt-3 break-keep font-serif text-3xl font-black text-ink md:text-4xl">
             시험 준비에 필요한 자료, 무료로 확인하세요.
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-ink/65">

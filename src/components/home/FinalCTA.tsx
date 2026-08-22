@@ -11,7 +11,7 @@ export default function FinalCTA() {
 
       <div className="relative mx-auto max-w-[1440px] px-5 text-center md:px-10">
         <div className="mx-auto mb-7 h-px w-16 bg-gold/50" />
-        <h2 className="font-serif text-3xl font-black leading-tight text-ivory sm:text-4xl md:text-5xl text-balance">
+        <h2 className="font-serif text-2xl font-black leading-snug text-ivory sm:text-3xl md:text-4xl text-balance">
           시험이 달라도
           <br />
           좋은 준비의 기준은 같습니다.

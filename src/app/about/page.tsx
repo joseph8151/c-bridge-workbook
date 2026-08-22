@@ -39,7 +39,7 @@ export default function AboutPage() {
       <section className="border-b border-purple/10 bg-lavender/20 py-20 md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.24em] text-purple">About C-BRIDGE</p>
-          <h1 className="mt-5 max-w-3xl font-serif text-4xl font-black leading-[1.15] text-ink sm:text-5xl md:text-6xl text-balance">
+          <h1 className="mt-5 max-w-3xl break-keep font-serif text-3xl font-black leading-[1.3] text-ink sm:text-4xl md:text-5xl text-balance">
             성인 어학시험 전문 문제집 & 실전 대비 플랫폼
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">

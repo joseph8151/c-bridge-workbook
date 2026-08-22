@@ -29,7 +29,7 @@ export default function SectionHeading({
         </p>
       )}
       <h2
-        className={`mt-3 font-serif font-bold text-3xl sm:text-4xl md:text-5xl leading-[1.08] text-balance ${
+        className={`mt-3 break-keep font-serif font-bold text-2xl sm:text-3xl md:text-4xl leading-[1.3] text-balance ${
           dark ? "text-ivory" : "text-ink"
         }`}
       >

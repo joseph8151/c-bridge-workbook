@@ -13,7 +13,7 @@ export default function PricingPage() {
       <section className="border-b border-purple/10 bg-lavender/20 py-14 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 text-center">
           <p className="text-xs font-bold tracking-[0.14em] text-purple">가격 안내</p>
-          <h1 className="mt-3 font-serif text-4xl font-black text-ink md:text-5xl">
+          <h1 className="mt-3 break-keep font-serif text-3xl font-black text-ink md:text-4xl">
             시험 대비 패키지, 한눈에 비교하세요.
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-ink/65 md:text-lg">

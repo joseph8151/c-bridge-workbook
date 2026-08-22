@@ -15,7 +15,7 @@ export default function ConsultationPage() {
       <div className="mx-auto grid max-w-[1440px] gap-14 px-5 md:px-10 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-xs font-bold tracking-[0.24em] text-purple">상담 신청</p>
-          <h1 className="mt-4 font-serif text-4xl font-black leading-tight text-ink md:text-5xl">
+          <h1 className="mt-4 break-keep font-serif text-3xl font-black leading-tight text-ink md:text-4xl">
             나에게 맞는
             <br />
             교재를 찾아드립니다.

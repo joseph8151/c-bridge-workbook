@@ -31,33 +31,41 @@ export default function BookCover({
       className={`relative shrink-0 ${sizeClasses[size]} ${className}`}
       style={{ transform: `rotate(${tilt}deg)` }}
     >
-      <div className="absolute inset-0 translate-x-[3px] translate-y-[3px] rounded-[3px] bg-ink/15" />
-      <div className="absolute inset-0 translate-x-[6px] translate-y-[6px] rounded-[3px] bg-ink/10" />
+      {/* page-stack edge, peeking from behind */}
+      <div className="absolute inset-0 translate-x-[3px] translate-y-[3px] rounded-[7px] bg-ink/12" />
+      <div className="absolute inset-0 translate-x-[6px] translate-y-[6px] rounded-[7px] bg-ink/8" />
+
       <div
-        className="relative h-full w-full rounded-[3px] p-3.5 md:p-4 flex flex-col justify-between text-ivory shadow-[0_18px_40px_-14px_rgba(33,26,40,0.45)] ring-1 ring-black/10"
+        className="relative h-full w-full overflow-hidden rounded-[7px] p-3.5 md:p-4 flex flex-col justify-between text-ivory shadow-[0_20px_44px_-16px_rgba(33,26,40,0.5)] ring-1 ring-black/10"
         style={{
           background: `linear-gradient(155deg, ${color} 0%, var(--color-plum) 115%)`,
         }}
       >
-        <div className="absolute inset-y-0 left-0 w-[6px] rounded-l-[3px] bg-black/25" />
-        <div className="flex items-center justify-between pl-1">
+        {/* soft top sheen for a printed-cover feel */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.16)_0%,transparent_28%)]" />
+        {/* spine shadow */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[5px] bg-black/25" />
+        {/* paper-edge sliver on the outer edge */}
+        <div className="pointer-events-none absolute inset-y-[3px] right-0 w-[3px] rounded-r-[4px] bg-ivory/40" />
+
+        <div className="relative flex items-center justify-between pl-1.5">
           <span className="text-[9px] md:text-[10px] font-bold tracking-[0.22em]">
             C-BRIDGE
           </span>
           <span
-            className="h-1.5 w-1.5 rounded-full"
+            className="h-1.5 w-1.5 shrink-0 rounded-full"
             style={{ background: "var(--color-gold)" }}
           />
         </div>
-        <div className="pl-1">
-          <p className="font-serif text-xl md:text-2xl font-bold leading-[1.05] text-balance">
+        <div className="relative pl-1.5">
+          <p className="font-serif text-xl md:text-2xl font-bold leading-[1.05] break-keep text-balance">
             {test}
           </p>
-          <p className="mt-1.5 text-[10px] md:text-xs font-semibold tracking-[0.14em] uppercase opacity-90">
+          <p className="mt-1.5 line-clamp-2 text-[10px] md:text-xs font-semibold leading-snug tracking-[0.1em] opacity-90 break-keep">
             {skill}
           </p>
         </div>
-        <div className="pl-1">
+        <div className="relative pl-1.5">
           {number !== undefined && (
             <p
               className="font-serif text-3xl md:text-4xl font-black leading-none"
@@ -66,7 +74,7 @@ export default function BookCover({
               {number}
             </p>
           )}
-          <p className="mt-1 text-[9px] md:text-[10px] tracking-[0.14em] uppercase opacity-90">
+          <p className="mt-1 text-[9px] md:text-[10px] tracking-[0.14em] uppercase opacity-80">
             {tag}
           </p>
         </div>

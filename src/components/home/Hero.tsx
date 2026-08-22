@@ -10,13 +10,28 @@ const heroLines = [
 
 const goalChips = ["TOEFL 110+ 목표", "OPIc AL 목표", "SJPT Level 8", "Reading 집중"];
 
-const floatingBadges = [
-  { label: "100P", className: "left-[6%] top-[6%]", delay: "0s" },
-  { label: "200P BEST", className: "right-[2%] top-[2%]", delay: "0.4s", accent: true },
-  { label: "300P PREMIUM", className: "right-[-2%] top-[46%]", delay: "0.9s", accent: true },
-  { label: "Mock Test", className: "left-[0%] bottom-[18%]", delay: "1.3s" },
-  { label: "Answer Guide", className: "right-[10%] bottom-[4%]", delay: "0.6s" },
-];
+function FloatBadge({
+  label,
+  className = "",
+  delay = "0s",
+  accent = false,
+}: {
+  label: string;
+  className?: string;
+  delay?: string;
+  accent?: boolean;
+}) {
+  return (
+    <span
+      className={`animate-float-slow absolute z-20 hidden whitespace-nowrap rounded-full border px-3.5 py-2 text-[11px] font-bold shadow-[0_8px_20px_-8px_rgba(69,53,101,0.35)] md:block ${className} ${
+        accent ? "border-gold/40 bg-plum text-gold" : "border-purple/15 bg-white/95 text-purple"
+      }`}
+      style={{ animationDelay: delay }}
+    >
+      {label}
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
@@ -35,12 +50,8 @@ export default function Hero() {
           <p className="text-xs md:text-sm font-bold tracking-[0.28em] text-purple">
             성인 어학시험 전문 문제집
           </p>
-          <h1 className="mt-5 font-serif text-4xl font-black leading-[1.2] tracking-tight text-ink sm:text-5xl md:text-[3.4rem] text-balance">
-            점수를 올려야 할 때,
-            <br />
-            문제집도 전략적으로
-            <br />
-            골라야 합니다.
+          <h1 className="mt-5 break-keep font-serif text-3xl font-black leading-[1.35] tracking-tight text-ink sm:text-4xl md:text-[2.75rem] text-balance">
+            점수를 올려야 할 때, 문제집도 전략적으로 골라야 합니다.
           </h1>
 
           <div className="mt-6 space-y-0.5">
@@ -85,57 +96,72 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="relative flex h-[300px] w-full max-w-md items-center justify-center gap-3 sm:h-[360px] md:h-[420px] lg:h-[480px] lg:max-w-none lg:flex-1 lg:justify-end lg:gap-5">
-          {floatingBadges.map((b) => (
-            <span
-              key={b.label}
-              className={`animate-float-slow absolute z-10 hidden rounded-full border px-3.5 py-2 text-[11px] font-bold shadow-[0_8px_20px_-8px_rgba(69,53,101,0.35)] md:block ${b.className} ${
-                b.accent
-                  ? "border-gold/40 bg-plum text-gold"
-                  : "border-purple/15 bg-white/90 text-purple"
-              }`}
-              style={{ animationDelay: b.delay }}
-            >
-              {b.label}
-            </span>
-          ))}
+        <div className="relative flex h-[300px] w-full max-w-md items-center justify-center gap-3 sm:h-[360px] md:h-[420px] lg:h-[480px] lg:max-w-none lg:flex-1 lg:justify-end lg:gap-6 lg:pr-6">
+          <div className="relative">
+            <FloatBadge label="100P" className="-left-6 -top-5" delay="0s" />
+            <BookCover
+              test="TOEIC"
+              skill="취업 · 승진"
+              tag="패키지 시리즈"
+              color="var(--color-employment)"
+              size="hero"
+              tilt={-6}
+              className="animate-float-slow"
+            />
+          </div>
 
-          <BookCover
-            test="TOEIC"
-            skill="취업 · 승진"
-            tag="패키지 시리즈"
-            color="var(--color-employment)"
-            size="hero"
-            tilt={-6}
-            className="animate-float-slow"
-          />
-          <BookCover
-            test="SJPT"
-            skill="일본어 말하기"
-            tag="패키지 시리즈"
-            color="var(--color-japanese)"
-            size="lg"
-            tilt={4}
-            className="animate-float-slow mt-10 [animation-delay:0.6s]"
-          />
-          <BookCover
-            test="TSC"
-            skill="중국어 말하기"
-            tag="패키지 시리즈"
-            color="var(--color-chinese)"
-            size="lg"
-            tilt={-3}
-            className="animate-float-slow mt-4 hidden sm:flex [animation-delay:1.2s]"
-          />
-          <BookCover
-            test="TOEFL"
-            skill="유학 · 이민"
-            tag="패키지 시리즈"
-            color="var(--color-studyabroad)"
-            size="md"
-            tilt={7}
-            className="animate-float-slow mt-16 hidden lg:flex [animation-delay:0.3s]"
-          />
+          <div className="relative mt-10">
+            <BookCover
+              test="SJPT"
+              skill="일본어 말하기"
+              tag="패키지 시리즈"
+              color="var(--color-japanese)"
+              size="lg"
+              tilt={4}
+              className="animate-float-slow [animation-delay:0.6s]"
+            />
+            <FloatBadge
+              label="Mock Test"
+              className="-bottom-4 left-1/2 -translate-x-1/2"
+              delay="1.3s"
+            />
+          </div>
+
+          <div className="relative mt-4 hidden sm:block">
+            <BookCover
+              test="TSC"
+              skill="중국어 말하기"
+              tag="패키지 시리즈"
+              color="var(--color-chinese)"
+              size="lg"
+              tilt={-3}
+              className="animate-float-slow [animation-delay:1.2s]"
+            />
+            <FloatBadge
+              label="Answer Guide"
+              className="-bottom-4 -right-4"
+              delay="0.6s"
+            />
+          </div>
+
+          <div className="relative mt-16 hidden lg:block">
+            <FloatBadge label="200P BEST" className="-right-5 -top-6" delay="0.4s" accent />
+            <BookCover
+              test="TOEFL"
+              skill="유학 · 이민"
+              tag="패키지 시리즈"
+              color="var(--color-studyabroad)"
+              size="md"
+              tilt={7}
+              className="animate-float-slow [animation-delay:0.3s]"
+            />
+            <FloatBadge
+              label="300P PREMIUM"
+              className="-bottom-4 -right-6"
+              delay="0.9s"
+              accent
+            />
+          </div>
         </div>
       </div>
     </section>

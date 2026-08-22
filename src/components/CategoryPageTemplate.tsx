@@ -15,7 +15,7 @@ export default function CategoryPageTemplate({ group }: { group: TestGroup }) {
           <p className="text-xs font-bold tracking-[0.14em]" style={{ color: meta.color }}>
             {meta.eyebrow}
           </p>
-          <h1 className="mt-3 max-w-2xl font-serif text-4xl font-black leading-tight text-ink md:text-5xl text-balance">
+          <h1 className="mt-3 max-w-2xl break-keep font-serif text-3xl font-black leading-tight text-ink md:text-4xl text-balance">
             {meta.headline}
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/65 md:text-lg">

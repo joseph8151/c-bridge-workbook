@@ -48,6 +48,12 @@ body {
   color: var(--color-ink);
 }
 
+/* Korean line-breaking: never split a word mid-character (e.g. "취업부터" -> "취업부" / "터") */
+h1, h2, h3, h4 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 ::selection {
   background: var(--color-gold);
   color: var(--color-plum);

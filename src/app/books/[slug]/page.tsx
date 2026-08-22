@@ -48,7 +48,7 @@ export default async function TestDetailPage({
           <p className="text-xs font-bold tracking-[0.14em]" style={{ color: group.color }}>
             {group.navLabel}
           </p>
-          <h1 className="mt-3 font-serif text-4xl font-black leading-tight text-ink md:text-5xl">
+          <h1 className="mt-3 break-keep font-serif text-3xl font-black leading-tight text-ink md:text-4xl">
             {test.name} 완성 대비
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">
