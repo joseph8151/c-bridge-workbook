@@ -57,12 +57,67 @@ export default async function TestDetailPage({
           <p className="mt-2 max-w-2xl text-sm text-ink/50">
             목표 Level에 따라 충분히 연습할 수 있도록 3가지 분량을 선택할 수 있습니다. {getTestPriceLabel()}
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {["목표점수 선택 가능", "영역 집중 선택 가능", "맞춤 구성 가능"].map((b) => (
+              <span
+                key={b}
+                className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-[11px] font-bold text-gold"
+              >
+                {b}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="bg-ivory py-16 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10">
           <TierSelector test={test} />
+        </div>
+      </section>
+
+      <section className="bg-lavender/20 py-14 md:py-16">
+        <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+          <p className="text-center text-sm font-bold tracking-[0.06em] text-purple">
+            이렇게 주문할 수 있습니다
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { no: "01", title: "시험 선택", desc: `예: ${test.name}` },
+              { no: "02", title: "목표 선택", desc: "예: 목표 점수/레벨" },
+              { no: "03", title: "분량 선택", desc: "100P / 200P / 300P" },
+              { no: "04", title: "집중 영역 선택", desc: "예: Reading + Writing" },
+              { no: "05", title: "맞춤 구성 확인", desc: "선택에 맞는 문제 비중으로 안내" },
+            ].map((s) => (
+              <div key={s.no} className="rounded-[16px] bg-ivory p-5 text-center">
+                <span className="font-serif text-2xl font-black text-purple/30">{s.no}</span>
+                <p className="mt-2 text-sm font-bold text-ink">{s.title}</p>
+                <p className="mt-1 text-xs text-ink/50">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-4 rounded-[20px] border border-purple/15 bg-ivory p-7 text-center">
+            <p className="font-serif text-lg font-bold text-ink">원하는 구성이 없나요?</p>
+            <p className="text-sm leading-relaxed text-ink/60">
+              Reading만 더 많이 풀고 싶거나, 특정 Speaking 유형을 집중하고 싶거나, 목표 점수에 맞춘
+              난이도 구성이 필요하다면 맞춤 구성을 선택할 수 있습니다.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link
+                href={`/consultation?test=${encodeURIComponent(test.name)}`}
+                className="rounded-[14px] bg-purple px-6 py-3 text-xs font-bold tracking-[0.06em] text-ivory transition-colors hover:bg-plum"
+              >
+                내 목표에 맞게 구성하기
+              </Link>
+              <Link
+                href="/consultation"
+                className="rounded-[14px] border border-purple/25 px-6 py-3 text-xs font-bold tracking-[0.06em] text-purple transition-colors hover:bg-lavender"
+              >
+                맞춤 교재 문의
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

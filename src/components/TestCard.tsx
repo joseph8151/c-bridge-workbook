@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BookCover from "./BookCover";
+import GroupIcon from "./icons/GroupIcons";
 import { Test, groupMeta } from "@/lib/tests";
 import { getTestPriceLabel } from "@/lib/products";
 
@@ -27,24 +28,28 @@ export default function TestCard({ test }: { test: Test }) {
         />
       </div>
 
-      <p className="text-[11px] font-bold tracking-[0.14em]" style={{ color: group.color }}>
-        {group.navLabel}
-      </p>
-      <h3 className="mt-1 font-serif text-lg font-bold leading-snug text-ink">{test.name}</h3>
+      <div className="flex items-center gap-1.5">
+        <GroupIcon group={test.group} className="shrink-0" style={{ color: group.color }} />
+        <p className="text-[11px] font-bold tracking-[0.14em]" style={{ color: group.color }}>
+          {group.navLabel}
+        </p>
+      </div>
+      <h3 className="mt-1.5 font-serif text-lg font-bold leading-snug text-ink">{test.name}</h3>
       <p className="mt-1 text-sm leading-relaxed text-ink/60">{test.tagline}</p>
 
-      {test.badges && test.badges.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {test.badges.slice(0, 2).map((b) => (
-            <span
-              key={b}
-              className="rounded-full bg-lavender px-2.5 py-1 text-[10px] font-bold text-purple"
-            >
-              {b}
-            </span>
-          ))}
-        </div>
-      )}
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {test.badges?.slice(0, 1).map((b) => (
+          <span
+            key={b}
+            className="rounded-full bg-lavender px-2.5 py-1 text-[10px] font-bold text-purple"
+          >
+            {b}
+          </span>
+        ))}
+        <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-1 text-[10px] font-bold text-gold">
+          맞춤 구성 가능
+        </span>
+      </div>
 
       <div className="mt-4 flex items-center justify-between border-t border-purple/10 pt-4">
         <span className="text-xs font-semibold tracking-[0.06em] text-ink/45">

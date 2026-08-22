@@ -3,17 +3,39 @@
 import { useState } from "react";
 import Link from "next/link";
 import BookCover from "./BookCover";
-import { Test, groupMeta } from "@/lib/tests";
+import { Test, groupMeta, getLevelOptions } from "@/lib/tests";
 import { Tier, tierMeta, tierOrder } from "@/lib/products";
 import { getIncludesForTier, getBonusContent, getBookSet } from "@/lib/productDetail";
+import { focusAreas } from "@/lib/focusAreas";
 
 export default function TierSelector({ test }: { test: Test }) {
+  const levelOptions = getLevelOptions(test);
   const [tier, setTier] = useState<Tier>("COMPLETE");
+  const [target, setTarget] = useState<string>(levelOptions[Math.floor(levelOptions.length / 2)]);
+  const [focus, setFocus] = useState<Set<string>>(new Set());
+
   const meta = tierMeta[tier];
   const includes = getIncludesForTier(test, tier);
   const bonus = getBonusContent(test);
   const bookSet = getBookSet(tier);
   const color = groupMeta[test.group].color;
+
+  function toggleFocus(id: string) {
+    setFocus((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  const focusLabels = focusAreas.filter((f) => focus.has(f.id)).map((f) => f.label);
+  const consultQuery = new URLSearchParams({
+    test: test.name,
+    tier: meta.label,
+    target,
+    ...(focusLabels.length ? { focus: focusLabels.join(", ") } : {}),
+  }).toString();
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -32,7 +54,25 @@ export default function TierSelector({ test }: { test: Test }) {
       </div>
 
       <div>
-        <div className="grid grid-cols-3 gap-3">
+        <p className="text-[11px] font-bold tracking-[0.14em] text-ink/40">01 · 목표 선택</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {levelOptions.map((opt) => (
+            <button
+              key={opt}
+              onClick={() => setTarget(opt)}
+              className={`rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors ${
+                target === opt
+                  ? "border-purple bg-purple text-ivory"
+                  : "border-purple/20 text-ink/70 hover:border-purple/40"
+              }`}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+
+        <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">02 · 분량 선택</p>
+        <div className="mt-3 grid grid-cols-3 gap-3">
           {tierOrder.map((t) => {
             const m = tierMeta[t];
             const active = t === tier;
@@ -64,10 +104,32 @@ export default function TierSelector({ test }: { test: Test }) {
           })}
         </div>
 
+        <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">
+          03 · 집중 영역 선택 (선택사항)
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {focusAreas.map((f) => (
+            <button
+              key={f.id}
+              onClick={() => toggleFocus(f.id)}
+              className={`rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors ${
+                focus.has(f.id)
+                  ? "border-purple bg-purple text-ivory"
+                  : "border-purple/20 text-ink/70 hover:border-purple/40"
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
         <div className="mt-8 rounded-[20px] border border-purple/10 bg-white/60 p-7">
-          <div className="flex items-baseline justify-between">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
-              <p className="text-xs font-bold tracking-[0.14em] text-purple/60">{meta.name}</p>
+              <p className="text-xs font-bold tracking-[0.14em] text-purple/60">
+                {test.name} · {target} · {meta.name}
+                {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
+              </p>
               <p className="mt-1 font-serif text-3xl font-black text-ink">
                 {meta.price.toLocaleString()}원
               </p>
@@ -95,11 +157,14 @@ export default function TierSelector({ test }: { test: Test }) {
           </div>
 
           <Link
-            href={`/consultation?test=${encodeURIComponent(test.name)}&tier=${meta.label}`}
-            className="mt-7 flex items-center justify-center rounded-[14px] bg-purple py-3.5 text-sm font-bold tracking-[0.04em] text-ivory transition-colors hover:bg-plum"
+            href={`/consultation?${consultQuery}`}
+            className="mt-7 flex items-center justify-center rounded-[14px] bg-purple py-3.5 text-sm font-bold tracking-[0.04em] text-ivory transition-all hover:-translate-y-0.5 hover:bg-plum"
           >
             {meta.ctaLabel}
           </Link>
+          <p className="mt-3 text-center text-xs text-ink/40">
+            같은 분량이라도 목표와 집중 영역에 따라 문제 구성을 다르게 선택할 수 있습니다.
+          </p>
         </div>
       </div>
     </div>

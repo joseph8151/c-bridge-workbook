@@ -14,6 +14,8 @@ export default function ConsultationForm() {
   const searchParams = useSearchParams();
   const prefillTest = searchParams.get("test") ?? "";
   const prefillTier = searchParams.get("tier") ?? "";
+  const prefillTarget = searchParams.get("target") ?? "";
+  const prefillFocus = searchParams.get("focus") ?? "";
 
   const [interests, setInterests] = useState<Set<string>>(new Set());
   const [status, setStatus] = useState<Status>("idle");
@@ -72,7 +74,11 @@ export default function ConsultationForm() {
       {(prefillTest || prefillTier) && (
         <div className="rounded-[14px] border border-purple/15 bg-lavender/20 px-4 py-3 text-sm text-ink/70">
           문의 내용: <span className="font-semibold text-ink">{prefillTest}</span>
+          {prefillTarget && <span className="font-semibold text-ink"> · {prefillTarget}</span>}
           {prefillTier && <span className="font-semibold text-ink"> · {prefillTier}</span>}
+          {prefillFocus && <span className="font-semibold text-ink"> · {prefillFocus}</span>}
+          <input type="hidden" name="targetLevel" value={prefillTarget} />
+          <input type="hidden" name="focusAreas" value={prefillFocus} />
         </div>
       )}
 

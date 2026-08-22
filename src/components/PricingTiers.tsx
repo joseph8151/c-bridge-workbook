@@ -47,10 +47,10 @@ export default function PricingTiers({
             return (
               <div
                 key={tier}
-                className={`relative flex flex-col rounded-[24px] border bg-white/70 p-8 ${
+                className={`group relative flex flex-col rounded-[24px] border bg-white/70 p-8 transition-all ${
                   isComplete
                     ? "border-purple/30 shadow-[0_24px_48px_-20px_rgba(69,53,101,0.35)] md:-translate-y-4 md:py-10"
-                    : "border-purple/10 shadow-[0_1px_2px_rgba(36,35,41,0.04)]"
+                    : "border-purple/10 shadow-[0_1px_2px_rgba(36,35,41,0.04)] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-20px_rgba(69,53,101,0.25)]"
                 }`}
               >
                 {meta.badge && (
@@ -85,8 +85,20 @@ export default function PricingTiers({
                   <p className="text-[11px] font-bold tracking-[0.1em] text-ink/40">포함 구성</p>
                   <ul className="mt-3 space-y-2">
                     {meta.includes.map((inc) => (
-                      <li key={inc} className="flex gap-2.5 text-xs leading-relaxed text-ink/60">
-                        <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-purple/40" />
+                      <li key={inc} className="flex items-center gap-2 text-xs leading-relaxed text-ink/60">
+                        <svg
+                          width="13"
+                          height="13"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke={isComplete ? "var(--color-gold)" : "var(--color-purple)"}
+                          strokeWidth="2.4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="shrink-0"
+                        >
+                          <path d="m5 12.5 4.5 4.5L19 7" />
+                        </svg>
                         {inc}
                       </li>
                     ))}
@@ -114,8 +126,8 @@ export default function PricingTiers({
           })}
         </div>
 
-        <p className="mt-8 text-center text-xs text-ink/40">
-          시험에 따라 제공 자료와 문제 구성은 달라질 수 있습니다.
+        <p className="mt-8 text-center text-sm text-ink/50">
+          100P · 200P · 300P 중 분량을 선택한 후, 원하는 영역과 목표 수준에 맞춰 구성할 수 있습니다.
         </p>
         <div className="mt-6 flex justify-center">
           <Link href="/finder" className="text-sm font-bold text-purple hover:underline">
