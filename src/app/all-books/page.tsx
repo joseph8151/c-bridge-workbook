@@ -4,16 +4,16 @@ import SectionHeading from "@/components/SectionHeading";
 import AllBooksClient from "@/components/AllBooksClient";
 
 export const metadata: Metadata = {
-  title: "All Books | C-BRIDGE TEST PREP",
+  title: "전체 시험 · 교재 보기 | C-BRIDGE",
   description:
-    "TOEFL, IELTS, PTE, Duolingo English Test, Junior 전 시리즈 문제집을 시험·영역·레벨·유형별로 검색하고 필터링하세요.",
+    "취업·승진, 일본어, 중국어, FLEX·SNULT, 유학·이민, 전문직까지 C-BRIDGE의 모든 시험 교재를 검색하고 필터링하세요.",
 };
 
 export default function AllBooksPage() {
   return (
     <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-[1440px] px-5 md:px-10">
-        <SectionHeading eyebrow="Full Catalog" title="ALL BOOKS." />
+        <SectionHeading eyebrow="전체 시험" title="내 교재 찾기" />
         <div className="mt-12">
           <Suspense fallback={null}>
             <AllBooksClient />

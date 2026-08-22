@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --color-ivory: #faf8f2;
-  --color-cream: #f3eedf;
-  --color-lavender: #e9e3f3;
-  --color-purple: #4b3a6b;
-  --color-plum: #2d203f;
-  --color-gold: #c7a45d;
-  --color-ink: #211a28;
+  --color-ivory: #faf7f0;
+  --color-cream: #f2ecdd;
+  --color-lavender: #ece7f5;
+  --color-purple: #453565;
+  --color-royal: #68558c;
+  --color-plum: #2d2340;
+  --color-gold: #b89b62;
+  --color-ink: #242329;
 
-  --color-toefl: #4b3a6b;
-  --color-ielts: #6b2f4a;
-  --color-pte: #3b5a8a;
-  --color-det: #a8823a;
+  --color-employment: #68558c;
+  --color-japanese: #6b3d57;
+  --color-chinese: #93493f;
+  --color-flex: #3e5a82;
+  --color-studyabroad: #a9843d;
+  --color-professional: #33625a;
 }
 
 @theme inline {
@@ -20,13 +23,17 @@
   --color-cream: var(--color-cream);
   --color-lavender: var(--color-lavender);
   --color-purple: var(--color-purple);
+  --color-royal: var(--color-royal);
   --color-plum: var(--color-plum);
   --color-gold: var(--color-gold);
   --color-ink: var(--color-ink);
-  --color-toefl: var(--color-toefl);
-  --color-ielts: var(--color-ielts);
-  --color-pte: var(--color-pte);
-  --color-det: var(--color-det);
+
+  --color-employment: var(--color-employment);
+  --color-japanese: var(--color-japanese);
+  --color-chinese: var(--color-chinese);
+  --color-flex: var(--color-flex);
+  --color-studyabroad: var(--color-studyabroad);
+  --color-professional: var(--color-professional);
 
   --font-serif: var(--font-display);
   --font-sans: var(--font-body);

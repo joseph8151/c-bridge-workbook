@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | C-BRIDGE TEST PREP",
+  title: "Terms of Service | C-BRIDGE",
   description: "C-BRIDGE 이용약관",
 };
 

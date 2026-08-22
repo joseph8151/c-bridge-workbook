@@ -1,5 +1,15 @@
 import Link from "next/link";
 import BookCover from "../BookCover";
+import { getTestPriceLabel } from "@/lib/products";
+
+const heroLines = [
+  "TOEIC · OPIc · TOEIC Speaking · Versant · SPA",
+  "JLPT · JPT · SJPT",
+  "HSK · HSKK · TSC",
+  "FLEX · SNULT",
+  "TOEFL · IELTS · PTE · Duolingo",
+  "OET · EPTA 등",
+];
 
 export default function Hero() {
   return (
@@ -7,22 +17,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-24 -right-40 h-[520px] w-[520px] rounded-full bg-lavender/70 blur-2xl" />
         <svg
-          className="absolute left-0 top-1/3 h-64 w-full opacity-70 md:h-80"
-          viewBox="0 0 1200 300"
-          fill="none"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 260 C 250 260, 350 40, 600 40 C 850 40, 950 260, 1200 260"
-            stroke="var(--color-purple)"
-            strokeOpacity="0.15"
-            strokeWidth="1.5"
-          />
-          <circle cx="0" cy="260" r="5" fill="var(--color-gold)" />
-          <circle cx="1200" cy="260" r="5" fill="var(--color-purple)" fillOpacity="0.4" />
-        </svg>
-        <svg
-          className="absolute inset-0 h-full w-full opacity-[0.06]"
+          className="absolute inset-0 h-full w-full opacity-[0.05]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
@@ -34,85 +29,80 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="mx-auto flex max-w-[1440px] flex-col-reverse items-center gap-12 px-5 pb-16 pt-8 md:px-10 md:pb-24 md:pt-14 lg:min-h-[82vh] lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+      <div className="mx-auto flex max-w-[1440px] flex-col-reverse items-center gap-12 px-5 pb-16 pt-8 md:px-10 md:pb-20 md:pt-14 lg:min-h-[78vh] lg:flex-row lg:items-center lg:justify-between lg:gap-8">
         <div className="max-w-xl animate-fade-up">
-          <p className="text-xs md:text-sm font-bold tracking-[0.32em] text-purple">
-            GLOBAL ENGLISH TEST PREP
+          <p className="text-xs md:text-sm font-bold tracking-[0.28em] text-purple">
+            성인 어학시험 전문 대비
           </p>
-          <h1 className="mt-5 font-serif text-5xl font-black leading-[0.98] tracking-tight text-ink sm:text-6xl md:text-7xl">
-            BUILD THE
+          <h1 className="mt-5 font-serif text-4xl font-black leading-[1.15] tracking-tight text-ink sm:text-5xl md:text-6xl text-balance">
+            취업부터 유학까지
             <br />
-            SCORE.
-            <br />
-            <span className="text-purple">CROSS THE</span>
-            <br />
-            BRIDGE.
+            필요한 시험을 제대로 준비하세요.
           </h1>
-          <p className="mt-6 text-base leading-relaxed text-ink/70 md:text-lg">
-            TOEFL, IELTS, PTE, Duolingo English Test까지.
-            <br />
-            목표 점수를 위한 유형별 집중 문제집과 실전 Mock Test.
-          </p>
-          <p className="mt-2 text-sm font-medium text-ink/50">
-            목표 점수까지 가는 가장 확실한 연습.
+
+          <div className="mt-6 space-y-0.5">
+            {heroLines.map((line) => (
+              <p key={line} className="text-sm font-semibold text-ink/60 md:text-base">
+                {line}
+              </p>
+            ))}
+          </div>
+          <p className="mt-4 text-base leading-relaxed text-ink/70">
+            영어부터 일본어·중국어·제2외국어까지, 시험별 문제집과 실전 대비 자료를 제공합니다.
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/all-books"
-              className="rounded-sm bg-purple px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-ivory transition-colors hover:bg-plum"
+              className="rounded-[14px] bg-purple px-7 py-3.5 text-sm font-bold tracking-[0.04em] text-ivory transition-colors hover:bg-plum"
             >
-              EXPLORE BOOKS
-              <span className="block text-[10px] font-semibold tracking-normal opacity-70">
-                문제집 둘러보기
-              </span>
+              시험별 교재 보기
             </Link>
             <Link
-              href="#choose-your-test"
-              className="rounded-sm border border-purple/30 px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-purple transition-colors hover:bg-lavender"
+              href="/finder"
+              className="rounded-[14px] border border-purple/30 px-7 py-3.5 text-sm font-bold tracking-[0.04em] text-purple transition-colors hover:bg-lavender"
             >
-              FIND MY TEST
-              <span className="block text-[10px] font-semibold tracking-normal opacity-70">
-                시험별 추천받기
-              </span>
+              나에게 맞는 시험 찾기
             </Link>
           </div>
+          <p className="mt-4 text-sm font-medium text-ink/45">
+            전문 대비 패키지 {getTestPriceLabel()}
+          </p>
         </div>
 
-        <div className="relative flex h-[320px] w-full max-w-md items-center justify-center gap-3 sm:h-[380px] md:h-[440px] lg:h-auto lg:max-w-none lg:flex-1 lg:justify-end lg:gap-5">
+        <div className="relative flex h-[280px] w-full max-w-md items-center justify-center gap-3 sm:h-[340px] md:h-[400px] lg:h-auto lg:max-w-none lg:flex-1 lg:justify-end lg:gap-5">
           <BookCover
-            test="TOEFL"
-            skill="Reading"
-            number="300"
-            tag="Practice Questions"
-            color="var(--color-toefl)"
+            test="TOEIC"
+            skill="취업 · 승진"
+            tag="패키지 시리즈"
+            color="var(--color-employment)"
             size="hero"
             tilt={-6}
             className="animate-float-slow"
           />
           <BookCover
-            test="IELTS"
-            skill="Academic Reading"
-            tag="Practice Questions"
-            color="var(--color-ielts)"
+            test="SJPT"
+            skill="일본어 말하기"
+            tag="패키지 시리즈"
+            color="var(--color-japanese)"
             size="lg"
             tilt={4}
             className="animate-float-slow mt-10 [animation-delay:0.6s]"
           />
           <BookCover
-            test="PTE"
-            skill="Speaking & Writing"
-            tag="Intensive Practice"
-            color="var(--color-pte)"
+            test="TSC"
+            skill="중국어 말하기"
+            tag="패키지 시리즈"
+            color="var(--color-chinese)"
             size="lg"
             tilt={-3}
             className="animate-float-slow mt-4 hidden sm:flex [animation-delay:1.2s]"
           />
           <BookCover
-            test="DET"
-            skill="Full Practice Tests"
-            tag="Mock Test Series"
-            color="var(--color-det)"
+            test="TOEFL"
+            skill="유학 · 이민"
+            tag="패키지 시리즈"
+            color="var(--color-studyabroad)"
             size="md"
             tilt={7}
             className="animate-float-slow mt-16 hidden lg:flex [animation-delay:0.3s]"

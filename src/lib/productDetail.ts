@@ -1,121 +1,158 @@
-import { Product } from "./products";
-import { levelInfo, testMeta } from "./testMeta";
+import { Test, BonusType } from "./tests";
+import { Tier, tierMeta } from "./products";
 
-export interface SampleQuestion {
-  passage: string;
-  question: string;
-  choices: string[];
-  answerIndex: number;
-  explanation: string;
+const bonusContent: Record<BonusType, { label: string; items: string[] }> = {
+  SPEAKING: {
+    label: "말하기 시험 추가자료",
+    items: ["예상 질문", "답변 구성법", "고득점 표현", "상황별 표현", "답변 예시", "실전 Speaking 모의고사"],
+  },
+  LISTENING: {
+    label: "듣기 시험 추가자료",
+    items: ["듣기 음원", "QR 연습", "추가 Listening 문제", "받아쓰기 또는 핵심 표현"],
+  },
+  WRITING: {
+    label: "Writing 시험 추가자료",
+    items: ["답안 구조", "고득점 표현", "예시 답안", "자주 틀리는 표현", "채점 포인트"],
+  },
+  VOCAB: {
+    label: "어휘 중심 시험 추가자료",
+    items: ["빈출 어휘", "시험별 핵심 표현", "단어 체크리스트", "Final Vocabulary"],
+  },
+  PROFESSIONAL: {
+    label: "전문직 시험 추가자료",
+    items: ["전문 어휘", "직무별 상황", "Case Study", "Speaking Scenario"],
+  },
+};
+
+export function getBonusContent(test: Test) {
+  return test.bonusTypes.map((b) => bonusContent[b]);
 }
 
-export interface ProductDetail {
-  whoFor: string[];
-  whatYouPractice: string[];
-  toc: string[];
-  sample: SampleQuestion;
-  studyPlan: { week: string; focus: string }[];
+const bookSets: Record<Tier, string[]> = {
+  STANDARD: ["Main Book", "Answer Book", "Final Review"],
+  COMPLETE: ["Main Workbook", "Answer Guide", "Mock Test Book", "Final Review", "Bonus Book"],
+  PREMIUM: [
+    "Main Workbook 01",
+    "Main Workbook 02",
+    "Detailed Answer Guide",
+    "Mock Test",
+    "Final Review",
+    "Premium Bonus",
+  ],
+};
+
+export function getBookSet(tier: Tier): string[] {
+  return bookSets[tier];
 }
 
-export function getProductDetail(product: Product): ProductDetail {
-  const meta = testMeta[product.test];
-  const level = levelInfo[product.level];
+export function getWhoFor(test: Test): string[] {
+  const isSpeaking = test.bonusTypes.includes("SPEAKING");
+  const isWriting = test.bonusTypes.includes("WRITING");
 
+  const lines = [`${test.name} 시험이 처음인 분`, "예상문제가 부족한 분"];
+
+  if (isSpeaking) {
+    lines.push("답변이 짧게 끝나는 분", "고득점 표현이 필요한 분", "실전 말하기를 많이 해보고 싶은 분");
+  } else if (isWriting) {
+    lines.push("답안 구조를 어떻게 잡아야 할지 막막한 분", "고득점 표현이 필요한 분", "실전 문제를 충분히 풀어보고 싶은 분");
+  } else {
+    lines.push("점수가 잘 오르지 않는 분", "고득점 표현이 필요한 분", "실전 문제를 충분히 풀어보고 싶은 분");
+  }
+
+  return lines;
+}
+
+export function getIncludesForTier(test: Test, tier: Tier): string[] {
+  return [...tierMeta[tier].includes];
+}
+
+export interface SamplePreview {
+  label: string;
+  prompt: string;
+  detail: string;
+}
+
+export function getSamplePreview(test: Test): SamplePreview {
+  if (test.bonusTypes.includes("SPEAKING")) {
+    return {
+      label: "SAMPLE · SPEAKING",
+      prompt: `${test.name} 예상질문: 최근 인상 깊었던 경험을 이유와 함께 설명해 보세요.`,
+      detail:
+        "고득점 답변 예시: 결론(주장)을 먼저 말한 뒤, 구체적인 이유와 사례를 순서대로 덧붙이고 마지막에 한 문장으로 요약합니다. 답변이 짧게 끝나지 않도록 이유를 최소 2가지 이상 준비해두는 것이 핵심입니다.",
+    };
+  }
+  if (test.bonusTypes.includes("WRITING")) {
+    return {
+      label: "SAMPLE · WRITING",
+      prompt: `${test.name} 예상문제: 최근 5년간 나타난 원격 근무 확산의 장단점에 대해 서술하시오.`,
+      detail:
+        "고득점 답안 구조: 서론에서 주제를 재진술하고, 본론에서 장점과 단점을 각각 구체적 근거와 함께 전개한 뒤, 결론에서 자신의 의견을 한 문장으로 명확히 정리합니다.",
+    };
+  }
+  if (test.bonusTypes.includes("PROFESSIONAL")) {
+    return {
+      label: "SAMPLE · CASE STUDY",
+      prompt: `${test.name} 예상 시나리오: 근무 중 발생한 상황을 동료에게 정확히 전달하고 필요한 조치를 요청하세요.`,
+      detail:
+        "전문 어휘와 상황별 표현을 활용해 핵심 정보(무엇을, 언제, 왜)를 빠짐없이 전달하는 것이 채점의 핵심 포인트입니다.",
+    };
+  }
   return {
-    whoFor: [
-      `${meta.name} ${product.skill} 영역에서 목표 점수까지 실전 문제량이 부족한 수험생`,
-      `${level.label} 단계(${level.ko})의 훈련이 필요한 학습자`,
-      "이론 강의는 충분히 들었지만 실전 감각이 부족하다고 느끼는 수험생",
-      "제한된 시간 안에 정확히 답하는 훈련이 필요한 수험생",
-    ],
-    whatYouPractice: [
-      `${product.skill} 영역 핵심 문항 유형 전체`,
-      `총 ${product.questions.toLocaleString()}문항의 반복 실전 훈련`,
-      "실제 시험과 동일한 난이도 배치와 시간 배분",
-      "오답 노트를 위한 상세 해설 및 근거 문장 표시",
-    ],
-    toc: [
-      "PART 1. Diagnostic Check — 진단 테스트",
-      `PART 2. ${product.skill} Core Types — 유형별 집중 훈련`,
-      "PART 3. Timed Practice Sets — 시간 제한 실전 세트",
-      `PART 4. ${level.label} Level Challenge — ${level.ko}`,
-      "PART 5. Answer Key & Explanations — 정답 및 해설",
-    ],
-    sample: buildSampleQuestion(product),
-    studyPlan: [
-      { week: "Week 1", focus: `${product.skill} 유형 진단 및 기초 다지기` },
-      { week: "Week 2", focus: "유형별 집중 반복 훈련" },
-      { week: "Week 3", focus: `${level.label} 난이도 문제 풀이` },
-      { week: "Week 4", focus: "시간 제한 실전 세트 및 총점검" },
-    ],
+    label: "SAMPLE · READING & VOCAB",
+    prompt: `${test.name} 예상문제: 지문의 핵심 내용과 일치하지 않는 것을 고르세요.`,
+    detail:
+      "지문 전체를 다시 읽기보다 문제가 가리키는 문장 주변을 정확히 확인하는 훈련이 속도와 정확도를 동시에 높여줍니다.",
   };
 }
 
-function buildSampleQuestion(product: Product): SampleQuestion {
-  if (product.skill.toLowerCase().includes("reading") || product.skill === "Academic Reading") {
+export interface RecommendationInput {
+  level: string;
+  goal: string;
+  timeframe: string;
+  dailyTime: string;
+}
+
+export function recommendTier(input: RecommendationInput): { tier: Tier; reasons: string[] } {
+  const { level, goal, timeframe } = input;
+
+  const isFirstTime = level.includes("처음");
+  const isHighLevel =
+    level.includes("고급") || level.includes("AL") || level.includes("N1") || level.includes("Level 6") || level.includes("Level 7") || level.includes("5~6");
+  const isRetakeOrHighScore = goal.includes("고득점") || goal.includes("재응시") || goal.includes("상위");
+  const isShortTimeframe = timeframe.includes("2주") || timeframe.includes("2~4주");
+  const isLongTimeframe = timeframe.includes("2~3개월") || timeframe.includes("3개월 이상");
+
+  if (isRetakeOrHighScore || isLongTimeframe || isHighLevel) {
     return {
-      passage:
-        "Urban heat islands occur when cities replace natural land cover with dense concentrations of pavement, buildings, and other surfaces that absorb and retain heat. This effect can raise a city's average temperature by several degrees compared to its surrounding rural areas, particularly during the evening hours when built surfaces slowly release the heat absorbed during the day.",
-      question:
-        "According to the passage, why do cities tend to be warmer than surrounding rural areas in the evening?",
-      choices: [
-        "Cities receive more direct sunlight than rural areas.",
-        "Built surfaces release stored heat slowly after sunset.",
-        "Rural areas have higher humidity levels overnight.",
-        "Urban vehicles produce more heat than rural traffic.",
+      tier: "PREMIUM",
+      reasons: [
+        "고득점 또는 상위 레벨을 목표로 하고 있음",
+        "충분한 문제량으로 반복 훈련이 필요한 단계",
+        "2~3개월 이상의 준비 기간에 적합한 분량",
+        "재응시 또는 실전 감각을 끌어올려야 하는 상황",
       ],
-      answerIndex: 1,
-      explanation:
-        "The passage states that built surfaces \"slowly release the heat absorbed during the day,\" which directly explains the evening temperature difference described in the question.",
     };
   }
 
-  if (product.skill.toLowerCase().includes("listening")) {
+  if (isFirstTime && isShortTimeframe) {
     return {
-      passage:
-        "[Audio Transcript Excerpt] Professor: Today I want to talk about a phenomenon called cognitive load, which refers to the amount of mental effort being used in working memory. When cognitive load is too high, learning actually becomes less effective, even if the material itself is important.",
-      question: "What is the professor mainly explaining?",
-      choices: [
-        "A method for measuring intelligence",
-        "Why some students prefer group study",
-        "How excessive mental effort can reduce learning",
-        "The history of memory research",
+      tier: "STANDARD",
+      reasons: [
+        "시험을 처음 준비하는 단계",
+        "짧은 기간 안에 핵심 유형부터 익혀야 함",
+        "특정 영역을 집중적으로 보완하기 좋은 분량",
+        "가볍게 시작해 감을 잡기에 적합",
       ],
-      answerIndex: 2,
-      explanation:
-        "The professor defines cognitive load and explains that when it is too high, \"learning actually becomes less effective\" — the main idea is the relationship between mental effort and learning outcomes.",
-    };
-  }
-
-  if (product.skill.toLowerCase().includes("speaking")) {
-    return {
-      passage:
-        "Prompt: Some people prefer to work for a large company, while others prefer to work for a small company. Which do you prefer and why? Use specific reasons and details in your response.",
-      question: "Sample high-scoring response structure:",
-      choices: [
-        "State a clear preference, give two reasons, support each with a specific example",
-        "List every possible advantage and disadvantage without choosing a side",
-        "Describe both companies equally without stating a preference",
-        "Focus only on salary without addressing the actual prompt",
-      ],
-      answerIndex: 0,
-      explanation:
-        "High-scoring responses commit to one position early, then develop exactly two well-supported reasons within the time limit — breadth without depth typically lowers delivery and development scores.",
     };
   }
 
   return {
-    passage:
-      "Prompt: Some people believe that technology has made it easier for young people to be independent, while others think it has made them more dependent on their parents. Discuss both views and give your own opinion.",
-    question: "Which approach best fits a high-scoring Task 2 response?",
-    choices: [
-      "Take a clear position and support it with one extended, well-developed argument",
-      "Discuss both views with balanced evidence, then state a clear personal opinion",
-      "Summarize the question without adding new ideas",
-      "List unrelated opinions about technology in general",
+    tier: "COMPLETE",
+    reasons: [
+      "일반적인 시험 준비 기간에 가장 무난한 선택",
+      "충분한 실전 문제와 모의고사가 필요한 단계",
+      "목표 점수를 확실히 올리고 싶은 상황",
+      "한 번에 제대로 준비하고 싶은 경우 가장 많이 선택하는 구성",
     ],
-    answerIndex: 1,
-    explanation:
-      "Discuss-both-views prompts require addressing both sides with relevant evidence before committing to a clearly stated personal position in the conclusion.",
   };
 }

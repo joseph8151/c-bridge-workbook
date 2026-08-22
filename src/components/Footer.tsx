@@ -19,7 +19,7 @@ export default function Footer() {
               {siteConfig.tagline}
             </p>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-lavender/80">
-              TOEFL·IELTS·PTE·Duolingo English Test 글로벌 영어시험 전문 문제집 브랜드.
+              {siteConfig.brandSub}
             </p>
           </div>
 

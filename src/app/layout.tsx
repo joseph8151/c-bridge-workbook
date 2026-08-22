@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
-const display = Playfair_Display({
+const display = Manrope({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  weight: ["600", "700", "800"],
 });
 
 const body = Inter({
@@ -19,9 +18,9 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "C-BRIDGE | TOEFL·IELTS·PTE·Duolingo 영어시험 문제집",
+  title: "C-BRIDGE | 성인 어학시험 전문 문제집",
   description:
-    "TOEFL, IELTS, PTE, Duolingo English Test 유형별 문제집과 실전 모의고사. Reading, Listening, Speaking, Writing 집중 훈련을 C-BRIDGE에서 만나보세요.",
+    "TOEIC, OPIc, JLPT, HSK, FLEX, TOEFL, IELTS, PTE부터 전문직 시험까지. 취업·이직·승진·유학·이민을 위한 성인 어학시험 전문 문제집과 실전 대비 자료를 C-BRIDGE에서 만나보세요.",
   metadataBase: new URL("https://c-bridge.example.com"),
 };
 
