@@ -52,6 +52,7 @@ export default function Footer() {
             <span>{siteConfig.hours}</span>
           </div>
         </div>
+        <p className="mt-3 text-xs text-lavender/50">{siteConfig.address}</p>
       </div>
     </footer>
   );

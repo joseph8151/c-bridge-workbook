@@ -7,6 +7,7 @@ export const siteConfig = {
   email: "hello@c-bridge.com",
   formspreeEndpoint: "https://formspree.io/f/xeajdzrz",
   hours: "평일 10:00 - 18:00 (KST) / 주말 및 공휴일 휴무",
+  address: "서울 서초구 반포대로18길 62, 엘루크서초",
 };
 
 export const megaMenuGroups = [
