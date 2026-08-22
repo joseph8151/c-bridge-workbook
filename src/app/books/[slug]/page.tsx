@@ -7,6 +7,8 @@ import { tests, getTestBySlug, groupMeta } from "@/lib/tests";
 import { getWhoFor, getSamplePreview } from "@/lib/productDetail";
 import { getGuidesForTest } from "@/lib/guides";
 import { getTestPriceLabel } from "@/lib/products";
+import { getTestIntro, getTestTips } from "@/lib/testContent";
+import { getTestimonialForTest } from "@/lib/reviews";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -40,6 +42,9 @@ export default async function TestDetailPage({
   const sample = getSamplePreview(test);
   const guides = getGuidesForTest(test.name);
   const related = tests.filter((t) => t.group === test.group && t.id !== test.id).slice(0, 3);
+  const intro = getTestIntro(test);
+  const tips = getTestTips(test);
+  const testimonial = getTestimonialForTest(test.name);
 
   return (
     <>
@@ -66,6 +71,24 @@ export default async function TestDetailPage({
                 {b}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ivory py-14 md:py-16">
+        <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+          <div className="flex flex-col gap-6 rounded-[24px] border border-purple/10 bg-lavender/10 p-7 md:flex-row md:items-start md:gap-10 md:p-9">
+            <div className="shrink-0">
+              <span
+                className="inline-block rounded-full px-3.5 py-1.5 text-[11px] font-bold tracking-[0.1em]"
+                style={{ background: "var(--color-lavender)", color: group.color }}
+              >
+                시험 소개
+              </span>
+            </div>
+            <p className="max-w-3xl break-keep text-sm leading-relaxed text-ink/75 md:text-base">
+              {intro}
+            </p>
           </div>
         </div>
       </section>
@@ -135,6 +158,30 @@ export default async function TestDetailPage({
         </div>
       </section>
 
+      <section className="bg-plum py-16 md:py-20">
+        <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+          <p className="text-xs font-bold tracking-[0.16em] text-gold">STRATEGY TIP</p>
+          <h2 className="mt-2 font-serif text-2xl font-bold text-ivory">
+            {test.name} 전략 팁
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {tips.map((tip, i) => (
+              <div
+                key={tip}
+                className="rounded-[18px] border border-ivory/10 bg-ivory/5 p-5"
+              >
+                <span className="font-serif text-2xl font-black text-gold/60">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-3 break-keep text-sm leading-relaxed text-lavender/90">
+                  {tip}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-ivory py-16 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10">
           <h2 className="font-serif text-2xl font-bold text-ink">구매 전에 확인하세요</h2>
@@ -145,7 +192,22 @@ export default async function TestDetailPage({
               <p className="mt-4 text-sm leading-relaxed text-ink/65">{sample.detail}</p>
             </div>
 
-            {guides.length > 0 && (
+            {testimonial && (
+              <div className="rounded-[20px] border border-gold/25 bg-plum p-7">
+                <div className="flex items-center justify-between">
+                  <p className="text-[10px] font-bold tracking-[0.16em] text-gold">구매 후기</p>
+                  <span className="rounded-full bg-gold/15 px-2.5 py-1 text-[10px] font-bold text-gold">
+                    {testimonial.tier}
+                  </span>
+                </div>
+                <p className="mt-4 break-keep text-sm leading-relaxed text-lavender/90">
+                  {testimonial.quote}
+                </p>
+                <p className="mt-4 text-xs font-bold text-lavender/60">{testimonial.author}</p>
+              </div>
+            )}
+
+            {!testimonial && guides.length > 0 && (
               <div className="rounded-[20px] border border-purple/15 bg-plum p-7">
                 <p className="text-[10px] font-bold tracking-[0.16em] text-gold">
                   처음 준비한다면 먼저 읽어보세요

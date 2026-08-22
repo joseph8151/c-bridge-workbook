@@ -7,6 +7,7 @@ import CustomOrder from "@/components/home/CustomOrder";
 import InsideBook from "@/components/home/InsideBook";
 import BonusMaterials from "@/components/home/BonusMaterials";
 import TrendingTests from "@/components/home/TrendingTests";
+import Testimonials from "@/components/home/Testimonials";
 import GuidesPreview from "@/components/home/GuidesPreview";
 import FaqSection from "@/components/home/FaqSection";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -28,6 +29,7 @@ export default function Home() {
       <CustomOrder />
       <BonusMaterials />
       <TrendingTests />
+      <Testimonials />
       <GuidesPreview />
       <FaqSection />
       <FinalCTA />
