@@ -6,6 +6,7 @@
 :root {
   --paper: #efe6d6;
   --paper-2: #e7ddc9;
+  --cream: #f7f1e6;
   --ink: #1c1712;
   --rust: #9b3b1c;
   --line: #cbbba0;
@@ -196,7 +197,7 @@ summary:focus-visible {
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 22px;
   margin: 0;
   padding: 0;
 }
@@ -291,16 +292,88 @@ summary:focus-visible {
   font-weight: 700;
 }
 
+/* photo frame with graceful fallback (no real photo yet) */
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-frame img.broken {
+  display: none;
+}
+
+.photo-frame .fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--paper-2) 0px,
+    var(--paper-2) 2px,
+    var(--paper) 2px,
+    var(--paper) 4px
+  );
+}
+
+.photo-frame img.broken + .fallback {
+  display: flex;
+}
+
+.photo-frame .fallback span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(28, 23, 18, 0.4);
+  text-transform: uppercase;
+}
+
+.photo-caption {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(28, 23, 18, 0.5);
+  text-transform: uppercase;
+}
+
+/* hero photo stage: photo behind, book cover overlaid */
+
+.hero-stage {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.hero-stage .photo-frame {
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+}
+
 /* book cover mockup */
 
 .book-mock {
   position: relative;
   aspect-ratio: 3 / 4;
-  max-width: 320px;
+  max-width: 230px;
   margin: 0 auto;
   background: var(--ink);
   color: var(--paper);
-  padding: 28px 26px;
+  padding: 22px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -308,20 +381,33 @@ summary:focus-visible {
   box-shadow: 8px 8px 0 var(--line);
 }
 
+.hero-stage .book-mock {
+  position: absolute;
+  right: -28px;
+  bottom: -28px;
+  margin: 0;
+}
+
 .book-mock .top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  font-size: 0.66rem;
-  letter-spacing: 0.14em;
+  gap: 10px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
   font-weight: 700;
   opacity: 0.85;
 }
 
+.book-mock .top span {
+  white-space: nowrap;
+}
+
 .book-mock .title {
-  font-size: 1.7rem;
-  line-height: 1.25;
+  font-size: 1.2rem;
+  line-height: 1.3;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .book-mock .lines {
@@ -349,12 +435,17 @@ summary:focus-visible {
 
 .book-mock .bottom {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
   border-top: 1px solid rgba(239, 230, 214, 0.3);
-  padding-top: 14px;
+  padding-top: 12px;
+}
+
+.book-mock .bottom span,
+.book-mock .bottom b {
+  white-space: nowrap;
 }
 
 .book-mock .bottom b {
@@ -731,6 +822,371 @@ summary:focus-visible {
   color: rgba(28, 23, 18, 0.5);
 }
 
+/* ---------- 3-photo editorial grid ---------- */
+
+.photo-grid3 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+.photo-grid3 figure {
+  width: 100%;
+  margin: 0;
+}
+
+.photo-grid3 .photo-frame {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+}
+
+.photo-grid3 figure:first-child .photo-frame {
+  aspect-ratio: 3 / 4;
+}
+
+/* ---------- full-bleed library band ---------- */
+
+.bleed-band {
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 30vw, 340px);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.bleed-band .photo-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.bleed-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(28, 23, 18, 0.55), rgba(28, 23, 18, 0.15));
+  z-index: 1;
+}
+
+.bleed-band .fallback {
+  background: var(--ink);
+}
+
+.bleed-band .fallback span {
+  color: rgba(239, 230, 214, 0.4);
+}
+
+.bleed-band .caption {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 20px;
+  z-index: 2;
+  color: var(--cream);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---------- exam filter ---------- */
+
+.filter-box {
+  margin-bottom: 24px;
+}
+
+.filter-box input {
+  width: 100%;
+  max-width: 360px;
+  padding: 0.75em 1em;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+.cat-cell.is-hidden {
+  display: none;
+}
+
+.filter-empty {
+  display: none;
+  padding: 26px 24px;
+  font-size: 0.9rem;
+  color: rgba(28, 23, 18, 0.6);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.filter-empty.show {
+  display: block;
+}
+
+/* ---------- included + photo pairing ---------- */
+
+.included-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.included-grid figure {
+  width: 100%;
+  margin: 0;
+}
+
+.included-grid .photo-frame {
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+}
+
+/* ---------- look inside preview ---------- */
+
+.preview-card {
+  border: 1px solid var(--ink);
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.preview-card .q-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--rust);
+  text-transform: uppercase;
+}
+
+.preview-card .passage {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: rgba(28, 23, 18, 0.8);
+  border-left: 2px solid var(--line);
+  padding-left: 18px;
+}
+
+.preview-card .question {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.preview-card .choices {
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.preview-card .choices li {
+  list-style: none;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.preview-card .reveal-btn {
+  margin-top: 20px;
+}
+
+.preview-answer {
+  display: none;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.preview-answer.show {
+  display: block;
+}
+
+.preview-answer .correct {
+  font-weight: 800;
+  color: var(--rust);
+}
+
+.preview-answer p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(28, 23, 18, 0.7);
+}
+
+.preview-disclaimer {
+  margin-top: 16px;
+  font-size: 0.76rem;
+  color: rgba(28, 23, 18, 0.45);
+}
+
+/* ---------- builder ---------- */
+
+.builder-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.builder-form {
+  border: 1px solid var(--ink);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.builder-result {
+  border: 1px solid var(--ink);
+  padding: 28px 24px;
+}
+
+.builder-result .price-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.builder-result .price-line .amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.alloc-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 60px;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+}
+
+.alloc-row .bar-track {
+  height: 8px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+
+.alloc-row .bar-fill {
+  height: 100%;
+  background: var(--rust);
+}
+
+.alloc-row .pages {
+  text-align: right;
+  font-weight: 700;
+}
+
+.builder-result .cta {
+  margin-top: 20px;
+}
+
+/* ---------- study load calculator ---------- */
+
+.calc-box {
+  border: 1px solid var(--line);
+  background: var(--cream);
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 20px;
+}
+
+.calc-box .field {
+  min-width: 140px;
+}
+
+.calc-box .field input {
+  width: 100%;
+  padding: 0.7em 0.6em;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+.calc-result {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.calc-result .big {
+  font-size: 1.5rem;
+  color: var(--rust);
+}
+
+/* ---------- consultation ---------- */
+
+.consult-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-width: 640px;
+}
+
+.consult-form .field.full {
+  grid-column: 1 / -1;
+}
+
+.consult-form input,
+.consult-form textarea {
+  width: 100%;
+  padding: 0.75em 0.8em;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+.consult-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.consult-form .actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.consult-form .mailto-link {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--rust);
+  text-decoration: underline;
+}
+
+.consult-confirm {
+  display: none;
+  max-width: 640px;
+  border: 1px solid var(--ink);
+  padding: 24px;
+}
+
+.consult-confirm.show {
+  display: block;
+}
+
+.consult-confirm p:first-child {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.consult-confirm p + p {
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: rgba(28, 23, 18, 0.65);
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 860px) {
@@ -739,6 +1195,20 @@ summary:focus-visible {
   }
   .process {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .photo-grid3 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .photo-grid3 figure:first-child {
+    grid-column: 1 / -1;
+  }
+  .included-grid,
+  .builder-grid {
+    grid-template-columns: 1fr;
+  }
+  .included-grid .photo-frame {
+    order: -1;
+    max-width: 320px;
   }
 }
 
@@ -830,5 +1300,38 @@ summary:focus-visible {
 
   .site-footer .grid {
     flex-direction: column;
+  }
+
+  .photo-grid3 {
+    grid-template-columns: 1fr;
+  }
+  .photo-grid3 figure:first-child {
+    grid-column: auto;
+  }
+
+  .hero-stage {
+    max-width: 260px;
+  }
+  .hero-stage .book-mock {
+    right: -14px;
+    bottom: -14px;
+    max-width: 160px;
+  }
+
+  .alloc-row {
+    grid-template-columns: 70px 1fr 46px;
+    font-size: 0.8rem;
+  }
+
+  .consult-form {
+    grid-template-columns: 1fr;
+  }
+  .consult-form .field.full {
+    grid-column: auto;
+  }
+
+  .calc-box {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
