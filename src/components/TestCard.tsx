@@ -55,7 +55,7 @@ export default function TestCard({ test }: { test: Test }) {
         <span className="text-xs font-semibold tracking-[0.06em] text-ink/45">
           100P · 200P · 300P
         </span>
-        <span className="font-serif text-base font-bold text-ink">{getTestPriceLabel()}</span>
+        <span className="font-serif text-base font-bold text-ink">{getTestPriceLabel(test.id)}</span>
       </div>
 
       <span className="mt-4 flex items-center justify-center gap-1.5 rounded-[14px] border border-purple/20 py-2.5 text-xs font-bold tracking-[0.06em] text-purple transition-colors group-hover:bg-purple group-hover:text-ivory">

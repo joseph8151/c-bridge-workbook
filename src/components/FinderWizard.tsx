@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { tests, Test, groupMeta, getLevelOptions } from "@/lib/tests";
-import { tierMeta } from "@/lib/products";
+import { tierMeta, getTierPrice } from "@/lib/products";
 import { recommendTier } from "@/lib/productDetail";
 
 const goalOptions = [
@@ -231,7 +231,7 @@ export default function FinderWizard() {
                 {tierMeta[recommendation.tier].pages}페이지
               </p>
               <p className="font-serif text-2xl font-black text-purple">
-                {tierMeta[recommendation.tier].price.toLocaleString()}원
+                {getTierPrice(test.id, recommendation.tier).toLocaleString()}원
               </p>
             </div>
             <div className="mt-4 grid gap-1.5 sm:grid-cols-2">

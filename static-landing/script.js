@@ -240,7 +240,7 @@
   }
 
   if (mailtoLink && consultForm) {
-    mailtoLink.addEventListener("click", function (e) {
+    mailtoLink.addEventListener("click", function () {
       var name = document.getElementById("cName").value;
       var exam = document.getElementById("cExam").value;
       var goal = document.getElementById("cGoal2").value;

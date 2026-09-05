@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
-import { tierMeta, tierOrder } from "@/lib/products";
+import { tierMeta, tierOrder, getProfessionalPriceLine } from "@/lib/products";
 
 const recommendedFor: Record<string, string[]> = {
   STANDARD: [
@@ -40,7 +40,11 @@ export default function PricingTiers({
           className="mx-auto max-w-2xl"
         />
 
-        <div className="mt-16 grid items-end gap-6 md:grid-cols-3 md:gap-5">
+        <p className="mt-8 text-center text-xs font-semibold text-ink/45">
+          아래 가격은 일반 어학시험 기준입니다. 전문직 시험은 과목 페이지에서 확인하세요.
+        </p>
+
+        <div className="mt-8 grid items-end gap-6 md:grid-cols-3 md:gap-5">
           {tierOrder.map((tier) => {
             const meta = tierMeta[tier];
             const isComplete = tier === "COMPLETE";
@@ -128,6 +132,9 @@ export default function PricingTiers({
 
         <p className="mt-8 text-center text-sm text-ink/50">
           100P · 200P · 300P 중 분량을 선택한 후, 원하는 영역과 목표 수준에 맞춰 구성할 수 있습니다.
+        </p>
+        <p className="mt-3 text-center text-xs font-semibold text-ink/40">
+          {getProfessionalPriceLine()}
         </p>
         <div className="mt-6 flex justify-center">
           <Link href="/finder" className="text-sm font-bold text-purple hover:underline">

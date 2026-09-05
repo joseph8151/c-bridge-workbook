@@ -84,10 +84,39 @@ export const tierMeta: Record<Tier, TierMeta> = {
 
 export const tierOrder: Tier[] = ["STANDARD", "COMPLETE", "PREMIUM"];
 
-export function getStartingPrice(): number {
-  return tierMeta.STANDARD.price;
+// Per-test price overrides. Most tests use the standard tierMeta price;
+// a test id listed here charges a different amount per tier instead
+// (e.g. OET, a specialized professional-exam package).
+const PROFESSIONAL_PRICE: Record<Tier, number> = {
+  STANDARD: 149000,
+  COMPLETE: 249000,
+  PREMIUM: 329000,
+};
+
+export const priceOverrides: Partial<Record<string, Record<Tier, number>>> = {
+  oet: PROFESSIONAL_PRICE,
+  epta: PROFESSIONAL_PRICE,
+  icao: PROFESSIONAL_PRICE,
+};
+
+export function getTierPrice(testId: string | undefined, tier: Tier): number {
+  return priceOverrides[testId ?? ""]?.[tier] ?? tierMeta[tier].price;
 }
 
-export function getTestPriceLabel(): string {
-  return `${getStartingPrice().toLocaleString()}원부터`;
+export function getStartingPrice(testId?: string): number {
+  return getTierPrice(testId, "STANDARD");
+}
+
+export function getTestPriceLabel(testId?: string): string {
+  return `${getStartingPrice(testId).toLocaleString()}원부터`;
+}
+
+// Combined starting-price line for site-wide (non test-specific) copy,
+// since general and professional exams start at different prices.
+export function getSiteWidePriceLabel(): string {
+  return `일반 시험 ${tierMeta.STANDARD.price.toLocaleString()}원부터 · 전문직 ${PROFESSIONAL_PRICE.STANDARD.toLocaleString()}원부터`;
+}
+
+export function getProfessionalPriceLine(): string {
+  return `OET · EPTA · ICAO 등 전문직 — 100P ${PROFESSIONAL_PRICE.STANDARD.toLocaleString()} · 200P ${PROFESSIONAL_PRICE.COMPLETE.toLocaleString()} · 300P ${PROFESSIONAL_PRICE.PREMIUM.toLocaleString()}`;
 }

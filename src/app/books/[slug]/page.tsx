@@ -60,7 +60,7 @@ export default async function TestDetailPage({
             {test.tagline}를 문제부터 실전 모의시험까지 한 번에 준비하세요.
           </p>
           <p className="mt-2 max-w-2xl text-sm text-ink/50">
-            목표 Level에 따라 충분히 연습할 수 있도록 3가지 분량을 선택할 수 있습니다. {getTestPriceLabel()}
+            목표 Level에 따라 충분히 연습할 수 있도록 3가지 분량을 선택할 수 있습니다. {getTestPriceLabel(test.id)}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {["목표점수 선택 가능", "영역 집중 선택 가능", "맞춤 구성 가능"].map((b) => (

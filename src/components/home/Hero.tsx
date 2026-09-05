@@ -1,7 +1,7 @@
 import Link from "next/link";
 import BookCover from "../BookCover";
 import { GradientBlob, DotGrid } from "../Decor";
-import { getTestPriceLabel } from "@/lib/products";
+import { getSiteWidePriceLabel } from "@/lib/products";
 
 const heroLines = [
   "TOEIC · OPIc · TOEFL · IELTS · PTE",
@@ -91,9 +91,7 @@ export default function Hero() {
               내 교재 찾기
             </Link>
           </div>
-          <p className="mt-4 text-sm font-medium text-ink/45">
-            전문 대비 패키지 {getTestPriceLabel()}
-          </p>
+          <p className="mt-4 text-sm font-medium text-ink/45">{getSiteWidePriceLabel()}</p>
         </div>
 
         <div className="relative flex h-[300px] w-full max-w-md items-center justify-center gap-3 sm:h-[360px] md:h-[420px] lg:h-[480px] lg:max-w-none lg:flex-1 lg:justify-end lg:gap-6 lg:pr-6">

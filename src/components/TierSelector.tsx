@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import BookCover from "./BookCover";
 import { Test, groupMeta, getLevelOptions } from "@/lib/tests";
-import { Tier, tierMeta, tierOrder } from "@/lib/products";
+import { Tier, tierMeta, tierOrder, getTierPrice } from "@/lib/products";
 import { getIncludesForTier, getBonusContent, getBookSet } from "@/lib/productDetail";
 import { focusAreas } from "@/lib/focusAreas";
 
@@ -97,7 +97,7 @@ export default function TierSelector({ test }: { test: Test }) {
                 )}
                 <p className="font-serif text-xl font-black">{m.label}</p>
                 <p className={`mt-1 text-xs font-bold ${active ? "text-lavender" : "text-ink/50"}`}>
-                  {m.price.toLocaleString()}원
+                  {getTierPrice(test.id, t).toLocaleString()}원
                 </p>
               </button>
             );
@@ -131,7 +131,7 @@ export default function TierSelector({ test }: { test: Test }) {
                 {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
               </p>
               <p className="mt-1 font-serif text-3xl font-black text-ink">
-                {meta.price.toLocaleString()}원
+                {getTierPrice(test.id, tier).toLocaleString()}원
               </p>
             </div>
             <p className="text-sm text-ink/50">
