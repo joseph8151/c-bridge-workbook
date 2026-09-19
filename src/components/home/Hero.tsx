@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import BookCover from "../BookCover";
 import { GradientBlob, DotGrid } from "../Decor";
 import { getSiteWidePriceLabel } from "@/lib/products";
@@ -92,6 +93,17 @@ export default function Hero() {
             </Link>
           </div>
           <p className="mt-4 text-sm font-medium text-ink/45">{getSiteWidePriceLabel()}</p>
+
+          <div className="relative mt-8 h-48 w-full max-w-md overflow-hidden rounded-[20px] shadow-[0_16px_40px_-20px_rgba(69,53,101,0.45)] md:h-56">
+            <Image
+              src="/images/brand.jpg"
+              alt="C-BRIDGE 문제집 www.c-bridge.uk"
+              fill
+              sizes="(max-width: 768px) 100vw, 448px"
+              className="object-cover"
+              style={{ objectPosition: "center" }}
+            />
+          </div>
         </div>
 
         <div className="relative flex h-[300px] w-full max-w-md items-center justify-center gap-3 sm:h-[360px] md:h-[420px] lg:h-[480px] lg:max-w-none lg:flex-1 lg:justify-end lg:gap-6 lg:pr-6">

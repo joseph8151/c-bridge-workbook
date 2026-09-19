@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import TierSelector from "@/components/TierSelector";
 import TestCard from "@/components/TestCard";
@@ -9,6 +10,11 @@ import { getGuidesForTest } from "@/lib/guides";
 import { getTestPriceLabel } from "@/lib/products";
 import { getTestIntro, getTestTips } from "@/lib/testContent";
 import { getTestimonialForTest } from "@/lib/reviews";
+
+const DETAIL_HERO_PHOTOS: Record<string, { src: string; alt: string }> = {
+  "pte-academic": { src: "/images/pte-academic.jpg", alt: "PTE Academic C-BRIDGE 문제집 www.c-bridge.uk" },
+  celpip: { src: "/images/celpip.jpg", alt: "CELPIP C-BRIDGE 문제집 www.c-bridge.uk" },
+};
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -45,35 +51,82 @@ export default async function TestDetailPage({
   const intro = getTestIntro(test);
   const tips = getTestTips(test);
   const testimonial = getTestimonialForTest(test.name);
+  const heroPhoto = DETAIL_HERO_PHOTOS[test.slug];
 
   return (
     <>
       <section className="border-b border-purple/10 bg-lavender/20 py-14 md:py-20">
-        <div className="mx-auto max-w-[1440px] px-5 md:px-10">
-          <p className="text-xs font-bold tracking-[0.14em]" style={{ color: group.color }}>
-            {group.navLabel}
-          </p>
-          <h1 className="mt-3 break-keep font-serif text-3xl font-black leading-tight text-ink md:text-4xl">
-            {test.name} 완성 대비
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">
-            {test.tagline}를 문제부터 실전 모의시험까지 한 번에 준비하세요.
-          </p>
-          <p className="mt-2 max-w-2xl text-sm text-ink/50">
-            목표 Level에 따라 충분히 연습할 수 있도록 3가지 분량을 선택할 수 있습니다. {getTestPriceLabel(test.id)}
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {["목표점수 선택 가능", "영역 집중 선택 가능", "맞춤 구성 가능"].map((b) => (
-              <span
-                key={b}
-                className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-[11px] font-bold text-gold"
-              >
-                {b}
-              </span>
-            ))}
+        <div
+          className={`mx-auto max-w-[1440px] px-5 md:px-10 ${
+            heroPhoto ? "grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]" : ""
+          }`}
+        >
+          <div>
+            <p className="text-xs font-bold tracking-[0.14em]" style={{ color: group.color }}>
+              {group.navLabel}
+            </p>
+            <h1 className="mt-3 break-keep font-serif text-3xl font-black leading-tight text-ink md:text-4xl">
+              {test.name} 완성 대비
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">
+              {test.tagline}를 문제부터 실전 모의시험까지 한 번에 준비하세요.
+            </p>
+            <p className="mt-2 max-w-2xl text-sm text-ink/50">
+              목표 Level에 따라 충분히 연습할 수 있도록 3가지 분량을 선택할 수 있습니다. {getTestPriceLabel(test.id)}
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {["목표점수 선택 가능", "영역 집중 선택 가능", "맞춤 구성 가능"].map((b) => (
+                <span
+                  key={b}
+                  className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-[11px] font-bold text-gold"
+                >
+                  {b}
+                </span>
+              ))}
+            </div>
           </div>
+          {heroPhoto && (
+            <div className="relative h-56 w-full overflow-hidden rounded-[20px] shadow-[0_16px_40px_-20px_rgba(69,53,101,0.45)] md:h-72">
+              <Image
+                src={heroPhoto.src}
+                alt={heroPhoto.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 480px"
+                className="object-cover"
+                style={{ objectPosition: "center" }}
+              />
+            </div>
+          )}
         </div>
       </section>
+
+      {test.slug === "pte-academic" && (
+        <section className="bg-cream py-12 md:py-14">
+          <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+            <div className="flex flex-col gap-6 rounded-[24px] border border-purple/10 bg-ivory p-7 md:flex-row md:items-center md:gap-10 md:p-9">
+              <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-[16px] md:h-36 md:w-48">
+                <Image
+                  src="/images/pte-academic-ukvi.jpg"
+                  alt="PTE Academic UKVI C-BRIDGE 문제집 www.c-bridge.uk"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 192px"
+                  className="object-cover"
+                  style={{ objectPosition: "center" }}
+                />
+              </div>
+              <div>
+                <span className="inline-block rounded-full px-3.5 py-1.5 text-[11px] font-bold tracking-[0.1em]" style={{ background: "var(--color-lavender)", color: group.color }}>
+                  PTE Academic UKVI
+                </span>
+                <p className="mt-4 max-w-2xl break-keep text-sm leading-relaxed text-ink/75 md:text-base">
+                  영국 비자·이민(UKVI) 목적의 PTE Academic UKVI도 동일한 시험 유형으로 준비할 수 있습니다.
+                  목표 기관이 요구하는 버전에 맞춰 같은 교재로 대비하세요.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-ivory py-14 md:py-16">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10">

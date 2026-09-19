@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import ConsultationForm from "@/components/ConsultationForm";
+import WorkbookPreviewModal from "@/components/WorkbookPreviewModal";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -39,6 +40,10 @@ export default function ConsultationPage() {
               {siteConfig.phone}
             </a>
             <p className="mt-1">{siteConfig.hours}</p>
+          </div>
+
+          <div className="mt-6">
+            <WorkbookPreviewModal />
           </div>
         </div>
 

@@ -1,11 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 import BookCover from "./BookCover";
 import GroupIcon from "./icons/GroupIcons";
 import { Test, groupMeta } from "@/lib/tests";
 import { getTestPriceLabel } from "@/lib/products";
 
+const PHOTO_THUMBNAILS: Record<string, { src: string; alt: string }> = {
+  "flex-english": { src: "/images/flex.jpg", alt: "FLEX C-BRIDGE 문제집 www.c-bridge.uk" },
+  "pte-academic": { src: "/images/pte-academic.jpg", alt: "PTE Academic C-BRIDGE 문제집 www.c-bridge.uk" },
+  celpip: { src: "/images/celpip.jpg", alt: "CELPIP C-BRIDGE 문제집 www.c-bridge.uk" },
+};
+
 export default function TestCard({ test }: { test: Test }) {
   const group = groupMeta[test.group];
+  const photo = PHOTO_THUMBNAILS[test.slug];
 
   return (
     <Link
@@ -18,14 +26,27 @@ export default function TestCard({ test }: { test: Test }) {
             대표 시험
           </span>
         )}
-        <BookCover
-          test={test.name}
-          skill={test.tagline}
-          tag="패키지 시리즈"
-          color={group.color}
-          size="md"
-          className="transition-transform duration-300 group-hover:-translate-y-1"
-        />
+        {photo ? (
+          <div className="relative h-52 w-36 overflow-hidden rounded-[12px] shadow-[0_10px_24px_-14px_rgba(36,35,41,0.4)] transition-transform duration-300 group-hover:-translate-y-1 md:h-56 md:w-40">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(max-width: 768px) 144px, 160px"
+              className="object-cover"
+              style={{ objectPosition: "center" }}
+            />
+          </div>
+        ) : (
+          <BookCover
+            test={test.name}
+            skill={test.tagline}
+            tag="패키지 시리즈"
+            color={group.color}
+            size="md"
+            className="transition-transform duration-300 group-hover:-translate-y-1"
+          />
+        )}
       </div>
 
       <div className="flex items-center gap-1.5">
