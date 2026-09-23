@@ -54,9 +54,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   verification: {
-    // 네이버 서치어드바이저(searchadvisor.naver.com)에서 사이트 소유 확인 후 발급받은 코드로 교체하세요.
     other: {
-      "naver-site-verification": "REPLACE_WITH_NAVER_SEARCH_ADVISOR_CODE",
+      "naver-site-verification": "28c18a1f32c433517fcd616d688e335640c5cd09",
     },
   },
   openGraph: {
