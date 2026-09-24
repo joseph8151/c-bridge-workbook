@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PricingTiers from "@/components/PricingTiers";
+import { tierMeta, tierOrder } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "가격 안내 | C-BRIDGE",
@@ -9,35 +9,48 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <>
-      <section className="border-b border-purple/10 bg-lavender/20 py-14 md:py-20">
-        <div className="mx-auto max-w-[1440px] px-5 md:px-10 text-center">
-          <p className="text-xs font-bold tracking-[0.14em] text-purple">가격 안내</p>
-          <h1 className="mt-3 break-keep font-serif text-3xl font-black text-ink md:text-4xl">
-            시험 대비 패키지, 한눈에 비교하세요.
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-ink/65 md:text-lg">
-            시험에 따라 제공 자료와 문제 구성은 조금씩 달라지지만, 가격 구조는 어떤 시험을
-            준비하든 동일합니다.
-          </p>
-        </div>
-      </section>
+    <section className="bg-paper py-20 md:py-28">
+      <div className="mx-auto max-w-[640px] px-5 text-center md:px-10">
+        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+          가격 안내
+        </p>
+        <h1
+          className="mx-auto mt-5 break-keep font-serif text-3xl font-black leading-[1.35] md:text-4xl"
+          style={{ color: "var(--color-inkstrong)" }}
+        >
+          직군이 달라도 페이지 가격은 같습니다.
+        </h1>
 
-      <PricingTiers eyebrow="" title="200P · 300P" subtitle="" />
-
-      <section className="bg-cream py-14 md:py-16">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-5 px-5 text-center md:px-10">
-          <p className="font-serif text-2xl font-bold text-ink md:text-3xl">
-            아직 어떤 분량이 맞는지 모르겠다면?
-          </p>
-          <Link
-            href="/finder"
-            className="rounded-[14px] bg-purple px-8 py-3.5 text-sm font-bold tracking-[0.04em] text-ivory transition-colors hover:bg-plum"
-          >
-            무료 교재 추천 받기
-          </Link>
+        <div className="mx-auto mt-12 max-w-sm">
+          {tierOrder.map((t) => {
+            const meta = tierMeta[t];
+            return (
+              <div
+                key={t}
+                className="flex items-baseline justify-between border-t py-6"
+                style={{ borderColor: "rgba(28,23,18,0.18)" }}
+              >
+                <span className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+                  {meta.pages}페이지
+                </span>
+                <span className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+                  {meta.price.toLocaleString()}원
+                </span>
+              </div>
+            );
+          })}
         </div>
-      </section>
-    </>
+
+        <p className="mt-8 text-sm text-ink/60">포함: 문제, 해설, 모의.</p>
+
+        <Link
+          href="/consultation"
+          className="mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
+          style={{ background: "var(--color-rust)" }}
+        >
+          구성 상담
+        </Link>
+      </div>
+    </section>
   );
 }

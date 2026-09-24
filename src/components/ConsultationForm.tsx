@@ -18,11 +18,16 @@ const testOptions = [
   "기타",
 ];
 
+const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기"];
+const volumeOptions = ["200P", "300P"];
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ConsultationForm() {
   const searchParams = useSearchParams();
   const prefillTest = searchParams.get("test") ?? "";
+  const prefillGoal = searchParams.get("goal") ?? "";
+  const prefillWeakArea = searchParams.get("weakArea") ?? "";
 
   const [status, setStatus] = useState<Status>("idle");
 
@@ -92,7 +97,43 @@ export default function ConsultationForm() {
         </select>
       </div>
 
-      <Field label="목표" name="goal" placeholder="예: 승진 제출용, 고득점" />
+      <Field label="목표" name="goal" placeholder="예: 승진 제출용, 고득점" defaultValue={prefillGoal} />
+
+      <div>
+        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">약한 영역</label>
+        <div className="mt-3 grid grid-cols-4 gap-2">
+          {weakAreaOptions.map((w) => (
+            <label
+              key={w}
+              className="flex cursor-pointer items-center justify-center rounded-[14px] border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+            >
+              <input
+                type="radio"
+                name="weakArea"
+                value={w}
+                defaultChecked={w === prefillWeakArea}
+                className="sr-only"
+              />
+              {w}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">분량</label>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {volumeOptions.map((v, i) => (
+            <label
+              key={v}
+              className="flex cursor-pointer items-center justify-center rounded-[14px] border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+            >
+              <input type="radio" name="volume" value={v} defaultChecked={i === 0} className="sr-only" />
+              {v}
+            </label>
+          ))}
+        </div>
+      </div>
 
       <div>
         <label className="text-xs font-bold tracking-[0.1em] text-ink/60">메시지</label>
@@ -133,12 +174,14 @@ function Field({
   type = "text",
   required,
   placeholder,
+  defaultValue,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
   placeholder?: string;
+  defaultValue?: string;
 }) {
   return (
     <div>
@@ -148,6 +191,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[var(--color-rust)] focus:outline-none"
       />
     </div>

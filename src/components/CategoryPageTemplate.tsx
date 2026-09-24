@@ -65,7 +65,7 @@ export default function CategoryPageTemplate({
             어떤 시험을 준비해야 할지 아직 모르겠다면?
           </p>
           <Link
-            href="/finder"
+            href="/recommend"
             className="rounded-[14px] bg-gold px-8 py-3.5 text-sm font-bold tracking-[0.04em] text-plum transition-transform hover:-translate-y-0.5"
           >
             무료 교재 추천 받기

@@ -92,6 +92,78 @@ export const guidePosts: GuidePost[] = [
       "대면 인터뷰에 자신이 있다면 IELTS가, 정형화된 문제 풀이에 강하다면 TOEFL이 상대적으로 유리할 수 있습니다.",
     ],
   },
+  {
+    slug: "pte-academic-vs-ukvi",
+    title: "PTE Academic과 UKVI는 과제가 같고 성적표가 다릅니다",
+    category: "PTE",
+    excerpt: "문항 구성은 동일하지만 성적표의 용도와 인정 기관이 다릅니다.",
+    readTime: "4 min read",
+    content: [
+      "PTE Academic과 PTE Academic UKVI는 시험장에서 치르는 문항과 시간 구성이 동일합니다. Speaking, Writing, Reading, Listening 네 영역 모두 같은 유형으로 출제됩니다.",
+      "차이는 성적표에 있습니다. UKVI는 영국 정부(Home Office)가 비자 심사용으로 인정하는 성적표 형식으로 발급되며, 일반 PTE Academic 성적표와는 발급 절차와 인정 범위가 다릅니다.",
+      "학교 지원이 목적이라면 PTE Academic, 영국 비자 신청이 목적이라면 UKVI로 접수해야 합니다. 준비 방법 자체는 동일하므로 목적에 맞는 접수 여부만 미리 확인하세요.",
+    ],
+  },
+  {
+    slug: "celpip-self-study-clb-plateau",
+    title: "CELPIP 독학, CLB가 안 오를 때",
+    category: "CELPIP",
+    excerpt: "정체 구간은 대부분 특정 영역 하나가 발목을 잡고 있는 경우입니다.",
+    readTime: "5 min read",
+    content: [
+      "CELPIP 점수가 정체되는 경우, 네 영역을 고르게 다시 푸는 것보다 CLB 점수를 가장 많이 깎아먹는 영역 하나를 먼저 찾는 것이 효율적입니다.",
+      "Writing은 이메일의 논지 전개와 문단 구성이, Speaking은 답변의 완결성과 자연스러운 연결이 CLB 점수에 직접적으로 반영됩니다. 어휘량보다 구조가 먼저인 경우가 많습니다.",
+      "독학으로 정체 구간에 있다면, 약한 영역만 집중적으로 풀어보고 실제 채점 기준에 맞춰 확인하는 과정이 필요합니다.",
+    ],
+  },
+  {
+    slug: "oet-writing-speaking-by-profession",
+    title: "OET는 직군마다 쓰기·말하기가 갈립니다",
+    category: "OET",
+    excerpt: "Reading·Listening은 공통이지만 Writing·Speaking은 직군별로 완전히 다릅니다.",
+    readTime: "5 min read",
+    content: [
+      "OET의 Reading과 Listening은 모든 직군이 동일한 문항을 풉니다. 하지만 Writing과 Speaking은 Nursing, Medicine, Pharmacy, Physiotherapy, Dentistry 등 직군별로 완전히 다른 과제가 출제됩니다.",
+      "Writing은 직군별 임상 상황을 담은 케이스 노트를 바탕으로 레터를 작성하는 과제이고, Speaking은 해당 직군에서 실제로 마주치는 환자 상담 상황을 역할극으로 진행합니다.",
+      "때문에 다른 직군의 자료로 준비하면 실전과 다른 형식을 연습하게 됩니다. 반드시 본인 직군에 맞춘 Writing·Speaking 자료로 준비해야 합니다.",
+    ],
+  },
+  {
+    slug: "epta-not-a-conversation-book",
+    title: "EPTA는 회화 교재로 대체되지 않습니다",
+    category: "EPTA",
+    excerpt: "일반 영어 회화 실력과 관제 교신 영어는 평가 기준이 다릅니다.",
+    readTime: "4 min read",
+    content: [
+      "EPTA는 일상 회화 능력이 아니라 표준화된 관제 교신 상황에서의 이해와 응답을 평가합니다. 정해진 표현과 절차를 정확히 듣고 반응하는 능력이 핵심입니다.",
+      "일반 영어 회화 교재로는 이 표준 교신 형식과 상황별 어휘를 다루지 않기 때문에, 실전 평가 기준과 맞지 않는 방식으로 준비하게 될 위험이 있습니다.",
+      "운항·관제 상황을 가정한 Speaking Scenario와 표준 교신 표현을 직접 다루는 자료로 준비하는 것이 실전과 가장 가깝습니다.",
+    ],
+  },
+  {
+    slug: "toles-is-contract-language",
+    title: "TOLES는 계약문입니다",
+    category: "TOLES",
+    excerpt: "일반 비즈니스 영어가 아니라 계약서 특유의 문장 구조를 다루는 시험입니다.",
+    readTime: "4 min read",
+    content: [
+      "TOLES는 일반 비즈니스 영어시험과 달리, 실제 계약서와 법률 문서에서 쓰이는 문장 구조와 어휘를 다룹니다. 조건문, 정의 조항, 면책 조항처럼 계약서에 반복적으로 등장하는 표현이 출제의 중심입니다.",
+      "독해에서는 계약 조항의 의미를 정확히 해석하는 능력이, Writing에서는 모호함 없이 조항을 작성하는 능력이 평가됩니다.",
+      "국제 로펌이나 크로스보더 계약 업무를 준비한다면, 일반 비즈니스 영어보다 계약문 특유의 구조에 맞춘 준비가 필요합니다.",
+    ],
+  },
+  {
+    slug: "topec-is-not-oet",
+    title: "TOPEC는 일본 병동 영어입니다. OET가 아닙니다",
+    category: "TOPEC",
+    excerpt: "둘 다 간호 영어를 다루지만 대상 국가와 시험 형식이 다른 별개의 시험입니다.",
+    readTime: "4 min read",
+    content: [
+      "TOPEC는 일본 병동에서 실제로 사용하는 간호 실무 영어를 평가하는 시험입니다. OET Nursing과 마찬가지로 간호 영역을 다루지만, 대상 의료 환경과 출제 기관, 평가 형식이 다른 별개의 시험입니다.",
+      "환자 응대, 인수인계, 임상 상황 설명 등 일본 병동에서 실제로 마주치는 상황을 중심으로 문항이 구성됩니다.",
+      "OET Nursing을 준비한 자료로 TOPEC를 대체할 수 없으므로, 목표 시험에 맞는 자료로 각각 준비해야 합니다.",
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string) {

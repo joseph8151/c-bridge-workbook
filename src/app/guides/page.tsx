@@ -1,42 +1,50 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SectionHeading from "@/components/SectionHeading";
 import { guidePosts } from "@/lib/guides";
 
 export const metadata: Metadata = {
-  title: "시험 준비 가이드 | C-BRIDGE",
-  description:
-    "OPIc, SJPT, Versant, SPA, PTE, TOEFL, IELTS 등 시험별 준비 방법과 학습 전략을 확인하세요.",
+  title: "시험 정보 | C-BRIDGE",
+  description: "PTE, CELPIP, OET, EPTA, TOLES, TOPEC 등 시험별 준비 정보를 확인하세요.",
 };
 
 export default function GuidesPage() {
+  const posts = guidePosts.filter((post) => post.category !== "FLEX");
+
   return (
     <section className="bg-ivory py-16 md:py-24">
-      <div className="mx-auto max-w-[1440px] px-5 md:px-10">
-        <SectionHeading eyebrow="시험 정보" title="시험 준비 가이드" />
+      <div className="mx-auto max-w-[800px] px-5 md:px-10">
+        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+          시험 정보
+        </p>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {guidePosts
-            .filter((post) => post.category !== "FLEX")
-            .map((post) => (
+        <div className="mt-10">
+          {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/guides/${post.slug}`}
-              className="group flex flex-col justify-between rounded-[20px] border border-purple/10 bg-lavender/10 p-7 transition-colors hover:border-purple/25 hover:bg-lavender/25"
+              className="group block border-t py-6 transition-opacity hover:opacity-70"
+              style={{ borderColor: "rgba(28,23,18,0.15)" }}
             >
-              <div>
-                <p className="text-[11px] font-bold tracking-[0.1em] text-purple">{post.category}</p>
-                <h2 className="mt-3 font-serif text-lg font-bold leading-snug text-ink">
-                  {post.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-ink/60">{post.excerpt}</p>
-              </div>
-              <p className="mt-5 flex items-center gap-2 text-xs font-bold text-purple">
-                {post.readTime}
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </p>
+              <p className="text-[11px] font-bold tracking-[0.1em] text-ink/45">{post.category}</p>
+              <h2
+                className="mt-2 break-keep font-serif text-lg font-bold leading-snug"
+                style={{ color: "var(--color-inkstrong)" }}
+              >
+                {post.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-ink/60">{post.excerpt}</p>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-14 text-center">
+          <Link
+            href="/consultation"
+            className="inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
+            style={{ background: "var(--color-rust)" }}
+          >
+            상담
+          </Link>
         </div>
       </div>
     </section>

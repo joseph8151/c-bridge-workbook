@@ -12,16 +12,9 @@ export const siteConfig = {
   address: "서울 서초구 반포대로18길 62, 엘루크서초",
 };
 
-export const megaMenuGroups = [
-  { label: "취업 · 승진", href: "/employment" },
-  { label: "일본어", href: "/japanese" },
-  { label: "중국어", href: "/chinese" },
-  { label: "유학 · 이민", href: "/study-abroad" },
-  { label: "전문직", href: "/professional" },
-];
-
 export const navLinks = [
-  { label: "교재 추천", href: "/finder" },
+  { label: "시험 찾기", href: "/exams" },
+  { label: "교재 추천", href: "/recommend" },
   { label: "가격 안내", href: "/pricing" },
   { label: "무료자료", href: "/resources" },
   { label: "시험 정보", href: "/guides" },
@@ -38,8 +31,8 @@ export const footerLinks = {
   ],
   SHOP: [
     { label: "가격 안내", href: "/pricing" },
-    { label: "전체 교재 보기", href: "/all-books" },
-    { label: "교재 추천 받기", href: "/finder" },
+    { label: "시험 찾기", href: "/exams" },
+    { label: "교재 추천 받기", href: "/recommend" },
   ],
   SUPPORT: [
     { label: "무료자료", href: "/resources" },
