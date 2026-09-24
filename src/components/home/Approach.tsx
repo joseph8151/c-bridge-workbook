@@ -8,7 +8,10 @@ export default function Approach() {
   return (
     <section className="bg-paper py-24 md:py-32">
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-        <div className="grid gap-12 border-t pt-12 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
+        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+          한 권에 들어가는 것
+        </p>
+        <div className="mt-6 grid gap-12 border-t pt-12 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
           {items.map((item) => (
             <div key={item.label}>
               <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-rust)" }}>

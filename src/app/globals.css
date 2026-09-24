@@ -23,6 +23,7 @@
   --color-rust: #6f8458;
   --color-line: #d7dec8;
   --color-pistachio: #b7c89a;
+  --color-pistachio-tint: #e7eedc;
   --color-nutbrown: #8a6a48;
 }
 
@@ -48,6 +49,7 @@
   --color-rust: var(--color-rust);
   --color-line: var(--color-line);
   --color-pistachio: var(--color-pistachio);
+  --color-pistachio-tint: var(--color-pistachio-tint);
   --color-nutbrown: var(--color-nutbrown);
 
   --font-serif: var(--font-display);

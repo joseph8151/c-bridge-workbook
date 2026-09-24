@@ -12,9 +12,9 @@ const notFits = [
 
 export default function FitCheck() {
   return (
-    <section className="bg-ivory py-16 md:py-24">
+    <section className="py-16 md:py-24" style={{ background: "var(--color-pistachio-tint)" }}>
       <div className="mx-auto max-w-[1000px] px-5 md:px-10">
-        <div className="grid gap-14 border-t pt-10 sm:grid-cols-2" style={{ borderColor: "var(--color-line)" }}>
+        <div className="grid gap-14 border-t pt-10 sm:grid-cols-2" style={{ borderColor: "var(--color-pistachio)" }}>
           <div>
             <p className="font-serif text-xl font-black md:text-2xl" style={{ color: "var(--color-rust)" }}>
               이런 때 맞습니다

@@ -23,16 +23,15 @@ export const navLinks = [
 
 export const footerLinks = {
   TESTS: [
-    { label: "취업 · 승진", href: "/employment" },
-    { label: "일본어", href: "/japanese" },
-    { label: "중국어", href: "/chinese" },
-    { label: "유학 · 이민", href: "/study-abroad" },
-    { label: "전문직", href: "/professional" },
+    { label: "PTE", href: "/books/pte-academic" },
+    { label: "CELPIP", href: "/books/celpip" },
+    { label: "OET", href: "/oet" },
+    { label: "EPTA", href: "/books/epta" },
+    { label: "시험 찾기", href: "/exams" },
   ],
   SHOP: [
     { label: "가격 안내", href: "/pricing" },
-    { label: "시험 찾기", href: "/exams" },
-    { label: "교재 추천 받기", href: "/recommend" },
+    { label: "교재 추천", href: "/recommend" },
   ],
   SUPPORT: [
     { label: "무료자료", href: "/resources" },

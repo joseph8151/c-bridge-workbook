@@ -3,7 +3,7 @@ import { tierMeta, tierOrder } from "@/lib/products";
 
 export default function PriceLine() {
   return (
-    <section className="bg-paper py-20 md:py-28">
+    <section className="bg-paper py-14 md:py-20">
       <div className="mx-auto max-w-[900px] px-5 text-center md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           가격
