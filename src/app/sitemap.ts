@@ -13,7 +13,6 @@ const staticRoutes = [
   "employment",
   "faq",
   "finder",
-  "flex-snult",
   "guides",
   "japanese",
   "pricing",

@@ -1,15 +1,10 @@
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
-import { tierMeta, tierOrder, getProfessionalPriceLine } from "@/lib/products";
+import { tierMeta, tierOrder } from "@/lib/products";
 
 const recommendedFor: Record<string, string[]> = {
-  STANDARD: [
-    "시험이 처음이거나 특정 시험을 집중적으로 연습하고 싶은 분",
-    "시간이 많지 않아 짧고 집중적으로 준비해야 하는 분",
-    "핵심 문제부터 먼저 풀어보고 싶은 분",
-  ],
   COMPLETE: [
-    "4~8주 정도 시험을 준비하는 분",
+    "시험이 처음이거나 4~8주 정도 준비하는 분",
     "충분한 실전 연습과 확실한 점수 상승이 필요한 분",
     "한 번에 제대로 준비하고 싶은 분",
   ],
@@ -41,10 +36,10 @@ export default function PricingTiers({
         />
 
         <p className="mt-8 text-center text-xs font-semibold text-ink/45">
-          아래 가격은 일반 어학시험 기준입니다. 전문직 시험은 과목 페이지에서 확인하세요.
+          페이지 수에 따라 구성이 달라집니다. 모든 시험 동일한 가격입니다.
         </p>
 
-        <div className="mt-8 grid items-end gap-6 md:grid-cols-3 md:gap-5">
+        <div className="mt-8 grid items-end gap-6 md:mx-auto md:max-w-3xl md:grid-cols-2 md:gap-5">
           {tierOrder.map((tier) => {
             const meta = tierMeta[tier];
             const isComplete = tier === "COMPLETE";
@@ -109,12 +104,6 @@ export default function PricingTiers({
                   </ul>
                 </div>
 
-                {isComplete && (
-                  <p className="mt-5 text-xs font-semibold text-purple/70">
-                    100P 두 권 대비 29,000원 절감
-                  </p>
-                )}
-
                 <Link
                   href="/all-books"
                   className={`mt-7 flex items-center justify-center rounded-[14px] py-3.5 text-sm font-bold tracking-[0.04em] transition-colors ${
@@ -131,10 +120,7 @@ export default function PricingTiers({
         </div>
 
         <p className="mt-8 text-center text-sm text-ink/50">
-          100P · 200P · 300P 중 분량을 선택한 후, 원하는 영역과 목표 수준에 맞춰 구성할 수 있습니다.
-        </p>
-        <p className="mt-3 text-center text-xs font-semibold text-ink/40">
-          {getProfessionalPriceLine()}
+          200P · 300P 중 분량을 선택한 후, 원하는 영역과 목표 수준에 맞춰 구성할 수 있습니다.
         </p>
         <div className="mt-6 flex justify-center">
           <Link href="/finder" className="text-sm font-bold text-purple hover:underline">

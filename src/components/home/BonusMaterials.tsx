@@ -3,12 +3,12 @@ import SectionHeading from "../SectionHeading";
 const categories = [
   {
     label: "말하기 시험",
-    exampleTests: "OPIc · TOEIC Speaking · Versant · SPA · SJPT · TSC · HSKK",
+    exampleTests: "OPIc · TOEIC Speaking · Versant · SPA · SJPT",
     items: ["예상 질문", "답변 구성법", "고득점 표현", "상황별 표현", "답변 예시", "실전 Speaking 모의고사"],
   },
   {
     label: "듣기 시험",
-    exampleTests: "TOEIC · JLPT · JPT · HSK · FLEX 등",
+    exampleTests: "TOEIC · CELPIP · Duolingo 등",
     items: ["듣기 음원", "QR 연습", "추가 Listening 문제", "받아쓰기 또는 핵심 표현"],
   },
   {
@@ -18,7 +18,7 @@ const categories = [
   },
   {
     label: "어휘 중심 시험",
-    exampleTests: "JLPT · JPT · HSK · TOEIC · TEPS · FLEX 등",
+    exampleTests: "TOEIC · TEPS · CELPIP 등",
     items: ["빈출 어휘", "시험별 핵심 표현", "단어 체크리스트", "Final Vocabulary"],
   },
 ];

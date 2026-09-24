@@ -14,7 +14,6 @@ export const megaMenuGroups = [
   { label: "취업 · 승진", href: "/employment" },
   { label: "일본어", href: "/japanese" },
   { label: "중국어", href: "/chinese" },
-  { label: "FLEX · SNULT", href: "/flex-snult" },
   { label: "유학 · 이민", href: "/study-abroad" },
   { label: "전문직", href: "/professional" },
 ];
@@ -32,7 +31,6 @@ export const footerLinks = {
     { label: "취업 · 승진", href: "/employment" },
     { label: "일본어", href: "/japanese" },
     { label: "중국어", href: "/chinese" },
-    { label: "FLEX · SNULT", href: "/flex-snult" },
     { label: "유학 · 이민", href: "/study-abroad" },
     { label: "전문직", href: "/professional" },
   ],

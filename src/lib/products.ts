@@ -1,43 +1,25 @@
-export type Tier = "STANDARD" | "COMPLETE" | "PREMIUM";
+export type Tier = "COMPLETE" | "PREMIUM";
 
 export interface TierMeta {
   tier: Tier;
-  label: string; // "100P"
+  label: string; // "200P"
   pages: number;
   price: number;
-  mockTestsLabel: string; // "3회" / "10회" / "15회 이상"
-  name: string; // "STANDARD"
+  mockTestsLabel: string; // "10회" / "15회 이상"
+  name: string; // "COMPLETE"
   shortDesc: string;
   badge?: string;
   ctaLabel: string;
   includes: string[];
 }
 
+// 모든 시험 동일 가격. 시험 종류에 따라 금액이 달라지지 않습니다.
 export const tierMeta: Record<Tier, TierMeta> = {
-  STANDARD: {
-    tier: "STANDARD",
-    label: "100P",
-    pages: 100,
-    price: 89000,
-    mockTestsLabel: "3회",
-    name: "STANDARD",
-    shortDesc: "시험을 처음 준비하거나 특정 시험을 집중적으로 연습하고 싶은 분.",
-    ctaLabel: "100P 구성 보기",
-    includes: [
-      "문제집 100P",
-      "상세 해설집",
-      "시험 직전 핵심 요약집",
-      "실전 모의고사 3회",
-      "4주 학습계획표",
-      "오답노트",
-      "시험별 추가자료",
-    ],
-  },
   COMPLETE: {
     tier: "COMPLETE",
     label: "200P",
     pages: 200,
-    price: 149000,
+    price: 245000,
     mockTestsLabel: "10회",
     name: "COMPLETE",
     shortDesc: "시험을 충분히 연습하고 한 번에 제대로 준비하려는 고객을 위한 주력 상품.",
@@ -60,7 +42,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     tier: "PREMIUM",
     label: "300P",
     pages: 300,
-    price: 199000,
+    price: 369000,
     mockTestsLabel: "15회 이상",
     name: "PREMIUM",
     shortDesc: "충분한 문제량과 고득점·상위 레벨을 목표로 하는 고객을 위한 집중 패키지.",
@@ -82,41 +64,16 @@ export const tierMeta: Record<Tier, TierMeta> = {
   },
 };
 
-export const tierOrder: Tier[] = ["STANDARD", "COMPLETE", "PREMIUM"];
+export const tierOrder: Tier[] = ["COMPLETE", "PREMIUM"];
+export const defaultTier: Tier = "COMPLETE";
 
-// Per-test price overrides. Most tests use the standard tierMeta price;
-// a test id listed here charges a different amount per tier instead
-// (e.g. OET, a specialized professional-exam package).
-const PROFESSIONAL_PRICE: Record<Tier, number> = {
-  STANDARD: 149000,
-  COMPLETE: 249000,
-  PREMIUM: 329000,
-};
-
-export const priceOverrides: Partial<Record<string, Record<Tier, number>>> = {
-  oet: PROFESSIONAL_PRICE,
-  epta: PROFESSIONAL_PRICE,
-  icao: PROFESSIONAL_PRICE,
-};
-
-export function getTierPrice(testId: string | undefined, tier: Tier): number {
-  return priceOverrides[testId ?? ""]?.[tier] ?? tierMeta[tier].price;
+export function getTierPrice(tier: Tier): number {
+  return tierMeta[tier].price;
 }
 
-export function getStartingPrice(testId?: string): number {
-  return getTierPrice(testId, "STANDARD");
-}
+// 홈·시험 페이지·상담 폼 등에서 가격을 설명할 때 쓰는 통일된 한 줄 카피.
+export const priceSummaryLine =
+  "페이지 수에 따라 구성이 달라집니다. 200페이지 245,000원, 300페이지 369,000원.";
 
-export function getTestPriceLabel(testId?: string): string {
-  return `${getStartingPrice(testId).toLocaleString()}원부터`;
-}
-
-// Combined starting-price line for site-wide (non test-specific) copy,
-// since general and professional exams start at different prices.
-export function getSiteWidePriceLabel(): string {
-  return `일반 시험 ${tierMeta.STANDARD.price.toLocaleString()}원부터 · 전문직 ${PROFESSIONAL_PRICE.STANDARD.toLocaleString()}원부터`;
-}
-
-export function getProfessionalPriceLine(): string {
-  return `OET · EPTA · ICAO 등 전문직 — 100P ${PROFESSIONAL_PRICE.STANDARD.toLocaleString()} · 200P ${PROFESSIONAL_PRICE.COMPLETE.toLocaleString()} · 300P ${PROFESSIONAL_PRICE.PREMIUM.toLocaleString()}`;
-}
+// 카드처럼 공간이 좁은 곳에서 쓰는 축약형.
+export const priceSummaryCompact = `${tierMeta.COMPLETE.price.toLocaleString()}원 · ${tierMeta.PREMIUM.price.toLocaleString()}원`;

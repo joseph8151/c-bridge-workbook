@@ -21,7 +21,7 @@ export const exampleOrders = [
   },
   {
     test: "TOEFL",
-    config: "70점 목표 · Reading + Listening · 100P",
+    config: "70점 목표 · Reading + Listening · 200P",
     points: ["기본 문제와 핵심 유형 중심", "Reading/Listening 비중 확대"],
   },
   {
@@ -35,14 +35,9 @@ export const exampleOrders = [
     points: ["상황별 예상질문", "답변 구조", "실전 인터뷰 중심"],
   },
   {
-    test: "TSC",
-    config: "Level 6 목표 · 사진묘사 + 의견제시 · 200P",
-    points: ["선택 유형 문제량 확대", "실전 답변 연습 강화"],
-  },
-  {
-    test: "FLEX 일본어",
-    config: "고득점 목표 · 독해 집중 · 300P",
-    points: ["독해 문제 비중 확대", "어휘·문법 고난도 추가", "실전 모의고사 강화"],
+    test: "CELPIP",
+    config: "Level 8 목표 · Speaking + Writing 집중 · 300P",
+    points: ["실생활 상황 문제 비중 확대", "답변·작문 구조 강화", "실전 모의고사 강화"],
   },
 ];
 
@@ -62,10 +57,5 @@ export const targetLevelExamples: Record<string, { level: string; desc: string }
     { level: "Level 4 목표", desc: "기본 응답과 짧은 문장" },
     { level: "Level 6 목표", desc: "상황 설명과 의견 표현 강화" },
     { level: "Level 8 목표", desc: "복합 상황, 자연스러운 답변 확장, 고급 표현 중심" },
-  ],
-  TSC: [
-    { level: "Level 4 목표", desc: "기본 질문응답" },
-    { level: "Level 6 목표", desc: "사진 묘사·상황 설명·의견 제시" },
-    { level: "Level 8 목표", desc: "복합 질문·고급 표현·긴 답변 구성" },
   ],
 };

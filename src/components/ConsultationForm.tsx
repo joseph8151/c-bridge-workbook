@@ -4,7 +4,7 @@ import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { siteConfig } from "@/lib/config";
 import { groupMeta, tests } from "@/lib/tests";
-import { tierOrder, tierMeta } from "@/lib/products";
+import { tierOrder, tierMeta, defaultTier } from "@/lib/products";
 
 const interestOptions = ["말하기", "듣기", "Writing", "어휘", "모의고사", "전문직 자료", "잘 모르겠음"];
 
@@ -122,7 +122,7 @@ export default function ConsultationForm() {
 
       <div>
         <label className="text-xs font-bold tracking-[0.1em] text-ink/60">관심 있는 분량</label>
-        <div className="mt-3 grid grid-cols-4 gap-2">
+        <div className="mt-3 grid grid-cols-3 gap-2">
           {tierOrder.map((t) => (
             <label
               key={t}
@@ -132,7 +132,7 @@ export default function ConsultationForm() {
                 type="radio"
                 name="tier"
                 value={tierMeta[t].label}
-                defaultChecked={tierMeta[t].label === prefillTier}
+                defaultChecked={tierMeta[t].label === (prefillTier || tierMeta[defaultTier].label)}
                 className="sr-only"
               />
               {tierMeta[t].label}

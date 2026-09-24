@@ -34,7 +34,7 @@ export default function AllBooksClient() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="시험명을 검색하세요. 예: TSC, SJPT, FLEX"
+          placeholder="시험명을 검색하세요. 예: SJPT, CELPIP, OET"
           className="w-full rounded-[14px] border border-purple/20 bg-ivory px-4 py-2.5 text-sm text-ink placeholder:text-ink/40 focus:border-purple focus:outline-none"
         />
 
@@ -70,7 +70,7 @@ export default function AllBooksClient() {
             ))}
           </div>
           <p className="mt-2 text-xs text-ink/40">
-            모든 시험은 100P·200P·300P 세 가지 분량으로 제공됩니다. 각 시험 페이지에서 선택할 수
+            모든 시험은 200P·300P 두 가지 분량으로 제공됩니다. 각 시험 페이지에서 선택할 수
             있습니다.
           </p>
         </div>

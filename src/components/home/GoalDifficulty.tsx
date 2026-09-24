@@ -60,8 +60,8 @@ export default function GoalDifficulty() {
 
         <div className="mx-auto mt-14 max-w-3xl rounded-[20px] border border-purple/10 bg-ivory p-7 text-center">
           <p className="break-keep text-sm font-semibold leading-relaxed text-ink/70 md:text-base">
-            같은 방식이 IELTS, PTE, Duolingo English Test, TOEIC, TOEIC Speaking, OPIc, FLEX, JLPT,
-            JPT, SJPT 등 다른 시험에도 동일하게 적용됩니다.
+            같은 방식이 IELTS, PTE, Duolingo English Test, TOEIC, TOEIC Speaking, OPIc, SJPT, CELPIP,
+            OET 등 다른 시험에도 동일하게 적용됩니다.
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-2">
             {otherApplicableTests.map((t) => (

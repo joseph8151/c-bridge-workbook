@@ -40,7 +40,6 @@ export default function Home() {
       <CategorySection group="EMPLOYMENT" tone="light" />
       <CategorySection group="JAPANESE" tone="lavender" />
       <CategorySection group="CHINESE" tone="cream" />
-      <CategorySection group="FLEX_SNULT" tone="lavender" />
       <CategorySection group="STUDY_ABROAD" tone="cream" />
       <CategorySection group="PROFESSIONAL" tone="lavender" />
       <InsideBook />

@@ -29,7 +29,6 @@ export function getBonusContent(test: Test) {
 }
 
 const bookSets: Record<Tier, string[]> = {
-  STANDARD: ["Main Book", "Answer Book", "Final Review"],
   COMPLETE: ["Main Workbook", "Answer Guide", "Mock Test Book", "Final Review", "Bonus Book"],
   PREMIUM: [
     "Main Workbook 01",
@@ -115,11 +114,9 @@ export interface RecommendationInput {
 export function recommendTier(input: RecommendationInput): { tier: Tier; reasons: string[] } {
   const { level, goal, timeframe } = input;
 
-  const isFirstTime = level.includes("처음");
   const isHighLevel =
     level.includes("고급") || level.includes("AL") || level.includes("N1") || level.includes("Level 6") || level.includes("Level 7") || level.includes("5~6");
   const isRetakeOrHighScore = goal.includes("고득점") || goal.includes("재응시") || goal.includes("상위");
-  const isShortTimeframe = timeframe.includes("2주") || timeframe.includes("2~4주");
   const isLongTimeframe = timeframe.includes("2~3개월") || timeframe.includes("3개월 이상");
 
   if (isRetakeOrHighScore || isLongTimeframe || isHighLevel) {
@@ -130,18 +127,6 @@ export function recommendTier(input: RecommendationInput): { tier: Tier; reasons
         "충분한 문제량으로 반복 훈련이 필요한 단계",
         "2~3개월 이상의 준비 기간에 적합한 분량",
         "재응시 또는 실전 감각을 끌어올려야 하는 상황",
-      ],
-    };
-  }
-
-  if (isFirstTime && isShortTimeframe) {
-    return {
-      tier: "STANDARD",
-      reasons: [
-        "시험을 처음 준비하는 단계",
-        "짧은 기간 안에 핵심 유형부터 익혀야 함",
-        "특정 영역을 집중적으로 보완하기 좋은 분량",
-        "가볍게 시작해 감을 잡기에 적합",
       ],
     };
   }

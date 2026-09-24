@@ -44,7 +44,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">
             C-BRIDGE는 취업, 이직, 승진, 유학·이민을 준비하는 분들을 위한 성인 어학시험 전문
-            브랜드입니다. TOEIC, OPIc, JLPT, HSK, FLEX, TOEFL, IELTS부터 전문직 시험까지, 시험별로
+            브랜드입니다. TOEIC, OPIc, SJPT, TOEFL, IELTS, PTE부터 전문직 시험까지, 시험별로
             필요한 학습 자료를 하나의 패키지로 구성해 제공합니다.
           </p>
         </div>

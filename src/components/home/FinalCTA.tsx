@@ -22,7 +22,7 @@ export default function FinalCTA() {
           C-BRIDGE에서 한 번에 확인하세요.
         </p>
 
-        <div className="mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-4">
+        <div className="mx-auto mt-12 grid max-w-md grid-cols-2 gap-4">
           {tierOrder.map((tier) => {
             const meta = tierMeta[tier];
             return (

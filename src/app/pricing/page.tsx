@@ -4,7 +4,7 @@ import PricingTiers from "@/components/PricingTiers";
 
 export const metadata: Metadata = {
   title: "가격 안내 | C-BRIDGE",
-  description: "C-BRIDGE 시험 대비 패키지 100P·200P·300P 구성과 가격을 확인하세요.",
+  description: "C-BRIDGE 시험 대비 패키지 200P·300P 구성과 가격을 확인하세요.",
 };
 
 export default function PricingPage() {
@@ -23,7 +23,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <PricingTiers eyebrow="" title="100P · 200P · 300P" subtitle="" />
+      <PricingTiers eyebrow="" title="200P · 300P" subtitle="" />
 
       <section className="bg-cream py-14 md:py-16">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-5 px-5 text-center md:px-10">

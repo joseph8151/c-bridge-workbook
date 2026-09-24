@@ -72,7 +72,7 @@ export default function TierSelector({ test }: { test: Test }) {
         </div>
 
         <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">02 · 분량 선택</p>
-        <div className="mt-3 grid grid-cols-3 gap-3">
+        <div className="mt-3 grid grid-cols-2 gap-3">
           {tierOrder.map((t) => {
             const m = tierMeta[t];
             const active = t === tier;
@@ -97,7 +97,7 @@ export default function TierSelector({ test }: { test: Test }) {
                 )}
                 <p className="font-serif text-xl font-black">{m.label}</p>
                 <p className={`mt-1 text-xs font-bold ${active ? "text-lavender" : "text-ink/50"}`}>
-                  {getTierPrice(test.id, t).toLocaleString()}원
+                  {getTierPrice(t).toLocaleString()}원
                 </p>
               </button>
             );
@@ -131,7 +131,7 @@ export default function TierSelector({ test }: { test: Test }) {
                 {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
               </p>
               <p className="mt-1 font-serif text-3xl font-black text-ink">
-                {getTierPrice(test.id, tier).toLocaleString()}원
+                {getTierPrice(tier).toLocaleString()}원
               </p>
             </div>
             <p className="text-sm text-ink/50">

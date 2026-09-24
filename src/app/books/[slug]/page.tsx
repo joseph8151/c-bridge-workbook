@@ -7,7 +7,7 @@ import TestCard from "@/components/TestCard";
 import { tests, getTestBySlug, groupMeta } from "@/lib/tests";
 import { getWhoFor, getSamplePreview } from "@/lib/productDetail";
 import { getGuidesForTest } from "@/lib/guides";
-import { getTestPriceLabel } from "@/lib/products";
+import { priceSummaryLine } from "@/lib/products";
 import { getTestIntro, getTestTips } from "@/lib/testContent";
 import { getTestimonialForTest } from "@/lib/reviews";
 
@@ -72,7 +72,7 @@ export default async function TestDetailPage({
               {test.tagline}를 문제부터 실전 모의시험까지 한 번에 준비하세요.
             </p>
             <p className="mt-2 max-w-2xl text-sm text-ink/50">
-              목표 Level에 따라 충분히 연습할 수 있도록 3가지 분량을 선택할 수 있습니다. {getTestPriceLabel(test.id)}
+              목표 Level에 따라 충분히 연습할 수 있도록 2가지 분량을 선택할 수 있습니다. {priceSummaryLine}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {["목표점수 선택 가능", "영역 집중 선택 가능", "맞춤 구성 가능"].map((b) => (
@@ -161,7 +161,7 @@ export default async function TestDetailPage({
             {[
               { no: "01", title: "시험 선택", desc: `예: ${test.name}` },
               { no: "02", title: "목표 선택", desc: "예: 목표 점수/레벨" },
-              { no: "03", title: "분량 선택", desc: "100P / 200P / 300P" },
+              { no: "03", title: "분량 선택", desc: "200P / 300P" },
               { no: "04", title: "집중 영역 선택", desc: "예: Reading + Writing" },
               { no: "05", title: "맞춤 구성 확인", desc: "선택에 맞는 문제 비중으로 안내" },
             ].map((s) => (

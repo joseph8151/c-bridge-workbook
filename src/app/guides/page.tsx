@@ -6,7 +6,7 @@ import { guidePosts } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "시험 준비 가이드 | C-BRIDGE",
   description:
-    "OPIc, SJPT, TSC, FLEX, JLPT, HSK, TOEFL, IELTS, PTE 등 시험별 준비 방법과 학습 전략을 확인하세요.",
+    "OPIc, SJPT, Versant, SPA, PTE, TOEFL, IELTS 등 시험별 준비 방법과 학습 전략을 확인하세요.",
 };
 
 export default function GuidesPage() {
@@ -16,7 +16,9 @@ export default function GuidesPage() {
         <SectionHeading eyebrow="시험 정보" title="시험 준비 가이드" />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {guidePosts.map((post) => (
+          {guidePosts
+            .filter((post) => post.category !== "FLEX")
+            .map((post) => (
             <Link
               key={post.slug}
               href={`/guides/${post.slug}`}

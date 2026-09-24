@@ -210,29 +210,6 @@ export const tests: Test[] = [
 
   // ---------------- JAPANESE ----------------
   {
-    id: "jlpt",
-    slug: "jlpt",
-    name: "JLPT",
-    group: "JAPANESE",
-    bonusTypes: ["LISTENING", "VOCAB"],
-    tagline: "N1 · N2 · N3 · N4 · N5",
-    description:
-      "일본어능력시험. 어휘, 문법, 독해, 청해를 레벨별로 충분히 연습할 수 있도록 구성합니다.",
-    levelOptions: ["N5", "N4", "N3", "N2", "N1"],
-    badges: ["첫 시험 추천"],
-  },
-  {
-    id: "jpt",
-    slug: "jpt",
-    name: "JPT",
-    group: "JAPANESE",
-    bonusTypes: ["LISTENING", "VOCAB"],
-    tagline: "취업·직장 내 실용 일본어 시험",
-    description:
-      "취업과 직장 내 일본어 평가에 활용되는 실용 일본어 시험. 600점·700점·800점·900점 등 목표점수별 대비가 가능합니다.",
-    badges: ["직장인 추천"],
-  },
-  {
     id: "sjpt",
     slug: "sjpt",
     name: "SJPT",
@@ -258,40 +235,6 @@ export const tests: Test[] = [
   },
 
   // ---------------- CHINESE ----------------
-  {
-    id: "hsk",
-    slug: "hsk",
-    name: "HSK",
-    group: "CHINESE",
-    bonusTypes: ["LISTENING", "VOCAB"],
-    tagline: "1급 ~ 6급",
-    description: "중국어 어휘, 독해, 듣기, 쓰기를 레벨별로 준비합니다.",
-    levelOptions: ["처음 응시", "1~2급", "3~4급", "5~6급"],
-    badges: ["첫 시험 추천"],
-  },
-  {
-    id: "hskk",
-    slug: "hskk",
-    name: "HSKK",
-    group: "CHINESE",
-    bonusTypes: ["SPEAKING"],
-    tagline: "중국어 말하기 시험",
-    description: "중국어 말하기 시험을 초급·중급·고급으로 나누어 대비합니다.",
-    badges: ["말하기 집중"],
-  },
-  {
-    id: "tsc",
-    slug: "tsc",
-    name: "TSC",
-    group: "CHINESE",
-    bonusTypes: ["SPEAKING"],
-    tagline: "TSC 중국어 말하기",
-    description:
-      "취업·승진을 위한 중국어 말하기 시험. 질문 응답, 사진 묘사, 상황 설명, 의견 제시 등 TSC 주요 유형을 집중적으로 연습합니다.",
-    levelOptions: ["처음 응시", "Level 1~3", "Level 4~5", "Level 6 이상"],
-    featured: true,
-    badges: ["말하기 집중", "직장인 추천"],
-  },
   {
     id: "bct",
     slug: "bct",
@@ -485,11 +428,10 @@ export function getLevelOptions(test: Test): string[] {
 export const trendingTestIds = [
   "opic",
   "sjpt",
-  "tsc",
   "versant",
   "spa",
   "pte-academic",
-  "jlpt",
-  "hsk",
-  "flex-japanese",
+  "celpip",
+  "oet",
+  "bct",
 ];

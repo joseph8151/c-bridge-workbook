@@ -65,7 +65,7 @@ export default function FinderWizard() {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="시험명을 검색하세요. 예: TSC, SJPT, FLEX"
+            placeholder="시험명을 검색하세요. 예: SJPT, CELPIP, OET"
             className="mt-5 w-full rounded-[14px] border border-purple/20 bg-ivory px-4 py-3 text-sm focus:border-purple focus:outline-none"
           />
           <div className="mt-4 max-h-72 space-y-4 overflow-y-auto pr-1">
@@ -231,7 +231,7 @@ export default function FinderWizard() {
                 {tierMeta[recommendation.tier].pages}페이지
               </p>
               <p className="font-serif text-2xl font-black text-purple">
-                {getTierPrice(test.id, recommendation.tier).toLocaleString()}원
+                {getTierPrice(recommendation.tier).toLocaleString()}원
               </p>
             </div>
             <div className="mt-4 grid gap-1.5 sm:grid-cols-2">

@@ -3,7 +3,8 @@ import { GradientBlob } from "../Decor";
 import { testimonials } from "@/lib/reviews";
 
 const general = testimonials.find((t) => t.id === "general")!;
-const cases = testimonials.filter((t) => t.id !== "general");
+// 홈에서는 FLEX 관련 후기를 노출하지 않습니다 (FLEX는 홈에서 숨김 처리).
+const cases = testimonials.filter((t) => t.id !== "general" && !t.test.startsWith("FLEX"));
 
 function QuoteMark() {
   return (

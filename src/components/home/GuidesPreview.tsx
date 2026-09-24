@@ -17,7 +17,10 @@ export default function GuidesPreview() {
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {guidePosts.slice(0, 6).map((post) => (
+          {guidePosts
+            .filter((post) => post.category !== "FLEX")
+            .slice(0, 6)
+            .map((post) => (
             <Link
               key={post.slug}
               href={`/guides/${post.slug}`}

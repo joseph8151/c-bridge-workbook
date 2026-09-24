@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import BookCover from "../BookCover";
 import { GradientBlob, DotGrid } from "../Decor";
-import { getSiteWidePriceLabel } from "@/lib/products";
+import { priceSummaryLine } from "@/lib/products";
 
 const heroLines = [
   "TOEIC · OPIc · TOEFL · IELTS · PTE",
-  "SJPT · TSC · JLPT · HSK · FLEX 등",
+  "SJPT · CELPIP · OET · EPTA 등",
 ];
 
 const goalChips = ["TOEFL 110+ 목표", "OPIc AL 목표", "SJPT Level 8", "Reading 집중"];
@@ -92,7 +92,7 @@ export default function Hero() {
               내 교재 찾기
             </Link>
           </div>
-          <p className="mt-4 text-sm font-medium text-ink/45">{getSiteWidePriceLabel()}</p>
+          <p className="mt-4 text-sm font-medium text-ink/45">{priceSummaryLine}</p>
 
           <div className="relative mt-8 h-48 w-full max-w-md overflow-hidden rounded-[20px] shadow-[0_16px_40px_-20px_rgba(69,53,101,0.45)] md:h-56">
             <Image
@@ -108,7 +108,7 @@ export default function Hero() {
 
         <div className="relative flex h-[300px] w-full max-w-md items-center justify-center gap-3 sm:h-[360px] md:h-[420px] lg:h-[480px] lg:max-w-none lg:flex-1 lg:justify-end lg:gap-6 lg:pr-6">
           <div className="relative">
-            <FloatBadge label="100P" className="-left-6 -top-5" delay="0s" />
+            <FloatBadge label="전 시험 동일가" className="-left-6 -top-5" delay="0s" />
             <BookCover
               test="TOEIC"
               skill="취업 · 승진"
@@ -139,10 +139,10 @@ export default function Hero() {
 
           <div className="relative mt-4 hidden sm:block">
             <BookCover
-              test="TSC"
-              skill="중국어 말하기"
+              test="OET"
+              skill="의료 전문직"
               tag="패키지 시리즈"
-              color="var(--color-chinese)"
+              color="var(--color-professional)"
               size="lg"
               tilt={-3}
               className="animate-float-slow [animation-delay:1.2s]"

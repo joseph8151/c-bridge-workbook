@@ -3,7 +3,7 @@ import Image from "next/image";
 import BookCover from "./BookCover";
 import GroupIcon from "./icons/GroupIcons";
 import { Test, groupMeta } from "@/lib/tests";
-import { getTestPriceLabel } from "@/lib/products";
+import { priceSummaryCompact } from "@/lib/products";
 
 const PHOTO_THUMBNAILS: Record<string, { src: string; alt: string }> = {
   "flex-english": { src: "/images/flex.jpg", alt: "FLEX C-BRIDGE 문제집 www.c-bridge.uk" },
@@ -73,10 +73,8 @@ export default function TestCard({ test }: { test: Test }) {
       </div>
 
       <div className="mt-4 flex items-center justify-between border-t border-purple/10 pt-4">
-        <span className="text-xs font-semibold tracking-[0.06em] text-ink/45">
-          100P · 200P · 300P
-        </span>
-        <span className="font-serif text-base font-bold text-ink">{getTestPriceLabel(test.id)}</span>
+        <span className="text-xs font-semibold tracking-[0.06em] text-ink/45">200P · 300P</span>
+        <span className="font-serif text-sm font-bold text-ink">{priceSummaryCompact}</span>
       </div>
 
       <span className="mt-4 flex items-center justify-center gap-1.5 rounded-[14px] border border-purple/20 py-2.5 text-xs font-bold tracking-[0.06em] text-purple transition-colors group-hover:bg-purple group-hover:text-ivory">

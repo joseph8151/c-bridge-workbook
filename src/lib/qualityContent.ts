@@ -50,10 +50,9 @@ export const otherApplicableTests = [
   "TOEIC",
   "TOEIC Speaking",
   "OPIc",
-  "FLEX",
-  "JLPT",
-  "JPT",
   "SJPT",
+  "CELPIP",
+  "OET",
 ];
 
 export interface FocusBuildItem {
