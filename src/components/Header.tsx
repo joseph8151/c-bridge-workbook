@@ -31,13 +31,13 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-purple/10 bg-ivory/95 backdrop-blur supports-[backdrop-filter]:bg-ivory/80"
+          ? "border-b border-purple/10 bg-paper/95 backdrop-blur supports-[backdrop-filter]:bg-paper/80"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10">
         <Link href="/" className="flex items-baseline gap-3">
-          <span className="font-serif text-2xl font-black tracking-tight text-purple md:text-3xl">
+          <span className="font-serif text-2xl font-black tracking-tight text-[var(--color-rust)] md:text-3xl">
             C-BRIDGE
           </span>
           <span className="hidden text-[11px] font-bold tracking-[0.14em] text-ink/40 sm:inline">
@@ -49,7 +49,7 @@ export default function Header() {
           <div ref={menuRef} className="relative">
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              className="flex items-center gap-1.5 text-[13px] font-bold tracking-[0.06em] text-ink/80 transition-colors hover:text-purple"
+              className="flex items-center gap-1.5 text-[13px] font-bold tracking-[0.06em] text-ink/80 transition-colors hover:text-[var(--color-rust)]"
             >
               시험 찾기
               <svg
@@ -66,14 +66,14 @@ export default function Header() {
             </button>
 
             {menuOpen && (
-              <div className="absolute left-1/2 top-full mt-3 w-[560px] -translate-x-1/2 rounded-sm border border-purple/10 bg-ivory p-6 shadow-xl">
+              <div className="absolute left-1/2 top-full mt-3 w-[560px] -translate-x-1/2 rounded-sm border border-ink/10 bg-paper p-6 shadow-xl">
                 <div className="grid grid-cols-2 gap-2">
                   {megaMenuGroups.map((g) => (
                     <Link
                       key={g.href}
                       href={g.href}
                       onClick={() => setMenuOpen(false)}
-                      className="rounded-sm px-4 py-3 text-sm font-bold text-ink/80 transition-colors hover:bg-lavender/50 hover:text-purple"
+                      className="rounded-sm px-4 py-3 text-sm font-bold text-ink/80 transition-colors hover:bg-ink/5 hover:text-[var(--color-rust)]"
                     >
                       {g.label}
                     </Link>
@@ -83,7 +83,7 @@ export default function Header() {
                   <Link
                     href="/all-books"
                     onClick={() => setMenuOpen(false)}
-                    className="text-xs font-bold tracking-[0.06em] text-purple hover:underline"
+                    className="text-xs font-bold tracking-[0.06em] text-[var(--color-rust)] hover:underline"
                   >
                     전체 시험 · 교재 보기 →
                   </Link>
@@ -96,7 +96,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] font-bold tracking-[0.06em] text-ink/80 transition-colors hover:text-purple"
+              className="text-[13px] font-bold tracking-[0.06em] text-ink/80 transition-colors hover:text-[var(--color-rust)]"
             >
               {link.label}
             </Link>
@@ -130,7 +130,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-purple/10 bg-ivory px-5 pb-6 pt-2 lg:hidden">
+        <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-ink/10 bg-paper px-5 pb-6 pt-2 lg:hidden">
           <p className="pt-3 text-[11px] font-bold tracking-[0.14em] text-ink/40">시험 찾기</p>
           <nav className="flex flex-col divide-y divide-purple/10">
             {megaMenuGroups.map((g) => (

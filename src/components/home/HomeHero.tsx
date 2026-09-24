@@ -1,44 +1,45 @@
 import Link from "next/link";
 import Image from "next/image";
+import { siteConfig } from "@/lib/config";
 
 export default function HomeHero() {
   return (
-    <section className="bg-paper">
-      <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-16 md:px-10 md:py-24">
-        <div>
-          <p
-            className="text-xs font-bold tracking-[0.24em]"
-            style={{ color: "var(--color-rust)" }}
-          >
+    <section className="relative h-screen w-full overflow-hidden">
+      <Image
+        src="/images/hero-diagonal.jpg"
+        alt="C-BRIDGE 문제집 www.c-bridge.uk"
+        fill
+        sizes="100vw"
+        priority
+        className="object-cover"
+        style={{ objectPosition: "center" }}
+      />
+
+      <div className="absolute inset-x-0 bottom-0 p-6 md:bottom-16 md:left-16 md:right-auto md:p-0">
+        <div
+          className="max-w-sm rounded-sm p-7 backdrop-blur-sm md:p-8"
+          style={{ background: "rgba(239, 230, 214, 0.88)" }}
+        >
+          <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
             C-BRIDGE
           </p>
+          <p className="mt-1 text-[11px] font-bold tracking-[0.14em] text-ink/50">
+            성인 어학시험 전문 문제집
+          </p>
           <h1
-            className="mt-5 break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+            className="mt-4 break-keep font-serif text-2xl font-black leading-[1.35] md:text-[28px]"
             style={{ color: "var(--color-inkstrong)" }}
           >
-            직군이 다른 시험은,
-            <br />
-            문제집도 갈라집니다.
+            펼치면, 오늘 할 분량이 보입니다.
           </h1>
           <Link
             href="/consultation"
-            className="mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
+            className="mt-6 inline-block rounded-sm px-6 py-3 text-xs font-bold tracking-[0.1em] text-paper transition-all hover:brightness-90"
             style={{ background: "var(--color-rust)" }}
           >
             상담
           </Link>
-        </div>
-
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm md:aspect-[3/4]">
-          <Image
-            src="/images/brand.jpg"
-            alt="C-BRIDGE 문제집 www.c-bridge.uk"
-            fill
-            sizes="(max-width: 768px) 100vw, 560px"
-            priority
-            className="object-cover"
-            style={{ objectPosition: "center" }}
-          />
+          <p className="mt-3 text-[11px] text-ink/45">{siteConfig.weekendNotice}</p>
         </div>
       </div>
     </section>

@@ -53,14 +53,11 @@ export default function ConsultationForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-[20px] border border-purple/15 bg-lavender/30 p-10 text-center">
+      <div className="rounded-[20px] border border-ink/15 bg-paper p-10 text-center">
         <p className="font-serif text-2xl font-bold text-ink">
-          Your request has been received.
+          상담 신청이 접수되었습니다.
         </p>
-        <p className="mt-2 text-ink/70">We&apos;ll contact you shortly.</p>
-        <p className="mt-4 text-sm text-ink/60">
-          상담 신청이 정상적으로 접수되었습니다. 빠른 시간 내에 연락드리겠습니다.
-        </p>
+        <p className="mt-2 text-sm text-ink/60">빠른 시간 내에 연락드리겠습니다.</p>
       </div>
     );
   }
@@ -68,7 +65,7 @@ export default function ConsultationForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {prefillTest && (
-        <div className="rounded-[14px] border border-purple/15 bg-lavender/20 px-4 py-3 text-sm text-ink/70">
+        <div className="rounded-[14px] border border-ink/15 bg-paper px-4 py-3 text-sm text-ink/70">
           문의 내용: <span className="font-semibold text-ink">{prefillTest}</span>
         </div>
       )}
@@ -82,7 +79,7 @@ export default function ConsultationForm() {
           name="test"
           required
           defaultValue={prefillTest}
-          className="mt-2 w-full rounded-[14px] border border-purple/20 bg-ivory px-3.5 py-2.5 text-sm text-ink focus:border-purple focus:outline-none"
+          className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
         >
           <option value="" disabled>
             시험을 선택하세요
@@ -102,13 +99,13 @@ export default function ConsultationForm() {
         <textarea
           name="message"
           rows={4}
-          className="mt-2 w-full rounded-[14px] border border-purple/20 bg-ivory px-3.5 py-2.5 text-sm text-ink focus:border-purple focus:outline-none"
+          className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
           placeholder="추가로 전달하고 싶은 내용을 남겨주세요."
         />
       </div>
 
       <label className="flex items-start gap-3 text-xs text-ink/60">
-        <input type="checkbox" required className="mt-0.5 h-4 w-4 accent-purple" />
+        <input type="checkbox" required className="mt-0.5 h-4 w-4" style={{ accentColor: "var(--color-rust)" }} />
         개인정보 수집 및 이용에 동의합니다. (상담 목적으로만 사용되며, 상담 완료 후 즉시 파기됩니다.)
       </label>
 
@@ -151,7 +148,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="mt-2 w-full rounded-[14px] border border-purple/20 bg-ivory px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-purple focus:outline-none"
+        className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[var(--color-rust)] focus:outline-none"
       />
     </div>
   );
