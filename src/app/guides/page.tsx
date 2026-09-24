@@ -23,7 +23,7 @@ export default function GuidesPage() {
               key={post.slug}
               href={`/guides/${post.slug}`}
               className="group block border-t py-6 transition-opacity hover:opacity-70"
-              style={{ borderColor: "rgba(28,23,18,0.15)" }}
+              style={{ borderColor: "var(--color-line)" }}
             >
               <p className="text-[11px] font-bold tracking-[0.1em] text-ink/45">{post.category}</p>
               <h2

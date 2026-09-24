@@ -23,7 +23,6 @@ export const tierMeta: Record<Tier, TierMeta> = {
     mockTestsLabel: "10회",
     name: "COMPLETE",
     shortDesc: "시험을 충분히 연습하고 한 번에 제대로 준비하려는 고객을 위한 주력 상품.",
-    badge: "BEST",
     ctaLabel: "200P 완성 패키지 보기",
     includes: [
       "문제집 200P",

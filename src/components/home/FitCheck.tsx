@@ -12,14 +12,14 @@ const notFits = [
 
 export default function FitCheck() {
   return (
-    <section className="bg-paper py-14 md:py-20">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-        <div className="grid gap-10 border-t pt-10 sm:grid-cols-2" style={{ borderColor: "rgba(28,23,18,0.15)" }}>
+    <section className="bg-ivory py-16 md:py-24">
+      <div className="mx-auto max-w-[1000px] px-5 md:px-10">
+        <div className="grid gap-14 border-t pt-10 sm:grid-cols-2" style={{ borderColor: "var(--color-line)" }}>
           <div>
-            <p className="font-serif text-lg font-black" style={{ color: "var(--color-rust)" }}>
+            <p className="font-serif text-xl font-black md:text-2xl" style={{ color: "var(--color-rust)" }}>
               이런 때 맞습니다
             </p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-5 space-y-2.5">
               {fits.map((line) => (
                 <li key={line} className="text-sm leading-relaxed text-ink/70">
                   {line}
@@ -28,8 +28,8 @@ export default function FitCheck() {
             </ul>
           </div>
           <div>
-            <p className="font-serif text-lg font-black text-ink/40">이런 때는 아닙니다</p>
-            <ul className="mt-4 space-y-2">
+            <p className="font-serif text-xl font-black text-ink/40 md:text-2xl">이런 때는 아닙니다</p>
+            <ul className="mt-5 space-y-2.5">
               {notFits.map((line) => (
                 <li key={line} className="text-sm leading-relaxed text-ink/50">
                   {line}

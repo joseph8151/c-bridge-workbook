@@ -28,7 +28,7 @@ export default function PricingPage() {
               <div
                 key={t}
                 className="flex items-baseline justify-between border-t py-6"
-                style={{ borderColor: "rgba(28,23,18,0.18)" }}
+                style={{ borderColor: "var(--color-line)" }}
               >
                 <span className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
                   {meta.pages}페이지

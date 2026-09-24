@@ -1,36 +1,45 @@
 import Link from "next/link";
-import Image from "next/image";
-import { priceSummaryLine } from "@/lib/products";
+import { tierMeta, tierOrder } from "@/lib/products";
 
 export default function PriceLine() {
   return (
-    <section className="bg-paper py-16 md:py-24">
-      <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 md:grid-cols-2 md:gap-16 md:px-10">
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm md:order-2">
-          <Image
-            src="/images/book-desk.jpg"
-            alt="C-BRIDGE 문제집 www.c-bridge.uk"
-            fill
-            sizes="(max-width: 768px) 100vw, 560px"
-            className="object-cover"
-            style={{ objectPosition: "center" }}
-          />
+    <section className="bg-paper py-20 md:py-28">
+      <div className="mx-auto max-w-[900px] px-5 text-center md:px-10">
+        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+          가격
+        </p>
+
+        <div className="mt-8 flex flex-col items-center justify-center gap-10 sm:flex-row sm:gap-16">
+          {tierOrder.map((tier, i) => {
+            const m = tierMeta[tier];
+            return (
+              <div key={tier} className="flex items-center gap-10 sm:gap-16">
+                <div>
+                  <p
+                    className="font-serif text-6xl font-black leading-none md:text-7xl"
+                    style={{ color: "var(--color-inkstrong)" }}
+                  >
+                    {m.label}
+                  </p>
+                  <p className="mt-3 text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
+                    {m.price.toLocaleString()}원
+                  </p>
+                </div>
+                {i === 0 && <div className="hidden h-16 w-px sm:block" style={{ background: "var(--color-line)" }} />}
+              </div>
+            );
+          })}
         </div>
-        <div className="md:order-1">
-          <p
-            className="break-keep font-serif text-2xl font-black leading-relaxed md:text-3xl"
-            style={{ color: "var(--color-inkstrong)" }}
-          >
-            {priceSummaryLine}
-          </p>
-          <Link
-            href="/consultation"
-            className="mt-8 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-            style={{ background: "var(--color-rust)" }}
-          >
-            상담
-          </Link>
-        </div>
+
+        <p className="mt-8 text-sm text-ink/50">페이지 수에 따라 구성이 달라집니다.</p>
+
+        <Link
+          href="/consultation"
+          className="mt-8 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all duration-300 hover:brightness-90"
+          style={{ background: "var(--color-rust)" }}
+        >
+          상담
+        </Link>
       </div>
     </section>
   );

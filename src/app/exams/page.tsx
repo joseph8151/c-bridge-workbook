@@ -83,7 +83,7 @@ export default function ExamsPage() {
                 <p className="text-xs font-bold tracking-[0.18em] text-ink/45">{g.label}</p>
                 <div className="mt-5 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
                   {g.items.map((item) => (
-                    <div key={item.name} className="border-t pt-5" style={{ borderColor: "rgba(28,23,18,0.15)" }}>
+                    <div key={item.name} className="border-t pt-5" style={{ borderColor: "var(--color-line)" }}>
                       <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
                         {item.name}
                       </p>

@@ -17,10 +17,13 @@
   --color-studyabroad: #a9843d;
   --color-professional: #33625a;
 
-  /* 홈 · 헤더 · 푸터의 출판사 브랜드 팔레트 */
-  --color-paper: #efe6d6;
-  --color-inkstrong: #1c1712;
-  --color-rust: #9b3b1c;
+  /* 홈 · 헤더 · 푸터의 출판사 브랜드 팔레트 — 이탈리아 젤라토 피스타치오 톤 */
+  --color-paper: #f6f0e4;
+  --color-inkstrong: #2a2e24;
+  --color-rust: #6f8458;
+  --color-line: #d7dec8;
+  --color-pistachio: #b7c89a;
+  --color-nutbrown: #8a6a48;
 }
 
 @theme inline {
@@ -43,6 +46,9 @@
   --color-paper: var(--color-paper);
   --color-inkstrong: var(--color-inkstrong);
   --color-rust: var(--color-rust);
+  --color-line: var(--color-line);
+  --color-pistachio: var(--color-pistachio);
+  --color-nutbrown: var(--color-nutbrown);
 
   --font-serif: var(--font-display);
   --font-sans: var(--font-body);

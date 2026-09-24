@@ -20,11 +20,11 @@ export default function ExamCards() {
             <Link
               key={t.id}
               href={hrefFor(t)}
-              className="group block border-t pt-6 transition-opacity hover:opacity-70"
-              style={{ borderColor: "rgba(28,23,18,0.18)" }}
+              className="group block border-t pt-6"
+              style={{ borderColor: "var(--color-line)" }}
             >
               <p
-                className="font-serif text-3xl font-black leading-none"
+                className="underline decoration-2 decoration-transparent underline-offset-8 transition-colors duration-300 font-serif text-3xl font-black leading-none group-hover:decoration-[var(--color-pistachio)]"
                 style={{ color: "var(--color-inkstrong)" }}
               >
                 {t.name}

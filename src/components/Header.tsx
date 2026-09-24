@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "@/lib/config";
+import BridgeMark from "@/components/BridgeMark";
 
 const primaryLinks = navLinks.filter((l) => l.href !== "/consultation");
 
@@ -26,8 +27,9 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10">
-        <Link href="/" className="flex items-baseline gap-3">
-          <span className="font-serif text-2xl font-black tracking-tight text-[var(--color-rust)] md:text-3xl">
+        <Link href="/" className="flex items-center gap-2.5">
+          <BridgeMark size={44} className="md:h-12 md:w-12" />
+          <span className="text-xs font-bold tracking-[0.14em] text-[var(--color-inkstrong)] md:text-sm">
             C-BRIDGE
           </span>
         </Link>

@@ -6,15 +6,15 @@ const items = [
 
 export default function Approach() {
   return (
-    <section className="bg-paper py-14 md:py-20">
+    <section className="bg-paper py-24 md:py-32">
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-        <div className="grid gap-10 border-t pt-10 sm:grid-cols-3" style={{ borderColor: "rgba(28,23,18,0.15)" }}>
+        <div className="grid gap-12 border-t pt-12 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
           {items.map((item) => (
             <div key={item.label}>
-              <p className="font-serif text-lg font-black" style={{ color: "var(--color-rust)" }}>
+              <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-rust)" }}>
                 {item.label}
               </p>
-              <p className="mt-2 break-keep text-base leading-relaxed" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-3 break-keep text-base leading-relaxed" style={{ color: "var(--color-inkstrong)" }}>
                 {item.desc}
               </p>
             </div>

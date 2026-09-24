@@ -52,7 +52,7 @@ export default async function GuidePostPage({
           ))}
         </div>
 
-        <div className="mt-14 border-t pt-8 text-center" style={{ borderColor: "rgba(28,23,18,0.15)" }}>
+        <div className="mt-14 border-t pt-8 text-center" style={{ borderColor: "var(--color-line)" }}>
           <p className="text-sm text-ink/60">같은 시험이라도 목표와 약한 영역에 따라 구성이 달라집니다.</p>
           <Link
             href="/consultation"

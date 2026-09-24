@@ -54,7 +54,7 @@ export default function ResourcesPage() {
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
           <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
             {samples.map((s) => (
-              <div key={s.exam} className="border-t pt-6" style={{ borderColor: "rgba(28,23,18,0.15)" }}>
+              <div key={s.exam} className="border-t pt-6" style={{ borderColor: "var(--color-line)" }}>
                 <p className="font-serif text-xl font-black" style={{ color: "var(--color-inkstrong)" }}>
                   {s.exam}
                 </p>

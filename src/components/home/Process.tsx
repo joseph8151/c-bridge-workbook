@@ -8,22 +8,22 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-ivory py-14 md:py-20">
+    <section className="bg-ivory py-16 md:py-20">
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-        <div className="grid gap-8 border-t pt-10 sm:grid-cols-3" style={{ borderColor: "rgba(28,23,18,0.15)" }}>
+        <div className="grid gap-10 border-t pt-10 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
           {steps.map((s) => (
             <div key={s.no}>
-              <span className="font-serif text-sm font-bold" style={{ color: "var(--color-rust)" }}>
+              <span className="font-serif text-5xl font-black leading-none md:text-6xl" style={{ color: "var(--color-rust)" }}>
                 {s.no}
               </span>
-              <p className="mt-1 font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-3 font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
                 {s.title}
               </p>
               <p className="mt-1 text-sm text-ink/60">{s.desc}</p>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-ink/45">{siteConfig.weekendNotice}</p>
+        <p className="mt-10 text-sm text-ink/45">{siteConfig.weekendNotice}</p>
       </div>
     </section>
   );
