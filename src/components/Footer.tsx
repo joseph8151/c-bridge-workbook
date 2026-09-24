@@ -32,6 +32,13 @@ export default function Footer() {
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-lavender/80">
               {siteConfig.brandSub}
             </p>
+            <Link
+              href="/consultation"
+              className="mt-6 inline-block rounded-sm px-5 py-2.5 text-xs font-bold tracking-[0.1em] text-paper transition-all hover:brightness-90"
+              style={{ background: "var(--color-rust)" }}
+            >
+              상담
+            </Link>
           </div>
 
           {columns.map(([heading, links]) => (
@@ -63,7 +70,8 @@ export default function Footer() {
             <span>{siteConfig.hours}</span>
           </div>
         </div>
-        <p className="mt-3 text-xs text-lavender/50">{siteConfig.address}</p>
+        <p className="mt-3 text-xs text-lavender/50">{siteConfig.weekendNotice}</p>
+        <p className="mt-1 text-xs text-lavender/50">{siteConfig.address}</p>
       </div>
     </footer>
   );

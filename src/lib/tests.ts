@@ -411,6 +411,28 @@ export const tests: Test[] = [
     description: "항공 영어 말하기 및 이해 능력 평가. 관제·운항 상황 중심의 Speaking Scenario를 연습합니다.",
     badges: ["자료가 부족한 시험 추천"],
   },
+  {
+    id: "toles",
+    slug: "toles",
+    name: "TOLES",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "국제 로펌 · 크로스보더 계약 영어시험",
+    description:
+      "국제 로펌과 크로스보더 계약 업무를 위한 법률 영어시험. 계약서 독해와 법률 문서 작성 중심으로 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "topec",
+    slug: "topec",
+    name: "TOPEC",
+    group: "PROFESSIONAL",
+    bonusTypes: ["PROFESSIONAL"],
+    tagline: "일본 병동 간호 영어시험",
+    description:
+      "일본 병동에서 사용하는 간호 실무 영어시험. 환자 응대와 임상 상황 중심의 회화를 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
 ];
 
 export function getTestBySlug(slug: string): Test | undefined {

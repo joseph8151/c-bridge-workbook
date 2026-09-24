@@ -6,7 +6,9 @@ export const siteConfig = {
   phone: "010-7343-0536",
   email: "hello@c-bridge.com",
   formspreeEndpoint: "https://formspree.io/f/xeajdzrz",
-  hours: "평일 10:00 - 18:00 (KST) / 주말 및 공휴일 휴무",
+  hours: "평일 10:00 - 18:00 (KST) · 주말·공휴일 포함",
+  weekendNotice: "상담은 주말·공휴일에도 받습니다.",
+  weekendNoticeEn: "Consultations are available on weekends and public holidays.",
   address: "서울 서초구 반포대로18길 62, 엘루크서초",
 };
 

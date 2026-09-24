@@ -16,6 +16,11 @@
   --color-flex: #3e5a82;
   --color-studyabroad: #a9843d;
   --color-professional: #33625a;
+
+  /* 홈 · 헤더 · 푸터의 출판사 브랜드 팔레트 */
+  --color-paper: #efe6d6;
+  --color-inkstrong: #1c1712;
+  --color-rust: #9b3b1c;
 }
 
 @theme inline {
@@ -34,6 +39,10 @@
   --color-flex: var(--color-flex);
   --color-studyabroad: var(--color-studyabroad);
   --color-professional: var(--color-professional);
+
+  --color-paper: var(--color-paper);
+  --color-inkstrong: var(--color-inkstrong);
+  --color-rust: var(--color-rust);
 
   --font-serif: var(--font-display);
   --font-sans: var(--font-body);

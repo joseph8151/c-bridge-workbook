@@ -3,37 +3,33 @@
 import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { siteConfig } from "@/lib/config";
-import { groupMeta, tests } from "@/lib/tests";
-import { tierOrder, tierMeta, defaultTier } from "@/lib/products";
 
-const interestOptions = ["말하기", "듣기", "Writing", "어휘", "모의고사", "전문직 자료", "잘 모르겠음"];
+const testOptions = [
+  "PTE",
+  "CELPIP",
+  "OET Nursing",
+  "OET Medicine",
+  "OET Pharmacy",
+  "OET Physiotherapy",
+  "OET Dentistry",
+  "EPTA",
+  "TOLES",
+  "TOPEC",
+  "기타",
+];
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ConsultationForm() {
   const searchParams = useSearchParams();
   const prefillTest = searchParams.get("test") ?? "";
-  const prefillTier = searchParams.get("tier") ?? "";
-  const prefillTarget = searchParams.get("target") ?? "";
-  const prefillFocus = searchParams.get("focus") ?? "";
 
-  const [interests, setInterests] = useState<Set<string>>(new Set());
   const [status, setStatus] = useState<Status>("idle");
-
-  function toggleInterest(value: string) {
-    setInterests((prev) => {
-      const next = new Set(prev);
-      if (next.has(value)) next.delete(value);
-      else next.add(value);
-      return next;
-    });
-  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     const formData = new FormData(e.currentTarget);
-    interests.forEach((s) => formData.append("interests", s));
 
     const isPlaceholder = siteConfig.formspreeEndpoint.includes("YOUR_FORMSPREE_ENDPOINT");
 
@@ -71,26 +67,17 @@ export default function ConsultationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {(prefillTest || prefillTier) && (
+      {prefillTest && (
         <div className="rounded-[14px] border border-purple/15 bg-lavender/20 px-4 py-3 text-sm text-ink/70">
           문의 내용: <span className="font-semibold text-ink">{prefillTest}</span>
-          {prefillTarget && <span className="font-semibold text-ink"> · {prefillTarget}</span>}
-          {prefillTier && <span className="font-semibold text-ink"> · {prefillTier}</span>}
-          {prefillFocus && <span className="font-semibold text-ink"> · {prefillFocus}</span>}
-          <input type="hidden" name="targetLevel" value={prefillTarget} />
-          <input type="hidden" name="focusAreas" value={prefillFocus} />
         </div>
       )}
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Name" name="name" required />
-        <Field label="Phone" name="phone" type="tel" required />
-      </div>
-
-      <Field label="Email" name="email" type="email" required />
+      <Field label="이름" name="name" required />
+      <Field label="이메일" name="email" type="email" required />
 
       <div>
-        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">준비 중인 시험</label>
+        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">시험</label>
         <select
           name="test"
           required
@@ -100,70 +87,15 @@ export default function ConsultationForm() {
           <option value="" disabled>
             시험을 선택하세요
           </option>
-          {Object.values(groupMeta).map((g) => (
-            <optgroup key={g.id} label={g.navLabel}>
-              {tests
-                .filter((t) => t.group === g.id)
-                .map((t) => (
-                  <option key={t.id} value={t.name}>
-                    {t.name}
-                  </option>
-                ))}
-            </optgroup>
+          {testOptions.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
           ))}
-          <option value="기타">기타 / 아직 정하지 못함</option>
         </select>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="현재 수준" name="currentLevel" placeholder="예: 처음 응시, IM2, N3" />
-        <Field label="목표" name="goal" placeholder="예: 승진 제출용, 고득점" />
-      </div>
-
-      <div>
-        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">관심 있는 분량</label>
-        <div className="mt-3 grid grid-cols-3 gap-2">
-          {tierOrder.map((t) => (
-            <label
-              key={t}
-              className="flex cursor-pointer flex-col items-center gap-1 rounded-[14px] border border-purple/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-purple has-[:checked]:bg-lavender/40 has-[:checked]:text-purple"
-            >
-              <input
-                type="radio"
-                name="tier"
-                value={tierMeta[t].label}
-                defaultChecked={tierMeta[t].label === (prefillTier || tierMeta[defaultTier].label)}
-                className="sr-only"
-              />
-              {tierMeta[t].label}
-            </label>
-          ))}
-          <label className="flex cursor-pointer flex-col items-center gap-1 rounded-[14px] border border-purple/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-purple has-[:checked]:bg-lavender/40 has-[:checked]:text-purple">
-            <input type="radio" name="tier" value="잘 모르겠음" className="sr-only" />
-            모름
-          </label>
-        </div>
-      </div>
-
-      <div>
-        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">관심 있는 자료</label>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {interestOptions.map((option) => (
-            <button
-              key={option}
-              type="button"
-              onClick={() => toggleInterest(option)}
-              className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
-                interests.has(option)
-                  ? "border-purple bg-purple text-ivory"
-                  : "border-purple/20 text-ink/70 hover:border-purple/40"
-              }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </div>
+      <Field label="목표" name="goal" placeholder="예: 승진 제출용, 고득점" />
 
       <div>
         <label className="text-xs font-bold tracking-[0.1em] text-ink/60">메시지</label>
@@ -189,9 +121,10 @@ export default function ConsultationForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-[14px] bg-purple py-4 text-sm font-bold tracking-[0.04em] text-ivory transition-colors hover:bg-plum disabled:opacity-60 sm:w-auto sm:px-10"
+        className="w-full rounded-[14px] py-4 text-sm font-bold tracking-[0.04em] text-paper transition-all hover:brightness-90 disabled:opacity-60 sm:w-auto sm:px-10"
+        style={{ background: "var(--color-rust)" }}
       >
-        {status === "submitting" ? "전송 중..." : "상담 신청하기"}
+        {status === "submitting" ? "전송 중..." : "상담 신청"}
       </button>
     </form>
   );

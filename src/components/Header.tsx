@@ -36,9 +36,12 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10">
-        <Link href="/" className="flex items-baseline gap-2">
+        <Link href="/" className="flex items-baseline gap-3">
           <span className="font-serif text-2xl font-black tracking-tight text-purple md:text-3xl">
             C-BRIDGE
+          </span>
+          <span className="hidden text-[11px] font-bold tracking-[0.14em] text-ink/40 sm:inline">
+            성인 어학시험 전문 문제집
           </span>
         </Link>
 
@@ -100,22 +103,15 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={`tel:${siteConfig.phone}`}
-            className="flex items-center gap-2 rounded-sm border border-purple/25 px-3.5 py-2.5 text-xs font-bold tracking-[0.08em] text-purple transition-colors hover:bg-lavender"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" />
-            </svg>
-            CALL
-          </a>
+        <div className="hidden flex-col items-end gap-1 md:flex">
           <Link
-            href="/all-books"
-            className="rounded-sm bg-purple px-5 py-2.5 text-xs font-bold tracking-[0.1em] text-ivory transition-colors hover:bg-plum"
+            href="/consultation"
+            className="rounded-sm px-5 py-2.5 text-xs font-bold tracking-[0.1em] text-paper transition-all hover:brightness-90"
+            style={{ background: "var(--color-rust)" }}
           >
-            내 교재 찾기
+            상담
           </Link>
+          <span className="text-[10px] text-ink/45">{siteConfig.weekendNotice}</span>
         </div>
 
         <button
@@ -162,12 +158,14 @@ export default function Header() {
             ))}
           </nav>
           <Link
-            href="/all-books"
+            href="/consultation"
             onClick={() => setOpen(false)}
-            className="mt-4 block rounded-sm bg-purple px-5 py-3 text-center text-xs font-bold tracking-[0.1em] text-ivory"
+            className="mt-4 block rounded-sm px-5 py-3 text-center text-xs font-bold tracking-[0.1em] text-paper"
+            style={{ background: "var(--color-rust)" }}
           >
-            내 교재 찾기
+            상담
           </Link>
+          <p className="mt-2 text-center text-[11px] text-ink/45">{siteConfig.weekendNotice}</p>
         </div>
       )}
     </header>

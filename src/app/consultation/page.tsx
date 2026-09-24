@@ -48,6 +48,7 @@ export default function ConsultationPage() {
         </div>
 
         <div className="rounded-[20px] border border-purple/10 bg-lavender/10 p-6 md:p-10">
+          <p className="mb-6 text-xs font-semibold text-ink/60">{siteConfig.weekendNotice}</p>
           <Suspense fallback={null}>
             <ConsultationForm />
           </Suspense>

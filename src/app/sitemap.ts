@@ -15,12 +15,15 @@ const staticRoutes = [
   "finder",
   "guides",
   "japanese",
+  "oet",
   "pricing",
   "privacy",
   "professional",
   "resources",
   "study-abroad",
   "terms",
+  "toles",
+  "topec",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
