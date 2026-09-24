@@ -3,32 +3,50 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "시험 찾기 | C-BRIDGE",
-  description: "갈 나라와 직군에 맞는 시험을 찾아보세요. PTE, CELPIP, OET, EPTA, TOLES, TOPEC.",
+  description:
+    "갈 나라와 직군에 맞는 시험을 찾아보세요. PTE, CELPIP, OET, NCLEX, EPTA, ELPAC, SPA, Versant, TOLES, TOPEC.",
 };
 
 const groups: { label: string; items: { name: string; desc: string }[] }[] = [
   {
-    label: "이민 · 유학",
+    label: "이민",
     items: [
       { name: "PTE Academic", desc: "컴퓨터 기반 학술 영어시험" },
       { name: "PTE Core", desc: "캐나다 이민을 위한 PTE" },
       { name: "PTE Academic UKVI", desc: "영국 비자를 위한 PTE" },
-      { name: "CELPIP", desc: "캐나다 이민 영어시험" },
+      { name: "CELPIP", desc: "캐나다 영주 · 시민권 영어시험" },
     ],
   },
   {
-    label: "의료",
+    label: "의료 영어",
     items: [
       { name: "OET Nursing", desc: "간호사 영어시험" },
       { name: "OET Medicine", desc: "의사 영어시험" },
       { name: "OET Pharmacy", desc: "약사 영어시험" },
       { name: "OET Physiotherapy", desc: "물리치료사 영어시험" },
       { name: "OET Dentistry", desc: "치과의사 영어시험" },
+      { name: "OET Radiography", desc: "방사선사 영어시험" },
+      { name: "OET Occupational Therapy", desc: "작업치료사 영어시험" },
     ],
   },
   {
+    label: "간호 면허",
+    items: [{ name: "NCLEX", desc: "미국 · 캐나다 간호 면허 본시험 문항 유형 연습서" }],
+  },
+  {
     label: "항공",
-    items: [{ name: "EPTA", desc: "조종사 · 항공 종사자 영어평가" }],
+    items: [
+      { name: "EPTA", desc: "조종사 · 항공 종사자 영어평가" },
+      { name: "ELPAC", desc: "유럽 관제 · 항공 교신 영어평가" },
+      { name: "Aviation English FAA", desc: "미국 FAA 라디오 텔레포니 영어평가" },
+    ],
+  },
+  {
+    label: "기업 말하기",
+    items: [
+      { name: "SPA", desc: "현대차 등 기업이 활용하는 말하기 평가" },
+      { name: "Versant", desc: "기업 전화 · 컴퓨터 말하기 평가" },
+    ],
   },
   {
     label: "법률",

@@ -169,20 +169,20 @@ export const tests: Test[] = [
     name: "Versant",
     group: "EMPLOYMENT",
     bonusTypes: ["SPEAKING"],
-    tagline: "기업 채용·임직원 영어평가",
+    tagline: "기업 전화·컴퓨터 말하기 평가",
     description:
-      "기업 채용 및 임직원 영어평가에 활용되는 시험. 말하기와 듣기를 중심으로 짧은 시간 안에 정확하게 답하는 훈련을 제공합니다.",
+      "기업이 전화·컴퓨터로 보는 말하기 평가입니다. 짧은 시간 안에 정확하게 답하는 훈련을 중심으로 대비합니다.",
     badges: ["직장인 추천", "말하기 집중"],
   },
   {
     id: "spa",
     slug: "spa",
-    name: "SPA",
+    name: "SPA (기업 영어 면접)",
     group: "EMPLOYMENT",
     bonusTypes: ["SPEAKING"],
-    tagline: "기업 임직원 영어 인터뷰 평가",
+    tagline: "기업 영어 인터뷰 평가",
     description:
-      "기업·임직원 영어 인터뷰와 말하기 평가 대비. 비즈니스 상황, 의견 제시, 설명형 문제를 실전 인터뷰 방식으로 연습합니다.",
+      "현대차 등 기업이 쓰는 말하기 평가입니다. 비즈니스 상황, 의견 제시, 설명형 문제를 실전 인터뷰 방식으로 연습합니다.",
     badges: ["직장인 추천", "말하기 집중"],
   },
   {
@@ -328,8 +328,9 @@ export const tests: Test[] = [
     name: "CELPIP",
     group: "STUDY_ABROAD",
     bonusTypes: ["WRITING"],
-    tagline: "캐나다 이민 영어시험",
-    description: "캐나다 이민과 시민권 신청을 위한 영어시험. 실생활 중심의 Listening·Speaking·Reading·Writing을 연습합니다.",
+    tagline: "캐나다 영주·시민권 영어시험",
+    description:
+      "캐나다 영주권과 시민권 신청을 위한 영어시험. General이 기본이며, 실생활 중심의 Listening·Speaking·Reading·Writing을 연습합니다.",
   },
   {
     id: "linguaskill",
@@ -431,6 +432,39 @@ export const tests: Test[] = [
     tagline: "일본 병동 간호 영어시험",
     description:
       "일본 병동에서 사용하는 간호 실무 영어시험. 환자 응대와 임상 상황 중심의 회화를 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "nclex",
+    slug: "nclex",
+    name: "NCLEX (간호 면허)",
+    group: "PROFESSIONAL",
+    bonusTypes: ["PROFESSIONAL"],
+    tagline: "미국 · 캐나다 간호 면허 본시험",
+    description:
+      "영어시험이 아닙니다. 미국·캐나다 간호 면허 본시험입니다. 시험 문항 유형에 맞춘 연습서로 임상 판단형 문제를 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "elpac",
+    slug: "elpac",
+    name: "ELPAC (항공 관제 영어)",
+    group: "PROFESSIONAL",
+    bonusTypes: ["PROFESSIONAL"],
+    tagline: "유럽 관제 · 항공 교신 영어평가",
+    description:
+      "유럽 관제·항공 교신 영어평가입니다. EPTA·Aviation English(FAA)와는 별개의 시험이며, 관제·교신 상황 중심으로 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "faa-english",
+    slug: "faa-english",
+    name: "Aviation English (FAA 교신)",
+    group: "PROFESSIONAL",
+    bonusTypes: ["PROFESSIONAL"],
+    tagline: "미국 FAA 라디오 텔레포니 영어평가",
+    description:
+      "미국 FAA 라디오 텔레포니 영어평가입니다. EPTA·ICAO English와 목적이 다른 시험으로, 교신 상황 중심으로 대비합니다.",
     badges: ["자료가 부족한 시험 추천"],
   },
 ];

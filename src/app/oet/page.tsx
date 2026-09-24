@@ -4,7 +4,8 @@ import { priceSummaryLine } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "OET | C-BRIDGE",
-  description: "직군별로 다른 OET Writing·Speaking을 직군에 맞춰 준비하세요. Nursing · Medicine · Pharmacy · Physiotherapy · Dentistry.",
+  description:
+    "직군별로 다른 OET Writing·Speaking을 직군에 맞춰 준비하세요. Nursing · Medicine · Pharmacy · Physiotherapy · Dentistry · Radiography · Occupational Therapy.",
 };
 
 const tracks = [
@@ -13,6 +14,8 @@ const tracks = [
   { en: "Pharmacy", ko: "약사" },
   { en: "Physiotherapy", ko: "물리치료" },
   { en: "Dentistry", ko: "치과" },
+  { en: "Radiography", ko: "방사선" },
+  { en: "Occupational Therapy", ko: "작업치료" },
 ];
 
 export default function OetPage() {

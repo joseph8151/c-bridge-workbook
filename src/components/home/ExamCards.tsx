@@ -31,7 +31,7 @@ export default function ExamCards() {
               </p>
               <p className="mt-3 text-sm leading-relaxed text-ink/60">{t.tagline}</p>
               {t.slug === "oet" && (
-                <p className="mt-1 text-xs text-ink/45">간호사 · 의사 · 약사 · 물리치료 · 치과</p>
+                <p className="mt-1 text-xs text-ink/45">간호사 · 의사 · 약사 · 물리치료 · 치과 · 방사선 · 작업치료</p>
               )}
               <span
                 className="mt-6 block text-xs font-bold tracking-[0.08em]"
