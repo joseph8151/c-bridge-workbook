@@ -8,42 +8,38 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesPage() {
-  const posts = guidePosts.filter((post) => post.category !== "FLEX");
-
   return (
     <section className="bg-ivory py-16 md:py-24">
-      <div className="mx-auto max-w-[800px] px-5 md:px-10">
+      <div className="mx-auto max-w-[680px] px-5 md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           시험 정보
         </p>
+        <p className="mt-4 text-sm text-ink/50">한 글에 한 지점만 적습니다.</p>
 
         <div className="mt-10">
-          {posts.map((post) => (
+          {guidePosts.map((post, i) => (
             <Link
               key={post.slug}
               href={`/guides/${post.slug}`}
-              className="group block border-t py-6 transition-opacity hover:opacity-70"
+              className="group flex items-start gap-5 border-t py-6"
               style={{ borderColor: "var(--color-line)" }}
             >
-              <p className="text-[11px] font-bold tracking-[0.1em] text-ink/45">{post.category}</p>
-              <h2
-                className="mt-2 break-keep font-serif text-lg font-bold leading-snug"
-                style={{ color: "var(--color-inkstrong)" }}
+              <span
+                className="font-serif text-lg font-bold leading-none"
+                style={{ color: "var(--color-rust)" }}
               >
-                {post.title}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink/60">{post.excerpt}</p>
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="min-w-0">
+                <span
+                  className="break-keep font-serif text-xl font-black leading-snug underline decoration-2 decoration-transparent underline-offset-8 transition-colors duration-300 group-hover:decoration-[var(--color-pistachio)] md:text-2xl"
+                  style={{ color: "var(--color-inkstrong)" }}
+                >
+                  {post.title}
+                </span>
+              </span>
             </Link>
           ))}
-        </div>
-
-        <div className="mt-14 text-center">
-          <Link
-            href="/consultation"
-            className="btn-primary inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
-          >
-            상담
-          </Link>
         </div>
       </div>
     </section>

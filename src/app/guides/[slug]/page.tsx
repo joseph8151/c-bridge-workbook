@@ -27,24 +27,27 @@ export default async function GuidePostPage({
   const post = getGuideBySlug(slug);
   if (!post) notFound();
 
+  const index = guidePosts.findIndex((p) => p.slug === slug);
+  const next = guidePosts[(index + 1) % guidePosts.length];
+
   return (
     <article className="bg-ivory py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-5 md:px-10">
+      <div className="mx-auto max-w-[680px] px-5 md:px-10">
         <Link href="/guides" className="text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-rust)" }}>
           ← 시험 정보
         </Link>
-        <p className="mt-6 text-[11px] font-bold tracking-[0.1em]" style={{ color: "var(--color-rust)" }}>
-          {post.category}
-        </p>
+
         <h1
-          className="mt-3 break-keep font-serif text-3xl font-black leading-tight md:text-5xl"
+          className="mt-6 break-keep font-serif text-3xl font-black leading-tight md:text-4xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           {post.title}
         </h1>
-        <p className="mt-4 text-sm text-ink/50">{post.readTime}</p>
+        <p className="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-ink/40">{post.category}</p>
 
-        <div className="mt-10 space-y-6">
+        <div className="mt-6 border-t" style={{ borderColor: "var(--color-line)" }} />
+
+        <div className="mt-8 space-y-5">
           {post.content.map((paragraph, i) => (
             <p key={i} className="text-base leading-relaxed text-ink/75">
               {paragraph}
@@ -52,13 +55,31 @@ export default async function GuidePostPage({
           ))}
         </div>
 
-        <div className="mt-14 border-t pt-8 text-center" style={{ borderColor: "var(--color-line)" }}>
-          <p className="text-sm text-ink/60">같은 시험이라도 목표와 약한 영역에 따라 구성이 달라집니다.</p>
+        <blockquote
+          className="mt-8 border-l-2 pl-5 font-serif text-base italic leading-relaxed text-ink/70"
+          style={{ borderColor: "var(--color-pistachio)" }}
+        >
+          {post.quote}
+        </blockquote>
+
+        <div className="mt-14 border-t pt-8" style={{ borderColor: "var(--color-line)" }}>
+          {post.closing && (
+            <>
+              <p className="text-sm text-ink/60">{post.closing}</p>
+              <Link
+                href={`/consultation?test=${encodeURIComponent(post.category)}`}
+                className="btn-primary mt-5 inline-block rounded-sm px-6 py-3 text-xs font-bold tracking-[0.08em]"
+              >
+                상담
+              </Link>
+              <div className="mt-8" />
+            </>
+          )}
           <Link
-            href="/consultation"
-            className="btn-primary mt-5 inline-block rounded-sm px-7 py-3 text-xs font-bold tracking-[0.08em]"
+            href={`/guides/${next.slug}`}
+            className="text-sm font-bold text-ink/70 underline decoration-ink/25 underline-offset-4 hover:text-ink"
           >
-            상담
+            다음 글: {next.title} →
           </Link>
         </div>
       </div>
