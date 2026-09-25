@@ -1,29 +1,34 @@
 import type { Metadata } from "next";
+import RecommendTestSelect from "@/components/RecommendTestSelect";
 
 export const metadata: Metadata = {
   title: "교재 추천 | C-BRIDGE",
   description: "시험명보다 약한 과제에 맞춘 교재 구성 기준을 확인하고 상담으로 이어가세요.",
 };
 
-const testOptions = [
-  "PTE",
-  "CELPIP",
-  "OET Nursing",
-  "OET Medicine",
-  "OET Pharmacy",
-  "OET Physiotherapy",
-  "OET Dentistry",
-  "OET Radiography",
-  "OET Occupational Therapy",
-  "NCLEX",
-  "EPTA",
-  "ELPAC",
-  "Aviation English FAA",
-  "SPA",
-  "Versant",
-  "TOLES",
-  "TOPEC",
-  "기타",
+const testGroups: { label: string; items: string[] }[] = [
+  {
+    label: "이민 · 유학",
+    items: ["PTE Academic", "PTE Academic UKVI", "PTE Core", "CELPIP", "IELTS General", "IELTS for UKVI"],
+  },
+  {
+    label: "의료 영어",
+    items: [
+      "OET Nursing",
+      "OET Medicine",
+      "OET Pharmacy",
+      "OET Physiotherapy",
+      "OET Dentistry",
+      "OET Radiography",
+      "OET Occupational Therapy",
+    ],
+  },
+  { label: "간호 면허", items: ["NCLEX"] },
+  { label: "항공", items: ["EPTA", "ELPAC (항공)", "Aviation English (FAA)", "ICAO English"] },
+  { label: "기업 말하기", items: ["SPA", "Versant"] },
+  { label: "법률", items: ["TOLES"] },
+  { label: "일본 간호", items: ["TOPEC"] },
+  { label: "기타", items: ["기타"] },
 ];
 
 const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기"];
@@ -43,24 +48,7 @@ export default function RecommendPage() {
         </h1>
 
         <form action="/consultation" method="get" className="mt-10 space-y-6">
-          <div>
-            <label className="text-xs font-bold tracking-[0.1em] text-ink/60">시험</label>
-            <select
-              name="test"
-              required
-              defaultValue=""
-              className="mt-2 w-full rounded-[14px] border border-ink/20 bg-ivory px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
-            >
-              <option value="" disabled>
-                시험을 선택하세요
-              </option>
-              {testOptions.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          </div>
+          <RecommendTestSelect groups={testGroups} />
 
           <div>
             <label className="text-xs font-bold tracking-[0.1em] text-ink/60">목표</label>

@@ -9,12 +9,14 @@ export const metadata: Metadata = {
 
 const groups: { label: string; items: { name: string; desc: string }[] }[] = [
   {
-    label: "이민",
+    label: "이민 · 유학",
     items: [
       { name: "PTE Academic", desc: "컴퓨터 기반 학술 영어시험" },
-      { name: "PTE Core", desc: "캐나다 이민을 위한 PTE" },
       { name: "PTE Academic UKVI", desc: "영국 비자를 위한 PTE" },
+      { name: "PTE Core", desc: "캐나다 이민을 위한 PTE" },
       { name: "CELPIP", desc: "캐나다 영주 · 시민권 영어시험" },
+      { name: "IELTS General", desc: "이민 · 취업을 위한 IELTS" },
+      { name: "IELTS for UKVI", desc: "영국 비자를 위한 IELTS" },
     ],
   },
   {
@@ -37,8 +39,9 @@ const groups: { label: string; items: { name: string; desc: string }[] }[] = [
     label: "항공",
     items: [
       { name: "EPTA", desc: "조종사 · 항공 종사자 영어평가" },
-      { name: "ELPAC", desc: "유럽 관제 · 항공 교신 영어평가" },
-      { name: "Aviation English FAA", desc: "미국 FAA 라디오 텔레포니 영어평가" },
+      { name: "ELPAC (항공)", desc: "유럽 관제 · 항공 교신 영어평가" },
+      { name: "Aviation English (FAA)", desc: "미국 FAA 라디오 텔레포니 영어평가" },
+      { name: "ICAO English", desc: "관제 · 조종 무선통신 영어능력등급" },
     ],
   },
   {

@@ -4,25 +4,29 @@ import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { siteConfig } from "@/lib/config";
 
-const testOptions = [
-  "PTE",
-  "CELPIP",
-  "OET Nursing",
-  "OET Medicine",
-  "OET Pharmacy",
-  "OET Physiotherapy",
-  "OET Dentistry",
-  "OET Radiography",
-  "OET Occupational Therapy",
-  "NCLEX",
-  "EPTA",
-  "ELPAC",
-  "Aviation English FAA",
-  "SPA",
-  "Versant",
-  "TOLES",
-  "TOPEC",
-  "기타",
+const testGroups: { label: string; items: string[] }[] = [
+  {
+    label: "이민 · 유학",
+    items: ["PTE Academic", "PTE Academic UKVI", "PTE Core", "CELPIP", "IELTS General", "IELTS for UKVI"],
+  },
+  {
+    label: "의료 영어",
+    items: [
+      "OET Nursing",
+      "OET Medicine",
+      "OET Pharmacy",
+      "OET Physiotherapy",
+      "OET Dentistry",
+      "OET Radiography",
+      "OET Occupational Therapy",
+    ],
+  },
+  { label: "간호 면허", items: ["NCLEX"] },
+  { label: "항공", items: ["EPTA", "ELPAC (항공)", "Aviation English (FAA)", "ICAO English"] },
+  { label: "기업 말하기", items: ["SPA", "Versant"] },
+  { label: "법률", items: ["TOLES"] },
+  { label: "일본 간호", items: ["TOPEC"] },
+  { label: "기타", items: ["기타"] },
 ];
 
 const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기"];
@@ -37,6 +41,7 @@ export default function ConsultationForm() {
   const prefillWeakArea = searchParams.get("weakArea") ?? "";
 
   const [status, setStatus] = useState<Status>("idle");
+  const [test, setTest] = useState(prefillTest);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -90,18 +95,28 @@ export default function ConsultationForm() {
         <select
           name="test"
           required
-          defaultValue={prefillTest}
+          value={test}
+          onChange={(e) => setTest(e.target.value)}
           className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
         >
           <option value="" disabled>
             시험을 선택하세요
           </option>
-          {testOptions.map((name) => (
-            <option key={name} value={name}>
-              {name}
-            </option>
+          {testGroups.map((g) => (
+            <optgroup key={g.label} label={g.label}>
+              {g.items.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </optgroup>
           ))}
         </select>
+        {test === "NCLEX" && (
+          <p className="mt-2 text-xs leading-relaxed text-ink/50">
+            영어시험이 아닙니다. 유형 연습서입니다.
+          </p>
+        )}
       </div>
 
       <Field label="목표" name="goal" placeholder="예: 승진 제출용, 고득점" defaultValue={prefillGoal} />
