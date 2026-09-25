@@ -78,7 +78,7 @@ export default function ExamsPage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-16 md:py-24">
+      <section className="bg-ivory py-16 md:py-24" data-reveal>
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
           <div className="space-y-14">
             {groups.map((g) => (

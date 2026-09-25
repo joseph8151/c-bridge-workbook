@@ -22,8 +22,7 @@ export default function TolesPage() {
         <p className="mt-6 text-base font-semibold text-ink/70">국제 로펌 · 크로스보더 계약</p>
         <Link
           href={`/consultation?test=${encodeURIComponent("TOLES")}`}
-          className="mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-          style={{ background: "var(--color-rust)" }}
+          className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
         >
           상담
         </Link>

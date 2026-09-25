@@ -23,7 +23,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-ivory py-16 md:py-20">
+    <section className="bg-ivory py-16 md:py-20" data-reveal>
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
         <div className="grid gap-10 border-t pt-10 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
           {steps.map((s) => (

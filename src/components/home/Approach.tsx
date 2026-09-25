@@ -6,7 +6,7 @@ const items = [
 
 export default function Approach() {
   return (
-    <section className="bg-paper py-24 md:py-32">
+    <section className="bg-paper py-24 md:py-32" data-reveal>
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           한 권에 들어가는 것

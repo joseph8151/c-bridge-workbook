@@ -13,7 +13,7 @@ export default function WorkbookPreviewModal() {
         onClick={() => setOpen(true)}
         className="group relative block w-full overflow-hidden rounded-[20px] border border-purple/10 text-left"
       >
-        <div className="relative h-48 w-full md:h-56">
+        <div className="img-fade relative h-48 w-full md:h-56">
           <Image
             src="/images/workbook-open.jpg"
             alt="C-BRIDGE 문제집 www.c-bridge.uk"
@@ -48,7 +48,7 @@ export default function WorkbookPreviewModal() {
             >
               ×
             </button>
-            <div className="relative h-[70vh] max-h-[560px] w-full">
+            <div className="img-fade relative h-[70vh] max-h-[560px] w-full">
               <Image
                 src="/images/workbook-open.jpg"
                 alt="C-BRIDGE 문제집 www.c-bridge.uk"

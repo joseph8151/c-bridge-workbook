@@ -77,7 +77,7 @@ export default async function TestDetailPage({
             </p>
           </div>
           {heroPhoto && (
-            <div className="relative h-56 w-full overflow-hidden md:h-72">
+            <div className="img-fade relative h-56 w-full overflow-hidden md:h-72">
               <Image
                 src={heroPhoto.src}
                 alt={heroPhoto.alt}
@@ -98,7 +98,7 @@ export default async function TestDetailPage({
               className="flex flex-col gap-6 border-t pt-8 md:flex-row md:items-center md:gap-10"
               style={{ borderColor: "var(--color-line)" }}
             >
-              <div className="relative h-40 w-full shrink-0 overflow-hidden md:h-36 md:w-48">
+              <div className="img-fade relative h-40 w-full shrink-0 overflow-hidden md:h-36 md:w-48">
                 <Image
                   src="/images/pte-academic-ukvi.jpg"
                   alt="PTE Academic UKVI C-BRIDGE 문제집 www.c-bridge.uk"
@@ -176,8 +176,7 @@ export default async function TestDetailPage({
             </p>
             <Link
               href={`/consultation?test=${encodeURIComponent(test.name)}`}
-              className="mt-2 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] transition-all duration-300 hover:brightness-90"
-              style={{ background: "var(--color-rust)", color: "var(--color-paper)" }}
+              className="btn-primary mt-2 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
             >
               상담
             </Link>
@@ -282,8 +281,7 @@ export default async function TestDetailPage({
           </p>
           <Link
             href={`/consultation?test=${encodeURIComponent(test.name)}`}
-            className="inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] transition-all duration-300 hover:brightness-90"
-            style={{ background: "var(--color-rust)", color: "var(--color-paper)" }}
+            className="btn-primary inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
           >
             상담
           </Link>

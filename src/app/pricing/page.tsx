@@ -30,7 +30,7 @@ export default function PricingPage() {
           {tierOrder.map((t) => {
             const meta = tierMeta[t];
             return (
-              <div key={t} className="border p-8 text-left" style={{ borderColor: "var(--color-line)" }}>
+              <div key={t} className="card-hover border p-8 text-left" style={{ borderColor: "var(--color-line)" }}>
                 <span className="whitespace-nowrap font-serif text-4xl font-black" style={{ color: "var(--color-inkstrong)" }}>
                   {meta.pages}페이지
                 </span>
@@ -46,7 +46,7 @@ export default function PricingPage() {
 
         <p className="mt-8 text-sm text-ink/60">포함: 문제, 해설, 모의.</p>
 
-        <div className="mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-line)" }}>
+        <div className="card-hover mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-line)" }}>
           <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
             상담
           </p>
@@ -54,11 +54,7 @@ export default function PricingPage() {
           <p className="mt-4 text-sm leading-relaxed text-ink/60">
             목표와 현재 수준에 맞춰 필요한 구성을 안내해드립니다.
           </p>
-          <Link
-            href="/consultation"
-            className="mt-6 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-            style={{ background: "var(--color-rust)" }}
-          >
+          <Link href="/consultation" className="btn-primary mt-6 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]">
             상담
           </Link>
         </div>

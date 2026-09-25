@@ -181,10 +181,9 @@ export default function ConsultationForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-[14px] py-4 text-sm font-bold tracking-[0.04em] text-paper transition-all hover:brightness-90 disabled:opacity-60 sm:w-auto sm:px-10"
-        style={{ background: "var(--color-rust)" }}
+        className="btn-primary w-full rounded-[14px] py-4 text-sm font-bold tracking-[0.04em] disabled:opacity-60 sm:w-auto sm:px-10"
       >
-        {status === "submitting" ? "전송 중..." : "상담 신청"}
+        {status === "submitting" ? "보내는 중" : "상담 신청"}
       </button>
     </form>
   );

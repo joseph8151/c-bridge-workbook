@@ -22,8 +22,7 @@ export default function TopecPage() {
         <p className="mt-6 text-sm text-ink/50">OET와는 다른 시험입니다.</p>
         <Link
           href={`/consultation?test=${encodeURIComponent("TOPEC")}`}
-          className="mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-          style={{ background: "var(--color-rust)" }}
+          className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
         >
           상담
         </Link>

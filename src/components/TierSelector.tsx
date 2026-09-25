@@ -164,8 +164,7 @@ export default function TierSelector({ test }: { test: Test }) {
 
           <Link
             href={`/consultation?${consultQuery}`}
-            className="mt-7 flex items-center justify-center rounded-sm py-3.5 text-sm font-bold tracking-[0.08em] transition-all duration-300 hover:brightness-90"
-            style={{ background: "var(--color-rust)", color: "var(--color-paper)" }}
+            className="btn-primary mt-7 flex items-center justify-center rounded-sm py-3.5 text-sm font-bold tracking-[0.08em]"
           >
             상담
           </Link>

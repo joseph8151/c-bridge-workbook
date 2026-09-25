@@ -22,8 +22,7 @@ export default function SpaPage() {
         <p className="mt-6 text-sm text-ink/50">비즈니스 상황 · 의견 제시 · 설명형 문제를 실전 인터뷰 방식으로 연습합니다.</p>
         <Link
           href={`/consultation?test=${encodeURIComponent("SPA")}`}
-          className="mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-          style={{ background: "var(--color-rust)" }}
+          className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
         >
           상담
         </Link>

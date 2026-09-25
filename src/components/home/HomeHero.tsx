@@ -11,7 +11,7 @@ export default function HomeHero() {
             C-BRIDGE
           </p>
           <h1
-            className="mt-6 break-keep font-serif text-[9vw] font-black leading-[1.15] md:text-[3.4vw] lg:text-[52px]"
+            className="hero-fade-up mt-6 break-keep font-serif text-[9vw] font-black leading-[1.15] md:text-[3.4vw] lg:text-[52px]"
             style={{ color: "var(--color-inkstrong)" }}
           >
             직군과 나라가 다르면
@@ -23,15 +23,18 @@ export default function HomeHero() {
           </p>
           <Link
             href="/consultation"
-            className="mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] transition-all duration-300 hover:brightness-90"
-            style={{ background: "var(--color-rust)", color: "var(--color-paper)" }}
+            className="btn-primary hero-fade-up mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
+            style={{ animationDelay: "80ms" }}
           >
             상담
           </Link>
           <p className="mt-4 text-sm text-ink/45">{siteConfig.weekendNotice}</p>
         </div>
 
-        <div className="hidden flex-col items-center justify-center gap-6 border-l md:flex" style={{ borderColor: "var(--color-line)" }}>
+        <div
+          className="hero-scale-in hidden flex-col items-center justify-center gap-6 border-l md:flex"
+          style={{ borderColor: "var(--color-line)" }}
+        >
           <BridgeMark size={280} />
           <div className="max-w-[240px] text-center">
             <p className="text-[11px] font-bold tracking-[0.16em] text-ink/40">{siteConfig.tagline}</p>

@@ -23,8 +23,7 @@ export default function Footer() {
             </p>
             <Link
               href="/consultation"
-              className="mt-6 inline-block rounded-sm px-5 py-2.5 text-xs font-bold tracking-[0.1em] text-paper transition-all hover:brightness-90"
-              style={{ background: "var(--color-rust)" }}
+              className="btn-primary mt-6 inline-block rounded-sm px-5 py-2.5 text-xs font-bold tracking-[0.1em]"
             >
               상담
             </Link>

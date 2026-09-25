@@ -13,14 +13,14 @@ export default function ExamCards() {
     .filter((t): t is Test => t !== undefined);
 
   return (
-    <section className="bg-paper py-14 md:py-20">
+    <section className="bg-paper py-14 md:py-20" data-reveal>
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {exams.map((t) => (
             <Link
               key={t.id}
               href={hrefFor(t)}
-              className="group flex flex-col justify-between border p-7"
+              className="card-hover group flex flex-col justify-between border p-7"
               style={{ borderColor: "var(--color-line)" }}
             >
               <div>
@@ -38,7 +38,10 @@ export default function ExamCards() {
                 )}
               </div>
               <div>
-                <div className="mt-8 h-[2px] w-10" style={{ background: "var(--color-pistachio)" }} />
+                <div
+                  className="mt-8 h-[2px] w-full origin-left scale-x-0 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100"
+                  style={{ background: "var(--color-pistachio)" }}
+                />
                 <span
                   className="mt-3 block text-xs font-bold tracking-[0.08em]"
                   style={{ color: "var(--color-rust)" }}

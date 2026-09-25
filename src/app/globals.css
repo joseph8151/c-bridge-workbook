@@ -60,6 +60,119 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --ease-pub: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Scroll-reveal targets — driven by RevealInit's single IntersectionObserver via [data-reveal] */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 380ms var(--ease-pub), transform 380ms var(--ease-pub);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* One-shot hero entrance (not observer-based — always above the fold) */
+.hero-fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: hero-fade-up 380ms var(--ease-pub) forwards;
+}
+@keyframes hero-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-scale-in {
+  opacity: 0;
+  transform: scale(1.04);
+  animation: hero-scale-in 600ms var(--ease-pub) forwards;
+}
+@keyframes hero-scale-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Cards: exam cards, price cards, sample previews */
+.card-hover {
+  transition: transform 320ms var(--ease-pub), box-shadow 320ms var(--ease-pub);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px -18px rgba(42, 46, 36, 0.35);
+}
+
+/* Primary (상담) buttons: hover = color only, click = scale only */
+.btn-primary {
+  background: var(--color-rust);
+  color: var(--color-paper);
+  transition: background-color 280ms var(--ease-pub), transform 150ms var(--ease-pub);
+}
+.btn-primary:hover {
+  background-color: #5c7048;
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Tab content swap: fade only, no slide */
+.tab-fade {
+  animation: tab-fade 280ms var(--ease-pub);
+}
+@keyframes tab-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Images: cream placeholder, fade in once painted */
+.img-fade {
+  background: var(--color-paper);
+}
+.img-fade img {
+  opacity: 0;
+  animation: img-fade-in 200ms var(--ease-pub) forwards;
+}
+@keyframes img-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-fade-up,
+  .hero-scale-in,
+  .tab-fade,
+  .img-fade img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .card-hover,
+  .card-hover:hover,
+  .btn-primary,
+  .btn-primary:active {
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
 body {
   background: var(--color-ivory);
   color: var(--color-ink);
@@ -80,20 +193,3 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(var(--tilt, 0deg)); }
-  50% { transform: translateY(-14px) rotate(var(--tilt, 0deg)); }
-}
-
-.animate-float-slow {
-  animation: float-slow 6s ease-in-out infinite;
-}
-
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-up {
-  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}

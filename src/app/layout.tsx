@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import RevealInit from "@/components/RevealInit";
 
 const display = Manrope({
   variable: "--font-display",
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1 pb-20 md:pb-0">{children}</main>
         <Footer />
         <StickyMobileCTA />
+        <RevealInit />
       </body>
     </html>
   );

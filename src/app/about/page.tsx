@@ -54,7 +54,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-20 md:py-28">
+      <section className="bg-ivory py-20 md:py-28" data-reveal>
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.18em] text-ink/45">이런 분들이 찾습니다</p>
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 border-t pt-6" style={{ borderColor: "var(--color-line)" }}>
@@ -67,7 +67,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-20 md:py-28">
+      <section className="bg-paper py-20 md:py-28" data-reveal>
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.18em] text-ink/45">원칙</p>
           <div className="mt-6 grid gap-10 border-t pt-10 md:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
@@ -90,8 +90,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/consultation"
-            className="inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] transition-all duration-300 hover:brightness-90"
-            style={{ background: "var(--color-rust)", color: "var(--color-paper)" }}
+            className="btn-primary inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
           >
             상담
           </Link>

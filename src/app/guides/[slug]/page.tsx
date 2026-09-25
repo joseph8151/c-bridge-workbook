@@ -56,8 +56,7 @@ export default async function GuidePostPage({
           <p className="text-sm text-ink/60">같은 시험이라도 목표와 약한 영역에 따라 구성이 달라집니다.</p>
           <Link
             href="/consultation"
-            className="mt-5 inline-block rounded-sm px-7 py-3 text-xs font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-            style={{ background: "var(--color-rust)" }}
+            className="btn-primary mt-5 inline-block rounded-sm px-7 py-3 text-xs font-bold tracking-[0.08em]"
           >
             상담
           </Link>

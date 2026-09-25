@@ -82,8 +82,7 @@ export default function RecommendPage() {
 
           <button
             type="submit"
-            className="w-full rounded-sm py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90 sm:w-auto sm:px-8"
-            style={{ background: "var(--color-rust)" }}
+            className="btn-primary w-full rounded-sm py-3.5 text-sm font-bold tracking-[0.08em] sm:w-auto sm:px-8"
           >
             이 기준으로 상담
           </button>

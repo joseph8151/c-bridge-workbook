@@ -82,8 +82,7 @@ export default function OetPage() {
           </p>
           <Link
             href="/consultation?test=OET"
-            className="inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-            style={{ background: "var(--color-rust)" }}
+            className="btn-primary inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
           >
             상담
           </Link>

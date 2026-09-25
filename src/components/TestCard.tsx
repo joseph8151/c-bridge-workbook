@@ -17,12 +17,12 @@ export default function TestCard({ test }: { test: Test }) {
   return (
     <Link
       href={`/books/${test.slug}`}
-      className="group flex flex-col border-t pt-6 transition-opacity"
+      className="card-hover group flex flex-col border-t pt-6"
       style={{ borderColor: "var(--color-line)" }}
     >
       <div className="flex justify-center pb-5">
         {photo ? (
-          <div className="relative h-48 w-32 overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 md:h-52 md:w-36">
+          <div className="img-fade relative h-48 w-32 overflow-hidden md:h-52 md:w-36">
             <Image
               src={photo.src}
               alt={photo.alt}
@@ -33,14 +33,7 @@ export default function TestCard({ test }: { test: Test }) {
             />
           </div>
         ) : (
-          <BookCover
-            test={test.name}
-            skill={test.tagline}
-            tag="패키지 시리즈"
-            color={group.color}
-            size="md"
-            className="transition-transform duration-300 group-hover:-translate-y-1"
-          />
+          <BookCover test={test.name} skill={test.tagline} tag="패키지 시리즈" color={group.color} size="md" />
         )}
       </div>
 

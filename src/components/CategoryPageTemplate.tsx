@@ -35,7 +35,7 @@ export default function CategoryPageTemplate({
             </p>
           </div>
           {heroImage && (
-            <div className="relative h-56 w-full overflow-hidden rounded-[20px] shadow-[0_16px_40px_-20px_rgba(69,53,101,0.45)] md:h-72">
+            <div className="img-fade relative h-56 w-full overflow-hidden rounded-[20px] shadow-[0_16px_40px_-20px_rgba(69,53,101,0.45)] md:h-72">
               <Image
                 src={heroImage.src}
                 alt={heroImage.alt}
