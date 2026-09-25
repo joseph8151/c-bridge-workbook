@@ -1,27 +1,35 @@
 import HomeHero from "@/components/home/HomeHero";
-import ExamCards from "@/components/home/ExamCards";
-import Approach from "@/components/home/Approach";
-import ProcessTimeline from "@/components/home/ProcessTimeline";
-import FitCheck from "@/components/home/FitCheck";
-import CaseStudies from "@/components/CaseStudies";
-import Process from "@/components/home/Process";
-import ExamNotes from "@/components/home/ExamNotes";
+import CredibilityStrip from "@/components/home/CredibilityStrip";
+import ExamIndexSection from "@/components/home/ExamIndexSection";
+import Philosophy from "@/components/home/Philosophy";
+import Method from "@/components/home/Method";
+import BookSeries from "@/components/home/BookSeries";
+import BookPreview from "@/components/BookPreview";
 import WhyCBridge from "@/components/WhyCBridge";
-import PriceLine from "@/components/home/PriceLine";
+import ProcessTimeline from "@/components/home/ProcessTimeline";
+import StudyProfiles from "@/components/StudyProfiles";
+import FinderCTA from "@/components/home/FinderCTA";
+import BusinessTeaser from "@/components/home/BusinessTeaser";
+import HomeFAQ from "@/components/home/HomeFAQ";
+import FinalCTA from "@/components/home/FinalCTA";
 
 export default function Home() {
   return (
     <>
       <HomeHero />
-      <ExamCards />
-      <Approach />
-      <ProcessTimeline />
-      <FitCheck />
-      <CaseStudies />
-      <Process />
-      <ExamNotes />
+      <CredibilityStrip />
+      <ExamIndexSection />
+      <Philosophy />
+      <Method />
+      <BookSeries />
+      <BookPreview />
       <WhyCBridge />
-      <PriceLine />
+      <ProcessTimeline />
+      <StudyProfiles />
+      <FinderCTA />
+      <BusinessTeaser />
+      <HomeFAQ />
+      <FinalCTA />
     </>
   );
 }

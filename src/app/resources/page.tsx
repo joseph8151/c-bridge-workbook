@@ -4,6 +4,7 @@ import ResourcesTabs from "@/components/ResourcesTabs";
 export const metadata: Metadata = {
   title: "무료자료 | C-BRIDGE",
   description: "PTE, CELPIP, OET, EPTA 샘플 문항을 미리 확인하세요.",
+  alternates: { canonical: "/resources" },
 };
 
 export default function ResourcesPage() {

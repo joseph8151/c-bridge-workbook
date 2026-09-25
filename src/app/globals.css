@@ -1,30 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --color-ivory: #faf7f0;
-  --color-cream: #f2ecdd;
-  --color-lavender: #ece7f5;
-  --color-purple: #453565;
-  --color-royal: #68558c;
-  --color-plum: #2d2340;
-  --color-gold: #b89b62;
-  --color-ink: #242329;
+  /* ============================================================
+     C-BRIDGE editorial design tokens — warm ivory paper,
+     deep ink text, muted bronze accent, dark navy sections.
+     ============================================================ */
+  --color-paper: #f5f3ee; /* primary background */
+  --color-paper-dark: #eeeae2; /* secondary background — used sparingly */
+  --color-ink: #111820; /* text primary, near-black */
+  --color-muted: #62656a; /* text secondary */
+  --color-bronze: #9a7651; /* accent — labels, dividers, CTA */
+  --color-bronze-dark: #7e6142; /* accent hover state */
+  --color-border: rgba(17, 24, 32, 0.12); /* 1px hairline */
+  --color-navy: #101820; /* dark section background */
+  --color-navy-text: #f5f3ee; /* dark section text */
 
-  --color-employment: #68558c;
-  --color-japanese: #6b3d57;
-  --color-chinese: #93493f;
-  --color-flex: #3e5a82;
-  --color-studyabroad: #a9843d;
-  --color-professional: #33625a;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
 
-  /* 홈 · 헤더 · 푸터의 출판사 브랜드 팔레트 — 이탈리아 젤라토 피스타치오 톤 */
-  --color-paper: #f6f0e4;
-  --color-inkstrong: #2a2e24;
-  --color-rust: #6f8458;
-  --color-line: #c9b8a4;
-  --color-pistachio: #b7c89a;
-  --color-pistachio-tint: #e7eedc;
-  --color-nutbrown: #8a6a48;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --container-width: 1280px;
+
+  /* ---- Legacy token names kept for compatibility; all repointed
+     at the tokens above so every existing component recolors
+     automatically without a sitewide rename. ---- */
+  --color-ivory: var(--color-paper);
+  --color-cream: var(--color-paper-dark);
+  --color-lavender: var(--color-paper-dark);
+  --color-purple: var(--color-ink);
+  --color-royal: var(--color-bronze);
+  --color-plum: var(--color-ink);
+  --color-gold: var(--color-bronze);
+
+  /* Category-group accent colors previously varied by subject (purple/maroon/
+     red/blue/gold/teal). An editorial system uses one restrained accent
+     everywhere, so all six now resolve to the same bronze. */
+  --color-employment: var(--color-bronze);
+  --color-japanese: var(--color-bronze);
+  --color-chinese: var(--color-bronze);
+  --color-flex: var(--color-bronze);
+  --color-studyabroad: var(--color-bronze);
+  --color-professional: var(--color-bronze);
+
+  --color-inkstrong: var(--color-ink);
+  --color-rust: var(--color-bronze);
+  --color-line: var(--color-border);
+  --color-pistachio: var(--color-bronze);
+  --color-pistachio-tint: var(--color-paper-dark);
+  --color-nutbrown: var(--color-bronze-dark);
 }
 
 @theme inline {
@@ -45,6 +75,11 @@
   --color-professional: var(--color-professional);
 
   --color-paper: var(--color-paper);
+  --color-paper-dark: var(--color-paper-dark);
+  --color-muted: var(--color-muted);
+  --color-bronze: var(--color-bronze);
+  --color-navy: var(--color-navy);
+  --color-navy-text: var(--color-navy-text);
   --color-inkstrong: var(--color-inkstrong);
   --color-rust: var(--color-rust);
   --color-line: var(--color-line);
@@ -69,8 +104,8 @@ html {
 /* Scroll-reveal targets — driven by RevealInit's single IntersectionObserver via [data-reveal] */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 280ms var(--ease-pub), transform 280ms var(--ease-pub);
+  transform: translateY(20px);
+  transition: opacity 500ms var(--ease-pub), transform 500ms var(--ease-pub);
 }
 [data-reveal].is-in {
   opacity: 1;
@@ -81,8 +116,8 @@ html {
 .hero-fade-up,
 .hero-scale-in {
   opacity: 0;
-  transform: translateY(16px);
-  animation: hero-fade-up 280ms var(--ease-pub) forwards;
+  transform: translateY(20px);
+  animation: hero-fade-up 500ms var(--ease-pub) forwards;
 }
 @keyframes hero-fade-up {
   to {
@@ -91,31 +126,101 @@ html {
   }
 }
 
-/* Cards: exam cards, price cards, sample previews -- line-divided cells, no shadow */
+/* Cards, index rows, previews -- line-divided, no shadow */
 .card-hover {
   transition: background-color 220ms var(--ease-pub);
 }
 .card-hover:hover {
-  background-color: rgba(42, 46, 36, 0.03);
+  background-color: rgba(17, 24, 32, 0.025);
 }
 
-/* Primary (상담) buttons: fixed 48px height, hover = color only, click = scale only */
+/* Arrow-slide micro interaction for editorial index rows */
+.arrow-slide {
+  display: inline-block;
+  transition: transform 220ms var(--ease-pub);
+}
+.card-hover:hover .arrow-slide,
+a:hover .arrow-slide {
+  transform: translateX(4px);
+}
+
+/* Primary buttons: dark ink fill, ivory text, minimal radius */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
   font-weight: 500;
   letter-spacing: 0.06em;
-  background: var(--color-rust);
+  background: var(--color-ink);
   color: var(--color-paper);
   transition: background-color 280ms var(--ease-pub), transform 150ms var(--ease-pub);
 }
 .btn-primary:hover {
-  background-color: #5c7048;
+  background-color: var(--color-bronze-dark);
 }
 .btn-primary:active {
   transform: scale(0.98);
+}
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 2px;
+}
+
+/* Secondary buttons: transparent, 1px ink border */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-ink);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-ink);
+  background: transparent;
+  transition: background-color 220ms var(--ease-pub);
+}
+.btn-secondary:hover {
+  background-color: rgba(17, 24, 32, 0.04);
+}
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 2px;
+}
+
+/* Dark-section variant of the buttons above */
+.btn-primary-inverse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  background: var(--color-paper);
+  color: var(--color-navy);
+  transition: background-color 220ms var(--ease-pub);
+}
+.btn-primary-inverse:hover {
+  background-color: var(--color-paper-dark);
+}
+.btn-secondary-inverse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(245, 243, 238, 0.35);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-navy-text);
+  background: transparent;
+  transition: background-color 220ms var(--ease-pub);
+}
+.btn-secondary-inverse:hover {
+  background-color: rgba(245, 243, 238, 0.08);
 }
 
 /* Tab content swap: fade only, no slide */
@@ -131,17 +236,20 @@ html {
   }
 }
 
-/* Images: cream placeholder, fade in once painted */
+/* Images: paper placeholder, gentle fade + 1.02 scale once painted */
 .img-fade {
-  background: var(--color-paper);
+  background: var(--color-paper-dark);
+  overflow: hidden;
 }
 .img-fade img {
   opacity: 0;
-  animation: img-fade-in 200ms var(--ease-pub) forwards;
+  transform: scale(1.02);
+  animation: img-fade-in 500ms var(--ease-pub) forwards;
 }
 @keyframes img-fade-in {
   to {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -161,6 +269,7 @@ html {
   }
   .card-hover,
   .card-hover:hover,
+  .arrow-slide,
   .btn-primary,
   .btn-primary:active {
     transition: none !important;
@@ -170,7 +279,7 @@ html {
 }
 
 body {
-  background: var(--color-ivory);
+  background: var(--color-paper);
   color: var(--color-ink);
   font-size: 16.5px;
   line-height: 1.7;
@@ -182,12 +291,20 @@ h1, h2, h3, h4 {
   overflow-wrap: break-word;
 }
 
+/* Small uppercase editorial labels — "THE SERIES", "LOOK INSIDE", etc. */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-bronze);
+}
+
 ::selection {
-  background: var(--color-gold);
-  color: var(--color-plum);
+  background: var(--color-bronze);
+  color: var(--color-paper);
 }
 
 .text-balance {
   text-wrap: balance;
 }
-

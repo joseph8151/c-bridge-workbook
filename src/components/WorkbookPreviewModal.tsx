@@ -11,7 +11,8 @@ export default function WorkbookPreviewModal() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group relative block w-full overflow-hidden rounded-[20px] border border-purple/10 text-left"
+        className="group relative block w-full overflow-hidden border text-left"
+        style={{ borderColor: "var(--color-border)" }}
       >
         <div className="img-fade relative h-48 w-full md:h-56">
           <Image
@@ -19,32 +20,38 @@ export default function WorkbookPreviewModal() {
             alt="C-BRIDGE 문제집 www.c-bridge.uk"
             fill
             sizes="(max-width: 768px) 100vw, 400px"
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             style={{ objectPosition: "center" }}
           />
         </div>
-        <span className="absolute bottom-3 left-3 rounded-full bg-ivory/95 px-3.5 py-1.5 text-xs font-bold tracking-[0.04em] text-purple shadow-sm">
+        <span
+          className="absolute bottom-3 left-3 border px-3.5 py-1.5 text-xs font-medium tracking-[0.04em]"
+          style={{ background: "var(--color-paper)", borderColor: "var(--color-border)", color: "var(--color-ink)" }}
+        >
           교재 미리보기 (Look inside)
         </span>
       </button>
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/70 p-5"
+          className="fixed inset-0 z-50 flex items-center justify-center p-5"
+          style={{ background: "rgba(17,24,32,0.7)" }}
           role="dialog"
           aria-modal="true"
           aria-label="교재 미리보기"
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative w-full max-w-2xl overflow-hidden rounded-[20px] bg-ivory"
+            className="relative w-full max-w-2xl overflow-hidden border"
+            style={{ background: "var(--color-paper)", borderColor: "var(--color-border)" }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setOpen(false)}
               aria-label="닫기"
-              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-ivory/90 text-lg font-bold text-purple shadow-sm"
+              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center border text-lg font-medium"
+              style={{ background: "var(--color-paper)", borderColor: "var(--color-border)", color: "var(--color-ink)" }}
             >
               ×
             </button>

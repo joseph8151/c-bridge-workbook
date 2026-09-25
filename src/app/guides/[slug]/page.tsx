@@ -15,7 +15,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getGuideBySlug(slug);
   if (!post) return {};
-  return { title: `${post.title} | C-BRIDGE`, description: post.excerpt };
+  const title = `${post.title} | C-BRIDGE`;
+  return {
+    title,
+    description: post.excerpt,
+    alternates: { canonical: `/guides/${slug}` },
+    openGraph: { title, description: post.excerpt, url: `/guides/${slug}` },
+    twitter: { card: "summary", title, description: post.excerpt },
+  };
 }
 
 export default async function GuidePostPage({

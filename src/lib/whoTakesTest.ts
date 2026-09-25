@@ -5,6 +5,11 @@ export interface WhoTakesTestInfo {
   audience: string; // 주요 응시자
   usedIn: string; // 시험 활용 국가 또는 기관
   differenceFromSimilar: string; // 비슷한 시험과의 차이
+  // 아래 세 필드는 공신력 있는 공개 정보로 확인된 시험에만 채웁니다.
+  // 확실하지 않은 숫자는 비워 두고, Exam Overview에서 해당 행을 생략합니다.
+  duration?: string;
+  score?: string;
+  sections?: string[];
 }
 
 // 시험별 "이 시험은 누가 준비하나요?" 데이터. 새 시험을 추가하거나 내용을 고칠 땐 이 파일만 수정하면 됩니다.
@@ -14,36 +19,54 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     audience: "해외 대학·대학원 지원자, 학생 비자를 신청하는 유학 준비생.",
     usedIn: "목표 대학·기관이 PTE Academic 성적을 인정하는 경우에 활용됩니다. 인정 여부는 지원 기관 기준으로 확인이 필요합니다.",
     differenceFromSimilar: "IELTS·TOEFL과 달리 전 영역이 컴퓨터로 채점되어 결과가 빠르고, Speaking과 Writing이 통합 채점되는 문항이 있습니다.",
+    duration: "약 2시간",
+    score: "10–90점",
+    sections: ["Speaking & Writing", "Reading", "Listening"],
   },
   "pte-core": {
     purpose: "캐나다 이민(Express Entry 등)을 목적으로 설계된 실생활 중심 영어시험입니다.",
     audience: "캐나다 영주권을 준비하는 이민 신청자.",
     usedIn: "캐나다 이민 프로그램에서 활용됩니다. 신청 유형별 요구 점수는 이민 프로그램 기준으로 다릅니다.",
     differenceFromSimilar: "학술 목적인 PTE Academic과 달리 이민 실무 상황 중심 문항으로 구성되어 있습니다.",
+    duration: "약 2시간",
+    score: "10–90점",
+    sections: ["Speaking & Writing", "Reading", "Listening"],
   },
   celpip: {
     purpose: "캐나다 영주권·시민권 신청을 위한 캐나다식 영어시험입니다.",
     audience: "캐나다 영주권·시민권을 준비하는 이민 신청자.",
     usedIn: "캐나다 이민, 시민권 신청에서 활용됩니다.",
     differenceFromSimilar: "IELTS General과 달리 캐나다 실생활 상황에 특화되어 있으며, 전 영역이 컴퓨터 기반으로 진행됩니다.",
+    duration: "약 3시간",
+    score: "CLB(Canadian Language Benchmark) 기준",
+    sections: ["Listening", "Reading", "Writing", "Speaking"],
   },
   ielts: {
     purpose: "유학·이민을 위한 국제 공인 영어시험입니다.",
     audience: "해외 대학 진학, 이민을 준비하는 지원자.",
     usedIn: "Academic은 대학·대학원 진학, General Training은 이민·취업 목적으로 활용됩니다. 인정 여부는 지원 기관 기준으로 확인이 필요합니다.",
     differenceFromSimilar: "PTE·TOEFL과 달리 Speaking이 대면 인터뷰 방식으로 진행됩니다.",
+    duration: "약 2시간 45분(Speaking 별도)",
+    score: "0–9.0 밴드",
+    sections: ["Listening", "Reading", "Writing", "Speaking"],
   },
   toefl: {
     purpose: "해외 대학·대학원 진학을 위한 학술 영어시험입니다.",
     audience: "미국을 포함한 해외 대학·대학원 지원자.",
     usedIn: "다수 해외 대학의 입학 요건으로 활용됩니다. 인정 여부는 지원 대학 기준으로 확인이 필요합니다.",
     differenceFromSimilar: "IELTS와 달리 전 영역이 컴퓨터로 진행되며, Speaking도 마이크에 녹음하는 방식입니다.",
+    duration: "약 2시간",
+    score: "0–120점",
+    sections: ["Reading", "Listening", "Speaking", "Writing"],
   },
   oet: {
     purpose: "의료전문직을 위한 직군별 영어시험입니다.",
     audience: "해외 취업·등록을 준비하는 간호사, 의사, 약사 등 의료전문직 종사자.",
     usedIn: "영국·호주·뉴질랜드 등 의료기관 및 면허 등록 기관에서 활용됩니다. 인정 여부는 등록 기관 기준으로 확인이 필요합니다.",
     differenceFromSimilar: "일반 영어시험과 달리 Writing·Speaking이 직군별 임상 상황(case notes, 환자 응대)으로 출제됩니다.",
+    duration: "약 3시간",
+    score: "A–E 등급(직군별 서브테스트)",
+    sections: ["Listening", "Reading", "Writing", "Speaking"],
   },
   epta: {
     purpose: "조종사 등 항공 종사자의 항공 영어 구사 능력을 평가하는 시험입니다.",
@@ -110,12 +133,18 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     audience: "취업 준비생, 승진 평가를 준비하는 직장인.",
     usedIn: "국내 기업의 채용·승진 기준으로 널리 활용됩니다.",
     differenceFromSimilar: "말하기를 평가하는 TOEIC Speaking과 달리 Listening·Reading만 평가합니다.",
+    duration: "약 2시간",
+    score: "10–990점",
+    sections: ["Listening", "Reading"],
   },
   "toeic-speaking": {
     purpose: "TOEIC의 말하기 영역을 별도로 평가하는 시험입니다.",
     audience: "채용·승진에서 말하기 평가가 필요한 직장인.",
     usedIn: "기업 채용·승진 평가에서 활용됩니다.",
     differenceFromSimilar: "Listening·Reading 중심의 TOEIC과 달리 말하기 문항으로만 구성됩니다.",
+    duration: "약 20분",
+    score: "0–200점",
+    sections: ["Speaking"],
   },
   duolingo: {
     purpose: "온라인으로 응시하는 컴퓨터 기반 영어시험입니다.",

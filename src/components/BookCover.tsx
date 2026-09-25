@@ -50,7 +50,7 @@ export default function BookCover({
       <div className="absolute inset-0 translate-x-[6px] translate-y-[6px] rounded-[7px] bg-ink/8" />
 
       <div
-        className="relative h-full w-full overflow-hidden rounded-[7px] text-ivory shadow-[0_20px_44px_-16px_rgba(33,26,40,0.5)] ring-1 ring-black/10"
+        className="relative h-full w-full overflow-hidden rounded-[7px] text-ivory shadow-[0_8px_16px_-12px_rgba(17,24,32,0.35)] ring-1 ring-black/10"
         style={{ background: `linear-gradient(155deg, ${color} 0%, var(--color-plum) 115%)` }}
       >
         {/* soft top sheen for a printed-cover feel */}

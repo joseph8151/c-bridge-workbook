@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "전체 시험 · 교재 보기 | C-BRIDGE",
   description:
     "취업·승진, 일본어, 중국어, FLEX·SNULT, 유학·이민, 전문직까지 C-BRIDGE의 모든 시험 교재를 검색하고 필터링하세요.",
+  alternates: { canonical: "/all-books" },
 };
 
 export default function AllBooksPage() {

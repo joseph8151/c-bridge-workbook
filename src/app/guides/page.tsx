@@ -5,6 +5,7 @@ import { guidePosts } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "시험 정보 | C-BRIDGE",
   description: "PTE, CELPIP, OET, EPTA, TOLES, TOPEC 등 시험별 준비 정보를 확인하세요.",
+  alternates: { canonical: "/guides" },
 };
 
 export default function GuidesPage() {

@@ -8,10 +8,10 @@ const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기", "선택 안 
 const volumeOptions = ["200P", "300P"];
 
 const questions = [
-  "어떤 시험을 준비하시나요?",
-  "목표 점수 또는 목표 등급은 무엇인가요?",
-  "집중적으로 공부하고 싶은 영역은 무엇인가요?",
-  "원하는 교재 분량은 무엇인가요?",
+  "어떤 시험을 준비하고 있나요?",
+  "목표 점수 또는 등급은?",
+  "집중하고 싶은 영역은?",
+  "원하는 교재 분량은?",
 ];
 
 export default function FinderWizard() {
@@ -84,13 +84,19 @@ export default function FinderWizard() {
   }
 
   return (
-    <div className="border p-8 md:p-10" style={{ borderColor: "var(--color-line)" }}>
-      <p className="text-xs font-bold tracking-[0.16em] text-ink/40">
-        STEP {step} / {totalSteps}
+    <div className="border p-8 md:p-10" style={{ borderColor: "var(--color-border)" }}>
+      <div className="h-[2px] w-full" style={{ background: "var(--color-border)" }}>
+        <div
+          className="h-full transition-[width] duration-500"
+          style={{ width: `${(step / totalSteps) * 100}%`, background: "var(--color-bronze)" }}
+        />
+      </div>
+      <p className="mt-4 text-xs font-medium tracking-[0.16em]" style={{ color: "var(--color-muted)" }}>
+        STEP {String(step).padStart(2, "0")} / {String(totalSteps).padStart(2, "0")}
       </p>
       <h2
         className="mt-3 break-keep font-serif text-xl font-bold leading-snug md:text-2xl"
-        style={{ color: "var(--color-inkstrong)" }}
+        style={{ color: "var(--color-ink)" }}
       >
         {questions[step - 1]}
       </h2>

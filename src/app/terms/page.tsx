@@ -39,7 +39,7 @@ export default function TermsPage() {
           <section>
             <h2 className="font-serif text-lg font-bold text-ink">4. 문의</h2>
             <p className="mt-2">
-              본 약관에 대한 문의는 {siteConfig.email} 또는 {siteConfig.phone}로 연락 바랍니다.
+              본 약관에 대한 문의는 {siteConfig.phone}로 연락 바랍니다.
             </p>
           </section>
         </div>

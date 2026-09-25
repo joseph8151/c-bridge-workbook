@@ -4,7 +4,6 @@ export const siteConfig = {
   tagline: "BUILD THE SCORE. CROSS THE BRIDGE.",
   taglineKo: "시험은 다르지만, 제대로 준비하는 방법은 같습니다.",
   phone: "010-7343-0536",
-  email: "hello@c-bridge.com",
   formspreeEndpoint: "https://formspree.io/f/xeajdzrz",
   hours: "평일 10:00 - 18:00 (KST) · 주말·공휴일 포함",
   weekendNotice: "상담은 주말·공휴일에도 받습니다.",
@@ -13,21 +12,21 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "시험 찾기", href: "/exams" },
-  { label: "교재 추천", href: "/recommend" },
-  { label: "가격 안내", href: "/pricing" },
-  { label: "무료자료", href: "/resources" },
-  { label: "시험 정보", href: "/guides" },
-  { label: "상담", href: "/consultation" },
+  { label: "EXAMS", href: "/exams" },
+  { label: "BOOKS", href: "/all-books" },
+  { label: "COMPARE", href: "/compare" },
+  { label: "HOW IT WORKS", href: "/#method" },
+  { label: "BUSINESS", href: "/business" },
+  { label: "ABOUT", href: "/about" },
 ];
 
 export const footerLinks = {
-  TESTS: [
-    { label: "PTE", href: "/books/pte-academic" },
-    { label: "CELPIP", href: "/books/celpip" },
-    { label: "OET", href: "/oet" },
-    { label: "EPTA", href: "/books/epta" },
-    { label: "시험 찾기", href: "/exams" },
+  SITE: [
+    { label: "EXAMS", href: "/exams" },
+    { label: "BOOKS", href: "/all-books" },
+    { label: "COMPARE", href: "/compare" },
+    { label: "BUSINESS", href: "/business" },
+    { label: "CONSULTATION", href: "/consultation" },
   ],
   LEGAL: [
     { label: "이용약관", href: "/terms" },

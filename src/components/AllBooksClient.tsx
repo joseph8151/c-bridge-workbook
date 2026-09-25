@@ -35,7 +35,7 @@ export default function AllBooksClient() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="시험명을 검색하세요. 예: SJPT, CELPIP, OET"
-          className="w-full rounded-[14px] border border-purple/20 bg-ivory px-4 py-2.5 text-sm text-ink placeholder:text-ink/40 focus:border-purple focus:outline-none"
+          className="w-full rounded border border-purple/20 bg-ivory px-4 py-2.5 text-sm text-ink placeholder:text-ink/40 focus:border-purple focus:outline-none"
         />
 
         <div className="border-b border-purple/10 py-5">
@@ -97,7 +97,7 @@ export default function AllBooksClient() {
             ))}
           </div>
         ) : (
-          <div className="rounded-[20px] border border-purple/15 bg-lavender/20 p-12 text-center">
+          <div className="rounded-md border border-purple/15 bg-lavender/20 p-12 text-center">
             <p className="text-sm text-ink/60">조건에 맞는 시험을 찾지 못했습니다.</p>
           </div>
         )}

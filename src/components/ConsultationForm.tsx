@@ -92,8 +92,11 @@ export default function ConsultationForm() {
       <Field label="이메일" name="email" type="email" required />
 
       <div>
-        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">시험</label>
+        <label htmlFor="cf-test" className="text-xs font-bold tracking-[0.1em] text-ink/60">
+          시험
+        </label>
         <select
+          id="cf-test"
           name="test"
           required
           value={test}
@@ -123,8 +126,8 @@ export default function ConsultationForm() {
       <Field label="목표" name="goal" placeholder="예: 승진 제출용, 고득점" defaultValue={prefillGoal} />
 
       <div>
-        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">약한 영역</label>
-        <div className="mt-3 grid grid-cols-4 gap-2">
+        <span className="text-xs font-bold tracking-[0.1em] text-ink/60">약한 영역</span>
+        <div role="radiogroup" aria-label="약한 영역" className="mt-3 grid grid-cols-4 gap-2">
           {weakAreaOptions.map((w) => (
             <label
               key={w}
@@ -144,8 +147,8 @@ export default function ConsultationForm() {
       </div>
 
       <div>
-        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">분량</label>
-        <div className="mt-3 grid grid-cols-2 gap-2">
+        <span className="text-xs font-bold tracking-[0.1em] text-ink/60">분량</span>
+        <div role="radiogroup" aria-label="분량" className="mt-3 grid grid-cols-2 gap-2">
           {volumeOptions.map((v, i) => (
             <label
               key={v}
@@ -159,8 +162,11 @@ export default function ConsultationForm() {
       </div>
 
       <div>
-        <label className="text-xs font-bold tracking-[0.1em] text-ink/60">메시지</label>
+        <label htmlFor="cf-message" className="text-xs font-bold tracking-[0.1em] text-ink/60">
+          메시지
+        </label>
         <textarea
+          id="cf-message"
           name="message"
           rows={4}
           className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
@@ -205,10 +211,14 @@ function Field({
   placeholder?: string;
   defaultValue?: string;
 }) {
+  const id = `cf-${name}`;
   return (
     <div>
-      <label className="text-xs font-bold tracking-[0.1em] text-ink/60">{label}</label>
+      <label htmlFor={id} className="text-xs font-bold tracking-[0.1em] text-ink/60">
+        {label}
+      </label>
       <input
+        id={id}
         name={name}
         type={type}
         required={required}

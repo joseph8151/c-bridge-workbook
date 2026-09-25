@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Container from "@/components/Container";
 import { compareEntries, getCompareBySlug } from "@/lib/compareData";
 
 export function generateStaticParams() {
@@ -15,9 +16,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCompareBySlug(slug);
   if (!c) return {};
+  const title = `${c.testA} vs ${c.testB} | C-BRIDGE`;
   return {
-    title: `${c.testA} vs ${c.testB} | C-BRIDGE`,
+    title,
     description: c.summary,
+    alternates: { canonical: `/compare/${slug}` },
+    openGraph: { title, description: c.summary, url: `/compare/${slug}` },
+    twitter: { card: "summary", title, description: c.summary },
   };
 }
 
@@ -30,21 +35,40 @@ export default async function ComparePage({
   const c = getCompareBySlug(slug);
   if (!c) notFound();
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "시험 비교", item: "https://www.c-bridge.uk/compare" },
+      { "@type": "ListItem", position: 2, name: `${c.testA} vs ${c.testB}`, item: `https://www.c-bridge.uk/compare/${slug}` },
+    ],
+  };
+
   return (
     <>
-      <section className="bg-paper py-16 md:py-24">
-        <div className="mx-auto max-w-[900px] px-5 md:px-10">
-          <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
-            시험 비교
-          </p>
-          <h1
-            className="mt-5 break-keep font-serif text-3xl font-bold leading-[1.3] md:text-4xl"
-            style={{ color: "var(--color-inkstrong)" }}
-          >
-            {c.testA} vs {c.testB}, 어떤 시험이 나에게 맞을까요?
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
+      <section className="py-16 md:py-24" style={{ background: "var(--color-paper)" }}>
+        <Container className="max-w-[900px]">
+          <p className="eyebrow">EXAM COMPARISON</p>
+          <div className="mt-6 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+            <span className="font-serif text-[42px] font-bold leading-none tracking-[-0.01em] md:text-[64px]" style={{ color: "var(--color-ink)" }}>
+              {c.testA}
+            </span>
+            <span className="font-serif text-xl italic" style={{ color: "var(--color-bronze)" }}>
+              vs
+            </span>
+            <span className="font-serif text-[42px] font-bold leading-none tracking-[-0.01em] md:text-[64px]" style={{ color: "var(--color-ink)" }}>
+              {c.testB}
+            </span>
+          </div>
+          <h1 className="mt-6 break-keep text-lg font-medium leading-snug md:text-xl" style={{ color: "var(--color-ink)" }}>
+            어떤 시험이 나에게 맞을까요?
           </h1>
-          <p className="mt-5 max-w-2xl break-keep text-base leading-relaxed text-ink/70">{c.summary}</p>
-        </div>
+          <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            {c.summary}
+          </p>
+        </Container>
       </section>
 
       <section className="bg-ivory py-14 md:py-20">
