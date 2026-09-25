@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 
 const steps = [
@@ -23,8 +24,18 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-ivory py-16 md:py-20" data-reveal>
-      <div className="mx-auto max-w-[1200px] px-5 md:px-10">
+    <section className="relative overflow-hidden py-16 md:py-20" data-reveal>
+      <Image
+        src="/images/process-cards.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover"
+        aria-hidden
+      />
+      <div className="absolute inset-0" style={{ background: "var(--color-paper)", opacity: 0.88 }} />
+
+      <div className="relative mx-auto max-w-[1200px] px-5 md:px-10">
         <div className="grid gap-10 border-t pt-10 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
           {steps.map((s) => (
             <div key={s.no}>
