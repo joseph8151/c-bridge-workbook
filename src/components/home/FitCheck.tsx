@@ -12,13 +12,17 @@ const notFits = [
 
 export default function FitCheck() {
   return (
-    <section className="py-16 md:py-24" style={{ background: "var(--color-pistachio-tint)" }} data-reveal>
+    <section
+      className="border-t py-20 md:py-24"
+      style={{ borderColor: "var(--color-line)", background: "var(--color-pistachio-tint)" }}
+      data-reveal
+    >
       <div className="mx-auto max-w-[1000px] px-5 md:px-10">
         <div
           className="grid border sm:grid-cols-2"
           style={{ borderColor: "var(--color-pistachio)" }}
         >
-          <div className="border-b p-8 sm:border-b-0 sm:border-r" style={{ borderColor: "var(--color-pistachio)" }}>
+          <div className="border-b p-10 sm:border-b-0 sm:border-r" style={{ borderColor: "var(--color-pistachio)" }}>
             <p className="font-serif text-xl font-black md:text-2xl" style={{ color: "var(--color-rust)" }}>
               이런 때 맞습니다
             </p>
@@ -30,7 +34,7 @@ export default function FitCheck() {
               ))}
             </ul>
           </div>
-          <div className="p-8">
+          <div className="p-10">
             <p className="font-serif text-xl font-black text-ink/40 md:text-2xl">이런 때는 아닙니다</p>
             <ul className="mt-5 space-y-2.5">
               {notFits.map((line) => (

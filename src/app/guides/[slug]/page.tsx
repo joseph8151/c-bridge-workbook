@@ -38,7 +38,7 @@ export default async function GuidePostPage({
         </Link>
 
         <h1
-          className="mt-6 break-keep font-serif text-3xl font-black leading-tight md:text-4xl"
+          className="mt-6 break-keep font-serif text-4xl font-black leading-tight md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           {post.title}

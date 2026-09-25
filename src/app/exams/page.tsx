@@ -80,7 +80,7 @@ export default function ExamsPage() {
             시험 찾기
           </p>
           <h1
-            className="mt-5 break-keep font-serif text-3xl font-black leading-[1.3] md:text-4xl"
+            className="mt-5 break-keep font-serif text-4xl font-black leading-[1.3] md:text-5xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
             갈 나라와 직군이 다르면 시험이 다릅니다.

@@ -3,7 +3,7 @@ import { tierMeta, tierOrder } from "@/lib/products";
 
 export default function PriceLine() {
   return (
-    <section className="bg-paper py-14 md:py-20" data-reveal>
+    <section className="border-t bg-paper py-20 md:py-24" style={{ borderColor: "var(--color-line)" }} data-reveal>
       <div className="mx-auto max-w-[900px] px-5 text-center md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           가격
@@ -18,11 +18,11 @@ export default function PriceLine() {
             return (
               <div
                 key={tier}
-                className={`p-8 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+                className={`p-10 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
                 style={{ borderColor: "var(--color-line)" }}
               >
                 <p
-                  className="font-serif text-5xl font-black leading-none"
+                  className="font-serif text-[56px] font-black leading-none"
                   style={{ color: "var(--color-inkstrong)" }}
                 >
                   {m.label}

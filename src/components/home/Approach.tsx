@@ -6,7 +6,7 @@ const items = [
 
 export default function Approach() {
   return (
-    <section className="bg-paper py-24 md:py-32" data-reveal>
+    <section className="border-t bg-paper py-20 md:py-24" style={{ borderColor: "var(--color-line)" }} data-reveal>
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           한 권에 들어가는 것
@@ -18,7 +18,7 @@ export default function Approach() {
           {items.map((item, i) => (
             <div
               key={item.label}
-              className={`p-8 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+              className={`p-10 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
               style={{ borderColor: "var(--color-line)" }}
             >
               <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-rust)" }}>

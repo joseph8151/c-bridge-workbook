@@ -41,7 +41,7 @@ export default function AboutPage() {
             About C-BRIDGE
           </p>
           <h1
-            className="mt-5 max-w-2xl break-keep font-serif text-3xl font-black leading-[1.3] sm:text-4xl md:text-5xl"
+            className="mt-5 max-w-2xl break-keep font-serif text-4xl font-black leading-[1.3] sm:text-5xl md:text-6xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
             직군과 나라가 다르면 같은 영어가 아닙니다.

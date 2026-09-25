@@ -42,7 +42,7 @@ export default function RecommendPage() {
           교재 추천
         </p>
         <h1
-          className="mt-5 break-keep font-serif text-2xl font-black leading-[1.4] md:text-3xl"
+          className="mt-5 break-keep font-serif text-3xl font-black leading-[1.4] md:text-4xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           교재는 시험명보다 약한 과제에 맞춥니다.

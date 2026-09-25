@@ -64,7 +64,7 @@ export default async function TestDetailPage({
               {group.navLabel}
             </p>
             <h1
-              className="mt-3 break-keep font-serif text-3xl font-black leading-tight md:text-4xl"
+              className="mt-3 break-keep font-serif text-4xl font-black leading-tight md:text-5xl"
               style={{ color: "var(--color-inkstrong)" }}
             >
               {test.name} 완성 대비

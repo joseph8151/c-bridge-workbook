@@ -8,7 +8,7 @@ const notes = [
 
 export default function ExamNotes() {
   return (
-    <section className="bg-ivory py-16 md:py-20" data-reveal>
+    <section className="border-t bg-ivory py-20 md:py-24" style={{ borderColor: "var(--color-line)" }} data-reveal>
       <div className="mx-auto max-w-[900px] px-5 md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           시험 정보

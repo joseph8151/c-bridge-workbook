@@ -15,15 +15,12 @@ export default function Footer() {
             <p className="font-serif text-3xl font-black tracking-tight md:text-4xl">
               {siteConfig.brandName}
             </p>
-            <p className="mt-3 text-xs font-bold tracking-[0.18em]" style={{ color: "var(--color-rust)" }}>
-              {siteConfig.tagline}
-            </p>
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-paper/70">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper/70">
               {siteConfig.brandSub}
             </p>
             <Link
               href="/consultation"
-              className="btn-primary mt-6 inline-block rounded-sm px-5 py-2.5 text-xs font-bold tracking-[0.1em]"
+              className="btn-primary mt-6 rounded-sm px-6 text-xs font-bold"
             >
               상담
             </Link>

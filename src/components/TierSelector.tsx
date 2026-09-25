@@ -136,7 +136,7 @@ export default function TierSelector({ test }: { test: Test }) {
                 {test.name} · {target} · {meta.name}
                 {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
               </p>
-              <p className="mt-1 font-serif text-3xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-1 font-serif text-4xl font-black" style={{ color: "var(--color-inkstrong)" }}>
                 {getTierPrice(tier).toLocaleString()}원
               </p>
             </div>

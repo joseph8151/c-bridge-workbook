@@ -26,7 +26,7 @@ export default function PricingPage() {
           가격 안내
         </p>
         <h1
-          className="mx-auto mt-5 break-keep font-serif text-3xl font-black leading-[1.35] md:text-4xl"
+          className="mx-auto mt-5 break-keep font-serif text-4xl font-black leading-[1.35] md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           직군이 달라도 페이지 가격은 같습니다.
@@ -43,13 +43,13 @@ export default function PricingPage() {
             return (
               <div
                 key={t}
-                className={`p-8 text-left ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+                className={`p-10 text-left ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
                 style={{ borderColor: "var(--color-line)" }}
               >
-                <span className="whitespace-nowrap font-serif text-4xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+                <span className="whitespace-nowrap font-serif text-[40px] font-black" style={{ color: "var(--color-inkstrong)" }}>
                   {meta.pages}페이지
                 </span>
-                <span className="mt-1 block font-serif text-2xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
+                <span className="mt-1 block font-serif text-[32px] font-bold" style={{ color: "var(--color-inkstrong)" }}>
                   {meta.price.toLocaleString()}원
                 </span>
                 <p className="mt-3 text-sm leading-relaxed text-ink/60">{tierDescriptions[t]}</p>

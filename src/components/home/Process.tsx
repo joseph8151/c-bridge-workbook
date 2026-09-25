@@ -24,7 +24,11 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-20" data-reveal>
+    <section
+      className="relative overflow-hidden border-t py-20 md:py-24"
+      style={{ borderColor: "var(--color-line)" }}
+      data-reveal
+    >
       <Image
         src="/images/process-cards.jpg"
         alt=""
@@ -33,7 +37,7 @@ export default function Process() {
         className="object-cover"
         aria-hidden
       />
-      <div className="absolute inset-0" style={{ background: "var(--color-paper)", opacity: 0.88 }} />
+      <div className="absolute inset-0" style={{ background: "var(--color-paper)", opacity: 0.82 }} />
 
       <div className="relative mx-auto max-w-[1200px] px-5 md:px-10">
         <div
@@ -43,7 +47,7 @@ export default function Process() {
           {steps.map((s, i) => (
             <div
               key={s.no}
-              className={`p-8 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+              className={`p-10 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
               style={{ borderColor: "var(--color-line)" }}
             >
               <span className="font-serif text-6xl font-black leading-none md:text-7xl" style={{ color: "var(--color-rust)" }}>

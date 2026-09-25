@@ -6,55 +6,52 @@ export default function HomeHero() {
   return (
     <section className="w-full bg-paper">
       <div
-        className="mx-auto grid w-full max-w-[1400px] gap-10 border p-8 md:grid-cols-[1.3fr_1fr] md:items-center md:gap-12 md:p-12"
+        className="mx-auto max-w-[1400px] border"
         style={{ borderColor: "var(--color-line)" }}
       >
-        <div>
-          <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
-            C-BRIDGE
-          </p>
-          <h1
-            className="hero-fade-up mt-6 break-keep font-serif text-[9vw] font-black leading-[1.15] md:text-[3.4vw] lg:text-[52px]"
-            style={{ color: "var(--color-inkstrong)" }}
-          >
-            직군과 나라가 다르면
-            <br />
-            같은 영어가 아닙니다.
-          </h1>
-          <p className="mt-4 break-keep text-base font-semibold text-ink/60 md:text-lg">
-            문제 · 해설 · 모의. 200페이지 또는 300페이지.
-          </p>
-          <Link
-            href="/consultation"
-            className="btn-primary hero-fade-up mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
-            style={{ animationDelay: "80ms" }}
-          >
-            상담
-          </Link>
-          <p className="mt-4 text-sm text-ink/45">{siteConfig.weekendNotice}</p>
-        </div>
+        <div className="grid md:min-h-[82vh] md:grid-cols-[1.3fr_1fr]">
+          <div className="flex flex-col justify-center px-6 py-14 sm:px-10 md:px-14 md:py-16 lg:px-16">
+            <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+              C-BRIDGE
+            </p>
+            <h1
+              className="hero-fade-up mt-6 break-keep font-serif text-[48px] font-black leading-[1.1] md:text-[56px] lg:text-[64px]"
+              style={{ color: "var(--color-inkstrong)" }}
+            >
+              직군과 나라가 다르면
+              <br />
+              같은 영어가 아닙니다.
+            </h1>
+            <p className="mt-6 max-w-md break-keep text-base leading-relaxed md:text-[17px]" style={{ color: "var(--color-inkstrong)", opacity: 0.75 }}>
+              문제 · 해설 · 모의. 200페이지 또는 300페이지.
+            </p>
+            <Link
+              href="/consultation"
+              className="btn-primary hero-fade-up mt-10 rounded-sm px-8 text-sm font-bold"
+              style={{ animationDelay: "80ms" }}
+            >
+              상담
+            </Link>
+            <p className="mt-5 text-sm" style={{ color: "var(--color-inkstrong)", opacity: 0.55 }}>
+              {siteConfig.weekendNotice}
+            </p>
+          </div>
 
-        <div
-          className="hero-scale-in hidden flex-col gap-5 border-l pl-10 md:flex"
-          style={{ borderColor: "var(--color-line)" }}
-        >
-          <div className="relative aspect-[4/3] w-full overflow-hidden">
+          <div
+            className="hero-fade-up relative hidden min-h-[420px] border-t md:block md:min-h-0 md:border-l md:border-t-0"
+            style={{ borderColor: "var(--color-line)", animationDelay: "80ms" }}
+          >
             <Image
               src="/images/hero-mark.jpg"
               alt="C-BRIDGE 브랜드 마크"
               fill
-              sizes="(max-width: 768px) 0px, 420px"
+              sizes="(max-width: 768px) 0px, 45vw"
               className="object-cover"
+              priority
             />
-          </div>
-          <div className="max-w-[240px]">
-            <p className="text-[11px] font-bold tracking-[0.16em] text-ink/40">{siteConfig.tagline}</p>
-            <p className="mt-3 break-keep text-sm leading-relaxed text-ink/60">{siteConfig.taglineKo}</p>
           </div>
         </div>
       </div>
-
-      <div className="mt-px border-b" style={{ borderColor: "var(--color-line)" }} />
     </section>
   );
 }

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+import { Source_Serif_4, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RevealInit from "@/components/RevealInit";
 
-const display = Manrope({
+const display = Source_Serif_4({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["600", "700", "900"],
 });
 
 const body = Inter({

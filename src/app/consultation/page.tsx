@@ -25,7 +25,7 @@ export default function ConsultationPage() {
           상담
         </p>
         <h1
-          className="mt-4 break-keep font-serif text-3xl font-black leading-tight md:text-4xl"
+          className="mt-4 break-keep font-serif text-4xl font-black leading-tight md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           나에게 맞는 교재를 찾아드립니다.
@@ -41,7 +41,7 @@ export default function ConsultationPage() {
           className="grid border-x border-b lg:grid-cols-[1fr_1.4fr]"
           style={{ borderColor: "var(--color-line)" }}
         >
-          <div className="border-b p-8 lg:border-b-0 lg:border-r" style={{ borderColor: "var(--color-line)" }}>
+          <div className="border-b p-10 lg:border-b-0 lg:border-r" style={{ borderColor: "var(--color-line)" }}>
             <div className="img-fade relative aspect-[4/3] w-full overflow-hidden">
               <Image
                 src="/images/book-desk.jpg"
