@@ -37,6 +37,9 @@ export default function ConsultationPage() {
             <p className="mt-4 text-sm leading-relaxed text-ink/60">
               목표와 현재 수준에 맞춰 필요한 구성을 안내해드립니다.
             </p>
+            <p className="mt-2 text-sm leading-relaxed text-ink/60">
+              구성이 정해지면 파일로 드립니다.
+            </p>
           </div>
 
           <div className="mt-10 space-y-5 border-t pt-8" style={{ borderColor: "var(--color-line)" }}>

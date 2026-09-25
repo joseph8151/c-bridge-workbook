@@ -35,6 +35,7 @@ export default function PriceLine() {
         </div>
 
         <p className="mt-8 text-sm text-ink/50">페이지 수에 따라 구성이 달라집니다.</p>
+        <p className="mt-1 text-sm text-ink/50">구성이 정해지면 파일로 드립니다.</p>
 
         <div className="card-hover mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-line)" }}>
           <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>

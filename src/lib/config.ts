@@ -29,19 +29,8 @@ export const footerLinks = {
     { label: "EPTA", href: "/books/epta" },
     { label: "시험 찾기", href: "/exams" },
   ],
-  SHOP: [
-    { label: "가격 안내", href: "/pricing" },
-    { label: "교재 추천", href: "/recommend" },
-  ],
-  SUPPORT: [
-    { label: "무료자료", href: "/resources" },
-    { label: "시험 준비 가이드", href: "/guides" },
-    { label: "FAQ", href: "/faq" },
-    { label: "상담", href: "/consultation" },
-  ],
-  COMPANY: [
-    { label: "About", href: "/about" },
-    { label: "Terms", href: "/terms" },
-    { label: "Privacy", href: "/privacy" },
+  LEGAL: [
+    { label: "이용약관", href: "/terms" },
+    { label: "개인정보", href: "/privacy" },
   ],
 };

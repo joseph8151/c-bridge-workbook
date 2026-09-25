@@ -7,6 +7,12 @@ const tierDescriptions: Record<Tier, string> = {
   PREMIUM: "전 영역 + 전 영역 모의 1회 + 시험 직전 16쪽 + 구성 상담 1회 수정.",
 };
 
+const faqItems = [
+  { q: "100페이지는 없나요", a: "200과 300만 있습니다." },
+  { q: "샘플을 전부 받을 수 있나요", a: "미리보기만 있습니다. 본량은 상담 후입니다." },
+  { q: "주말에도 되나요", a: "주말·공휴일에도 상담을 받습니다." },
+];
+
 export const metadata: Metadata = {
   title: "가격 안내 | C-BRIDGE",
   description: "C-BRIDGE 시험 대비 패키지 200P·300P 구성과 가격을 확인하세요.",
@@ -45,6 +51,18 @@ export default function PricingPage() {
         </div>
 
         <p className="mt-8 text-sm text-ink/60">포함: 문제, 해설, 모의.</p>
+        <p className="mt-1 text-sm text-ink/60">구성이 정해지면 파일로 드립니다.</p>
+
+        <div className="mx-auto mt-14 max-w-xl text-left">
+          {faqItems.map((item) => (
+            <div key={item.q} className="border-t py-5" style={{ borderColor: "var(--color-line)" }}>
+              <p className="text-sm font-bold" style={{ color: "var(--color-inkstrong)" }}>
+                {item.q}
+              </p>
+              <p className="mt-1.5 text-sm text-ink/60">{item.a}</p>
+            </div>
+          ))}
+        </div>
 
         <div className="card-hover mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-line)" }}>
           <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>

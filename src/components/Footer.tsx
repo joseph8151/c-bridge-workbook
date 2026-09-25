@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer style={{ background: "var(--color-inkstrong)", color: "var(--color-paper)" }}>
       <div className="mx-auto max-w-[1440px] px-5 py-12 md:px-10 md:py-14">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_repeat(4,1fr)]">
+        <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
           <div>
             <p className="font-serif text-3xl font-black tracking-tight md:text-4xl">
               {siteConfig.brandName}
