@@ -20,7 +20,7 @@ const body = Inter({
 const siteUrl = "https://www.c-bridge.uk";
 const ogTitle = "C-BRIDGE | 성인 어학시험 전문 문제집";
 const ogDescription =
-  "TOEIC·OPIc·PTE·IELTS·SJPT·CELPIP·OET·EPTA 등 성인 어학시험 전문 문제집과 실전 대비 자료";
+  "직군과 나라마다 다른 시험을 정확히 준비하는 성인 어학시험 전문 문제집과 실전 대비 자료";
 
 // 네이버 웹 노출용 주요 키워드 — 검색 유입이 많은 시험명·목적 키워드를 우선순위로 배치
 const mainKeywords = [
@@ -44,7 +44,7 @@ const mainKeywords = [
 export const metadata: Metadata = {
   title: ogTitle,
   description:
-    "TOEIC, OPIc, SJPT, TOEFL, IELTS, PTE부터 전문직 시험까지. 취업·이직·승진·유학·이민을 위한 성인 어학시험 전문 문제집과 실전 대비 자료를 C-BRIDGE에서 만나보세요.",
+    "직군과 나라가 다르면 같은 영어가 아닙니다. 취업·이직·승진·유학·이민을 위한 성인 어학시험 전문 문제집과 실전 대비 자료를 C-BRIDGE에서 만나보세요.",
   keywords: mainKeywords,
   metadataBase: new URL(siteUrl),
   alternates: {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: ogTitle,
-    description: "취업·승진·유학을 위한 성인 어학시험 전문 문제집",
+    description: "직군과 나라마다 다른 시험, 정확하게 준비하는 성인 어학시험 전문 문제집",
     images: ["/og-image.jpg"],
   },
 };

@@ -117,6 +117,18 @@ export const guidePosts: GuidePost[] = [
     ],
   },
   {
+    slug: "celpip-listening-numbers-maps",
+    title: "CELPIP 듣기, 숫자와 지도",
+    category: "CELPIP",
+    excerpt: "Listening to Problem Solving은 숫자·길찾기 정보를 놓치면 그대로 오답으로 이어집니다.",
+    readTime: "4 min read",
+    content: [
+      "CELPIP Listening의 Problem Solving 파트는 전화번호, 가격, 시간처럼 숫자 정보와 길찾기·장소 설명이 함께 나오는 경우가 많습니다. 전체 맥락을 이해해도 숫자 하나, 방향 하나를 놓치면 오답으로 이어집니다.",
+      "이 유형은 어휘력보다 정보를 받아 적는 속도와 순서가 중요합니다. 들으면서 핵심 숫자·위치 정보만 짧게 메모하는 연습이 필요합니다.",
+      "실전 모의고사로 같은 호흡의 문제를 반복해서 풀어보면, 정보가 나오는 타이밍을 예측하는 감각이 생깁니다.",
+    ],
+  },
+  {
     slug: "oet-writing-speaking-by-profession",
     title: "OET는 직군마다 쓰기·말하기가 갈립니다",
     category: "OET",

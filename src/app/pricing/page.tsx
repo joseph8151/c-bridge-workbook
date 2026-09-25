@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { tierMeta, tierOrder } from "@/lib/products";
+import { tierMeta, tierOrder, Tier } from "@/lib/products";
+
+const tierDescriptions: Record<Tier, string> = {
+  COMPLETE: "약한 영역 집중. 문제·해설·영역 세트.",
+  PREMIUM: "전 영역 + 전 영역 모의 1회 + 시험 직전 16쪽 + 구성 상담 1회 수정.",
+};
 
 export const metadata: Metadata = {
   title: "가격 안내 | C-BRIDGE",
@@ -21,21 +26,19 @@ export default function PricingPage() {
           직군이 달라도 페이지 가격은 같습니다.
         </h1>
 
-        <div className="mx-auto mt-12 max-w-sm">
+        <div className="mx-auto mt-12 grid max-w-xl gap-5 sm:grid-cols-2">
           {tierOrder.map((t) => {
             const meta = tierMeta[t];
             return (
-              <div
-                key={t}
-                className="flex items-baseline justify-between border-t py-6"
-                style={{ borderColor: "var(--color-line)" }}
-              >
-                <span className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <div key={t} className="border p-8 text-left" style={{ borderColor: "var(--color-line)" }}>
+                <span className="whitespace-nowrap font-serif text-4xl font-black" style={{ color: "var(--color-inkstrong)" }}>
                   {meta.pages}페이지
                 </span>
-                <span className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+                <span className="mt-1 block font-serif text-2xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
                   {meta.price.toLocaleString()}원
                 </span>
+                <p className="mt-3 text-sm leading-relaxed text-ink/60">{tierDescriptions[t]}</p>
+                <div className="mt-5 h-[2px] w-10" style={{ background: "var(--color-pistachio)" }} />
               </div>
             );
           })}
@@ -43,13 +46,22 @@ export default function PricingPage() {
 
         <p className="mt-8 text-sm text-ink/60">포함: 문제, 해설, 모의.</p>
 
-        <Link
-          href="/consultation"
-          className="mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
-          style={{ background: "var(--color-rust)" }}
-        >
-          구성 상담
-        </Link>
+        <div className="mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-line)" }}>
+          <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+            상담
+          </p>
+          <div className="mt-2 h-[2px] w-8" style={{ background: "var(--color-pistachio)" }} />
+          <p className="mt-4 text-sm leading-relaxed text-ink/60">
+            목표와 현재 수준에 맞춰 필요한 구성을 안내해드립니다.
+          </p>
+          <Link
+            href="/consultation"
+            className="mt-6 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em] text-paper transition-all hover:brightness-90"
+            style={{ background: "var(--color-rust)" }}
+          >
+            상담
+          </Link>
+        </div>
       </div>
     </section>
   );

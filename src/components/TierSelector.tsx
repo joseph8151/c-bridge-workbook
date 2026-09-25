@@ -60,11 +60,12 @@ export default function TierSelector({ test }: { test: Test }) {
             <button
               key={opt}
               onClick={() => setTarget(opt)}
-              className={`rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors ${
+              className="rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors"
+              style={
                 target === opt
-                  ? "border-purple bg-purple text-ivory"
-                  : "border-purple/20 text-ink/70 hover:border-purple/40"
-              }`}
+                  ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
+                  : { borderColor: "var(--color-line)", color: "rgba(42,46,36,0.7)" }
+              }
             >
               {opt}
             </button>
@@ -80,23 +81,27 @@ export default function TierSelector({ test }: { test: Test }) {
               <button
                 key={t}
                 onClick={() => setTier(t)}
-                className={`relative rounded-[18px] border px-4 py-5 text-center transition-colors ${
+                className="relative border px-4 py-5 text-center transition-colors"
+                style={
                   active
-                    ? "border-purple bg-purple text-ivory shadow-[0_12px_28px_-16px_rgba(69,53,101,0.5)]"
-                    : "border-purple/15 bg-white/60 text-ink hover:border-purple/30"
-                }`}
+                    ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
+                    : { borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }
+                }
               >
                 {m.badge && (
                   <span
-                    className={`absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full px-2.5 py-0.5 text-[9px] font-bold tracking-[0.06em] ${
-                      active ? "bg-gold text-plum" : "bg-lavender text-purple"
-                    }`}
+                    className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 text-[9px] font-bold tracking-[0.06em]"
+                    style={
+                      active
+                        ? { background: "var(--color-paper)", color: "var(--color-rust)" }
+                        : { background: "var(--color-pistachio-tint)", color: "var(--color-rust)" }
+                    }
                   >
                     {m.badge}
                   </span>
                 )}
                 <p className="font-serif text-xl font-black">{m.label}</p>
-                <p className={`mt-1 text-xs font-bold ${active ? "text-lavender" : "text-ink/50"}`}>
+                <p className="mt-1 text-xs font-bold" style={active ? { color: "var(--color-paper)" } : { color: "rgba(42,46,36,0.5)" }}>
                   {getTierPrice(t).toLocaleString()}원
                 </p>
               </button>
@@ -112,25 +117,26 @@ export default function TierSelector({ test }: { test: Test }) {
             <button
               key={f.id}
               onClick={() => toggleFocus(f.id)}
-              className={`rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors ${
+              className="rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors"
+              style={
                 focus.has(f.id)
-                  ? "border-purple bg-purple text-ivory"
-                  : "border-purple/20 text-ink/70 hover:border-purple/40"
-              }`}
+                  ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
+                  : { borderColor: "var(--color-line)", color: "rgba(42,46,36,0.7)" }
+              }
             >
               {f.label}
             </button>
           ))}
         </div>
 
-        <div className="mt-8 rounded-[20px] border border-purple/10 bg-white/60 p-7">
+        <div className="mt-8 border p-7" style={{ borderColor: "var(--color-line)" }}>
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
-              <p className="text-xs font-bold tracking-[0.14em] text-purple/60">
+              <p className="text-xs font-bold tracking-[0.14em]" style={{ color: "var(--color-rust)" }}>
                 {test.name} · {target} · {meta.name}
                 {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
               </p>
-              <p className="mt-1 font-serif text-3xl font-black text-ink">
+              <p className="mt-1 font-serif text-3xl font-black" style={{ color: "var(--color-inkstrong)" }}>
                 {getTierPrice(tier).toLocaleString()}원
               </p>
             </div>
@@ -144,13 +150,13 @@ export default function TierSelector({ test }: { test: Test }) {
           <div className="mt-6 grid gap-2 sm:grid-cols-2">
             {includes.map((item) => (
               <div key={item} className="flex gap-2.5 text-sm text-ink/70">
-                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-purple/50" />
+                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full" style={{ background: "var(--color-rust)" }} />
                 {item}
               </div>
             ))}
             {bonus.flatMap((b) => b.items).map((item) => (
               <div key={item} className="flex gap-2.5 text-sm text-ink/70">
-                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
+                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full" style={{ background: "var(--color-pistachio)" }} />
                 {item}
               </div>
             ))}
@@ -158,9 +164,10 @@ export default function TierSelector({ test }: { test: Test }) {
 
           <Link
             href={`/consultation?${consultQuery}`}
-            className="mt-7 flex items-center justify-center rounded-[14px] bg-purple py-3.5 text-sm font-bold tracking-[0.04em] text-ivory transition-all hover:-translate-y-0.5 hover:bg-plum"
+            className="mt-7 flex items-center justify-center rounded-sm py-3.5 text-sm font-bold tracking-[0.08em] transition-all duration-300 hover:brightness-90"
+            style={{ background: "var(--color-rust)", color: "var(--color-paper)" }}
           >
-            {meta.ctaLabel}
+            상담
           </Link>
           <p className="mt-3 text-center text-xs text-ink/40">
             같은 분량이라도 목표와 집중 영역에 따라 문제 구성을 다르게 선택할 수 있습니다.

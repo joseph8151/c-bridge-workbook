@@ -45,7 +45,7 @@ export default function ResourcesPage() {
             className="mt-5 break-keep font-serif text-3xl font-black leading-[1.35] md:text-4xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
-            샘플로 호흡을 보고, 본량은 상담에서 정합니다.
+            샘플로 호흡을 보고, 분량은 상담에서 정합니다.
           </h1>
         </div>
       </section>

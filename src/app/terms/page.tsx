@@ -10,8 +10,8 @@ export default function TermsPage() {
   return (
     <section className="bg-ivory py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-5 md:px-10">
-        <p className="text-xs font-bold tracking-[0.24em] text-purple">Company</p>
-        <h1 className="mt-4 font-serif text-4xl font-black text-ink">Terms of Service</h1>
+        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>Company</p>
+        <h1 className="mt-4 font-serif text-4xl font-black" style={{ color: "var(--color-inkstrong)" }}>Terms of Service</h1>
         <div className="mt-10 space-y-8 text-sm leading-relaxed text-ink/70">
           <section>
             <h2 className="font-serif text-lg font-bold text-ink">1. 목적</h2>

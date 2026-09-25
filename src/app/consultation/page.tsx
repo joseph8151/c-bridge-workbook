@@ -29,6 +29,16 @@ export default function ConsultationPage() {
             결제 확인 후 문제집을 전달해드립니다.
           </p>
 
+          <div className="mt-8 max-w-sm border p-7" style={{ borderColor: "var(--color-line)" }}>
+            <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+              상담
+            </p>
+            <div className="mt-2 h-[2px] w-8" style={{ background: "var(--color-pistachio)" }} />
+            <p className="mt-4 text-sm leading-relaxed text-ink/60">
+              목표와 현재 수준에 맞춰 필요한 구성을 안내해드립니다.
+            </p>
+          </div>
+
           <div className="mt-10 space-y-5 border-t pt-8" style={{ borderColor: "var(--color-line)" }}>
             <Step no="01" title="교재 확인" desc="관심있는 시험과 교재를 확인합니다" />
             <Step no="02" title="상담 신청" desc="상담 폼을 작성합니다" />

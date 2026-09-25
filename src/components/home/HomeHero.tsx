@@ -4,7 +4,7 @@ import BridgeMark from "@/components/BridgeMark";
 
 export default function HomeHero() {
   return (
-    <section className="flex min-h-[56vh] w-full items-center bg-paper md:min-h-[62vh]">
+    <section className="flex min-h-[85vh] w-full items-center bg-paper">
       <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-5 py-14 md:grid-cols-[1.3fr_1fr] md:items-center md:gap-12 md:px-10 md:py-0">
         <div>
           <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
@@ -32,8 +32,8 @@ export default function HomeHero() {
         </div>
 
         <div className="hidden flex-col items-center justify-center gap-6 border-l md:flex" style={{ borderColor: "var(--color-line)" }}>
-          <BridgeMark size={220} />
-          <div className="max-w-[220px] text-center">
+          <BridgeMark size={280} />
+          <div className="max-w-[240px] text-center">
             <p className="text-[11px] font-bold tracking-[0.16em] text-ink/40">{siteConfig.tagline}</p>
             <p className="mt-3 break-keep text-sm leading-relaxed text-ink/60">{siteConfig.taglineKo}</p>
           </div>
