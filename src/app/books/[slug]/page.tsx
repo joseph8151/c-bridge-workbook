@@ -4,6 +4,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import TierSelector from "@/components/TierSelector";
 import TestCard from "@/components/TestCard";
+import BookPreview from "@/components/BookPreview";
+import WhoTakesTest from "@/components/WhoTakesTest";
+import WhyCBridge from "@/components/WhyCBridge";
 import { tests, getTestBySlug, groupMeta } from "@/lib/tests";
 import { getWhoFor, getSamplePreview } from "@/lib/productDetail";
 import { getGuidesForTest } from "@/lib/guides";
@@ -135,6 +138,8 @@ export default async function TestDetailPage({
         </div>
       </section>
 
+      <BookPreview testName={test.name} />
+
       <section className="bg-ivory py-16 md:py-20">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
           <TierSelector test={test} />
@@ -199,6 +204,8 @@ export default async function TestDetailPage({
           </ul>
         </div>
       </section>
+
+      <WhoTakesTest test={test} />
 
       <section className="py-16 md:py-20" style={{ background: "var(--color-inkstrong)" }}>
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
@@ -273,6 +280,8 @@ export default async function TestDetailPage({
           </div>
         </section>
       )}
+
+      <WhyCBridge />
 
       <section className="bg-paper py-14 md:py-16">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-5 px-5 text-center md:px-10">

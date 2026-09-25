@@ -25,13 +25,18 @@ export default function HomeHero() {
             <p className="mt-6 max-w-md break-keep text-base leading-relaxed md:text-[17px]" style={{ color: "var(--color-inkstrong)", opacity: 0.75 }}>
               문제 · 해설 · 모의. 200페이지 또는 300페이지.
             </p>
-            <Link
-              href="/consultation"
-              className="btn-primary hero-fade-up mt-10 rounded-sm px-8 text-sm font-bold"
-              style={{ animationDelay: "80ms" }}
-            >
-              상담
-            </Link>
+            <div className="hero-fade-up mt-10 flex flex-wrap gap-4" style={{ animationDelay: "80ms" }}>
+              <Link href="/finder" className="btn-primary rounded-sm px-7 text-sm font-bold">
+                내 시험 교재 찾기
+              </Link>
+              <Link
+                href="/consultation"
+                className="inline-flex min-h-[48px] items-center border px-7 text-sm font-bold"
+                style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
+              >
+                교재 상담하기
+              </Link>
+            </div>
             <p className="mt-5 text-sm" style={{ color: "var(--color-inkstrong)", opacity: 0.55 }}>
               {siteConfig.weekendNotice}
             </p>

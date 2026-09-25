@@ -71,7 +71,22 @@ export interface SamplePreview {
   detail: string;
 }
 
+// 시험별로 문항 성격이 명확히 다른 경우, 공통 bonusTypes 분기보다 우선 적용되는 예시.
+// OET Writing은 일반 에세이가 아니라 case notes 기반 전문 서신(referral / discharge / transfer letter)입니다.
+const SAMPLE_PREVIEW_OVERRIDES: Record<string, SamplePreview> = {
+  oet: {
+    label: "SAMPLE · CASE NOTES → LETTER",
+    prompt:
+      "OET 예상과제: 아래 case notes를 참고해 담당 의사에게 보내는 Referral Letter를 작성하세요. (자체 제작 예시)",
+    detail:
+      "고득점 답안 구조: 환자 기본 정보와 내원 사유를 먼저 밝히고, 관련 병력·검사 소견을 시간 순으로 정리한 뒤, 현재 상태와 요청 사항(의뢰 목적)을 명확한 한 문장으로 마무리합니다. 일반 에세이가 아닌 전문 서신 형식이므로 격식체 표현과 의료 어휘 사용이 채점의 핵심입니다.",
+  },
+};
+
 export function getSamplePreview(test: Test): SamplePreview {
+  if (SAMPLE_PREVIEW_OVERRIDES[test.slug]) {
+    return SAMPLE_PREVIEW_OVERRIDES[test.slug];
+  }
   if (test.bonusTypes.includes("SPEAKING")) {
     return {
       label: "SAMPLE · SPEAKING",

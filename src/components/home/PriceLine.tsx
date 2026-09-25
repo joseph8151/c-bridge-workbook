@@ -52,9 +52,18 @@ export default function PriceLine() {
           <p className="mt-4 text-sm leading-relaxed text-ink/60">
             목표와 현재 수준에 맞춰 필요한 구성을 안내해드립니다.
           </p>
-          <Link href="/consultation" className="btn-primary mt-6 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]">
-            상담
-          </Link>
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <Link href="/finder" className="btn-primary rounded-sm px-7 text-sm font-bold">
+              내 시험 교재 찾기
+            </Link>
+            <Link
+              href="/consultation"
+              className="inline-flex min-h-[48px] items-center border px-7 text-sm font-bold"
+              style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
+            >
+              교재 상담하기
+            </Link>
+          </div>
         </div>
       </div>
     </section>
