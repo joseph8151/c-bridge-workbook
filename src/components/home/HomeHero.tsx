@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/config";
-import BridgeMark from "@/components/BridgeMark";
 
 export default function HomeHero() {
   return (
@@ -32,11 +32,19 @@ export default function HomeHero() {
         </div>
 
         <div
-          className="hero-scale-in hidden flex-col items-center justify-center gap-6 border-l md:flex"
+          className="hero-scale-in hidden flex-col gap-5 border-l pl-10 md:flex"
           style={{ borderColor: "var(--color-line)" }}
         >
-          <BridgeMark size={280} />
-          <div className="max-w-[240px] text-center">
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <Image
+              src="/images/hero-mark.jpg"
+              alt="C-BRIDGE 브랜드 마크"
+              fill
+              sizes="(max-width: 768px) 0px, 420px"
+              className="object-cover"
+            />
+          </div>
+          <div className="max-w-[240px]">
             <p className="text-[11px] font-bold tracking-[0.16em] text-ink/40">{siteConfig.tagline}</p>
             <p className="mt-3 break-keep text-sm leading-relaxed text-ink/60">{siteConfig.taglineKo}</p>
           </div>

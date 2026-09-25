@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "@/lib/config";
 import BridgeMark from "@/components/BridgeMark";
@@ -28,10 +29,26 @@ export default function Header() {
     >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10">
         <Link href="/" className="flex items-center gap-2.5">
-          <BridgeMark size={44} className="md:h-12 md:w-12" />
+          <BridgeMark size={44} className="hidden md:block" />
+          <Image
+            src="/images/mobile-mark.jpg"
+            alt=""
+            width={32}
+            height={32}
+            className="rounded-full object-cover md:hidden"
+            style={{ border: "1px solid var(--color-line)" }}
+          />
           <span className="text-xs font-bold tracking-[0.14em] text-[var(--color-inkstrong)] md:text-sm">
             C-BRIDGE
           </span>
+          <Image
+            src="/images/logo-mark.jpg"
+            alt=""
+            width={26}
+            height={38}
+            className="hidden object-cover md:block"
+            style={{ border: "1px solid rgba(42,46,36,0.35)" }}
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
