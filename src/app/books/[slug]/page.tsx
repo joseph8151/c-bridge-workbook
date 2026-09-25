@@ -248,21 +248,21 @@ export default async function TestDetailPage({
       <BookPreview testName={test.name} />
 
       {/* 08 · Study Method */}
-      <section className="py-16 md:py-20" style={{ background: "var(--color-navy)" }}>
+      <section className="border-t py-16 md:py-20" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}>
         <Container>
           <p className="eyebrow" style={{ color: "var(--color-bronze)" }}>
             STUDY METHOD
           </p>
-          <h2 className="mt-2 font-serif text-2xl font-bold" style={{ color: "var(--color-navy-text)" }}>
+          <h2 className="mt-2 font-serif text-2xl font-bold" style={{ color: "var(--color-ink)" }}>
             {test.name} 학습 방법
           </h2>
-          <div className="mt-8 grid gap-8 border-t pt-8 sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: "rgba(245,243,238,0.14)" }}>
+          <div className="mt-8 grid gap-8 border-t pt-8 sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: "var(--color-border)" }}>
             {tips.map((tip, i) => (
               <div key={tip}>
                 <span className="font-serif text-2xl font-bold" style={{ color: "var(--color-bronze)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "rgba(245,243,238,0.8)" }}>
+                <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
                   {tip}
                 </p>
               </div>

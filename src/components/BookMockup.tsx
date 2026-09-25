@@ -7,16 +7,22 @@ export interface BookMockupItem {
 // 겹쳐 쌓인 책 표지를 얇은 border · 미세한 회전 · 약한 그림자만으로 표현합니다.
 export default function BookMockup({ books }: { books: BookMockupItem[] }) {
   return (
-    <div className="relative mx-auto h-[420px] w-full max-w-[340px]" aria-hidden>
+    <div
+      className="relative mx-auto w-full"
+      style={{ height: "clamp(300px, 82vw, 420px)", maxWidth: "clamp(260px, 88vw, 340px)" }}
+      aria-hidden
+    >
       {books.map((b, i) => {
-        const offset = i * 34;
+        const offset = `calc(${i} * clamp(22px, 8vw, 34px))`;
         const rotate = (i - (books.length - 1) / 2) * 2.5;
         return (
           <div
             key={b.title}
-            className="absolute flex h-[340px] w-[240px] flex-col justify-between border p-6"
+            className="absolute flex flex-col justify-between border p-5 min-[430px]:p-6"
             style={{
-              left: `${offset}px`,
+              width: "clamp(180px, 62vw, 240px)",
+              height: "clamp(250px, 84vw, 340px)",
+              left: offset,
               top: `${i * 10}px`,
               background: "var(--color-paper)",
               borderColor: "var(--color-border)",

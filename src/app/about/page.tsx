@@ -89,12 +89,12 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 md:py-20" style={{ background: "var(--color-navy)" }}>
+      <section className="border-t py-16 md:py-20" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}>
         <Container className="flex flex-col items-center gap-6 text-center">
-          <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-navy-text)" }}>
+          <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-ink)" }}>
             BUILD THE SCORE. CROSS THE BRIDGE.
           </p>
-          <Link href="/consultation" className="btn-primary-inverse px-7 text-sm font-medium">
+          <Link href="/consultation" className="btn-primary px-7 text-sm font-medium">
             상담
           </Link>
         </Container>

@@ -63,11 +63,11 @@ export default function BookPreview({ testName }: { testName?: string }) {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-4">
-          <Link href={consultHref} className="btn-primary px-7 text-sm font-medium">
+        <div className="mt-10 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:gap-4">
+          <Link href={consultHref} className="btn-primary justify-center px-7 text-sm font-medium">
             교재 구성 상담하기
           </Link>
-          <Link href="/exams" className="btn-secondary px-7 text-sm font-medium">
+          <Link href="/exams" className="btn-secondary justify-center px-7 text-sm font-medium">
             내 시험 교재 보기
           </Link>
         </div>

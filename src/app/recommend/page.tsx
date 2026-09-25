@@ -38,7 +38,7 @@ const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기"];
 export default function RecommendPage() {
   return (
     <section className="bg-paper py-16 md:py-24">
-      <div className="mx-auto max-w-[1100px] px-5 md:px-10">
+      <div className="mx-auto max-w-[1100px] px-4 min-[361px]:px-5 md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           교재 추천
         </p>
@@ -55,7 +55,7 @@ export default function RecommendPage() {
           className="grid border-x border-b md:grid-cols-[0.8fr_1fr]"
           style={{ borderColor: "var(--color-line)" }}
         >
-          <div className="border-b p-8 md:border-b-0 md:border-r" style={{ borderColor: "var(--color-line)" }}>
+          <div className="border-b p-6 min-[361px]:p-8 md:border-b-0 md:border-r" style={{ borderColor: "var(--color-line)" }}>
             <p className="text-xs font-bold tracking-[0.1em] text-ink/50">미리보기</p>
             <p className="mt-4 break-keep text-sm leading-relaxed text-ink/70">
               시험을 고르고 약한 영역을 알려주시면, 그 시험·목표에 맞춘 구성으로 상담을 이어갑니다.
@@ -66,7 +66,7 @@ export default function RecommendPage() {
             </div>
           </div>
 
-          <form action="/consultation" method="get" className="space-y-6 p-8">
+          <form action="/consultation" method="get" className="space-y-6 p-6 min-[361px]:p-8">
             <RecommendTestSelect groups={testGroups} />
 
             <div>

@@ -41,7 +41,7 @@ export default function ConsultationPage() {
         <div className="mt-10 border-t" style={{ borderColor: "var(--color-border)" }} />
 
         <div className="grid border-x border-b lg:grid-cols-[1fr_1.4fr]" style={{ borderColor: "var(--color-border)" }}>
-          <div className="border-b p-10 lg:border-b-0 lg:border-r" style={{ borderColor: "var(--color-border)" }}>
+          <div className="border-b p-6 min-[361px]:p-8 lg:p-10 lg:border-b-0 lg:border-r" style={{ borderColor: "var(--color-border)" }}>
             <div className="img-fade relative aspect-[4/3] w-full overflow-hidden">
               <Image src="/images/book-desk.jpg" alt="C-BRIDGE 문제집이 놓인 책상" fill sizes="(max-width: 1024px) 100vw, 500px" className="object-cover" />
             </div>
@@ -74,7 +74,7 @@ export default function ConsultationPage() {
             </div>
           </div>
 
-          <div className="p-8 md:p-10">
+          <div className="p-6 min-[361px]:p-8 md:p-10">
             <p className="mb-6 text-sm" style={{ color: "var(--color-muted)" }}>
               남겨 주시면 확인 후 회신합니다. 주말·공휴일에도 받습니다.
             </p>

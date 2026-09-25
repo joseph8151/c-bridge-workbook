@@ -19,7 +19,7 @@ const audiences = [
   "Bulk Orders",
 ];
 
-const supportedTests = ["TOEIC", "TOEIC Speaking", "OPIc", "Versant", "SPA", "TEPS", "FLEX", "PTE", "IELTS", "OET", "CELPIP", "기타 기업 요청 시험"];
+const supportedTests = ["Versant", "SPA", "FLEX", "PTE", "IELTS", "OET", "CELPIP", "기타 기업 요청 시험"];
 
 const AUDIENCE_BORDER_CLASSES = [
   "",
@@ -41,28 +41,28 @@ const services = [
 export default function BusinessPage() {
   return (
     <>
-      <section className="py-20 md:py-28" style={{ background: "var(--color-navy)" }}>
+      <section className="py-20 md:py-28" style={{ background: "var(--color-paper)" }}>
         <Container className="max-w-[1000px]">
           <p className="eyebrow" style={{ color: "var(--color-bronze)" }}>
             C—BRIDGE FOR BUSINESS
           </p>
           <h1
             className="mt-5 break-keep font-serif text-4xl font-bold leading-[1.2] md:text-5xl"
-            style={{ color: "var(--color-navy-text)" }}
+            style={{ color: "var(--color-ink)" }}
           >
             기업과 기관을 위한
             <br />
             맞춤형 어학평가 및 시험 대비
           </h1>
-          <p className="mt-6 max-w-xl break-keep text-base leading-relaxed" style={{ color: "rgba(245,243,238,0.75)" }}>
+          <p className="mt-6 max-w-xl break-keep text-base leading-relaxed" style={{ color: "var(--color-muted)" }}>
             임직원 평가, 승진 시험, 해외 파견, 직무별 영어 시험까지. 조직의 목적에 맞는 시험 대비
             자료를 제공합니다.
           </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Link href="/consultation?test=기타" className="btn-primary-inverse px-7 text-sm font-medium">
+          <div className="mt-8 flex w-full flex-col gap-2.5 min-[430px]:w-auto min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:gap-4 md:mt-9">
+            <Link href="/consultation?test=기타" className="btn-primary justify-center px-7 text-sm font-medium">
               기업 문의하기
             </Link>
-            <Link href="/consultation?test=기타" className="btn-secondary-inverse px-7 text-sm font-medium">
+            <Link href="/consultation?test=기타" className="btn-secondary justify-center px-7 text-sm font-medium">
               맞춤 구성 상담
             </Link>
           </div>
@@ -84,7 +84,7 @@ export default function BusinessPage() {
         </Container>
       </section>
 
-      <section className="py-16 md:py-20" style={{ background: "var(--color-navy)" }}>
+      <section className="border-t py-16 md:py-20" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}>
         <Container>
           <p className="eyebrow" style={{ color: "var(--color-bronze)" }}>
             SUPPORTED EXAMS
@@ -94,13 +94,13 @@ export default function BusinessPage() {
               <span
                 key={t}
                 className="border px-4 py-2 text-sm font-medium"
-                style={{ borderColor: "rgba(245,243,238,0.2)", color: "var(--color-navy-text)" }}
+                style={{ borderColor: "var(--color-border)", color: "var(--color-ink)" }}
               >
                 {t}
               </span>
             ))}
           </div>
-          <p className="mt-5 text-sm" style={{ color: "rgba(245,243,238,0.55)" }}>
+          <p className="mt-5 text-sm" style={{ color: "var(--color-muted)" }}>
             목록에 없는 시험도 기업 요청에 따라 구성 가능 여부를 상담을 통해 확인해드립니다.
           </p>
         </Container>
@@ -127,16 +127,16 @@ export default function BusinessPage() {
         </Container>
       </section>
 
-      <section className="py-16 md:py-20" style={{ background: "var(--color-navy)" }}>
+      <section className="border-t py-16 md:py-20" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}>
         <Container className="flex flex-col items-center gap-6 text-center">
-          <p className="max-w-2xl break-keep font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-navy-text)" }}>
+          <p className="max-w-2xl break-keep font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-ink)" }}>
             조직에 맞는 구성을 상담을 통해 안내해드립니다.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/consultation?test=기타" className="btn-primary-inverse px-7 text-sm font-medium">
+          <div className="flex w-full flex-col gap-2.5 min-[430px]:w-auto min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:justify-center min-[430px]:gap-4">
+            <Link href="/consultation?test=기타" className="btn-primary justify-center px-7 text-sm font-medium">
               기업 문의하기
             </Link>
-            <Link href="/consultation?test=기타" className="btn-secondary-inverse px-7 text-sm font-medium">
+            <Link href="/consultation?test=기타" className="btn-secondary justify-center px-7 text-sm font-medium">
               맞춤 구성 상담
             </Link>
           </div>

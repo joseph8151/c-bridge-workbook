@@ -138,22 +138,6 @@ export const compareEntries: CompareEntry[] = [
     ctaTestBSlug: "icao",
   },
   {
-    slug: "toeic-speaking-vs-opic",
-    testA: "TOEIC Speaking",
-    testB: "OPIc",
-    summary: "둘 다 국내 기업 채용·승진에서 활용되는 말하기 평가이지만 진행 방식이 다릅니다.",
-    rows: rows(
-      ["채용·승진 시 말하기 능력 증빙", "정해진 문항에 순서대로 답변, 컴퓨터 녹음", "약 20분", "정해진 문항 유형(사진 묘사, 설명 등)", "0~200점", "TOEIC Speaking을 요구하는 기업", "정해진 문항 유형을 선호하는 응시자"],
-      ["채용·승진 시 말하기 능력 증빙", "사전 설문(Background Survey) 기반 개인화된 문항 구성, 컴퓨터 녹음", "약 40분(오리엔테이션 포함)", "개인 설문 기반 주제(취미, 경험 등) + 롤플레이", "NL~AL 등급", "OPIc을 요구하는 기업", "익숙한 주제로 답변하고 싶은 응시자"],
-    ),
-    whenAFits: ["지원 기업이 TOEIC Speaking 점수를 요구할 때", "정해진 문항 유형으로 예측 가능하게 준비하고 싶을 때"],
-    whenBFits: ["지원 기업이 OPIc 등급을 요구할 때", "설문 기반으로 익숙한 주제를 답변하고 싶을 때"],
-    biggestDifference: "TOEIC Speaking은 모든 응시자가 동일한 문항을 받지만, OPIc은 사전 설문을 기반으로 개인화된 문항을 받는다는 점이 가장 큰 차이입니다.",
-    howToPrepare: "지원하는 기업이 요구하는 시험명을 반드시 먼저 확인해야 합니다.",
-    bookGuide: "C-BRIDGE는 현재 TOEIC Speaking 문제집을 제공하고 있습니다. OPIc 준비가 필요하다면 상담을 통해 방향을 안내해드립니다.",
-    ctaTestASlug: "toeic-speaking",
-  },
-  {
     slug: "sjpt-vs-jpt",
     testA: "SJPT",
     testB: "JPT",

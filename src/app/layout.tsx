@@ -38,7 +38,6 @@ const ogDescription =
 // 네이버 웹 노출용 주요 키워드 — 검색 유입이 많은 시험명·목적 키워드를 우선순위로 배치
 const mainKeywords = [
   "성인 어학시험 문제집",
-  "TOEIC 문제집",
   "TOEFL 문제집",
   "IELTS 문제집",
   "PTE 문제집",

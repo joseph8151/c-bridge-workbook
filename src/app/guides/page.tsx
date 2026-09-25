@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function GuidesPage() {
   return (
     <section className="bg-ivory py-16 md:py-24">
-      <div className="mx-auto max-w-[680px] px-5 md:px-10">
+      <div className="mx-auto max-w-[680px] px-4 min-[361px]:px-5 md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           시험 정보
         </p>

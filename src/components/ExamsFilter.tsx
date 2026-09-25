@@ -56,7 +56,7 @@ export default function ExamsFilter({ groups }: { groups: ExamGroup[] }) {
               {g.items.map((item) => (
                 <div
                   key={item.name}
-                  className="border-b border-r p-8"
+                  className="border-b border-r p-6 min-[361px]:p-8"
                   style={{ borderColor: "var(--color-line)" }}
                 >
                   <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>

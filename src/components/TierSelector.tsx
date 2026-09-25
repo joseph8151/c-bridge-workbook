@@ -129,7 +129,7 @@ export default function TierSelector({ test }: { test: Test }) {
           ))}
         </div>
 
-        <div className="mt-8 border p-7" style={{ borderColor: "var(--color-line)" }}>
+        <div className="mt-8 border p-5 min-[361px]:p-7" style={{ borderColor: "var(--color-line)" }}>
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
               <p className="text-xs font-bold tracking-[0.14em]" style={{ color: "var(--color-rust)" }}>

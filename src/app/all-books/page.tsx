@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AllBooksPage() {
   return (
     <section className="bg-ivory py-14 md:py-20">
-      <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+      <div className="mx-auto max-w-[1440px] px-4 min-[361px]:px-5 md:px-10">
         <SectionHeading eyebrow="전체 시험" title="내 교재 찾기" />
         <div className="mt-12">
           <Suspense fallback={null}>

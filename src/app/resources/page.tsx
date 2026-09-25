@@ -11,7 +11,7 @@ export default function ResourcesPage() {
   return (
     <>
       <section className="bg-ivory py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-5 md:px-10">
+        <div className="mx-auto max-w-[1200px] px-4 min-[361px]:px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
             무료자료
           </p>

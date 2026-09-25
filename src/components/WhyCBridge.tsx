@@ -23,7 +23,7 @@ export default function WhyCBridge() {
           {cards.map((c, i) => (
             <div
               key={c.no}
-              className={`p-8 md:p-10 ${i > 0 ? "border-t" : ""} ${i < 2 ? "sm:border-t-0" : ""} ${
+              className={`p-6 min-[361px]:p-8 md:p-10 ${i > 0 ? "border-t" : ""} ${i < 2 ? "sm:border-t-0" : ""} ${
                 i % 2 === 1 ? "sm:border-l" : ""
               }`}
               style={{ borderColor: "var(--color-border)" }}

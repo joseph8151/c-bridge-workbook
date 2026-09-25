@@ -97,7 +97,7 @@ export default function AllBooksClient() {
             ))}
           </div>
         ) : (
-          <div className="rounded-md border border-purple/15 bg-lavender/20 p-12 text-center">
+          <div className="rounded-md border border-purple/15 bg-lavender/20 p-8 min-[361px]:p-12 text-center">
             <p className="text-sm text-ink/60">조건에 맞는 시험을 찾지 못했습니다.</p>
           </div>
         )}

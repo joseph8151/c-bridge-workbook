@@ -2,18 +2,24 @@
 
 :root {
   /* ============================================================
-     C-BRIDGE editorial design tokens — warm ivory paper,
-     deep ink text, muted bronze accent, dark navy sections.
+     C-BRIDGE gelato pistachio palette — warm cream paper,
+     deep ink text, pistachio-green accent. Only the footer is
+     allowed to be a deep, solid pistachio surface; every other
+     section is light.
      ============================================================ */
-  --color-paper: #f5f3ee; /* primary background */
-  --color-paper-dark: #eeeae2; /* secondary background — used sparingly */
-  --color-ink: #111820; /* text primary, near-black */
-  --color-muted: #62656a; /* text secondary */
-  --color-bronze: #9a7651; /* accent — labels, dividers, CTA */
-  --color-bronze-dark: #7e6142; /* accent hover state */
-  --color-border: rgba(17, 24, 32, 0.12); /* 1px hairline */
-  --color-navy: #101820; /* dark section background */
-  --color-navy-text: #f5f3ee; /* dark section text */
+  --color-paper: #f6f0e4; /* background */
+  --color-paper-dark: #e7eedc; /* 면 강조 */
+  --color-ink: #2a2e24; /* 제목 */
+  --color-muted: #5c574e; /* 보조 텍스트 */
+  --color-bronze: #6f8458; /* 버튼 · 푸터 · 악센트 */
+  --color-bronze-dark: #5c7048; /* 호버 */
+  --color-border: #c9b8a4; /* 선 */
+  --color-pistachio: #b7c89a;
+  --color-disabled: #c5d0b0;
+
+  /* 다크 섹션은 전부 크림으로 통일 — footer만 예외로 별도 처리 */
+  --color-navy: var(--color-paper);
+  --color-navy-text: var(--color-ink);
 
   --space-xs: 8px;
   --space-sm: 16px;
@@ -28,6 +34,20 @@
 
   --container-width: 1280px;
 
+  /* ---- Mobile responsive system ----
+     Shared tokens so every section/card/button uses the same grid instead
+     of ad hoc spacing per component. Gutter matches Container's px-5 (20px);
+     the 360px-and-under fallback drops to 16px via the media query below. */
+  --mobile-gutter: 20px;
+  --content-max-width: 1280px;
+  --section-space-mobile: 72px;
+  --section-space-desktop: 128px;
+  --section-space-mobile-lg: 88px;
+  --card-radius: 4px;
+  --card-padding-mobile: 20px;
+  --card-padding-desktop: 32px;
+  --card-gap-mobile: 12px;
+
   /* ---- Legacy token names kept for compatibility; all repointed
      at the tokens above so every existing component recolors
      automatically without a sitewide rename. ---- */
@@ -40,8 +60,7 @@
   --color-gold: var(--color-bronze);
 
   /* Category-group accent colors previously varied by subject (purple/maroon/
-     red/blue/gold/teal). An editorial system uses one restrained accent
-     everywhere, so all six now resolve to the same bronze. */
+     red/blue/gold/teal). One restrained pistachio accent everywhere instead. */
   --color-employment: var(--color-bronze);
   --color-japanese: var(--color-bronze);
   --color-chinese: var(--color-bronze);
@@ -52,7 +71,6 @@
   --color-inkstrong: var(--color-ink);
   --color-rust: var(--color-bronze);
   --color-line: var(--color-border);
-  --color-pistachio: var(--color-bronze);
   --color-pistachio-tint: var(--color-paper-dark);
   --color-nutbrown: var(--color-bronze-dark);
 }
@@ -131,7 +149,7 @@ html {
   transition: background-color 220ms var(--ease-pub);
 }
 .card-hover:hover {
-  background-color: rgba(17, 24, 32, 0.025);
+  background-color: rgba(42, 46, 36, 0.03);
 }
 
 /* Arrow-slide micro interaction for editorial index rows */
@@ -144,7 +162,7 @@ a:hover .arrow-slide {
   transform: translateX(4px);
 }
 
-/* Primary buttons: dark ink fill, ivory text, minimal radius */
+/* Primary buttons: gelato pistachio fill everywhere */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -153,9 +171,9 @@ a:hover .arrow-slide {
   border-radius: var(--radius-sm);
   font-weight: 500;
   letter-spacing: 0.06em;
-  background: var(--color-ink);
+  background: var(--color-bronze);
   color: var(--color-paper);
-  transition: background-color 280ms var(--ease-pub), transform 150ms var(--ease-pub);
+  transition: background-color 220ms var(--ease-pub), transform 150ms var(--ease-pub);
 }
 .btn-primary:hover {
   background-color: var(--color-bronze-dark);
@@ -164,18 +182,22 @@ a:hover .arrow-slide {
   transform: scale(0.98);
 }
 .btn-primary:focus-visible {
-  outline: 2px solid var(--color-bronze);
+  outline: 1px solid var(--color-bronze);
   outline-offset: 2px;
 }
+.btn-primary:disabled {
+  background: var(--color-disabled);
+  color: var(--color-paper);
+}
 
-/* Secondary buttons: transparent, 1px ink border */
+/* Secondary buttons: pistachio border, ink text, pistachio-tint hover */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 52px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-ink);
+  border: 1px solid var(--color-bronze);
   font-weight: 500;
   letter-spacing: 0.06em;
   color: var(--color-ink);
@@ -183,15 +205,16 @@ a:hover .arrow-slide {
   transition: background-color 220ms var(--ease-pub);
 }
 .btn-secondary:hover {
-  background-color: rgba(17, 24, 32, 0.04);
+  background-color: var(--color-paper-dark);
 }
 .btn-secondary:focus-visible {
-  outline: 2px solid var(--color-bronze);
+  outline: 1px solid var(--color-bronze);
   outline-offset: 2px;
 }
 
-/* Dark-section variant of the buttons above */
-.btn-primary-inverse {
+/* Footer-only variant: the footer is the one surface allowed to stay a
+   deep, solid pistachio, so its buttons invert to a cream fill instead. */
+.btn-on-footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -200,11 +223,34 @@ a:hover .arrow-slide {
   font-weight: 500;
   letter-spacing: 0.06em;
   background: var(--color-paper);
-  color: var(--color-navy);
+  color: var(--color-bronze);
+  transition: background-color 220ms var(--ease-pub);
+}
+.btn-on-footer:hover {
+  background-color: var(--color-paper-dark);
+}
+.btn-on-footer:focus-visible {
+  outline: 1px solid var(--color-paper);
+  outline-offset: 2px;
+}
+
+/* Deprecated aliases kept so any remaining reference still resolves to a
+   readable, on-brand button rather than breaking. Prefer .btn-primary /
+   .btn-secondary (light sections) or .btn-on-footer (the footer). */
+.btn-primary-inverse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  background: var(--color-bronze);
+  color: var(--color-paper);
   transition: background-color 220ms var(--ease-pub);
 }
 .btn-primary-inverse:hover {
-  background-color: var(--color-paper-dark);
+  background-color: var(--color-bronze-dark);
 }
 .btn-secondary-inverse {
   display: inline-flex;
@@ -212,15 +258,15 @@ a:hover .arrow-slide {
   justify-content: center;
   min-height: 52px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(245, 243, 238, 0.35);
+  border: 1px solid var(--color-bronze);
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: var(--color-navy-text);
+  color: var(--color-ink);
   background: transparent;
   transition: background-color 220ms var(--ease-pub);
 }
 .btn-secondary-inverse:hover {
-  background-color: rgba(245, 243, 238, 0.08);
+  background-color: var(--color-paper-dark);
 }
 
 /* Tab content swap: fade only, no slide */
@@ -278,11 +324,88 @@ a:hover .arrow-slide {
   }
 }
 
+html,
+body {
+  /* Safety net: a stray 100vw/fixed-width child should never create a
+     horizontal scrollbar on mobile. Real overflow sources are still fixed
+     at the source (see .container / --mobile-gutter usage); this only
+     guards against ones that slip through. */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-size: 16.5px;
   line-height: 1.7;
+}
+
+@media (max-width: 360px) {
+  :root {
+    --mobile-gutter: 16px;
+  }
+}
+
+/* ============================================================
+   Mobile responsive system — shared utilities so every section,
+   card and CTA row is built on the same spacing/type scale instead
+   of one-off Tailwind values per component.
+   ============================================================ */
+
+/* Section vertical rhythm: 72px mobile -> 128px desktop, one scale everywhere */
+.section-space {
+  padding-top: var(--section-space-mobile);
+  padding-bottom: var(--section-space-mobile);
+}
+.section-space-lg {
+  padding-top: var(--section-space-mobile-lg);
+  padding-bottom: var(--section-space-mobile-lg);
+}
+@media (min-width: 1024px) {
+  .section-space {
+    padding-top: var(--section-space-desktop);
+    padding-bottom: var(--section-space-desktop);
+  }
+  .section-space-lg {
+    padding-top: var(--section-space-desktop);
+    padding-bottom: var(--section-space-desktop);
+  }
+}
+
+/* Card shell: same radius/padding/border everywhere a boxed card is used */
+.card-shell {
+  border-radius: var(--card-radius);
+  border: 1px solid var(--color-border);
+  padding: var(--card-padding-mobile);
+}
+@media (min-width: 768px) {
+  .card-shell {
+    padding: var(--card-padding-desktop);
+  }
+}
+
+/* 2x2 stat grid on mobile, 4-across from tablet up */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+@media (min-width: 640px) {
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Horizontal-scroll tab/table row that never overflows the viewport itself */
+.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.scroll-row::-webkit-scrollbar {
+  display: none;
 }
 
 /* Korean line-breaking: never split a word mid-character (e.g. "취업부터" -> "취업부" / "터") */

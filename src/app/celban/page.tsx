@@ -10,7 +10,7 @@ export default function CelbanPage() {
   return (
     <section className="bg-paper py-20 md:py-32">
       <div
-        className="mx-auto max-w-[900px] border p-10 text-center md:p-16"
+        className="mx-auto max-w-[900px] border p-6 text-center min-[361px]:p-10 md:p-16"
         style={{ borderColor: "var(--color-line)" }}
       >
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>

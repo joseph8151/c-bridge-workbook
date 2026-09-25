@@ -52,12 +52,12 @@ export default function CategoryPageTemplate({
         </Container>
       </section>
 
-      <section className="py-14 md:py-16" style={{ background: "var(--color-navy)" }}>
+      <section className="border-t py-14 md:py-16" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}>
         <Container className="flex flex-col items-center gap-5 text-center">
-          <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-navy-text)" }}>
+          <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-ink)" }}>
             어떤 시험을 준비해야 할지 아직 모르겠다면?
           </p>
-          <Link href="/recommend" className="btn-primary-inverse px-7 text-sm font-medium">
+          <Link href="/recommend" className="btn-primary px-7 text-sm font-medium">
             무료 교재 추천 받기
           </Link>
         </Container>

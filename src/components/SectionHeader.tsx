@@ -16,7 +16,7 @@ export default function SectionHeader({
       <p className="eyebrow">{eyebrow}</p>
       {title && (
         <h2
-          className="mt-4 break-keep font-serif text-[32px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[44px]"
+          className="mt-3 break-keep font-serif text-[28px] font-bold leading-[1.2] tracking-[-0.01em] md:mt-4 md:text-[44px]"
           style={{ color: "var(--color-ink)" }}
         >
           {title}
@@ -24,7 +24,7 @@ export default function SectionHeader({
       )}
       {description && (
         <p
-          className={`mt-4 max-w-[650px] break-keep text-base leading-relaxed md:text-lg ${align === "center" ? "mx-auto" : ""}`}
+          className={`mt-3 max-w-[650px] break-keep text-[15px] leading-[1.6] md:mt-4 md:text-lg md:leading-relaxed ${align === "center" ? "mx-auto" : "text-left"}`}
           style={{ color: "var(--color-muted)" }}
         >
           {description}

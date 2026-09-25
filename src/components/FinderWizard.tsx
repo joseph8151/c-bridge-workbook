@@ -39,7 +39,7 @@ export default function FinderWizard() {
     }${weakArea && weakArea !== "선택 안 함" ? `&weakArea=${encodeURIComponent(weakArea)}` : ""}`;
 
     return (
-      <div className="border p-8 text-center md:p-12" style={{ borderColor: "var(--color-line)" }}>
+      <div className="border p-6 text-center min-[361px]:p-8 md:p-12" style={{ borderColor: "var(--color-line)" }}>
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           결과
         </p>
@@ -52,13 +52,13 @@ export default function FinderWizard() {
           <p>희망 분량: {volume}</p>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Link href={testHref} className="btn-primary rounded-sm px-7 text-sm font-bold">
+        <div className="mt-8 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:justify-center min-[430px]:gap-4">
+          <Link href={testHref} className="btn-primary justify-center rounded-sm px-7 text-sm font-bold">
             {testName} 교재 페이지 보기
           </Link>
           <Link
             href={consultHref}
-            className="inline-flex min-h-[48px] items-center border px-7 text-sm font-medium tracking-[0.06em]"
+            className="inline-flex min-h-[48px] items-center justify-center border px-7 text-sm font-medium tracking-[0.06em]"
             style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
           >
             바로 상담하기
@@ -84,7 +84,7 @@ export default function FinderWizard() {
   }
 
   return (
-    <div className="border p-8 md:p-10" style={{ borderColor: "var(--color-border)" }}>
+    <div className="border p-5 min-[361px]:p-8 md:p-10" style={{ borderColor: "var(--color-border)" }}>
       <div className="h-[2px] w-full" style={{ background: "var(--color-border)" }}>
         <div
           className="h-full transition-[width] duration-500"

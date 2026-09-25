@@ -9,16 +9,16 @@ export default function BookSeries() {
       <Container>
         <SectionHeader eyebrow="THE SERIES" />
 
-        <div className="mt-12 grid border-y sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
+        <div className="mt-10 grid border-y sm:mt-12 sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
           {tierOrder.map((tier, i) => {
             const m = tierMeta[tier];
             return (
               <div
                 key={tier}
-                className={`p-8 md:p-12 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+                className={`p-6 min-[361px]:p-8 md:p-12 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
                 style={{ borderColor: "var(--color-border)" }}
               >
-                <span className="font-serif text-[80px] font-bold leading-none" style={{ color: "var(--color-ink)" }}>
+                <span className="font-serif text-[56px] font-bold leading-none min-[430px]:text-[64px] md:text-[80px]" style={{ color: "var(--color-ink)" }}>
                   {m.pages}
                 </span>
                 <span className="mt-1 block text-xs font-medium tracking-[0.16em]" style={{ color: "var(--color-muted)" }}>
@@ -38,7 +38,7 @@ export default function BookSeries() {
 
                 <Link
                   href={`/pricing`}
-                  className="mt-8 inline-flex text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--color-bronze)]"
+                  className="mt-8 inline-flex min-h-[44px] items-center text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--color-bronze)]"
                   style={{ color: "var(--color-ink)" }}
                 >
                   Explore {m.label} <span className="arrow-slide ml-1.5">→</span>

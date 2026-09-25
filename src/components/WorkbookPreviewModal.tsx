@@ -34,7 +34,7 @@ export default function WorkbookPreviewModal() {
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-5"
+          className="fixed inset-0 z-[60] flex items-center justify-center p-5"
           style={{ background: "rgba(17,24,32,0.7)" }}
           role="dialog"
           aria-modal="true"

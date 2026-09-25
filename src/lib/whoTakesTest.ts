@@ -128,41 +128,11 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     usedIn: "국내 기업의 채용·승진 평가에서 활용됩니다.",
     differenceFromSimilar: "Versant의 자동 채점 방식과 달리 비즈니스 상황, 의견 제시 등 인터뷰형 문항으로 구성됩니다.",
   },
-  toeic: {
-    purpose: "취업과 승진에 활용되는 영어 Listening·Reading 시험입니다.",
-    audience: "취업 준비생, 승진 평가를 준비하는 직장인.",
-    usedIn: "국내 기업의 채용·승진 기준으로 널리 활용됩니다.",
-    differenceFromSimilar: "말하기를 평가하는 TOEIC Speaking과 달리 Listening·Reading만 평가합니다.",
-    duration: "약 2시간",
-    score: "10–990점",
-    sections: ["Listening", "Reading"],
-  },
-  "toeic-speaking": {
-    purpose: "TOEIC의 말하기 영역을 별도로 평가하는 시험입니다.",
-    audience: "채용·승진에서 말하기 평가가 필요한 직장인.",
-    usedIn: "기업 채용·승진 평가에서 활용됩니다.",
-    differenceFromSimilar: "Listening·Reading 중심의 TOEIC과 달리 말하기 문항으로만 구성됩니다.",
-    duration: "약 20분",
-    score: "0–200점",
-    sections: ["Speaking"],
-  },
   duolingo: {
     purpose: "온라인으로 응시하는 컴퓨터 기반 영어시험입니다.",
     audience: "해외 대학 지원자 중 빠른 결과와 온라인 응시를 원하는 지원자.",
     usedIn: "일부 해외 대학의 입학 요건으로 활용됩니다. 인정 여부는 지원 대학 기준으로 확인이 필요합니다.",
     differenceFromSimilar: "지정 고사장에서 치르는 IELTS·TOEFL과 달리 온라인에서 자유롭게 응시합니다.",
-  },
-  "g-telp": {
-    purpose: "취업·편입에 활용되는 영어능력시험입니다.",
-    audience: "취업 준비생, 편입을 준비하는 대학생.",
-    usedIn: "일부 기업 채용, 대학 편입 기준으로 활용됩니다.",
-    differenceFromSimilar: "TOEIC과 달리 문법 영역이 별도로 포함되어 있습니다.",
-  },
-  teps: {
-    purpose: "서울대학교 언어교육원이 개발한 영어능력시험입니다.",
-    audience: "채용·편입을 준비하는 취업 준비생, 대학생.",
-    usedIn: "일부 기업 채용, 대학 편입 기준으로 활용됩니다.",
-    differenceFromSimilar: "TOEIC과 달리 문법·어휘 난이도가 높은 편이며 자료가 상대적으로 적습니다.",
   },
 };
 

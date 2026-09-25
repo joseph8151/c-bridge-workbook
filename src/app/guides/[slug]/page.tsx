@@ -39,7 +39,7 @@ export default async function GuidePostPage({
 
   return (
     <article className="bg-ivory py-16 md:py-24">
-      <div className="mx-auto max-w-[680px] px-5 md:px-10">
+      <div className="mx-auto max-w-[680px] px-4 min-[361px]:px-5 md:px-10">
         <Link href="/guides" className="text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-rust)" }}>
           ← 시험 정보
         </Link>

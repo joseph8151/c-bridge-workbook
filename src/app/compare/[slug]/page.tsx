@@ -51,14 +51,14 @@ export default async function ComparePage({
       <section className="py-16 md:py-24" style={{ background: "var(--color-paper)" }}>
         <Container className="max-w-[900px]">
           <p className="eyebrow">EXAM COMPARISON</p>
-          <div className="mt-6 flex flex-wrap items-baseline gap-x-5 gap-y-2">
-            <span className="font-serif text-[42px] font-bold leading-none tracking-[-0.01em] md:text-[64px]" style={{ color: "var(--color-ink)" }}>
+          <div className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 md:mt-6 md:gap-x-5">
+            <span className="font-serif text-[30px] font-bold leading-none tracking-[-0.01em] min-[430px]:text-[36px] md:text-[64px]" style={{ color: "var(--color-ink)" }}>
               {c.testA}
             </span>
-            <span className="font-serif text-xl italic" style={{ color: "var(--color-bronze)" }}>
+            <span className="font-serif text-lg italic md:text-xl" style={{ color: "var(--color-bronze)" }}>
               vs
             </span>
-            <span className="font-serif text-[42px] font-bold leading-none tracking-[-0.01em] md:text-[64px]" style={{ color: "var(--color-ink)" }}>
+            <span className="font-serif text-[30px] font-bold leading-none tracking-[-0.01em] min-[430px]:text-[36px] md:text-[64px]" style={{ color: "var(--color-ink)" }}>
               {c.testB}
             </span>
           </div>
@@ -72,7 +72,7 @@ export default async function ComparePage({
       </section>
 
       <section className="bg-ivory py-14 md:py-20">
-        <div className="mx-auto max-w-[900px] overflow-x-auto px-5 md:px-10">
+        <div className="mx-auto max-w-[900px] overflow-x-auto px-4 min-[361px]:px-5 md:px-10">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
               <tr>
@@ -115,12 +115,12 @@ export default async function ComparePage({
       </section>
 
       <section className="border-t bg-paper py-16 md:py-20" style={{ borderColor: "var(--color-line)" }}>
-        <div className="mx-auto max-w-[900px] px-5 md:px-10">
+        <div className="mx-auto max-w-[900px] px-4 min-[361px]:px-5 md:px-10">
           <div
             className="grid border sm:grid-cols-2"
             style={{ borderColor: "var(--color-line)" }}
           >
-            <div className="border-b p-8 sm:border-b-0 sm:border-r" style={{ borderColor: "var(--color-line)" }}>
+            <div className="border-b p-6 min-[361px]:p-8 sm:border-b-0 sm:border-r" style={{ borderColor: "var(--color-line)" }}>
               <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {c.testA}가 적합한 경우
               </p>
@@ -132,7 +132,7 @@ export default async function ComparePage({
                 ))}
               </ul>
             </div>
-            <div className="p-8">
+            <div className="p-6 min-[361px]:p-8">
               <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {c.testB}가 적합한 경우
               </p>
@@ -149,7 +149,7 @@ export default async function ComparePage({
       </section>
 
       <section className="bg-ivory py-16 md:py-20">
-        <div className="mx-auto max-w-[680px] px-5 md:px-10">
+        <div className="mx-auto max-w-[680px] px-4 min-[361px]:px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
             가장 큰 차이
           </p>
@@ -194,17 +194,17 @@ export default async function ComparePage({
       </section>
 
       <section className="border-t bg-paper py-14 md:py-16" style={{ borderColor: "var(--color-line)" }}>
-        <div className="mx-auto flex max-w-[900px] flex-col items-center gap-5 px-5 text-center md:px-10">
+        <div className="mx-auto flex max-w-[900px] flex-col items-center gap-5 px-4 min-[361px]:px-5 text-center md:px-10">
           <p className="font-serif text-xl font-bold md:text-2xl" style={{ color: "var(--color-inkstrong)" }}>
             어떤 시험인지 정했다면, 맞는 교재로 시작하세요.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/finder" className="btn-primary rounded-sm px-7 text-sm font-bold">
+          <div className="flex w-full flex-col gap-2.5 min-[430px]:w-auto min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:justify-center min-[430px]:gap-4">
+            <Link href="/finder" className="btn-primary justify-center rounded-sm px-7 text-sm font-bold">
               내 시험 교재 찾기
             </Link>
             <Link
               href="/consultation"
-              className="inline-flex min-h-[48px] items-center border px-7 text-sm font-medium tracking-[0.06em]"
+              className="inline-flex min-h-[48px] items-center justify-center border px-7 text-sm font-medium tracking-[0.06em]"
               style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
             >
               시험 선택 상담하기

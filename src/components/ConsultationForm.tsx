@@ -71,7 +71,7 @@ export default function ConsultationForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-ink/15 bg-paper p-10 text-center">
+      <div className="border border-ink/15 bg-paper p-6 min-[361px]:p-10 text-center">
         <p className="font-serif text-2xl font-bold text-ink">
           상담 신청이 접수되었습니다.
         </p>

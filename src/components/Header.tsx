@@ -20,14 +20,15 @@ export default function Header() {
     <header
       className="sticky top-0 z-50 w-full backdrop-blur transition-[background-color,border-color] duration-300"
       style={{
-        background: scrolled ? "rgba(245,243,238,0.92)" : "rgba(245,243,238,0)",
+        background: scrolled ? "rgba(246,240,228,0.92)" : "rgba(246,240,228,0)",
         borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
       }}
     >
-      <div className="mx-auto flex h-[72px] max-w-[1320px] items-center justify-between px-5 md:h-20 md:px-10">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="C-BRIDGE 홈">
-          <BridgeMark size={36} />
-          <span className="text-sm font-medium tracking-[0.16em]" style={{ color: "var(--color-ink)" }}>
+      <div className="mx-auto flex h-16 max-w-[1320px] items-center justify-between px-4 min-[361px]:px-5 md:h-20 md:px-10">
+        <Link href="/" className="flex shrink-0 items-center gap-2 min-[361px]:gap-2.5" aria-label="C-BRIDGE 홈">
+          <BridgeMark size={30} className="md:hidden" />
+          <BridgeMark size={36} className="hidden md:block" />
+          <span className="text-sm font-medium tracking-[0.14em] min-[361px]:tracking-[0.16em]" style={{ color: "var(--color-ink)" }}>
             C—BRIDGE
           </span>
         </Link>
@@ -53,7 +54,7 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 lg:hidden"
+          className="-mr-2 flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
             className={`h-[1.5px] w-6 transition-transform ${open ? "translate-y-[6.5px] rotate-45" : ""}`}
@@ -72,7 +73,7 @@ export default function Header() {
 
       {open && (
         <div
-          className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t px-5 pb-6 pt-2 lg:hidden"
+          className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t px-4 pb-6 pt-2 min-[361px]:px-5 md:max-h-[calc(100vh-5rem)] lg:hidden"
           style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}
         >
           <nav className="flex flex-col divide-y" style={{ borderColor: "var(--color-border)" }} aria-label="모바일 메뉴">

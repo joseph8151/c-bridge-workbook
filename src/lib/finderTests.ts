@@ -46,11 +46,8 @@ export const finderGroups: FinderGroup[] = [
   {
     label: "취업 · 승진",
     items: [
-      { name: "TOEIC", href: "/books/toeic" },
-      { name: "TOEIC Speaking", href: "/books/toeic-speaking" },
       { name: "Versant", href: "/books/versant" },
       { name: "SPA", href: "/books/spa" },
-      { name: "TEPS", href: "/books/teps" },
     ],
   },
   {

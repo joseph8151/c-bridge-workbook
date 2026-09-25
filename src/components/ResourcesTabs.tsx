@@ -290,16 +290,13 @@ export default function ResourcesTabs() {
 
   return (
     <div className="mt-8 border" style={{ borderColor: "var(--color-line)" }}>
-      <div
-        className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3 border-b px-6 pt-6 md:px-8 md:pt-8"
-        style={{ borderColor: "var(--color-line)" }}
-      >
-        <div className="flex flex-wrap gap-x-8 gap-y-3">
+      <div className="border-b px-4 pt-5 min-[361px]:px-6 md:px-8 md:pt-8" style={{ borderColor: "var(--color-line)" }}>
+        <div className="scroll-row gap-x-6 min-[430px]:gap-x-8">
           {exams.map((exam) => (
             <button
               key={exam}
               onClick={() => setActive(exam)}
-              className="pb-4 font-serif text-2xl font-bold transition-colors md:text-3xl"
+              className="shrink-0 pb-4 font-serif text-xl font-bold transition-colors md:text-3xl"
               style={{
                 color: active === exam ? "var(--color-inkstrong)" : "rgba(42,46,36,0.3)",
                 borderBottom: active === exam ? "2px solid var(--color-pistachio)" : "2px solid transparent",
@@ -310,11 +307,11 @@ export default function ResourcesTabs() {
             </button>
           ))}
         </div>
-        <p className="pb-4 text-sm text-ink/50">전체 파일은 올리지 않습니다.</p>
+        <p className="pb-4 text-xs text-ink/50 md:text-sm">전체 파일은 올리지 않습니다.</p>
       </div>
 
       <div className="grid md:grid-cols-[1fr_1.4fr]">
-        <div className="border-b p-6 md:border-b-0 md:border-r md:p-8" style={{ borderColor: "var(--color-line)" }}>
+        <div className="border-b p-5 min-[361px]:p-6 md:border-b-0 md:border-r md:p-8" style={{ borderColor: "var(--color-line)" }}>
           <div className="img-fade relative aspect-[4/5] w-full overflow-hidden">
             <Image
               src="/images/workbook-open.jpg"
@@ -332,7 +329,7 @@ export default function ResourcesTabs() {
           </p>
         </div>
 
-        <div key={active} className="tab-fade space-y-10 p-6 md:p-8">
+        <div key={active} className="tab-fade space-y-8 p-5 min-[361px]:p-6 md:space-y-10 md:p-8">
           {tab.items.map((item) => (
             <SampleCard key={item.title} item={item} />
           ))}

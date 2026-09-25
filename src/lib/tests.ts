@@ -130,28 +130,6 @@ function snultLang(name: string, id: string) {
 export const tests: Test[] = [
   // ---------------- EMPLOYMENT ----------------
   {
-    id: "toeic",
-    slug: "toeic",
-    name: "TOEIC",
-    group: "EMPLOYMENT",
-    bonusTypes: ["LISTENING", "VOCAB"],
-    tagline: "취업과 승진의 기본 영어시험",
-    description:
-      "취업과 승진에 가장 널리 활용되는 영어시험. Listening과 Reading을 중심으로 파트별 문제와 실전 모의고사를 제공합니다.",
-    badges: ["취준생 추천"],
-  },
-  {
-    id: "toeic-speaking",
-    slug: "toeic-speaking",
-    name: "TOEIC Speaking",
-    group: "EMPLOYMENT",
-    bonusTypes: ["SPEAKING"],
-    tagline: "기업 채용·승진의 말하기 평가",
-    description:
-      "기업 채용과 승진에서 많이 활용되는 영어 말하기 시험. 질문 유형별 답변법과 실전 말하기 연습을 집중적으로 제공합니다.",
-    badges: ["말하기 집중", "직장인 추천"],
-  },
-  {
     id: "versant",
     slug: "versant",
     name: "Versant",
@@ -173,29 +151,6 @@ export const tests: Test[] = [
       "현대차 등 기업이 쓰는 말하기 평가입니다. 비즈니스 상황, 의견 제시, 설명형 문제를 실전 인터뷰 방식으로 연습합니다.",
     badges: ["직장인 추천", "말하기 집중"],
   },
-  {
-    id: "g-telp",
-    slug: "g-telp",
-    name: "G-TELP",
-    group: "EMPLOYMENT",
-    bonusTypes: ["VOCAB"],
-    tagline: "취업·편입 영어능력시험",
-    description:
-      "취업과 편입에 활용되는 영어능력시험. Listening·Grammar·Reading을 유형별로 연습합니다.",
-    badges: ["취준생 추천"],
-  },
-  {
-    id: "teps",
-    slug: "teps",
-    name: "TEPS",
-    group: "EMPLOYMENT",
-    bonusTypes: ["VOCAB"],
-    tagline: "서울대 개발 영어능력시험",
-    description:
-      "기업 채용과 편입에 활용되는 영어시험. Listening·Grammar·Vocabulary·Reading을 연습합니다.",
-    badges: ["자료가 부족한 시험 추천"],
-  },
-
   // ---------------- JAPANESE ----------------
   {
     id: "sjpt",

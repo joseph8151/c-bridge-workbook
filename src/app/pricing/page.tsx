@@ -23,27 +23,27 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <section className="py-20 md:py-28" style={{ background: "var(--color-paper)" }}>
+    <section className="py-14 min-[361px]:py-16 md:py-28" style={{ background: "var(--color-paper)" }}>
       <Container className="max-w-[640px] text-center">
         <p className="eyebrow">THE SERIES</p>
         <h1
-          className="mx-auto mt-5 break-keep font-serif text-4xl font-bold leading-[1.35] md:text-5xl"
+          className="mx-auto mt-4 break-keep font-serif text-[28px] font-bold leading-[1.3] min-[361px]:mt-5 min-[361px]:text-4xl md:text-5xl md:leading-[1.35]"
           style={{ color: "var(--color-ink)" }}
         >
           직군이 달라도 페이지 가격은 같습니다.
         </h1>
 
-        <div className="mt-10 border-t" style={{ borderColor: "var(--color-border)" }} />
+        <div className="mt-8 border-t min-[361px]:mt-10" style={{ borderColor: "var(--color-border)" }} />
 
-        <div className="mx-auto mt-12 grid max-w-xl border sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
+        <div className="mx-auto mt-10 grid max-w-xl border sm:grid-cols-2 md:mt-12" style={{ borderColor: "var(--color-border)" }}>
           {tierOrder.map((t, i) => {
             const meta = tierMeta[t];
             return (
-              <div key={t} className={`p-10 text-left ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`} style={{ borderColor: "var(--color-border)" }}>
-                <span className="whitespace-nowrap font-serif text-[40px] font-bold" style={{ color: "var(--color-ink)" }}>
+              <div key={t} className={`p-6 text-left min-[361px]:p-8 md:p-10 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`} style={{ borderColor: "var(--color-border)" }}>
+                <span className="whitespace-nowrap font-serif text-[32px] font-bold min-[361px]:text-[40px]" style={{ color: "var(--color-ink)" }}>
                   {meta.pages}페이지
                 </span>
-                <span className="mt-1 block font-serif text-[32px] font-bold" style={{ color: "var(--color-bronze)" }}>
+                <span className="mt-1 block font-serif text-[26px] font-bold min-[361px]:text-[32px]" style={{ color: "var(--color-bronze)" }}>
                   ₩{meta.price.toLocaleString()}
                 </span>
                 <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
@@ -61,11 +61,11 @@ export default function PricingPage() {
           구성이 정해지면 파일로 드립니다.
         </p>
 
-        <div className="mx-auto mt-14 max-w-xl text-left">
+        <div className="mx-auto mt-12 max-w-xl text-left md:mt-14">
           <FAQ items={faqItems} />
         </div>
 
-        <div className="mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-border)" }}>
+        <div className="mx-auto mt-8 max-w-sm border p-6 min-[361px]:p-8 md:mt-10" style={{ borderColor: "var(--color-border)" }}>
           <p className="font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
             상담
           </p>

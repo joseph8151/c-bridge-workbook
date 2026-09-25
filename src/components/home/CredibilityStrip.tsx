@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 
-const exams = ["PTE", "IELTS", "CELPIP", "OET", "TOEFL", "EPTA", "TOEIC", "OPIc"];
+const exams = ["PTE", "IELTS", "CELPIP", "OET", "TOEFL", "EPTA"];
 
 // 정적 목록 — 자동 marquee는 넣지 않음(과도한 animation 회피).
 export default function CredibilityStrip() {
