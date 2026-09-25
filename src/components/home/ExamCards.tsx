@@ -15,12 +15,15 @@ export default function ExamCards() {
   return (
     <section className="bg-paper py-14 md:py-20" data-reveal>
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {exams.map((t) => (
+        <div
+          className="grid border-y sm:grid-cols-2 lg:grid-cols-4"
+          style={{ borderColor: "var(--color-line)" }}
+        >
+          {exams.map((t, i) => (
             <Link
               key={t.id}
               href={hrefFor(t)}
-              className="card-hover group flex flex-col justify-between border p-7"
+              className={`card-hover group flex flex-col justify-between p-8 ${i > 0 ? "border-l" : ""} ${i > 1 ? "border-t sm:border-t-0" : ""}`}
               style={{ borderColor: "var(--color-line)" }}
             >
               <div>

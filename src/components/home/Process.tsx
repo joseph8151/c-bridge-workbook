@@ -36,9 +36,16 @@ export default function Process() {
       <div className="absolute inset-0" style={{ background: "var(--color-paper)", opacity: 0.88 }} />
 
       <div className="relative mx-auto max-w-[1200px] px-5 md:px-10">
-        <div className="grid gap-10 border-t pt-10 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
-          {steps.map((s) => (
-            <div key={s.no}>
+        <div
+          className="grid border-y sm:grid-cols-3"
+          style={{ borderColor: "var(--color-line)" }}
+        >
+          {steps.map((s, i) => (
+            <div
+              key={s.no}
+              className={`p-8 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+              style={{ borderColor: "var(--color-line)" }}
+            >
               <span className="font-serif text-6xl font-black leading-none md:text-7xl" style={{ color: "var(--color-rust)" }}>
                 {s.no}
               </span>

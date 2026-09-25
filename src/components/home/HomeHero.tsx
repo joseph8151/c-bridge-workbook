@@ -4,8 +4,11 @@ import { siteConfig } from "@/lib/config";
 
 export default function HomeHero() {
   return (
-    <section className="flex min-h-[85vh] w-full items-center bg-paper">
-      <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-5 py-14 md:grid-cols-[1.3fr_1fr] md:items-center md:gap-12 md:px-10 md:py-0">
+    <section className="w-full bg-paper">
+      <div
+        className="mx-auto grid w-full max-w-[1400px] gap-10 border p-8 md:grid-cols-[1.3fr_1fr] md:items-center md:gap-12 md:p-12"
+        style={{ borderColor: "var(--color-line)" }}
+      >
         <div>
           <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
             C-BRIDGE
@@ -50,6 +53,8 @@ export default function HomeHero() {
           </div>
         </div>
       </div>
+
+      <div className="mt-px border-b" style={{ borderColor: "var(--color-line)" }} />
     </section>
   );
 }

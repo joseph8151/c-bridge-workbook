@@ -32,11 +32,20 @@ export default function PricingPage() {
           직군이 달라도 페이지 가격은 같습니다.
         </h1>
 
-        <div className="mx-auto mt-12 grid max-w-xl gap-5 sm:grid-cols-2">
-          {tierOrder.map((t) => {
+        <div className="mt-10 border-t" style={{ borderColor: "var(--color-line)" }} />
+
+        <div
+          className="mx-auto mt-12 grid max-w-xl border sm:grid-cols-2"
+          style={{ borderColor: "var(--color-line)" }}
+        >
+          {tierOrder.map((t, i) => {
             const meta = tierMeta[t];
             return (
-              <div key={t} className="card-hover border p-8 text-left" style={{ borderColor: "var(--color-line)" }}>
+              <div
+                key={t}
+                className={`p-8 text-left ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+                style={{ borderColor: "var(--color-line)" }}
+              >
                 <span className="whitespace-nowrap font-serif text-4xl font-black" style={{ color: "var(--color-inkstrong)" }}>
                   {meta.pages}페이지
                 </span>
@@ -44,7 +53,6 @@ export default function PricingPage() {
                   {meta.price.toLocaleString()}원
                 </span>
                 <p className="mt-3 text-sm leading-relaxed text-ink/60">{tierDescriptions[t]}</p>
-                <div className="mt-5 h-[2px] w-10" style={{ background: "var(--color-pistachio)" }} />
               </div>
             );
           })}
@@ -53,9 +61,13 @@ export default function PricingPage() {
         <p className="mt-8 text-sm text-ink/60">포함: 문제, 해설, 모의.</p>
         <p className="mt-1 text-sm text-ink/60">구성이 정해지면 파일로 드립니다.</p>
 
-        <div className="mx-auto mt-14 max-w-xl text-left">
-          {faqItems.map((item) => (
-            <div key={item.q} className="border-t py-5" style={{ borderColor: "var(--color-line)" }}>
+        <div className="mx-auto mt-14 max-w-xl border text-left" style={{ borderColor: "var(--color-line)" }}>
+          {faqItems.map((item, i) => (
+            <div
+              key={item.q}
+              className={`p-6 ${i > 0 ? "border-t" : ""}`}
+              style={{ borderColor: "var(--color-line)" }}
+            >
               <p className="text-sm font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {item.q}
               </p>
@@ -64,11 +76,10 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <div className="card-hover mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-line)" }}>
+        <div className="mx-auto mt-10 max-w-sm border p-8" style={{ borderColor: "var(--color-line)" }}>
           <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
             상담
           </p>
-          <div className="mt-2 h-[2px] w-8" style={{ background: "var(--color-pistachio)" }} />
           <p className="mt-4 text-sm leading-relaxed text-ink/60">
             목표와 현재 수준에 맞춰 필요한 구성을 안내해드립니다.
           </p>

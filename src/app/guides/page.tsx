@@ -15,13 +15,14 @@ export default function GuidesPage() {
           시험 정보
         </p>
         <p className="mt-4 text-sm text-ink/50">한 글에 한 지점만 적습니다.</p>
+        <div className="mt-8 border-t" style={{ borderColor: "var(--color-line)" }} />
 
-        <div className="mt-10">
+        <div className="border-x border-b" style={{ borderColor: "var(--color-line)" }}>
           {guidePosts.map((post, i) => (
             <Link
               key={post.slug}
               href={`/guides/${post.slug}`}
-              className="group flex items-start gap-5 border-t py-6"
+              className={`group flex items-start gap-5 px-6 py-6 ${i > 0 ? "border-t" : ""}`}
               style={{ borderColor: "var(--color-line)" }}
             >
               <span

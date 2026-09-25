@@ -17,7 +17,7 @@ export default function RecommendTestSelect({
         required
         value={test}
         onChange={(e) => setTest(e.target.value)}
-        className="mt-2 w-full rounded-[14px] border border-ink/20 bg-ivory px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
+        className="mt-2 w-full rounded-none border border-ink/20 bg-ivory px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
       >
         <option value="" disabled>
           시험을 선택하세요

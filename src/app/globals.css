@@ -100,13 +100,12 @@ html {
   }
 }
 
-/* Cards: exam cards, price cards, sample previews */
+/* Cards: exam cards, price cards, sample previews -- line-divided cells, no shadow */
 .card-hover {
-  transition: transform 320ms var(--ease-pub), box-shadow 320ms var(--ease-pub);
+  transition: background-color 220ms var(--ease-pub);
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px -18px rgba(42, 46, 36, 0.35);
+  background-color: rgba(42, 46, 36, 0.03);
 }
 
 /* Primary (상담) buttons: hover = color only, click = scale only */

@@ -289,44 +289,50 @@ export default function ResourcesTabs() {
   const tab = samplesByExam[active];
 
   return (
-    <div>
-      <div className="flex flex-wrap gap-x-8 gap-y-3 border-b" style={{ borderColor: "var(--color-line)" }}>
-        {exams.map((exam) => (
-          <button
-            key={exam}
-            onClick={() => setActive(exam)}
-            className="pb-4 font-serif text-2xl font-black transition-colors md:text-3xl"
-            style={{
-              color: active === exam ? "var(--color-inkstrong)" : "rgba(42,46,36,0.3)",
-              borderBottom: active === exam ? "2px solid var(--color-pistachio)" : "2px solid transparent",
-              marginBottom: "-1px",
-            }}
-          >
-            {exam}
-          </button>
-        ))}
+    <div className="mt-8 border" style={{ borderColor: "var(--color-line)" }}>
+      <div
+        className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3 border-b px-6 pt-6 md:px-8 md:pt-8"
+        style={{ borderColor: "var(--color-line)" }}
+      >
+        <div className="flex flex-wrap gap-x-8 gap-y-3">
+          {exams.map((exam) => (
+            <button
+              key={exam}
+              onClick={() => setActive(exam)}
+              className="pb-4 font-serif text-2xl font-black transition-colors md:text-3xl"
+              style={{
+                color: active === exam ? "var(--color-inkstrong)" : "rgba(42,46,36,0.3)",
+                borderBottom: active === exam ? "2px solid var(--color-pistachio)" : "2px solid transparent",
+                marginBottom: "-1px",
+              }}
+            >
+              {exam}
+            </button>
+          ))}
+        </div>
+        <p className="pb-4 text-sm text-ink/50">전체 파일은 올리지 않습니다.</p>
       </div>
 
-      <p className="mt-5 text-sm text-ink/50">
-        <Link href="/consultation" className="underline decoration-ink/25 underline-offset-4 hover:text-ink/70">
-          나머지 샘플은 상담
-        </Link>
-      </p>
-      <p className="mt-2 text-sm text-ink/50">전체 파일은 올리지 않습니다.</p>
-
-      <div className="mt-10 grid gap-10 md:grid-cols-[1fr_1.4fr] md:items-start">
-        <div className="img-fade relative aspect-[4/5] w-full overflow-hidden">
-          <Image
-            src="/images/workbook-open.jpg"
-            alt="C-BRIDGE 문제집 속지 www.c-bridge.uk"
-            fill
-            sizes="(max-width: 768px) 100vw, 420px"
-            className="object-cover"
-            style={{ objectPosition: "center" }}
-          />
+      <div className="grid md:grid-cols-[1fr_1.4fr]">
+        <div className="border-b p-6 md:border-b-0 md:border-r md:p-8" style={{ borderColor: "var(--color-line)" }}>
+          <div className="img-fade relative aspect-[4/5] w-full overflow-hidden">
+            <Image
+              src="/images/workbook-open.jpg"
+              alt="C-BRIDGE 문제집 속지 www.c-bridge.uk"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+              style={{ objectPosition: "center" }}
+            />
+          </div>
+          <p className="mt-5 text-sm text-ink/50">
+            <Link href="/consultation" className="underline decoration-ink/25 underline-offset-4 hover:text-ink/70">
+              나머지 샘플은 상담
+            </Link>
+          </p>
         </div>
 
-        <div key={active} className="tab-fade space-y-10">
+        <div key={active} className="tab-fade space-y-10 p-6 md:p-8">
           {tab.items.map((item) => (
             <SampleCard key={item.title} item={item} />
           ))}

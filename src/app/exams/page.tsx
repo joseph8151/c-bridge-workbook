@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ExamsFilter, { ExamGroup } from "@/components/ExamsFilter";
 
 export const metadata: Metadata = {
   title: "시험 찾기 | C-BRIDGE",
   description:
-    "갈 나라와 직군에 맞는 시험을 찾아보세요. PTE, CELPIP, OET, NCLEX, EPTA, ELPAC, SPA, Versant, TOLES, TOPEC.",
+    "갈 나라와 직군에 맞는 시험을 찾아보세요. PTE, CELPIP, OET, CELBAN, MET, NCLEX, EPTA, ELPAC, SPA, Versant, TOLES, TOPEC.",
 };
 
-const groups: { label: string; items: { name: string; desc: string }[] }[] = [
+const groups: ExamGroup[] = [
   {
     label: "이민 · 유학",
     items: [
@@ -15,6 +15,11 @@ const groups: { label: string; items: { name: string; desc: string }[] }[] = [
       { name: "PTE Academic UKVI", desc: "영국 비자를 위한 PTE" },
       { name: "PTE Core", desc: "캐나다 이민을 위한 PTE" },
       { name: "CELPIP", desc: "캐나다 영주 · 시민권 영어시험" },
+      {
+        name: "MET (미시간영어)",
+        desc: "미시간 영어시험. 호주 비자 목록에 오르는 경우가 있습니다.",
+        keywords: ["MET", "미시간영어", "Michigan English Test", "MET 문제집", "MET 호주"],
+      },
       { name: "IELTS General", desc: "이민 · 취업을 위한 IELTS" },
       { name: "IELTS for UKVI", desc: "영국 비자를 위한 IELTS" },
     ],
@@ -29,6 +34,11 @@ const groups: { label: string; items: { name: string; desc: string }[] }[] = [
       { name: "OET Dentistry", desc: "치과의사 영어시험" },
       { name: "OET Radiography", desc: "방사선사 영어시험" },
       { name: "OET Occupational Therapy", desc: "작업치료사 영어시험" },
+      {
+        name: "CELBAN (셀반)",
+        desc: "캐나다 간호 등록용 영어입니다. OET·셀핍과 형식이 다릅니다.",
+        keywords: ["CELBAN", "셀반", "캐나다 간호 영어", "CELBAN 문제집"],
+      },
     ],
   },
   {
@@ -47,7 +57,7 @@ const groups: { label: string; items: { name: string; desc: string }[] }[] = [
   {
     label: "기업 말하기",
     items: [
-      { name: "SPA", desc: "현대차 등 기업이 활용하는 말하기 평가" },
+      { name: "SPA", desc: "기업이 활용하는 말하기 평가" },
       { name: "Versant", desc: "기업 전화 · 컴퓨터 말하기 평가" },
     ],
   },
@@ -76,42 +86,12 @@ export default function ExamsPage() {
             갈 나라와 직군이 다르면 시험이 다릅니다.
           </h1>
         </div>
+        <div className="mt-10 border-t" style={{ borderColor: "var(--color-line)" }} />
       </section>
 
       <section className="bg-ivory py-16 md:py-24" data-reveal>
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-          <div className="space-y-14">
-            {groups.map((g) => (
-              <div key={g.label}>
-                <p className="text-xs font-bold tracking-[0.18em] text-ink/45">{g.label}</p>
-                <div className="mt-5 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-                  {g.items.map((item) => (
-                    <div key={item.name} className="border-t pt-5" style={{ borderColor: "var(--color-line)" }}>
-                      <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
-                        {item.name}
-                      </p>
-                      <p className="mt-1.5 text-sm text-ink/60">{item.desc}</p>
-                      <Link
-                        href={`/consultation?test=${encodeURIComponent(item.name)}`}
-                        className="mt-4 inline-block text-xs font-bold tracking-[0.08em]"
-                        style={{ color: "var(--color-rust)" }}
-                      >
-                        상담 →
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-16 text-sm text-ink/50">
-            목록에 없으면{" "}
-            <Link href="/consultation" className="underline decoration-ink/25 underline-offset-4 hover:text-ink/80">
-              상담
-            </Link>
-            에 시험명을 적으세요.
-          </p>
+          <ExamsFilter groups={groups} />
         </div>
       </section>
     </>

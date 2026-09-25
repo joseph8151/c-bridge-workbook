@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ResourcesPage() {
   return (
     <>
-      <section className="bg-paper py-16 md:py-24">
+      <section className="bg-ivory py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
             무료자료
@@ -20,11 +20,9 @@ export default function ResourcesPage() {
           >
             본책의 호흡만 보여 드립니다.
           </h1>
-        </div>
-      </section>
 
-      <section className="bg-ivory py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-5 md:px-10">
+          <div className="mt-10 border-t" style={{ borderColor: "var(--color-line)" }} />
+
           <ResourcesTabs />
         </div>
       </section>

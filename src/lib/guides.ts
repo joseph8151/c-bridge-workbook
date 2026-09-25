@@ -193,6 +193,29 @@ export const guidePosts: GuidePost[] = [
     quote: "Level 4 descriptor: communicates effectively even in unfamiliar situations.",
     closing: "지원하는 항공사·관제 기관이 요구하는 등급을 먼저 확인하는 것이 순서입니다.",
   },
+  {
+    slug: "celban-is-not-celpip",
+    title: "CELBAN은 셀핍이 아닙니다",
+    category: "CELBAN",
+    excerpt: "캐나다 간호 등록용 영어로, CELPIP과 형식이 다른 별개의 시험입니다.",
+    content: [
+      "간호사 등록을 위한 캐나다 시험이라고 해서 CELBAN을 CELPIP과 같은 시험으로 볼 수는 없습니다. 대상도 형식도 다릅니다.",
+      "CELBAN은 병동 인수인계, 기록, 환자 설명처럼 임상 상황에 특화된 듣기·읽기·쓰기·말하기를 평가합니다. OET Nursing과 영역은 비슷해 보여도 출제 기관과 채점 기준이 다른 별개의 시험이라, OET 자료로 대체할 수 없습니다.",
+    ],
+    quote: "Handover note: “The patient reported increased pain overnight and was given medication at 2 a.m.”",
+  },
+  {
+    slug: "met-is-not-a-short-ielts",
+    title: "MET는 아이엘츠 축소판이 아닙니다",
+    category: "MET",
+    excerpt: "Michigan English Test는 PTE·IELTS와 과제 구성이 다른 별개의 시험입니다.",
+    content: [
+      "IELTS의 축소판처럼 보일 수 있지만 MET(Michigan English Test)는 과제 구성 자체가 다른 시험입니다. 듣기·읽기·말하기·쓰기 네 영역을 평가하며 학술·이주 목적으로 쓰입니다.",
+      "호주 비자 목록에 오르는 경우가 있지만, 인정 여부는 나라와 학교마다 다릅니다. 지원 전에 목표 기관이 MET를 인정하는지부터 확인해야 합니다.",
+    ],
+    quote: "Listening prompt: “The seminar has been moved to Thursday afternoon.”",
+    closing: "인정 여부는 상담에서 지원 국가 기준으로 확인해드립니다.",
+  },
 ];
 
 export function getGuideBySlug(slug: string) {

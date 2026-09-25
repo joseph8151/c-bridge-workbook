@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/config";
 const testGroups: { label: string; items: string[] }[] = [
   {
     label: "이민 · 유학",
-    items: ["PTE Academic", "PTE Academic UKVI", "PTE Core", "CELPIP", "IELTS General", "IELTS for UKVI"],
+    items: ["PTE Academic", "PTE Academic UKVI", "PTE Core", "CELPIP", "MET (미시간영어)", "IELTS General", "IELTS for UKVI"],
   },
   {
     label: "의료 영어",
@@ -19,6 +19,7 @@ const testGroups: { label: string; items: string[] }[] = [
       "OET Dentistry",
       "OET Radiography",
       "OET Occupational Therapy",
+      "CELBAN (셀반)",
     ],
   },
   { label: "간호 면허", items: ["NCLEX"] },
@@ -70,7 +71,7 @@ export default function ConsultationForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-[20px] border border-ink/15 bg-paper p-10 text-center">
+      <div className="border border-ink/15 bg-paper p-10 text-center">
         <p className="font-serif text-2xl font-bold text-ink">
           상담 신청이 접수되었습니다.
         </p>
@@ -82,7 +83,7 @@ export default function ConsultationForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {prefillTest && (
-        <div className="rounded-[14px] border border-ink/15 bg-paper px-4 py-3 text-sm text-ink/70">
+        <div className="rounded-none border border-ink/15 bg-paper px-4 py-3 text-sm text-ink/70">
           문의 내용: <span className="font-semibold text-ink">{prefillTest}</span>
         </div>
       )}
@@ -97,7 +98,7 @@ export default function ConsultationForm() {
           required
           value={test}
           onChange={(e) => setTest(e.target.value)}
-          className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
+          className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
         >
           <option value="" disabled>
             시험을 선택하세요
@@ -127,7 +128,7 @@ export default function ConsultationForm() {
           {weakAreaOptions.map((w) => (
             <label
               key={w}
-              className="flex cursor-pointer items-center justify-center rounded-[14px] border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+              className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
             >
               <input
                 type="radio"
@@ -148,7 +149,7 @@ export default function ConsultationForm() {
           {volumeOptions.map((v, i) => (
             <label
               key={v}
-              className="flex cursor-pointer items-center justify-center rounded-[14px] border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+              className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
             >
               <input type="radio" name="volume" value={v} defaultChecked={i === 0} className="sr-only" />
               {v}
@@ -162,7 +163,7 @@ export default function ConsultationForm() {
         <textarea
           name="message"
           rows={4}
-          className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
+          className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
           placeholder="추가로 전달하고 싶은 내용을 남겨주세요."
         />
       </div>
@@ -181,7 +182,7 @@ export default function ConsultationForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="btn-primary w-full rounded-[14px] py-4 text-sm font-bold tracking-[0.04em] disabled:opacity-60 sm:w-auto sm:px-10"
+        className="btn-primary w-full rounded-sm py-4 text-sm font-bold tracking-[0.04em] disabled:opacity-60 sm:w-auto sm:px-10"
       >
         {status === "submitting" ? "보내는 중" : "상담 신청"}
       </button>
@@ -213,7 +214,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         defaultValue={defaultValue}
-        className="mt-2 w-full rounded-[14px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[var(--color-rust)] focus:outline-none"
+        className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[var(--color-rust)] focus:outline-none"
       />
     </div>
   );

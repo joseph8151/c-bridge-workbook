@@ -11,9 +11,16 @@ export default function Approach() {
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           한 권에 들어가는 것
         </p>
-        <div className="mt-6 grid gap-12 border-t pt-12 sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
-          {items.map((item) => (
-            <div key={item.label}>
+        <div
+          className="mt-6 grid border-y sm:grid-cols-3"
+          style={{ borderColor: "var(--color-line)" }}
+        >
+          {items.map((item, i) => (
+            <div
+              key={item.label}
+              className={`p-8 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+              style={{ borderColor: "var(--color-line)" }}
+            >
               <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-rust)" }}>
                 {item.label}
               </p>
