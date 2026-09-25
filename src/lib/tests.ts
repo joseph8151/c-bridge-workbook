@@ -152,18 +152,6 @@ export const tests: Test[] = [
     badges: ["말하기 집중", "직장인 추천"],
   },
   {
-    id: "opic",
-    slug: "opic",
-    name: "OPIc",
-    group: "EMPLOYMENT",
-    bonusTypes: ["SPEAKING"],
-    tagline: "취준생·직장인의 영어 말하기 시험",
-    description:
-      "취준생과 직장인이 많이 준비하는 영어 말하기 시험. IM2·IH·AL 목표별로 답변 구조, 돌발주제, Role Play를 연습합니다.",
-    levelOptions: ["처음 응시", "IM1 이하", "IM2", "IM3", "IH", "AL 목표"],
-    badges: ["취준생 추천", "말하기 집중", "가장 많이 선택"],
-  },
-  {
     id: "versant",
     slug: "versant",
     name: "Versant",
@@ -482,7 +470,6 @@ export function getLevelOptions(test: Test): string[] {
 }
 
 export const trendingTestIds = [
-  "opic",
   "sjpt",
   "versant",
   "spa",

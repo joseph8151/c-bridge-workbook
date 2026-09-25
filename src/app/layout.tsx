@@ -27,7 +27,6 @@ const ogDescription =
 const mainKeywords = [
   "성인 어학시험 문제집",
   "TOEIC 문제집",
-  "OPIc 문제집",
   "TOEFL 문제집",
   "IELTS 문제집",
   "PTE 문제집",

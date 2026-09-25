@@ -25,11 +25,6 @@ export const exampleOrders = [
     points: ["기본 문제와 핵심 유형 중심", "Reading/Listening 비중 확대"],
   },
   {
-    test: "OPIc",
-    config: "AL 목표 · 200P",
-    points: ["돌발주제", "Role Play", "답변 확장 · 고급 표현 중심"],
-  },
-  {
     test: "SJPT",
     config: "Level 7 목표 · Speaking 집중 · 200P",
     points: ["상황별 예상질문", "답변 구조", "실전 인터뷰 중심"],
@@ -47,11 +42,6 @@ export const targetLevelExamples: Record<string, { level: string; desc: string }
     { level: "90점 목표", desc: "중급 난이도 + 실전 문제 비중 확대" },
     { level: "100점 목표", desc: "고난도 문제 + 시간관리 + 실전 Mock 강화" },
     { level: "110점+ 목표", desc: "상위 난이도 문제 + 함정 유형 + 고득점 전략 중심" },
-  ],
-  OPIc: [
-    { level: "IM2 목표", desc: "기본 답변 구조 중심" },
-    { level: "IH 목표", desc: "답변 확장 + 돌발주제 + Role Play 강화" },
-    { level: "AL 목표", desc: "표현 다양성 + 자연스러운 연결 + 고난도 돌발주제 집중" },
   ],
   SJPT: [
     { level: "Level 4 목표", desc: "기본 응답과 짧은 문장" },

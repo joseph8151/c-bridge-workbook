@@ -54,15 +54,6 @@ export const testimonials: Testimonial[] = [
     author: "FLEX 일본어 200P 구매자",
   },
   {
-    id: "opic",
-    test: "OPIc",
-    tier: "200P",
-    tag: "돌발주제 · Role Play 보완, IH 목표",
-    quote:
-      "IH 목표로 단기간 준비하려고 200P 선택했어요. 돌발주제랑 Role Play가 약하다고 했더니 그쪽 비중을 높여주셔서 좋았습니다. 그냥 스크립트 외우는 방식이 아니라 답변 구조를 잡는 식이라 실제로 말할 때 덜 막혔어요.",
-    author: "OPIc 200P 구매자",
-  },
-  {
     id: "toefl",
     test: "TOEFL",
     tier: "300P",
