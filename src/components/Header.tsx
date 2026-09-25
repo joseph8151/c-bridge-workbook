@@ -46,29 +46,43 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/finder" className="btn-primary hidden px-6 text-xs font-medium tracking-[0.1em] md:inline-flex">
+        {/* Desktop/tablet (md+): unchanged appearance from before — a
+           separate node from the mobile group below so nothing here shifts
+           the existing layout. Visibility now uses .header-desktop-cta
+           (see globals.css) instead of Tailwind's hidden/md:inline-flex,
+           which .btn-primary's unlayered CSS was silently overriding. */}
+        <Link href="/finder" className="btn-primary header-desktop-cta px-6 text-xs font-medium tracking-[0.1em]">
           FIND YOUR EXAM
         </Link>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
-          aria-expanded={open}
-          className="-mr-2 flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-1.5 lg:hidden"
-        >
-          <span
-            className={`h-[1.5px] w-6 transition-transform ${open ? "translate-y-[6.5px] rotate-45" : ""}`}
-            style={{ background: "var(--color-ink)" }}
-          />
-          <span
-            className={`h-[1.5px] w-6 transition-opacity ${open ? "opacity-0" : ""}`}
-            style={{ background: "var(--color-ink)" }}
-          />
-          <span
-            className={`h-[1.5px] w-6 transition-transform ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`}
-            style={{ background: "var(--color-ink)" }}
-          />
-        </button>
+        {/* <lg (mobile + tablet): one wrapper, same as the original single
+           hamburger's visibility range. The compact Navigation CTA only
+           joins it below md — on tablet this wrapper holds just the
+           hamburger, so spacing next to the desktop CTA above is unchanged. */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link href="/finder" className="btn-nav-cta">
+            FIND YOUR EXAM
+          </Link>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={open}
+            className="-mr-2 flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-1.5"
+          >
+            <span
+              className={`h-[1.5px] w-6 transition-transform ${open ? "translate-y-[6.5px] rotate-45" : ""}`}
+              style={{ background: "var(--color-ink)" }}
+            />
+            <span
+              className={`h-[1.5px] w-6 transition-opacity ${open ? "opacity-0" : ""}`}
+              style={{ background: "var(--color-ink)" }}
+            />
+            <span
+              className={`h-[1.5px] w-6 transition-transform ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`}
+              style={{ background: "var(--color-ink)" }}
+            />
+          </button>
+        </div>
       </div>
 
       {open && (

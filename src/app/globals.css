@@ -234,6 +234,102 @@ a:hover .arrow-slide {
   outline-offset: 2px;
 }
 
+/* Pre-existing bug, fixed here rather than by touching .btn-primary itself
+   (used sitewide): .btn-primary sets `display: inline-flex` outside any
+   @layer, so it always outranks Tailwind's layered `hidden`/`md:inline-flex`
+   utilities regardless of source order — the header's desktop CTA was
+   showing on mobile too because of this. Scoped to just that one Link so no
+   other .btn-primary usage anywhere else is affected. */
+.header-desktop-cta {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header-desktop-cta {
+    display: inline-flex;
+  }
+}
+
+/* Header "Navigation CTA" — a compact version of the primary button that
+   lives inline next to the logo/hamburger on mobile. Same brand color as
+   .btn-fab below (and the desktop header CTA) but sized to sit quietly in
+   a 64px header row instead of being the loudest thing in it. */
+.btn-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 6px;
+  background: var(--color-bronze);
+  color: var(--color-paper);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: background-color 220ms var(--ease-pub), transform 150ms var(--ease-pub);
+}
+.btn-nav-cta:hover {
+  background-color: var(--color-bronze-dark);
+}
+.btn-nav-cta:active {
+  transform: scale(0.97);
+}
+.btn-nav-cta:focus-visible {
+  outline: 1px solid var(--color-bronze);
+  outline-offset: 2px;
+}
+/* .btn-nav-cta/.btn-fab live outside any @layer, so a plain media query here
+   is the reliable way to hide them at md+ — Tailwind's md:hidden utility is
+   itself inside @layer utilities, and unlayered CSS always outranks layered
+   CSS regardless of source order, so it cannot override these classes. */
+@media (min-width: 768px) {
+  .btn-nav-cta {
+    display: none;
+  }
+}
+
+/* Floating Action Button — the mobile-only consult shortcut, corner-anchored
+   instead of a full-width bar. Same height/radius/color family as
+   .btn-nav-cta above so the two read as one system, with its own subtle
+   shadow since it floats over page content rather than sitting in a bar. */
+.btn-fab {
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 124px;
+  height: 52px;
+  padding: 0 20px;
+  border-radius: 6px;
+  background: var(--color-bronze);
+  color: var(--color-paper);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px -6px rgba(42, 46, 36, 0.35);
+  transition: background-color 220ms var(--ease-pub), transform 150ms var(--ease-pub);
+}
+.btn-fab:hover {
+  background-color: var(--color-bronze-dark);
+}
+.btn-fab:active {
+  transform: scale(0.97);
+}
+.btn-fab:focus-visible {
+  outline: 2px solid var(--color-bronze-dark);
+  outline-offset: 2px;
+}
+@media (min-width: 768px) {
+  .btn-fab {
+    display: none;
+  }
+}
+
 /* Deprecated aliases kept so any remaining reference still resolves to a
    readable, on-brand button rather than breaking. Prefer .btn-primary /
    .btn-secondary (light sections) or .btn-on-footer (the footer). */
@@ -317,10 +413,17 @@ a:hover .arrow-slide {
   .card-hover:hover,
   .arrow-slide,
   .btn-primary,
-  .btn-primary:active {
+  .btn-primary:active,
+  .btn-nav-cta,
+  .btn-nav-cta:active {
     transition: none !important;
     transform: none !important;
     box-shadow: none !important;
+  }
+  .btn-fab,
+  .btn-fab:active {
+    transition: none !important;
+    transform: none !important;
   }
 }
 

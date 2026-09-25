@@ -1,14 +1,14 @@
 import Link from "next/link";
 
+// Mobile-only floating consult shortcut — a corner-anchored pill (Floating
+// Action Button), not a full-width bar, so it reads as a quiet system-level
+// shortcut rather than a second header. See .btn-fab in globals.css for the
+// shared sizing/radius/color it deliberately keeps in common with the
+// header's .btn-nav-cta.
 export default function StickyMobileCTA() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-ink/10 bg-paper/95 backdrop-blur md:hidden">
-      <Link
-        href="/consultation"
-        className="btn-primary flex items-center justify-center py-4 text-sm font-bold tracking-[0.08em]"
-      >
-        상담
-      </Link>
-    </div>
+    <Link href="/consultation" className="btn-fab">
+      상담하기 <span aria-hidden="true">→</span>
+    </Link>
   );
 }
