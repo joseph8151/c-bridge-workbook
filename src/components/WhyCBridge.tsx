@@ -51,10 +51,10 @@ export default function WhyCBridge() {
               }`}
               style={{ borderColor: "var(--color-line)" }}
             >
-              <span className="font-serif text-2xl font-black" style={{ color: "var(--color-rust)" }}>
+              <span className="font-serif text-2xl font-bold" style={{ color: "var(--color-rust)" }}>
                 {c.no}
               </span>
-              <p className="mt-3 font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {c.title}
               </p>
               <p className="mt-2 break-keep text-sm leading-relaxed text-ink/65">{c.desc}</p>

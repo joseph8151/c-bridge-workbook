@@ -14,7 +14,7 @@ export default function NclexPage() {
           NCLEX (간호 면허)
         </p>
         <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           영어시험이 아닙니다. 간호 면허 본시험입니다.

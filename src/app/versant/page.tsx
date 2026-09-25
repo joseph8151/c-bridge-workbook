@@ -14,7 +14,7 @@ export default function VersantPage() {
           Versant
         </p>
         <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           기업이 전화 · 컴퓨터로 보는 말하기 평가입니다.

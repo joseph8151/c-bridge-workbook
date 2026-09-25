@@ -57,7 +57,7 @@ export default function BusinessPage() {
             C-BRIDGE FOR BUSINESS
           </p>
           <h1
-            className="mt-5 break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+            className="mt-5 break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
             style={{ color: "var(--color-paper)" }}
           >
             기업과 기관을 위한
@@ -77,7 +77,7 @@ export default function BusinessPage() {
             </Link>
             <Link
               href="/consultation?test=기타"
-              className="inline-flex min-h-[48px] items-center border border-paper/25 px-7 text-sm font-bold text-paper"
+              className="inline-flex min-h-[48px] items-center border border-paper/25 px-7 text-sm font-medium tracking-[0.06em] text-paper"
             >
               맞춤 교재 문의
             </Link>
@@ -139,7 +139,7 @@ export default function BusinessPage() {
           <div className="mt-6 grid gap-x-10 gap-y-8 border-t pt-8 sm:grid-cols-2 lg:grid-cols-5" style={{ borderColor: "var(--color-line)" }}>
             {services.map((s) => (
               <div key={s.no}>
-                <span className="font-serif text-2xl font-black" style={{ color: "var(--color-rust)" }}>
+                <span className="font-serif text-2xl font-bold" style={{ color: "var(--color-rust)" }}>
                   {s.no}
                 </span>
                 <p className="mt-2 text-sm font-bold" style={{ color: "var(--color-inkstrong)" }}>
@@ -154,7 +154,7 @@ export default function BusinessPage() {
 
       <section className="py-16 md:py-20" style={{ background: "var(--color-inkstrong)" }}>
         <div className="mx-auto flex max-w-[900px] flex-col items-center gap-6 px-5 text-center md:px-10">
-          <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-paper)" }}>
+          <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-paper)" }}>
             조직에 맞는 구성을 상담을 통해 안내해드립니다.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -163,7 +163,7 @@ export default function BusinessPage() {
             </Link>
             <Link
               href="/consultation?test=기타"
-              className="inline-flex min-h-[48px] items-center border border-paper/25 px-7 text-sm font-bold text-paper"
+              className="inline-flex min-h-[48px] items-center border border-paper/25 px-7 text-sm font-medium tracking-[0.06em] text-paper"
             >
               맞춤 교재 문의
             </Link>

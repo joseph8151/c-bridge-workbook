@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px] px-5 py-12 md:px-10 md:py-14">
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
           <div>
-            <p className="font-serif text-3xl font-black tracking-tight md:text-4xl">
+            <p className="font-serif text-3xl font-bold tracking-tight md:text-4xl">
               {siteConfig.brandName}
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper/70">

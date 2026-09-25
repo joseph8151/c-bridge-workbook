@@ -1,21 +1,33 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, Inter } from "next/font/google";
+import { Noto_Serif_KR, Cormorant_Garamond, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RevealInit from "@/components/RevealInit";
 
-const display = Source_Serif_4({
-  variable: "--font-display",
+// 한글 제목용 세리프 — 400/600/700만 로드 (900은 사용하지 않음)
+const serifKr = Noto_Serif_KR({
+  variable: "--font-serif-kr",
   subsets: ["latin"],
-  weight: ["600", "700", "900"],
+  weight: ["400", "600", "700"],
+  display: "swap",
 });
 
-const body = Inter({
-  variable: "--font-body",
+// 영문 제목 · 로고 · 가격 숫자용 세리프
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+// 본문 · 메뉴 · 폼의 1차 폰트는 Pretendard(CDN)이며, 이 폰트는 로드 실패 시 폴백으로만 쓰임
+const sansKr = Noto_Sans_KR({
+  variable: "--font-sans-kr",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const siteUrl = "https://www.c-bridge.uk";
@@ -81,8 +93,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
-      className={`${display.variable} ${body.variable} h-full antialiased`}
+      className={`${serifKr.variable} ${cormorant.variable} ${sansKr.variable} h-full antialiased`}
     >
+      <head>
+        {/* 본문 · 메뉴 · 폼용 Pretendard — 로드 실패 시 위 Noto Sans KR로 자동 대체 */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-ivory text-ink font-sans">
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>

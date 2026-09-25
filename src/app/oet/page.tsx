@@ -27,7 +27,7 @@ export default function OetPage() {
             OET
           </p>
           <h1
-            className="mt-5 break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+            className="mt-5 break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
             같은 OET가 아닙니다.
@@ -51,7 +51,7 @@ export default function OetPage() {
               >
                 <div>
                   <p
-                    className="font-serif text-2xl font-black leading-tight"
+                    className="font-serif text-2xl font-bold leading-tight"
                     style={{ color: "var(--color-inkstrong)" }}
                   >
                     OET
@@ -78,7 +78,7 @@ export default function OetPage() {
             WRITING TASK 구조
           </p>
           <h2
-            className="mt-4 break-keep font-serif text-2xl font-black leading-snug md:text-3xl"
+            className="mt-4 break-keep font-serif text-2xl font-bold leading-snug md:text-3xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
             일반 에세이가 아니라, case notes 기반 전문 서신입니다.

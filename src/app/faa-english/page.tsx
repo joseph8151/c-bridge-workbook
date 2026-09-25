@@ -14,7 +14,7 @@ export default function FaaEnglishPage() {
           Aviation English (FAA 교신)
         </p>
         <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           미국 FAA 라디오 텔레포니 영어입니다.

@@ -21,7 +21,7 @@ export default function Approach() {
               className={`p-10 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
               style={{ borderColor: "var(--color-line)" }}
             >
-              <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-rust)" }}>
+              <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-rust)" }}>
                 {item.label}
               </p>
               <p className="mt-3 break-keep text-base leading-relaxed" style={{ color: "var(--color-inkstrong)" }}>

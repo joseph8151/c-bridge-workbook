@@ -100,7 +100,7 @@ export default function TierSelector({ test }: { test: Test }) {
                     {m.badge}
                   </span>
                 )}
-                <p className="font-serif text-xl font-black">{m.label}</p>
+                <p className="font-serif text-xl font-bold">{m.label}</p>
                 <p className="mt-1 text-xs font-bold" style={active ? { color: "var(--color-paper)" } : { color: "rgba(42,46,36,0.5)" }}>
                   {getTierPrice(t).toLocaleString()}원
                 </p>
@@ -136,7 +136,7 @@ export default function TierSelector({ test }: { test: Test }) {
                 {test.name} · {target} · {meta.name}
                 {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
               </p>
-              <p className="mt-1 font-serif text-4xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {getTierPrice(tier).toLocaleString()}원
               </p>
             </div>

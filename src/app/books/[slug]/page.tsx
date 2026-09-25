@@ -67,7 +67,7 @@ export default async function TestDetailPage({
               {group.navLabel}
             </p>
             <h1
-              className="mt-3 break-keep font-serif text-4xl font-black leading-tight md:text-5xl"
+              className="mt-3 break-keep font-serif text-4xl font-bold leading-tight md:text-5xl"
               style={{ color: "var(--color-inkstrong)" }}
             >
               {test.name} 완성 대비
@@ -160,7 +160,7 @@ export default async function TestDetailPage({
               { no: "05", title: "맞춤 구성 확인", desc: "선택에 맞는 문제 비중으로 안내" },
             ].map((s) => (
               <div key={s.no}>
-                <span className="font-serif text-3xl font-black" style={{ color: "var(--color-rust)" }}>
+                <span className="font-serif text-3xl font-bold" style={{ color: "var(--color-rust)" }}>
                   {s.no}
                 </span>
                 <p className="mt-2 text-sm font-bold" style={{ color: "var(--color-inkstrong)" }}>
@@ -172,7 +172,7 @@ export default async function TestDetailPage({
           </div>
 
           <div className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-4 border-t pt-10 text-center" style={{ borderColor: "var(--color-line)" }}>
-            <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+            <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
               원하는 구성이 없나요?
             </p>
             <p className="text-sm leading-relaxed text-ink/60">
@@ -191,7 +191,7 @@ export default async function TestDetailPage({
 
       <section className="bg-ivory py-16 md:py-20">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-          <h2 className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+          <h2 className="font-serif text-2xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
             이런 분께 추천합니다
           </h2>
           <ul className="mt-6 grid gap-x-8 gap-y-3 border-t pt-6 sm:grid-cols-2" style={{ borderColor: "var(--color-line)" }}>
@@ -212,13 +212,13 @@ export default async function TestDetailPage({
           <p className="text-xs font-bold tracking-[0.16em]" style={{ color: "var(--color-pistachio)" }}>
             STRATEGY TIP
           </p>
-          <h2 className="mt-2 font-serif text-2xl font-black" style={{ color: "var(--color-paper)" }}>
+          <h2 className="mt-2 font-serif text-2xl font-bold" style={{ color: "var(--color-paper)" }}>
             {test.name} 전략 팁
           </h2>
           <div className="mt-8 grid gap-8 border-t border-paper/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
             {tips.map((tip, i) => (
               <div key={tip}>
-                <span className="font-serif text-2xl font-black" style={{ color: "var(--color-pistachio)" }}>
+                <span className="font-serif text-2xl font-bold" style={{ color: "var(--color-pistachio)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="mt-3 break-keep text-sm leading-relaxed text-paper/80">{tip}</p>
@@ -230,7 +230,7 @@ export default async function TestDetailPage({
 
       <section className="bg-paper py-16 md:py-20">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-          <h2 className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+          <h2 className="font-serif text-2xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
             구매 전에 확인하세요
           </h2>
           <div className="mt-8 grid gap-10 border-t pt-8 lg:grid-cols-2" style={{ borderColor: "var(--color-line)" }}>
@@ -269,7 +269,7 @@ export default async function TestDetailPage({
       {related.length > 0 && (
         <section className="bg-ivory py-16 md:py-20">
           <div className="mx-auto max-w-[1200px] px-5 md:px-10">
-            <h2 className="font-serif text-2xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+            <h2 className="font-serif text-2xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
               관련 시험
             </h2>
             <div className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -285,7 +285,7 @@ export default async function TestDetailPage({
 
       <section className="bg-paper py-14 md:py-16">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-5 px-5 text-center md:px-10">
-          <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-inkstrong)" }}>
+          <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-inkstrong)" }}>
             {priceSummaryLine}
           </p>
           <Link

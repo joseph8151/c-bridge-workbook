@@ -24,7 +24,7 @@ export default function ProcessTimeline() {
           만드는 과정
         </p>
         <h2
-          className="mt-4 break-keep font-serif text-2xl font-black leading-snug md:text-3xl"
+          className="mt-4 break-keep font-serif text-2xl font-bold leading-snug md:text-3xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           C-BRIDGE 교재는 이렇게 만들어집니다
@@ -36,10 +36,10 @@ export default function ProcessTimeline() {
         >
           {steps.map((s, i) => (
             <div key={s.no} className={`p-8 ${BORDER_CLASSES[i]}`} style={{ borderColor: "var(--color-line)" }}>
-              <span className="font-serif text-3xl font-black" style={{ color: "var(--color-rust)" }}>
+              <span className="font-serif text-3xl font-bold" style={{ color: "var(--color-rust)" }}>
                 {s.no}
               </span>
-              <p className="mt-3 font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {s.title}
               </p>
               <p className="mt-2 break-keep text-sm leading-relaxed text-ink/65">{s.desc}</p>

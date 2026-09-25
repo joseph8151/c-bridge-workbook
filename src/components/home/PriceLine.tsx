@@ -22,7 +22,7 @@ export default function PriceLine() {
                 style={{ borderColor: "var(--color-line)" }}
               >
                 <p
-                  className="font-serif text-[56px] font-black leading-none"
+                  className="font-serif text-[56px] font-bold leading-none"
                   style={{ color: "var(--color-inkstrong)" }}
                 >
                   {m.label}
@@ -46,7 +46,7 @@ export default function PriceLine() {
         <div className="mt-10 border-t" style={{ borderColor: "var(--color-line)" }} />
 
         <div className="mx-auto max-w-lg border-x border-b p-8" style={{ borderColor: "var(--color-line)" }}>
-          <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+          <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
             상담
           </p>
           <p className="mt-4 text-sm leading-relaxed text-ink/60">
@@ -58,7 +58,7 @@ export default function PriceLine() {
             </Link>
             <Link
               href="/consultation"
-              className="inline-flex min-h-[48px] items-center border px-7 text-sm font-bold"
+              className="inline-flex min-h-[48px] items-center border px-7 text-sm font-medium tracking-[0.06em]"
               style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
             >
               교재 상담하기

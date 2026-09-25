@@ -14,7 +14,7 @@ export default function SpaPage() {
           SPA (기업 영어 면접)
         </p>
         <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           현대차 등 기업이 쓰는 말하기 평가입니다.

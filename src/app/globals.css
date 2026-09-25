@@ -52,8 +52,10 @@
   --color-pistachio-tint: var(--color-pistachio-tint);
   --color-nutbrown: var(--color-nutbrown);
 
-  --font-serif: var(--font-display);
-  --font-sans: var(--font-body);
+  /* 영문/숫자는 Cormorant Garamond, 한글은 Noto Serif KR로 자동 매칭(문자 단위 폰트 스택) */
+  --font-serif: var(--font-cormorant), var(--font-serif-kr), "Apple SD Gothic Neo", serif;
+  /* 본문 1차 폰트는 CDN Pretendard, 실패 시 Noto Sans KR로 대체 */
+  --font-sans: "Pretendard Variable", Pretendard, var(--font-sans-kr), "Apple SD Gothic Neo", sans-serif;
 }
 
 html {
@@ -103,7 +105,8 @@ html {
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   background: var(--color-rust);
   color: var(--color-paper);
   transition: background-color 280ms var(--ease-pub), transform 150ms var(--ease-pub);
@@ -169,6 +172,8 @@ html {
 body {
   background: var(--color-ivory);
   color: var(--color-ink);
+  font-size: 16.5px;
+  line-height: 1.7;
 }
 
 /* Korean line-breaking: never split a word mid-character (e.g. "취업부터" -> "취업부" / "터") */

@@ -23,7 +23,7 @@ export default function FitCheck() {
           style={{ borderColor: "var(--color-pistachio)" }}
         >
           <div className="border-b p-10 sm:border-b-0 sm:border-r" style={{ borderColor: "var(--color-pistachio)" }}>
-            <p className="font-serif text-xl font-black md:text-2xl" style={{ color: "var(--color-rust)" }}>
+            <p className="font-serif text-xl font-bold md:text-2xl" style={{ color: "var(--color-rust)" }}>
               이런 때 맞습니다
             </p>
             <ul className="mt-5 space-y-2.5">
@@ -35,7 +35,7 @@ export default function FitCheck() {
             </ul>
           </div>
           <div className="p-10">
-            <p className="font-serif text-xl font-black text-ink/40 md:text-2xl">이런 때는 아닙니다</p>
+            <p className="font-serif text-xl font-bold text-ink/40 md:text-2xl">이런 때는 아닙니다</p>
             <ul className="mt-5 space-y-2.5">
               {notFits.map((line) => (
                 <li key={line} className="text-sm leading-relaxed text-ink/50">

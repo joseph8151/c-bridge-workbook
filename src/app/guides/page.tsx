@@ -33,7 +33,7 @@ export default function GuidesPage() {
               </span>
               <span className="min-w-0">
                 <span
-                  className="break-keep font-serif text-xl font-black leading-snug underline decoration-2 decoration-transparent underline-offset-8 transition-colors duration-300 group-hover:decoration-[var(--color-pistachio)] md:text-2xl"
+                  className="break-keep font-serif text-xl font-bold leading-snug underline decoration-2 decoration-transparent underline-offset-8 transition-colors duration-300 group-hover:decoration-[var(--color-pistachio)] md:text-2xl"
                   style={{ color: "var(--color-inkstrong)" }}
                 >
                   {post.title}

@@ -32,7 +32,7 @@ export default function ConsultationPage() {
           상담
         </p>
         <h1
-          className="mt-4 break-keep font-serif text-4xl font-black leading-tight md:text-5xl"
+          className="mt-4 break-keep font-serif text-4xl font-bold leading-tight md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           나에게 맞는 교재를 찾아드립니다.

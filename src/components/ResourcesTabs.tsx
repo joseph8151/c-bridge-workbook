@@ -260,7 +260,7 @@ function ExerciseView({ exercise }: { exercise: Exercise }) {
 function SampleCard({ item }: { item: ExamItem }) {
   return (
     <div className="card-hover">
-      <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+      <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
         {item.title}
       </p>
 
@@ -299,7 +299,7 @@ export default function ResourcesTabs() {
             <button
               key={exam}
               onClick={() => setActive(exam)}
-              className="pb-4 font-serif text-2xl font-black transition-colors md:text-3xl"
+              className="pb-4 font-serif text-2xl font-bold transition-colors md:text-3xl"
               style={{
                 color: active === exam ? "var(--color-inkstrong)" : "rgba(42,46,36,0.3)",
                 borderBottom: active === exam ? "2px solid var(--color-pistachio)" : "2px solid transparent",

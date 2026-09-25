@@ -56,7 +56,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] font-bold tracking-[0.06em] text-ink/80 transition-colors hover:text-[var(--color-rust)]"
+              className="text-[13px] font-medium tracking-[0.08em] text-ink/80 transition-colors hover:text-[var(--color-rust)]"
             >
               {link.label}
             </Link>

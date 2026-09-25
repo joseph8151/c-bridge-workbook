@@ -93,7 +93,7 @@ function ClassicFace({ test, skill, number, tag }: FaceProps) {
       </div>
       <div className="relative pl-1.5">
         {number !== undefined && (
-          <p className="font-serif text-3xl md:text-4xl font-black leading-none" style={{ color: "var(--color-gold)" }}>
+          <p className="font-serif text-3xl md:text-4xl font-bold leading-none" style={{ color: "var(--color-gold)" }}>
             {number}
           </p>
         )}
@@ -110,7 +110,7 @@ function BandFace({ test, skill, number, tag }: FaceProps) {
       <div className="flex items-center justify-between">
         <span className="text-[9px] md:text-[10px] font-bold tracking-[0.22em] opacity-90">C-BRIDGE</span>
         {number !== undefined && (
-          <span className="font-serif text-sm md:text-base font-black" style={{ color: "var(--color-gold)" }}>
+          <span className="font-serif text-sm md:text-base font-bold" style={{ color: "var(--color-gold)" }}>
             {number}
           </span>
         )}
@@ -120,7 +120,7 @@ function BandFace({ test, skill, number, tag }: FaceProps) {
         {skill}
       </p>
       <div className="mt-auto">
-        <p className="font-serif text-2xl md:text-[1.75rem] font-black leading-[0.95] break-keep text-balance">
+        <p className="font-serif text-2xl md:text-[1.75rem] font-bold leading-[0.95] break-keep text-balance">
           {test}
         </p>
         <p className="mt-2 text-[9px] md:text-[10px] tracking-[0.14em] uppercase opacity-70">{tag}</p>
@@ -141,7 +141,7 @@ function EmblemFace({ test, skill, number, tag }: FaceProps) {
           className="flex h-12 w-12 items-center justify-center rounded-full border md:h-14 md:w-14"
           style={{ borderColor: "var(--color-gold)" }}
         >
-          <span className="font-serif text-base font-black md:text-lg" style={{ color: "var(--color-gold)" }}>
+          <span className="font-serif text-base font-bold md:text-lg" style={{ color: "var(--color-gold)" }}>
             {number !== undefined ? number : initials}
           </span>
         </div>
@@ -187,7 +187,7 @@ function SplitFace({ test, skill, number, tag, color }: FaceProps & { color: str
         <div className="flex items-end justify-between">
           <p className="text-[8px] tracking-[0.1em] uppercase opacity-70 md:text-[9px]">{tag}</p>
           {number !== undefined && (
-            <p className="font-serif text-xl font-black leading-none md:text-2xl" style={{ color: "var(--color-gold)" }}>
+            <p className="font-serif text-xl font-bold leading-none md:text-2xl" style={{ color: "var(--color-gold)" }}>
               {number}
             </p>
           )}

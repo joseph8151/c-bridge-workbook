@@ -38,7 +38,7 @@ export default async function ComparePage({
             시험 비교
           </p>
           <h1
-            className="mt-5 break-keep font-serif text-3xl font-black leading-[1.3] md:text-4xl"
+            className="mt-5 break-keep font-serif text-3xl font-bold leading-[1.3] md:text-4xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
             {c.testA} vs {c.testB}, 어떤 시험이 나에게 맞을까요?
@@ -54,13 +54,13 @@ export default async function ComparePage({
               <tr>
                 <th className="w-[30%] border-b-2 pb-3 pr-4 text-xs font-bold tracking-[0.08em] text-ink/45" style={{ borderColor: "var(--color-line)" }} />
                 <th
-                  className="border-b-2 pb-3 pr-4 font-serif text-base font-black"
+                  className="border-b-2 pb-3 pr-4 font-serif text-base font-bold"
                   style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
                 >
                   {c.testA}
                 </th>
                 <th
-                  className="border-b-2 pb-3 font-serif text-base font-black"
+                  className="border-b-2 pb-3 font-serif text-base font-bold"
                   style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
                 >
                   {c.testB}
@@ -97,7 +97,7 @@ export default async function ComparePage({
             style={{ borderColor: "var(--color-line)" }}
           >
             <div className="border-b p-8 sm:border-b-0 sm:border-r" style={{ borderColor: "var(--color-line)" }}>
-              <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {c.testA}가 적합한 경우
               </p>
               <ul className="mt-4 space-y-2.5">
@@ -109,7 +109,7 @@ export default async function ComparePage({
               </ul>
             </div>
             <div className="p-8">
-              <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {c.testB}가 적합한 경우
               </p>
               <ul className="mt-4 space-y-2.5">
@@ -171,7 +171,7 @@ export default async function ComparePage({
 
       <section className="border-t bg-paper py-14 md:py-16" style={{ borderColor: "var(--color-line)" }}>
         <div className="mx-auto flex max-w-[900px] flex-col items-center gap-5 px-5 text-center md:px-10">
-          <p className="font-serif text-xl font-black md:text-2xl" style={{ color: "var(--color-inkstrong)" }}>
+          <p className="font-serif text-xl font-bold md:text-2xl" style={{ color: "var(--color-inkstrong)" }}>
             어떤 시험인지 정했다면, 맞는 교재로 시작하세요.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -180,7 +180,7 @@ export default async function ComparePage({
             </Link>
             <Link
               href="/consultation"
-              className="inline-flex min-h-[48px] items-center border px-7 text-sm font-bold"
+              className="inline-flex min-h-[48px] items-center border px-7 text-sm font-medium tracking-[0.06em]"
               style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
             >
               시험 선택 상담하기

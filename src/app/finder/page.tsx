@@ -14,7 +14,7 @@ export default function FinderPage() {
           내 시험 교재 찾기
         </p>
         <h1
-          className="mt-5 break-keep font-serif text-3xl font-black leading-[1.3] md:text-4xl"
+          className="mt-5 break-keep font-serif text-3xl font-bold leading-[1.3] md:text-4xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           네 가지만 선택하면 맞는 교재로 연결해드립니다.

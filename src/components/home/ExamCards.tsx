@@ -28,7 +28,7 @@ export default function ExamCards() {
             >
               <div>
                 <p
-                  className="underline decoration-2 decoration-transparent underline-offset-[24px] transition-colors duration-300 font-serif text-2xl font-black leading-none group-hover:decoration-[var(--color-pistachio)]"
+                  className="underline decoration-2 decoration-transparent underline-offset-[24px] transition-colors duration-300 font-serif text-2xl font-bold leading-none group-hover:decoration-[var(--color-pistachio)]"
                   style={{ color: "var(--color-inkstrong)" }}
                 >
                   {t.name}

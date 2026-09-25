@@ -15,7 +15,7 @@ export default function HomeHero() {
               C-BRIDGE
             </p>
             <h1
-              className="hero-fade-up mt-6 break-keep font-serif text-[48px] font-black leading-[1.1] md:text-[56px] lg:text-[64px]"
+              className="hero-fade-up mt-6 break-keep font-serif text-[56px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[64px]"
               style={{ color: "var(--color-inkstrong)" }}
             >
               직군과 나라가 다르면
@@ -31,7 +31,7 @@ export default function HomeHero() {
               </Link>
               <Link
                 href="/consultation"
-                className="inline-flex min-h-[48px] items-center border px-7 text-sm font-bold"
+                className="inline-flex min-h-[48px] items-center border px-7 text-sm font-medium tracking-[0.06em]"
                 style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
               >
                 교재 상담하기

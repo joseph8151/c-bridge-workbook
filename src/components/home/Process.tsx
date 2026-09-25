@@ -50,10 +50,10 @@ export default function Process() {
               className={`p-10 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
               style={{ borderColor: "var(--color-line)" }}
             >
-              <span className="font-serif text-6xl font-black leading-none md:text-7xl" style={{ color: "var(--color-rust)" }}>
+              <span className="font-serif text-6xl font-bold leading-none md:text-7xl" style={{ color: "var(--color-rust)" }}>
                 {s.no}
               </span>
-              <p className="mt-4 font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-4 font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {s.title}
               </p>
               <p className="mt-1 text-sm leading-relaxed text-ink/60">{s.desc}</p>

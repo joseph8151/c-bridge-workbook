@@ -9,7 +9,7 @@ export default function CaseStudies() {
           학습 구성 사례
         </p>
         <h2
-          className="mt-4 break-keep font-serif text-2xl font-black leading-snug md:text-3xl"
+          className="mt-4 break-keep font-serif text-2xl font-bold leading-snug md:text-3xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           이런 분들이 C-BRIDGE를 선택합니다
@@ -36,7 +36,7 @@ export default function CaseStudies() {
               style={{ borderColor: "var(--color-line)" }}
             >
               <div>
-                <p className="font-serif text-xl font-black" style={{ color: "var(--color-inkstrong)" }}>
+                <p className="font-serif text-xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
                   {c.test}
                 </p>
                 <p className="mt-2 text-sm text-ink/60">{c.profile}</p>

@@ -40,7 +40,7 @@ export default function TestCard({ test }: { test: Test }) {
       <p className="text-[11px] font-bold tracking-[0.14em]" style={{ color: "var(--color-rust)" }}>
         {group.navLabel}
       </p>
-      <h3 className="mt-1.5 font-serif text-lg font-black leading-snug" style={{ color: "var(--color-inkstrong)" }}>
+      <h3 className="mt-1.5 font-serif text-lg font-bold leading-snug" style={{ color: "var(--color-inkstrong)" }}>
         {test.name}
       </h3>
       <p className="mt-1 text-sm leading-relaxed text-ink/60">{test.tagline}</p>

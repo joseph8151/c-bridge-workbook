@@ -26,7 +26,7 @@ export default function BookPreview({ testName }: { testName: string }) {
           교재 미리보기
         </p>
         <h2
-          className="mt-4 break-keep font-serif text-2xl font-black leading-snug md:text-3xl"
+          className="mt-4 break-keep font-serif text-2xl font-bold leading-snug md:text-3xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           실제 C-BRIDGE 교재가 어떻게 구성되는지 확인해보세요.
@@ -47,7 +47,7 @@ export default function BookPreview({ testName }: { testName: string }) {
                 style={{ borderColor: "var(--color-line)", background: "var(--color-paper)" }}
               >
                 <span
-                  className="font-serif text-4xl font-black leading-none"
+                  className="font-serif text-4xl font-bold leading-none"
                   style={{ color: "var(--color-pistachio)" }}
                 >
                   {item.no}
@@ -65,7 +65,7 @@ export default function BookPreview({ testName }: { testName: string }) {
                   C-BRIDGE
                 </span>
               </div>
-              <p className="mt-3 font-serif text-base font-black" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-3 font-serif text-base font-bold" style={{ color: "var(--color-inkstrong)" }}>
                 {item.label}
               </p>
               <p className="mt-1 text-xs leading-relaxed text-ink/55">{item.desc}</p>
@@ -82,7 +82,7 @@ export default function BookPreview({ testName }: { testName: string }) {
           </Link>
           <Link
             href="/exams"
-            className="inline-flex min-h-[48px] items-center border px-7 text-sm font-bold"
+            className="inline-flex min-h-[48px] items-center border px-7 text-sm font-medium tracking-[0.06em]"
             style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
           >
             내 시험 교재 보기

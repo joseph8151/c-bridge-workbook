@@ -59,7 +59,7 @@ export default function ExamsFilter({ groups }: { groups: ExamGroup[] }) {
                   className="border-b border-r p-8"
                   style={{ borderColor: "var(--color-line)" }}
                 >
-                  <p className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+                  <p className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                     {item.name}
                   </p>
                   <p className="mt-1.5 text-sm text-ink/60">{item.desc}</p>

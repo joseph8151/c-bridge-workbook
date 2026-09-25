@@ -43,7 +43,7 @@ export default function FinderWizard() {
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           결과
         </p>
-        <p className="mt-5 font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-inkstrong)" }}>
+        <p className="mt-5 font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-inkstrong)" }}>
           {testName}
         </p>
         <div className="mx-auto mt-6 max-w-sm space-y-1.5 text-sm text-ink/60">
@@ -58,7 +58,7 @@ export default function FinderWizard() {
           </Link>
           <Link
             href={consultHref}
-            className="inline-flex min-h-[48px] items-center border px-7 text-sm font-bold"
+            className="inline-flex min-h-[48px] items-center border px-7 text-sm font-medium tracking-[0.06em]"
             style={{ borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }}
           >
             바로 상담하기
@@ -89,7 +89,7 @@ export default function FinderWizard() {
         STEP {step} / {totalSteps}
       </p>
       <h2
-        className="mt-3 break-keep font-serif text-xl font-black leading-snug md:text-2xl"
+        className="mt-3 break-keep font-serif text-xl font-bold leading-snug md:text-2xl"
         style={{ color: "var(--color-inkstrong)" }}
       >
         {questions[step - 1]}

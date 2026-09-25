@@ -41,7 +41,7 @@ export default function AboutPage() {
             About C-BRIDGE
           </p>
           <h1
-            className="mt-5 max-w-2xl break-keep font-serif text-4xl font-black leading-[1.3] sm:text-5xl md:text-6xl"
+            className="mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.3] sm:text-5xl md:text-6xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
             직군과 나라가 다르면 같은 영어가 아닙니다.
@@ -73,7 +73,7 @@ export default function AboutPage() {
           <div className="mt-6 grid gap-10 border-t pt-10 md:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
             {points.map((p) => (
               <div key={p.title}>
-                <h3 className="font-serif text-lg font-black" style={{ color: "var(--color-inkstrong)" }}>
+                <h3 className="font-serif text-lg font-bold" style={{ color: "var(--color-inkstrong)" }}>
                   {p.title}
                 </h3>
                 <p className="mt-3 break-keep text-sm leading-relaxed text-ink/65">{p.desc}</p>
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-20" style={{ background: "var(--color-inkstrong)" }}>
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-6 px-5 text-center md:px-10">
-          <p className="font-serif text-2xl font-black md:text-3xl" style={{ color: "var(--color-paper)" }}>
+          <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-paper)" }}>
             BUILD THE SCORE. CROSS THE BRIDGE.
           </p>
           <Link

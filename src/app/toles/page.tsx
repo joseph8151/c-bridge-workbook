@@ -14,7 +14,7 @@ export default function TolesPage() {
           TOLES
         </p>
         <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-black leading-[1.25] md:text-5xl"
+          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
           style={{ color: "var(--color-inkstrong)" }}
         >
           계약문이 영어시험입니다.

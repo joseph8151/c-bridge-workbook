@@ -15,7 +15,7 @@ export default function ResourcesPage() {
             무료자료
           </p>
           <h1
-            className="mt-5 break-keep font-serif text-4xl font-black leading-[1.35] md:text-5xl"
+            className="mt-5 break-keep font-serif text-4xl font-bold leading-[1.35] md:text-5xl"
             style={{ color: "var(--color-inkstrong)" }}
           >
             본책의 호흡만 보여 드립니다.
