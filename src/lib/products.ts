@@ -8,6 +8,7 @@ export interface TierMeta {
   mockTestsLabel: string; // "10회" / "15회 이상"
   name: string; // "COMPLETE"
   shortDesc: string;
+  recommendedFor: string[];
   badge?: string;
   ctaLabel: string;
   includes: string[];
@@ -23,6 +24,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     mockTestsLabel: "10회",
     name: "COMPLETE",
     shortDesc: "시험을 충분히 연습하고 한 번에 제대로 준비하려는 고객을 위한 주력 상품.",
+    recommendedFor: ["처음 준비하는 경우", "시험일까지 4~8주", "취약 영역 집중 훈련"],
     ctaLabel: "200P 완성 패키지 보기",
     includes: [
       "문제집 200P",
@@ -43,9 +45,10 @@ export const tierMeta: Record<Tier, TierMeta> = {
     pages: 300,
     price: 369000,
     mockTestsLabel: "15회 이상",
-    name: "PREMIUM",
+    name: "INTENSIVE",
     shortDesc: "충분한 문제량과 고득점·상위 레벨을 목표로 하는 고객을 위한 집중 패키지.",
-    badge: "PREMIUM",
+    recommendedFor: ["고득점 목표", "재응시 준비", "장기 준비 (8주 이상)"],
+    badge: "INTENSIVE",
     ctaLabel: "300P 집중 패키지 보기",
     includes: [
       "문제집 300P",

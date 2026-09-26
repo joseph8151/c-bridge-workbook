@@ -2,6 +2,7 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 import { caseStudies } from "@/lib/caseStudies";
+import { tierMeta } from "@/lib/products";
 
 export default function StudyProfiles() {
   return (
@@ -31,16 +32,16 @@ export default function StudyProfiles() {
                 <p className="mt-4 text-sm font-semibold" style={{ color: "var(--color-bronze)" }}>
                   {c.focus}
                 </p>
-                <p className="mt-1 text-sm" style={{ color: "var(--color-muted)" }}>
-                  {c.volume}
+                <p className="mt-1 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-muted)" }}>
+                  {tierMeta[c.tier].label} {tierMeta[c.tier].name}
                 </p>
               </div>
               <Link
-                href={`/consultation?test=${encodeURIComponent(c.test)}`}
+                href={`/consultation?test=${encodeURIComponent(c.test)}&tier=${encodeURIComponent(tierMeta[c.tier].label)}`}
                 className="mt-8 inline-block text-xs font-medium tracking-[0.06em]"
                 style={{ color: "var(--color-ink)" }}
               >
-                비슷한 교재 구성 상담하기 <span className="arrow-slide">→</span>
+                이 구성 보기 <span className="arrow-slide">→</span>
               </Link>
             </div>
           ))}

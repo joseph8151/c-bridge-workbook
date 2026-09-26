@@ -7,9 +7,9 @@ export default function Philosophy() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <EditorialHeading size="lg">
-            같은 영어라도
+            직군과 나라가 다르면
             <br />
-            시험은 전혀 다릅니다.
+            같은 영어가 아닙니다.
           </EditorialHeading>
           <div className="max-w-[650px] space-y-5 text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
             <p className="break-keep">

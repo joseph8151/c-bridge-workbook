@@ -1,12 +1,18 @@
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 
-const cards = [
-  { no: "01", title: "시험별 맞춤 구성", desc: "시험 유형과 목표 점수에 맞춰 필요한 영역을 중심으로 구성합니다." },
-  { no: "02", title: "실전 문제 훈련", desc: "실제 시험 구조와 출제 유형을 기준으로 반복 훈련할 수 있습니다." },
-  { no: "03", title: "상세 해설", desc: "정답뿐 아니라 문제 접근 방법과 오답 이유까지 확인할 수 있습니다." },
-  { no: "04", title: "Final Review", desc: "시험 직전 핵심 문제와 개념을 빠르게 다시 확인할 수 있습니다." },
-  { no: "05", title: "Study Plan", desc: "교재 분량을 기준으로 학습 일정을 체계적으로 관리할 수 있습니다." },
+const items = [
+  { no: "01", title: "EXAM STRUCTURE", desc: "시험 구조를 기준으로 문제를 구성합니다." },
+  { no: "02", title: "TARGET", desc: "목표 수준에 맞춘 난이도로 훈련합니다." },
+  { no: "03", title: "FOCUS", desc: "Reading · Writing · Speaking 등 취약 영역에 집중합니다." },
+  { no: "04", title: "FINAL", desc: "실전 모의와 시험 직전 Review로 마무리합니다." },
+];
+
+const BORDER_CLASSES = [
+  "",
+  "border-t sm:border-t-0 sm:border-l",
+  "border-t lg:border-t-0 lg:border-l",
+  "border-t sm:border-l lg:border-t-0",
 ];
 
 export default function WhyCBridge() {
@@ -15,27 +21,25 @@ export default function WhyCBridge() {
       <Container>
         <SectionHeader
           eyebrow="WHY C-BRIDGE"
-          title="MORE THAN A WORKBOOK."
-          description="문제를 더 많이 푸는 것이 아니라, 시험에 맞는 문제를 풀어야 합니다."
+          title="문제를 많이 주는 것이 목적이 아닙니다."
+          description="같은 시험을 준비해도 현재 수준, 목표 점수, 시험일까지 남은 기간, 취약 영역에 따라 필요한 문제는 달라집니다. C-BRIDGE는 시험별 구조를 기준으로 필요한 영역을 선택하고 반복해서 훈련할 수 있도록 구성합니다."
         />
 
-        <div className="mt-12 grid border-y sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
-          {cards.map((c, i) => (
+        <div className="mt-12 grid border-y sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: "var(--color-border)" }}>
+          {items.map((item, i) => (
             <div
-              key={c.no}
-              className={`p-6 min-[361px]:p-8 md:p-10 ${i > 0 ? "border-t" : ""} ${i < 2 ? "sm:border-t-0" : ""} ${
-                i % 2 === 1 ? "sm:border-l" : ""
-              }`}
+              key={item.no}
+              className={`p-6 min-[361px]:p-8 ${BORDER_CLASSES[i]}`}
               style={{ borderColor: "var(--color-border)" }}
             >
               <span className="font-serif text-2xl font-bold" style={{ color: "var(--color-bronze)" }}>
-                {c.no}
+                {item.no}
               </span>
               <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
-                {c.title}
+                {item.title}
               </p>
               <p className="mt-2 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-                {c.desc}
+                {item.desc}
               </p>
             </div>
           ))}

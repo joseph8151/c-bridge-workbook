@@ -40,6 +40,7 @@ export default function ConsultationForm() {
   const prefillTest = searchParams.get("test") ?? "";
   const prefillGoal = searchParams.get("goal") ?? "";
   const prefillWeakArea = searchParams.get("weakArea") ?? "";
+  const prefillTier = searchParams.get("tier") ?? "";
 
   const [status, setStatus] = useState<Status>("idle");
   const [test, setTest] = useState(prefillTest);
@@ -82,9 +83,17 @@ export default function ConsultationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
+        <p className="text-sm font-semibold text-ink">교재를 먼저 고르지 않으셔도 됩니다.</p>
+        <p className="mt-1 text-xs leading-relaxed text-ink/60">
+          시험과 목표를 알려주시면 필요한 구성을 안내해드립니다.
+        </p>
+      </div>
+
       {prefillTest && (
         <div className="rounded-none border border-ink/15 bg-paper px-4 py-3 text-sm text-ink/70">
           문의 내용: <span className="font-semibold text-ink">{prefillTest}</span>
+          {prefillTier && ` · ${prefillTier}`}
         </div>
       )}
 
@@ -125,6 +134,8 @@ export default function ConsultationForm() {
 
       <Field label="목표" name="goal" placeholder="예: 승진 제출용, 고득점" defaultValue={prefillGoal} />
 
+      <Field label="시험 예정일" name="examDate" type="date" />
+
       <div>
         <span className="text-xs font-bold tracking-[0.1em] text-ink/60">약한 영역</span>
         <div role="radiogroup" aria-label="약한 영역" className="mt-3 grid grid-cols-4 gap-2">
@@ -154,7 +165,13 @@ export default function ConsultationForm() {
               key={v}
               className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
             >
-              <input type="radio" name="volume" value={v} defaultChecked={i === 0} className="sr-only" />
+              <input
+                type="radio"
+                name="volume"
+                value={v}
+                defaultChecked={prefillTier ? v === prefillTier : i === 0}
+                className="sr-only"
+              />
               {v}
             </label>
           ))}

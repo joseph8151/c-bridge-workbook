@@ -30,7 +30,10 @@ export default function ResourcesPage() {
 
       <section className="bg-paper py-10">
         <div className="mx-auto max-w-[1200px] px-5 text-center md:px-10">
-          <p className="text-sm text-ink/50">300페이지를 고르면 직전 16쪽과 모의 1회가 붙습니다.</p>
+          <p className="text-sm text-ink/50">
+            300P를 선택하면 대량 실전 문제와 실전 모의고사 15회 이상, 시험 직전 Final Book이 함께
+            제공됩니다.
+          </p>
         </div>
       </section>
     </>

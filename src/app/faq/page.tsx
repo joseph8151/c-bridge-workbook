@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
-import FaqAccordion from "@/components/FaqAccordion";
+import FAQ from "@/components/FAQ";
+import { extendedFaqItems } from "@/lib/faqData";
 
 export const metadata: Metadata = {
-  title: "FAQ | C-BRIDGE TEST PREP",
-  description: "C-BRIDGE 문제집 구매, 배송, 상담에 대한 자주 묻는 질문을 확인하세요.",
+  title: "FAQ | C-BRIDGE",
+  description: "C-BRIDGE 구성, 가격, 전달 방식, 상담에 대한 자주 묻는 질문을 확인하세요.",
+  alternates: { canonical: "/faq" },
 };
 
 export default function FaqPage() {
@@ -13,7 +15,7 @@ export default function FaqPage() {
       <div className="mx-auto max-w-4xl px-4 min-[361px]:px-5 md:px-10">
         <SectionHeading eyebrow="Support" title="FREQUENTLY ASKED QUESTIONS." />
         <div className="mt-12">
-          <FaqAccordion />
+          <FAQ items={extendedFaqItems} />
         </div>
       </div>
     </section>
