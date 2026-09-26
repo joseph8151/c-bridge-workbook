@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function StickyMobileCTA() {
   return (
     <Link href="/consultation" className="btn-fab">
-      상담하기 <span aria-hidden="true">→</span>
+      교재 구성 상담하기 <span aria-hidden="true">→</span>
     </Link>
   );
 }
