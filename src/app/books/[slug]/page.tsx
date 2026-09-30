@@ -18,6 +18,7 @@ import { siteFaqItems } from "@/lib/faqData";
 import TolesBookPage from "@/components/pages/TolesBookPage";
 import MarlinsBookPage from "@/components/pages/MarlinsBookPage";
 import EptaBookPage from "@/components/pages/EptaBookPage";
+import TelcPflegeBookPage from "@/components/pages/TelcPflegeBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -53,6 +54,7 @@ export default async function TestDetailPage({
   if (test.slug === "toles") return <TolesBookPage />;
   if (test.slug === "marlins") return <MarlinsBookPage />;
   if (test.slug === "epta") return <EptaBookPage />;
+  if (test.slug === "telc-pflege") return <TelcPflegeBookPage />;
 
   const group = groupMeta[test.group];
   const whoFor = getWhoFor(test);
@@ -112,16 +114,6 @@ export default async function TestDetailPage({
             <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed md:text-base" style={{ color: "var(--color-muted)" }}>
               영국 비자·이민(UKVI) 목적의 PTE Academic UKVI도 동일한 시험 유형으로 준비할 수 있습니다.
               목표 기관이 요구하는 버전에 맞춰 같은 교재로 대비하세요.
-            </p>
-          </Container>
-        </section>
-      )}
-
-      {test.slug === "telc-pflege" && (
-        <section className="border-t py-10 md:py-12" style={{ borderColor: "var(--color-border)" }}>
-          <Container>
-            <p className="max-w-2xl break-keep text-sm leading-relaxed md:text-base" style={{ color: "var(--color-muted)" }}>
-              Goethe-Test PRO Pflege 구성으로도 맞춥니다.
             </p>
           </Container>
         </section>
