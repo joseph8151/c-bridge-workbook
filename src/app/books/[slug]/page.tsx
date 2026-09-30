@@ -15,6 +15,7 @@ import { priceSummaryLine } from "@/lib/products";
 import { getTestIntro, getTestTips } from "@/lib/testContent";
 import { getWhoTakesTestInfo } from "@/lib/whoTakesTest";
 import { siteFaqItems } from "@/lib/faqData";
+import TolesBookPage from "@/components/pages/TolesBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -46,6 +47,8 @@ export default async function TestDetailPage({
   const { slug } = await params;
   const test = getTestBySlug(slug);
   if (!test) notFound();
+
+  if (test.slug === "toles") return <TolesBookPage />;
 
   const group = groupMeta[test.group];
   const whoFor = getWhoFor(test);
