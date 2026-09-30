@@ -17,6 +17,7 @@ import { getWhoTakesTestInfo } from "@/lib/whoTakesTest";
 import { siteFaqItems } from "@/lib/faqData";
 import TolesBookPage from "@/components/pages/TolesBookPage";
 import MarlinsBookPage from "@/components/pages/MarlinsBookPage";
+import EptaBookPage from "@/components/pages/EptaBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -51,6 +52,7 @@ export default async function TestDetailPage({
 
   if (test.slug === "toles") return <TolesBookPage />;
   if (test.slug === "marlins") return <MarlinsBookPage />;
+  if (test.slug === "epta") return <EptaBookPage />;
 
   const group = groupMeta[test.group];
   const whoFor = getWhoFor(test);
