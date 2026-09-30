@@ -32,6 +32,27 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     score: "10–90점",
     sections: ["Speaking & Writing", "Reading", "Listening"],
   },
+  "ielts-general": {
+    purpose: "이민·취업을 목적으로 한 실생활 중심 IELTS 모듈입니다.",
+    audience: "이민, 취업 이민, 국내외 취업을 준비하는 지원자.",
+    usedIn: "이민 프로그램, 취업 지원에서 활용됩니다. 인정 여부는 지원 기관 기준으로 확인이 필요합니다.",
+    differenceFromSimilar: "학술 목적인 IELTS Academic과 달리 Reading·Writing 문항이 실생활·직장 상황 중심으로 출제됩니다.",
+    sections: ["Listening", "Reading", "Writing", "Speaking"],
+  },
+  "languagecert-academic": {
+    purpose: "호주 비자 목록에 오르는 학술 목적 영어시험입니다.",
+    audience: "호주 유학·비자를 준비하는 지원자.",
+    usedIn: "일부 호주 비자·교육기관에서 활용됩니다. 인정 여부는 비자 유형과 학교마다 다르므로 지원 전 확인이 필요합니다.",
+    differenceFromSimilar: "IELTS·PTE Academic과 시험 제공 기관과 채점 방식이 다르며, 인정 범위도 기관별로 상이합니다.",
+    sections: ["Listening", "Reading", "Writing", "Speaking"],
+  },
+  "telc-pflege": {
+    purpose: "독일 간호 인력 등록을 위한 전문 목적 독일어시험입니다.",
+    audience: "독일 간호 면허 등록·취업을 준비하는 간호 인력.",
+    usedIn: "독일 간호 인력 등록 기관에서 활용됩니다. 인정 여부는 등록 기관 기준으로 확인이 필요합니다.",
+    differenceFromSimilar: "영어시험인 OET와 달리 독일어로 치르는 시험이며, 평가 기관과 채점 기준도 다릅니다.",
+    sections: ["Hören", "Lesen", "Schreiben", "Sprechen"],
+  },
   celpip: {
     purpose: "캐나다 영주권·시민권 신청을 위한 캐나다식 영어시험입니다.",
     audience: "캐나다 영주권·시민권을 준비하는 이민 신청자.",

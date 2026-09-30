@@ -7,7 +7,16 @@ import { siteConfig } from "@/lib/config";
 const testGroups: { label: string; items: string[] }[] = [
   {
     label: "이민 · 유학",
-    items: ["PTE Academic", "PTE Academic UKVI", "PTE Core", "CELPIP", "MET (미시간영어)", "IELTS General", "IELTS for UKVI"],
+    items: [
+      "PTE Academic",
+      "PTE Academic UKVI",
+      "PTE Core",
+      "IELTS General",
+      "LanguageCert Academic",
+      "CELPIP",
+      "MET (미시간영어)",
+      "IELTS for UKVI",
+    ],
   },
   {
     label: "의료 영어",
@@ -20,6 +29,7 @@ const testGroups: { label: string; items: string[] }[] = [
       "OET Radiography",
       "OET Occupational Therapy",
       "CELBAN (셀반)",
+      "telc B1·B2 Pflege",
     ],
   },
   { label: "간호 면허", items: ["NCLEX"] },

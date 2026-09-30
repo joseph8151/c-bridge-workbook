@@ -14,15 +14,28 @@ const groups: ExamGroup[] = [
     items: [
       { name: "PTE Academic", desc: "컴퓨터 기반 학술 영어시험" },
       { name: "PTE Academic UKVI", desc: "영국 비자를 위한 PTE" },
-      { name: "PTE Core", desc: "캐나다 이민을 위한 PTE" },
+      {
+        name: "PTE Core",
+        desc: "캐나다 이민을 위한 PTE",
+        keywords: ["PTE Core", "피티이 코어"],
+      },
       { name: "CELPIP", desc: "캐나다 영주 · 시민권 영어시험" },
       {
         name: "MET (미시간영어)",
         desc: "미시간 영어시험. 호주 비자 목록에 오르는 경우가 있습니다.",
         keywords: ["MET", "미시간영어", "Michigan English Test", "MET 문제집", "MET 호주"],
       },
-      { name: "IELTS General", desc: "이민 · 취업을 위한 IELTS" },
+      {
+        name: "IELTS General",
+        desc: "이민 · 취업을 위한 IELTS",
+        keywords: ["IELTS General", "아이엘츠 제너럴", "아이엘츠 이민"],
+      },
       { name: "IELTS for UKVI", desc: "영국 비자를 위한 IELTS" },
+      {
+        name: "LanguageCert Academic",
+        desc: "호주 비자 목록에 오르는 학술 영어입니다. 인정은 비자·학교마다 다릅니다.",
+        keywords: ["LanguageCert", "랭귀지서트", "LanguageCert Academic"],
+      },
     ],
   },
   {
@@ -39,6 +52,11 @@ const groups: ExamGroup[] = [
         name: "CELBAN (셀반)",
         desc: "캐나다 간호 등록용 영어입니다. OET·셀핍과 형식이 다릅니다.",
         keywords: ["CELBAN", "셀반", "캐나다 간호 영어", "CELBAN 문제집"],
+      },
+      {
+        name: "telc B1·B2 Pflege",
+        desc: "독일 간호 독일어. OET가 아닙니다.",
+        keywords: ["telc Pflege", "텔크 간호", "독일 간호 독일어", "B2 Pflege"],
       },
     ],
   },

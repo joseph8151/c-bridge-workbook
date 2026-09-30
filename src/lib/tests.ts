@@ -256,6 +256,18 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "캐나다 이민을 위한 PTE",
     description: "캐나다 이민을 목적으로 한 PTE Core 시험 대비. 실생활 중심 문항 유형을 연습합니다.",
+    keywords: ["PTE Core", "피티이 코어"],
+  },
+  {
+    id: "ielts-general",
+    slug: "ielts-general",
+    name: "IELTS General Training",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "이민 · 취업을 위한 IELTS",
+    description:
+      "이민·취업을 목적으로 한 IELTS General Training 모듈 대비 과정입니다. Academic과 Reading·Writing 문항 구성이 다릅니다.",
+    keywords: ["IELTS General", "아이엘츠 제너럴", "아이엘츠 이민"],
   },
   {
     id: "duolingo",
@@ -295,6 +307,17 @@ export const tests: Test[] = [
     tagline: "영국식 국제 영어시험",
     description: "유학·이민에 활용되는 영국 기반 국제 영어시험. 영역별 실전 문제와 모의고사를 제공합니다.",
     badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "languagecert-academic",
+    slug: "languagecert-academic",
+    name: "LanguageCert Academic",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "호주 비자 목록 학술 영어시험",
+    description:
+      "호주 비자 목록에 오르는 학술 영어시험입니다. 인정 여부는 비자 유형과 학교마다 다르므로 지원 전 확인이 필요합니다.",
+    keywords: ["LanguageCert", "랭귀지서트", "LanguageCert Academic"],
   },
   {
     id: "tcf-canada",
@@ -416,6 +439,18 @@ export const tests: Test[] = [
     description:
       "캐나다 간호사 등록을 위한 영어시험입니다. 영주용 CELPIP, OET Nursing과도 형식과 제출 대상 기관이 다릅니다.",
     keywords: ["CELBAN", "셀반", "캐나다 간호 영어"],
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "telc-pflege",
+    slug: "telc-pflege",
+    name: "telc B1·B2 Pflege",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "독일 간호 독일어시험",
+    description:
+      "독일 간호 인력 등록을 위한 독일어시험입니다. OET와는 언어와 평가 기관이 다릅니다.",
+    keywords: ["telc Pflege", "텔크 간호", "독일 간호 독일어", "B2 Pflege"],
     badges: ["자료가 부족한 시험 추천"],
   },
   {

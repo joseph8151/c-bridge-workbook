@@ -216,6 +216,42 @@ export const guidePosts: GuidePost[] = [
     quote: "Listening prompt: “The seminar has been moved to Thursday afternoon.”",
     closing: "인정 여부는 상담에서 지원 국가 기준으로 확인해드립니다.",
   },
+  {
+    slug: "pte-academic-vs-core",
+    title: "PTE Academic과 Core는 성적표 용도가 다릅니다",
+    category: "PTE",
+    excerpt: "같은 PTE 브랜드지만 Academic은 학술용, Core는 캐나다 이민용으로 목적이 다릅니다.",
+    content: [
+      "PTE라는 이름은 같지만 Academic과 Core는 같은 시험이 아닙니다. Academic은 대학·대학원 진학을 위한 학술 목적 시험이고, Core는 캐나다 이민(Express Entry 등)을 위해 설계된 실생활 중심 시험입니다.",
+      "문항 성격부터 다릅니다. Academic은 강의·에세이 같은 학술 자료를 다루지만, Core는 이메일이나 공지문 같은 실생활 상황 중심 과제로 구성됩니다. 목적에 맞지 않는 쪽으로 준비하면 시험 자체가 낯설게 느껴질 수 있습니다.",
+    ],
+    quote: "Core task: “Write a short message to your building manager about a maintenance issue.”",
+    closing: "진학이 목적이면 Academic, 캐나다 이민이 목적이면 Core로 접수해야 합니다.",
+  },
+  {
+    slug: "ielts-general-is-not-a-shorter-academic",
+    title: "IELTS General은 Academic을 줄인 시험이 아닙니다",
+    category: "IELTS",
+    excerpt: "이민·취업용 모듈로, Academic과 Reading·Writing 문항 구성 자체가 다릅니다.",
+    content: [
+      "General Training을 Academic보다 쉬운 시험으로 오해하는 경우가 많지만, 난이도가 아니라 목적과 문항 구성 자체가 다른 시험입니다. Academic은 대학 강의나 학술 지문을 다루는 반면, General Training은 안내문, 광고, 사내 공지 같은 실생활·직장 지문을 다룹니다.",
+      "Writing도 마찬가지입니다. Academic은 그래프·도표를 설명하는 Task 1이 나오지만, General Training은 편지 쓰기가 나옵니다. Listening과 Speaking은 공통이지만, Reading과 Writing을 Academic 자료로 준비하면 실제 시험 유형과 어긋납니다.",
+    ],
+    quote: "General Training Task 1: “Write a letter to your landlord about a repair that has not been completed.”",
+    closing: "이민·취업이 목적이면 처음부터 General Training 자료로 준비해야 합니다.",
+  },
+  {
+    slug: "telc-pflege-is-not-generic-b2",
+    title: "telc Pflege는 일반 B2가 아닙니다",
+    category: "telc",
+    excerpt: "일반 독일어 B2와 달리 간호 현장 어휘와 상황으로 채점되는 전문 목적 시험입니다.",
+    content: [
+      "telc B1·B2 Pflege를 일반 B2 독일어 시험의 연장으로 보는 경우가 있지만, 실제로는 간호 현장 어휘와 업무 상황을 평가하는 전문 목적 시험입니다. 일상 대화 중심의 일반 B2 자료로는 다루지 않는 인수인계, 환자 기록, 병동 대화 같은 상황이 출제됩니다.",
+      "평가 기관과 채점 기준도 일반 독일어 시험과 다릅니다. 독일 간호 인력 등록이 목적이라면, 일반 B2 교재가 아니라 Pflege 전용 자료로 준비해야 실제 시험 유형과 맞습니다.",
+    ],
+    quote: "Handover note: “Der Patient hat heute Nacht über Schmerzen geklagt und wurde um 2 Uhr behandelt.”",
+    closing: "OET와는 언어 자체가 다른 시험이므로 OET 자료로 대체할 수 없습니다.",
+  },
 ];
 
 export function getGuideBySlug(slug: string) {

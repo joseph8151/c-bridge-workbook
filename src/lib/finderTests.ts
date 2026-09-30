@@ -15,6 +15,8 @@ export const finderGroups: FinderGroup[] = [
     items: [
       { name: "PTE Academic", href: "/books/pte-academic" },
       { name: "PTE Core", href: "/books/pte-core" },
+      { name: "IELTS General", href: "/books/ielts-general" },
+      { name: "LanguageCert Academic", href: "/books/languagecert-academic" },
       { name: "CELPIP", href: "/books/celpip" },
       { name: "MET (미시간영어)", href: "/met" },
       { name: "IELTS", href: "/books/ielts" },
@@ -27,6 +29,7 @@ export const finderGroups: FinderGroup[] = [
     items: [
       { name: "OET", href: "/oet" },
       { name: "CELBAN (셀반)", href: "/celban" },
+      { name: "telc B1·B2 Pflege", href: "/books/telc-pflege" },
       { name: "TOPEC", href: "/books/topec" },
     ],
   },
