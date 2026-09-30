@@ -8,10 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function FlexSnultPage() {
-  return (
-    <CategoryPageTemplate
-      group="FLEX_SNULT"
-      heroImage={{ src: "/images/flex.jpg", alt: "FLEX C-BRIDGE 문제집 www.c-bridge.uk" }}
-    />
-  );
+  return <CategoryPageTemplate group="FLEX_SNULT" />;
 }

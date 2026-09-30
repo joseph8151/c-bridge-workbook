@@ -22,13 +22,14 @@ const BORDER_CLASSES = [
 
 export default function ValueStack() {
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-24 md:py-32" style={{ borderColor: "var(--color-border)" }} data-reveal>
       <Container className="grid gap-12 lg:grid-cols-[1fr_320px] lg:items-start lg:gap-16">
         <div>
           <SectionHeader
             eyebrow="VALUE STACK"
             title="한 권의 PDF가 아닙니다."
             description="시험을 준비하는 과정에 필요한 자료를 하나의 구성으로 제공합니다."
+            size="lg"
           />
 
           <div className="mt-10 grid border-y sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>

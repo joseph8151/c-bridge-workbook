@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import TierSelector from "@/components/TierSelector";
 import TestCard from "@/components/TestCard";
@@ -16,11 +15,6 @@ import { priceSummaryLine } from "@/lib/products";
 import { getTestIntro, getTestTips } from "@/lib/testContent";
 import { getWhoTakesTestInfo } from "@/lib/whoTakesTest";
 import { siteFaqItems } from "@/lib/faqData";
-
-const DETAIL_HERO_PHOTOS: Record<string, { src: string; alt: string }> = {
-  "pte-academic": { src: "/images/pte-academic.jpg", alt: "PTE Academic C-BRIDGE 문제집 www.c-bridge.uk" },
-  celpip: { src: "/images/celpip.jpg", alt: "CELPIP C-BRIDGE 문제집 www.c-bridge.uk" },
-};
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -60,7 +54,6 @@ export default async function TestDetailPage({
   const related = tests.filter((t) => t.group === test.group && t.id !== test.id).slice(0, 3);
   const intro = getTestIntro(test);
   const tips = getTestTips(test);
-  const heroPhoto = DETAIL_HERO_PHOTOS[test.slug];
   const overview = getWhoTakesTestInfo(test);
 
   const overviewRows = [
@@ -86,7 +79,7 @@ export default async function TestDetailPage({
 
       {/* 01 · Hero */}
       <section className="py-16 md:py-24" style={{ background: "var(--color-paper)" }}>
-        <Container className={heroPhoto ? "grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]" : ""}>
+        <Container>
           <div>
             <p className="eyebrow">{group.navLabel}</p>
             <h1
@@ -102,29 +95,27 @@ export default async function TestDetailPage({
               목표 Level에 따라 충분히 연습할 수 있도록 2가지 분량을 선택할 수 있습니다. {priceSummaryLine}
             </p>
           </div>
-          {heroPhoto && (
-            <div className="img-fade relative h-56 w-full overflow-hidden md:h-72">
-              <Image src={heroPhoto.src} alt={heroPhoto.alt} fill sizes="(max-width: 1024px) 100vw, 480px" className="object-cover" style={{ objectPosition: "center" }} />
-            </div>
-          )}
         </Container>
       </section>
 
       {test.slug === "pte-academic" && (
-        <section className="border-t py-12 md:py-14" style={{ borderColor: "var(--color-border)" }}>
+        <section className="border-t py-10 md:py-12" style={{ borderColor: "var(--color-border)" }}>
           <Container>
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
-              <div className="img-fade relative h-40 w-full shrink-0 overflow-hidden md:h-36 md:w-48">
-                <Image src="/images/pte-academic-ukvi.jpg" alt="PTE Academic UKVI C-BRIDGE 문제집 www.c-bridge.uk" fill sizes="(max-width: 768px) 100vw, 192px" className="object-cover" style={{ objectPosition: "center" }} />
-              </div>
-              <div>
-                <p className="eyebrow">PTE Academic UKVI</p>
-                <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed md:text-base" style={{ color: "var(--color-muted)" }}>
-                  영국 비자·이민(UKVI) 목적의 PTE Academic UKVI도 동일한 시험 유형으로 준비할 수 있습니다.
-                  목표 기관이 요구하는 버전에 맞춰 같은 교재로 대비하세요.
-                </p>
-              </div>
-            </div>
+            <p className="eyebrow">PTE Academic UKVI</p>
+            <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed md:text-base" style={{ color: "var(--color-muted)" }}>
+              영국 비자·이민(UKVI) 목적의 PTE Academic UKVI도 동일한 시험 유형으로 준비할 수 있습니다.
+              목표 기관이 요구하는 버전에 맞춰 같은 교재로 대비하세요.
+            </p>
+          </Container>
+        </section>
+      )}
+
+      {test.slug === "telc-pflege" && (
+        <section className="border-t py-10 md:py-12" style={{ borderColor: "var(--color-border)" }}>
+          <Container>
+            <p className="max-w-2xl break-keep text-sm leading-relaxed md:text-base" style={{ color: "var(--color-muted)" }}>
+              Goethe-Test PRO Pflege 구성으로도 맞춥니다.
+            </p>
           </Container>
         </section>
       )}

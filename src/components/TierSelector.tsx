@@ -40,7 +40,7 @@ export default function TierSelector({ test }: { test: Test }) {
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
       <div className="flex flex-wrap justify-center gap-2.5 lg:sticky lg:top-28 lg:justify-start">
-        {bookSet.map((title, i) => (
+        {bookSet.map((title) => (
           <BookCover
             key={title}
             test={test.name}
@@ -48,7 +48,6 @@ export default function TierSelector({ test }: { test: Test }) {
             tag={meta.label}
             color={color}
             size={bookSet.length > 4 ? "sm" : "md"}
-            tilt={i % 2 === 0 ? -4 : 4}
           />
         ))}
       </div>

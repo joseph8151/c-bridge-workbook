@@ -3,49 +3,35 @@ export interface BookMockupItem {
   subtitle?: string;
 }
 
-// 실제 표지 이미지가 없을 때 쓰는 CSS 전용 book mockup.
-// 겹쳐 쌓인 책 표지를 얇은 border · 미세한 회전 · 약한 그림자만으로 표현합니다.
+// 표지 목업 — 단색 사각형 + 시험명 텍스트만. 기울임 · 그라디언트 · 그림자 없음.
 export default function BookMockup({ books }: { books: BookMockupItem[] }) {
   return (
-    <div
-      className="relative mx-auto w-full"
-      style={{ height: "clamp(300px, 82vw, 420px)", maxWidth: "clamp(260px, 88vw, 340px)" }}
-      aria-hidden
-    >
-      {books.map((b, i) => {
-        const offset = `calc(${i} * clamp(22px, 8vw, 34px))`;
-        const rotate = (i - (books.length - 1) / 2) * 2.5;
-        return (
-          <div
-            key={b.title}
-            className="absolute flex flex-col justify-between border p-5 min-[430px]:p-6"
-            style={{
-              width: "clamp(180px, 62vw, 240px)",
-              height: "clamp(250px, 84vw, 340px)",
-              left: offset,
-              top: `${i * 10}px`,
-              background: "var(--color-paper)",
-              borderColor: "var(--color-border)",
-              boxShadow: "0 24px 48px -32px rgba(17,24,32,0.4)",
-              transform: `rotate(${rotate}deg)`,
-              zIndex: books.length - i,
-            }}
-          >
-            <div className="h-[3px] w-10" style={{ background: "var(--color-bronze)" }} />
-            <div>
-              <p className="eyebrow">C-BRIDGE</p>
-              <p className="mt-2 font-serif text-xl font-bold leading-tight" style={{ color: "var(--color-ink)" }}>
-                {b.title}
+    <div className="flex gap-4" aria-hidden>
+      {books.map((b) => (
+        <div
+          key={b.title}
+          className="flex flex-col justify-between border p-5 min-[430px]:p-6"
+          style={{
+            width: "clamp(140px, 24vw, 180px)",
+            height: "clamp(200px, 34vw, 260px)",
+            background: "var(--color-paper)",
+            borderColor: "var(--color-ink)",
+          }}
+        >
+          <div className="h-[2px] w-8" style={{ background: "var(--color-bronze)" }} />
+          <div>
+            <p className="eyebrow">C-BRIDGE</p>
+            <p className="mt-2 font-serif text-lg font-bold leading-tight" style={{ color: "var(--color-ink)" }}>
+              {b.title}
+            </p>
+            {b.subtitle && (
+              <p className="mt-1.5 text-xs" style={{ color: "var(--color-muted)" }}>
+                {b.subtitle}
               </p>
-              {b.subtitle && (
-                <p className="mt-1.5 text-xs" style={{ color: "var(--color-muted)" }}>
-                  {b.subtitle}
-                </p>
-              )}
-            </div>
+            )}
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }

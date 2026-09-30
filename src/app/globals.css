@@ -7,15 +7,15 @@
      allowed to be a deep, solid pistachio surface; every other
      section is light.
      ============================================================ */
-  --color-paper: #f6f0e4; /* background */
-  --color-paper-dark: #e7eedc; /* 면 강조 */
-  --color-ink: #2a2e24; /* 제목 */
-  --color-muted: #5c574e; /* 보조 텍스트 */
-  --color-bronze: #6f8458; /* 버튼 · 푸터 · 악센트 */
-  --color-bronze-dark: #5c7048; /* 호버 */
-  --color-border: #c9b8a4; /* 선 */
-  --color-pistachio: #b7c89a;
-  --color-disabled: #c5d0b0;
+  --color-paper: #f7f6f2; /* background — flat, no texture */
+  --color-paper-dark: #eeece4; /* 면 강조 */
+  --color-ink: #222222; /* 본문 텍스트 */
+  --color-muted: #5a574c; /* 보조 텍스트 */
+  --color-bronze: #2a2e24; /* 단일 포인트 컬러 — 버튼 · 링크 · 악센트 */
+  --color-bronze-dark: #1c1f18; /* 호버 */
+  --color-border: #d9d3c4; /* 1px 라인 */
+  --color-pistachio: #2a2e24;
+  --color-disabled: #c9c4b6;
 
   /* 다크 섹션은 전부 크림으로 통일 — footer만 예외로 별도 처리 */
   --color-navy: var(--color-paper);
@@ -32,14 +32,14 @@
   --radius-md: 6px;
   --radius-lg: 8px;
 
-  --container-width: 1280px;
+  --container-width: 1040px;
 
   /* ---- Mobile responsive system ----
      Shared tokens so every section/card/button uses the same grid instead
      of ad hoc spacing per component. Gutter matches Container's px-5 (20px);
      the 360px-and-under fallback drops to 16px via the media query below. */
   --mobile-gutter: 20px;
-  --content-max-width: 1280px;
+  --content-max-width: 1040px;
   --section-space-mobile: 72px;
   --section-space-desktop: 128px;
   --section-space-mobile-lg: 88px;
@@ -108,7 +108,7 @@
   /* 영문/숫자는 Cormorant Garamond, 한글은 Noto Serif KR로 자동 매칭(문자 단위 폰트 스택) */
   --font-serif: var(--font-cormorant), var(--font-serif-kr), "Apple SD Gothic Neo", serif;
   /* 본문 1차 폰트는 CDN Pretendard, 실패 시 Noto Sans KR로 대체 */
-  --font-sans: "Pretendard Variable", Pretendard, var(--font-sans-kr), "Apple SD Gothic Neo", sans-serif;
+  --font-sans: var(--font-wanted-sans), var(--font-sans-kr), "Apple SD Gothic Neo", sans-serif;
 }
 
 html {
@@ -162,24 +162,25 @@ a:hover .arrow-slide {
   transform: translateX(4px);
 }
 
-/* Primary buttons: gelato pistachio fill everywhere */
+/* Button system: exactly ONE filled variant (.btn-primary) site-wide.
+   Everything else is either a 1px border or plain underlined text — no
+   drop shadows, no gradients, no second fill color. */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  border-radius: var(--radius-sm);
+  min-height: 48px;
+  border-radius: 2px;
+  border: 1px solid var(--color-bronze);
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   background: var(--color-bronze);
   color: var(--color-paper);
-  transition: background-color 220ms var(--ease-pub), transform 150ms var(--ease-pub);
+  transition: background-color 180ms var(--ease-pub), color 180ms var(--ease-pub);
 }
 .btn-primary:hover {
   background-color: var(--color-bronze-dark);
-}
-.btn-primary:active {
-  transform: scale(0.98);
+  border-color: var(--color-bronze-dark);
 }
 .btn-primary:focus-visible {
   outline: 1px solid var(--color-bronze);
@@ -187,22 +188,23 @@ a:hover .arrow-slide {
 }
 .btn-primary:disabled {
   background: var(--color-disabled);
+  border-color: var(--color-disabled);
   color: var(--color-paper);
 }
 
-/* Secondary buttons: pistachio border, ink text, pistachio-tint hover */
+/* Secondary buttons: 1px border, ink text, no fill */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-bronze);
+  min-height: 48px;
+  border-radius: 2px;
+  border: 1px solid var(--color-ink);
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--color-ink);
   background: transparent;
-  transition: background-color 220ms var(--ease-pub);
+  transition: background-color 180ms var(--ease-pub);
 }
 .btn-secondary:hover {
   background-color: var(--color-paper-dark);
@@ -212,22 +214,42 @@ a:hover .arrow-slide {
   outline-offset: 2px;
 }
 
-/* Footer-only variant: the footer is the one surface allowed to stay a
-   deep, solid pistachio, so its buttons invert to a cream fill instead. */
+/* Underlined text button — the plainest CTA treatment, used wherever a
+   filled or bordered button would be one too many on the page. */
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  color: var(--color-ink);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-underline-offset: 4px;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  transition: text-decoration-color 180ms var(--ease-pub);
+}
+.btn-text:hover {
+  text-decoration-color: var(--color-ink);
+}
+
+/* Footer-only variant: footer stays a solid dark surface, so its one
+   button inverts to a bordered (not filled) treatment in paper color. */
 .btn-on-footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  border-radius: var(--radius-sm);
+  min-height: 48px;
+  border-radius: 2px;
+  border: 1px solid var(--color-paper);
   font-weight: 500;
-  letter-spacing: 0.06em;
-  background: var(--color-paper);
-  color: var(--color-bronze);
-  transition: background-color 220ms var(--ease-pub);
+  letter-spacing: 0.04em;
+  background: transparent;
+  color: var(--color-paper);
+  transition: background-color 180ms var(--ease-pub), color 180ms var(--ease-pub);
 }
 .btn-on-footer:hover {
-  background-color: var(--color-paper-dark);
+  background-color: var(--color-paper);
+  color: var(--color-bronze);
 }
 .btn-on-footer:focus-visible {
   outline: 1px solid var(--color-paper);
@@ -257,22 +279,20 @@ a:hover .arrow-slide {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
+  height: 44px;
   padding: 0 16px;
-  border-radius: 6px;
-  background: var(--color-bronze);
-  color: var(--color-paper);
+  border-radius: 2px;
+  border: 1px solid var(--color-ink);
+  background: transparent;
+  color: var(--color-ink);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  transition: background-color 220ms var(--ease-pub), transform 150ms var(--ease-pub);
+  transition: background-color 180ms var(--ease-pub);
 }
 .btn-nav-cta:hover {
-  background-color: var(--color-bronze-dark);
-}
-.btn-nav-cta:active {
-  transform: scale(0.97);
+  background-color: var(--color-paper-dark);
 }
 .btn-nav-cta:focus-visible {
   outline: 1px solid var(--color-bronze);
@@ -302,23 +322,20 @@ a:hover .arrow-slide {
   justify-content: center;
   gap: 4px;
   min-width: 124px;
-  height: 48px;
+  height: 44px;
   padding: 0 18px;
-  border-radius: 6px;
-  background: var(--color-bronze);
-  color: var(--color-paper);
+  border-radius: 2px;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  box-shadow: 0 6px 20px -6px rgba(42, 46, 36, 0.35);
-  transition: background-color 220ms var(--ease-pub), transform 150ms var(--ease-pub);
+  transition: background-color 180ms var(--ease-pub);
 }
 .btn-fab:hover {
-  background-color: var(--color-bronze-dark);
-}
-.btn-fab:active {
-  transform: scale(0.97);
+  background-color: var(--color-paper-dark);
 }
 .btn-fab:focus-visible {
   outline: 2px solid var(--color-bronze-dark);
@@ -328,41 +345,6 @@ a:hover .arrow-slide {
   .btn-fab {
     display: none;
   }
-}
-
-/* Deprecated aliases kept so any remaining reference still resolves to a
-   readable, on-brand button rather than breaking. Prefer .btn-primary /
-   .btn-secondary (light sections) or .btn-on-footer (the footer). */
-.btn-primary-inverse {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  border-radius: var(--radius-sm);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  background: var(--color-bronze);
-  color: var(--color-paper);
-  transition: background-color 220ms var(--ease-pub);
-}
-.btn-primary-inverse:hover {
-  background-color: var(--color-bronze-dark);
-}
-.btn-secondary-inverse {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-bronze);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--color-ink);
-  background: transparent;
-  transition: background-color 220ms var(--ease-pub);
-}
-.btn-secondary-inverse:hover {
-  background-color: var(--color-paper-dark);
 }
 
 /* Tab content swap: fade only, no slide */

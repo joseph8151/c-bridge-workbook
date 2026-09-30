@@ -5,7 +5,7 @@ import { tierMeta, tierOrder } from "@/lib/products";
 
 export default function BookSeries() {
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-24 md:py-32" style={{ borderColor: "var(--color-border)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="PACKAGE & PRICE" title="준비 기간에 맞춰 선택하세요." />
 

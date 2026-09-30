@@ -11,7 +11,7 @@ export default function ResourcesPage() {
   return (
     <>
       <section className="bg-ivory py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-4 min-[361px]:px-5 md:px-10">
+        <div className="mx-auto max-w-[1040px] px-4 min-[361px]:px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
             무료자료
           </p>
@@ -29,7 +29,7 @@ export default function ResourcesPage() {
       </section>
 
       <section className="bg-paper py-10">
-        <div className="mx-auto max-w-[1200px] px-5 text-center md:px-10">
+        <div className="mx-auto max-w-[1040px] px-5 text-center md:px-10">
           <p className="text-sm text-ink/50">
             300P를 선택하면 대량 실전 문제와 실전 모의고사 15회 이상, 시험 직전 Final Book이 함께
             제공됩니다.

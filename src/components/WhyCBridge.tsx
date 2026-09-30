@@ -17,7 +17,7 @@ const BORDER_CLASSES = [
 
 export default function WhyCBridge() {
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-24 md:py-32" style={{ borderColor: "var(--color-border)" }} data-reveal>
       <Container>
         <SectionHeader
           eyebrow="WHY C-BRIDGE"

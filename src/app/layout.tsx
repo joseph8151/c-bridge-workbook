@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Serif_KR, Cormorant_Garamond, Noto_Sans_KR } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -22,7 +23,19 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-// 본문 · 메뉴 · 폼의 1차 폰트는 Pretendard(CDN)이며, 이 폰트는 로드 실패 시 폴백으로만 쓰임
+// 본문 · 메뉴 · 폼 · 버튼용 1차 폰트. 자체 호스팅(로컬 정적 파일)이라 외부 CDN 의존이 없음
+const wantedSans = localFont({
+  src: [
+    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-wanted-sans",
+  display: "swap",
+});
+
+// 폴백 전용 — Wanted Sans 로드 실패 시에만 쓰임
 const sansKr = Noto_Sans_KR({
   variable: "--font-sans-kr",
   subsets: ["latin"],
@@ -79,20 +92,11 @@ export const metadata: Metadata = {
     url: `${siteUrl}/`,
     title: ogTitle,
     description: ogDescription,
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "C-BRIDGE 성인 어학시험 전문 문제집",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: ogTitle,
     description: "직군과 나라마다 다른 시험, 정확하게 준비하는 성인 어학시험 전문 문제집",
-    images: ["/og-image.jpg"],
   },
 };
 
@@ -100,15 +104,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
-      className={`${serifKr.variable} ${cormorant.variable} ${sansKr.variable} h-full antialiased`}
+      className={`${serifKr.variable} ${cormorant.variable} ${wantedSans.variable} ${sansKr.variable} h-full antialiased`}
     >
-      <head>
-        {/* 본문 · 메뉴 · 폼용 Pretendard — 로드 실패 시 위 Noto Sans KR로 자동 대체 */}
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
-        />
-      </head>
       <body className="min-h-full flex flex-col bg-ivory text-ink font-sans">
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>

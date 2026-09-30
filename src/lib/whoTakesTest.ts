@@ -177,6 +177,13 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     usedIn: "국제 로펌 채용, 법률 영어 자격 증빙으로 활용됩니다.",
     differenceFromSimilar: "일반 비즈니스 영어시험과 달리 계약서 독해, 법률 문서 작성 중심으로 출제됩니다.",
   },
+  marlins: {
+    purpose: "선원·크루즈 승무원을 위한 해사영어(Maritime English)시험입니다.",
+    audience: "상선·크루즈선 승선을 준비하는 해기사 및 선원.",
+    usedIn: "선사 채용, 승선 자격 요건에서 활용됩니다. 인정 여부는 선사·자격 기준에 따라 다릅니다.",
+    differenceFromSimilar: "일반 영어시험과 달리 IMO 표준 해사통신용어(SMCP)를 기반으로 한 선내 상황별 듣기·말하기를 평가합니다.",
+    sections: ["Listening", "Speaking"],
+  },
   topec: {
     purpose: "일본 병동에서 근무하는 간호 인력을 위한 실무 일본어 시험입니다.",
     audience: "일본 병원 취업을 준비하는 간호 인력.",
@@ -218,6 +225,12 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     audience: "채용·승진 과정에서 영어 인터뷰를 준비하는 직장인.",
     usedIn: "국내 기업의 채용·승진 평가에서 활용됩니다.",
     differenceFromSimilar: "Versant의 자동 채점 방식과 달리 비즈니스 상황, 의견 제시 등 인터뷰형 문항으로 구성됩니다.",
+  },
+  "trade-english": {
+    purpose: "수출입 무역 실무에 쓰이는 영어 능력을 평가하는 국가공인 자격시험입니다.",
+    audience: "무역 실무직 취업·이직을 준비하는 직장인, 무역학과 재학생.",
+    usedIn: "무역·상사·수출입 관련 기업 채용에서 자격 증빙으로 활용됩니다.",
+    differenceFromSimilar: "Versant·SPA 같은 말하기 중심 평가와 달리 신용장(L/C), 클레임(Claims) 등 무역 서류·용어 독해와 작문 중심으로 출제됩니다.",
   },
   duolingo: {
     purpose: "온라인으로 응시하는 컴퓨터 기반 영어시험입니다.",

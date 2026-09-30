@@ -22,7 +22,7 @@ export default function OetPage() {
   return (
     <>
       <section className="bg-paper py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-4 min-[361px]:px-5 md:px-10">
+        <div className="mx-auto max-w-[1040px] px-4 min-[361px]:px-5 md:px-10">
           <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
             OET
           </p>
@@ -41,7 +41,7 @@ export default function OetPage() {
       </section>
 
       <section className="bg-ivory py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-4 min-[361px]:px-5 md:px-10">
+        <div className="mx-auto max-w-[1040px] px-4 min-[361px]:px-5 md:px-10">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {tracks.map((t) => (
               <Link
@@ -124,7 +124,7 @@ export default function OetPage() {
       </section>
 
       <section className="bg-ivory py-14 md:py-16">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-6 px-5 text-center md:px-10">
+        <div className="mx-auto flex max-w-[1040px] flex-col items-center gap-6 px-5 text-center md:px-10">
           <p
             className="max-w-lg break-keep text-base font-semibold leading-relaxed md:text-lg"
             style={{ color: "var(--color-inkstrong)" }}

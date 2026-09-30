@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 
 export default function FinalCTA() {
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }} data-reveal>
+    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }} data-reveal>
       <Container>
         <div className="flex flex-col items-start gap-8">
           <p

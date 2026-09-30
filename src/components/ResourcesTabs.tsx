@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 type Exercise =
   | { kind: "text"; lines: string[] }
@@ -310,30 +309,17 @@ export default function ResourcesTabs() {
         <p className="pb-4 text-xs text-ink/50 md:text-sm">전체 파일은 올리지 않습니다.</p>
       </div>
 
-      <div className="grid md:grid-cols-[1fr_1.4fr]">
-        <div className="border-b p-5 min-[361px]:p-6 md:border-b-0 md:border-r md:p-8" style={{ borderColor: "var(--color-line)" }}>
-          <div className="img-fade relative aspect-[4/5] w-full overflow-hidden">
-            <Image
-              src="/images/workbook-open.jpg"
-              alt="C-BRIDGE 문제집 속지 www.c-bridge.uk"
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
-              style={{ objectPosition: "center" }}
-            />
-          </div>
-          <p className="mt-5 text-sm text-ink/50">
-            <Link href="/consultation" className="underline decoration-ink/25 underline-offset-4 hover:text-ink/70">
-              나머지 샘플은 상담
-            </Link>
-          </p>
-        </div>
-
+      <div>
         <div key={active} className="tab-fade space-y-8 p-5 min-[361px]:p-6 md:space-y-10 md:p-8">
           {tab.items.map((item) => (
             <SampleCard key={item.title} item={item} />
           ))}
           {tab.note && <p className="text-xs text-ink/40">{tab.note}</p>}
+          <p className="text-sm text-ink/50">
+            <Link href="/consultation" className="underline decoration-ink/25 underline-offset-4 hover:text-ink/70">
+              나머지 샘플은 상담
+            </Link>
+          </p>
         </div>
       </div>
     </div>

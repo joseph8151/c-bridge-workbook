@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ElpacPage() {
   return (
     <section className="bg-paper py-20 md:py-32">
-      <div className="mx-auto max-w-[1200px] px-5 text-center md:px-10">
+      <div className="mx-auto max-w-[1040px] px-5 text-center md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           ELPAC (항공 관제 영어)
         </p>

@@ -9,9 +9,9 @@ const steps = [
 
 export default function Method() {
   return (
-    <section id="method" className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section id="method" className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)" }} data-reveal>
       <Container>
-        <SectionHeader eyebrow="THE METHOD" title="THE C-BRIDGE METHOD" />
+        <SectionHeader eyebrow="THE METHOD" title="THE C-BRIDGE METHOD" size="sm" />
 
         <div className="mt-12 grid border-y sm:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
           {steps.map((s, i) => (

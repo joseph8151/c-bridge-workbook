@@ -152,6 +152,17 @@ export const tests: Test[] = [
       "현대차 등 기업이 쓰는 말하기 평가입니다. 비즈니스 상황, 의견 제시, 설명형 문제를 실전 인터뷰 방식으로 연습합니다.",
     badges: ["직장인 추천", "말하기 집중"],
   },
+  {
+    id: "trade-english",
+    slug: "trade-english",
+    name: "무역영어 1급",
+    group: "EMPLOYMENT",
+    bonusTypes: ["VOCAB"],
+    tagline: "수출입 무역 실무 영어 국가공인 자격",
+    description:
+      "수출입 업무에 쓰이는 무역 실무 영어 자격시험입니다. 신용장(L/C), 클레임(Claims) 등 무역 서류·용어 중심으로 대비합니다.",
+    keywords: ["무역영어", "무역영어 1급", "Trade English", "L/C", "신용장"],
+  },
   // ---------------- JAPANESE ----------------
   {
     id: "sjpt",
@@ -482,6 +493,18 @@ export const tests: Test[] = [
     tagline: "국제 로펌 · 크로스보더 계약 영어시험",
     description:
       "국제 로펌과 크로스보더 계약 업무를 위한 법률 영어시험. 계약서 독해와 법률 문서 작성 중심으로 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "marlins",
+    slug: "marlins",
+    name: "MARLINS",
+    group: "PROFESSIONAL",
+    bonusTypes: ["SPEAKING", "PROFESSIONAL"],
+    tagline: "해기사 · 선원 해사영어시험",
+    description:
+      "선원·크루즈 승무원을 위한 해사영어시험입니다. IMO 표준 해사통신용어(SMCP) 기반의 선내 상황별 듣기·말하기를 연습합니다.",
+    keywords: ["MARLINS", "말린스", "해사영어", "선원 영어시험"],
     badges: ["자료가 부족한 시험 추천"],
   },
   {

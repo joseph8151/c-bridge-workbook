@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { Suspense } from "react";
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 import FAQ from "@/components/FAQ";
 import ConsultationForm from "@/components/ConsultationForm";
-import WorkbookPreviewModal from "@/components/WorkbookPreviewModal";
 import { orderFaqItems } from "@/lib/faqData";
 
 export const metadata: Metadata = {
@@ -42,11 +41,7 @@ export default function ConsultationPage() {
 
         <div className="grid border-x border-b lg:grid-cols-[1fr_1.4fr]" style={{ borderColor: "var(--color-border)" }}>
           <div className="border-b p-6 min-[361px]:p-8 lg:p-10 lg:border-b-0 lg:border-r" style={{ borderColor: "var(--color-border)" }}>
-            <div className="img-fade relative aspect-[4/3] w-full overflow-hidden">
-              <Image src="/images/book-desk.jpg" alt="C-BRIDGE 문제집이 놓인 책상" fill sizes="(max-width: 1024px) 100vw, 500px" className="object-cover" />
-            </div>
-
-            <p className="mt-8 eyebrow">교재는 이렇게 진행됩니다</p>
+            <p className="eyebrow">교재는 이렇게 진행됩니다</p>
             <div className="mt-5 space-y-5">
               {steps.map((s) => (
                 <div key={s.no} className="flex items-baseline gap-4">
@@ -70,7 +65,9 @@ export default function ConsultationPage() {
             </p>
 
             <div className="mt-6">
-              <WorkbookPreviewModal />
+              <Link href="/all-books" className="btn-text text-sm">
+                교재 구성 미리보기 <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
 

@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 
 export default function BusinessTeaser() {
   return (
-    <section className="py-20 md:py-28" style={{ background: "var(--color-paper)" }} data-reveal>
+    <section className="py-14 md:py-20" style={{ background: "var(--color-paper)" }} data-reveal>
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16">
           <div>

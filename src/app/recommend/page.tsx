@@ -49,7 +49,7 @@ const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기"];
 export default function RecommendPage() {
   return (
     <section className="bg-paper py-16 md:py-24">
-      <div className="mx-auto max-w-[1100px] px-4 min-[361px]:px-5 md:px-10">
+      <div className="mx-auto max-w-[1040px] px-4 min-[361px]:px-5 md:px-10">
         <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
           교재 추천
         </p>

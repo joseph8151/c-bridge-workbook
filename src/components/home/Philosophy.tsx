@@ -3,7 +3,7 @@ import EditorialHeading from "@/components/EditorialHeading";
 
 export default function Philosophy() {
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }} data-reveal>
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <EditorialHeading size="lg">

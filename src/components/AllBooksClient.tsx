@@ -132,7 +132,7 @@ export default function AllBooksClient() {
                     </span>
                   </Link>
                 ) : (
-                  <div className="mt-6 grid gap-5 border-t pt-6 sm:grid-cols-2 xl:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
+                  <div className="mt-6 border-t" style={{ borderColor: "var(--color-border)" }}>
                     {items.map((t) => (
                       <TestCard key={t.id} test={t} />
                     ))}

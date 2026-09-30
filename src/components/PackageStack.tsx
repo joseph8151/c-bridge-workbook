@@ -23,7 +23,6 @@ export default function PackageStack() {
               top: offset,
               background: "var(--color-paper)",
               borderColor: "var(--color-border)",
-              boxShadow: i === SHEETS.length - 1 ? "0 20px 40px -28px rgba(17,24,32,0.4)" : "none",
               zIndex: i,
             }}
           >

@@ -1,16 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import TestCard from "./TestCard";
 import Container from "./Container";
 import { TestGroup, groupMeta, getTestsByGroup } from "@/lib/tests";
 
-export default function CategoryPageTemplate({
-  group,
-  heroImage,
-}: {
-  group: TestGroup;
-  heroImage?: { src: string; alt: string };
-}) {
+export default function CategoryPageTemplate({ group }: { group: TestGroup }) {
   const meta = groupMeta[group];
   const groupTests = [...getTestsByGroup(group)].sort(
     (a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)),
@@ -19,32 +12,25 @@ export default function CategoryPageTemplate({
   return (
     <>
       <section className="border-b py-14 md:py-20" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}>
-        <Container className={heroImage ? "grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]" : ""}>
-          <div>
-            <p className="eyebrow" style={{ color: meta.color }}>
-              {meta.eyebrow}
-            </p>
-            <h1
-              className="mt-3 max-w-2xl break-keep font-serif text-4xl font-bold leading-tight md:text-5xl text-balance"
-              style={{ color: "var(--color-ink)" }}
-            >
-              {meta.headline}
-            </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-              {meta.description}
-            </p>
-          </div>
-          {heroImage && (
-            <div className="img-fade relative h-56 w-full overflow-hidden md:h-72">
-              <Image src={heroImage.src} alt={heroImage.alt} fill sizes="(max-width: 1024px) 100vw, 480px" className="object-cover" style={{ objectPosition: "center" }} />
-            </div>
-          )}
+        <Container>
+          <p className="eyebrow" style={{ color: meta.color }}>
+            {meta.eyebrow}
+          </p>
+          <h1
+            className="mt-3 max-w-2xl break-keep font-serif text-4xl font-bold leading-tight md:text-5xl text-balance"
+            style={{ color: "var(--color-ink)" }}
+          >
+            {meta.headline}
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
+            {meta.description}
+          </p>
         </Container>
       </section>
 
       <section className="py-16 md:py-20" style={{ background: "var(--color-paper)" }}>
         <Container>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="border-t" style={{ borderColor: "var(--color-border)" }}>
             {groupTests.map((t) => (
               <TestCard key={t.id} test={t} />
             ))}
