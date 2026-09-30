@@ -84,6 +84,12 @@ const SAMPLE_PREVIEW_OVERRIDES: Record<string, SamplePreview> = {
 };
 
 export function getSamplePreview(test: Test): SamplePreview {
+  // OET's sub-profession slugs (oet-nursing, oet-medicine, ...) share the
+  // same case-notes → professional-letter Writing format as the general
+  // "oet" entry — only the override lookup key differs per profession.
+  if (test.slug === "oet" || test.slug.startsWith("oet-")) {
+    return SAMPLE_PREVIEW_OVERRIDES.oet;
+  }
   if (SAMPLE_PREVIEW_OVERRIDES[test.slug]) {
     return SAMPLE_PREVIEW_OVERRIDES[test.slug];
   }

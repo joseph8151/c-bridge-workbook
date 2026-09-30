@@ -51,6 +51,10 @@ export const finderGroups: FinderGroup[] = [
     ],
   },
   {
+    label: "FLEX · SNULT",
+    items: [{ name: "FLEX · SNULT (언어는 상담)", href: "/flex-snult" }],
+  },
+  {
     label: "법률",
     items: [{ name: "TOLES", href: "/books/toles" }],
   },

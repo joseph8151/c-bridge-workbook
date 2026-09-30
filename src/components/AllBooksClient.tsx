@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import TestCard from "./TestCard";
 import { tests, TestGroup, groupMeta } from "@/lib/tests";
@@ -19,9 +20,13 @@ export default function AllBooksClient() {
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
     return tests.filter((t) => {
       if (groups.size && !groups.has(t.group)) return false;
-      if (query.trim() && !t.name.toLowerCase().includes(query.trim().toLowerCase())) return false;
+      if (q) {
+        const haystack = [t.name, ...(t.keywords ?? [])].join(" ").toLowerCase();
+        if (!haystack.includes(q)) return false;
+      }
       return true;
     });
   }, [groups, query]);
@@ -111,11 +116,28 @@ export default function AllBooksClient() {
                 <p className="mt-2 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
                   {meta.name}
                 </p>
-                <div className="mt-6 grid gap-5 border-t pt-6 sm:grid-cols-2 xl:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
-                  {items.map((t) => (
-                    <TestCard key={t.id} test={t} />
-                  ))}
-                </div>
+                {meta.id === "FLEX_SNULT" ? (
+                  // 언어별 13개 시험을 한 줄씩 나열하지 않고 하나의 요약 카드로만 보여줍니다.
+                  // 개별 언어 페이지는 /flex-snult 하위에서만 노출됩니다.
+                  <Link
+                    href="/flex-snult"
+                    className="card-hover mt-6 block border-t border-b p-7 sm:max-w-md"
+                    style={{ borderColor: "var(--color-border)" }}
+                  >
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                      대학 외국어. 언어는 상담 때 고릅니다.
+                    </p>
+                    <span className="mt-3 inline-flex text-sm font-medium" style={{ color: "var(--color-ink)" }}>
+                      FLEX · SNULT 보기 <span className="arrow-slide ml-1.5">→</span>
+                    </span>
+                  </Link>
+                ) : (
+                  <div className="mt-6 grid gap-5 border-t pt-6 sm:grid-cols-2 xl:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
+                    {items.map((t) => (
+                      <TestCard key={t.id} test={t} />
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -30,6 +30,7 @@ const testGroups: { label: string; items: string[] }[] = [
   { label: "기업 말하기", items: ["SPA", "Versant"] },
   { label: "법률", items: ["TOLES"] },
   { label: "일본 간호", items: ["TOPEC"] },
+  { label: "FLEX · SNULT", items: ["FLEX · SNULT (언어는 상담)"] },
   { label: "기타", items: ["기타"] },
 ];
 

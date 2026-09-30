@@ -30,6 +30,7 @@ export interface Test {
   levelOptions?: string[];
   featured?: boolean;
   badges?: string[];
+  keywords?: string[];
 }
 
 export const GENERIC_LEVELS = ["처음 응시", "기초", "중급", "고급"];
@@ -45,6 +46,17 @@ export const groupMeta: Record<TestGroup, GroupMeta> = {
     description:
       "취업 준비생과 직장인이 가장 많이 준비하는 영어 평가시험입니다. Listening·Reading 중심 시험부터 말하기 평가까지 폭넓게 대비합니다.",
     color: "var(--color-employment)",
+  },
+  STUDY_ABROAD: {
+    id: "STUDY_ABROAD",
+    navLabel: "유학·이민",
+    name: "유학 · 이민 시험",
+    slug: "study-abroad",
+    eyebrow: "유학 · 이민",
+    headline: "해외 대학과 이민, 목표에 맞는 시험으로.",
+    description:
+      "해외 대학·대학원 진학과 이민을 준비하는 수험생을 위한 영어 및 제2외국어 시험 대비 자료입니다.",
+    color: "var(--color-studyabroad)",
   },
   JAPANESE: {
     id: "JAPANESE",
@@ -78,17 +90,6 @@ export const groupMeta: Record<TestGroup, GroupMeta> = {
     description:
       "취업, 대학, 기업 및 외국어 능력평가를 준비하는 수험생을 위한 언어별 FLEX·SNULT 대비 자료를 제공합니다.",
     color: "var(--color-flex)",
-  },
-  STUDY_ABROAD: {
-    id: "STUDY_ABROAD",
-    navLabel: "유학·이민",
-    name: "유학 · 이민 시험",
-    slug: "study-abroad",
-    eyebrow: "유학 · 이민",
-    headline: "해외 대학과 이민, 목표에 맞는 시험으로.",
-    description:
-      "해외 대학·대학원 진학과 이민을 준비하는 수험생을 위한 영어 및 제2외국어 시험 대비 자료입니다.",
-    color: "var(--color-studyabroad)",
   },
   PROFESSIONAL: {
     id: "PROFESSIONAL",
@@ -333,6 +334,88 @@ export const tests: Test[] = [
     tagline: "의사 · 간호사 등 의료전문직 영어시험",
     description:
       "의료전문직을 위한 영어시험. 전문 어휘, 임상 상황, Case Study 중심의 Writing·Speaking 자료를 제공합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "oet-nursing",
+    slug: "oet-nursing",
+    name: "OET Nursing",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "간호사 영어시험",
+    description:
+      "간호사 직군을 위한 OET 대비 자료입니다. Reading·Listening은 공통이며, Writing·Speaking을 간호 임상 상황(case notes, 환자 응대)에 맞춰 준비합니다.",
+  },
+  {
+    id: "oet-medicine",
+    slug: "oet-medicine",
+    name: "OET Medicine",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "의사 영어시험",
+    description:
+      "의사 직군을 위한 OET 대비 자료입니다. Reading·Listening은 공통이며, Writing·Speaking을 진료 상황(case notes, 환자 응대)에 맞춰 준비합니다.",
+  },
+  {
+    id: "oet-pharmacy",
+    slug: "oet-pharmacy",
+    name: "OET Pharmacy",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "약사 영어시험",
+    description:
+      "약사 직군을 위한 OET 대비 자료입니다. Reading·Listening은 공통이며, Writing·Speaking을 약국 상황(복약 지도, 환자 응대)에 맞춰 준비합니다.",
+  },
+  {
+    id: "oet-physiotherapy",
+    slug: "oet-physiotherapy",
+    name: "OET Physiotherapy",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "물리치료사 영어시험",
+    description:
+      "물리치료사 직군을 위한 OET 대비 자료입니다. Reading·Listening은 공통이며, Writing·Speaking을 재활 상황(치료 기록, 환자 응대)에 맞춰 준비합니다.",
+  },
+  {
+    id: "oet-dentistry",
+    slug: "oet-dentistry",
+    name: "OET Dentistry",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "치과의사 영어시험",
+    description:
+      "치과의사 직군을 위한 OET 대비 자료입니다. Reading·Listening은 공통이며, Writing·Speaking을 진료 상황(case notes, 환자 응대)에 맞춰 준비합니다.",
+  },
+  {
+    id: "oet-radiography",
+    slug: "oet-radiography",
+    name: "OET Radiography",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "방사선사 영어시험",
+    description:
+      "방사선사 직군을 위한 OET 대비 자료입니다. Reading·Listening은 공통이며, Writing·Speaking을 검사 상황(촬영 기록, 환자 응대)에 맞춰 준비합니다.",
+  },
+  {
+    id: "oet-occupational-therapy",
+    slug: "oet-occupational-therapy",
+    name: "OET Occupational Therapy",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "작업치료사 영어시험",
+    description:
+      "작업치료사 직군을 위한 OET 대비 자료입니다. Reading·Listening은 공통이며, Writing·Speaking을 재활 상황(치료 기록, 환자 응대)에 맞춰 준비합니다.",
+  },
+  {
+    id: "celban",
+    slug: "celban",
+    name: "CELBAN (셀반)",
+    group: "PROFESSIONAL",
+    bonusTypes: ["WRITING", "PROFESSIONAL"],
+    tagline: "캐나다 간호 등록 영어",
+    description:
+      "캐나다 간호사 등록을 위한 영어시험입니다. 영주용 CELPIP, OET Nursing과도 형식과 제출 대상 기관이 다릅니다.",
+    keywords: ["CELBAN", "셀반", "캐나다 간호 영어"],
     badges: ["자료가 부족한 시험 추천"],
   },
   {
