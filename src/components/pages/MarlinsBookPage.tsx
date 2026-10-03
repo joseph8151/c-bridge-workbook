@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 
-const includes = ["듣기(숫자·시간·지시)", "해사 어휘", "문법", "읽기", "구술 TOSE 문항", "해설(한국어)"];
+const includes = ["듣기", "문법", "어휘", "읽기", "숫자·시각", "구술 TOSE 문항", "해설(한국어)"];
 
 const prices = [
   { label: "Marlins + TOSE 200P", price: "₩245,000" },
@@ -38,6 +38,10 @@ export default function MarlinsBookPage() {
         <Container>
           <p className="max-w-2xl break-keep border-t pt-8 text-base leading-relaxed md:text-lg" style={{ borderColor: "var(--color-border)", color: "var(--color-ink)" }}>
             Marlins는 컴퓨터 객관식이다. TOSE는 말하기이다. 한 파일에 섞지 말고 세트로 판다.
+          </p>
+          <p className="mt-4 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            듣기·문법·어휘·읽기·숫자·시각 영역으로 구성되며, 점수는 퍼센트로 산출됩니다. 선원용(METS),
+            오프쇼어, 크루즈 직원용 버전이 각각 다르며, 해당 버전은 상담에서 확인합니다.
           </p>
         </Container>
       </section>
