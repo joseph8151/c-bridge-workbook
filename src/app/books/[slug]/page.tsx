@@ -25,6 +25,20 @@ export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
 }
 
+// 해외취업·이민·비자 신규 시험 전용 SEO 타이틀 — 다른 시험의 기본 타이틀 생성 방식은 그대로 둡니다.
+const TITLE_OVERRIDES: Record<string, string> = {
+  "jft-basic": "JFT-Basic 문제집 | 일본 특정기능 시험 대비 | C-BRIDGE",
+  "eps-topik": "EPS-TOPIK 문제집 | 한국 취업 한국어 시험 대비 | C-BRIDGE",
+  "pte-home": "PTE Home 문제집 | UKVI 영국 비자 영어시험 대비 | C-BRIDGE",
+  "ielts-life-skills": "IELTS Life Skills 문제집 | 영국 비자 영어시험 대비 | C-BRIDGE",
+  "trinity-gese": "Trinity GESE 문제집 | UKVI 영어시험 대비 | C-BRIDGE",
+  "trinity-ise": "Trinity ISE 문제집 | 영국 유학·비자 영어시험 대비 | C-BRIDGE",
+  "skills-for-english-ukvi": "Skills for English UKVI 문제집 | 영국 비자 영어시험 대비 | C-BRIDGE",
+  met: "MET 문제집 | Michigan English Test 대비 | C-BRIDGE",
+  "cambridge-c1-advanced": "Cambridge C1 Advanced 문제집 | C1 Advanced 시험 대비 | C-BRIDGE",
+  "us-citizenship-test": "U.S. Citizenship Test 문제집 | 미국 시민권 시험 대비 | C-BRIDGE",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -33,7 +47,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const test = getTestBySlug(slug);
   if (!test) return {};
-  const title = `${test.name} 교재 | C-BRIDGE`;
+  const title = TITLE_OVERRIDES[slug] ?? `${test.name} 교재 | C-BRIDGE`;
   return {
     title,
     description: test.description,

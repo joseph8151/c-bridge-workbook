@@ -81,6 +81,8 @@ const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProper
   FLEX_SNULT: Certificate,
   STUDY_ABROAD: Globe,
   PROFESSIONAL: Stethoscope,
+  OVERSEAS_EMPLOYMENT: Globe,
+  IMMIGRATION_VISA: Certificate,
 };
 
 export default function GroupIcon({

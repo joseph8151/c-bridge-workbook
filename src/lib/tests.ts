@@ -4,7 +4,9 @@ export type TestGroup =
   | "CHINESE"
   | "FLEX_SNULT"
   | "STUDY_ABROAD"
-  | "PROFESSIONAL";
+  | "PROFESSIONAL"
+  | "OVERSEAS_EMPLOYMENT"
+  | "IMMIGRATION_VISA";
 
 export type BonusType = "SPEAKING" | "LISTENING" | "WRITING" | "VOCAB" | "PROFESSIONAL";
 
@@ -102,6 +104,28 @@ export const groupMeta: Record<TestGroup, GroupMeta> = {
       "일반 어학시험과 달리 전문 어휘, 직무별 상황, Case Study, Speaking Scenario 등 전문직에 특화된 자료를 제공합니다.",
     color: "var(--color-professional)",
   },
+  OVERSEAS_EMPLOYMENT: {
+    id: "OVERSEAS_EMPLOYMENT",
+    navLabel: "해외취업",
+    name: "해외취업 시험",
+    slug: "overseas-employment",
+    eyebrow: "해외취업",
+    headline: "해외 취업과 현지 채용을 위한 시험부터.",
+    description:
+      "해외 취업, 현지 채용, 외국계 기업 진출을 준비하는 분들을 위한 시험 대비 자료입니다.",
+    color: "var(--color-overseas-employment)",
+  },
+  IMMIGRATION_VISA: {
+    id: "IMMIGRATION_VISA",
+    navLabel: "이민·비자",
+    name: "이민 · 비자 시험",
+    slug: "immigration-visa",
+    eyebrow: "이민 · 비자",
+    headline: "비자 신청과 정착을 위한 시험부터.",
+    description:
+      "비자 신청, 영주권, 시민권 등 이민 절차에 활용되는 시험 대비 자료입니다.",
+    color: "var(--color-immigration-visa)",
+  },
 };
 
 function flexLang(name: string, id: string) {
@@ -181,7 +205,7 @@ export const tests: Test[] = [
     id: "bjt",
     slug: "bjt",
     name: "BJT",
-    group: "JAPANESE",
+    group: "OVERSEAS_EMPLOYMENT",
     bonusTypes: ["LISTENING", "VOCAB"],
     tagline: "비즈니스 일본어 커뮤니케이션 능력시험",
     description:
@@ -356,6 +380,17 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "독일 대학 진학 독일어 시험",
     description: "독일 대학·대학원 진학을 위한 독일어 시험. 영역별 실전 문제와 모의고사를 제공합니다.",
+  },
+  {
+    id: "cambridge-c1-advanced",
+    slug: "cambridge-c1-advanced",
+    name: "Cambridge C1 Advanced",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "유학·취업·해외 진학을 위한 고급 영어능력시험",
+    description:
+      "유학, 취업, 해외 진학에 폭넓게 활용되는 Cambridge C1 Advanced(CAE) 고급 영어능력시험입니다. Reading·Writing·Listening·Speaking 전 영역을 대비합니다.",
+    keywords: ["Cambridge C1 Advanced", "CAE", "케임브리지 C1", "캠브리지 어드밴스드"],
   },
 
   // ---------------- PROFESSIONAL ----------------
@@ -550,6 +585,111 @@ export const tests: Test[] = [
     description:
       "미국 FAA 라디오 텔레포니 영어평가입니다. EPTA·ICAO English와 목적이 다른 시험으로, 교신 상황 중심으로 대비합니다.",
     badges: ["자료가 부족한 시험 추천"],
+  },
+
+  // ---------------- OVERSEAS_EMPLOYMENT ----------------
+  {
+    id: "jft-basic",
+    slug: "jft-basic",
+    name: "JFT-Basic",
+    group: "OVERSEAS_EMPLOYMENT",
+    bonusTypes: ["LISTENING", "VOCAB"],
+    tagline: "일본 특정기능·취업을 위한 기초 일본어 시험",
+    description:
+      "일본 특정기능(SSW) 취업 비자를 위한 기초 일본어 능력시험입니다. 생활·업무 상황의 어휘와 독해·청해를 연습합니다.",
+    keywords: ["JFT-Basic", "JFT 베이직", "일본 특정기능 시험", "SSW 일본어"],
+  },
+  {
+    id: "eps-topik",
+    slug: "eps-topik",
+    name: "EPS-TOPIK",
+    group: "OVERSEAS_EMPLOYMENT",
+    bonusTypes: ["VOCAB"],
+    tagline: "외국인 근로자의 한국 취업을 위한 한국어능력시험",
+    description:
+      "고용허가제(EPS)를 통해 한국 취업을 준비하는 외국인 근로자를 위한 한국어능력시험입니다. 생활·산업 현장 어휘와 독해·청해를 연습합니다.",
+    keywords: ["EPS-TOPIK", "고용허가제 한국어시험", "외국인근로자 한국어시험"],
+  },
+
+  // ---------------- IMMIGRATION_VISA ----------------
+  {
+    id: "pte-home",
+    slug: "pte-home",
+    name: "PTE Home",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["SPEAKING"],
+    tagline: "영국 비자·정착을 위한 Speaking & Listening 영어시험",
+    description:
+      "영국 비자 신청과 정착을 위한 PTE Home 시험입니다. Speaking과 Listening 중심으로 구성되며, Reading·Writing은 포함되지 않습니다.",
+    levelOptions: ["A1", "A2", "B1"],
+    keywords: ["PTE Home", "피티이 홈", "영국 비자 영어시험", "PTE Home A1", "PTE Home A2", "PTE Home B1"],
+  },
+  {
+    id: "ielts-life-skills",
+    slug: "ielts-life-skills",
+    name: "IELTS Life Skills",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["SPEAKING"],
+    tagline: "영국 가족비자·정착·시민권 등을 위한 영어시험",
+    description:
+      "영국 가족비자, 영주권, 시민권 신청 등에 활용되는 Speaking·Listening 중심의 생활 영어시험입니다.",
+    levelOptions: ["A1", "A2", "B1"],
+    keywords: ["IELTS Life Skills", "아이엘츠 라이프 스킬즈", "영국 가족비자 영어시험"],
+  },
+  {
+    id: "trinity-gese",
+    slug: "trinity-gese",
+    name: "Trinity GESE",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["SPEAKING"],
+    tagline: "영국 비자·정착을 위한 Speaking & Listening 시험",
+    description:
+      "영국 비자·정착 목적의 Trinity GESE 시험입니다. 1:1 대면 방식의 Speaking·Listening 평가로 구성됩니다.",
+    keywords: ["Trinity GESE", "트리니티 GESE", "영국 비자 말하기 시험"],
+  },
+  {
+    id: "trinity-ise",
+    slug: "trinity-ise",
+    name: "Trinity ISE",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["WRITING"],
+    tagline: "영국 유학·취업·비자를 위한 4 Skills 영어시험",
+    description:
+      "영국 유학·취업·비자 목적의 Trinity ISE 시험입니다. Reading·Writing·Speaking·Listening 네 영역을 모두 평가합니다.",
+    keywords: ["Trinity ISE", "트리니티 ISE", "영국 유학 영어시험"],
+  },
+  {
+    id: "skills-for-english-ukvi",
+    slug: "skills-for-english-ukvi",
+    name: "Skills for English UKVI",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["WRITING"],
+    tagline: "영국 비자 신청에 활용되는 UKVI 영어시험",
+    description:
+      "영국 비자 신청(SELT)에 활용되는 Skills for English UKVI 시험입니다. 목표 비자 유형에 따라 요구 레벨이 다릅니다.",
+    keywords: ["Skills for English UKVI", "스킬즈포잉글리시", "UKVI SELT 시험"],
+  },
+  {
+    id: "met",
+    slug: "met",
+    name: "MET",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["WRITING"],
+    tagline: "유학·취업·이민 목적의 Michigan English Test",
+    description:
+      "유학, 취업, 이민을 목적으로 활용되는 Michigan English Test(MET) 대비 자료입니다. Listening·Reading·Writing·Speaking 전 영역을 연습합니다.",
+    keywords: ["MET", "미시간영어", "Michigan English Test", "MET 문제집", "MET 호주"],
+  },
+  {
+    id: "us-citizenship-test",
+    slug: "us-citizenship-test",
+    name: "U.S. Citizenship Test",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["SPEAKING"],
+    tagline: "미국 시민권 인터뷰와 Civics 시험 대비",
+    description:
+      "미국 시민권 신청자를 위한 N-400 인터뷰와 Civics(역사·정부 상식) 시험 대비 자료입니다. 영어 읽기·쓰기·말하기 평가도 함께 포함됩니다.",
+    keywords: ["U.S. Citizenship Test", "미국 시민권 시험", "Civics Test", "N-400 인터뷰"],
   },
 ];
 
