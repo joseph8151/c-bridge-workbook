@@ -9,7 +9,7 @@ const steps = [
 
 export default function Method() {
   return (
-    <section id="method" className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section id="method" className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-skyblue)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="THE METHOD" title="THE C-BRIDGE METHOD" size="sm" />
 

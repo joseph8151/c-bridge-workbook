@@ -6,7 +6,7 @@ import { tierMeta } from "@/lib/products";
 
 export default function StudyProfiles() {
   return (
-    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-skyblue)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="WHO IT'S FOR" title="Sample Study Profiles" />
         <p className="mt-3 text-sm" style={{ color: "var(--color-muted)" }}>

@@ -6,7 +6,7 @@ const checklist = ["시험명", "현재 수준", "목표", "시험일까지 남�
 
 export default function ConsultationSafety() {
   return (
-    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-skyblue)" }} data-reveal>
       <Container className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
         <SectionHeader
           eyebrow="CONSULTATION"

@@ -18,7 +18,7 @@ const items: ExamIndexItem[] = [
 
 export default function ExamIndexSection() {
   return (
-    <section className="py-20 md:py-28" style={{ background: "var(--color-paper)" }} data-reveal>
+    <section className="py-20 md:py-28" style={{ background: "var(--color-skyblue)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="EXAM INDEX" />
         <div className="mt-8">

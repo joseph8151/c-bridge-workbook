@@ -17,6 +17,10 @@
   --color-pistachio: #2a2e24;
   --color-disabled: #c9c4b6;
 
+  /* 홈페이지 섹션 배경 리듬 — 아이보리와 번갈아 쓰는 스카이블루 톤 */
+  --color-skyblue: #bfe3f2; /* 배경 톤 */
+  --color-skyblue-deep: #5aa8c7; /* 보더·소소한 포인트용 */
+
   /* 다크 섹션은 전부 크림으로 통일 — footer만 예외로 별도 처리 */
   --color-navy: var(--color-paper);
   --color-navy-text: var(--color-ink);
