@@ -21,7 +21,7 @@ export default function BookSeries() {
                 <p className="text-xs font-bold tracking-[0.16em]" style={{ color: "var(--color-bronze)" }}>
                   {m.name} · {m.label}
                 </p>
-                <p className="mt-3 font-serif text-3xl font-bold md:text-4xl" style={{ color: "var(--color-ink)" }}>
+                <p className="mt-3 text-4xl font-medium tracking-[-0.02em] md:text-5xl" style={{ color: "var(--color-ink)" }}>
                   ₩{m.price.toLocaleString()}
                 </p>
                 <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>

@@ -20,7 +20,7 @@ export default function Header() {
     <header
       className="sticky top-0 z-50 w-full backdrop-blur transition-[background-color,border-color] duration-300"
       style={{
-        background: scrolled ? "rgba(246,240,228,0.92)" : "rgba(246,240,228,0)",
+        background: scrolled ? "rgba(247,244,238,0.92)" : "rgba(247,244,238,0)",
         borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
       }}
     >

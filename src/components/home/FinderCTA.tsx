@@ -8,7 +8,7 @@ export default function FinderCTA() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
             <p className="eyebrow">FIND YOUR EXAM</p>
-            <p className="mt-3 max-w-lg break-keep font-serif text-2xl font-bold leading-snug md:text-[28px]" style={{ color: "var(--color-ink)" }}>
+            <p className="mt-3 max-w-lg break-keep text-2xl font-medium leading-snug tracking-[-0.03em] md:text-[28px]" style={{ color: "var(--color-ink)" }}>
               내게 맞는 시험과 교재를 4단계로 찾아보세요.
             </p>
           </div>

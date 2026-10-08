@@ -7,7 +7,7 @@ export default function FinalCTA() {
       <Container>
         <div className="flex flex-col items-start gap-8">
           <p
-            className="break-keep font-serif text-3xl font-bold leading-[1.25] tracking-[-0.01em] md:text-5xl"
+            className="break-keep text-[26px] font-medium leading-[1.25] tracking-[-0.03em] md:text-[32px]"
             style={{ color: "var(--color-ink)" }}
           >
             시험은 정했는데,

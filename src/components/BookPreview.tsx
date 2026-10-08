@@ -23,34 +23,30 @@ export default function BookPreview({ testName }: { testName?: string }) {
           description="문제부터 해설, 실전 모의, 시험 직전 정리까지 실제 학습 흐름을 미리 확인해보세요."
         />
 
-        {/* Mobile: plain stacked list, no carousel — each preview full width. */}
-        <div className="mt-8 space-y-8 md:hidden">
-          {lookInsidePreviews.map((page) => (
+        {/* Mobile: 속지 가로 스크롤 — 카드 1.1장 정도가 보이도록. */}
+        <div
+          className="mt-8 flex gap-4 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {lookInsidePreviews.map((page, i) => (
             <button
               key={page.no}
               type="button"
-              onClick={() => setModalIndex(lookInsidePreviews.indexOf(page))}
-              className="flex w-full cursor-pointer items-start gap-4 border-t pt-6 text-left"
-              style={{ borderColor: "var(--color-border)" }}
+              onClick={() => setModalIndex(i)}
+              className="shrink-0 cursor-pointer text-left"
+              style={{ scrollSnapAlign: "start", width: "78%" }}
               aria-label={`${page.titleEn} 미리보기 확대`}
             >
-              <div className="w-24 shrink-0">
-                <PreviewCard page={page} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
-                  {page.no} · {page.eyebrow}
-                </p>
-                <p className="font-serif text-base font-bold" style={{ color: "var(--color-ink)" }}>
-                  {page.titleEn}
-                </p>
-                <p className="mt-1 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-                  {page.desc}
-                </p>
-                <span className="mt-2 inline-block text-[11px] font-medium tracking-[0.04em]" style={{ color: "var(--color-ink)" }}>
-                  탭하여 확대 ↗
-                </span>
-              </div>
+              <PreviewCard page={page} detail />
+              <p className="mt-3 text-xs font-medium tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                {page.no} · {page.eyebrow}
+              </p>
+              <p className="text-base font-medium" style={{ color: "var(--color-ink)" }}>
+                {page.titleEn}
+              </p>
+              <p className="mt-1 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                {page.desc}
+              </p>
             </button>
           ))}
         </div>

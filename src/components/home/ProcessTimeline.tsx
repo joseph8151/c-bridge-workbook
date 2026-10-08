@@ -28,10 +28,10 @@ export default function ProcessTimeline() {
         <div className="mt-12 grid border-y sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
           {steps.map((s, i) => (
             <div key={s.no} className={`p-8 ${BORDER_CLASSES[i]}`} style={{ borderColor: "var(--color-border)" }}>
-              <span className="font-serif text-3xl font-bold" style={{ color: "var(--color-bronze)" }}>
+              <span className="text-3xl font-bold" style={{ color: "var(--color-bronze)" }}>
                 {s.no}
               </span>
-              <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
+              <p className="mt-3 text-lg font-bold" style={{ color: "var(--color-ink)" }}>
                 {s.title}
               </p>
               <p className="mt-2 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>

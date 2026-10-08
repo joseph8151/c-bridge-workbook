@@ -22,7 +22,7 @@ function Page({ no, children }: { no: string; children: React.ReactNode }) {
 }
 
 function Bar({ w, className = "" }: { w: number; className?: string }) {
-  return <div className={`h-1.5 rounded-full ${className}`} style={{ width: `${w}%`, background: "rgba(42,46,36,0.12)" }} />;
+  return <div className={`h-1.5 rounded-full ${className}`} style={{ width: `${w}%`, background: "rgba(28,31,26,0.12)" }} />;
 }
 
 function AbstractPractice() {

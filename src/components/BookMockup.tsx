@@ -22,7 +22,7 @@ export default function BookMockup({ books }: { books: BookMockupItem[] }) {
           <div className="min-w-0">
             <p className="eyebrow text-[9px] min-[430px]:text-[11px]">C-BRIDGE</p>
             <p
-              className="mt-1.5 break-keep font-serif text-sm font-bold leading-tight min-[430px]:mt-2 min-[430px]:text-lg"
+              className="mt-1.5 break-keep text-sm font-bold leading-tight min-[430px]:mt-2 min-[430px]:text-lg"
               style={{ color: "var(--color-ink)" }}
             >
               {b.title}

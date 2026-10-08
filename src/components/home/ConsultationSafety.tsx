@@ -1,55 +1,28 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/Container";
-import SectionHeader from "@/components/SectionHeader";
-
-const checklist = ["시험명", "현재 수준", "목표", "시험일까지 남은 기간", "집중하고 싶은 영역"];
 
 export default function ConsultationSafety() {
   return (
-    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-skyblue)" }} data-reveal>
+    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }} data-reveal>
       <Container>
-        <div className="img-fade relative mb-8 aspect-[4/3] w-28 overflow-hidden min-[430px]:w-32">
-          <Image
-            src="/images/notebook-hands.jpg"
-            alt=""
-            fill
-            sizes="128px"
-            className="object-cover"
-          />
-        </div>
-
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
-          <SectionHeader
-            eyebrow="CONSULTATION"
-            title="어떤 구성을 골라야 할지 몰라도 괜찮습니다."
-            description="시험명, 현재 수준, 목표, 시험일까지 남은 기간, 집중하고 싶은 영역을 상담에서 확인하고 필요한 구성을 안내해드립니다."
-            size="sm"
-          />
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+          <div className="img-fade relative aspect-[4/3] w-28 shrink-0 overflow-hidden min-[430px]:w-32">
+            <Image src="/images/notebook-hands.jpg" alt="" fill sizes="128px" className="object-cover" />
+          </div>
 
           <div>
-            <ul className="flex flex-wrap gap-2">
-              {checklist.map((c) => (
-                <li
-                  key={c}
-                  className="border px-3.5 py-1.5 text-xs font-medium"
-                  style={{ borderColor: "var(--color-border)", color: "var(--color-ink)" }}
-                >
-                  {c}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-                결제 전 상담을 통해 필요한 구성으로 먼저 조정하며, 결제 후에도{" "}
-                <strong style={{ color: "var(--color-ink)" }}>구성 상담 1회, 구성 수정 1회</strong>가
-                제공됩니다.
-              </p>
-            </div>
-
-            <Link href="/consultation" className="btn-primary mt-7 px-7 text-sm font-medium">
-              구성 상담하기
+            <p className="eyebrow">CONSULTATION</p>
+            <p className="mt-2 max-w-xl break-keep text-base leading-[1.7]" style={{ color: "var(--color-ink)" }}>
+              어떤 구성을 골라야 할지 몰라도 괜찮습니다. 시험명과 목표만 알려주시면 필요한 구성을
+              안내해드립니다.
+            </p>
+            <Link
+              href="/consultation"
+              className="mt-4 inline-flex text-sm font-medium transition-colors hover:text-[var(--color-bronze)]"
+              style={{ color: "var(--color-ink)" }}
+            >
+              구성 상담하기 <span className="arrow-slide ml-1.5">→</span>
             </Link>
           </div>
         </div>

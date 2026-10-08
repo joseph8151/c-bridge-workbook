@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Serif_KR, Cormorant_Garamond, Noto_Sans_KR } from "next/font/google";
+import { Geist } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -7,37 +7,22 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RevealInit from "@/components/RevealInit";
 
-// 한글 제목용 세리프 — 400/600/700만 로드 (900은 사용하지 않음)
-const serifKr = Noto_Serif_KR({
-  variable: "--font-serif-kr",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-});
-
-// 영문 제목 · 로고 · 가격 숫자용 세리프
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
-
-// 본문 · 메뉴 · 폼 · 버튼용 1차 폰트. 자체 호스팅(로컬 정적 파일)이라 외부 CDN 의존이 없음
-const wantedSans = localFont({
+// 한글 전체(제목 포함) 기본 폰트. 명조 사용 금지 — Pretendard만 사용.
+// 자체 호스팅(로컬 정적 파일)이라 외부 CDN 의존이 없음.
+const pretendard = localFont({
   src: [
-    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-SemiBold.woff2", weight: "600", style: "normal" },
-    { path: "../../node_modules/wanted-sans/fonts/webfonts/static/complete/woff2/WantedSans-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../../node_modules/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../node_modules/pretendard/dist/web/static/woff2/Pretendard-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../node_modules/pretendard/dist/web/static/woff2/Pretendard-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../../node_modules/pretendard/dist/web/static/woff2/Pretendard-Bold.woff2", weight: "700", style: "normal" },
   ],
-  variable: "--font-wanted-sans",
+  variable: "--font-pretendard",
   display: "swap",
 });
 
-// 폴백 전용 — Wanted Sans 로드 실패 시에만 쓰임
-const sansKr = Noto_Sans_KR({
-  variable: "--font-sans-kr",
+// 영문 라벨 · 가격 숫자용. 이탤릭 사용 금지.
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -102,10 +87,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="ko"
-      className={`${serifKr.variable} ${cormorant.variable} ${wantedSans.variable} ${sansKr.variable} h-full antialiased`}
-    >
+    <html lang="ko" className={`${pretendard.variable} ${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-ivory text-ink font-sans">
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>

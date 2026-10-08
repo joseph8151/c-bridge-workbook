@@ -35,7 +35,7 @@ export default function ValueStack() {
           <div className="mt-10 grid border-y sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
             {items.map((item, i) => (
               <div key={item.no} className={`p-6 min-[361px]:p-8 ${BORDER_CLASSES[i]}`} style={{ borderColor: "var(--color-border)" }}>
-                <span className="font-serif text-2xl font-bold" style={{ color: "var(--color-bronze)" }}>
+                <span className="text-2xl font-bold" style={{ color: "var(--color-bronze)" }}>
                   {item.no}
                 </span>
                 <p className="mt-3 text-sm font-bold tracking-[0.04em]" style={{ color: "var(--color-ink)" }}>

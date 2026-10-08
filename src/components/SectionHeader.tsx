@@ -1,7 +1,7 @@
 const titleSizeClasses = {
-  sm: "text-[22px] md:text-[32px]",
-  md: "text-[28px] md:text-[44px]",
-  lg: "text-[32px] md:text-[52px]",
+  sm: "text-[20px] md:text-[26px]",
+  md: "text-[24px] md:text-[30px]",
+  lg: "text-[26px] md:text-[32px]",
 } as const;
 
 export default function SectionHeader({
@@ -24,7 +24,7 @@ export default function SectionHeader({
       <p className="eyebrow">{eyebrow}</p>
       {title && (
         <h2
-          className={`mt-3 break-keep font-serif font-bold leading-[1.2] tracking-[-0.01em] md:mt-4 ${titleSizeClasses[size]}`}
+          className={`mt-3 break-keep font-medium leading-[1.2] tracking-[-0.03em] md:mt-4 ${titleSizeClasses[size]}`}
           style={{ color: "var(--color-ink)" }}
         >
           {title}
@@ -32,7 +32,7 @@ export default function SectionHeader({
       )}
       {description && (
         <p
-          className={`mt-3 max-w-[650px] break-keep text-[15px] leading-[1.6] md:mt-4 md:text-lg md:leading-relaxed ${align === "center" ? "mx-auto" : "text-left"}`}
+          className={`mt-3 max-w-[650px] break-keep text-base leading-[1.7] md:mt-4 ${align === "center" ? "mx-auto" : "text-left"}`}
           style={{ color: "var(--color-muted)" }}
         >
           {description}

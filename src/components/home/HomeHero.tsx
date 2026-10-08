@@ -9,8 +9,8 @@ export default function HomeHero() {
         <div>
           <p className="eyebrow text-[11px] min-[361px]:text-xs">PROFESSIONAL LANGUAGE EXAM SERIES</p>
           <h1
-            className="hero-fade-up mt-5 break-keep font-serif text-[36px] font-bold leading-[1.15] tracking-[-0.01em] md:mt-6 md:text-[64px] md:leading-[1.15] md:tracking-[-0.02em] lg:text-[76px]"
-            style={{ color: "var(--color-ink)" }}
+            className="hero-fade-up mt-5 break-keep font-medium leading-[1.15] tracking-[-0.03em]"
+            style={{ color: "var(--color-ink)", fontSize: "clamp(40px, 5vw, 64px)" }}
           >
             내 시험, 내 목표,
             <br />
@@ -33,20 +33,30 @@ export default function HomeHero() {
             </Link>
           </div>
           <ul
-            className="hero-fade-up mt-8 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium tracking-[0.02em] md:mt-10"
-            style={{ color: "var(--color-muted)", animationDelay: "140ms" }}
+            className="hero-fade-up mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium md:mt-10"
+            style={{ animationDelay: "140ms" }}
           >
-            {["시험별 구성", "목표별 난이도", "취약 영역 집중", "PDF 형태 전달"].map((t) => (
-              <li key={t} className="flex items-center gap-1.5">
-                <span className="h-1 w-1 shrink-0 rounded-full" style={{ background: "var(--color-bronze)" }} />
-                {t}
+            {[
+              { name: "PTE Academic", href: "/books/pte-academic" },
+              { name: "CELPIP", href: "/books/celpip" },
+              { name: "OET", href: "/oet" },
+              { name: "EPTA", href: "/books/epta" },
+            ].map((t) => (
+              <li key={t.name}>
+                <Link
+                  href={t.href}
+                  className="underline decoration-[var(--color-border)] underline-offset-4 transition-colors hover:text-[var(--color-bronze)] hover:decoration-[var(--color-bronze)]"
+                  style={{ color: "var(--color-ink)" }}
+                >
+                  {t.name}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
         <div className="hero-fade-up img-fade order-last min-w-0" style={{ animationDelay: "120ms" }}>
-          <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden lg:max-w-none">
+          <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2px] lg:max-w-none">
             <Image
               src="/images/hero-desk.jpg"
               alt="책상에서 문제집을 풀며 필기하는 모습"

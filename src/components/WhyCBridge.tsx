@@ -32,10 +32,10 @@ export default function WhyCBridge() {
               className={`p-6 min-[361px]:p-8 ${BORDER_CLASSES[i]}`}
               style={{ borderColor: "var(--color-border)" }}
             >
-              <span className="font-serif text-2xl font-bold" style={{ color: "var(--color-bronze)" }}>
+              <span className="text-2xl font-bold" style={{ color: "var(--color-bronze)" }}>
                 {item.no}
               </span>
-              <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
+              <p className="mt-3 text-lg font-bold" style={{ color: "var(--color-ink)" }}>
                 {item.title}
               </p>
               <p className="mt-2 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>

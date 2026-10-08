@@ -5,7 +5,7 @@ import { siteFaqItems } from "@/lib/faqData";
 
 export default function HomeFAQ() {
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)", background: "var(--color-skyblue)" }} data-reveal>
+    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }} data-reveal>
       <Container>
         <div className="mx-auto max-w-[680px]">
           <SectionHeader eyebrow="FAQ" align="center" />

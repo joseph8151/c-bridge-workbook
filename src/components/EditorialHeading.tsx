@@ -1,9 +1,9 @@
 type Size = "xl" | "lg" | "md";
 
 const SIZE_CLASSES: Record<Size, string> = {
-  xl: "text-[42px] md:text-[72px] lg:text-[88px] leading-[1.05]",
-  lg: "text-[36px] md:text-[52px] lg:text-[64px] leading-[1.1]",
-  md: "text-[28px] md:text-[36px] leading-[1.2]",
+  xl: "text-[26px] md:text-[32px] leading-[1.2]",
+  lg: "text-[24px] md:text-[30px] leading-[1.2]",
+  md: "text-[22px] md:text-[26px] leading-[1.25]",
 };
 
 export default function EditorialHeading({
@@ -21,7 +21,7 @@ export default function EditorialHeading({
 }) {
   return (
     <Tag
-      className={`break-keep font-serif font-bold tracking-[-0.02em] ${SIZE_CLASSES[size]} ${className}`}
+      className={`break-keep font-medium tracking-[-0.03em] ${SIZE_CLASSES[size]} ${className}`}
       style={{ color: color ?? "var(--color-ink)" }}
     >
       {children}

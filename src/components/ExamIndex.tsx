@@ -14,20 +14,17 @@ export default function ExamIndex({ items }: { items: ExamIndexItem[] }) {
         <Link
           key={item.name}
           href={item.href}
-          className={`card-hover group flex items-baseline gap-6 border-b py-8 md:py-10 ${
+          className={`group flex items-baseline gap-6 border-b py-8 md:py-10 ${
             i % 2 === 1 ? "md:border-l md:pl-10" : "md:pr-10"
           }`}
           style={{ borderColor: "var(--color-border)" }}
         >
-          <span
-            className="shrink-0 font-serif text-2xl font-bold"
-            style={{ color: "var(--color-bronze)" }}
-          >
+          <span className="shrink-0 text-2xl font-medium" style={{ color: "var(--color-bronze)" }}>
             {String(i + 1).padStart(2, "0")}
           </span>
           <span className="min-w-0 flex-1">
             <span
-              className="block break-keep font-serif text-2xl font-bold tracking-[-0.01em] md:text-[28px]"
+              className="block break-keep text-2xl font-medium tracking-[-0.03em] underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-[var(--color-ink)] md:text-[28px]"
               style={{ color: "var(--color-ink)" }}
             >
               {item.name}

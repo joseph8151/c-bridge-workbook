@@ -2,26 +2,20 @@
 
 :root {
   /* ============================================================
-     C-BRIDGE gelato pistachio palette — warm cream paper,
-     deep ink text, pistachio-green accent. Only the footer is
-     allowed to be a deep, solid pistachio surface; every other
-     section is light.
+     C-BRIDGE publisher palette — 크림 배경, 짙은 잉크 텍스트,
+     피스타치오는 버튼과 얇은 룰에만 쓰는 단일 포인트 컬러.
      ============================================================ */
-  --color-paper: #f7f6f2; /* background — flat, no texture */
-  --color-paper-dark: #eeece4; /* 면 강조 */
-  --color-ink: #222222; /* 본문 텍스트 */
-  --color-muted: #5a574c; /* 보조 텍스트 */
-  --color-bronze: #2a2e24; /* 단일 포인트 컬러 — 버튼 · 링크 · 악센트 */
-  --color-bronze-dark: #1c1f18; /* 호버 */
-  --color-border: #d9d3c4; /* 1px 라인 */
-  --color-pistachio: #2a2e24;
+  --color-paper: #f7f4ee; /* 배경 */
+  --color-paper-dark: #eef3e6; /* 보조면 */
+  --color-ink: #1c1f1a; /* 본문 텍스트 */
+  --color-muted: #5b5d52; /* 보조 텍스트 */
+  --color-bronze: #6e8b62; /* 단일 포인트 컬러 — 버튼 · 얇은 룰 전용 */
+  --color-bronze-dark: #5a7350; /* 호버 */
+  --color-border: #e4e1d8; /* 1px 라인 */
+  --color-pistachio: #6e8b62;
   --color-disabled: #c9c4b6;
 
-  /* 홈페이지 섹션 배경 리듬 — 아이보리와 번갈아 쓰는 스카이블루 톤 */
-  --color-skyblue: #bfe3f2; /* 배경 톤 */
-  --color-skyblue-deep: #5aa8c7; /* 보더·소소한 포인트용 */
-
-  /* 다크 섹션은 전부 크림으로 통일 — footer만 예외로 별도 처리 */
+  /* 하단 띠(footer)도 동일한 크림 — 다크 섹션 없음 */
   --color-navy: var(--color-paper);
   --color-navy-text: var(--color-ink);
 
@@ -113,10 +107,10 @@
   --color-pistachio-tint: var(--color-pistachio-tint);
   --color-nutbrown: var(--color-nutbrown);
 
-  /* 영문/숫자는 Cormorant Garamond, 한글은 Noto Serif KR로 자동 매칭(문자 단위 폰트 스택) */
-  --font-serif: var(--font-cormorant), var(--font-serif-kr), "Apple SD Gothic Neo", serif;
-  /* 본문 1차 폰트는 CDN Pretendard, 실패 시 Noto Sans KR로 대체 */
-  --font-sans: var(--font-wanted-sans), var(--font-sans-kr), "Apple SD Gothic Neo", sans-serif;
+  /* 명조 금지 — font-serif 유틸리티도 동일한 산세리프 스택을 씁니다 */
+  --font-serif: var(--font-sans);
+  /* 영문 라벨·가격 숫자는 Geist, 한글은 Pretendard로 자동 매칭(문자 단위 폰트 스택) */
+  --font-sans: var(--font-geist), var(--font-pretendard), "Apple SD Gothic Neo", sans-serif;
 }
 
 html {
@@ -157,7 +151,7 @@ html {
   transition: background-color 220ms var(--ease-pub);
 }
 .card-hover:hover {
-  background-color: rgba(42, 46, 36, 0.03);
+  background-color: rgba(28, 31, 26, 0.03);
 }
 
 /* Arrow-slide micro interaction for editorial index rows */
@@ -238,30 +232,6 @@ a:hover .arrow-slide {
 }
 .btn-text:hover {
   text-decoration-color: var(--color-ink);
-}
-
-/* Footer-only variant: footer stays a solid dark surface, so its one
-   button inverts to a bordered (not filled) treatment in paper color. */
-.btn-on-footer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  border-radius: 2px;
-  border: 1px solid var(--color-paper);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  background: transparent;
-  color: var(--color-paper);
-  transition: background-color 180ms var(--ease-pub), color 180ms var(--ease-pub);
-}
-.btn-on-footer:hover {
-  background-color: var(--color-paper);
-  color: var(--color-bronze);
-}
-.btn-on-footer:focus-visible {
-  outline: 1px solid var(--color-paper);
-  outline-offset: 2px;
 }
 
 /* Pre-existing bug, fixed here rather than by touching .btn-primary itself

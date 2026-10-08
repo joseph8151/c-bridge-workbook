@@ -11,7 +11,7 @@ export default function BusinessTeaser() {
               FOR BUSINESS
             </p>
             <p
-              className="mt-4 max-w-xl break-keep font-serif text-2xl font-bold leading-snug md:text-[32px]"
+              className="mt-4 max-w-xl break-keep text-2xl font-medium leading-snug tracking-[-0.03em] md:text-[32px]"
               style={{ color: "var(--color-ink)" }}
             >
               임직원 평가, 승진 시험, 해외 파견까지 — 조직의 목적에 맞는 시험 대비 자료를
