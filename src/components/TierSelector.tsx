@@ -63,7 +63,7 @@ export default function TierSelector({ test }: { test: Test }) {
               style={
                 target === opt
                   ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
-                  : { borderColor: "var(--color-line)", color: "rgba(42,46,36,0.7)" }
+                  : { borderColor: "var(--color-line)", color: "rgba(30,36,28,0.7)" }
               }
             >
               {opt}
@@ -100,7 +100,7 @@ export default function TierSelector({ test }: { test: Test }) {
                   </span>
                 )}
                 <p className="font-serif text-xl font-bold">{m.label}</p>
-                <p className="mt-1 text-xs font-bold" style={active ? { color: "var(--color-paper)" } : { color: "rgba(42,46,36,0.5)" }}>
+                <p className="mt-1 text-xs font-bold" style={active ? { color: "var(--color-paper)" } : { color: "rgba(30,36,28,0.5)" }}>
                   {getTierPrice(t).toLocaleString()}원
                 </p>
               </button>
@@ -120,7 +120,7 @@ export default function TierSelector({ test }: { test: Test }) {
               style={
                 focus.has(f.id)
                   ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
-                  : { borderColor: "var(--color-line)", color: "rgba(42,46,36,0.7)" }
+                  : { borderColor: "var(--color-line)", color: "rgba(30,36,28,0.7)" }
               }
             >
               {f.label}

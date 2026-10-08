@@ -6,7 +6,7 @@ function Page({ no, children }: { no: string; children: React.ReactNode }) {
   return (
     <div
       className="relative flex aspect-[3/4] w-full flex-col overflow-hidden border p-4 min-[361px]:p-5 md:p-6"
-      style={{ borderColor: "var(--color-border)", background: "#FBF9F4" }}
+      style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }}
     >
       <div className="flex items-center justify-between border-b pb-2" style={{ borderColor: "var(--color-border)" }}>
         <span className="text-[10px] font-bold tracking-[0.14em]" style={{ color: "var(--color-bronze)" }}>
@@ -22,7 +22,7 @@ function Page({ no, children }: { no: string; children: React.ReactNode }) {
 }
 
 function Bar({ w, className = "" }: { w: number; className?: string }) {
-  return <div className={`h-1.5 rounded-full ${className}`} style={{ width: `${w}%`, background: "rgba(28,31,26,0.12)" }} />;
+  return <div className={`h-1.5 rounded-full ${className}`} style={{ width: `${w}%`, background: "rgba(30,36,28,0.12)" }} />;
 }
 
 function AbstractPractice() {

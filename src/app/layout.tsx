@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -21,8 +21,8 @@ const pretendard = localFont({
 });
 
 // 영문 라벨 · 가격 숫자용. 이탤릭 사용 금지.
-const geist = Geist({
-  variable: "--font-geist",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ko" className={`${pretendard.variable} ${geist.variable} h-full antialiased`}>
+    <html lang="ko" className={`${pretendard.variable} ${instrumentSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-ivory text-ink font-sans">
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>

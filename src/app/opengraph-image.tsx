@@ -15,18 +15,18 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#f7f4ee",
-          color: "#1c1f1a",
+          background: "#f6f1e8",
+          color: "#1e241c",
         }}
       >
-        <div style={{ display: "flex", fontSize: 30, fontWeight: 600, letterSpacing: 6, color: "#6e8b62" }}>
+        <div style={{ display: "flex", fontSize: 30, fontWeight: 600, letterSpacing: 6, color: "#5f7f52" }}>
           C—BRIDGE
         </div>
         <div style={{ display: "flex", marginTop: 28, fontSize: 68, fontWeight: 500, lineHeight: 1.15 }}>
           Professional Language
         </div>
         <div style={{ display: "flex", fontSize: 68, fontWeight: 500, lineHeight: 1.15 }}>Exam Series</div>
-        <div style={{ display: "flex", marginTop: 32, fontSize: 26, color: "#5b5d52" }}>
+        <div style={{ display: "flex", marginTop: 32, fontSize: 26, color: "#5e6558" }}>
           PTE · CELPIP · OET · EPTA · IELTS · TOEFL
         </div>
       </div>

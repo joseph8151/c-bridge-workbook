@@ -297,7 +297,7 @@ export default function ResourcesTabs() {
               onClick={() => setActive(exam)}
               className="shrink-0 pb-4 font-serif text-xl font-bold transition-colors md:text-3xl"
               style={{
-                color: active === exam ? "var(--color-inkstrong)" : "rgba(42,46,36,0.3)",
+                color: active === exam ? "var(--color-inkstrong)" : "rgba(30,36,28,0.3)",
                 borderBottom: active === exam ? "2px solid var(--color-pistachio)" : "2px solid transparent",
                 marginBottom: "-1px",
               }}

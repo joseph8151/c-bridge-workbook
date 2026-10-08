@@ -2,17 +2,18 @@
 
 :root {
   /* ============================================================
-     C-BRIDGE publisher palette — 크림 배경, 짙은 잉크 텍스트,
-     피스타치오는 버튼과 얇은 룰에만 쓰는 단일 포인트 컬러.
+     C-BRIDGE publisher palette — 하늘색 전면 제거, 아래 8개 값만 사용.
+     포인트(피스타치오)는 버튼 배경 · 현재 메뉴 · 가는 밑줄에만.
      ============================================================ */
-  --color-paper: #f7f4ee; /* 배경 */
-  --color-paper-dark: #eef3e6; /* 보조면 */
-  --color-ink: #1c1f1a; /* 본문 텍스트 */
-  --color-muted: #5b5d52; /* 보조 텍스트 */
-  --color-bronze: #6e8b62; /* 단일 포인트 컬러 — 버튼 · 얇은 룰 전용 */
-  --color-bronze-dark: #5a7350; /* 호버 */
-  --color-border: #e4e1d8; /* 1px 라인 */
-  --color-pistachio: #6e8b62;
+  --color-paper: #f6f1e8; /* 배경 */
+  --color-paper-dark: #fbf8f3; /* 면 — 카드/대체 섹션 표면 (호버 아님) */
+  --color-ink: #1e241c; /* 글자 */
+  --color-muted: #5e6558; /* 보조 글자 */
+  --color-bronze: #5f7f52; /* 포인트 — 버튼 배경 · 현재 메뉴 · 가는 밑줄 전용 */
+  --color-bronze-dark: #4e6843; /* 포인트 버튼 호버 시 살짝 어둡게 */
+  --color-border: #e4ddd0; /* 선 */
+  --color-pistachio: #5f7f52;
+  --color-hover-surface: #e7efe2; /* 호버 면 — 보더/텍스트 버튼의 :hover 배경 전용 */
   --color-disabled: #c9c4b6;
 
   /* 하단 띠(footer)도 동일한 크림 — 다크 섹션 없음 */
@@ -98,6 +99,7 @@
   --color-paper-dark: var(--color-paper-dark);
   --color-muted: var(--color-muted);
   --color-bronze: var(--color-bronze);
+  --color-hover-surface: var(--color-hover-surface);
   --color-navy: var(--color-navy);
   --color-navy-text: var(--color-navy-text);
   --color-inkstrong: var(--color-inkstrong);
@@ -109,8 +111,8 @@
 
   /* 명조 금지 — font-serif 유틸리티도 동일한 산세리프 스택을 씁니다 */
   --font-serif: var(--font-sans);
-  /* 영문 라벨·가격 숫자는 Geist, 한글은 Pretendard로 자동 매칭(문자 단위 폰트 스택) */
-  --font-sans: var(--font-geist), var(--font-pretendard), "Apple SD Gothic Neo", sans-serif;
+  /* 영문 라벨·가격 숫자는 Instrument Sans, 한글은 Pretendard로 자동 매칭(문자 단위 폰트 스택) */
+  --font-sans: var(--font-instrument-sans), var(--font-pretendard), "Apple SD Gothic Neo", sans-serif;
 }
 
 html {
@@ -151,7 +153,7 @@ html {
   transition: background-color 220ms var(--ease-pub);
 }
 .card-hover:hover {
-  background-color: rgba(28, 31, 26, 0.03);
+  background-color: rgba(30, 36, 28, 0.03);
 }
 
 /* Arrow-slide micro interaction for editorial index rows */
@@ -209,7 +211,7 @@ a:hover .arrow-slide {
   transition: background-color 180ms var(--ease-pub);
 }
 .btn-secondary:hover {
-  background-color: var(--color-paper-dark);
+  background-color: var(--color-hover-surface);
 }
 .btn-secondary:focus-visible {
   outline: 1px solid var(--color-bronze);
@@ -270,7 +272,7 @@ a:hover .arrow-slide {
   transition: background-color 180ms var(--ease-pub);
 }
 .btn-nav-cta:hover {
-  background-color: var(--color-paper-dark);
+  background-color: var(--color-hover-surface);
 }
 .btn-nav-cta:focus-visible {
   outline: 1px solid var(--color-bronze);
@@ -313,7 +315,7 @@ a:hover .arrow-slide {
   transition: background-color 180ms var(--ease-pub);
 }
 .btn-fab:hover {
-  background-color: var(--color-paper-dark);
+  background-color: var(--color-hover-surface);
 }
 .btn-fab:focus-visible {
   outline: 2px solid var(--color-bronze-dark);
