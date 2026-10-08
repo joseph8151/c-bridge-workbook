@@ -45,7 +45,7 @@ export default function HomeHero() {
           </ul>
         </div>
 
-        <div className="hero-fade-up order-last" style={{ animationDelay: "120ms" }}>
+        <div className="hero-fade-up order-last min-w-0" style={{ animationDelay: "120ms" }}>
           <BookMockup
             books={[
               { title: "PTE Academic", subtitle: "Complete Workbook" },

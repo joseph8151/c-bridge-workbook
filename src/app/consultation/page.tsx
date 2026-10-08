@@ -6,6 +6,7 @@ import SectionHeader from "@/components/SectionHeader";
 import FAQ from "@/components/FAQ";
 import ConsultationForm from "@/components/ConsultationForm";
 import { orderFaqItems } from "@/lib/faqData";
+import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "BOOK CONSULTATION | C-BRIDGE",
@@ -36,6 +37,24 @@ export default function ConsultationPage() {
           시험과 목표 점수를 알려주세요. 필요한 영역과 교재 구성을 안내합니다. 현재는 자동결제를
           제공하지 않으며, 상담 후 담당자가 결제 방법을 안내해드립니다.
         </p>
+
+        <div className="mt-8 border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
+          <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+            국내에서는 전화·문자 상담을 권장합니다.
+          </p>
+          <p className="mt-1 text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            더 빠르고 정확한 상담이 가능합니다. 이메일·양식 상담은 해외에서 연락 주시는 경우
+            이용해 주세요.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            <a href={`tel:${siteConfig.phone}`} className="btn-primary px-6 text-sm font-medium">
+              전화 상담 {siteConfig.phone}
+            </a>
+            <a href={`sms:${siteConfig.phone}`} className="btn-secondary px-6 text-sm font-medium">
+              문자 상담
+            </a>
+          </div>
+        </div>
 
         <div className="mt-10 border-t" style={{ borderColor: "var(--color-border)" }} />
 
@@ -73,7 +92,8 @@ export default function ConsultationPage() {
 
           <div className="p-6 min-[361px]:p-8 md:p-10">
             <p className="mb-6 text-sm" style={{ color: "var(--color-muted)" }}>
-              남겨 주시면 확인 후 회신합니다. 주말·공휴일에도 받습니다.
+              해외에서는 아래 양식으로 남겨 주세요. 국내에서는 전화·문자 상담이 더 빠르고
+              정확합니다. 주말·공휴일에도 받습니다.
             </p>
             <Suspense fallback={null}>
               <ConsultationForm />
