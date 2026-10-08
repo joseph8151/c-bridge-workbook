@@ -2,6 +2,7 @@ import HomeHero from "@/components/home/HomeHero";
 import CredibilityStrip from "@/components/home/CredibilityStrip";
 import Philosophy from "@/components/home/Philosophy";
 import ExamIndexSection from "@/components/home/ExamIndexSection";
+import ExamIndexPhotoBreak from "@/components/home/ExamIndexPhotoBreak";
 import ValueStack from "@/components/home/ValueStack";
 import BookPreview from "@/components/BookPreview";
 import Method from "@/components/home/Method";
@@ -26,6 +27,7 @@ export default function Home() {
       <HomeHero />
       <Philosophy />
       <CredibilityStrip />
+      <ExamIndexPhotoBreak />
       <ExamIndexSection />
       <ValueStack />
       <BookPreview />

@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/Container";
-import BookMockup from "@/components/BookMockup";
 
 export default function HomeHero() {
   return (
@@ -45,14 +45,17 @@ export default function HomeHero() {
           </ul>
         </div>
 
-        <div className="hero-fade-up order-last min-w-0" style={{ animationDelay: "120ms" }}>
-          <BookMockup
-            books={[
-              { title: "PTE Academic", subtitle: "Complete Workbook" },
-              { title: "OET", subtitle: "Healthcare English" },
-              { title: "CELPIP", subtitle: "Canadian English" },
-            ]}
-          />
+        <div className="hero-fade-up img-fade order-last min-w-0" style={{ animationDelay: "120ms" }}>
+          <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden lg:max-w-none">
+            <Image
+              src="/images/hero-desk.jpg"
+              alt="책상에서 문제집을 풀며 필기하는 모습"
+              fill
+              sizes="(max-width: 1024px) 100vw, 480px"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </Container>
     </section>
