@@ -20,7 +20,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     tier: "COMPLETE",
     label: "200P",
     pages: 200,
-    price: 245000,
+    price: 220500,
     mockTestsLabel: "10회",
     name: "COMPLETE",
     shortDesc: "시험을 충분히 연습하고 한 번에 제대로 준비하려는 고객을 위한 주력 상품.",
@@ -43,7 +43,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     tier: "PREMIUM",
     label: "300P",
     pages: 300,
-    price: 369000,
+    price: 332100,
     mockTestsLabel: "15회 이상",
     name: "INTENSIVE",
     shortDesc: "충분한 문제량과 고득점·상위 레벨을 목표로 하는 고객을 위한 집중 패키지.",
@@ -75,7 +75,7 @@ export function getTierPrice(tier: Tier): number {
 
 // 홈·시험 페이지·상담 폼 등에서 가격을 설명할 때 쓰는 통일된 한 줄 카피.
 export const priceSummaryLine =
-  "페이지 수에 따라 구성이 달라집니다. 200페이지 245,000원, 300페이지 369,000원.";
+  "페이지 수에 따라 구성이 달라집니다. 200페이지 220,500원, 300페이지 332,100원.";
 
 // 카드처럼 공간이 좁은 곳에서 쓰는 축약형.
 export const priceSummaryCompact = `${tierMeta.COMPLETE.price.toLocaleString()}원 · ${tierMeta.PREMIUM.price.toLocaleString()}원`;

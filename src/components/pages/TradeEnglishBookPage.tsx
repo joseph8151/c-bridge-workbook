@@ -10,8 +10,8 @@ const bodyLines = [
 const includes = ["영문해석", "영작(클레임·회신)", "짧은 한국어 해설", "모의 3회"];
 
 const prices = [
-  { label: "L/C·클레임 200P", price: "₩245,000" },
-  { label: "L/C·클레임 300P", price: "₩369,000" },
+  { label: "L/C·클레임 200P", price: "₩220,500" },
+  { label: "L/C·클레임 300P", price: "₩332,100" },
 ];
 
 const options = [

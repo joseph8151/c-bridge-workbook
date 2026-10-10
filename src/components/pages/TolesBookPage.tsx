@@ -10,8 +10,8 @@ const bodyLines = [
 const includes = ["계약·조항 독해", "협상 메일", "답·해설", "모의 3회", "Final Review"];
 
 const prices = [
-  { label: "TOLES Higher 200P", price: "₩245,000" },
-  { label: "TOLES Higher 300P", price: "₩369,000" },
+  { label: "TOLES Higher 200P", price: "₩220,500" },
+  { label: "TOLES Higher 300P", price: "₩332,100" },
 ];
 
 const options = [
