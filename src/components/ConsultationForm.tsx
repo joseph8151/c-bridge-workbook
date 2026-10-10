@@ -113,7 +113,14 @@ export default function ConsultationForm() {
 
       <Field label="이름" name="name" required />
 
-      <Field label="전화번호" name="phone" type="tel" required placeholder="010-1234-5678" />
+      <Field
+        label="전화번호"
+        name="phone"
+        type="tel"
+        required
+        placeholder="010-1234-5678"
+        hint="해외에 계신 경우 국가번호를 포함한 해외 번호를 입력해 주세요. (예: +1 416-555-0123)"
+      />
 
       <div>
         <span className="text-xs font-bold tracking-[0.1em] text-ink/60">선호하는 연락 방법</span>
@@ -286,6 +293,7 @@ function Field({
   required,
   placeholder,
   defaultValue,
+  hint,
 }: {
   label: string;
   name: string;
@@ -293,6 +301,7 @@ function Field({
   required?: boolean;
   placeholder?: string;
   defaultValue?: string;
+  hint?: string;
 }) {
   const id = `cf-${name}`;
   return (
@@ -309,6 +318,7 @@ function Field({
         defaultValue={defaultValue}
         className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[var(--color-rust)] focus:outline-none"
       />
+      {hint && <p className="mt-1.5 text-xs leading-relaxed text-ink/50">{hint}</p>}
     </div>
   );
 }
