@@ -147,6 +147,13 @@ export default function ConsultationForm() {
         </div>
       </div>
 
+      <Field
+        label="연락 가능 시간"
+        name="availableTime"
+        placeholder="예: 지금 바로 가능 / 평일 오후 2~4시"
+        hint="지금 바로 연락 가능하시면 '지금 가능'이라고 적어주시거나, 편하신 상담 요일과 시간을 적어 주세요."
+      />
+
       <div>
         <label htmlFor="cf-kakao" className="text-xs font-bold tracking-[0.1em] text-ink/60">
           카카오톡 ID (선택)
