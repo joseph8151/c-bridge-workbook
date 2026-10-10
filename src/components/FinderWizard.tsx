@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { finderGroups } from "@/lib/finderTests";
 
-const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기", "선택 안 함"];
+const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기", "전체"];
 const volumeOptions = ["200P", "300P"];
 
 const questions = [
@@ -36,7 +36,7 @@ export default function FinderWizard() {
   if (done) {
     const consultHref = `/consultation?test=${encodeURIComponent(testName)}${
       goal ? `&goal=${encodeURIComponent(goal)}` : ""
-    }${weakArea && weakArea !== "선택 안 함" ? `&weakArea=${encodeURIComponent(weakArea)}` : ""}`;
+    }${weakArea && weakArea !== "전체" ? `&weakArea=${encodeURIComponent(weakArea)}` : ""}`;
 
     return (
       <div className="border p-6 text-center min-[361px]:p-8 md:p-12" style={{ borderColor: "var(--color-line)" }}>
@@ -48,7 +48,7 @@ export default function FinderWizard() {
         </p>
         <div className="mx-auto mt-6 max-w-sm space-y-1.5 text-sm text-ink/60">
           {goal && <p>목표: {goal}</p>}
-          {weakArea && weakArea !== "선택 안 함" && <p>집중 영역: {weakArea}</p>}
+          {weakArea && weakArea !== "전체" && <p>집중 영역: {weakArea}</p>}
           <p>희망 분량: {volume}</p>
         </div>
 

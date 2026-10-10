@@ -41,7 +41,7 @@ const testGroups: { label: string; items: string[] }[] = [
   { label: "기타", items: ["기타"] },
 ];
 
-const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기"];
+const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기", "전체"];
 const volumeOptions = ["200P", "300P"];
 
 const contactMethods = [
@@ -198,7 +198,7 @@ export default function ConsultationForm() {
 
       <div>
         <span className="text-xs font-bold tracking-[0.1em] text-ink/60">약한 영역</span>
-        <div role="radiogroup" aria-label="약한 영역" className="mt-3 grid grid-cols-4 gap-2">
+        <div role="radiogroup" aria-label="약한 영역" className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
           {weakAreaOptions.map((w) => (
             <label
               key={w}
