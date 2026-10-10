@@ -20,6 +20,7 @@ import MarlinsBookPage from "@/components/pages/MarlinsBookPage";
 import EptaBookPage from "@/components/pages/EptaBookPage";
 import TelcPflegeBookPage from "@/components/pages/TelcPflegeBookPage";
 import TradeEnglishBookPage from "@/components/pages/TradeEnglishBookPage";
+import SatBookPage from "@/components/pages/SatBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -71,6 +72,7 @@ export default async function TestDetailPage({
   if (test.slug === "epta") return <EptaBookPage />;
   if (test.slug === "telc-pflege") return <TelcPflegeBookPage />;
   if (test.slug === "trade-english") return <TradeEnglishBookPage />;
+  if (test.slug === "sat") return <SatBookPage />;
 
   const group = groupMeta[test.group];
   const whoFor = getWhoFor(test);

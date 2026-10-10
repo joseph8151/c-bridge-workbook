@@ -392,6 +392,16 @@ export const tests: Test[] = [
       "유학, 취업, 해외 진학에 폭넓게 활용되는 Cambridge C1 Advanced(CAE) 고급 영어능력시험입니다. Reading·Writing·Listening·Speaking 전 영역을 대비합니다.",
     keywords: ["Cambridge C1 Advanced", "CAE", "케임브리지 C1", "캠브리지 어드밴스드"],
   },
+  {
+    id: "sat",
+    slug: "sat",
+    name: "SAT",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "미국 대학 진학 SAT",
+    description: "미국 대학 진학을 위한 SAT. 영어(Reading and Writing)와 수학을 각각 별도로 준비합니다.",
+    keywords: ["SAT", "디지털 SAT", "SAT 영어", "SAT 수학"],
+  },
 
   // ---------------- PROFESSIONAL ----------------
   {
