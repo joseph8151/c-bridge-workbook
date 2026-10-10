@@ -68,7 +68,6 @@ export default function Footer() {
               © {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
-              <span>{siteConfig.phone}</span>
               <span>{siteConfig.hours}</span>
             </div>
           </div>
