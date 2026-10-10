@@ -44,11 +44,7 @@ const testGroups: { label: string; items: string[] }[] = [
 const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기", "전체"];
 const volumeOptions = ["200P", "300P"];
 
-const contactMethods = [
-  { value: "문자", placeholder: "휴대폰 번호 (예: 010-1234-5678)" },
-  { value: "전화", placeholder: "휴대폰 번호 (예: 010-1234-5678)" },
-  { value: "카카오톡 ID", placeholder: "카카오톡 ID" },
-] as const;
+const contactMethods = ["문자", "전화"] as const;
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -61,7 +57,7 @@ export default function ConsultationForm() {
 
   const [status, setStatus] = useState<Status>("idle");
   const [test, setTest] = useState(prefillTest);
-  const [contactMethod, setContactMethod] = useState<(typeof contactMethods)[number]["value"]>("문자");
+  const [contactMethod, setContactMethod] = useState<(typeof contactMethods)[number]>("문자");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -117,34 +113,44 @@ export default function ConsultationForm() {
 
       <Field label="이름" name="name" required />
 
+      <Field label="전화번호" name="phone" type="tel" required placeholder="010-1234-5678" />
+
       <div>
-        <span className="text-xs font-bold tracking-[0.1em] text-ink/60">연락 방법</span>
-        <div role="radiogroup" aria-label="연락 방법" className="mt-3 grid grid-cols-3 gap-2">
+        <span className="text-xs font-bold tracking-[0.1em] text-ink/60">선호하는 연락 방법</span>
+        <p className="mt-1 text-xs leading-relaxed text-ink/50">
+          문자·전화 상담을 권장합니다. 더 빠르고 정확하게 안내해드릴 수 있습니다.
+        </p>
+        <div role="radiogroup" aria-label="선호하는 연락 방법" className="mt-3 grid grid-cols-2 gap-2">
           {contactMethods.map((m) => (
             <label
-              key={m.value}
+              key={m}
               className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
             >
               <input
                 type="radio"
                 name="contactMethod"
-                value={m.value}
-                checked={contactMethod === m.value}
-                onChange={() => setContactMethod(m.value)}
+                value={m}
+                checked={contactMethod === m}
+                onChange={() => setContactMethod(m)}
                 className="sr-only"
               />
-              {m.value}
+              {m}
             </label>
           ))}
         </div>
-        <div className="mt-3">
-          <Field
-            label="연락처"
-            name="contactValue"
-            required
-            placeholder={contactMethods.find((m) => m.value === contactMethod)?.placeholder}
-          />
-        </div>
+      </div>
+
+      <div>
+        <label htmlFor="cf-kakao" className="text-xs font-bold tracking-[0.1em] text-ink/60">
+          카카오톡 ID (선택)
+        </label>
+        <input
+          id="cf-kakao"
+          name="kakaoId"
+          type="text"
+          placeholder="카카오톡으로 연락받고 싶으시면 입력해 주세요"
+          className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[var(--color-rust)] focus:outline-none"
+        />
       </div>
 
       <div>
