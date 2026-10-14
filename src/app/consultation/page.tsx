@@ -44,8 +44,8 @@ export default function ConsultationPage() {
             국내에서는 전화·문자 상담을 권장합니다.
           </p>
           <p className="mt-1 text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            더 빠르고 정확한 상담이 가능합니다. 이메일·양식 상담은 해외에서 연락 주시는 경우
-            이용해 주세요.
+            더 빠르고 정확한 상담이 가능합니다. 전화·문자가 어려우시면 아래 양식으로도 국내·해외
+            모두 상담을 남기실 수 있습니다. (이메일 입력은 해외 고객만 해당합니다.)
           </p>
           <div className="mt-4 flex flex-wrap gap-2.5">
             <a href={`tel:${siteConfig.phone}`} className="btn-primary px-6 text-sm font-medium">
@@ -116,8 +116,8 @@ export default function ConsultationPage() {
             </div>
 
             <p className="mb-6 text-sm" style={{ color: "var(--color-muted)" }}>
-              해외에서는 아래 양식으로 남겨 주세요. 국내에서는 전화·문자 상담이 더 빠르고
-              정확합니다. 주말·공휴일에도 받습니다.
+              전화·문자 상담이 더 빠르고 정확하지만, 아래 양식으로도 국내·해외 모두 상담을
+              남기실 수 있습니다. 주말·공휴일에도 받습니다.
             </p>
             <Suspense fallback={null}>
               <ConsultationForm />
