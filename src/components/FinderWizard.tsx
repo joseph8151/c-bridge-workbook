@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { finderGroups } from "@/lib/finderTests";
+import { tierMeta } from "@/lib/products";
 
 const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기", "전체"];
 const volumeOptions = ["200P", "300P"];
@@ -34,6 +35,7 @@ export default function FinderWizard() {
   const canGoNext = step !== 1 || testName !== "";
 
   if (done) {
+    const volumePrice = Object.values(tierMeta).find((t) => t.label === volume)?.price;
     const consultHref = `/consultation?test=${encodeURIComponent(testName)}${
       goal ? `&goal=${encodeURIComponent(goal)}` : ""
     }${weakArea && weakArea !== "전체" ? `&weakArea=${encodeURIComponent(weakArea)}` : ""}`;
@@ -49,7 +51,10 @@ export default function FinderWizard() {
         <div className="mx-auto mt-6 max-w-sm space-y-1.5 text-sm text-ink/60">
           {goal && <p>목표: {goal}</p>}
           {weakArea && weakArea !== "전체" && <p>집중 영역: {weakArea}</p>}
-          <p>희망 분량: {volume}</p>
+          <p>
+            희망 분량: {volume}
+            {volumePrice != null && <> · ₩{volumePrice.toLocaleString()}</>}
+          </p>
         </div>
 
         <div className="mt-8 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:justify-center min-[430px]:gap-4">
@@ -156,22 +161,26 @@ export default function FinderWizard() {
 
         {step === 4 && (
           <div className="grid grid-cols-2 gap-2">
-            {volumeOptions.map((v) => (
-              <label
-                key={v}
-                className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-4 text-sm font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
-              >
-                <input
-                  type="radio"
-                  name="volume"
-                  value={v}
-                  checked={volume === v}
-                  onChange={() => setVolume(v)}
-                  className="sr-only"
-                />
-                {v}
-              </label>
-            ))}
+            {volumeOptions.map((v) => {
+              const vPrice = Object.values(tierMeta).find((t) => t.label === v)?.price;
+              return (
+                <label
+                  key={v}
+                  className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-none border border-ink/20 py-4 text-sm font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+                >
+                  <input
+                    type="radio"
+                    name="volume"
+                    value={v}
+                    checked={volume === v}
+                    onChange={() => setVolume(v)}
+                    className="sr-only"
+                  />
+                  <span>{v}</span>
+                  {vPrice != null && <span className="text-xs font-medium opacity-70">₩{vPrice.toLocaleString()}</span>}
+                </label>
+              );
+            })}
           </div>
         )}
       </div>

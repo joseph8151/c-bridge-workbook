@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import ConsultationForm from "@/components/ConsultationForm";
 import { orderFaqItems } from "@/lib/faqData";
 import { siteConfig } from "@/lib/config";
+import { tierMeta, tierOrder } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "BOOK CONSULTATION | C-BRIDGE",
@@ -91,6 +92,29 @@ export default function ConsultationPage() {
           </div>
 
           <div className="p-6 min-[361px]:p-8 md:p-10">
+            <div className="mb-6 border p-4" style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }}>
+              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                상담 전에 가격을 먼저 확인해보세요
+              </p>
+              <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+                {tierOrder.map((tier) => {
+                  const m = tierMeta[tier];
+                  return (
+                    <p key={tier} className="text-sm" style={{ color: "var(--color-ink)" }}>
+                      <span className="font-semibold">{m.label}</span> ₩{m.price.toLocaleString()}
+                    </p>
+                  );
+                })}
+              </div>
+              <Link
+                href="/pricing"
+                className="mt-2 inline-flex text-xs font-medium underline decoration-[var(--color-border)] underline-offset-4 hover:text-[var(--color-bronze)]"
+                style={{ color: "var(--color-ink)" }}
+              >
+                구성별 가격 자세히 보기 →
+              </Link>
+            </div>
+
             <p className="mb-6 text-sm" style={{ color: "var(--color-muted)" }}>
               해외에서는 아래 양식으로 남겨 주세요. 국내에서는 전화·문자 상담이 더 빠르고
               정확합니다. 주말·공휴일에도 받습니다.

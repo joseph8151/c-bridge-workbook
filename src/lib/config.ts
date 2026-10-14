@@ -14,6 +14,7 @@ export const siteConfig = {
 export const navLinks = [
   { label: "EXAMS", href: "/exams" },
   { label: "BOOKS", href: "/all-books" },
+  { label: "PRICING", href: "/pricing" },
   { label: "COMPARE", href: "/compare" },
   { label: "HOW IT WORKS", href: "/#method" },
   { label: "BUSINESS", href: "/business" },
@@ -24,6 +25,7 @@ export const footerLinks = {
   SITE: [
     { label: "EXAMS", href: "/exams" },
     { label: "BOOKS", href: "/all-books" },
+    { label: "PRICING", href: "/pricing" },
     { label: "COMPARE", href: "/compare" },
     { label: "BUSINESS", href: "/business" },
     { label: "CONSULTATION", href: "/consultation" },
