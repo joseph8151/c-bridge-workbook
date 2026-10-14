@@ -66,8 +66,8 @@ export default function BookSeries() {
         </div>
 
         <p className="mt-8 text-sm" style={{ color: "var(--color-muted)" }}>
-          가격은 페이지 수가 아니라 포함된 구성 전체를 기준으로 책정됩니다. 구성이 정해지면 파일로
-          드립니다.
+          가격은 페이지 수가 아니라 포함된 구성 전체를 기준으로 책정됩니다. 구성이 정해지면 PDF
+          파일로 드리며, 원하실 경우 실물 교재로 제작해 발송해드립니다.
         </p>
       </Container>
     </section>
