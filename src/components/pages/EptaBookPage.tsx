@@ -6,14 +6,14 @@ const configs = [
     level: "EPTA Level 4",
     desc: "운항 최소",
     tier: "200P",
-    price: "₩220,500",
+    price: "₩220,000",
     href: "/consultation?test=EPTA&level=4",
   },
   {
     level: "EPTA Level 5",
     desc: "재평가·승급",
     tier: "300P",
-    price: "₩332,100",
+    price: "₩332,000",
     href: "/consultation?test=EPTA&level=5",
   },
 ];
