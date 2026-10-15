@@ -10,8 +10,8 @@ const bodyLines = [
 const includes = ["듣기·읽기·쓰기·말하기(병동)", "한국어 해설", "모의", "Final Review"];
 
 const prices = [
-  { label: "Pflege 200P", price: "₩220,000" },
-  { label: "Pflege 300P", price: "₩332,000" },
+  { label: "Pflege 200P", price: "₩190,000" },
+  { label: "Pflege 300P", price: "₩290,000" },
 ];
 
 export default function TelcPflegeBookPage() {

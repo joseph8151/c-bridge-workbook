@@ -4,8 +4,8 @@ import Container from "@/components/Container";
 const includes = ["듣기", "문법", "어휘", "읽기", "숫자·시각", "구술 TOSE 문항", "해설(한국어)"];
 
 const prices = [
-  { label: "Marlins + TOSE 200P", price: "₩220,000" },
-  { label: "Marlins + TOSE 300P", price: "₩332,000" },
+  { label: "Marlins + TOSE 200P", price: "₩190,000" },
+  { label: "Marlins + TOSE 300P", price: "₩290,000" },
 ];
 
 const options = [
