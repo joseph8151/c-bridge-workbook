@@ -20,7 +20,7 @@ export default function HomeHero() {
             PTE · CELPIP · OET · EPTA 등 시험 구조와 목표 점수를 기준으로 문제집·해설·실전
             모의고사·Final Review를 하나의 구성으로 제공합니다.
           </p>
-          <div className="hero-fade-up mt-8 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:gap-4 md:mt-10" style={{ animationDelay: "80ms" }}>
+          <div className="hero-fade-up mt-8 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:items-center min-[430px]:gap-4 md:mt-10" style={{ animationDelay: "80ms" }}>
             <Link href="/finder" className="btn-primary px-7 text-sm font-medium">
               내 시험 교재 찾기
             </Link>
@@ -30,6 +30,13 @@ export default function HomeHero() {
               style={{ color: "var(--color-ink)" }}
             >
               구성 상담하기 <span className="arrow-slide ml-1.5">→</span>
+            </Link>
+            <Link
+              href="/pricing#direct-purchase"
+              className="inline-flex min-h-[48px] items-center justify-center text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--color-bronze)] md:min-h-[52px] md:justify-start"
+              style={{ color: "var(--color-ink)" }}
+            >
+              상담 없이 바로 구매 <span className="arrow-slide ml-1.5">→</span>
             </Link>
           </div>
           <ul
