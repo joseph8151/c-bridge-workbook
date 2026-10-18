@@ -1,15 +1,21 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { finderGroups } from "@/lib/finderTests";
-import { tierMeta, tierOrder } from "@/lib/products";
+import { tierMeta, tierOrder, type Tier } from "@/lib/products";
 import { siteConfig } from "@/lib/config";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function DirectPurchaseForm() {
+  const searchParams = useSearchParams();
+  const prefillTierLabel = searchParams.get("tier");
+  const prefillTest = searchParams.get("test") ?? "";
+  const matchedTier = tierOrder.find((t) => tierMeta[t].label === prefillTierLabel);
+
   const [status, setStatus] = useState<Status>("idle");
-  const [tier, setTier] = useState(tierOrder[0]);
+  const [tier, setTier] = useState<Tier>(matchedTier ?? tierOrder[0]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -60,7 +66,7 @@ export default function DirectPurchaseForm() {
           id="dp-test"
           name="test"
           required
-          defaultValue=""
+          defaultValue={prefillTest}
           className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink focus:border-[var(--color-rust)] focus:outline-none"
         >
           <option value="" disabled>

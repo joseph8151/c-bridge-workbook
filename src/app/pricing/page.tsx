@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import Container from "@/components/Container";
 import FAQ from "@/components/FAQ";
 import DirectPurchaseForm from "@/components/DirectPurchaseForm";
@@ -76,18 +77,26 @@ export default function PricingPage() {
                   </ul>
                 </div>
 
-                <Link
-                  href={`/consultation?tier=${encodeURIComponent(meta.label)}`}
-                  className="btn-primary mt-7 justify-center px-7 text-sm font-medium"
-                >
-                  {meta.label} 구성 상담하기
-                </Link>
+                <div className="mt-7 flex flex-wrap gap-2.5">
+                  <Link
+                    href={`/consultation?tier=${encodeURIComponent(meta.label)}`}
+                    className="btn-primary justify-center px-7 text-sm font-medium"
+                  >
+                    {meta.label} 구성 상담하기
+                  </Link>
+                  <Link
+                    href={`/pricing?tier=${encodeURIComponent(meta.label)}#direct-purchase`}
+                    className="btn-secondary justify-center px-7 text-sm font-medium"
+                  >
+                    바로 구매
+                  </Link>
+                </div>
               </div>
             );
           })}
         </div>
 
-        <div className="mx-auto mt-10 max-w-xl border p-6 text-left min-[361px]:p-8 md:mt-12" style={{ borderColor: "var(--color-border)" }}>
+        <div id="direct-purchase" className="mx-auto mt-10 max-w-xl scroll-mt-24 border p-6 text-left min-[361px]:p-8 md:mt-12" style={{ borderColor: "var(--color-border)" }}>
           <p className="eyebrow">DIRECT PURCHASE</p>
           <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
             상담 없이 바로 구매하실 수도 있습니다.
@@ -122,7 +131,9 @@ export default function PricingPage() {
           </div>
 
           <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
-            <DirectPurchaseForm />
+            <Suspense fallback={null}>
+              <DirectPurchaseForm />
+            </Suspense>
           </div>
 
           <p className="mt-4 text-xs" style={{ color: "var(--color-muted)" }}>
