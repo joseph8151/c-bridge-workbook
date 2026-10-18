@@ -69,6 +69,17 @@ export default function BookSeries() {
           가격은 페이지 수가 아니라 포함된 구성 전체를 기준으로 책정됩니다. 구성이 정해지면 PDF
           파일로 드리며, 원하실 경우 실물 교재로 제작해 국내·해외 모두 발송해드립니다.
         </p>
+        <p className="mt-2 text-sm" style={{ color: "var(--color-muted)" }}>
+          상담 없이 바로 구매하고 싶으시면{" "}
+          <Link
+            href="/pricing"
+            className="underline decoration-[var(--color-border)] underline-offset-4 hover:text-[var(--color-bronze)]"
+            style={{ color: "var(--color-ink)" }}
+          >
+            가격 페이지
+          </Link>
+          에서 계좌이체로 바로 구매하실 수 있습니다.
+        </p>
       </Container>
     </section>
   );

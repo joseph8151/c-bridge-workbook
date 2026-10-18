@@ -5,10 +5,14 @@ export const siteConfig = {
   taglineKo: "시험은 다르지만, 제대로 준비하는 방법은 같습니다.",
   phone: "010-7343-0536",
   formspreeEndpoint: "https://formspree.io/f/xeajdzrz",
-  hours: "평일 10:00 - 18:00 (KST) · 주말·공휴일 포함",
-  weekendNotice: "상담은 주말·공휴일에도 받습니다.",
-  weekendNoticeEn: "Consultations are available on weekends and public holidays.",
+  hours: "연중무휴 08:00 - 22:00 (KST)",
+  weekendNotice: "365일, 오전 8시부터 밤 10시까지 상담과 발송 접수를 받습니다.",
+  weekendNoticeEn: "Open 365 days a year, 8:00 AM to 10:00 PM (KST).",
   address: "서울 서초구 반포대로18길 62, 엘루크서초",
+  bankName: "토스뱅크",
+  bankAccountHolder: "김형기",
+  bankAccountNumber: "1001-4105-4081",
+  shippingTurnaround: "영업시간 내 입금 확인 후 3~10시간 이내 발송",
 };
 
 export const navLinks = [
