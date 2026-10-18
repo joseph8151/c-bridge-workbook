@@ -96,6 +96,19 @@ export default function PricingPage() {
             아래 계좌로 입금 후 이메일 주소를 남겨주시면, {siteConfig.shippingTurnaround}됩니다.
           </p>
 
+          <div className="mt-5 border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
+            <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              신중하게 결정하신 분만 작성해 주세요.
+            </p>
+            <p className="mt-1 text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              입금 후 취소가 어려울 수 있습니다. 구성이 확실하지 않으시면 입금 전 먼저{" "}
+              <Link href="/consultation" className="underline decoration-[var(--color-border)] underline-offset-4 hover:text-[var(--color-bronze)]">
+                상담
+              </Link>
+              을 이용해 주세요.
+            </p>
+          </div>
+
           <div className="mt-5 border-t pt-5" style={{ borderColor: "var(--color-border)" }}>
             <p className="text-xs font-semibold tracking-[0.06em]" style={{ color: "var(--color-ink)" }}>
               입금 계좌
