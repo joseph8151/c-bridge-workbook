@@ -76,7 +76,13 @@ export default function DirectPurchaseForm() {
       <input type="hidden" name="selectedTests" value={selectedTests.join(", ") || "(선택 안 함)"} readOnly />
       <input type="hidden" name="totalAmount" value={`₩${totalAmount.toLocaleString()}`} readOnly />
 
-      <Field label="입금자명" name="depositorName" required placeholder="입금하신 분 성함" />
+      <Field
+        label="입금자명"
+        name="depositorName"
+        required
+        placeholder="입금하신 분 성함"
+        hint="통장·앱에 찍히는 입금자명과 정확히 같은 이름(본인 실명)을 적어주세요. 다르면 입금 확인이 늦어질 수 있습니다."
+      />
       <Field label="이메일 (교재 발송용)" name="email" type="email" required placeholder="교재를 받으실 이메일 주소" />
 
       <div>
@@ -193,12 +199,14 @@ function Field({
   type = "text",
   required,
   placeholder,
+  hint,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
   placeholder?: string;
+  hint?: string;
 }) {
   const id = `dp-${name}`;
   return (
@@ -214,6 +222,7 @@ function Field({
         placeholder={placeholder}
         className="mt-2 w-full rounded-none border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[var(--color-rust)] focus:outline-none"
       />
+      {hint && <p className="mt-1.5 text-xs leading-relaxed text-ink/50">{hint}</p>}
     </div>
   );
 }
