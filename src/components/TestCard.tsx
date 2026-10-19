@@ -19,7 +19,7 @@ export default function TestCard({ test }: { test: Test }) {
 
       <span className="flex shrink-0 flex-col items-end gap-1">
         <span className="font-serif text-sm font-bold" style={{ color: "var(--color-inkstrong)" }}>
-          {priceSummaryCompact}
+          {test.priceOverride ?? priceSummaryCompact}
         </span>
         <span className="text-xs font-bold tracking-[0.08em]" style={{ color: "var(--color-rust)" }}>
           자세히 보기 →

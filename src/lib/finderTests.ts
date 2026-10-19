@@ -59,9 +59,18 @@ export const finderGroups: FinderGroup[] = [
   },
   {
     label: "법률",
+    items: [{ name: "TOLES", href: "/books/toles" }],
+  },
+  {
+    label: "전문대학원 · 전문직",
     items: [
-      { name: "TOLES", href: "/books/toles" },
       { name: "LSAT", href: "/books/lsat" },
+      { name: "GRE", href: "/books/gre" },
+      { name: "GMAT", href: "/books/gmat" },
+      { name: "MCAT", href: "/books/mcat" },
+      { name: "DAT", href: "/books/dat" },
+      { name: "OAT", href: "/books/oat" },
+      { name: "UCAT", href: "/books/ucat" },
     ],
   },
   {

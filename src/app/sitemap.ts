@@ -22,6 +22,7 @@ const staticRoutes = [
   "pricing",
   "privacy",
   "professional",
+  "professional-grad",
   "recommend",
   "resources",
   "spa",

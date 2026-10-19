@@ -6,7 +6,8 @@ export type TestGroup =
   | "STUDY_ABROAD"
   | "PROFESSIONAL"
   | "OVERSEAS_EMPLOYMENT"
-  | "IMMIGRATION_VISA";
+  | "IMMIGRATION_VISA"
+  | "PROFESSIONAL_GRAD";
 
 export type BonusType = "SPEAKING" | "LISTENING" | "WRITING" | "VOCAB" | "PROFESSIONAL";
 
@@ -33,6 +34,9 @@ export interface Test {
   featured?: boolean;
   badges?: string[];
   keywords?: string[];
+  // 공용 200P/300P 가격표와 다른 고정가 단일 상품(전문대학원 시험 등)의 카드 표시용 가격.
+  // 지정하지 않으면 기존처럼 priceSummaryCompact(공용 가격 범위)를 보여줍니다.
+  priceOverride?: string;
 }
 
 export const GENERIC_LEVELS = ["처음 응시", "기초", "중급", "고급"];
@@ -125,6 +129,17 @@ export const groupMeta: Record<TestGroup, GroupMeta> = {
     description:
       "비자 신청, 영주권, 시민권 등 이민 절차에 활용되는 시험 대비 자료입니다.",
     color: "var(--color-immigration-visa)",
+  },
+  PROFESSIONAL_GRAD: {
+    id: "PROFESSIONAL_GRAD",
+    navLabel: "전문대학원·전문직",
+    name: "전문대학원 · 전문직 시험",
+    slug: "professional-grad",
+    eyebrow: "PROFESSIONAL & GRADUATE EXAMS",
+    headline: "전문대학원 진학, 입학시험부터 정확하게 준비합니다.",
+    description:
+      "LSAT, GRE, GMAT, MCAT, DAT, OAT, UCAT 등 전문대학원·전문직 진학을 위한 입학시험 대비 자료입니다. 모든 문제는 C-BRIDGE가 자체 제작한 오리지널 문제입니다.",
+    color: "var(--color-professional-grad)",
   },
 };
 
@@ -402,29 +417,6 @@ export const tests: Test[] = [
     description: "미국 대학 진학을 위한 SAT. 영어(Reading and Writing)와 수학을 각각 별도로 준비합니다.",
     keywords: ["SAT", "디지털 SAT", "SAT 영어", "SAT 수학"],
   },
-  {
-    id: "lsat",
-    slug: "lsat",
-    name: "LSAT",
-    group: "STUDY_ABROAD",
-    bonusTypes: ["WRITING"],
-    tagline: "법학전문대학원(Law School) 입학시험",
-    description:
-      "LSAT Logical Reasoning 180P, Reading Comprehension 90P, Argumentative Writing 30P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE LSAT Complete 300P.",
-    keywords: [
-      "LSAT",
-      "LSAT 문제집",
-      "LSAT Logical Reasoning",
-      "LSAT Reading Comprehension",
-      "LSAT Writing",
-      "LSAT 모의고사",
-      "LSAT 독학",
-      "LSAT 170",
-      "LSAT 문제",
-      "LSAT 교재",
-    ],
-  },
-
   // ---------------- PROFESSIONAL ----------------
   {
     id: "oet",
@@ -722,6 +714,151 @@ export const tests: Test[] = [
     description:
       "미국 시민권 신청자를 위한 N-400 인터뷰와 Civics(역사·정부 상식) 시험 대비 자료입니다. 영어 읽기·쓰기·말하기 평가도 함께 포함됩니다.",
     keywords: ["U.S. Citizenship Test", "미국 시민권 시험", "Civics Test", "N-400 인터뷰"],
+  },
+
+  // ---------------- PROFESSIONAL_GRAD ----------------
+  {
+    id: "lsat",
+    slug: "lsat",
+    name: "LSAT",
+    group: "PROFESSIONAL_GRAD",
+    bonusTypes: ["WRITING"],
+    tagline: "법학전문대학원(Law School) 입학시험",
+    description:
+      "LSAT Logical Reasoning 180P, Reading Comprehension 90P, Argumentative Writing 30P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE LSAT Complete 300P.",
+    keywords: [
+      "LSAT",
+      "LSAT 문제집",
+      "LSAT Logical Reasoning",
+      "LSAT Reading Comprehension",
+      "LSAT Writing",
+      "LSAT 모의고사",
+      "LSAT 독학",
+      "LSAT 170",
+      "LSAT 문제",
+      "LSAT 교재",
+    ],
+    priceOverride: "290,000원",
+  },
+  {
+    id: "gre",
+    slug: "gre",
+    name: "GRE",
+    group: "PROFESSIONAL_GRAD",
+    bonusTypes: ["WRITING"],
+    tagline: "대학원 진학 공인 입학시험",
+    description:
+      "GRE Verbal Reasoning 120P, Quantitative Reasoning 120P, Analytical Writing 60P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE GRE Complete 300P.",
+    keywords: [
+      "GRE",
+      "GRE 문제집",
+      "GRE Verbal",
+      "GRE Quant",
+      "GRE Writing",
+      "GRE 모의고사",
+      "GRE 독학",
+      "GRE 교재",
+    ],
+    priceOverride: "290,000원",
+  },
+  {
+    id: "gmat",
+    slug: "gmat",
+    name: "GMAT",
+    group: "PROFESSIONAL_GRAD",
+    bonusTypes: ["WRITING"],
+    tagline: "경영전문대학원(MBA) 입학시험",
+    description:
+      "GMAT Quantitative Reasoning 100P, Verbal Reasoning 100P, Data Insights 100P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE GMAT Complete 300P.",
+    keywords: [
+      "GMAT",
+      "GMAT 문제집",
+      "GMAT Quant",
+      "GMAT Verbal",
+      "GMAT Data Insights",
+      "GMAT 모의고사",
+      "GMAT 독학",
+      "GMAT 교재",
+    ],
+    priceOverride: "290,000원",
+  },
+  {
+    id: "mcat",
+    slug: "mcat",
+    name: "MCAT",
+    group: "PROFESSIONAL_GRAD",
+    bonusTypes: ["WRITING"],
+    tagline: "의학전문대학원(Medical School) 입학시험",
+    description:
+      "MCAT Chemical and Physical Foundations, CARS, Biological and Biochemical Foundations, Psychological·Social·Biological Foundations 네 영역 각 100P와 실전 모의고사 8회, 추가 문제 150제를 포함한 C-BRIDGE MCAT Complete 400P.",
+    keywords: [
+      "MCAT",
+      "MCAT 문제집",
+      "MCAT CARS",
+      "MCAT Biology",
+      "MCAT Chemistry",
+      "MCAT Psychology",
+      "MCAT 모의고사",
+      "MCAT 교재",
+    ],
+    priceOverride: "390,000원",
+  },
+  {
+    id: "dat",
+    slug: "dat",
+    name: "DAT",
+    group: "PROFESSIONAL_GRAD",
+    bonusTypes: ["WRITING"],
+    tagline: "치의학전문대학원(Dental School) 입학시험",
+    description:
+      "DAT Survey of Natural Sciences 140P, Perceptual Ability Test 90P, Reading Comprehension 60P, Quantitative Reasoning 60P와 실전 모의고사 8회, 추가 문제 120제를 포함한 C-BRIDGE DAT Complete 350P.",
+    keywords: [
+      "DAT",
+      "DAT 문제집",
+      "DAT PAT",
+      "DAT Natural Sciences",
+      "DAT 모의고사",
+      "DAT 교재",
+    ],
+    priceOverride: "340,000원",
+  },
+  {
+    id: "oat",
+    slug: "oat",
+    name: "OAT",
+    group: "PROFESSIONAL_GRAD",
+    bonusTypes: ["WRITING"],
+    tagline: "검안학전문대학원(Optometry School) 입학시험",
+    description:
+      "OAT Survey of Natural Sciences 120P, Reading Comprehension 60P, Physics 90P, Quantitative Reasoning 80P와 실전 모의고사 8회, 추가 문제 120제를 포함한 C-BRIDGE OAT Complete 350P.",
+    keywords: [
+      "OAT",
+      "OAT 문제집",
+      "OAT Physics",
+      "OAT Natural Sciences",
+      "OAT 모의고사",
+      "OAT 교재",
+    ],
+    priceOverride: "340,000원",
+  },
+  {
+    id: "ucat",
+    slug: "ucat",
+    name: "UCAT",
+    group: "PROFESSIONAL_GRAD",
+    bonusTypes: ["WRITING"],
+    tagline: "영국 의·치학계열 입학시험",
+    description:
+      "UCAT Verbal Reasoning 75P, Decision Making 75P, Quantitative Reasoning 75P, Situational Judgement 75P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE UCAT Complete 300P.",
+    keywords: [
+      "UCAT",
+      "UCAT 문제집",
+      "UCAT Situational Judgement",
+      "UCAT Decision Making",
+      "UCAT 모의고사",
+      "UCAT 교재",
+    ],
+    priceOverride: "290,000원",
   },
 ];
 

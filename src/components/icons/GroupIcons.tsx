@@ -74,6 +74,16 @@ function Stethoscope(props: { className?: string; style?: CSSProperties }) {
   );
 }
 
+function AcademicCap(props: { className?: string; style?: CSSProperties }) {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" {...common} className={props.className} style={props.style}>
+      <path d="M12 4.5 21 9l-9 4.5L3 9l9-4.5Z" />
+      <path d="M7 11v5c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-5" />
+      <path d="M21 9v5.5" />
+    </svg>
+  );
+}
+
 const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProperties }) => ReactElement> = {
   EMPLOYMENT: Briefcase,
   JAPANESE: SpeechBubble,
@@ -83,6 +93,7 @@ const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProper
   PROFESSIONAL: Stethoscope,
   OVERSEAS_EMPLOYMENT: Globe,
   IMMIGRATION_VISA: Certificate,
+  PROFESSIONAL_GRAD: AcademicCap,
 };
 
 export default function GroupIcon({

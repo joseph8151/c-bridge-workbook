@@ -68,6 +68,7 @@
   --color-professional: var(--color-bronze);
   --color-overseas-employment: var(--color-bronze);
   --color-immigration-visa: var(--color-bronze);
+  --color-professional-grad: var(--color-bronze);
 
   --color-inkstrong: var(--color-ink);
   --color-rust: var(--color-bronze);
@@ -94,6 +95,7 @@
   --color-professional: var(--color-professional);
   --color-overseas-employment: var(--color-overseas-employment);
   --color-immigration-visa: var(--color-immigration-visa);
+  --color-professional-grad: var(--color-professional-grad);
 
   --color-paper: var(--color-paper);
   --color-paper-dark: var(--color-paper-dark);

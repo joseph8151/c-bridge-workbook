@@ -22,6 +22,12 @@ import TelcPflegeBookPage from "@/components/pages/TelcPflegeBookPage";
 import TradeEnglishBookPage from "@/components/pages/TradeEnglishBookPage";
 import SatBookPage from "@/components/pages/SatBookPage";
 import LsatBookPage from "@/components/pages/LsatBookPage";
+import GreBookPage from "@/components/pages/GreBookPage";
+import GmatBookPage from "@/components/pages/GmatBookPage";
+import McatBookPage from "@/components/pages/McatBookPage";
+import DatBookPage from "@/components/pages/DatBookPage";
+import OatBookPage from "@/components/pages/OatBookPage";
+import UcatBookPage from "@/components/pages/UcatBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -40,6 +46,12 @@ const TITLE_OVERRIDES: Record<string, string> = {
   "cambridge-c1-advanced": "Cambridge C1 Advanced 문제집 | C1 Advanced 시험 대비 | C-BRIDGE",
   "us-citizenship-test": "U.S. Citizenship Test 문제집 | 미국 시민권 시험 대비 | C-BRIDGE",
   lsat: "LSAT 문제집 300P | Logical Reasoning · Reading Comprehension | C-BRIDGE",
+  gre: "GRE 문제집 300P | Verbal · Quant · Writing | C-BRIDGE",
+  gmat: "GMAT 문제집 300P | Quant · Verbal · Data Insights | C-BRIDGE",
+  mcat: "MCAT 문제집 400P | CARS · Biology · Chemistry · Psychology | C-BRIDGE",
+  dat: "DAT 문제집 350P | Natural Sciences · PAT · Reading · Quant | C-BRIDGE",
+  oat: "OAT 문제집 350P | Physics · Science · Reading · Quant | C-BRIDGE",
+  ucat: "UCAT 문제집 300P | Verbal · Decision Making · Quant · SJT | C-BRIDGE",
 };
 
 export async function generateMetadata({
@@ -76,6 +88,12 @@ export default async function TestDetailPage({
   if (test.slug === "trade-english") return <TradeEnglishBookPage />;
   if (test.slug === "sat") return <SatBookPage />;
   if (test.slug === "lsat") return <LsatBookPage />;
+  if (test.slug === "gre") return <GreBookPage />;
+  if (test.slug === "gmat") return <GmatBookPage />;
+  if (test.slug === "mcat") return <McatBookPage />;
+  if (test.slug === "dat") return <DatBookPage />;
+  if (test.slug === "oat") return <OatBookPage />;
+  if (test.slug === "ucat") return <UcatBookPage />;
 
   const group = groupMeta[test.group];
   const whoFor = getWhoFor(test);

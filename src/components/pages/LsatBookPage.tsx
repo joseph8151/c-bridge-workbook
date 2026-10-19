@@ -129,7 +129,7 @@ export default function LsatBookPage() {
       {/* Hero — 가격을 바로 노출 */}
       <section className="py-16 md:py-24" style={{ background: "var(--color-paper)" }}>
         <Container>
-          <p className="eyebrow">STUDY ABROAD · LSAT COMPLETE</p>
+          <p className="eyebrow">PROFESSIONAL & GRADUATE EXAMS · LSAT COMPLETE</p>
           <h1
             className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-bold leading-tight tracking-[-0.01em] md:text-[52px]"
             style={{ color: "var(--color-ink)" }}
@@ -154,7 +154,7 @@ export default function LsatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
-              <Link href="/pricing?test=LSAT&tier=300P#direct-purchase" className="btn-primary px-7 text-sm font-medium">
+              <Link href="/pricing?test=LSAT&price=290000&label=LSAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase" className="btn-primary px-7 text-sm font-medium">
                 290,000원 바로 구매
               </Link>
               <Link href="/consultation?test=LSAT" className="btn-secondary px-7 text-sm font-medium">
@@ -462,7 +462,7 @@ export default function LsatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
-              <Link href="/pricing?test=LSAT&tier=300P#direct-purchase" className="btn-primary px-7 text-sm font-medium">
+              <Link href="/pricing?test=LSAT&price=290000&label=LSAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase" className="btn-primary px-7 text-sm font-medium">
                 290,000원 바로 구매
               </Link>
               <Link href="/consultation?test=LSAT" className="btn-secondary px-7 text-sm font-medium">
@@ -472,9 +472,9 @@ export default function LsatBookPage() {
           </div>
 
           <p className="mt-6 max-w-2xl break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            바로 구매 시 메시지 란에 시험 예정일 · 목표 점수 · 집중 영역(Logical Reasoning / Reading
-            Comprehension / Writing) · 4주·8주 학습 플랜 중 선호하시는 내용을 적어주시면 발송 전 반영해
-            드립니다.
+            Study Plan은 구매 폼에서 바로 선택하실 수 있습니다. 시험 예정일 · 현재 준비 수준 · 목표 점수 ·
+            가장 어려운 영역 · 집중하고 싶은 영역(Logical Reasoning / Reading Comprehension / Writing)은
+            메시지 란에 적어주시면 발송 전 반영해 드립니다.
           </p>
           <p className="mt-2 max-w-2xl break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
             LSAT Complete 300P는 C-BRIDGE가 자체 제작한 오리지널 LSAT 교재이며, 공식 기출문제를 복제하거나

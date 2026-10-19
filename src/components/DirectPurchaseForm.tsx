@@ -14,13 +14,30 @@ export default function DirectPurchaseForm() {
   const prefillTest = searchParams.get("test");
   const matchedTier = tierOrder.find((t) => tierMeta[t].label === prefillTierLabel);
 
+  // 전문대학원·전문직 시험처럼 200P/300P 공용 구성에 맞지 않는 고정가 단일 상품용 모드.
+  // ?price=<원 단위 금액>이 있으면 구성 라디오·복수선택 대신 고정 상품/가격만 보여준다.
+  const prefillPriceParam = searchParams.get("price");
+  const prefillLabel = searchParams.get("label");
+  const prefillPlansParam = searchParams.get("plans");
+  const isFixedMode =
+    prefillPriceParam !== null && Number.isFinite(Number(prefillPriceParam)) && Number(prefillPriceParam) > 0;
+  const fixedPrice = isFixedMode ? Number(prefillPriceParam) : 0;
+  const fixedLabel = prefillLabel ?? prefillTest ?? "";
+  const planOptions = prefillPlansParam
+    ? prefillPlansParam
+        .split(",")
+        .map((p) => p.trim())
+        .filter(Boolean)
+    : [];
+
   const [status, setStatus] = useState<Status>("idle");
   const [tier, setTier] = useState<Tier>(matchedTier ?? tierOrder[0]);
   const [selectedTests, setSelectedTests] = useState<string[]>(prefillTest ? [prefillTest] : []);
   const [selectionError, setSelectionError] = useState(false);
+  const [studyPlan, setStudyPlan] = useState<string>(planOptions[0] ?? "");
 
-  const unitPrice = tierMeta[tier].price;
-  const totalAmount = unitPrice * selectedTests.length;
+  const unitPrice = isFixedMode ? fixedPrice : tierMeta[tier].price;
+  const totalAmount = isFixedMode ? fixedPrice : unitPrice * selectedTests.length;
 
   function toggleTest(name: string) {
     setSelectionError(false);
@@ -30,7 +47,7 @@ export default function DirectPurchaseForm() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (selectedTests.length === 0) {
+    if (!isFixedMode && selectedTests.length === 0) {
       setSelectionError(true);
       return;
     }
@@ -70,11 +87,17 @@ export default function DirectPurchaseForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <input type="hidden" name="formType" value="direct_purchase" />
-      <input type="hidden" name="tier" value={tierMeta[tier].label} readOnly />
+      <input type="hidden" name="tier" value={isFixedMode ? fixedLabel : tierMeta[tier].label} readOnly />
       <input type="hidden" name="unitPrice" value={`₩${unitPrice.toLocaleString()}`} readOnly />
-      <input type="hidden" name="testCount" value={selectedTests.length} readOnly />
-      <input type="hidden" name="selectedTests" value={selectedTests.join(", ") || "(선택 안 함)"} readOnly />
+      <input type="hidden" name="testCount" value={isFixedMode ? 1 : selectedTests.length} readOnly />
+      <input
+        type="hidden"
+        name="selectedTests"
+        value={isFixedMode ? prefillTest ?? fixedLabel : selectedTests.join(", ") || "(선택 안 함)"}
+        readOnly
+      />
       <input type="hidden" name="totalAmount" value={`₩${totalAmount.toLocaleString()}`} readOnly />
+      {isFixedMode && planOptions.length > 0 && <input type="hidden" name="studyPlan" value={studyPlan} readOnly />}
 
       <Field
         label="입금자명"
@@ -85,75 +108,119 @@ export default function DirectPurchaseForm() {
       />
       <Field label="이메일 (교재 발송용)" name="email" type="email" required placeholder="교재를 받으실 이메일 주소" />
 
-      <div>
-        <span className="text-xs font-bold tracking-[0.1em] text-ink/60">구성</span>
-        <p className="mt-1 text-xs leading-relaxed text-ink/50">
-          선택하신 구성이 희망 문제집 전체에 동일하게 적용됩니다.
-        </p>
-        <div role="radiogroup" aria-label="구성" className="mt-3 grid grid-cols-2 gap-2">
-          {tierOrder.map((t) => {
-            const m = tierMeta[t];
-            return (
+      {isFixedMode ? (
+        <div className="border p-4" style={{ borderColor: "var(--color-border)" }}>
+          <p className="text-xs font-bold tracking-[0.1em] text-ink/60">구매 상품</p>
+          <p className="mt-1.5 font-serif text-xl font-bold text-ink">{fixedLabel}</p>
+        </div>
+      ) : (
+        <>
+          <div>
+            <span className="text-xs font-bold tracking-[0.1em] text-ink/60">구성</span>
+            <p className="mt-1 text-xs leading-relaxed text-ink/50">
+              선택하신 구성이 희망 문제집 전체에 동일하게 적용됩니다.
+            </p>
+            <div role="radiogroup" aria-label="구성" className="mt-3 grid grid-cols-2 gap-2">
+              {tierOrder.map((t) => {
+                const m = tierMeta[t];
+                return (
+                  <label
+                    key={t}
+                    className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-none border border-ink/20 py-3 text-sm font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+                  >
+                    <input
+                      type="radio"
+                      name="tierRadio"
+                      value={m.label}
+                      checked={tier === t}
+                      onChange={() => setTier(t)}
+                      className="sr-only"
+                    />
+                    <span>{m.label}</span>
+                    <span className="text-xs font-medium opacity-70">₩{m.price.toLocaleString()}</span>
+                  </label>
+                );
+              })}
+            </div>
+          </div>
+
+          <div>
+            <span className="text-xs font-bold tracking-[0.1em] text-ink/60">희망 문제집 (복수 선택 가능)</span>
+            <div
+              className="mt-3 max-h-64 overflow-y-auto border border-ink/20 p-3"
+              role="group"
+              aria-label="희망 문제집"
+            >
+              {finderGroups.map((g) => (
+                <div key={g.label} className="mb-3 last:mb-0">
+                  <p className="text-[11px] font-bold tracking-[0.08em] text-ink/40">{g.label}</p>
+                  <div className="mt-1.5 grid grid-cols-1 gap-x-3 gap-y-1 min-[480px]:grid-cols-2">
+                    {g.items.map((item) => (
+                      <label key={item.name} className="flex cursor-pointer items-start gap-1.5 py-0.5 text-sm text-ink/80">
+                        <input
+                          type="checkbox"
+                          checked={selectedTests.includes(item.name)}
+                          onChange={() => toggleTest(item.name)}
+                          className="mt-0.5 h-3.5 w-3.5 shrink-0"
+                          style={{ accentColor: "var(--color-rust)" }}
+                        />
+                        <span className="break-keep">{item.name}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {selectionError && (
+              <p className="mt-1.5 text-xs" style={{ color: "var(--color-rust)" }}>
+                희망 문제집을 1개 이상 선택해 주세요.
+              </p>
+            )}
+          </div>
+        </>
+      )}
+
+      {isFixedMode && planOptions.length > 0 && (
+        <div>
+          <span className="text-xs font-bold tracking-[0.1em] text-ink/60">Study Plan 선택</span>
+          <div
+            role="radiogroup"
+            aria-label="Study Plan"
+            className="mt-3 grid gap-2"
+            style={{ gridTemplateColumns: `repeat(${planOptions.length}, minmax(0, 1fr))` }}
+          >
+            {planOptions.map((p) => (
               <label
-                key={t}
-                className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-none border border-ink/20 py-3 text-sm font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+                key={p}
+                className="flex cursor-pointer items-center justify-center gap-1 rounded-none border border-ink/20 py-3 text-sm font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
               >
                 <input
                   type="radio"
-                  name="tierRadio"
-                  value={m.label}
-                  checked={tier === t}
-                  onChange={() => setTier(t)}
+                  name="studyPlanRadio"
+                  value={p}
+                  checked={studyPlan === p}
+                  onChange={() => setStudyPlan(p)}
                   className="sr-only"
                 />
-                <span>{m.label}</span>
-                <span className="text-xs font-medium opacity-70">₩{m.price.toLocaleString()}</span>
+                <span>{p}</span>
               </label>
-            );
-          })}
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div>
-        <span className="text-xs font-bold tracking-[0.1em] text-ink/60">희망 문제집 (복수 선택 가능)</span>
-        <div
-          className="mt-3 max-h-64 overflow-y-auto border border-ink/20 p-3"
-          role="group"
-          aria-label="희망 문제집"
-        >
-          {finderGroups.map((g) => (
-            <div key={g.label} className="mb-3 last:mb-0">
-              <p className="text-[11px] font-bold tracking-[0.08em] text-ink/40">{g.label}</p>
-              <div className="mt-1.5 grid grid-cols-1 gap-x-3 gap-y-1 min-[480px]:grid-cols-2">
-                {g.items.map((item) => (
-                  <label key={item.name} className="flex cursor-pointer items-start gap-1.5 py-0.5 text-sm text-ink/80">
-                    <input
-                      type="checkbox"
-                      checked={selectedTests.includes(item.name)}
-                      onChange={() => toggleTest(item.name)}
-                      className="mt-0.5 h-3.5 w-3.5 shrink-0"
-                      style={{ accentColor: "var(--color-rust)" }}
-                    />
-                    <span className="break-keep">{item.name}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        {selectionError && (
-          <p className="mt-1.5 text-xs" style={{ color: "var(--color-rust)" }}>
-            희망 문제집을 1개 이상 선택해 주세요.
-          </p>
-        )}
-      </div>
+      )}
 
       <div className="border p-4" style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }}>
         <p className="text-xs font-bold tracking-[0.1em] text-ink/60">입금하실 금액</p>
         <p className="mt-1.5 text-2xl font-bold text-ink">₩{totalAmount.toLocaleString()}</p>
         <p className="mt-1 text-xs leading-relaxed text-ink/60">
-          {tierMeta[tier].label} ₩{unitPrice.toLocaleString()} × {selectedTests.length}권
-          {selectedTests.length > 0 && <> ({selectedTests.join(", ")})</>}
+          {isFixedMode ? (
+            <>{fixedLabel}</>
+          ) : (
+            <>
+              {tierMeta[tier].label} ₩{unitPrice.toLocaleString()} × {selectedTests.length}권
+              {selectedTests.length > 0 && <> ({selectedTests.join(", ")})</>}
+            </>
+          )}
         </p>
       </div>
 

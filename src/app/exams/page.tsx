@@ -82,9 +82,18 @@ const groups: ExamGroup[] = [
   },
   {
     label: "법률",
+    items: [{ name: "TOLES", desc: "국제 로펌 · 크로스보더 계약 영어시험" }],
+  },
+  {
+    label: "전문대학원 · 전문직",
     items: [
-      { name: "TOLES", desc: "국제 로펌 · 크로스보더 계약 영어시험" },
       { name: "LSAT", desc: "법학전문대학원(Law School) 입학시험" },
+      { name: "GRE", desc: "대학원 진학 공인 입학시험" },
+      { name: "GMAT", desc: "경영전문대학원(MBA) 입학시험" },
+      { name: "MCAT", desc: "의학전문대학원(Medical School) 입학시험" },
+      { name: "DAT", desc: "치의학전문대학원(Dental School) 입학시험" },
+      { name: "OAT", desc: "검안학전문대학원(Optometry School) 입학시험" },
+      { name: "UCAT", desc: "영국 의·치학계열 입학시험" },
     ],
   },
   {
