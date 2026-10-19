@@ -82,7 +82,10 @@ const groups: ExamGroup[] = [
   },
   {
     label: "법률",
-    items: [{ name: "TOLES", desc: "국제 로펌 · 크로스보더 계약 영어시험" }],
+    items: [
+      { name: "TOLES", desc: "국제 로펌 · 크로스보더 계약 영어시험" },
+      { name: "LSAT", desc: "법학전문대학원(Law School) 입학시험" },
+    ],
   },
   {
     label: "일본 간호",

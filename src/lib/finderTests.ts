@@ -59,7 +59,10 @@ export const finderGroups: FinderGroup[] = [
   },
   {
     label: "법률",
-    items: [{ name: "TOLES", href: "/books/toles" }],
+    items: [
+      { name: "TOLES", href: "/books/toles" },
+      { name: "LSAT", href: "/books/lsat" },
+    ],
   },
   {
     label: "일본어",

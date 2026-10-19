@@ -402,6 +402,28 @@ export const tests: Test[] = [
     description: "미국 대학 진학을 위한 SAT. 영어(Reading and Writing)와 수학을 각각 별도로 준비합니다.",
     keywords: ["SAT", "디지털 SAT", "SAT 영어", "SAT 수학"],
   },
+  {
+    id: "lsat",
+    slug: "lsat",
+    name: "LSAT",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "법학전문대학원(Law School) 입학시험",
+    description:
+      "LSAT Logical Reasoning 180P, Reading Comprehension 90P, Argumentative Writing 30P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE LSAT Complete 300P.",
+    keywords: [
+      "LSAT",
+      "LSAT 문제집",
+      "LSAT Logical Reasoning",
+      "LSAT Reading Comprehension",
+      "LSAT Writing",
+      "LSAT 모의고사",
+      "LSAT 독학",
+      "LSAT 170",
+      "LSAT 문제",
+      "LSAT 교재",
+    ],
+  },
 
   // ---------------- PROFESSIONAL ----------------
   {

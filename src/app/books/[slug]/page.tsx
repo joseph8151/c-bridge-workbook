@@ -21,6 +21,7 @@ import EptaBookPage from "@/components/pages/EptaBookPage";
 import TelcPflegeBookPage from "@/components/pages/TelcPflegeBookPage";
 import TradeEnglishBookPage from "@/components/pages/TradeEnglishBookPage";
 import SatBookPage from "@/components/pages/SatBookPage";
+import LsatBookPage from "@/components/pages/LsatBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -38,6 +39,7 @@ const TITLE_OVERRIDES: Record<string, string> = {
   met: "MET 문제집 | Michigan English Test 대비 | C-BRIDGE",
   "cambridge-c1-advanced": "Cambridge C1 Advanced 문제집 | C1 Advanced 시험 대비 | C-BRIDGE",
   "us-citizenship-test": "U.S. Citizenship Test 문제집 | 미국 시민권 시험 대비 | C-BRIDGE",
+  lsat: "LSAT 문제집 300P | Logical Reasoning · Reading Comprehension | C-BRIDGE",
 };
 
 export async function generateMetadata({
@@ -73,6 +75,7 @@ export default async function TestDetailPage({
   if (test.slug === "telc-pflege") return <TelcPflegeBookPage />;
   if (test.slug === "trade-english") return <TradeEnglishBookPage />;
   if (test.slug === "sat") return <SatBookPage />;
+  if (test.slug === "lsat") return <LsatBookPage />;
 
   const group = groupMeta[test.group];
   const whoFor = getWhoFor(test);
