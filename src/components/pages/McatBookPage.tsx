@@ -85,9 +85,9 @@ const overviewRows = [
   { label: "CARS", value: "100P" },
   { label: "Biological & Biochemical Foundations", value: "100P" },
   { label: "Psychological, Social & Biological Foundations", value: "100P" },
-  { label: "Detailed Explanations", value: "별도 포함" },
-  { label: "Mock Tests", value: "8회" },
-  { label: "Bonus Questions", value: "150제" },
+  { label: "상세 해설집", value: "별도 포함" },
+  { label: "Mock Tests", value: "3회" },
+  { label: "Bonus Questions", value: "50제" },
   { label: "Final Review", value: "포함" },
   { label: "6 Week Plan", value: "포함" },
   { label: "12 Week Plan", value: "포함" },
@@ -213,7 +213,7 @@ export default function McatBookPage() {
       {/* 상세 해설집 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
-          <p className="eyebrow">DETAILED EXPLANATIONS · 별도 포함</p>
+          <p className="eyebrow">상세 해설집 · 별도 포함</p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-ink)" }}>
             본교재와 별도로 상세 해설집을 제공합니다. 모든 수치·정의·과학 개념은 검증 가능한 구조로
             작성하며, 각 문항은 아래 구조로 해설을 제공합니다.
@@ -236,26 +236,26 @@ export default function McatBookPage() {
         </Container>
       </section>
 
-      {/* 실전 모의고사 8회 */}
+      {/* 실전 모의고사 3회 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">MOCK TESTS</p>
           <p className="mt-4 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
-            C-BRIDGE Original Mock Tests · Full-Length Practice Tests × 8
+            C-BRIDGE Original Mock Tests · Full-Length Practice Tests × 3
           </p>
           <p className="mt-4 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            MCAT 모의고사 실전 연습용 C-BRIDGE 자체 제작 모의고사 8회를 포함합니다. 실제 공식 기출문제는
+            MCAT 모의고사 실전 연습용 C-BRIDGE 자체 제작 모의고사 3회를 포함합니다. 실제 공식 기출문제는
             포함하지 않으며, 전 영역을 실전과 동일한 시간 배분으로 연습할 수 있도록 구성합니다.
           </p>
         </Container>
       </section>
 
-      {/* 추가 문제 150제 */}
+      {/* 추가 문제 50제 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
-          <p className="eyebrow">BONUS 150 QUESTIONS</p>
+          <p className="eyebrow">BONUS 50 QUESTIONS</p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-ink)" }}>
-            네 영역 전체를 아우르는 추가 MCAT 문제 150제를 포함합니다.
+            네 영역 전체를 아우르는 추가 MCAT 문제 50제를 포함합니다.
           </p>
           <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
             페이지 수를 채우는 부록이 아니라, 본교재 학습을 마친 뒤 추가로 반복 연습할 수 있도록 구성한

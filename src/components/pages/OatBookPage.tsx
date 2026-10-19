@@ -59,9 +59,9 @@ const overviewRows = [
   { label: "Reading Comprehension", value: "60P" },
   { label: "Physics", value: "90P" },
   { label: "Quantitative Reasoning", value: "80P" },
-  { label: "Detailed Explanations", value: "별도 포함" },
-  { label: "Mock Tests", value: "8회" },
-  { label: "Bonus Questions", value: "120제" },
+  { label: "상세 해설집", value: "별도 포함" },
+  { label: "Mock Tests", value: "3회" },
+  { label: "Bonus Questions", value: "40제" },
   { label: "Final Review", value: "포함" },
   { label: "6 Week Plan", value: "포함" },
   { label: "10 Week Plan", value: "포함" },
@@ -218,7 +218,7 @@ export default function OatBookPage() {
       {/* 상세 해설집 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
-          <p className="eyebrow">DETAILED EXPLANATIONS · 별도 포함</p>
+          <p className="eyebrow">상세 해설집 · 별도 포함</p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-ink)" }}>
             본교재와 별도로 상세 해설집을 제공합니다. 모든 수치·정의·과학 개념은 검증 가능한 구조로
             작성하며, 각 문항은 아래 구조로 해설을 제공합니다.
@@ -241,26 +241,26 @@ export default function OatBookPage() {
         </Container>
       </section>
 
-      {/* 실전 모의고사 8회 */}
+      {/* 실전 모의고사 3회 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">MOCK TESTS</p>
           <p className="mt-4 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
-            C-BRIDGE Original Mock Tests · Full-Length Practice Tests × 8
+            C-BRIDGE Original Mock Tests · Full-Length Practice Tests × 3
           </p>
           <p className="mt-4 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            OAT 모의고사 실전 연습용 C-BRIDGE 자체 제작 모의고사 8회를 포함합니다. 실제 공식 기출문제는
+            OAT 모의고사 실전 연습용 C-BRIDGE 자체 제작 모의고사 3회를 포함합니다. 실제 공식 기출문제는
             포함하지 않으며, 전 영역을 실전과 동일한 시간 배분으로 연습할 수 있도록 구성합니다.
           </p>
         </Container>
       </section>
 
-      {/* 추가 문제 120제 */}
+      {/* 추가 문제 40제 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
-          <p className="eyebrow">BONUS 120 QUESTIONS</p>
+          <p className="eyebrow">BONUS 40 QUESTIONS</p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-ink)" }}>
-            Natural Sciences와 Physics 중심의 추가 OAT 문제 120제를 포함합니다.
+            Natural Sciences와 Physics 중심의 추가 OAT 문제 40제를 포함합니다.
           </p>
           <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
             페이지 수를 채우는 부록이 아니라, 본교재 학습을 마친 뒤 추가로 반복 연습할 수 있도록 구성한

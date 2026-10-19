@@ -725,7 +725,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "법학전문대학원(Law School) 입학시험",
     description:
-      "LSAT Logical Reasoning 180P, Reading Comprehension 90P, Argumentative Writing 30P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE LSAT Complete 300P.",
+      "LSAT Logical Reasoning 180P, Reading Comprehension 90P, Argumentative Writing 30P와 실전 모의고사 3회, 추가 문제 33제를 포함한 C-BRIDGE LSAT Complete 300P.",
     keywords: [
       "LSAT",
       "LSAT 문제집",
@@ -748,7 +748,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "대학원 진학 공인 입학시험",
     description:
-      "GRE Verbal Reasoning 120P, Quantitative Reasoning 120P, Analytical Writing 60P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE GRE Complete 300P.",
+      "GRE Verbal Reasoning 120P, Quantitative Reasoning 120P, Analytical Writing 60P와 실전 모의고사 3회, 추가 문제 33제를 포함한 C-BRIDGE GRE Complete 300P.",
     keywords: [
       "GRE",
       "GRE 문제집",
@@ -769,7 +769,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "경영전문대학원(MBA) 입학시험",
     description:
-      "GMAT Quantitative Reasoning 100P, Verbal Reasoning 100P, Data Insights 100P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE GMAT Complete 300P.",
+      "GMAT Quantitative Reasoning 100P, Verbal Reasoning 100P, Data Insights 100P와 실전 모의고사 3회, 추가 문제 33제를 포함한 C-BRIDGE GMAT Complete 300P.",
     keywords: [
       "GMAT",
       "GMAT 문제집",
@@ -790,7 +790,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "의학전문대학원(Medical School) 입학시험",
     description:
-      "MCAT Chemical and Physical Foundations, CARS, Biological and Biochemical Foundations, Psychological·Social·Biological Foundations 네 영역 각 100P와 실전 모의고사 8회, 추가 문제 150제를 포함한 C-BRIDGE MCAT Complete 400P.",
+      "MCAT Chemical and Physical Foundations, CARS, Biological and Biochemical Foundations, Psychological·Social·Biological Foundations 네 영역 각 100P와 실전 모의고사 3회, 추가 문제 50제를 포함한 C-BRIDGE MCAT Complete 400P.",
     keywords: [
       "MCAT",
       "MCAT 문제집",
@@ -811,7 +811,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "치의학전문대학원(Dental School) 입학시험",
     description:
-      "DAT Survey of Natural Sciences 140P, Perceptual Ability Test 90P, Reading Comprehension 60P, Quantitative Reasoning 60P와 실전 모의고사 8회, 추가 문제 120제를 포함한 C-BRIDGE DAT Complete 350P.",
+      "DAT Survey of Natural Sciences 140P, Perceptual Ability Test 90P, Reading Comprehension 60P, Quantitative Reasoning 60P와 실전 모의고사 3회, 추가 문제 40제를 포함한 C-BRIDGE DAT Complete 350P.",
     keywords: [
       "DAT",
       "DAT 문제집",
@@ -830,7 +830,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "검안학전문대학원(Optometry School) 입학시험",
     description:
-      "OAT Survey of Natural Sciences 120P, Reading Comprehension 60P, Physics 90P, Quantitative Reasoning 80P와 실전 모의고사 8회, 추가 문제 120제를 포함한 C-BRIDGE OAT Complete 350P.",
+      "OAT Survey of Natural Sciences 120P, Reading Comprehension 60P, Physics 90P, Quantitative Reasoning 80P와 실전 모의고사 3회, 추가 문제 40제를 포함한 C-BRIDGE OAT Complete 350P.",
     keywords: [
       "OAT",
       "OAT 문제집",
@@ -849,7 +849,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "영국 의·치학계열 입학시험",
     description:
-      "UCAT Verbal Reasoning 75P, Decision Making 75P, Quantitative Reasoning 75P, Situational Judgement 75P와 실전 모의고사 10회, 추가 문제 100제를 포함한 C-BRIDGE UCAT Complete 300P.",
+      "UCAT Verbal Reasoning 75P, Decision Making 75P, Quantitative Reasoning 75P, Situational Judgement 75P와 실전 모의고사 3회, 추가 문제 33제를 포함한 C-BRIDGE UCAT Complete 300P.",
     keywords: [
       "UCAT",
       "UCAT 문제집",
