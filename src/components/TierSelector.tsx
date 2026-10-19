@@ -36,6 +36,7 @@ export default function TierSelector({ test }: { test: Test }) {
     target,
     ...(focusLabels.length ? { focus: focusLabels.join(", ") } : {}),
   }).toString();
+  const purchaseQuery = new URLSearchParams({ test: test.name, tier: meta.label }).toString();
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -162,10 +163,16 @@ export default function TierSelector({ test }: { test: Test }) {
           </div>
 
           <Link
-            href={`/consultation?${consultQuery}`}
+            href={`/pricing?${purchaseQuery}#direct-purchase`}
             className="btn-primary mt-7 flex items-center justify-center rounded-sm py-3.5 text-sm font-bold tracking-[0.08em]"
           >
-            상담
+            바로 구매
+          </Link>
+          <Link
+            href={`/consultation?${consultQuery}`}
+            className="mt-2.5 flex items-center justify-center text-xs font-medium text-ink/50 underline decoration-ink/20 underline-offset-4 hover:text-ink/80"
+          >
+            구성을 잘 모르겠다면 상담 후 구매하기
           </Link>
           <p className="mt-3 text-center text-xs text-ink/40">
             같은 분량이라도 목표와 집중 영역에 따라 문제 구성을 다르게 선택할 수 있습니다.

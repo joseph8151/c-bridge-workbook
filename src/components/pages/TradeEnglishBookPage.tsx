@@ -128,12 +128,17 @@ export default function TradeEnglishBookPage() {
           </p>
 
           <p className="mt-2 text-xs" style={{ color: "var(--color-muted)" }}>
-            즉시결제는 제공하지 않습니다. 상담 후 구성을 확정합니다.
+            계좌이체로 바로 구매하시거나, 상담 후 구성을 확정하실 수 있습니다.
           </p>
 
-          <Link href="/consultation?test=Trade%20English&tier=200P" className="btn-primary mt-8 px-7 text-sm font-medium">
-            구성 상담하기
-          </Link>
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            <Link href="/pricing?test=Trade%20English&tier=200P#direct-purchase" className="btn-primary px-7 text-sm font-medium">
+              바로 구매
+            </Link>
+            <Link href="/consultation?test=Trade%20English&tier=200P" className="btn-secondary px-7 text-sm font-medium">
+              구성 상담
+            </Link>
+          </div>
         </Container>
       </section>
     </>

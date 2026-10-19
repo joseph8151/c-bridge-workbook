@@ -121,6 +121,14 @@ export default async function TestDetailPage({
             <p className="mt-2 max-w-2xl text-sm" style={{ color: "var(--color-muted)" }}>
               목표 Level에 따라 충분히 연습할 수 있도록 2가지 분량을 선택할 수 있습니다. {priceSummaryLine}
             </p>
+            <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold tracking-[0.04em]" style={{ color: "var(--color-ink)" }}>
+              {["Workbook", "Answer Guide", "Mock Test", "Final Review", "Study Plan"].map((step, i, arr) => (
+                <span key={step} className="flex items-center gap-x-2">
+                  {step}
+                  {i < arr.length - 1 && <span style={{ color: "var(--color-bronze)" }}>→</span>}
+                </span>
+              ))}
+            </p>
           </div>
         </Container>
       </section>
@@ -284,12 +292,18 @@ export default async function TestDetailPage({
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <p className="eyebrow">{sample.label}</p>
-              <p className="mt-4 text-sm font-semibold leading-relaxed" style={{ color: "var(--color-ink)" }}>
-                {sample.prompt}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-                {sample.detail}
-              </p>
+              <div className="mt-4 space-y-6">
+                {sample.examples.map((ex, i) => (
+                  <div key={ex.prompt} className={i > 0 ? "border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                    <p className="text-sm font-semibold leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                      {ex.prompt}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                      {ex.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {guides.length > 0 && (

@@ -8,6 +8,7 @@ const configs = [
     tier: "200P",
     price: "₩190,000",
     href: "/consultation?test=EPTA&level=4",
+    purchaseHref: "/pricing?test=EPTA&tier=200P#direct-purchase",
   },
   {
     level: "EPTA Level 5",
@@ -15,6 +16,7 @@ const configs = [
     tier: "300P",
     price: "₩290,000",
     href: "/consultation?test=EPTA&level=5",
+    purchaseHref: "/pricing?test=EPTA&tier=300P#direct-purchase",
   },
 ];
 
@@ -62,15 +64,20 @@ export default function EptaBookPage() {
                 <p className="mt-2 font-serif text-2xl font-bold" style={{ color: "var(--color-ink)" }}>
                   {c.price}
                 </p>
-                <Link href={c.href} className="btn-primary mt-6 px-7 text-sm font-medium">
-                  상담하기
-                </Link>
+                <div className="mt-6 flex flex-wrap gap-2.5">
+                  <Link href={c.purchaseHref} className="btn-primary px-7 text-sm font-medium">
+                    바로 구매
+                  </Link>
+                  <Link href={c.href} className="btn-secondary px-7 text-sm font-medium">
+                    상담
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
 
           <p className="mt-10 text-xs" style={{ color: "var(--color-muted)" }}>
-            즉시결제는 제공하지 않습니다. 상담 후 구성을 확정합니다.
+            계좌이체로 바로 구매하시거나, 상담 후 구성을 확정하실 수 있습니다.
           </p>
         </Container>
       </section>
