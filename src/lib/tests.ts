@@ -177,8 +177,9 @@ export const tests: Test[] = [
     bonusTypes: ["SPEAKING"],
     tagline: "기업 전화·컴퓨터 말하기 평가",
     description:
-      "기업이 전화·컴퓨터로 보는 말하기 평가입니다. 짧은 시간 안에 정확하게 답하는 훈련을 중심으로 대비합니다.",
+      "Versant Speaking과 Listening 중심 과제를 100페이지 집중 구성으로 준비하는 C-BRIDGE Versant 문제집.",
     badges: ["직장인 추천", "말하기 집중"],
+    priceOverride: "129,000원",
   },
   {
     id: "spa",
@@ -188,8 +189,9 @@ export const tests: Test[] = [
     bonusTypes: ["SPEAKING"],
     tagline: "기업 영어 인터뷰 평가",
     description:
-      "현대차 등 기업이 쓰는 말하기 평가입니다. 비즈니스 상황, 의견 제시, 설명형 문제를 실전 인터뷰 방식으로 연습합니다.",
+      "SPA의 Speaking 평가를 중심으로 필요한 질문 유형과 답변 연습을 100페이지에 집중 구성합니다.",
     badges: ["직장인 추천", "말하기 집중"],
+    priceOverride: "129,000원",
   },
   {
     id: "trade-english",
@@ -552,8 +554,10 @@ export const tests: Test[] = [
     group: "PROFESSIONAL",
     bonusTypes: ["PROFESSIONAL"],
     tagline: "조종사 · 항공 종사자 영어평가",
-    description: "조종사 및 항공 종사자를 위한 영어평가. 직무 상황과 Speaking Scenario 중심으로 대비합니다.",
+    description:
+      "항공영어 Listening과 Speaking 과제를 중심으로 준비하는 직무 특화 100페이지 구성입니다.",
     badges: ["자료가 부족한 시험 추천"],
+    priceOverride: "129,000원",
   },
   {
     id: "icao",
