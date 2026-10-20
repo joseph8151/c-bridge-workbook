@@ -12,13 +12,16 @@ export default function HomeHero() {
             className="hero-fade-up mt-5 break-keep font-medium leading-[1.15] tracking-[-0.03em]"
             style={{ color: "var(--color-ink)", fontSize: "clamp(40px, 5vw, 64px)" }}
           >
-            내 시험, 내 목표,
+            필요한 문제를,
             <br />
-            내가 필요한 문제부터.
+            충분한 분량으로.
           </h1>
           <p className="mt-4 max-w-md break-keep text-[15px] leading-[1.6] md:mt-6 md:text-[17px] md:leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            PTE · CELPIP · OET · EPTA 등 시험 구조와 목표 점수를 기준으로 문제집·해설·실전
-            모의고사·Final Review를 하나의 구성으로 제공합니다.
+            시험 구조에 맞춘 방대한 문제와 자료로 목표 점수를 준비합니다.
+          </p>
+          <p className="mt-3 max-w-md break-keep text-[15px] leading-[1.6] md:text-[17px] md:leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            충분한 문제 경험은 실전에서의 속도와 정확도를 만드는 중요한 과정입니다. C-BRIDGE는
+            다양한 유형과 방대한 문제량을 통해 실제 시험에 충분히 대비할 수 있도록 구성합니다.
           </p>
           <div className="hero-fade-up mt-8 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:items-center min-[430px]:gap-4 md:mt-10" style={{ animationDelay: "80ms" }}>
             <Link href="/finder" className="btn-primary px-7 text-sm font-medium">

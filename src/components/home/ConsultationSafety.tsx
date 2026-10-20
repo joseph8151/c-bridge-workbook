@@ -14,8 +14,8 @@ export default function ConsultationSafety() {
           <div>
             <p className="eyebrow">CONSULTATION</p>
             <p className="mt-2 max-w-xl break-keep text-base leading-[1.7]" style={{ color: "var(--color-ink)" }}>
-              가격은 위 PACKAGE & PRICE에서 먼저 확인해보세요. 어떤 구성을 골라야 할지 몰라도
-              괜찮습니다 — 시험명과 목표만 알려주시면 필요한 구성을 안내해드립니다.
+              시험과 목표에 따라 필요한 범위가 다릅니다. 구성을 결정하기 어렵다면 상담을 통해
+              필요한 영역과 분량을 먼저 좁혀보세요.
             </p>
             <Link
               href="/consultation"
