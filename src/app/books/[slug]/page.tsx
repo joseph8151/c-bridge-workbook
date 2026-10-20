@@ -28,6 +28,7 @@ import McatBookPage from "@/components/pages/McatBookPage";
 import DatBookPage from "@/components/pages/DatBookPage";
 import OatBookPage from "@/components/pages/OatBookPage";
 import UcatBookPage from "@/components/pages/UcatBookPage";
+import PteExpressBookPage from "@/components/pages/PteExpressBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -52,6 +53,7 @@ const TITLE_OVERRIDES: Record<string, string> = {
   dat: "DAT 문제집 350P | Natural Sciences · PAT · Reading · Quant | C-BRIDGE",
   oat: "OAT 문제집 350P | Physics · Science · Reading · Quant | C-BRIDGE",
   ucat: "UCAT 문제집 300P | Verbal · Decision Making · Quant · SJT | C-BRIDGE",
+  "pte-express": "PTE Express 문제집 | 미국 대학 영어시험 대비 | C-BRIDGE",
 };
 
 export async function generateMetadata({
@@ -94,6 +96,7 @@ export default async function TestDetailPage({
   if (test.slug === "dat") return <DatBookPage />;
   if (test.slug === "oat") return <OatBookPage />;
   if (test.slug === "ucat") return <UcatBookPage />;
+  if (test.slug === "pte-express") return <PteExpressBookPage />;
 
   const group = groupMeta[test.group];
   const whoFor = getWhoFor(test);

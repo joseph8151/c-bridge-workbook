@@ -19,6 +19,11 @@ const groups: ExamGroup[] = [
         desc: "캐나다 이민을 위한 PTE",
         keywords: ["PTE Core", "피티이 코어"],
       },
+      {
+        name: "PTE Express",
+        desc: "미국 대학 지원을 위한 온라인 영어시험",
+        keywords: ["PTE Express", "PTE Express 시험", "PTE Express 미국 대학"],
+      },
       { name: "CELPIP", desc: "캐나다 영주 · 시민권 영어시험" },
       {
         name: "MET (미시간영어)",

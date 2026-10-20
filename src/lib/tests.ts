@@ -309,6 +309,28 @@ export const tests: Test[] = [
     keywords: ["PTE Core", "피티이 코어"],
   },
   {
+    id: "pte-express",
+    slug: "pte-express",
+    name: "PTE Express",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "미국 대학 지원을 위한 온라인 영어시험",
+    description:
+      "PTE Express Speaking, Listening, Reading, Writing을 충분한 문제량으로 준비하는 C-BRIDGE PTE Express 200P·300P 문제집.",
+    keywords: [
+      "PTE Express",
+      "PTE Express 시험",
+      "PTE Express 문제집",
+      "PTE Express 미국 대학",
+      "PTE Express Speaking",
+      "PTE Express Writing",
+      "PTE Express Reading",
+      "PTE Express Listening",
+      "PTE Express 공부",
+      "PTE Express PTE Academic 차이",
+    ],
+  },
+  {
     id: "ielts-general",
     slug: "ielts-general",
     name: "IELTS General Training",

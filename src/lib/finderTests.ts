@@ -15,6 +15,7 @@ export const finderGroups: FinderGroup[] = [
     items: [
       { name: "PTE Academic", href: "/books/pte-academic" },
       { name: "PTE Core", href: "/books/pte-core" },
+      { name: "PTE Express", href: "/books/pte-express" },
       { name: "IELTS General", href: "/books/ielts-general" },
       { name: "LanguageCert Academic", href: "/books/languagecert-academic" },
       { name: "CELPIP", href: "/books/celpip" },
