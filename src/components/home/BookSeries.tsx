@@ -10,7 +10,7 @@ export default function BookSeries() {
         <SectionHeader
           eyebrow="PACKAGE & PRICE"
           title="준비 기간에 맞춰 선택하세요."
-          description="200페이지는 한 영역을 집중적으로, 300페이지는 전 영역을 충분한 문제량으로 준비할 수 있도록 구성됩니다."
+          description="200P는 핵심 영역 또는 취약 영역 집중, 300P는 전 영역 + 고득점 + 충분한 반복으로 구성됩니다."
         />
 
         <div className="mt-10 grid border-y sm:mt-12 sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
