@@ -52,6 +52,8 @@ export const finderGroups: FinderGroup[] = [
     items: [
       { name: "Versant", href: "/books/versant" },
       { name: "SPA", href: "/books/spa" },
+      { name: "ESPT", href: "/books/espt" },
+      { name: "TEPS Speaking", href: "/books/teps-speaking" },
     ],
   },
   {

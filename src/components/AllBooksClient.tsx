@@ -85,8 +85,9 @@ export default function AllBooksClient() {
             ))}
           </div>
           <p className="mt-2 text-xs text-ink/40">
-            대부분의 시험은 200P·300P 두 가지 분량으로 제공됩니다. SPA·EPTA·Versant는 시험
-            특성에 맞춰 100P 집중 구성으로 제공됩니다. 각 시험 페이지에서 확인할 수 있습니다.
+            대부분의 시험은 200P·300P 두 가지 분량으로 제공됩니다. SPA·EPTA·Versant는 100P,
+            ESPT·TEPS Speaking은 60P 집중 구성으로 제공됩니다. 각 시험 페이지에서 확인할 수
+            있습니다.
           </p>
         </div>
 

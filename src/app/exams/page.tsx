@@ -83,6 +83,8 @@ const groups: ExamGroup[] = [
     items: [
       { name: "SPA", desc: "기업이 활용하는 말하기 평가" },
       { name: "Versant", desc: "기업 전화 · 컴퓨터 말하기 평가" },
+      { name: "ESPT", desc: "말하기 중심 영어능력시험" },
+      { name: "TEPS Speaking", desc: "공인 영어능력시험 말하기 평가" },
     ],
   },
   {

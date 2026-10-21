@@ -20,6 +20,8 @@ import MarlinsBookPage from "@/components/pages/MarlinsBookPage";
 import EptaBookPage from "@/components/pages/EptaBookPage";
 import SpaBookPage from "@/components/pages/SpaBookPage";
 import VersantBookPage from "@/components/pages/VersantBookPage";
+import EsptBookPage from "@/components/pages/EsptBookPage";
+import TepsSpeakingBookPage from "@/components/pages/TepsSpeakingBookPage";
 import TelcPflegeBookPage from "@/components/pages/TelcPflegeBookPage";
 import TradeEnglishBookPage from "@/components/pages/TradeEnglishBookPage";
 import SatBookPage from "@/components/pages/SatBookPage";
@@ -59,6 +61,8 @@ const TITLE_OVERRIDES: Record<string, string> = {
   spa: "SPA 문제집 100P | Speaking 실전 대비 | C-BRIDGE",
   epta: "EPTA 문제집 100P | 항공영어 Listening · Speaking 대비 | C-BRIDGE",
   versant: "Versant 문제집 100P | Speaking · Listening 실전 대비 | C-BRIDGE",
+  espt: "ESPT 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
+  "teps-speaking": "TEPS Speaking 문제집 60P | 말하기 실전 대비 | C-BRIDGE",
 };
 
 export async function generateMetadata({
@@ -93,6 +97,8 @@ export default async function TestDetailPage({
   if (test.slug === "epta") return <EptaBookPage />;
   if (test.slug === "spa") return <SpaBookPage />;
   if (test.slug === "versant") return <VersantBookPage />;
+  if (test.slug === "espt") return <EsptBookPage />;
+  if (test.slug === "teps-speaking") return <TepsSpeakingBookPage />;
   if (test.slug === "telc-pflege") return <TelcPflegeBookPage />;
   if (test.slug === "trade-english") return <TradeEnglishBookPage />;
   if (test.slug === "sat") return <SatBookPage />;

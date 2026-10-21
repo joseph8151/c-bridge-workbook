@@ -194,6 +194,30 @@ export const tests: Test[] = [
     priceOverride: "129,000원",
   },
   {
+    id: "espt",
+    slug: "espt",
+    name: "ESPT",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "말하기 중심 영어능력시험",
+    description:
+      "ESPT의 Speaking 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에 집중 구성합니다.",
+    badges: ["말하기 집중"],
+    priceOverride: "80,000원",
+  },
+  {
+    id: "teps-speaking",
+    slug: "teps-speaking",
+    name: "TEPS Speaking",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "공인 영어능력시험 말하기 평가",
+    description:
+      "TEPS Speaking의 말하기 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에 집중 구성합니다.",
+    badges: ["말하기 집중"],
+    priceOverride: "80,000원",
+  },
+  {
     id: "trade-english",
     slug: "trade-english",
     name: "무역영어 1급",
