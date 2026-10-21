@@ -41,6 +41,11 @@ const groups: ExamGroup[] = [
         desc: "호주 비자 목록에 오르는 학술 영어입니다. 인정은 비자·학교마다 다릅니다.",
         keywords: ["LanguageCert", "랭귀지서트", "LanguageCert Academic"],
       },
+      {
+        name: "CELPE-Bras",
+        desc: "브라질 이민·유학을 위한 포르투갈어 공인시험",
+        keywords: ["CELPE-Bras", "셀피브라스", "브라질 포르투갈어 시험"],
+      },
     ],
   },
   {
@@ -85,6 +90,11 @@ const groups: ExamGroup[] = [
       { name: "Versant", desc: "기업 전화 · 컴퓨터 말하기 평가" },
       { name: "ESPT", desc: "말하기 중심 영어능력시험" },
       { name: "TEPS Speaking", desc: "공인 영어능력시험 말하기 평가" },
+      { name: "OPIc 영어", desc: "컴퓨터 기반 영어 말하기 평가" },
+      { name: "OPIc 중국어", desc: "컴퓨터 기반 중국어 말하기 평가" },
+      { name: "OPIc 일본어", desc: "컴퓨터 기반 일본어 말하기 평가" },
+      { name: "OPIc 스페인어", desc: "컴퓨터 기반 스페인어 말하기 평가" },
+      { name: "OPIc 베트남어", desc: "컴퓨터 기반 베트남어 말하기 평가" },
     ],
   },
   {

@@ -22,6 +22,8 @@ import SpaBookPage from "@/components/pages/SpaBookPage";
 import VersantBookPage from "@/components/pages/VersantBookPage";
 import EsptBookPage from "@/components/pages/EsptBookPage";
 import TepsSpeakingBookPage from "@/components/pages/TepsSpeakingBookPage";
+import OpicBookPage from "@/components/pages/OpicBookPage";
+import CelpeBrasBookPage from "@/components/pages/CelpeBrasBookPage";
 import TelcPflegeBookPage from "@/components/pages/TelcPflegeBookPage";
 import TradeEnglishBookPage from "@/components/pages/TradeEnglishBookPage";
 import SatBookPage from "@/components/pages/SatBookPage";
@@ -63,6 +65,12 @@ const TITLE_OVERRIDES: Record<string, string> = {
   versant: "Versant 문제집 100P | Speaking · Listening 실전 대비 | C-BRIDGE",
   espt: "ESPT 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
   "teps-speaking": "TEPS Speaking 문제집 60P | 말하기 실전 대비 | C-BRIDGE",
+  "opic-english": "OPIc 영어 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
+  "opic-chinese": "OPIc 중국어 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
+  "opic-japanese": "OPIc 일본어 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
+  "opic-spanish": "OPIc 스페인어 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
+  "opic-vietnamese": "OPIc 베트남어 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
+  "celpe-bras": "CELPE-Bras 문제집 100P | 포르투갈어 실전 대비 | C-BRIDGE",
 };
 
 export async function generateMetadata({
@@ -99,6 +107,12 @@ export default async function TestDetailPage({
   if (test.slug === "versant") return <VersantBookPage />;
   if (test.slug === "espt") return <EsptBookPage />;
   if (test.slug === "teps-speaking") return <TepsSpeakingBookPage />;
+  if (test.slug === "opic-english") return <OpicBookPage language="영어" languageLabel="ENGLISH" />;
+  if (test.slug === "opic-chinese") return <OpicBookPage language="중국어" languageLabel="CHINESE" />;
+  if (test.slug === "opic-japanese") return <OpicBookPage language="일본어" languageLabel="JAPANESE" />;
+  if (test.slug === "opic-spanish") return <OpicBookPage language="스페인어" languageLabel="SPANISH" />;
+  if (test.slug === "opic-vietnamese") return <OpicBookPage language="베트남어" languageLabel="VIETNAMESE" />;
+  if (test.slug === "celpe-bras") return <CelpeBrasBookPage />;
   if (test.slug === "telc-pflege") return <TelcPflegeBookPage />;
   if (test.slug === "trade-english") return <TradeEnglishBookPage />;
   if (test.slug === "sat") return <SatBookPage />;

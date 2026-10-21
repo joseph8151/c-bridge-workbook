@@ -218,6 +218,71 @@ export const tests: Test[] = [
     priceOverride: "80,000원",
   },
   {
+    id: "opic-english",
+    slug: "opic-english",
+    name: "OPIc 영어",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "컴퓨터 기반 영어 말하기 평가",
+    description:
+      "OPIc 영어의 Speaking 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에 집중 구성합니다.",
+    badges: ["말하기 집중"],
+    keywords: ["OPIc", "오픽", "OPIc 영어"],
+    priceOverride: "80,000원",
+  },
+  {
+    id: "opic-chinese",
+    slug: "opic-chinese",
+    name: "OPIc 중국어",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "컴퓨터 기반 중국어 말하기 평가",
+    description:
+      "OPIc 중국어의 Speaking 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에 집중 구성합니다.",
+    badges: ["말하기 집중"],
+    keywords: ["OPIc", "오픽", "OPIc 중국어"],
+    priceOverride: "80,000원",
+  },
+  {
+    id: "opic-japanese",
+    slug: "opic-japanese",
+    name: "OPIc 일본어",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "컴퓨터 기반 일본어 말하기 평가",
+    description:
+      "OPIc 일본어의 Speaking 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에 집중 구성합니다.",
+    badges: ["말하기 집중"],
+    keywords: ["OPIc", "오픽", "OPIc 일본어"],
+    priceOverride: "80,000원",
+  },
+  {
+    id: "opic-spanish",
+    slug: "opic-spanish",
+    name: "OPIc 스페인어",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "컴퓨터 기반 스페인어 말하기 평가",
+    description:
+      "OPIc 스페인어의 Speaking 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에 집중 구성합니다.",
+    badges: ["말하기 집중"],
+    keywords: ["OPIc", "오픽", "OPIc 스페인어"],
+    priceOverride: "80,000원",
+  },
+  {
+    id: "opic-vietnamese",
+    slug: "opic-vietnamese",
+    name: "OPIc 베트남어",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "컴퓨터 기반 베트남어 말하기 평가",
+    description:
+      "OPIc 베트남어의 Speaking 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에 집중 구성합니다.",
+    badges: ["말하기 집중"],
+    keywords: ["OPIc", "오픽", "OPIc 베트남어"],
+    priceOverride: "80,000원",
+  },
+  {
     id: "trade-english",
     slug: "trade-english",
     name: "무역영어 1급",
@@ -764,6 +829,19 @@ export const tests: Test[] = [
     description:
       "미국 시민권 신청자를 위한 N-400 인터뷰와 Civics(역사·정부 상식) 시험 대비 자료입니다. 영어 읽기·쓰기·말하기 평가도 함께 포함됩니다.",
     keywords: ["U.S. Citizenship Test", "미국 시민권 시험", "Civics Test", "N-400 인터뷰"],
+  },
+  {
+    id: "celpe-bras",
+    slug: "celpe-bras",
+    name: "CELPE-Bras",
+    group: "IMMIGRATION_VISA",
+    bonusTypes: ["SPEAKING", "WRITING"],
+    tagline: "브라질 이민·유학을 위한 포르투갈어 공인시험",
+    description:
+      "CELPE-Bras의 필기(텍스트 생산 과제)와 구술(인터뷰) 영역을 중심으로 필요한 유형과 답변 연습을 100페이지에 집중 구성합니다.",
+    badges: ["이민·유학 추천"],
+    keywords: ["CELPE-Bras", "셀피브라스", "브라질 포르투갈어 시험", "포르투갈어 공인시험"],
+    priceOverride: "129,000원",
   },
 
   // ---------------- PROFESSIONAL_GRAD ----------------

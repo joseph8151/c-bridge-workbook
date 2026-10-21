@@ -23,6 +23,7 @@ export const finderGroups: FinderGroup[] = [
       { name: "IELTS", href: "/books/ielts" },
       { name: "TOEFL", href: "/books/toefl" },
       { name: "Duolingo English Test", href: "/books/duolingo" },
+      { name: "CELPE-Bras", href: "/books/celpe-bras" },
     ],
   },
   {
@@ -54,6 +55,11 @@ export const finderGroups: FinderGroup[] = [
       { name: "SPA", href: "/books/spa" },
       { name: "ESPT", href: "/books/espt" },
       { name: "TEPS Speaking", href: "/books/teps-speaking" },
+      { name: "OPIc 영어", href: "/books/opic-english" },
+      { name: "OPIc 중국어", href: "/books/opic-chinese" },
+      { name: "OPIc 일본어", href: "/books/opic-japanese" },
+      { name: "OPIc 스페인어", href: "/books/opic-spanish" },
+      { name: "OPIc 베트남어", href: "/books/opic-vietnamese" },
     ],
   },
   {
