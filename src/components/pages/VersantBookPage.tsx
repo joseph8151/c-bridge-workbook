@@ -18,6 +18,28 @@ const recommendedFor = [
   "단기간에 시험 형식에 익숙해져야 하는 경우",
 ];
 
+const lookInsideExamples = [
+  {
+    label: "SENTENCE REPEAT (자체 제작 예시)",
+    prompt:
+      "The shipment was delayed because the supplier changed the delivery schedule without notice.",
+    detail:
+      "들은 문장을 그대로 따라 말하는 유형입니다. 문장이 길어질수록 의미 단위(배송 지연 → 원인 → 결과)로 끊어 기억해야 정확히 반복할 수 있습니다. 짧은 간격 안에 바로 응답하는 연습이 핵심입니다.",
+  },
+  {
+    label: "SENTENCE BUILD (자체 제작 예시)",
+    prompt: "meeting / the / postponed / was / budget review",
+    detail:
+      "뒤섞인 단어를 듣고 올바른 어순의 문장으로 재구성해 말하는 유형입니다. 단어를 하나씩 따라가기보다 문장 전체의 의미를 먼저 떠올린 뒤 자연스러운 어순으로 배열하는 연습이 반응 속도를 높여줍니다.",
+  },
+  {
+    label: "SHORT ANSWER QUESTION (자체 제작 예시)",
+    prompt: "회의 일정이 변경되었다는 소식을 들었을 때, 동료에게 가장 먼저 확인해야 할 것은 무엇입니까?",
+    detail:
+      "짧은 질문에 즉각적으로 핵심만 답하는 유형입니다. 문장을 길게 구성하려 하지 말고, 질문이 요구하는 정보(언제·어디서·무엇을) 하나에 집중해 빠르게 답하는 것이 핵심입니다.",
+  },
+];
+
 export default function VersantBookPage() {
   return (
     <>
@@ -87,22 +109,23 @@ export default function VersantBookPage() {
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              SENTENCE REPEAT (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;The shipment was delayed because the supplier changed the delivery schedule
-              without notice.&rdquo;
-            </p>
-            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              연습 포인트
-            </p>
-            <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              들은 문장을 그대로 따라 말하는 유형입니다. 문장이 길어질수록 의미 단위(배송 지연 →
-              원인 → 결과)로 끊어 기억해야 정확히 반복할 수 있습니다. 짧은 간격 안에 바로 응답하는
-              연습이 핵심입니다.
-            </p>
-            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  &ldquo;{ex.prompt}&rdquo;
+                </p>
+                <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  연습 포인트
+                </p>
+                <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.detail}
+                </p>
+              </div>
+            ))}
+            <p className="mt-6 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 예시입니다.
             </p>
           </div>

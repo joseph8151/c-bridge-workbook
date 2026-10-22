@@ -212,6 +212,48 @@ export default function OatBookPage() {
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
             </p>
           </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              GENERAL CHEMISTRY · pH SCALE (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              pH가 3인 용액은 pH가 5인 용액보다 수소 이온(H⁺) 농도가 몇 배 높은가?
+            </p>
+            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              정답: 100배
+            </p>
+            <p className="mt-3 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — pH는 수소 이온 농도의 로그 역수 척도이므로, pH가 1 낮아질 때마다 농도는 10배
+              증가합니다. pH 3과 5는 2만큼 차이가 나므로 농도 차이는 10² = 100배입니다.
+            </p>
+            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
+            </p>
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              READING COMPREHENSION · DETAIL (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              다음 글을 읽고 질문에 답하시오. &ldquo;사람은 나이가 들면서 수정체의 탄력이 감소해 가까운
+              물체에 초점을 맞추는 조절력이 점차 떨어진다. 이 현상을 노안이라고 하며, 근시·원시와 달리
+              나이에 따라 자연스럽게 나타난다.&rdquo; 질문: 윗글에 따르면 노안이 나타나는 주된 원인은
+              무엇인가?
+            </p>
+            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              정답: 수정체의 탄력(조절력) 감소
+            </p>
+            <p className="mt-3 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 지문은 노안의 원인을 수정체 탄력 저하로 명시하고 있으며, 근시·원시와는 다른 원인으로
+              구분해 설명합니다. 세부 정보를 묻는 문제는 지문에 명시된 표현을 정확히 찾아 확인하는 것이
+              핵심입니다.
+            </p>
+            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
+            </p>
+          </div>
         </Container>
       </section>
 

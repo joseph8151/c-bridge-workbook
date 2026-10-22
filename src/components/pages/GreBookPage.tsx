@@ -64,6 +64,12 @@ const quantExplanationFields = [
   { label: "Common Calculation Error", desc: "자주 하는 계산 실수" },
 ];
 
+const verbalSampleOptions = [
+  { key: "A", text: "vague", correct: true },
+  { key: "B", text: "detailed", correct: false },
+  { key: "C", text: "popular", correct: false },
+];
+
 const finalReviewItems = [
   "Verbal 핵심 유형 체크",
   "Quant 공식 체크리스트",
@@ -230,7 +236,7 @@ export default function GreBookPage() {
         </Container>
       </section>
 
-      {/* Look Inside — Quant 샘플 (과학·수학 검수 구조 적용) */}
+      {/* Look Inside — 자체 제작 예시 3종 (Quant · Verbal · Writing) */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
@@ -252,6 +258,66 @@ export default function GreBookPage() {
                 사용 공식 — {quantSample.formulaUsed}
               </p>
             )}
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              VERBAL REASONING · TEXT COMPLETION (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              &ldquo;Although the committee&apos;s proposal was widely praised for its ambition, critics
+              argued that its implementation plan remained frustratingly _____.&rdquo;
+            </p>
+
+            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              질문: 빈칸에 들어갈 가장 적절한 단어를 고르시오.
+            </p>
+
+            <div className="mt-4 space-y-2.5">
+              {verbalSampleOptions.map((o) => (
+                <div
+                  key={o.key}
+                  className="flex items-start gap-3 border p-3 text-sm"
+                  style={{
+                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  <span className="shrink-0 font-semibold">{o.key}.</span>
+                  <span className="flex-1 break-keep">{o.text}</span>
+                  {o.correct && (
+                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                      정답
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — &ldquo;Although&rdquo;로 시작하는 문장은 앞뒤가 대조 관계를 이룹니다. &ldquo;널리 호평받은
+              야심찬 제안&rdquo;과 대조되는 부정적 의미의 단어가 필요하므로, &ldquo;모호한&rdquo;을 뜻하는
+              vague가 적절합니다. detailed(상세한)와 popular(인기 있는)는 대조 관계에 맞지 않습니다.
+            </p>
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              ANALYTICAL WRITING · ISSUE TASK (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              &ldquo;어떤 사람들은 성공이 대부분 개인의 노력에서 비롯된다고 믿는 반면, 다른 사람들은 외부
+              환경이 더 큰 역할을 한다고 믿는다. 이 주제에 대한 자신의 입장을 논하시오.&rdquo;
+            </p>
+            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              고득점 답안 구조 예시
+            </p>
+            <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              서론에서 두 입장 중 하나를 선택해 명확히 밝히고, 본론에서 구체적인 사례나 논리로 근거를
+              전개한 뒤, 상대 입장이 타당할 수 있는 예외적 상황을 짧게 인정하고, 결론에서 자신의 입장을
+              한 문장으로 재확인합니다. 어느 한쪽이 &ldquo;항상&rdquo; 옳다고 단정하기보다 조건을 인정하는
+              균형 잡힌 논증이 고득점에 유리합니다.
+            </p>
             <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
             </p>

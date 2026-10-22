@@ -14,10 +14,42 @@ const prices = [
   { label: "TOLES Higher 300P", price: "₩332,000" },
 ];
 
-const options = [
-  { key: "A", text: "상대방의 사전 서면 동의가 있는 경우", correct: true },
-  { key: "B", text: "계약 종료 후 언제든", correct: false },
-  { key: "C", text: "구두로 통지한 경우", correct: false },
+const lookInsideExamples = [
+  {
+    label: "CONTRACT CLAUSE · ASSIGNMENT (자체 제작 예시)",
+    quote: "“The party shall not assign this Agreement without prior written consent.”",
+    question: "질문: 양도가 가능한 조건을 고르시오.",
+    options: [
+      { key: "A", text: "상대방의 사전 서면 동의가 있는 경우", correct: true },
+      { key: "B", text: "계약 종료 후 언제든", correct: false },
+      { key: "C", text: "구두로 통지한 경우", correct: false },
+    ],
+    why: "WHY — “without prior written consent”는 사전 서면 동의가 없는 양도를 금지한다는 의미이므로, 반대로 해석하면 사전 서면 동의가 있는 경우에만 양도가 가능합니다.",
+  },
+  {
+    label: "CONTRACT CLAUSE · TERMINATION (자체 제작 예시)",
+    quote:
+      "“Either party may terminate this Agreement by giving no less than thirty (30) days’ written notice to the other party.”",
+    question: "질문: 계약을 해지하기 위한 최소 조건을 고르시오.",
+    options: [
+      { key: "A", text: "상대방에게 최소 30일 전 서면 통지", correct: true },
+      { key: "B", text: "양 당사자의 동시 서명", correct: false },
+      { key: "C", text: "구두 통지 후 즉시 해지", correct: false },
+    ],
+    why: "WHY — “no less than thirty (30) days’ written notice”는 해지를 위해 최소 30일 전에 서면으로 통지해야 한다는 조건을 명시하므로, 그 이하의 통지 기간이나 구두 통지는 조건을 충족하지 못합니다.",
+  },
+  {
+    label: "CONTRACT CLAUSE · CONFIDENTIALITY (자체 제작 예시)",
+    quote:
+      "“The Receiving Party shall not disclose Confidential Information to any third party except with the prior written consent of the Disclosing Party.”",
+    question: "질문: 비밀정보를 제3자에게 공개할 수 있는 경우를 고르시오.",
+    options: [
+      { key: "A", text: "공개 당사자의 사전 서면 동의가 있는 경우", correct: true },
+      { key: "B", text: "수령 당사자가 필요하다고 판단하는 경우", correct: false },
+      { key: "C", text: "제3자가 비밀유지를 구두로 약속한 경우", correct: false },
+    ],
+    why: "WHY — 조항은 “except with the prior written consent”라는 예외 조건을 명시하므로, 공개 당사자(Disclosing Party)의 사전 서면 동의 없이는 제3자 공개가 금지됩니다.",
+  },
 ];
 
 export default function TolesBookPage() {
@@ -55,47 +87,50 @@ export default function TolesBookPage() {
         </Container>
       </section>
 
-      {/* Look Inside — 실제 문항 1개, HTML 텍스트만 */}
+      {/* Look Inside — 실제 문항 3개, HTML 텍스트만 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              CONTRACT CLAUSE (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-lg italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;The party shall not assign this Agreement without prior written consent.&rdquo;
-            </p>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-lg italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  {ex.quote}
+                </p>
 
-            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              질문: 양도가 가능한 조건을 고르시오.
-            </p>
+                <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  {ex.question}
+                </p>
 
-            <div className="mt-4 space-y-2.5">
-              {options.map((o) => (
-                <div
-                  key={o.key}
-                  className="flex items-start gap-3 border p-3 text-sm"
-                  style={{
-                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
-                    color: "var(--color-ink)",
-                  }}
-                >
-                  <span className="shrink-0 font-semibold">{o.key}.</span>
-                  <span className="flex-1 break-keep">{o.text}</span>
-                  {o.correct && (
-                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
-                      정답
-                    </span>
-                  )}
+                <div className="mt-4 space-y-2.5">
+                  {ex.options.map((o) => (
+                    <div
+                      key={o.key}
+                      className="flex items-start gap-3 border p-3 text-sm"
+                      style={{
+                        borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                        color: "var(--color-ink)",
+                      }}
+                    >
+                      <span className="shrink-0 font-semibold">{o.key}.</span>
+                      <span className="flex-1 break-keep">{o.text}</span>
+                      {o.correct && (
+                        <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                          정답
+                        </span>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              WHY — &ldquo;without prior written consent&rdquo;는 사전 서면 동의가 없는 양도를 금지한다는 의미이므로,
-              반대로 해석하면 사전 서면 동의가 있는 경우에만 양도가 가능합니다.
-            </p>
+                <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.why}
+                </p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

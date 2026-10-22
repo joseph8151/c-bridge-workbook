@@ -8,10 +8,43 @@ const prices = [
   { label: "Marlins + TOSE 300P", price: "₩332,000" },
 ];
 
-const options = [
-  { key: "A", text: "03:00", correct: true },
-  { key: "B", text: "09:05", correct: false },
-  { key: "C", text: "12:30", correct: false },
+const lookInsideExamples = [
+  {
+    label: "LISTENING SCRIPT · ETA (자체 제작 예시)",
+    quote:
+      "“This is the bridge. We are altering course to zero nine five degrees. ETA at the pilot station is zero three hundred hours. Current speed is twelve point five knots.”",
+    question: "질문: 선박의 예상 도착 시각(ETA)은 몇 시입니까?",
+    options: [
+      { key: "A", text: "03:00", correct: true },
+      { key: "B", text: "09:05", correct: false },
+      { key: "C", text: "12:30", correct: false },
+    ],
+    why: "WHY — “zero three hundred hours”는 시각을 나타내는 해사 통신 표현으로, 03:00을 의미합니다. 숫자를 자리별로 끊어 듣는 훈련이 핵심입니다.",
+  },
+  {
+    label: "LISTENING SCRIPT · WEATHER REPORT (자체 제작 예시)",
+    quote:
+      "“Weather update: wind north-west force six, visibility three nautical miles, wave height two point five metres.”",
+    question: "질문: 현재 파고(wave height)는 몇 미터입니까?",
+    options: [
+      { key: "A", text: "2.5미터", correct: true },
+      { key: "B", text: "3미터", correct: false },
+      { key: "C", text: "6미터", correct: false },
+    ],
+    why: "WHY — 보고에는 풍향·풍력·시정·파고 등 여러 수치가 연속으로 등장합니다. 질문이 묻는 항목(wave height)이 나오는 구간만 정확히 골라 듣는 훈련이 필요합니다.",
+  },
+  {
+    label: "LISTENING SCRIPT · SAFETY DRILL (자체 제작 예시)",
+    quote:
+      "“Attention all crew. This is a fire drill. Muster station is at the aft deck. All personnel report within five minutes.”",
+    question: "질문: 승무원이 집합해야 하는 장소는 어디입니까?",
+    options: [
+      { key: "A", text: "선미 갑판(aft deck)", correct: true },
+      { key: "B", text: "선교(bridge)", correct: false },
+      { key: "C", text: "기관실(engine room)", correct: false },
+    ],
+    why: "WHY — 공지의 핵심은 “muster station is at the aft deck” 부분입니다. 비상 상황 안내에서는 장소·시간 등 실행에 필요한 정보를 놓치지 않는 것이 핵심입니다.",
+  },
 ];
 
 export default function MarlinsBookPage() {
@@ -46,48 +79,50 @@ export default function MarlinsBookPage() {
         </Container>
       </section>
 
-      {/* Look Inside — 짧은 듣기 스크립트 + 숫자 문항 1개, HTML 텍스트만 */}
+      {/* Look Inside — 짧은 듣기 스크립트 + 숫자 문항 3개, HTML 텍스트만 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              LISTENING SCRIPT (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;This is the bridge. We are altering course to zero nine five degrees. ETA at the
-              pilot station is zero three hundred hours. Current speed is twelve point five knots.&rdquo;
-            </p>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  {ex.quote}
+                </p>
 
-            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              질문: 선박의 예상 도착 시각(ETA)은 몇 시입니까?
-            </p>
+                <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  {ex.question}
+                </p>
 
-            <div className="mt-4 space-y-2.5">
-              {options.map((o) => (
-                <div
-                  key={o.key}
-                  className="flex items-start gap-3 border p-3 text-sm"
-                  style={{
-                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
-                    color: "var(--color-ink)",
-                  }}
-                >
-                  <span className="shrink-0 font-semibold">{o.key}.</span>
-                  <span className="flex-1">{o.text}</span>
-                  {o.correct && (
-                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
-                      정답
-                    </span>
-                  )}
+                <div className="mt-4 space-y-2.5">
+                  {ex.options.map((o) => (
+                    <div
+                      key={o.key}
+                      className="flex items-start gap-3 border p-3 text-sm"
+                      style={{
+                        borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                        color: "var(--color-ink)",
+                      }}
+                    >
+                      <span className="shrink-0 font-semibold">{o.key}.</span>
+                      <span className="flex-1">{o.text}</span>
+                      {o.correct && (
+                        <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                          정답
+                        </span>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              WHY — &ldquo;zero three hundred hours&rdquo;는 시각을 나타내는 해사 통신 표현으로, 03:00을
-              의미합니다. 숫자를 자리별로 끊어 듣는 훈련이 핵심입니다.
-            </p>
+                <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.why}
+                </p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

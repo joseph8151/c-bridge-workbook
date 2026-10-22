@@ -19,6 +19,18 @@ const sjtOptions = [
   { key: "D", text: "다른 팀원들에게 알리지 않고 혼자 조용히 대신 작업해준다.", rank: "가장 부적절함" },
 ];
 
+const verbalOptions = [
+  { key: "A", text: "참(True)", correct: false },
+  { key: "B", text: "거짓(False)", correct: false },
+  { key: "C", text: "알 수 없음(Can't Tell)", correct: true },
+];
+
+const decisionOptions = [
+  { key: "A", text: "민수는 간호사이다.", correct: false },
+  { key: "B", text: "민수는 간호사가 아니다.", correct: true },
+  { key: "C", text: "모든 야간 근무자는 간호사이다.", correct: false },
+];
+
 const explanationFields = [
   { label: "Correct Answer", desc: "정답 선택지" },
   { label: "Why It Is Correct", desc: "정답인 이유" },
@@ -225,6 +237,87 @@ export default function UcatBookPage() {
             <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               WHY — 문제를 투명하게 공유하고 함께 해결책을 찾는 대응이 가장 적절하며, 혼자 몰래 대신
               해결하거나 책임을 회피하는 대응일수록 전문직 윤리 기준에서 부적절하다고 평가됩니다.
+            </p>
+            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
+            </p>
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              VERBAL REASONING · TRUE / FALSE / CAN&apos;T TELL (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              &ldquo;최근 한 도시에서 자전거 도로를 전체 도로의 10%까지 확대하는 정책을 시행한 이후, 해당
+              구간의 교통사고 건수가 감소했다는 보고가 있었다. 다만 이 보고서는 다른 지역과의 비교
+              자료나 사고 유형별 세부 통계를 포함하지 않았다.&rdquo;
+            </p>
+            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              질문: &ldquo;자전거 도로 확대가 전반적인 교통안전 개선의 유일한 원인이다&rdquo;는 위 글만으로
+              참인가, 거짓인가, 알 수 없는가?
+            </p>
+            <div className="mt-4 space-y-2.5">
+              {verbalOptions.map((o) => (
+                <div
+                  key={o.key}
+                  className="flex items-start gap-3 border p-3 text-sm"
+                  style={{
+                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  <span className="shrink-0 font-semibold">{o.key}.</span>
+                  <span className="flex-1 break-keep">{o.text}</span>
+                  {o.correct && (
+                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                      정답
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 지문은 자전거 도로 확대와 사고 감소 사이의 연관성만 언급할 뿐, 다른 요인을
+              배제했다는 근거는 제시하지 않습니다. 따라서 &lsquo;유일한 원인&rsquo;이라는 단정은 지문만으로
+              참·거짓을 판단할 수 없습니다.
+            </p>
+            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
+            </p>
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              DECISION MAKING · LOGIC (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              다음 전제가 모두 참일 때 반드시 참인 결론을 고르시오. 전제 1: 모든 간호사는 야간 근무를
+              한다. 전제 2: 민수는 야간 근무를 하지 않는다.
+            </p>
+            <div className="mt-4 space-y-2.5">
+              {decisionOptions.map((o) => (
+                <div
+                  key={o.key}
+                  className="flex items-start gap-3 border p-3 text-sm"
+                  style={{
+                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  <span className="shrink-0 font-semibold">{o.key}.</span>
+                  <span className="flex-1 break-keep">{o.text}</span>
+                  {o.correct && (
+                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                      정답
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 전제 1은 &lsquo;간호사 → 야간 근무&rsquo;라는 조건 관계입니다. 민수가 야간 근무를
+              하지 않는다는 것은 이 조건의 결과가 성립하지 않는다는 뜻이므로, 대우(야간 근무를 하지
+              않음 → 간호사가 아님)에 따라 민수는 간호사가 아니라고 반드시 결론 내릴 수 있습니다.
             </p>
             <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.

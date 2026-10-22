@@ -14,10 +14,41 @@ const prices = [
   { label: "L/C·클레임 300P", price: "₩332,000" },
 ];
 
-const options = [
-  { key: "A", text: "2025년 5월 15일", correct: true },
-  { key: "B", text: "신용장 개설일로부터 30일", correct: false },
-  { key: "C", text: "선하증권 발행일로부터 21일", correct: false },
+const lookInsideExamples = [
+  {
+    label: "L/C CLAUSE · SHIPMENT DATE (자체 제작 예시)",
+    quote: "“Latest date of shipment: 15 MAY 2025.\nPartial shipments are not allowed.”",
+    question: "질문: 이 조건에서 선적기한을 고르시오.",
+    options: [
+      { key: "A", text: "2025년 5월 15일", correct: true },
+      { key: "B", text: "신용장 개설일로부터 30일", correct: false },
+      { key: "C", text: "선하증권 발행일로부터 21일", correct: false },
+    ],
+    why: "WHY — 신용장 조항에 “Latest date of shipment”가 날짜로 명시되어 있으면, 그 날짜가 곧 선적기한입니다. 개설일·선하증권일 기준 계산과 혼동하지 않아야 합니다.",
+  },
+  {
+    label: "L/C CLAUSE · PAYMENT TERMS (자체 제작 예시)",
+    quote: "“Payment: 100% by irrevocable L/C at sight, available by negotiation.”",
+    question: "질문: 이 조건에서 대금 결제 방식을 고르시오.",
+    options: [
+      { key: "A", text: "취소불능 신용장에 의한 일람불 결제", correct: true },
+      { key: "B", text: "선적 후 90일 외상 결제(D/A)", correct: false },
+      { key: "C", text: "전신환 송금(T/T) 선지급", correct: false },
+    ],
+    why: "WHY — “irrevocable L/C at sight”는 서류 제시 즉시 결제되는 취소불능 신용장 조건을 의미합니다. 외상(D/A)이나 단순 송금(T/T)과 혼동하지 않아야 합니다.",
+  },
+  {
+    label: "CLAIM LETTER · REQUESTED REMEDY (자체 제작 예시)",
+    quote:
+      "“Upon inspection, 120 units were found to be defective. We request a full replacement of the defective goods within 14 days.”",
+    question: "질문: 클레임 서한에서 요청하는 조치를 고르시오.",
+    options: [
+      { key: "A", text: "하자 물품 14일 이내 전량 교체", correct: true },
+      { key: "B", text: "대금 전액 환불", correct: false },
+      { key: "C", text: "다음 선적분 할인 제공", correct: false },
+    ],
+    why: "WHY — 서한의 핵심 요청은 마지막 문장 “we request a full replacement... within 14 days”에 있습니다. 클레임 서한은 문제 상황보다 상대방에게 요구하는 구체적 조치를 정확히 짚어내는 것이 핵심입니다.",
+  },
 ];
 
 export default function TradeEnglishBookPage() {
@@ -55,49 +86,53 @@ export default function TradeEnglishBookPage() {
         </Container>
       </section>
 
-      {/* Look Inside — L/C 조항 2줄 + 문항 1개, HTML 텍스트만 */}
+      {/* Look Inside — L/C·클레임 서한 문항 3개, HTML 텍스트만 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              L/C CLAUSE (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;Latest date of shipment: 15 MAY 2025.
-              <br />
-              Partial shipments are not allowed.&rdquo;
-            </p>
-
-            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              질문: 이 조건에서 선적기한을 고르시오.
-            </p>
-
-            <div className="mt-4 space-y-2.5">
-              {options.map((o) => (
-                <div
-                  key={o.key}
-                  className="flex items-start gap-3 border p-3 text-sm"
-                  style={{
-                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
-                    color: "var(--color-ink)",
-                  }}
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p
+                  className="mt-4 break-keep font-serif text-base italic leading-relaxed"
+                  style={{ color: "var(--color-ink)", whiteSpace: "pre-line" }}
                 >
-                  <span className="shrink-0 font-semibold">{o.key}.</span>
-                  <span className="flex-1 break-keep">{o.text}</span>
-                  {o.correct && (
-                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
-                      정답
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
+                  {ex.quote}
+                </p>
 
-            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              WHY — 신용장 조항에 &ldquo;Latest date of shipment&rdquo;가 날짜로 명시되어 있으면, 그 날짜가
-              곧 선적기한입니다. 개설일·선하증권일 기준 계산과 혼동하지 않아야 합니다.
-            </p>
+                <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  {ex.question}
+                </p>
+
+                <div className="mt-4 space-y-2.5">
+                  {ex.options.map((o) => (
+                    <div
+                      key={o.key}
+                      className="flex items-start gap-3 border p-3 text-sm"
+                      style={{
+                        borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                        color: "var(--color-ink)",
+                      }}
+                    >
+                      <span className="shrink-0 font-semibold">{o.key}.</span>
+                      <span className="flex-1 break-keep">{o.text}</span>
+                      {o.correct && (
+                        <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                          정답
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.why}
+                </p>
+              </div>
+            ))}
           </div>
 
           <p className="mt-6 max-w-2xl text-xs" style={{ color: "var(--color-muted)" }}>

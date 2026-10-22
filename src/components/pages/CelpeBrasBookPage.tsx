@@ -17,6 +17,27 @@ const recommendedFor = [
   "짧은 기간 동안 핵심 유형을 집중적으로 연습하려는 경우",
 ];
 
+const lookInsideExamples = [
+  {
+    label: "WRITING · TEXTUAL PRODUCTION (자체 제작 예시)",
+    prompt: "최근 읽은 기사를 바탕으로, 브라질 생활에 적응하며 느낀 점을 담은 편지를 작성해 보세요.",
+    detail:
+      "1) 편지의 목적을 첫 문장에서 명확히 제시 → 2) 겪은 경험이나 상황을 구체적으로 서술 → 3) 상대방에게 전달하고 싶은 요청이나 결론으로 마무리. 과제 지시문이 요구하는 글의 형식(편지·보고서 등)을 정확히 지키는 것이 고득점의 핵심입니다.",
+  },
+  {
+    label: "WRITING · OPINION REPORT (자체 제작 예시)",
+    prompt: "주어진 자료를 바탕으로, 원격근무 확산에 대한 본인의 의견을 담은 짧은 보고서를 작성해 보세요.",
+    detail:
+      "1) 자료의 핵심 내용을 한 문장으로 요약 → 2) 본인의 입장을 명확히 제시하고 근거를 덧붙임 → 3) 제언이나 결론으로 마무리. 자료를 그대로 옮기기보다 자신의 언어로 재구성하는 것이 핵심입니다.",
+  },
+  {
+    label: "SPEAKING · INTERVIEW QUESTION (자체 제작 예시)",
+    prompt: "브라질에서의 일상생활 중 한 가지 주제를 선택해, 평가자와 대화하듯 자유롭게 설명해 보세요.",
+    detail:
+      "1) 주제를 짧게 소개 → 2) 구체적인 경험이나 사례를 덧붙여 설명 → 3) 평가자의 추가 질문에 자연스럽게 이어 답변. 암기한 문장을 그대로 말하기보다 실제 대화처럼 자연스럽게 반응하는 것이 핵심입니다.",
+  },
+];
+
 export default function CelpeBrasBookPage() {
   return (
     <>
@@ -86,22 +107,23 @@ export default function CelpeBrasBookPage() {
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              WRITING · TEXTUAL PRODUCTION (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;최근 읽은 기사를 바탕으로, 브라질 생활에 적응하며 느낀 점을 담은 편지를 작성해
-              보세요.&rdquo;
-            </p>
-            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              고득점 답변 구조 예시
-            </p>
-            <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              1) 편지의 목적을 첫 문장에서 명확히 제시 → 2) 겪은 경험이나 상황을 구체적으로 서술 →
-              3) 상대방에게 전달하고 싶은 요청이나 결론으로 마무리. 과제 지시문이 요구하는 글의
-              형식(편지·보고서 등)을 정확히 지키는 것이 고득점의 핵심입니다.
-            </p>
-            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  &ldquo;{ex.prompt}&rdquo;
+                </p>
+                <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  고득점 답변 구조 예시
+                </p>
+                <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.detail}
+                </p>
+              </div>
+            ))}
+            <p className="mt-6 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 예시입니다.
             </p>
           </div>

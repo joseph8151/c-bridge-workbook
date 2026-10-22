@@ -14,6 +14,25 @@ const prices = [
   { label: "Pflege 300P", price: "₩332,000" },
 ];
 
+const lookInsideExamples = [
+  {
+    label: "HANDOVER (자체 제작 예시)",
+    quote: "„Der Blutdruck des Patienten liegt bei 130 zu 85, der Puls bei 78 pro Minute.“",
+    instruction: "지시: 위 인수인계 문장을 듣고 환자의 활력징후를 한국어로 요약하세요.",
+  },
+  {
+    label: "MEDICATION INSTRUCTION (자체 제작 예시)",
+    quote:
+      "„Der Patient muss zweimal täglich zwanzig Milligramm dieses Medikaments einnehmen, morgens und abends nach dem Essen.“",
+    instruction: "지시: 위 문장을 듣고 투약 시간과 용량을 한국어로 요약하세요.",
+  },
+  {
+    label: "PATIENT COMMUNICATION (자체 제작 예시)",
+    quote: "„Wir müssen jetzt Ihren Verband wechseln, das dauert nur ein paar Minuten und tut nicht weh.“",
+    instruction: "지시: 위 문장을 듣고 환자에게 전달해야 할 핵심 내용을 한국어로 요약하세요.",
+  },
+];
+
 export default function TelcPflegeBookPage() {
   return (
     <>
@@ -49,20 +68,24 @@ export default function TelcPflegeBookPage() {
         </Container>
       </section>
 
-      {/* Look Inside — 독일어 한 문장 + 한국어 지시 한 줄, HTML 텍스트만 */}
+      {/* Look Inside — 독일어 문장 + 한국어 지시, 3개 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              HANDOVER (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-lg italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &bdquo;Der Blutdruck des Patienten liegt bei 130 zu 85, der Puls bei 78 pro Minute.&ldquo;
-            </p>
-            <p className="mt-6 break-keep text-sm leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              지시: 위 인수인계 문장을 듣고 환자의 활력징후를 한국어로 요약하세요.
-            </p>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-lg italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  {ex.quote}
+                </p>
+                <p className="mt-6 break-keep text-sm leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  {ex.instruction}
+                </p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

@@ -17,6 +17,27 @@ const recommendedFor = [
   "짧은 기간 동안 핵심 유형을 집중적으로 연습하려는 경우",
 ];
 
+const lookInsideExamples = [
+  {
+    label: "SPEAKING · SITUATION DESCRIPTION (자체 제작 예시)",
+    prompt: "최근 참여했던 팀 프로젝트 중 하나를 선택해, 본인의 역할과 결과를 설명해 보세요.",
+    detail:
+      "1) 프로젝트 배경을 한 문장으로 소개 → 2) 본인이 맡은 역할과 구체적으로 한 일 제시 → 3) 결과나 배운 점으로 마무리. 추상적인 설명보다 구체적인 행동과 수치를 넣으면 답변이 또렷해집니다.",
+  },
+  {
+    label: "SPEAKING · OPINION QUESTION (자체 제작 예시)",
+    prompt: "회사 내 재택근무 확대에 대한 본인의 의견을 이유와 함께 말해 보세요.",
+    detail:
+      "1) 입장을 한 문장으로 먼저 밝히고 → 2) 업무 효율이나 협업 측면의 구체적 근거를 제시 → 3) 현실적인 조건이나 단서를 덧붙여 마무리. 찬반을 애매하게 흐리지 않는 것이 핵심입니다.",
+  },
+  {
+    label: "SPEAKING · SITUATIONAL RESPONSE (자체 제작 예시)",
+    prompt: "고객이 서비스 지연에 대해 불만을 제기한 상황을 가정하고, 어떻게 대응할지 설명해 보세요.",
+    detail:
+      "1) 상황을 인지했음을 짧게 전달 → 2) 원인이나 현재 조치를 구체적으로 설명 → 3) 앞으로의 대응 방안을 제시하며 마무리. 변명처럼 들리지 않도록 사실과 해결책 중심으로 답하는 것이 핵심입니다.",
+  },
+];
+
 export default function EsptBookPage() {
   return (
     <>
@@ -86,22 +107,23 @@ export default function EsptBookPage() {
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              SPEAKING · SITUATION DESCRIPTION (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;최근 참여했던 팀 프로젝트 중 하나를 선택해, 본인의 역할과 결과를 설명해
-              보세요.&rdquo;
-            </p>
-            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              고득점 답변 구조 예시
-            </p>
-            <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              1) 프로젝트 배경을 한 문장으로 소개 → 2) 본인이 맡은 역할과 구체적으로 한 일 제시 →
-              3) 결과나 배운 점으로 마무리. 추상적인 설명보다 구체적인 행동과 수치를 넣으면 답변이
-              또렷해집니다.
-            </p>
-            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  &ldquo;{ex.prompt}&rdquo;
+                </p>
+                <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  고득점 답변 구조 예시
+                </p>
+                <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.detail}
+                </p>
+              </div>
+            ))}
+            <p className="mt-6 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 예시입니다.
             </p>
           </div>

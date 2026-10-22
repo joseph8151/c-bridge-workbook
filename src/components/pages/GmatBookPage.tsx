@@ -64,6 +64,24 @@ const quantExplanationFields = [
   { label: "Common Calculation Error", desc: "자주 하는 계산 실수" },
 ];
 
+const verbalSampleOptions = [
+  { key: "A", text: "신제품 출시 지연은 품질 검증 절차가 길어졌기 때문이다.", correct: false },
+  {
+    key: "B",
+    text: "매출 감소의 원인이 신제품 출시 지연이 아니라 다른 요인(경쟁사 가격 인하 등)일 수 있다.",
+    correct: true,
+  },
+  { key: "C", text: "회사는 신제품 출시를 더 서둘렀어야 한다.", correct: false },
+  { key: "D", text: "품질 검증 절차는 생략할 수 없다.", correct: false },
+];
+
+const dataSufficiencyOptions = [
+  { key: "A", text: "진술 (1)만으로 충분하고, (2)만으로는 불충분하다.", correct: false },
+  { key: "B", text: "진술 (2)만으로 충분하고, (1)만으로는 불충분하다.", correct: false },
+  { key: "C", text: "(1)과 (2)를 모두 사용해야 충분하다.", correct: true },
+  { key: "D", text: "(1), (2)를 각각 따로 사용해도 충분하다.", correct: false },
+];
+
 const finalReviewItems = [
   "Quant 공식 체크리스트",
   "Verbal 핵심 유형 체크",
@@ -219,7 +237,7 @@ export default function GmatBookPage() {
         </Container>
       </section>
 
-      {/* Look Inside — Quant 샘플 (과학·수학 검수 구조 적용) */}
+      {/* Look Inside — 자체 제작 예시 3종 (Quant · Verbal · Data Insights) */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
@@ -241,6 +259,91 @@ export default function GmatBookPage() {
                 사용 공식 — {quantSample.formulaUsed}
               </p>
             )}
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              VERBAL REASONING · CRITICAL REASONING (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              &ldquo;한 회사의 신제품 매출이 전 분기 대비 감소했다. 이 회사는 신제품 출시가 예정보다 두 달
+              늦어진 것이 매출 감소의 원인이라고 결론지었다.&rdquo;
+            </p>
+
+            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              질문: 다음 중 위 논증을 가장 약화하는 것은?
+            </p>
+
+            <div className="mt-4 space-y-2.5">
+              {verbalSampleOptions.map((o) => (
+                <div
+                  key={o.key}
+                  className="flex items-start gap-3 border p-3 text-sm"
+                  style={{
+                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  <span className="shrink-0 font-semibold">{o.key}.</span>
+                  <span className="flex-1 break-keep">{o.text}</span>
+                  {o.correct && (
+                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                      정답
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 이 논증은 &ldquo;출시 지연 → 매출 감소&rdquo;라는 인과관계를 전제합니다. 매출 감소의
+              원인이 경쟁사 가격 인하 등 다른 요인일 수 있다면 이 인과관계 자체가 흔들리므로, B가 논증을
+              가장 약화합니다.
+            </p>
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              DATA INSIGHTS · DATA SUFFICIENCY (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              정수 x, y에 대해 x &gt; 5인가?
+              <br />
+              (1) x &gt; y
+              <br />
+              (2) y &gt; 5
+            </p>
+
+            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              질문: 위 두 조건만으로 질문에 답할 수 있는지 판단하시오.
+            </p>
+
+            <div className="mt-4 space-y-2.5">
+              {dataSufficiencyOptions.map((o) => (
+                <div
+                  key={o.key}
+                  className="flex items-start gap-3 border p-3 text-sm"
+                  style={{
+                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  <span className="shrink-0 font-semibold">{o.key}.</span>
+                  <span className="flex-1 break-keep">{o.text}</span>
+                  {o.correct && (
+                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                      정답
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — (1)만으로는 y의 값을 알 수 없어 x가 5보다 큰지 판단할 수 없습니다. (2)만으로는 x와 y의
+              대소관계를 알 수 없어 역시 판단할 수 없습니다. 그러나 (1)과 (2)를 함께 사용하면 x &gt; y &gt;
+              5이므로 x &gt; 5임을 확정할 수 있습니다.
+            </p>
             <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
             </p>

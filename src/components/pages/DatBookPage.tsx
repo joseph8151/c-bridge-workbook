@@ -159,6 +159,26 @@ export default function DatBookPage() {
               <Chip key={t}>{t}</Chip>
             ))}
           </div>
+
+          <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              BIOLOGY · CELL STRUCTURE (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              성숙한 사람의 적혈구(RBC)에는 핵이 없습니다. 이것이 산소 운반 기능에 유리한 이유로 가장
+              적절한 것은 무엇인가?
+            </p>
+            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              정답: 핵이 차지하던 공간에 헤모글로빈을 더 많이 채울 수 있기 때문이다
+            </p>
+            <p className="mt-3 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 적혈구는 성숙 과정에서 핵을 제거해 세포 내부 공간을 넓히고, 그 공간에 산소와
+              결합하는 헤모글로빈을 더 많이 채워 산소 운반 효율을 높입니다.
+            </p>
+            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
+            </p>
+          </div>
         </Container>
       </section>
 
@@ -220,6 +240,26 @@ export default function DatBookPage() {
             대수·기하·응용 계산 문제를 유형별로 연습합니다. 모든 수치와 공식은 C-BRIDGE 자체 제작 문제이며,
             별도 검수 구조를 거쳐 관리됩니다.
           </p>
+
+          <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              QUANTITATIVE REASONING · PERCENT CHANGE (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              어떤 치과의 하루 평균 환자 수가 지난달보다 20% 증가하여 이번 달 하루 48명이 되었다. 지난달
+              하루 평균 환자 수는?
+            </p>
+            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              정답: 40명
+            </p>
+            <p className="mt-3 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 이번 달 수치는 지난달의 120%에 해당하므로 48 ÷ 1.2 = 40입니다. 증가율 문제는 기준이
+              &lsquo;이번 달&rsquo;이 아니라 &lsquo;지난달(원래 값)&rsquo;이라는 점에 주의해야 합니다.
+            </p>
+            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
+            </p>
+          </div>
         </Container>
       </section>
 

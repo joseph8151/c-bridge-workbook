@@ -17,6 +17,28 @@ const recommendedFor = [
   "짧은 기간 동안 핵심 유형을 집중적으로 연습하려는 경우",
 ];
 
+const lookInsideExamples = [
+  {
+    label: "SPEAKING · OPINION QUESTION (자체 제작 예시)",
+    prompt: "회사가 재택근무 일수를 줄이기로 했습니다. 이 결정에 대한 본인의 의견을 말해 보세요.",
+    detail:
+      "1) 입장을 한 문장으로 명확히 제시 → 2) 업무 효율·협업 등 구체적 근거 1~2가지 제시 → 3) 현실적인 절충안이나 조건을 덧붙여 마무리. 짧은 준비 시간 안에서도 구조를 미리 정해두면 답변이 끊기지 않습니다.",
+  },
+  {
+    label: "SPEAKING · SELF INTRODUCTION (자체 제작 예시)",
+    prompt: "최근 담당했던 업무 중 하나를 선택해, 본인의 역할과 강점을 연결해 설명해 보세요.",
+    detail:
+      "1) 업무의 배경을 한 문장으로 소개 → 2) 본인이 맡은 역할과 구체적으로 한 일 제시 → 3) 그 과정에서 드러난 본인의 강점으로 마무리. 추상적인 장점 나열보다 실제 업무 사례와 연결하면 답변이 설득력 있게 들립니다.",
+  },
+  {
+    label: "SPEAKING · SITUATIONAL RESPONSE (자체 제작 예시)",
+    prompt:
+      "마감 기한이 촉박한 상황에서 동료와의 협업이 필요합니다. 이런 상황에 어떻게 대응할지 설명해 보세요.",
+    detail:
+      "1) 상황을 한 문장으로 정리 → 2) 우선순위를 어떻게 정할지 구체적으로 제시 → 3) 동료와 소통할 방식을 덧붙여 마무리. 혼자 해결하는 방식보다 협업 과정을 구체적으로 설명하는 것이 고득점 포인트입니다.",
+  },
+];
+
 export default function SpaBookPage() {
   return (
     <>
@@ -86,22 +108,23 @@ export default function SpaBookPage() {
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              SPEAKING · OPINION QUESTION (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;회사가 재택근무 일수를 줄이기로 했습니다. 이 결정에 대한 본인의 의견을 말해
-              보세요.&rdquo;
-            </p>
-            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              고득점 답변 구조 예시
-            </p>
-            <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              1) 입장을 한 문장으로 명확히 제시 → 2) 업무 효율·협업 등 구체적 근거 1~2가지 제시 → 3)
-              현실적인 절충안이나 조건을 덧붙여 마무리. 짧은 준비 시간 안에서도 구조를 미리 정해두면
-              답변이 끊기지 않습니다.
-            </p>
-            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  &ldquo;{ex.prompt}&rdquo;
+                </p>
+                <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  고득점 답변 구조 예시
+                </p>
+                <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.detail}
+                </p>
+              </div>
+            ))}
+            <p className="mt-6 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 예시입니다.
             </p>
           </div>

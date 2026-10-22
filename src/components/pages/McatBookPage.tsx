@@ -49,6 +49,25 @@ const scienceSample: ScienceReviewedQuestion = {
   validationStatus: "unverified",
 };
 
+const bioSample: ScienceReviewedQuestion = {
+  subject: "Biological and Biochemical Foundations (Cell Biology)",
+  topic: "Membrane Transport",
+  difficulty: "Easy",
+  prompt: "세포막을 통한 능동수송(active transport)의 가장 핵심적인 특징은 무엇인가?",
+  correctAnswer: "ATP 에너지를 사용해 농도 기울기(저농도→고농도)를 거슬러 물질을 이동시킨다.",
+  explanation:
+    "확산이나 삼투 같은 수동수송은 농도 기울기를 따라 에너지 소모 없이 일어나지만, 능동수송은 ATP를 소비해 농도 기울기를 거스르는 방향으로 물질을 이동시킨다는 점이 핵심 차이입니다.",
+  sourceCheckRequired: true,
+  validationStatus: "unverified",
+};
+
+const carsOptions = [
+  { key: "A", text: "새로운 기술의 도입은 항상 사회 전체에 이익을 가져다준다.", correct: false },
+  { key: "B", text: "기술 도입의 편익은 균등하지 않을 수 있으며 그 분배를 함께 살펴야 한다.", correct: true },
+  { key: "C", text: "기술 발전은 전통 산업 종사자에게 어떤 영향도 주지 않는다.", correct: false },
+  { key: "D", text: "저자는 기술 도입 자체를 반대하고 있다.", correct: false },
+];
+
 const explanationFields = [
   { label: "Concept Tested", desc: "출제 개념" },
   { label: "Correct Answer", desc: "정답" },
@@ -181,7 +200,7 @@ export default function McatBookPage() {
         </section>
       ))}
 
-      {/* Look Inside — 과학 샘플 (검수 구조 적용) */}
+      {/* Look Inside — 과학 샘플 2개(검수 구조 적용) + CARS 1개 */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
@@ -203,7 +222,62 @@ export default function McatBookPage() {
                 사용 공식 — {scienceSample.formulaUsed}
               </p>
             )}
-            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+
+            <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
+              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                {bioSample.subject.toUpperCase()} · {bioSample.topic} (자체 제작 예시)
+              </p>
+              <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                {bioSample.prompt}
+              </p>
+              <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                정답: {bioSample.correctAnswer}
+              </p>
+              <p className="mt-3 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                WHY — {bioSample.explanation}
+              </p>
+            </div>
+
+            <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
+              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                CARS (자체 제작 예시)
+              </p>
+              <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                지문 요지: 최근 한 논평은 새로운 자동화 기술의 도입이 생산성을 높이는 동시에, 그 혜택이
+                산업 전반에 고르게 분배되지 않을 수 있다는 점을 지적하며 전환 과정에서 소외되는 집단에 대한
+                지원책이 함께 논의되어야 한다고 주장한다.
+              </p>
+              <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                질문: 위 지문에서 저자의 입장과 가장 일치하는 것은?
+              </p>
+              <div className="mt-4 space-y-2.5">
+                {carsOptions.map((o) => (
+                  <div
+                    key={o.key}
+                    className="flex items-start gap-3 border p-3 text-sm"
+                    style={{
+                      borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                      color: "var(--color-ink)",
+                    }}
+                  >
+                    <span className="shrink-0 font-semibold">{o.key}.</span>
+                    <span className="flex-1 break-keep">{o.text}</span>
+                    {o.correct && (
+                      <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                        정답
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                WHY — 저자는 기술 도입 자체를 반대하지 않으며, 혜택이 고르게 분배되지 않을 수 있다는
+                우려와 지원책 논의의 필요성을 함께 제시하고 있으므로 B가 저자의 입장과 가장 일치합니다.
+                극단적으로 찬성·반대를 단정하는 선택지는 지문의 균형 잡힌 태도와 맞지 않습니다.
+              </p>
+            </div>
+
+            <p className="mt-6 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
             </p>
           </div>

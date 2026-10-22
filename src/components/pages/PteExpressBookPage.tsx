@@ -42,6 +42,30 @@ const recommendedFor = [
   "네 영역 전체를 충분한 문제량으로 연습하고 싶은 분",
 ];
 
+const lookInsideExamples = [
+  {
+    label: "SPEAKING · DESCRIBE IMAGE (자체 제작 예시)",
+    prompt:
+      "Look at the graph below. In 25 seconds, prepare to describe what the graph is showing. You will then have 40 seconds to speak about the graph.",
+    detail:
+      "1) 그래프의 종류와 주제를 한 문장으로 소개 → 2) 가장 두드러진 변화나 수치를 구체적으로 제시 → 3) 전체 경향을 한 문장으로 요약. 짧은 준비 시간 안에서도 구조를 미리 정해두면 침묵 없이 40초를 채울 수 있습니다.",
+  },
+  {
+    label: "WRITING · SHORT ESSAY (자체 제작 예시)",
+    prompt:
+      "Some people believe online learning is as effective as traditional classroom learning. Do you agree or disagree? Support your answer with reasons and examples.",
+    detail:
+      "1) 서론에서 자신의 입장을 분명히 밝히고 → 2) 본론에서 구체적 근거를 예시와 함께 전개 → 3) 결론에서 입장을 한 문장으로 재정리. 양쪽 의견을 애매하게 나열하지 않고 하나의 입장을 끝까지 유지하는 것이 핵심입니다.",
+  },
+  {
+    label: "READING · FILL IN THE BLANKS (자체 제작 예시)",
+    prompt:
+      "The company's new policy, _____ aimed at reducing costs, has instead increased employee turnover.",
+    detail:
+      "빈칸 앞뒤 문맥의 논리 관계(의도와 결과의 대조)를 먼저 파악한 뒤 빈칸에 들어갈 표현을 좁혀가는 훈련이 필요합니다. 단어 하나만 보고 고르기보다 문장 전체의 흐름을 먼저 읽는 것이 핵심입니다.",
+  },
+];
+
 export default function PteExpressBookPage() {
   const test = getTestBySlug("pte-express")!;
 
@@ -163,22 +187,23 @@ export default function PteExpressBookPage() {
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-              SPEAKING · DESCRIBE IMAGE (자체 제작 예시)
-            </p>
-            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;Look at the graph below. In 25 seconds, prepare to describe what the graph is
-              showing. You will then have 40 seconds to speak about the graph.&rdquo;
-            </p>
-            <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              고득점 답변 구조 예시
-            </p>
-            <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              1) 그래프의 종류와 주제를 한 문장으로 소개 → 2) 가장 두드러진 변화나 수치를 구체적으로 제시
-              → 3) 전체 경향을 한 문장으로 요약. 짧은 준비 시간 안에서도 구조를 미리 정해두면 침묵 없이
-              40초를 채울 수 있습니다.
-            </p>
-            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            {lookInsideExamples.map((ex, i) => (
+              <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
+                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                  {ex.label}
+                </p>
+                <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+                  &ldquo;{ex.prompt}&rdquo;
+                </p>
+                <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+                  고득점 답변 구조 예시
+                </p>
+                <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                  {ex.detail}
+                </p>
+              </div>
+            ))}
+            <p className="mt-6 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 예시입니다.
             </p>
           </div>

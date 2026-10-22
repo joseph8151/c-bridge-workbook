@@ -55,6 +55,28 @@ const lrOptions = [
   { key: "D", text: "인근 상권의 임대료가 하락할 것이다.", correct: false },
 ];
 
+const rcOptions = [
+  { key: "A", text: "재생사업은 고용을 전혀 창출하지 못한다.", correct: false },
+  {
+    key: "B",
+    text: "재생사업의 경제적 효과 평가가 임대료 상승에 따른 기존 주민 이탈을 간과할 수 있다는 것",
+    correct: true,
+  },
+  { key: "C", text: "재생사업은 반드시 중단되어야 한다는 것", correct: false },
+  { key: "D", text: "노후 산업단지는 재생사업 대상이 될 수 없다는 것", correct: false },
+];
+
+const assumptionOptions = [
+  {
+    key: "A",
+    text: "집중도가 높아진 원인이 스트레칭 자체이지, 그 그룹이 가진 다른 공통 특성(수면시간 등) 때문이 아니다.",
+    correct: true,
+  },
+  { key: "B", text: "모든 직장인이 스트레칭을 좋아한다.", correct: false },
+  { key: "C", text: "스트레칭은 10분보다 길게 할수록 효과가 크다.", correct: false },
+  { key: "D", text: "기업은 직원 건강에 책임이 있다.", correct: false },
+];
+
 const explanationFields = [
   { label: "Correct Answer", desc: "정답 선택지" },
   { label: "Why It Is Correct", desc: "정답인 이유" },
@@ -258,7 +280,7 @@ export default function LsatBookPage() {
         </Container>
       </section>
 
-      {/* Look Inside — 자체 제작 예시 */}
+      {/* Look Inside — 자체 제작 예시 3종 (Logical Reasoning × 2, Reading Comprehension × 1) */}
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
@@ -301,7 +323,93 @@ export default function LsatBookPage() {
               기준치 이하라는 사실은 이 전제를 뒷받침하므로 논증을 강화합니다. 나머지 선택지는 결론과 직접
               연결되지 않는 정보입니다.
             </p>
-            <p className="mt-4 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              READING COMPREHENSION · SOCIAL SCIENCE (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              최근 여러 도시에서는 노후 산업단지를 재생해 복합 문화공간으로 전환하는 사업을 추진하고 있다.
+              지지자들은 이러한 사업이 지역 경제를 활성화하고 고용을 창출한다고 주장한다. 그러나 일부
+              연구자들은 재생사업 이후 임대료 상승으로 기존 주민과 소상공인이 오히려 지역을 떠나는 현상이
+              나타난다고 지적한다. 이 연구자들은 재생사업의 경제적 효과를 평가할 때 고용 창출 수치만이
+              아니라 기존 거주자의 정주 여부도 함께 살펴봐야 한다고 제안한다.
+            </p>
+
+            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              질문: 위 글에서 일부 연구자들이 제기하는 핵심 우려는 무엇인가?
+            </p>
+
+            <div className="mt-4 space-y-2.5">
+              {rcOptions.map((o) => (
+                <div
+                  key={o.key}
+                  className="flex items-start gap-3 border p-3 text-sm"
+                  style={{
+                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  <span className="shrink-0 font-semibold">{o.key}.</span>
+                  <span className="flex-1 break-keep">{o.text}</span>
+                  {o.correct && (
+                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                      정답
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 지문은 재생사업이 &ldquo;전혀&rdquo; 효과가 없다거나 &ldquo;반드시&rdquo; 중단되어야 한다는
+              극단적 주장을 하지 않습니다. 연구자들의 핵심 지적은 효과 평가 시 고용 수치 외에 기존 거주자의
+              정주 여부도 함께 봐야 한다는 것이므로 정답은 B입니다. 지문에 없는 극단적 표현이 포함된
+              선택지는 대부분 오답입니다.
+            </p>
+          </div>
+
+          <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
+            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              LOGICAL REASONING · ASSUMPTION (자체 제작 예시)
+            </p>
+            <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
+              &ldquo;한 연구에 따르면 매일 아침 10분간 스트레칭을 한 직장인 그룹은 그렇지 않은 그룹보다 하루
+              업무 집중도가 더 높았다. 따라서 모든 기업은 출근 직후 스트레칭 시간을 의무화해야 한다.&rdquo;
+            </p>
+
+            <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
+              질문: 위 논증이 성립하기 위해 반드시 전제되어야 하는 것은?
+            </p>
+
+            <div className="mt-4 space-y-2.5">
+              {assumptionOptions.map((o) => (
+                <div
+                  key={o.key}
+                  className="flex items-start gap-3 border p-3 text-sm"
+                  style={{
+                    borderColor: o.correct ? "var(--color-bronze)" : "var(--color-border)",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  <span className="shrink-0 font-semibold">{o.key}.</span>
+                  <span className="flex-1 break-keep">{o.text}</span>
+                  {o.correct && (
+                    <span className="shrink-0 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                      정답
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              WHY — 이 논증은 &ldquo;스트레칭 → 집중도 상승&rdquo;이라는 인과관계를 전제로 결론(의무화)을
+              내립니다. 만약 두 그룹의 차이가 스트레칭이 아닌 다른 요인(수면시간 등) 때문이라면 논증은
+              무너지므로, A가 논증이 성립하기 위해 반드시 필요한 전제(가정)입니다.
+            </p>
+            <p className="mt-4 max-w-2xl break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               고지: 공식 기출 복원이 아닙니다. C-BRIDGE가 자체 제작한 오리지널 문제입니다.
             </p>
           </div>
