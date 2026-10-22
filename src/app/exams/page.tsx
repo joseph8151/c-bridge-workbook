@@ -46,6 +46,11 @@ const groups: ExamGroup[] = [
         desc: "브라질 이민·유학을 위한 포르투갈어 공인시험",
         keywords: ["CELPE-Bras", "셀피브라스", "브라질 포르투갈어 시험"],
       },
+      {
+        name: "OOPT (Oxford Online Placement Test)",
+        desc: "교환학생·어학연수 배치시험",
+        keywords: ["OOPT", "Oxford Online Placement Test", "옥스포드 배치고사"],
+      },
     ],
   },
   {

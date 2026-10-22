@@ -462,6 +462,17 @@ export const tests: Test[] = [
     badges: ["자료가 부족한 시험 추천"],
   },
   {
+    id: "oopt",
+    slug: "oopt",
+    name: "OOPT (Oxford Online Placement Test)",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["LISTENING", "VOCAB"],
+    tagline: "컴퓨터 적응형 영어 배치고사",
+    description:
+      "대학 교환학생·어학연수 배치시험으로 활용되는 OOPT(Oxford Online Placement Test) 대비 자료입니다. Use of English와 Listening 중심으로 레벨 배치에 필요한 문제와 모의고사를 제공합니다.",
+    keywords: ["OOPT", "Oxford Online Placement Test", "옥스포드 온라인 배치고사", "교환학생 배치시험"],
+  },
+  {
     id: "languagecert",
     slug: "languagecert",
     name: "LanguageCert",

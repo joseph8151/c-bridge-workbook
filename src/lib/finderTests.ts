@@ -24,6 +24,7 @@ export const finderGroups: FinderGroup[] = [
       { name: "TOEFL", href: "/books/toefl" },
       { name: "Duolingo English Test", href: "/books/duolingo" },
       { name: "CELPE-Bras", href: "/books/celpe-bras" },
+      { name: "OOPT (Oxford Online Placement Test)", href: "/books/oopt" },
     ],
   },
   {
