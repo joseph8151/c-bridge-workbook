@@ -1,0 +1,151 @@
+import { AddOn } from "../addOns";
+
+// GRE · GMAT · LSAT · UCAT
+export const graduate1AddOns: AddOn[] = [
+  // ---------------- GRE ----------------
+  {
+    id: "verbal-booster",
+    testSlug: "gre",
+    name: "GRE Verbal Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 100 Questions",
+    includesOverride: ["Reading Comprehension", "Text Completion", "Sentence Equivalence", "정답 및 상세 해설"],
+  },
+  {
+    id: "quant-booster",
+    testSlug: "gre",
+    name: "GRE Quant Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 100 Questions",
+    includesOverride: ["Arithmetic", "Algebra", "Geometry", "Data Analysis", "정답 및 상세 해설"],
+  },
+  {
+    id: "mock-test-pack",
+    testSlug: "gre",
+    name: "GRE Mock Test Pack",
+    kind: "mock-test",
+    price: 59000,
+    badge: "100P · 5 Full Practice Tests",
+  },
+  {
+    id: "final-review",
+    testSlug: "gre",
+    name: "GRE Final Review",
+    kind: "final-review",
+    price: 39000,
+    badge: "35P · 40 Final Check Questions",
+  },
+
+  // ---------------- GMAT ----------------
+  {
+    id: "quant-booster",
+    testSlug: "gmat",
+    name: "GMAT Quant Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 100 Questions",
+  },
+  {
+    id: "verbal-booster",
+    testSlug: "gmat",
+    name: "GMAT Verbal Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 100 Questions",
+  },
+  {
+    id: "data-insights-booster",
+    testSlug: "gmat",
+    name: "GMAT Data Insights Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 100 Questions",
+  },
+  {
+    id: "mock-test-pack",
+    testSlug: "gmat",
+    name: "GMAT Mock Test Pack",
+    kind: "mock-test",
+    price: 59000,
+    badge: "100P · 5 Full Practice Tests",
+  },
+
+  // ---------------- LSAT ----------------
+  {
+    id: "lr-booster",
+    testSlug: "lsat",
+    name: "LSAT Logical Reasoning Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "90P · 120 Questions",
+    note: "Logical Reasoning은 수요가 높은 핵심 영역이므로 문제량을 조금 더 많이 제공합니다.",
+  },
+  {
+    id: "rc-booster",
+    testSlug: "lsat",
+    name: "LSAT Reading Comprehension Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 50 Passages + Questions",
+  },
+  {
+    id: "mock-test-pack",
+    testSlug: "lsat",
+    name: "LSAT Mock Test Pack",
+    kind: "mock-test",
+    price: 59000,
+    badge: "100P · 5 Full Practice Tests",
+  },
+  {
+    id: "final-review",
+    testSlug: "lsat",
+    name: "LSAT Final Review",
+    kind: "final-review",
+    price: 39000,
+    badge: "35P · 40 Final Check Questions",
+  },
+
+  // ---------------- UCAT ----------------
+  {
+    id: "verbal-booster",
+    testSlug: "ucat",
+    name: "UCAT Verbal Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 120 Questions",
+  },
+  {
+    id: "decision-making-booster",
+    testSlug: "ucat",
+    name: "UCAT Decision Making Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 100 Questions",
+  },
+  {
+    id: "quant-booster",
+    testSlug: "ucat",
+    name: "UCAT Quantitative Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 120 Questions",
+  },
+  {
+    id: "sjt-booster",
+    testSlug: "ucat",
+    name: "UCAT Situational Judgement Booster",
+    kind: "questions-booster",
+    price: 59000,
+    badge: "80P · 100 Questions",
+  },
+  {
+    id: "mock-test-pack",
+    testSlug: "ucat",
+    name: "UCAT Mock Test Pack",
+    kind: "mock-test",
+    price: 59000,
+    badge: "100P · 5 Full Practice Tests",
+  },
+];

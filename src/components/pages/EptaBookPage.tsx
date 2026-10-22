@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import AddOnSection from "@/components/AddOnSection";
 
 const includes = [
   "문제집 100P",
@@ -239,6 +240,8 @@ export default function EptaBookPage() {
           </div>
         </Container>
       </section>
+
+      <AddOnSection testSlug="epta" />
     </>
   );
 }

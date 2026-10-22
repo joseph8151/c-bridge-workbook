@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import TierSelector from "@/components/TierSelector";
+import AddOnSection from "@/components/AddOnSection";
 import { getTestBySlug } from "@/lib/tests";
 import { tierMeta, tierOrder } from "@/lib/products";
 
@@ -257,6 +258,8 @@ export default function PteExpressBookPage() {
           </p>
         </Container>
       </section>
+
+      <AddOnSection testSlug="pte-express" />
     </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import TierSelector from "@/components/TierSelector";
+import AddOnSection from "@/components/AddOnSection";
 import TestCard from "@/components/TestCard";
 import BookPreview from "@/components/BookPreview";
 import WhyCBridge from "@/components/WhyCBridge";
@@ -270,6 +271,8 @@ export default async function TestDetailPage({
           </div>
         </Container>
       </section>
+
+      <AddOnSection testSlug={test.slug} />
 
       <section className="border-t py-14 md:py-16" style={{ borderColor: "var(--color-border)" }}>
         <Container>

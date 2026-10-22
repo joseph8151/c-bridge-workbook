@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import AddOnSection from "@/components/AddOnSection";
 
 const bodyLines = [
   "LSAT은 암기량이 아니라 논증 구조를 읽어내는 능력을 보는 시험입니다.",
@@ -590,6 +591,8 @@ export default function LsatBookPage() {
           </p>
         </Container>
       </section>
+
+      <AddOnSection testSlug="lsat" />
     </>
   );
 }

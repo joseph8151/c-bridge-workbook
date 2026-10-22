@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import AddOnSection from "@/components/AddOnSection";
 
 const bodyLines = [
   "UCAT은 지식이 아니라 빠른 판단력과 상황 대응 능력을 보는 시험입니다.",
@@ -490,6 +491,8 @@ export default function UcatBookPage() {
           </p>
         </Container>
       </section>
+
+      <AddOnSection testSlug="ucat" />
     </>
   );
 }

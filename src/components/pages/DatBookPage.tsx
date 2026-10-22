@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import AddOnSection from "@/components/AddOnSection";
 
 const bodyLines = [
   "DAT은 과학 지식과 함께 공간지각 능력(PAT)을 별도로 측정하는 시험입니다.",
@@ -428,6 +429,8 @@ export default function DatBookPage() {
           </p>
         </Container>
       </section>
+
+      <AddOnSection testSlug="dat" />
     </>
   );
 }

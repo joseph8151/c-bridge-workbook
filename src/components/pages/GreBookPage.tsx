@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import AddOnSection from "@/components/AddOnSection";
 import type { ScienceReviewedQuestion } from "@/lib/scienceReviewSchema";
 
 const bodyLines = [
@@ -498,6 +499,8 @@ export default function GreBookPage() {
           </p>
         </Container>
       </section>
+
+      <AddOnSection testSlug="gre" />
     </>
   );
 }
