@@ -12,7 +12,7 @@ import FAQ from "@/components/FAQ";
 import { tests, getTestBySlug, groupMeta } from "@/lib/tests";
 import { getWhoFor, getSamplePreview } from "@/lib/productDetail";
 import { getGuidesForTest } from "@/lib/guides";
-import { priceSummaryLine } from "@/lib/products";
+import { priceSummaryLine, tierMeta, tierOrder } from "@/lib/products";
 import { getTestIntro, getTestTips } from "@/lib/testContent";
 import { getWhoTakesTestInfo } from "@/lib/whoTakesTest";
 import { siteFaqItems } from "@/lib/faqData";
@@ -127,6 +127,8 @@ export default async function TestDetailPage({
   if (test.slug === "pte-express") return <PteExpressBookPage />;
 
   const group = groupMeta[test.group];
+  const availableTiers = test.availableTiers ?? tierOrder;
+  const singleTierMeta = availableTiers.length === 1 ? tierMeta[availableTiers[0]] : null;
   const whoFor = getWhoFor(test);
   const sample = getSamplePreview(test);
   const guides = getGuidesForTest(test.name);
@@ -171,7 +173,9 @@ export default async function TestDetailPage({
               {test.tagline}
             </p>
             <p className="mt-2 max-w-2xl text-sm" style={{ color: "var(--color-muted)" }}>
-              목표 Level에 따라 충분히 연습할 수 있도록 2가지 분량을 선택할 수 있습니다. {priceSummaryLine}
+              {singleTierMeta
+                ? `목표 Level에 따라 충분히 연습할 수 있는 ${singleTierMeta.label} 단일 구성입니다. ${singleTierMeta.price.toLocaleString()}원.`
+                : `목표 Level에 따라 충분히 연습할 수 있도록 2가지 분량을 선택할 수 있습니다. ${priceSummaryLine}`}
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold tracking-[0.04em]" style={{ color: "var(--color-ink)" }}>
               {["Workbook", "Answer Guide", "Mock Test", "Final Review", "Study Plan"].map((step, i, arr) => (
@@ -281,7 +285,7 @@ export default async function TestDetailPage({
             {[
               { no: "01", title: "시험 선택", desc: `예: ${test.name}` },
               { no: "02", title: "목표 선택", desc: "예: 목표 점수/레벨" },
-              { no: "03", title: "분량 선택", desc: "200P / 300P" },
+              { no: "03", title: "분량 선택", desc: singleTierMeta ? singleTierMeta.label : "200P / 300P" },
               { no: "04", title: "집중 영역 선택", desc: "예: Reading + Writing" },
               { no: "05", title: "맞춤 구성 확인", desc: "선택에 맞는 문제 비중으로 안내" },
             ].map((s) => (
@@ -412,7 +416,7 @@ export default async function TestDetailPage({
       <section className="border-t py-14 md:py-16" style={{ borderColor: "var(--color-border)" }}>
         <Container className="flex flex-col items-center gap-5 text-center">
           <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-ink)" }}>
-            {priceSummaryLine}
+            {singleTierMeta ? `${singleTierMeta.label} ${singleTierMeta.price.toLocaleString()}원.` : priceSummaryLine}
           </p>
           <Link href={`/consultation?test=${encodeURIComponent(test.name)}`} className="btn-primary px-7 text-sm font-medium">
             상담

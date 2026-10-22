@@ -1,3 +1,5 @@
+import type { Tier } from "./products";
+
 export type TestGroup =
   | "EMPLOYMENT"
   | "JAPANESE"
@@ -8,7 +10,9 @@ export type TestGroup =
   | "OVERSEAS_EMPLOYMENT"
   | "IMMIGRATION_VISA"
   | "PROFESSIONAL_GRAD"
-  | "DATA_CERTIFICATION";
+  | "DATA_CERTIFICATION"
+  | "CLOUD_IT_CERTIFICATION"
+  | "PROJECT_MANAGEMENT";
 
 export type BonusType = "SPEAKING" | "LISTENING" | "WRITING" | "VOCAB" | "PROFESSIONAL";
 
@@ -38,6 +42,14 @@ export interface Test {
   // 공용 200P/300P 가격표와 다른 고정가 단일 상품(전문대학원 시험 등)의 카드 표시용 가격.
   // 지정하지 않으면 기존처럼 priceSummaryCompact(공용 가격 범위)를 보여줍니다.
   priceOverride?: string;
+  // 기본은 200P/300P 둘 다 판매(tierOrder). AZ-900/AI-900처럼 200P 단일 분량만 판매할 때만 지정합니다.
+  availableTiers?: Tier[];
+  // 주관 기관(AWS, Microsoft, CompTIA, PMI 등). 비공식 자료임을 분명히 하기 위한 표기용이며
+  // 공식 제휴를 의미하지 않습니다.
+  provider?: string;
+  // 확인되지 않은 시험 코드·개정 연도는 추측해 채우지 않고 비워둡니다.
+  examCode?: string;
+  lastReviewed?: string;
 }
 
 export const GENERIC_LEVELS = ["처음 응시", "기초", "중급", "고급"];
@@ -152,6 +164,28 @@ export const groupMeta: Record<TestGroup, GroupMeta> = {
     description:
       "SQLD, ADsP, 빅데이터분석기사, 정보처리기사 등 데이터·IT 실무 자격시험을 문제집, 모의고사, 학습 플랜으로 준비하는 자료입니다.",
     color: "var(--color-data-certification)",
+  },
+  CLOUD_IT_CERTIFICATION: {
+    id: "CLOUD_IT_CERTIFICATION",
+    navLabel: "클라우드·IT",
+    name: "클라우드 · IT 자격시험",
+    slug: "cloud-it-certification",
+    eyebrow: "CLOUD & IT CERTIFICATION",
+    headline: "클라우드·IT 자격도 실전 문제풀이로.",
+    description:
+      "AWS, Microsoft Azure, CompTIA 등 클라우드·IT 실무 자격시험을 문제집, 모의고사, 학습 플랜으로 준비하는 자료입니다.",
+    color: "var(--color-cloud-it-certification)",
+  },
+  PROJECT_MANAGEMENT: {
+    id: "PROJECT_MANAGEMENT",
+    navLabel: "프로젝트·관리",
+    name: "프로젝트 · 관리 자격시험",
+    slug: "project-management",
+    eyebrow: "PROJECT MANAGEMENT",
+    headline: "프로젝트 관리 자격도 체계적으로.",
+    description:
+      "PMP, CAPM, PRINCE2 등 프로젝트 관리 자격시험을 문제집, 모의고사, 학습 플랜으로 준비하는 자료입니다.",
+    color: "var(--color-project-management)",
   },
 };
 
@@ -1056,6 +1090,83 @@ export const tests: Test[] = [
     description:
       "소프트웨어 설계, 개발, 데이터베이스, 프로그래밍 언어, 정보시스템 구축을 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["정보처리기사", "정보처리기사 필기", "IT 자격증"],
+  },
+  // ---------------- CLOUD_IT_CERTIFICATION ----------------
+  {
+    id: "aws-cloud-practitioner",
+    slug: "aws-cloud-practitioner",
+    name: "AWS Cloud Practitioner",
+    group: "CLOUD_IT_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "AWS 클라우드 기초 자격시험",
+    description:
+      "AWS 클라우드 개념, 보안, 요금제, 핵심 서비스를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["AWS Cloud Practitioner", "AWS 자격증", "클라우드 자격증"],
+    provider: "AWS",
+  },
+  {
+    id: "aws-solutions-architect-associate",
+    slug: "aws-solutions-architect-associate",
+    name: "AWS Solutions Architect Associate",
+    group: "CLOUD_IT_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "AWS 아키텍처 설계 자격시험",
+    description:
+      "AWS 아키텍처 설계, 복원력, 성능, 비용 최적화를 시나리오 기반 문제로 준비하는 Self-Study 구성입니다.",
+    keywords: ["AWS Solutions Architect", "AWS SAA", "AWS 자격증"],
+    provider: "AWS",
+  },
+  {
+    id: "az-900",
+    slug: "az-900",
+    name: "AZ-900 (Microsoft Azure Fundamentals)",
+    group: "CLOUD_IT_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "Microsoft Azure 기초 자격시험",
+    description:
+      "Azure 핵심 개념, 서비스, 거버넌스, 요금제를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["AZ-900", "Azure Fundamentals", "Azure 자격증"],
+    provider: "Microsoft",
+    availableTiers: ["COMPLETE"],
+  },
+  {
+    id: "ai-900",
+    slug: "ai-900",
+    name: "AI-900 (Microsoft Azure AI Fundamentals)",
+    group: "CLOUD_IT_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "Microsoft Azure AI 기초 자격시험",
+    description:
+      "AI·ML 기본 개념과 Azure AI 서비스를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["AI-900", "Azure AI Fundamentals", "AI 자격증"],
+    provider: "Microsoft",
+    availableTiers: ["COMPLETE"],
+  },
+  {
+    id: "comptia-security-plus",
+    slug: "comptia-security-plus",
+    name: "CompTIA Security+",
+    group: "CLOUD_IT_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "보안 실무 국제 자격시험",
+    description:
+      "네트워크 보안, 위협 대응, 암호화, 거버넌스 영역을 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["CompTIA Security+", "Security+", "보안 자격증"],
+    provider: "CompTIA",
+  },
+
+  // ---------------- PROJECT_MANAGEMENT ----------------
+  {
+    id: "pmp",
+    slug: "pmp",
+    name: "PMP (Project Management Professional)",
+    group: "PROJECT_MANAGEMENT",
+    bonusTypes: ["VOCAB"],
+    tagline: "프로젝트 관리 전문가 국제 자격시험",
+    description:
+      "프로젝트 관리 프로세스, 리더십, 비즈니스 환경 영역을 시나리오 문제 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["PMP", "PMP 자격증", "프로젝트 관리 자격증", "PMI"],
+    provider: "PMI",
   },
 ];
 

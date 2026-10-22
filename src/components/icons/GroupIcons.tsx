@@ -95,6 +95,24 @@ function BarChart(props: { className?: string; style?: CSSProperties }) {
   );
 }
 
+function Cloud(props: { className?: string; style?: CSSProperties }) {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" {...common} className={props.className} style={props.style}>
+      <path d="M7 18h10.5a3.5 3.5 0 0 0 0-7 5.5 5.5 0 0 0-10.6-1.7A4.5 4.5 0 0 0 7 18Z" />
+    </svg>
+  );
+}
+
+function Clipboard(props: { className?: string; style?: CSSProperties }) {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" {...common} className={props.className} style={props.style}>
+      <rect x="5" y="4.5" width="14" height="16" rx="2" />
+      <path d="M9 4.5V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+      <path d="M9 11.5l2 2 4-4.5" />
+    </svg>
+  );
+}
+
 const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProperties }) => ReactElement> = {
   EMPLOYMENT: Briefcase,
   JAPANESE: SpeechBubble,
@@ -106,6 +124,8 @@ const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProper
   IMMIGRATION_VISA: Certificate,
   PROFESSIONAL_GRAD: AcademicCap,
   DATA_CERTIFICATION: BarChart,
+  CLOUD_IT_CERTIFICATION: Cloud,
+  PROJECT_MANAGEMENT: Clipboard,
 };
 
 export default function GroupIcon({

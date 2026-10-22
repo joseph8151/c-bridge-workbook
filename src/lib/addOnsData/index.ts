@@ -5,6 +5,7 @@ import { corporateAddOns } from "./corporate";
 import { graduate1AddOns } from "./graduate1";
 import { graduate2AddOns } from "./graduate2";
 import { dataCertAddOns } from "./dataCert";
+import { cloudItPmAddOns } from "./cloudItPm";
 
 // 각 시험군 fork가 작성한 데이터 파일을 여기서만 합칩니다. 개별 데이터 파일은
 // 서로 다른 testSlug만 다루므로 병합 시 충돌이 없습니다.
@@ -15,6 +16,7 @@ export const allAddOns: AddOn[] = [
   ...graduate1AddOns,
   ...graduate2AddOns,
   ...dataCertAddOns,
+  ...cloudItPmAddOns,
 ];
 
 export function getAddOnsForTest(testSlug: string): AddOn[] {

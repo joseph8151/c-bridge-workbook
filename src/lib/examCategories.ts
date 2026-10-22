@@ -10,7 +10,9 @@ export type ExamCategoryId =
   | "healthcare-medical"
   | "graduate-professional"
   | "employment-aptitude"
-  | "data-certification";
+  | "data-certification"
+  | "cloud-it-certification"
+  | "project-management";
 
 export interface ExamCategoryMeta {
   id: ExamCategoryId;
@@ -43,6 +45,8 @@ export const examCategoryOrder: ExamCategoryId[] = [
   "graduate-professional",
   "employment-aptitude",
   "data-certification",
+  "cloud-it-certification",
+  "project-management",
 ];
 
 export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
@@ -81,6 +85,18 @@ export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
     navLabel: "데이터·자격",
     navLabelEn: "Data & Certification",
     description: "데이터 분석, 데이터베이스, IT 실무 및 자격 취득을 위한 시험",
+  },
+  "cloud-it-certification": {
+    id: "cloud-it-certification",
+    navLabel: "클라우드·IT 자격",
+    navLabelEn: "Cloud & IT Certification",
+    description: "AWS, Microsoft Azure, CompTIA 등 클라우드·IT 실무 자격시험",
+  },
+  "project-management": {
+    id: "project-management",
+    navLabel: "프로젝트·관리 자격",
+    navLabelEn: "Project Management",
+    description: "PMP, CAPM, PRINCE2 등 프로젝트 관리 자격시험",
   },
 };
 
@@ -304,6 +320,59 @@ export const examGroups: ExamGroupMeta[] = [
     description: "소프트웨어 설계·개발, 데이터베이스, 정보시스템 구축 등 IT 실무 자격시험",
     testSlugs: ["information-processing-engineer"],
   },
+
+  // ---------------- CLOUD & IT CERTIFICATION ----------------
+  {
+    id: "aws",
+    categoryId: "cloud-it-certification",
+    label: "AWS",
+    description: "AWS 클라우드 기초부터 아키텍처 설계까지 다루는 자격시험",
+    testSlugs: ["aws-cloud-practitioner", "aws-solutions-architect-associate"],
+  },
+  {
+    id: "microsoft-azure",
+    categoryId: "cloud-it-certification",
+    label: "Microsoft Azure",
+    description: "Azure 클라우드와 AI 서비스 기초를 다루는 자격시험",
+    testSlugs: ["az-900", "ai-900"],
+  },
+  {
+    id: "comptia",
+    categoryId: "cloud-it-certification",
+    label: "CompTIA",
+    description: "네트워크·보안·하드웨어 실무를 다루는 국제 IT 자격시험",
+    testSlugs: ["comptia-security-plus"],
+  },
+  {
+    id: "devops-kubernetes",
+    categoryId: "cloud-it-certification",
+    label: "DevOps · Kubernetes",
+    description: "컨테이너 오케스트레이션과 인프라 자동화 자격시험",
+    testSlugs: [],
+  },
+  {
+    id: "cloud-data",
+    categoryId: "cloud-it-certification",
+    label: "Cloud Data",
+    description: "클라우드 데이터 플랫폼 실무 자격시험",
+    testSlugs: [],
+  },
+
+  // ---------------- PROJECT MANAGEMENT ----------------
+  {
+    id: "pmi",
+    categoryId: "project-management",
+    label: "PMI",
+    description: "PMI(Project Management Institute) 공인 프로젝트 관리 자격시험",
+    testSlugs: ["pmp"],
+  },
+  {
+    id: "prince2",
+    categoryId: "project-management",
+    label: "PRINCE2",
+    description: "PRINCE2 방법론 기반 프로젝트 관리 자격시험",
+    testSlugs: [],
+  },
 ];
 
 // 아직 상품 데이터·가격이 확정되지 않아 실제 판매 카드로는 노출하지 않는 확장 후보입니다.
@@ -313,6 +382,15 @@ export const comingSoonTests: ComingSoonTest[] = [
   { id: "adp", name: "ADP", groupId: "data-analysis", note: "데이터분석 전문가 자격시험 · 준비 중" },
   { id: "sqlp", name: "SQLP", groupId: "database", note: "SQL 전문가 자격시험 · 준비 중" },
   { id: "japan-spi", name: "일본 SPI", groupId: "japan-employment", note: "일본 취업 적성검사 · 준비 중" },
+  { id: "ai-102", name: "AI-102", groupId: "microsoft-azure", note: "Azure AI Engineer 자격시험 · 준비 중" },
+  { id: "comptia-a-plus", name: "CompTIA A+", groupId: "comptia", note: "IT 하드웨어·OS 실무 자격시험 · 준비 중" },
+  { id: "comptia-network-plus", name: "CompTIA Network+", groupId: "comptia", note: "네트워크 실무 자격시험 · 준비 중" },
+  { id: "cka", name: "CKA", groupId: "devops-kubernetes", note: "Kubernetes 운영 자격시험 · 준비 중" },
+  { id: "terraform-associate", name: "Terraform Associate", groupId: "devops-kubernetes", note: "인프라 자동화 자격시험 · 준비 중" },
+  { id: "snowpro-core", name: "SnowPro Core", groupId: "cloud-data", note: "클라우드 데이터 플랫폼 자격시험 · 준비 중" },
+  { id: "capm", name: "CAPM", groupId: "pmi", note: "PMI 입문 프로젝트 관리 자격시험 · 준비 중" },
+  { id: "prince2-foundation", name: "PRINCE2 Foundation", groupId: "prince2", note: "PRINCE2 기초 자격시험 · 준비 중" },
+  { id: "prince2-practitioner", name: "PRINCE2 Practitioner", groupId: "prince2", note: "PRINCE2 실무 자격시험 · 준비 중" },
 ];
 
 export function getGroupsForCategory(categoryId: ExamCategoryId): ExamGroupMeta[] {

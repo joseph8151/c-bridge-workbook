@@ -10,7 +10,8 @@ import { focusAreas } from "@/lib/focusAreas";
 
 export default function TierSelector({ test }: { test: Test }) {
   const levelOptions = getLevelOptions(test);
-  const [tier, setTier] = useState<Tier>("COMPLETE");
+  const availableTiers = test.availableTiers ?? tierOrder;
+  const [tier, setTier] = useState<Tier>(availableTiers[0]);
   const [target, setTarget] = useState<string>(levelOptions[Math.floor(levelOptions.length / 2)]);
   const [focus, setFocus] = useState<Set<string>>(new Set());
 
@@ -72,42 +73,46 @@ export default function TierSelector({ test }: { test: Test }) {
           ))}
         </div>
 
-        <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">02 · 분량 선택</p>
-        <div className="mt-3 grid grid-cols-2 gap-3">
-          {tierOrder.map((t) => {
-            const m = tierMeta[t];
-            const active = t === tier;
-            return (
-              <button
-                key={t}
-                onClick={() => setTier(t)}
-                className="relative border px-4 py-5 text-center transition-colors"
-                style={
-                  active
-                    ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
-                    : { borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }
-                }
-              >
-                {m.badge && (
-                  <span
-                    className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 text-[9px] font-bold tracking-[0.06em]"
+        {availableTiers.length > 1 && (
+          <>
+            <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">02 · 분량 선택</p>
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              {availableTiers.map((t) => {
+                const m = tierMeta[t];
+                const active = t === tier;
+                return (
+                  <button
+                    key={t}
+                    onClick={() => setTier(t)}
+                    className="relative border px-4 py-5 text-center transition-colors"
                     style={
                       active
-                        ? { background: "var(--color-paper)", color: "var(--color-rust)" }
-                        : { background: "var(--color-pistachio-tint)", color: "var(--color-rust)" }
+                        ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
+                        : { borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }
                     }
                   >
-                    {m.badge}
-                  </span>
-                )}
-                <p className="font-serif text-xl font-bold">{m.label}</p>
-                <p className="mt-1 text-xs font-bold" style={active ? { color: "var(--color-paper)" } : { color: "rgba(30,36,28,0.5)" }}>
-                  {getTierPrice(t).toLocaleString()}원
-                </p>
-              </button>
-            );
-          })}
-        </div>
+                    {m.badge && (
+                      <span
+                        className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 text-[9px] font-bold tracking-[0.06em]"
+                        style={
+                          active
+                            ? { background: "var(--color-paper)", color: "var(--color-rust)" }
+                            : { background: "var(--color-pistachio-tint)", color: "var(--color-rust)" }
+                        }
+                      >
+                        {m.badge}
+                      </span>
+                    )}
+                    <p className="font-serif text-xl font-bold">{m.label}</p>
+                    <p className="mt-1 text-xs font-bold" style={active ? { color: "var(--color-paper)" } : { color: "rgba(30,36,28,0.5)" }}>
+                      {getTierPrice(t).toLocaleString()}원
+                    </p>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        )}
 
         <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">
           03 · 집중 영역 선택 (선택사항)

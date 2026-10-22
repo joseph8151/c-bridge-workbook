@@ -70,6 +70,8 @@
   --color-immigration-visa: var(--color-bronze);
   --color-professional-grad: var(--color-bronze);
   --color-data-certification: var(--color-bronze);
+  --color-cloud-it-certification: var(--color-bronze);
+  --color-project-management: var(--color-bronze);
 
   --color-inkstrong: var(--color-ink);
   --color-rust: var(--color-bronze);
@@ -98,6 +100,8 @@
   --color-immigration-visa: var(--color-immigration-visa);
   --color-professional-grad: var(--color-professional-grad);
   --color-data-certification: var(--color-data-certification);
+  --color-cloud-it-certification: var(--color-cloud-it-certification);
+  --color-project-management: var(--color-project-management);
 
   --color-paper: var(--color-paper);
   --color-paper-dark: var(--color-paper-dark);
