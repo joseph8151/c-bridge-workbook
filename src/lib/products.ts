@@ -5,7 +5,7 @@ export interface TierMeta {
   label: string; // "200P"
   pages: number;
   price: number;
-  mockTestsLabel: string; // "10회" / "15회 이상"
+  mockTestsLabel: string; // "5회" / "8회"
   name: string; // "COMPLETE"
   shortDesc: string;
   recommendedFor: string[];
@@ -21,7 +21,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     label: "200P",
     pages: 200,
     price: 220000,
-    mockTestsLabel: "10회",
+    mockTestsLabel: "5회",
     name: "COMPLETE",
     shortDesc: "핵심 영역 또는 취약 영역을 충분히 연습하고, 시험의 기본 흐름을 안정적으로 준비하는 표준 구성.",
     recommendedFor: [
@@ -34,7 +34,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     includes: [
       "문제집 200P",
       "상세 해설집",
-      "실전 모의고사 10회",
+      "실전 모의고사 5회",
       "시험 직전 최종 요약집",
       "추가 문제 100제",
       "4주·8주 학습 플랜",
@@ -53,7 +53,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     label: "300P",
     pages: 300,
     price: 332000,
-    mockTestsLabel: "15회 이상",
+    mockTestsLabel: "8회",
     name: "INTENSIVE",
     shortDesc: "전 영역을 폭넓게 다루고, 충분한 문제량과 반복 훈련으로 고득점·상위 레벨을 준비하는 집중 구성.",
     recommendedFor: [
@@ -69,7 +69,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
       "문제집 300P",
       "상세 해설집",
       "대량 실전 문제",
-      "실전 모의고사 15회 이상",
+      "실전 모의고사 8회",
       "추가 문제 200제",
       "시험 직전 Final Book",
       "4주·8주·12주 학습 계획",
