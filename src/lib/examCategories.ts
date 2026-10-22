@@ -80,7 +80,7 @@ export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
     id: "data-certification",
     navLabel: "데이터·자격",
     navLabelEn: "Data & Certification",
-    description: "데이터 분석, 데이터베이스 및 실무 자격 취득을 위한 시험",
+    description: "데이터 분석, 데이터베이스, IT 실무 및 자격 취득을 위한 시험",
   },
 };
 
@@ -284,11 +284,25 @@ export const examGroups: ExamGroupMeta[] = [
 
   // ---------------- DATA & CERTIFICATION ----------------
   {
-    id: "data-db",
+    id: "data-analysis",
     categoryId: "data-certification",
-    label: "데이터·DB 자격",
-    description: "데이터 분석 및 데이터베이스 실무 자격시험",
-    testSlugs: [],
+    label: "데이터 분석 자격",
+    description: "데이터 이해, 분석 기획, 통계 및 데이터 분석 역량을 평가하는 자격시험",
+    testSlugs: ["adsp", "big-data-analysis"],
+  },
+  {
+    id: "database",
+    categoryId: "data-certification",
+    label: "데이터베이스 자격",
+    description: "SQL, 데이터 모델링, 데이터베이스 활용 능력을 평가하는 자격시험",
+    testSlugs: ["sqld"],
+  },
+  {
+    id: "it-processing",
+    categoryId: "data-certification",
+    label: "IT·정보처리",
+    description: "소프트웨어 설계·개발, 데이터베이스, 정보시스템 구축 등 IT 실무 자격시험",
+    testSlugs: ["information-processing-engineer"],
   },
 ];
 
@@ -296,8 +310,8 @@ export const examGroups: ExamGroupMeta[] = [
 // 구조만 미리 준비해두고, 실제 상품이 준비되면 tests.ts에 Test를 추가한 뒤 위 testSlugs에
 // slug만 추가하면 됩니다(이 배열에서는 제거).
 export const comingSoonTests: ComingSoonTest[] = [
-  { id: "sqld", name: "SQLD", groupId: "data-db", note: "SQL 개발자 자격시험 · 준비 중" },
-  { id: "adsp", name: "ADsP", groupId: "data-db", note: "데이터분석 준전문가 자격시험 · 준비 중" },
+  { id: "adp", name: "ADP", groupId: "data-analysis", note: "데이터분석 전문가 자격시험 · 준비 중" },
+  { id: "sqlp", name: "SQLP", groupId: "database", note: "SQL 전문가 자격시험 · 준비 중" },
   { id: "japan-spi", name: "일본 SPI", groupId: "japan-employment", note: "일본 취업 적성검사 · 준비 중" },
 ];
 

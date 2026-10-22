@@ -84,6 +84,17 @@ function AcademicCap(props: { className?: string; style?: CSSProperties }) {
   );
 }
 
+function BarChart(props: { className?: string; style?: CSSProperties }) {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" {...common} className={props.className} style={props.style}>
+      <path d="M4 20V10" />
+      <path d="M10 20V6" />
+      <path d="M16 20v-7" />
+      <path d="M3 20h18" />
+    </svg>
+  );
+}
+
 const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProperties }) => ReactElement> = {
   EMPLOYMENT: Briefcase,
   JAPANESE: SpeechBubble,
@@ -94,6 +105,7 @@ const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProper
   OVERSEAS_EMPLOYMENT: Globe,
   IMMIGRATION_VISA: Certificate,
   PROFESSIONAL_GRAD: AcademicCap,
+  DATA_CERTIFICATION: BarChart,
 };
 
 export default function GroupIcon({

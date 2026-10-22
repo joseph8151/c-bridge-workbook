@@ -7,7 +7,8 @@ export type TestGroup =
   | "PROFESSIONAL"
   | "OVERSEAS_EMPLOYMENT"
   | "IMMIGRATION_VISA"
-  | "PROFESSIONAL_GRAD";
+  | "PROFESSIONAL_GRAD"
+  | "DATA_CERTIFICATION";
 
 export type BonusType = "SPEAKING" | "LISTENING" | "WRITING" | "VOCAB" | "PROFESSIONAL";
 
@@ -140,6 +141,17 @@ export const groupMeta: Record<TestGroup, GroupMeta> = {
     description:
       "LSAT, GRE, GMAT, MCAT, DAT, OAT, UCAT 등 전문대학원·전문직 진학을 위한 입학시험 대비 자료입니다. 모든 문제는 C-BRIDGE가 자체 제작한 오리지널 문제입니다.",
     color: "var(--color-professional-grad)",
+  },
+  DATA_CERTIFICATION: {
+    id: "DATA_CERTIFICATION",
+    navLabel: "데이터·자격",
+    name: "데이터 · 자격 시험",
+    slug: "data-certification",
+    eyebrow: "DATA & CERTIFICATION",
+    headline: "데이터·IT 실무 자격도 문제풀이 중심으로.",
+    description:
+      "SQLD, ADsP, 빅데이터분석기사, 정보처리기사 등 데이터·IT 실무 자격시험을 문제집, 모의고사, 학습 플랜으로 준비하는 자료입니다.",
+    color: "var(--color-data-certification)",
   },
 };
 
@@ -998,6 +1010,52 @@ export const tests: Test[] = [
       "UCAT 교재",
     ],
     priceOverride: "290,000원",
+  },
+
+  // ---------------- DATA_CERTIFICATION ----------------
+  {
+    id: "sqld",
+    slug: "sqld",
+    name: "SQLD (SQL 개발자)",
+    group: "DATA_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "SQL과 데이터 모델링 자격시험",
+    description:
+      "SQL과 데이터 모델링을 문제풀이 중심으로 반복하는 Self-Study 구성입니다. SQL 기본부터 데이터 모델링까지 200P·300P 분량으로 준비합니다.",
+    keywords: ["SQLD", "SQL개발자", "SQL 자격증", "데이터베이스 자격증"],
+  },
+  {
+    id: "adsp",
+    slug: "adsp",
+    name: "ADsP (데이터분석 준전문가)",
+    group: "DATA_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "데이터분석 준전문가 자격시험",
+    description:
+      "데이터 이해부터 분석 기획, 통계·데이터 분석까지 시험 범위를 반복 학습하는 Self-Study 구성입니다.",
+    keywords: ["ADsP", "데이터분석 준전문가", "데이터 자격증"],
+  },
+  {
+    id: "big-data-analysis",
+    slug: "big-data-analysis",
+    name: "빅데이터분석기사",
+    group: "DATA_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "빅데이터 분석 국가기술자격",
+    description:
+      "빅데이터 분석 기획, 탐색, 모델링 및 결과 해석을 체계적으로 준비하는 Self-Study 구성입니다. 실기는 실제 작업형 환경과 평가 구조가 달라 현재는 필기 중심으로 제공합니다.",
+    keywords: ["빅데이터분석기사", "빅데이터분석기사 필기", "데이터 국가기술자격"],
+  },
+  {
+    id: "information-processing-engineer",
+    slug: "information-processing-engineer",
+    name: "정보처리기사",
+    group: "DATA_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "소프트웨어·정보처리 국가기술자격",
+    description:
+      "소프트웨어 설계, 개발, 데이터베이스, 프로그래밍 언어, 정보시스템 구축을 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["정보처리기사", "정보처리기사 필기", "IT 자격증"],
   },
 ];
 
