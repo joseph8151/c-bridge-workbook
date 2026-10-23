@@ -90,13 +90,13 @@ export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
     id: "cloud-it-certification",
     navLabel: "클라우드·IT 자격",
     navLabelEn: "Cloud & IT Certification",
-    description: "AWS, Microsoft Azure, CompTIA 등 클라우드·IT 실무 자격시험",
+    description: "AWS, Microsoft Azure, CompTIA, ITIL 등 클라우드·IT·보안 실무 자격시험",
   },
   "project-management": {
     id: "project-management",
-    navLabel: "프로젝트·관리 자격",
-    navLabelEn: "Project Management",
-    description: "PMP, CAPM, PRINCE2 등 프로젝트 관리 자격시험",
+    navLabel: "프로젝트·애자일 자격",
+    navLabelEn: "Project & Agile",
+    description: "PMP, CAPM, PRINCE2, Scrum 등 프로젝트 관리 및 Agile 실무 자격시험",
   },
 };
 
@@ -357,6 +357,13 @@ export const examGroups: ExamGroupMeta[] = [
     description: "클라우드 데이터 플랫폼 실무 자격시험",
     testSlugs: [],
   },
+  {
+    id: "it-service",
+    categoryId: "cloud-it-certification",
+    label: "IT Service",
+    description: "IT서비스관리 개념과 Practice를 다루는 국제 자격시험",
+    testSlugs: ["itil-foundation"],
+  },
 
   // ---------------- PROJECT MANAGEMENT ----------------
   {
@@ -364,14 +371,21 @@ export const examGroups: ExamGroupMeta[] = [
     categoryId: "project-management",
     label: "PMI",
     description: "PMI(Project Management Institute) 공인 프로젝트 관리 자격시험",
-    testSlugs: ["pmp"],
+    testSlugs: ["pmp", "capm"],
   },
   {
     id: "prince2",
     categoryId: "project-management",
     label: "PRINCE2",
     description: "PRINCE2 방법론 기반 프로젝트 관리 자격시험",
-    testSlugs: [],
+    testSlugs: ["prince2-foundation"],
+  },
+  {
+    id: "agile-scrum",
+    categoryId: "project-management",
+    label: "Agile & Scrum",
+    description: "Scrum 기반 역할, 이벤트, 원칙을 다루는 애자일 자격시험",
+    testSlugs: ["psm-1"],
   },
 ];
 
@@ -388,9 +402,9 @@ export const comingSoonTests: ComingSoonTest[] = [
   { id: "cka", name: "CKA", groupId: "devops-kubernetes", note: "Kubernetes 운영 자격시험 · 준비 중" },
   { id: "terraform-associate", name: "Terraform Associate", groupId: "devops-kubernetes", note: "인프라 자동화 자격시험 · 준비 중" },
   { id: "snowpro-core", name: "SnowPro Core", groupId: "cloud-data", note: "클라우드 데이터 플랫폼 자격시험 · 준비 중" },
-  { id: "capm", name: "CAPM", groupId: "pmi", note: "PMI 입문 프로젝트 관리 자격시험 · 준비 중" },
-  { id: "prince2-foundation", name: "PRINCE2 Foundation", groupId: "prince2", note: "PRINCE2 기초 자격시험 · 준비 중" },
   { id: "prince2-practitioner", name: "PRINCE2 Practitioner", groupId: "prince2", note: "PRINCE2 실무 자격시험 · 준비 중" },
+  { id: "pl-300", name: "PL-300 (Power BI Data Analyst)", groupId: "microsoft-azure", note: "Power BI 데이터 분석 자격시험 · 준비 중" },
+  { id: "pspo-1", name: "PSPO I (Professional Scrum Product Owner I)", groupId: "agile-scrum", note: "Scrum.org 공인 프로덕트 오너 자격시험 · 준비 중" },
 ];
 
 export function getGroupsForCategory(categoryId: ExamCategoryId): ExamGroupMeta[] {

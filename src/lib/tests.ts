@@ -1154,6 +1154,18 @@ export const tests: Test[] = [
     keywords: ["CompTIA Security+", "Security+", "보안 자격증"],
     provider: "CompTIA",
   },
+  {
+    id: "itil-foundation",
+    slug: "itil-foundation",
+    name: "ITIL Foundation",
+    group: "CLOUD_IT_CERTIFICATION",
+    bonusTypes: ["VOCAB"],
+    tagline: "IT서비스관리 입문 국제 자격시험",
+    description:
+      "ITIL의 핵심 개념, 원칙, Practice를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["ITIL Foundation", "ITIL 자격증", "IT서비스관리 자격증"],
+    availableTiers: ["COMPLETE"],
+  },
 
   // ---------------- PROJECT_MANAGEMENT ----------------
   {
@@ -1167,6 +1179,44 @@ export const tests: Test[] = [
       "프로젝트 관리 프로세스, 리더십, 비즈니스 환경 영역을 시나리오 문제 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["PMP", "PMP 자격증", "프로젝트 관리 자격증", "PMI"],
     provider: "PMI",
+  },
+  {
+    id: "capm",
+    slug: "capm",
+    name: "CAPM (Certified Associate in Project Management)",
+    group: "PROJECT_MANAGEMENT",
+    bonusTypes: ["VOCAB"],
+    tagline: "PMI 공인 입문 프로젝트 관리 자격시험",
+    description:
+      "프로젝트 관리 기본 개념과 프로세스를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["CAPM", "CAPM 자격증", "PMI 입문 자격증"],
+    provider: "PMI",
+    availableTiers: ["COMPLETE"],
+  },
+  {
+    id: "prince2-foundation",
+    slug: "prince2-foundation",
+    name: "PRINCE2 Foundation",
+    group: "PROJECT_MANAGEMENT",
+    bonusTypes: ["VOCAB"],
+    tagline: "PRINCE2 방법론 기초 자격시험",
+    description:
+      "PRINCE2의 원칙, 테마, 프로세스를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["PRINCE2 Foundation", "PRINCE2 자격증", "프로젝트 관리 방법론"],
+    availableTiers: ["COMPLETE"],
+  },
+  {
+    id: "psm-1",
+    slug: "psm-1",
+    name: "PSM I (Professional Scrum Master I)",
+    group: "PROJECT_MANAGEMENT",
+    bonusTypes: ["VOCAB"],
+    tagline: "Scrum.org 공인 스크럼 마스터 자격시험",
+    description:
+      "Scrum Guide 기반 원칙, 역할, 이벤트, 산출물을 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
+    keywords: ["PSM I", "PSM1", "Professional Scrum Master", "스크럼 마스터 자격증"],
+    provider: "Scrum.org",
+    availableTiers: ["COMPLETE"],
   },
 ];
 
