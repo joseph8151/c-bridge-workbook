@@ -14,16 +14,25 @@ export default function ConsultationSafety() {
           <div>
             <p className="eyebrow">CONSULTATION</p>
             <p className="mt-2 max-w-xl break-keep text-base leading-[1.7]" style={{ color: "var(--color-ink)" }}>
-              시험과 목표에 따라 필요한 범위가 다릅니다. 구성을 결정하기 어렵다면 상담을 통해
-              필요한 영역과 분량을 먼저 좁혀보세요.
+              시험과 목표에 따라 필요한 범위가 다릅니다. 가격을 먼저 확인하신 후, 충분한 상담을
+              통해 필요한 영역과 분량을 좁혀보세요.
             </p>
-            <Link
-              href="/consultation"
-              className="mt-4 inline-flex text-sm font-medium transition-colors hover:text-[var(--color-bronze)]"
-              style={{ color: "var(--color-ink)" }}
-            >
-              구성 상담하기 <span className="arrow-slide ml-1.5">→</span>
-            </Link>
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+              <Link
+                href="/pricing"
+                className="inline-flex text-sm font-medium transition-colors hover:text-[var(--color-bronze)]"
+                style={{ color: "var(--color-ink)" }}
+              >
+                가격 먼저 확인하기 <span className="arrow-slide ml-1.5">→</span>
+              </Link>
+              <Link
+                href="/consultation"
+                className="inline-flex text-sm font-medium transition-colors hover:text-[var(--color-bronze)]"
+                style={{ color: "var(--color-ink)" }}
+              >
+                구성 상담하기 <span className="arrow-slide ml-1.5">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </Container>

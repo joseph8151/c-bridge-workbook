@@ -180,7 +180,8 @@ export default function TierSelector({ test }: { test: Test }) {
             상담 없이 바로 구매
           </Link>
           <p className="mt-3 text-center text-xs text-ink/40">
-            같은 분량이라도 목표와 집중 영역에 따라 문제 구성을 다르게 선택할 수 있습니다.
+            위 가격을 먼저 확인하신 후, 충분한 상담을 통해 목표와 집중 영역에 맞는 구성으로
+            안내해드립니다.
           </p>
         </div>
       </div>

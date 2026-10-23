@@ -36,13 +36,14 @@ export default function ConsultationPage() {
           교재 구성 상담
         </h1>
         <p className="mt-4 max-w-lg text-base leading-relaxed" style={{ color: "var(--color-muted)" }}>
-          시험과 목표 점수를 알려주세요. 필요한 영역과 교재 구성을 안내합니다. 현재는 자동결제를
-          제공하지 않으며, 상담 후 담당자가 결제 방법을 안내해드립니다.
+          아래에서 가격을 먼저 확인하신 후, 시험과 목표 점수를 알려주세요. 충분한 상담을 통해
+          필요한 영역과 교재 구성을 안내합니다. 현재는 자동결제를 제공하지 않으며, 상담 후
+          담당자가 결제 방법을 안내해드립니다.
         </p>
 
         <div className="mt-8 border p-4 min-[361px]:p-5" style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }}>
-          <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
-            상담 전에 가격을 먼저 확인해보세요
+          <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+            가격을 먼저 확인하신 후 상담해 주세요
           </p>
           <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1">
             {tierOrder.map((tier) => {
