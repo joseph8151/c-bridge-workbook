@@ -154,7 +154,7 @@ export default function LsatBookPage() {
         <Container>
           <p className="eyebrow">PROFESSIONAL & GRADUATE EXAMS · LSAT COMPLETE</p>
           <h1
-            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-bold leading-tight tracking-[-0.01em] md:text-[52px]"
+            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[52px]"
             style={{ color: "var(--color-ink)" }}
           >
             LSAT은 암기가 아니라 논증 구조를 읽는 시험입니다.
@@ -169,7 +169,7 @@ export default function LsatBookPage() {
             style={{ borderColor: "var(--color-border)" }}
           >
             <div>
-              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 LSAT COMPLETE · 300P
               </p>
               <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
@@ -235,7 +235,7 @@ export default function LsatBookPage() {
             LSAT Reading Comprehension은 다양한 주제의 고난도 지문과 질문으로 구성합니다.
           </p>
 
-          <p className="mt-6 text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+          <p className="mt-6 text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
             지문 영역
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -244,7 +244,7 @@ export default function LsatBookPage() {
             ))}
           </div>
 
-          <p className="mt-6 text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+          <p className="mt-6 text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
             문항 유형
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -286,7 +286,7 @@ export default function LsatBookPage() {
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+            <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
               LOGICAL REASONING · STRENGTHEN (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
@@ -327,7 +327,7 @@ export default function LsatBookPage() {
           </div>
 
           <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+            <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
               READING COMPREHENSION · SOCIAL SCIENCE (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
@@ -372,7 +372,7 @@ export default function LsatBookPage() {
           </div>
 
           <div className="mt-6 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+            <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
               LOGICAL REASONING · ASSUMPTION (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
@@ -440,7 +440,7 @@ export default function LsatBookPage() {
             ))}
           </div>
 
-          <p className="mt-10 text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+          <p className="mt-10 text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
             Reading Comprehension의 경우 다음을 함께 제공합니다
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -455,7 +455,7 @@ export default function LsatBookPage() {
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">MOCK TESTS</p>
-          <p className="mt-4 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
+          <p className="mt-4 font-serif text-xl font-semibold tracking-[-0.01em]" style={{ color: "var(--color-ink)" }}>
             C-BRIDGE Original Mock Tests · Full-Length Practice Tests × 3
           </p>
           <p className="mt-4 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
@@ -505,10 +505,10 @@ export default function LsatBookPage() {
           <div className="mt-8 grid gap-6 border-t pt-8 sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
             {studyPlans.map((p) => (
               <div key={p.label} className="border p-6 min-[361px]:p-7" style={{ borderColor: "var(--color-border)" }}>
-                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-bronze)" }}>
+                <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-bronze)" }}>
                   {p.label}
                 </p>
-                <p className="mt-2 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
+                <p className="mt-2 font-serif text-xl font-semibold tracking-[-0.01em]" style={{ color: "var(--color-ink)" }}>
                   {p.title}
                 </p>
                 <p className="mt-2 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
@@ -542,7 +542,7 @@ export default function LsatBookPage() {
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">PACKAGE & PRICE</p>
-          <p className="mt-3 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
+          <p className="mt-3 font-serif text-xl font-semibold tracking-[-0.01em]" style={{ color: "var(--color-ink)" }}>
             LSAT Complete 300P
           </p>
 
@@ -563,7 +563,7 @@ export default function LsatBookPage() {
 
           <div className="mt-8 flex flex-wrap items-end justify-between gap-6 border-t pt-8" style={{ borderColor: "var(--color-border)" }}>
             <div>
-              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 PRICE
               </p>
               <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>

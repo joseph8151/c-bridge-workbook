@@ -41,7 +41,7 @@ export default function TelcPflegeBookPage() {
         <Container>
           <p className="eyebrow">MEDICAL GERMAN · TELC PFLEGE</p>
           <h1
-            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-bold leading-tight tracking-[-0.01em] md:text-[52px]"
+            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[52px]"
             style={{ color: "var(--color-ink)" }}
           >
             병동 독일어가 안 되면 B2가 의미가 없습니다.
@@ -75,7 +75,7 @@ export default function TelcPflegeBookPage() {
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
             {lookInsideExamples.map((ex, i) => (
               <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
-                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                   {ex.label}
                 </p>
                 <p className="mt-4 break-keep font-serif text-lg italic leading-relaxed" style={{ color: "var(--color-ink)" }}>

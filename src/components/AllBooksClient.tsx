@@ -82,7 +82,7 @@ export default function AllBooksClient() {
         />
 
         <div className="border-b py-5" style={{ borderColor: "var(--color-border)" }}>
-          <p className="text-[11px] font-bold tracking-[0.16em] text-ink/50">카테고리</p>
+          <p className="text-[11px] font-semibold tracking-[0.16em] text-ink/50">카테고리</p>
           <div className="mt-3 flex flex-wrap gap-2">
             <button
               onClick={() => jumpToCategory(null)}
@@ -113,7 +113,7 @@ export default function AllBooksClient() {
         </div>
 
         <div className="py-5">
-          <p className="text-[11px] font-bold tracking-[0.16em] text-ink/50">패키지 분량</p>
+          <p className="text-[11px] font-semibold tracking-[0.16em] text-ink/50">패키지 분량</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {tierOrder.map((t) => (
               <span
@@ -138,7 +138,7 @@ export default function AllBooksClient() {
               setQuery("");
               jumpToCategory(null);
             }}
-            className="mt-2 text-xs font-bold tracking-[0.06em]"
+            className="mt-2 text-xs font-semibold tracking-[0.06em]"
             style={{ color: "var(--color-bronze)" }}
           >
             필터 초기화
@@ -232,7 +232,7 @@ function CategorySection({
           <span className="eyebrow" style={{ color: "var(--color-bronze)" }}>
             {meta.navLabelEn}
           </span>
-          <span className="mt-2 block font-serif text-xl font-bold md:text-2xl" style={{ color: "var(--color-ink)" }}>
+          <span className="mt-2 block font-serif text-xl font-medium tracking-[-0.02em] md:text-2xl" style={{ color: "var(--color-ink)" }}>
             {meta.navLabel}
           </span>
           <span className="mt-1.5 block max-w-xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
@@ -299,7 +299,7 @@ function GroupSection({
         className="flex w-full items-center justify-between gap-4 py-2 text-left"
       >
         <span>
-          <span className="block text-sm font-bold" style={{ color: "var(--color-ink)" }}>
+          <span className="block text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
             {group.label}
           </span>
           <span className="mt-0.5 block text-xs" style={{ color: "var(--color-muted)" }}>
@@ -345,12 +345,12 @@ function GroupSection({
               style={{ borderColor: "var(--color-line)" }}
             >
               <span>
-                <span className="block font-serif text-lg font-bold leading-snug" style={{ color: "var(--color-inkstrong)" }}>
+                <span className="block font-serif text-lg font-semibold leading-snug tracking-[-0.01em]" style={{ color: "var(--color-inkstrong)" }}>
                   {c.name}
                 </span>
                 <span className="mt-0.5 block text-sm leading-relaxed text-ink/60">{c.note}</span>
               </span>
-              <span className="shrink-0 text-xs font-bold tracking-[0.08em]" style={{ color: "var(--color-muted)" }}>
+              <span className="shrink-0 text-xs font-semibold tracking-[0.08em]" style={{ color: "var(--color-muted)" }}>
                 준비 중
               </span>
             </div>

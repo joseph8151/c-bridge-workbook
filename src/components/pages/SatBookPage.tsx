@@ -57,7 +57,7 @@ export default function SatBookPage() {
         <Container>
           <p className="eyebrow">STUDY ABROAD · SAT</p>
           <h1
-            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-bold leading-tight tracking-[-0.01em] md:text-[52px]"
+            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[52px]"
             style={{ color: "var(--color-ink)" }}
           >
             영어와 수학, 필요한 과목만 따로 준비합니다.
@@ -89,7 +89,7 @@ export default function SatBookPage() {
         <Container>
           <p className="eyebrow">LOOK INSIDE</p>
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+            <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
               SAT 영어 · WORDS IN CONTEXT (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-lg italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
@@ -128,7 +128,7 @@ export default function SatBookPage() {
             </p>
 
             <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
-              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 SAT 영어 · CRAFT AND STRUCTURE (자체 제작 예시)
               </p>
               <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
@@ -167,7 +167,7 @@ export default function SatBookPage() {
             </div>
 
             <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
-              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 SAT 수학 · LINEAR EQUATIONS (자체 제작 예시)
               </p>
               <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
@@ -223,7 +223,7 @@ export default function SatBookPage() {
                 <div className="mt-4 grid gap-6 sm:grid-cols-3">
                   {s.tiers.map((t) => (
                     <div key={t.label}>
-                      <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                      <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                         {t.label}
                       </p>
                       <p className="mt-1 font-serif text-2xl font-bold" style={{ color: "var(--color-ink)" }}>

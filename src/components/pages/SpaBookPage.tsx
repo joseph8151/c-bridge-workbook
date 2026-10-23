@@ -48,7 +48,7 @@ export default function SpaBookPage() {
         <Container>
           <p className="eyebrow">EMPLOYMENT · SPA 100P</p>
           <h1
-            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-bold leading-tight tracking-[-0.01em] md:text-[52px]"
+            className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[52px]"
             style={{ color: "var(--color-ink)" }}
           >
             SPA는 Speaking 한 영역을 집중적으로 준비하는 시험입니다.
@@ -64,7 +64,7 @@ export default function SpaBookPage() {
 
           <div className="mt-8 flex flex-wrap items-center gap-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
             <div>
-              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 SPA · 100P
               </p>
               <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
@@ -111,7 +111,7 @@ export default function SpaBookPage() {
           <div className="mt-8 max-w-2xl border p-6 min-[430px]:p-8" style={{ borderColor: "var(--color-border)" }}>
             {lookInsideExamples.map((ex, i) => (
               <div key={ex.label} className={i > 0 ? "mt-6 border-t pt-6" : ""} style={i > 0 ? { borderColor: "var(--color-border)" } : undefined}>
-                <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+                <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                   {ex.label}
                 </p>
                 <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
@@ -154,13 +154,13 @@ export default function SpaBookPage() {
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">PACKAGE & PRICE</p>
-          <p className="mt-3 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
+          <p className="mt-3 font-serif text-xl font-semibold tracking-[-0.01em]" style={{ color: "var(--color-ink)" }}>
             SPA · 100P
           </p>
 
           <div className="mt-8 flex flex-wrap items-end justify-between gap-6 border-t pt-8" style={{ borderColor: "var(--color-border)" }}>
             <div>
-              <p className="text-xs font-bold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
+              <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 PRICE
               </p>
               <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>

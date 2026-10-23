@@ -164,7 +164,7 @@ export default async function TestDetailPage({
           <div>
             <p className="eyebrow">{group.navLabel}</p>
             <h1
-              className="mt-3 break-keep font-serif text-[40px] font-bold leading-tight tracking-[-0.01em] md:text-[56px]"
+              className="mt-3 break-keep font-serif text-[40px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[56px]"
               style={{ color: "var(--color-ink)" }}
             >
               {test.name}
@@ -304,7 +304,7 @@ export default async function TestDetailPage({
           </div>
 
           <div className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-4 border-t pt-10 text-center" style={{ borderColor: "var(--color-border)" }}>
-            <p className="font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
+            <p className="font-serif text-lg font-semibold" style={{ color: "var(--color-ink)" }}>
               원하는 구성이 없나요?
             </p>
             <p className="text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
@@ -327,7 +327,7 @@ export default async function TestDetailPage({
           <p className="eyebrow" style={{ color: "var(--color-bronze)" }}>
             STUDY METHOD
           </p>
-          <h2 className="mt-2 font-serif text-2xl font-bold" style={{ color: "var(--color-ink)" }}>
+          <h2 className="mt-2 font-serif text-2xl font-medium tracking-[-0.02em]" style={{ color: "var(--color-ink)" }}>
             {test.name} 학습 방법
           </h2>
           <div className="mt-8 grid gap-8 border-t pt-8 sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: "var(--color-border)" }}>
