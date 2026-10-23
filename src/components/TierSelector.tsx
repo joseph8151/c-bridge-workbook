@@ -168,16 +168,16 @@ export default function TierSelector({ test }: { test: Test }) {
           </div>
 
           <Link
-            href={`/pricing?${purchaseQuery}#direct-purchase`}
+            href={`/consultation?${consultQuery}`}
             className="btn-primary mt-7 flex items-center justify-center rounded-sm py-3.5 text-sm font-bold tracking-[0.08em]"
           >
-            바로 구매
+            구성 상담 받기
           </Link>
           <Link
-            href={`/consultation?${consultQuery}`}
+            href={`/pricing?${purchaseQuery}#direct-purchase`}
             className="mt-2.5 flex items-center justify-center text-xs font-medium text-ink/50 underline decoration-ink/20 underline-offset-4 hover:text-ink/80"
           >
-            구성을 잘 모르겠다면 상담 후 구매하기
+            상담 없이 바로 구매
           </Link>
           <p className="mt-3 text-center text-xs text-ink/40">
             같은 분량이라도 목표와 집중 영역에 따라 문제 구성을 다르게 선택할 수 있습니다.

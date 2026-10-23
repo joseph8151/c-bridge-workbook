@@ -83,14 +83,14 @@ export default function EptaBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
+              <Link href="/consultation?test=EPTA&tier=100P" className="btn-primary px-7 text-sm font-medium">
+                구성 상담하기
+              </Link>
               <Link
                 href="/pricing?test=EPTA&price=129000&label=EPTA%20%C2%B7%20100P#direct-purchase"
-                className="btn-primary px-7 text-sm font-medium"
+                className="btn-secondary px-7 text-sm font-medium"
               >
                 129,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=EPTA&tier=100P" className="btn-secondary px-7 text-sm font-medium">
-                구성 상담하기
               </Link>
             </div>
           </div>
@@ -227,14 +227,14 @@ export default function EptaBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
+              <Link href="/consultation?test=EPTA&tier=100P" className="btn-primary px-7 text-sm font-medium">
+                구성 상담하기
+              </Link>
               <Link
                 href="/pricing?test=EPTA&price=129000&label=EPTA%20%C2%B7%20100P#direct-purchase"
-                className="btn-primary px-7 text-sm font-medium"
+                className="btn-secondary px-7 text-sm font-medium"
               >
                 129,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=EPTA&tier=100P" className="btn-secondary px-7 text-sm font-medium">
-                구성 상담하기
               </Link>
             </div>
           </div>

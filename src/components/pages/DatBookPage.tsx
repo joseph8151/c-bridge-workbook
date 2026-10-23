@@ -118,14 +118,14 @@ export default function DatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
+              <Link href="/consultation?test=DAT" className="btn-primary px-7 text-sm font-medium">
+                상품 문의
+              </Link>
               <Link
                 href="/pricing?test=DAT&price=340000&label=DAT%20Complete%20350P&plans=6%20Week%20Plan,10%20Week%20Plan#direct-purchase"
-                className="btn-primary px-7 text-sm font-medium"
+                className="btn-secondary px-7 text-sm font-medium"
               >
                 340,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=DAT" className="btn-secondary px-7 text-sm font-medium">
-                상품 문의
               </Link>
             </div>
           </div>
@@ -406,14 +406,14 @@ export default function DatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
+              <Link href="/consultation?test=DAT" className="btn-primary px-7 text-sm font-medium">
+                상품 문의
+              </Link>
               <Link
                 href="/pricing?test=DAT&price=340000&label=DAT%20Complete%20350P&plans=6%20Week%20Plan,10%20Week%20Plan#direct-purchase"
-                className="btn-primary px-7 text-sm font-medium"
+                className="btn-secondary px-7 text-sm font-medium"
               >
                 340,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=DAT" className="btn-secondary px-7 text-sm font-medium">
-                상품 문의
               </Link>
             </div>
           </div>

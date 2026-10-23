@@ -177,11 +177,11 @@ export default function LsatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
-              <Link href="/pricing?test=LSAT&price=290000&label=LSAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase" className="btn-primary px-7 text-sm font-medium">
-                290,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=LSAT" className="btn-secondary px-7 text-sm font-medium">
+              <Link href="/consultation?test=LSAT" className="btn-primary px-7 text-sm font-medium">
                 상품 문의
+              </Link>
+              <Link href="/pricing?test=LSAT&price=290000&label=LSAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase" className="btn-secondary px-7 text-sm font-medium">
+                290,000원 바로 구매
               </Link>
             </div>
           </div>
@@ -571,11 +571,11 @@ export default function LsatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
-              <Link href="/pricing?test=LSAT&price=290000&label=LSAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase" className="btn-primary px-7 text-sm font-medium">
-                290,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=LSAT" className="btn-secondary px-7 text-sm font-medium">
+              <Link href="/consultation?test=LSAT" className="btn-primary px-7 text-sm font-medium">
                 상품 문의
+              </Link>
+              <Link href="/pricing?test=LSAT&price=290000&label=LSAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase" className="btn-secondary px-7 text-sm font-medium">
+                290,000원 바로 구매
               </Link>
             </div>
           </div>

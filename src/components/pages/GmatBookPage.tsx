@@ -156,14 +156,14 @@ export default function GmatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
+              <Link href="/consultation?test=GMAT" className="btn-primary px-7 text-sm font-medium">
+                상품 문의
+              </Link>
               <Link
                 href="/pricing?test=GMAT&price=290000&label=GMAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase"
-                className="btn-primary px-7 text-sm font-medium"
+                className="btn-secondary px-7 text-sm font-medium"
               >
                 290,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=GMAT" className="btn-secondary px-7 text-sm font-medium">
-                상품 문의
               </Link>
             </div>
           </div>
@@ -502,14 +502,14 @@ export default function GmatBookPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
+              <Link href="/consultation?test=GMAT" className="btn-primary px-7 text-sm font-medium">
+                상품 문의
+              </Link>
               <Link
                 href="/pricing?test=GMAT&price=290000&label=GMAT%20Complete%20300P&plans=4%20Week%20Plan,8%20Week%20Plan#direct-purchase"
-                className="btn-primary px-7 text-sm font-medium"
+                className="btn-secondary px-7 text-sm font-medium"
               >
                 290,000원 바로 구매
-              </Link>
-              <Link href="/consultation?test=GMAT" className="btn-secondary px-7 text-sm font-medium">
-                상품 문의
               </Link>
             </div>
           </div>

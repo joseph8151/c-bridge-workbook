@@ -116,11 +116,11 @@ export default function TelcPflegeBookPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-2.5">
-            <Link href="/pricing?test=TELC%20Pflege&tier=200P#direct-purchase" className="btn-primary px-7 text-sm font-medium">
-              바로 구매
-            </Link>
-            <Link href="/consultation?test=TELC%20Pflege&tier=200P" className="btn-secondary px-7 text-sm font-medium">
+            <Link href="/consultation?test=TELC%20Pflege&tier=200P" className="btn-primary px-7 text-sm font-medium">
               구성 상담
+            </Link>
+            <Link href="/pricing?test=TELC%20Pflege&tier=200P#direct-purchase" className="btn-secondary px-7 text-sm font-medium">
+              바로 구매
             </Link>
           </div>
         </Container>

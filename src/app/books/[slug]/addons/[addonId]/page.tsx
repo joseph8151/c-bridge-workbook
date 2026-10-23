@@ -92,11 +92,11 @@ export default async function AddOnDetailPage({
               {formatPrice(addOn.price)}
             </p>
             <div className="flex flex-wrap gap-2.5">
-              <Link href={buyHref} className="btn-primary px-7 text-sm font-medium">
-                {formatPrice(addOn.price)} 바로 구매
-              </Link>
-              <Link href={consultHref} className="btn-secondary px-7 text-sm font-medium">
+              <Link href={consultHref} className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
+              </Link>
+              <Link href={buyHref} className="btn-secondary px-7 text-sm font-medium">
+                {formatPrice(addOn.price)} 바로 구매
               </Link>
             </div>
           </div>
