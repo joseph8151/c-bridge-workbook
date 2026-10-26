@@ -21,13 +21,13 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
   };
 
   return (
-    <div className="border-t" style={{ borderColor: "var(--color-border)" }}>
+    <div className="border-t" style={{ borderColor: "var(--bg-line)" }}>
       {/* Next.js SSRs this client component's initial markup, so crawlers still see the schema. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
-          <div key={item.q} className="border-b" style={{ borderColor: "var(--color-border)" }}>
+          <div key={item.q} className="border-b" style={{ borderColor: "var(--bg-line)" }}>
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -35,10 +35,10 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
               aria-controls={`faq-panel-${i}`}
               className="flex w-full items-center justify-between gap-6 py-6 text-left"
             >
-              <span className="break-keep text-[15px] font-medium md:text-base" style={{ color: "var(--color-ink)" }}>
+              <span className="break-keep text-[15px] font-medium md:text-base" style={{ color: "var(--bg-ink)" }}>
                 {item.q}
               </span>
-              <span aria-hidden className="shrink-0 text-xl font-light" style={{ color: "var(--color-bronze)" }}>
+              <span aria-hidden className="shrink-0 text-xl font-light" style={{ color: "var(--bg-accent)" }}>
                 {isOpen ? "−" : "+"}
               </span>
             </button>
@@ -47,7 +47,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
                 id={`faq-panel-${i}`}
                 role="region"
                 className="break-keep pb-6 text-sm leading-relaxed"
-                style={{ color: "var(--color-muted)" }}
+                style={{ color: "var(--bg-muted)" }}
               >
                 {item.a}
               </p>

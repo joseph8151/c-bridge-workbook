@@ -51,6 +51,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
     mockTestsLabel: "5회",
     name: "COMPLETE",
     shortDesc: "핵심 영역 또는 취약 영역을 충분히 연습하고, 시험의 기본 흐름을 안정적으로 준비하는 표준 구성.",
+    badge: "가장 많이 선택",
     recommendedFor: [
       "처음 준비하는 경우",
       "시험일까지 4~8주",

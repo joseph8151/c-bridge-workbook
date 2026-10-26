@@ -54,7 +54,9 @@ export default function TierSelector({ test }: { test: Test }) {
       </div>
 
       <div>
-        <p className="text-[11px] font-bold tracking-[0.14em] text-ink/40">01 · 목표 선택</p>
+        <p className="text-[11px] font-bold tracking-[0.14em]" style={{ color: "var(--bg-muted)" }}>
+          01 · 목표 선택
+        </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {levelOptions.map((opt) => (
             <button
@@ -63,8 +65,8 @@ export default function TierSelector({ test }: { test: Test }) {
               className="rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors"
               style={
                 target === opt
-                  ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
-                  : { borderColor: "var(--color-line)", color: "rgba(30,36,28,0.7)" }
+                  ? { borderColor: "var(--bg-ink)", background: "var(--bg-ink)", color: "var(--bg-paper)" }
+                  : { borderColor: "var(--bg-line)", color: "var(--bg-ink)", opacity: 0.7 }
               }
             >
               {opt}
@@ -74,7 +76,9 @@ export default function TierSelector({ test }: { test: Test }) {
 
         {availableTiers.length > 1 && (
           <>
-            <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">02 · 분량 선택</p>
+            <p className="mt-6 text-[11px] font-bold tracking-[0.14em]" style={{ color: "var(--bg-muted)" }}>
+              02 · 분량 선택
+            </p>
             <div className={`mt-3 grid gap-3 ${availableTiers.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
               {availableTiers.map((t) => {
                 const m = tierMeta[t];
@@ -83,27 +87,25 @@ export default function TierSelector({ test }: { test: Test }) {
                   <button
                     key={t}
                     onClick={() => setTier(t)}
-                    className="relative border px-2.5 py-5 text-center transition-colors min-[361px]:px-4"
+                    className="relative border-2 px-2.5 py-5 text-center transition-colors min-[361px]:px-4"
                     style={
                       active
-                        ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
-                        : { borderColor: "var(--color-line)", color: "var(--color-inkstrong)" }
+                        ? { borderColor: "var(--bg-accent)", background: "var(--bg-accent-soft)", color: "var(--bg-ink)" }
+                        : { borderColor: "var(--bg-line)", color: "var(--bg-ink)" }
                     }
                   >
                     {m.badge && (
                       <span
-                        className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 text-[9px] font-bold tracking-[0.06em]"
-                        style={
-                          active
-                            ? { background: "var(--color-paper)", color: "var(--color-rust)" }
-                            : { background: "var(--color-pistachio-tint)", color: "var(--color-rust)" }
-                        }
+                        className="absolute -top-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap px-2.5 py-0.5 text-[9px] font-bold tracking-[0.06em]"
+                        style={{ background: "var(--bg-accent)", color: "var(--bg-ink-deep)" }}
                       >
                         {m.badge}
                       </span>
                     )}
-                    <p className="font-serif text-xl font-bold">{m.label}</p>
-                    <p className="mt-1 text-xs font-bold" style={active ? { color: "var(--color-paper)" } : { color: "rgba(30,36,28,0.5)" }}>
+                    <p className="text-xl font-bold" style={{ fontFamily: "var(--bg-font-display)" }}>
+                      {m.label}
+                    </p>
+                    <p className="mt-1 text-xs font-bold" style={{ color: active ? "var(--bg-ink)" : "var(--bg-muted)" }}>
                       {getTierPrice(t).toLocaleString()}원
                     </p>
                   </button>
@@ -113,7 +115,7 @@ export default function TierSelector({ test }: { test: Test }) {
           </>
         )}
 
-        <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">
+        <p className="mt-6 text-[11px] font-bold tracking-[0.14em]" style={{ color: "var(--bg-muted)" }}>
           03 · 집중 영역 선택 (선택사항)
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -124,8 +126,8 @@ export default function TierSelector({ test }: { test: Test }) {
               className="rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors"
               style={
                 focus.has(f.id)
-                  ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }
-                  : { borderColor: "var(--color-line)", color: "rgba(30,36,28,0.7)" }
+                  ? { borderColor: "var(--bg-ink)", background: "var(--bg-ink)", color: "var(--bg-paper)" }
+                  : { borderColor: "var(--bg-line)", color: "var(--bg-ink)", opacity: 0.7 }
               }
             >
               {f.label}
@@ -133,34 +135,43 @@ export default function TierSelector({ test }: { test: Test }) {
           ))}
         </div>
 
-        <div className="mt-8 border p-5 min-[361px]:p-7" style={{ borderColor: "var(--color-line)" }}>
+        <div
+          className="mt-8 p-5 min-[361px]:p-7"
+          style={{ background: "var(--bg-ink)", color: "var(--bg-paper)", borderRadius: "var(--bg-radius)" }}
+        >
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
-              <p className="text-xs font-bold tracking-[0.14em]" style={{ color: "var(--color-rust)" }}>
+              <p className="text-xs font-bold tracking-[0.14em]" style={{ color: "var(--bg-accent)" }}>
                 {test.name} · {target} · {meta.name}
                 {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
               </p>
-              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-inkstrong)" }}>
+              <p className="mt-1 text-4xl font-bold" style={{ color: "var(--bg-accent)", fontFamily: "var(--bg-font-display)" }}>
                 {getTierPrice(tier).toLocaleString()}원
               </p>
             </div>
-            <p className="text-sm text-ink/50">
+            <p className="text-sm" style={{ color: "rgba(246,244,238,0.55)" }}>
               {meta.pages}페이지 · 모의고사 {meta.mockTestsLabel}
             </p>
           </div>
 
-          <p className="mt-4 text-sm leading-relaxed text-ink/60">{meta.shortDesc}</p>
+          <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(246,244,238,0.75)" }}>
+            {meta.shortDesc}
+          </p>
 
           <div className="mt-6 grid gap-2 sm:grid-cols-2">
             {includes.map((item) => (
-              <div key={item} className="flex gap-2.5 text-sm text-ink/70">
-                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full" style={{ background: "var(--color-rust)" }} />
+              <div key={item} className="flex gap-2.5 text-sm" style={{ color: "rgba(246,244,238,0.85)" }}>
+                <span aria-hidden className="shrink-0" style={{ color: "var(--bg-accent)" }}>
+                  ✓
+                </span>
                 {item}
               </div>
             ))}
             {bonus.flatMap((b) => b.items).map((item) => (
-              <div key={item} className="flex gap-2.5 text-sm text-ink/70">
-                <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full" style={{ background: "var(--color-pistachio)" }} />
+              <div key={item} className="flex gap-2.5 text-sm" style={{ color: "rgba(246,244,238,0.85)" }}>
+                <span aria-hidden className="shrink-0" style={{ color: "var(--bg-accent)" }}>
+                  ✓
+                </span>
                 {item}
               </div>
             ))}
@@ -168,11 +179,11 @@ export default function TierSelector({ test }: { test: Test }) {
 
           <Link
             href={`/consultation?${consultQuery}`}
-            className="btn-primary mt-7 flex items-center justify-center rounded-sm py-3.5 text-sm font-bold tracking-[0.08em]"
+            className="btn-primary-on-dark mt-7 flex items-center justify-center py-3.5 text-sm font-bold tracking-[0.08em]"
           >
             ⚡ 빠른 상담 받기
           </Link>
-          <p className="mt-3 text-center text-xs text-ink/40">
+          <p className="mt-3 text-center text-xs" style={{ color: "rgba(246,244,238,0.45)" }}>
             위 가격을 먼저 확인하신 후, 충분한 상담을 통해 목표와 집중 영역에 맞는 구성으로
             안내해드립니다. 신청 후 30분 이내 문자 또는 전화로 연락드립니다.
           </p>

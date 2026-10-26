@@ -20,15 +20,15 @@ export default function Header() {
     <header
       className="sticky top-0 z-50 w-full backdrop-blur transition-[background-color,border-color] duration-300"
       style={{
-        background: scrolled ? "rgba(246,241,232,0.92)" : "rgba(246,241,232,0)",
-        borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
+        background: scrolled ? "rgba(246,244,238,0.92)" : "rgba(246,244,238,0)",
+        borderBottom: scrolled ? "1px solid var(--bg-line)" : "1px solid transparent",
       }}
     >
       <div className="mx-auto flex h-16 max-w-[1320px] items-center justify-between px-4 min-[361px]:px-5 md:h-20 md:px-10">
         <Link href="/" className="flex shrink-0 items-center gap-2 min-[361px]:gap-2.5" aria-label="C-BRIDGE 홈">
-          <BridgeMark size={30} className="md:hidden" />
-          <BridgeMark size={36} className="hidden md:block" />
-          <span className="text-sm font-medium tracking-[0.14em] min-[361px]:tracking-[0.16em]" style={{ color: "var(--color-ink)" }}>
+          <BridgeMark size={30} color="var(--bg-ink)" className="md:hidden" />
+          <BridgeMark size={36} color="var(--bg-ink)" className="hidden md:block" />
+          <span className="text-sm font-medium tracking-[0.14em] min-[361px]:tracking-[0.16em]" style={{ color: "var(--bg-ink)" }}>
             C—BRIDGE
           </span>
         </Link>
@@ -38,8 +38,8 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium tracking-[0.08em] transition-colors hover:text-[var(--color-bronze)]"
-              style={{ color: "var(--color-ink)", opacity: 0.85 }}
+              className="text-[13px] font-medium tracking-[0.08em] transition-colors hover:text-[var(--bg-accent)]"
+              style={{ color: "var(--bg-ink)", opacity: 0.85 }}
             >
               {link.label}
             </Link>
@@ -71,15 +71,15 @@ export default function Header() {
           >
             <span
               className={`h-[1.5px] w-6 transition-transform ${open ? "translate-y-[6.5px] rotate-45" : ""}`}
-              style={{ background: "var(--color-ink)" }}
+              style={{ background: "var(--bg-ink)" }}
             />
             <span
               className={`h-[1.5px] w-6 transition-opacity ${open ? "opacity-0" : ""}`}
-              style={{ background: "var(--color-ink)" }}
+              style={{ background: "var(--bg-ink)" }}
             />
             <span
               className={`h-[1.5px] w-6 transition-transform ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`}
-              style={{ background: "var(--color-ink)" }}
+              style={{ background: "var(--bg-ink)" }}
             />
           </button>
         </div>
@@ -88,16 +88,16 @@ export default function Header() {
       {open && (
         <div
           className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t px-4 pb-6 pt-2 min-[361px]:px-5 md:max-h-[calc(100vh-5rem)] lg:hidden"
-          style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}
+          style={{ borderColor: "var(--bg-line)", background: "var(--bg-paper)" }}
         >
-          <nav className="flex flex-col divide-y" style={{ borderColor: "var(--color-border)" }} aria-label="모바일 메뉴">
+          <nav className="flex flex-col divide-y" style={{ borderColor: "var(--bg-line)" }} aria-label="모바일 메뉴">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="py-3.5 text-sm font-medium tracking-[0.04em]"
-                style={{ color: "var(--color-ink)", borderColor: "var(--color-border)" }}
+                style={{ color: "var(--bg-ink)", borderColor: "var(--bg-line)" }}
               >
                 {link.label}
               </Link>

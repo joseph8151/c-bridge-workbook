@@ -199,12 +199,14 @@ html {
   }
 }
 
-/* Cards, index rows, previews -- line-divided, no shadow */
+/* Cards, index rows, previews -- line-divided, no shadow.
+   [BRITISH GREEN REDESIGN — Step 2] Hover tint switched from a plain ink
+   wash to the gold-soft token — a sparing gold touch on interaction. */
 .card-hover {
   transition: background-color 220ms var(--ease-pub);
 }
 .card-hover:hover {
-  background-color: rgba(30, 36, 28, 0.03);
+  background-color: var(--bg-accent-soft);
 }
 
 /* Arrow-slide micro interaction for editorial index rows */
@@ -219,53 +221,82 @@ a:hover .arrow-slide {
 
 /* Button system: exactly ONE filled variant (.btn-primary) site-wide.
    Everything else is either a 1px border or plain underlined text — no
-   drop shadows, no gradients, no second fill color. */
+   drop shadows, no gradients, no second fill color.
+   [BRITISH GREEN REDESIGN — Step 2] Repointed to the new --bg-* tokens:
+   ink-filled primary, gold reserved for focus rings / hover tints / the
+   dark-section counterpart below, never the default button fill. */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  border-radius: 2px;
-  border: 1px solid var(--color-bronze);
+  border-radius: var(--bg-radius);
+  border: 1px solid var(--bg-ink);
   font-weight: 500;
   letter-spacing: 0.04em;
-  background: var(--color-bronze);
-  color: var(--color-paper);
+  background: var(--bg-ink);
+  color: var(--bg-paper);
   transition: background-color 180ms var(--ease-pub), color 180ms var(--ease-pub);
 }
 .btn-primary:hover {
-  background-color: var(--color-bronze-dark);
-  border-color: var(--color-bronze-dark);
+  background-color: var(--bg-ink-soft);
+  border-color: var(--bg-ink-soft);
 }
 .btn-primary:focus-visible {
-  outline: 1px solid var(--color-bronze);
+  outline: 1px solid var(--bg-accent);
   outline-offset: 2px;
 }
 .btn-primary:disabled {
-  background: var(--color-disabled);
-  border-color: var(--color-disabled);
-  color: var(--color-paper);
+  background: var(--bg-line);
+  border-color: var(--bg-line);
+  color: var(--bg-muted);
 }
 
-/* Secondary buttons: 1px border, ink text, no fill */
+/* Dark-section counterpart — same shape/weight as .btn-primary, polarity
+   reversed (gold fill, deep-ink text) for use on an --bg-ink background,
+   per the alternating light/dark section rhythm. */
+.btn-primary-on-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border-radius: var(--bg-radius);
+  border: 1px solid var(--bg-accent);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: var(--bg-accent);
+  color: var(--bg-ink-deep);
+  transition: background-color 180ms var(--ease-pub), border-color 180ms var(--ease-pub);
+}
+.btn-primary-on-dark:hover {
+  background-color: #d4ad63;
+  border-color: #d4ad63;
+}
+.btn-primary-on-dark:focus-visible {
+  outline: 1px solid var(--bg-accent-soft);
+  outline-offset: 2px;
+}
+
+/* Secondary buttons: 1px border, ink text, no fill. Hover tint is the
+   gold-soft token — one of the "gold used sparingly" touches. */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  border-radius: 2px;
-  border: 1px solid var(--color-ink);
+  border-radius: var(--bg-radius);
+  border: 1px solid var(--bg-ink);
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--color-ink);
+  color: var(--bg-ink);
   background: transparent;
   transition: background-color 180ms var(--ease-pub);
 }
 .btn-secondary:hover {
-  background-color: var(--color-hover-surface);
+  background-color: var(--bg-accent-soft);
 }
 .btn-secondary:focus-visible {
-  outline: 1px solid var(--color-bronze);
+  outline: 1px solid var(--bg-accent);
   outline-offset: 2px;
 }
 
@@ -275,16 +306,16 @@ a:hover .arrow-slide {
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
-  color: var(--color-ink);
+  color: var(--bg-ink);
   font-weight: 500;
   letter-spacing: 0.02em;
   text-underline-offset: 4px;
   text-decoration: underline;
-  text-decoration-color: var(--color-border);
+  text-decoration-color: var(--bg-line);
   transition: text-decoration-color 180ms var(--ease-pub);
 }
 .btn-text:hover {
-  text-decoration-color: var(--color-ink);
+  text-decoration-color: var(--bg-accent);
 }
 
 /* Pre-existing bug, fixed here rather than by touching .btn-primary itself
@@ -312,10 +343,10 @@ a:hover .arrow-slide {
   justify-content: center;
   height: 44px;
   padding: 0 16px;
-  border-radius: 2px;
-  border: 1px solid var(--color-ink);
+  border-radius: var(--bg-radius);
+  border: 1px solid var(--bg-ink);
   background: transparent;
-  color: var(--color-ink);
+  color: var(--bg-ink);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -323,10 +354,10 @@ a:hover .arrow-slide {
   transition: background-color 180ms var(--ease-pub);
 }
 .btn-nav-cta:hover {
-  background-color: var(--color-hover-surface);
+  background-color: var(--bg-accent-soft);
 }
 .btn-nav-cta:focus-visible {
-  outline: 1px solid var(--color-bronze);
+  outline: 1px solid var(--bg-accent);
   outline-offset: 2px;
 }
 /* .btn-nav-cta/.btn-fab live outside any @layer, so a plain media query here
@@ -355,10 +386,10 @@ a:hover .arrow-slide {
   min-width: 124px;
   height: 44px;
   padding: 0 18px;
-  border-radius: 2px;
-  border: 1px solid var(--color-ink);
-  background: var(--color-paper);
-  color: var(--color-ink);
+  border-radius: var(--bg-radius);
+  border: 1px solid var(--bg-ink);
+  background: var(--bg-paper);
+  color: var(--bg-ink);
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -366,10 +397,10 @@ a:hover .arrow-slide {
   transition: background-color 180ms var(--ease-pub);
 }
 .btn-fab:hover {
-  background-color: var(--color-hover-surface);
+  background-color: var(--bg-accent-soft);
 }
 .btn-fab:focus-visible {
-  outline: 2px solid var(--color-bronze-dark);
+  outline: 2px solid var(--bg-accent);
   outline-offset: 2px;
 }
 @media (min-width: 768px) {
@@ -489,10 +520,14 @@ body {
   }
 }
 
-/* Card shell: same radius/padding/border everywhere a boxed card is used */
+/* Card shell: same radius/padding/border everywhere a boxed card is used.
+   [BRITISH GREEN REDESIGN — Step 2] Surface fill + minimal shadow instead
+   of a bare transparent box. */
 .card-shell {
-  border-radius: var(--card-radius);
-  border: 1px solid var(--color-border);
+  border-radius: var(--bg-radius);
+  border: 1px solid var(--bg-line);
+  background: var(--bg-surface);
+  box-shadow: var(--bg-shadow);
   padding: var(--card-padding-mobile);
 }
 @media (min-width: 768px) {
@@ -530,13 +565,27 @@ h1, h2, h3, h4 {
   overflow-wrap: break-word;
 }
 
-/* Small uppercase editorial labels — "THE SERIES", "LOOK INSIDE", etc. */
+/* Small uppercase editorial labels — "THE SERIES", "LOOK INSIDE", etc.
+   [BRITISH GREEN REDESIGN — Step 2] Label text stays ink (gold text on
+   every section label would blow past "gold used sparingly"); only the
+   short leading rule before it is gold. */
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-bronze);
+  color: var(--bg-ink);
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 1.5px;
+  background: var(--bg-accent);
+  flex-shrink: 0;
 }
 
 ::selection {
