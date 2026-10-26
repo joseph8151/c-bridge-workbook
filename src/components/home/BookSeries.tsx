@@ -63,13 +63,7 @@ export default function BookSeries() {
                     href={`/consultation?tier=${encodeURIComponent(m.label)}`}
                     className="btn-primary justify-center px-7 text-sm font-medium"
                   >
-                    {m.label} 구성 상담하기
-                  </Link>
-                  <Link
-                    href={`/pricing?tier=${encodeURIComponent(m.label)}#direct-purchase`}
-                    className="btn-secondary justify-center px-7 text-sm font-medium"
-                  >
-                    바로 구매
+                    {m.label} ⚡ 빠른 상담하기
                   </Link>
                 </div>
               </div>
@@ -79,7 +73,8 @@ export default function BookSeries() {
 
         <p className="mt-8 text-sm" style={{ color: "var(--color-muted)" }}>
           가격은 페이지 수가 아니라 포함된 구성 전체를 기준으로 책정됩니다. 구성이 정해지면 PDF
-          파일로 드리며, 원하실 경우 실물 교재로 제작해 국내·해외 모두 발송해드립니다.
+          파일로 드리며, 원하실 경우 실물 교재로 제작해 국내·해외 모두 발송해드립니다. 상담 신청
+          후 30분 이내 문자 또는 전화로 연락드립니다.
         </p>
       </Container>
     </section>

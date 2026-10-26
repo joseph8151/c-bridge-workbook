@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 import Container from "@/components/Container";
 import FAQ from "@/components/FAQ";
-import DirectPurchaseForm from "@/components/DirectPurchaseForm";
 import { tierMeta, tierOrder } from "@/lib/products";
 import { siteFaqItems } from "@/lib/faqData";
-import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "가격 안내 | C-BRIDGE",
@@ -82,13 +79,7 @@ export default function PricingPage() {
                     href={`/consultation?tier=${encodeURIComponent(meta.label)}`}
                     className="btn-primary justify-center px-7 text-sm font-medium"
                   >
-                    {meta.label} 구성 상담하기
-                  </Link>
-                  <Link
-                    href={`/pricing?tier=${encodeURIComponent(meta.label)}#direct-purchase`}
-                    className="btn-secondary justify-center px-7 text-sm font-medium"
-                  >
-                    바로 구매
+                    {meta.label} ⚡ 빠른 상담하기
                   </Link>
                 </div>
               </div>
@@ -96,62 +87,18 @@ export default function PricingPage() {
           })}
         </div>
 
-        <div id="direct-purchase" className="mx-auto mt-10 max-w-xl scroll-mt-24 border p-6 text-left min-[361px]:p-8 md:mt-12" style={{ borderColor: "var(--color-border)" }}>
-          <p className="eyebrow">DIRECT PURCHASE</p>
-          <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
-            상담 없이 바로 구매하실 수도 있습니다.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            아래 계좌로 입금 후 이메일 주소를 남겨주시면, {siteConfig.shippingTurnaround}됩니다.
-          </p>
-
-          <div className="mt-5 border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
-            <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              신중하게 결정하신 분만 작성해 주세요.
-            </p>
-            <p className="mt-1 text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              입금 후 취소가 어려울 수 있습니다. 구성이 확실하지 않으시면 입금 전 먼저{" "}
-              <Link href="/consultation" className="underline decoration-[var(--color-border)] underline-offset-4 hover:text-[var(--color-bronze)]">
-                상담
-              </Link>
-              을 이용해 주세요.
-            </p>
-          </div>
-
-          <div className="mt-5 border-t pt-5" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-semibold tracking-[0.06em]" style={{ color: "var(--color-ink)" }}>
-              입금 계좌
-            </p>
-            <p className="mt-2 text-lg font-bold" style={{ color: "var(--color-ink)" }}>
-              {siteConfig.bankName} {siteConfig.bankAccountNumber}
-            </p>
-            <p className="text-sm" style={{ color: "var(--color-muted)" }}>
-              예금주: {siteConfig.bankAccountHolder}
-            </p>
-          </div>
-
-          <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
-            <Suspense fallback={null}>
-              <DirectPurchaseForm />
-            </Suspense>
-          </div>
-
-          <p className="mt-4 text-xs" style={{ color: "var(--color-muted)" }}>
-            영업시간: {siteConfig.hours}
-          </p>
-        </div>
-
         <div className="mx-auto mt-10 max-w-xl border p-6 text-left min-[361px]:p-8 md:mt-12" style={{ borderColor: "var(--color-border)" }}>
-          <p className="font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
+          <p className="eyebrow">⚡ 빠른 상담</p>
+          <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
             어떤 구성을 골라야 할지 몰라도 괜찮습니다.
           </p>
           <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
             시험명, 현재 수준, 목표, 시험 예정일, 취약 영역을 상담에서 알려주시면 필요한 구성을
             안내해드립니다. 결제 전 상담을 통해 구성을 먼저 조정하며, 결제 후에도 1회에 한해 구성
-            수정이 가능합니다.
+            수정이 가능합니다. 상담 신청 후 30분 이내 문자 또는 전화로 연락드립니다.
           </p>
-          <Link href="/consultation" className="btn-secondary mt-6 px-7 text-sm font-medium">
-            구성 상담하기
+          <Link href="/consultation" className="btn-primary mt-6 px-7 text-sm font-medium">
+            ⚡ 빠른 상담하기
           </Link>
         </div>
 

@@ -5,10 +5,8 @@ import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 import FAQ from "@/components/FAQ";
 import ConsultationForm from "@/components/ConsultationForm";
-import DirectPurchaseForm from "@/components/DirectPurchaseForm";
 import { orderFaqItems } from "@/lib/faqData";
 import { tierMeta, tierOrder } from "@/lib/products";
-import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "BOOK CONSULTATION | C-BRIDGE",
@@ -64,14 +62,14 @@ export default function ConsultationPage() {
           </Link>
         </div>
 
-        <p className="eyebrow">상담이 필요하시면</p>
+        <p className="eyebrow">⚡ 빠른 상담</p>
         <div className="mt-6 border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
           <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-            국내에서는 전화번호와 카카오톡 ID를 남겨주세요.
+            신청 후 30분 이내 문자 또는 전화로 연락드립니다.
           </p>
           <p className="mt-1 text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            아래 양식에 전화번호(필수)와 카카오톡 ID(선택)를 남겨주시면 빠르게 연락드립니다.
-            해외에서 연락 주시는 경우에는 이메일로도 상담 가능합니다.
+            아래 양식에 전화번호(필수)와 카카오톡 ID(선택)를 남겨주세요. 해외에서 연락 주시는
+            경우에는 이메일로도 상담 가능합니다.
           </p>
         </div>
 
@@ -109,51 +107,11 @@ export default function ConsultationPage() {
 
           <div className="p-6 min-[361px]:p-8 md:p-10">
             <p className="mb-6 text-sm" style={{ color: "var(--color-muted)" }}>
-              전화번호와 카카오톡 ID를 남겨주시면 빠르게 연락드립니다. 해외에서는 이메일로도
+              전화번호와 카카오톡 ID를 남겨주시면 30분 이내에 연락드립니다. 해외에서는 이메일로도
               남기실 수 있습니다. 주말·공휴일에도 받습니다.
             </p>
             <Suspense fallback={null}>
               <ConsultationForm />
-            </Suspense>
-          </div>
-        </div>
-
-        <div className="mt-10 border-t" style={{ borderColor: "var(--color-border)" }} />
-
-        <div id="direct-purchase" className="mt-6 scroll-mt-24 border p-6 min-[361px]:p-8" style={{ borderColor: "var(--color-border)" }}>
-          <p className="eyebrow">DIRECT PURCHASE</p>
-          <p className="mt-3 font-serif text-lg font-bold" style={{ color: "var(--color-ink)" }}>
-            상담 없이 바로 구매하실 수도 있습니다.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            아래 계좌로 입금 후 이메일 주소를 남겨주시면, {siteConfig.shippingTurnaround}됩니다.
-          </p>
-
-          <div className="mt-5 border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
-            <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              신중하게 결정하신 분만 작성해 주세요.
-            </p>
-            <p className="mt-1 text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              입금 후 취소가 어려울 수 있습니다. 구성이 확실하지 않으시면 위 상담을 먼저
-              이용해 주세요.
-            </p>
-          </div>
-
-          <div className="mt-5 border-t pt-5" style={{ borderColor: "var(--color-border)" }}>
-            <p className="text-xs font-semibold tracking-[0.06em]" style={{ color: "var(--color-ink)" }}>
-              입금 계좌
-            </p>
-            <p className="mt-2 text-lg font-bold" style={{ color: "var(--color-ink)" }}>
-              {siteConfig.bankName} {siteConfig.bankAccountNumber}
-            </p>
-            <p className="text-sm" style={{ color: "var(--color-muted)" }}>
-              예금주: {siteConfig.bankAccountHolder}
-            </p>
-          </div>
-
-          <div className="mt-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
-            <Suspense fallback={null}>
-              <DirectPurchaseForm />
             </Suspense>
           </div>
         </div>

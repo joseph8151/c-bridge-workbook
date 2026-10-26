@@ -18,7 +18,6 @@ const includes = [
 export default function OpicBookPage({ language, languageLabel }: OpicBookPageProps) {
   const testName = `OPIc ${language}`;
   const priceLabel = `${testName} · 60P`;
-  const buyHref = `/pricing?test=${encodeURIComponent(testName)}&price=80000&label=${encodeURIComponent(priceLabel)}#direct-purchase`;
   const consultHref = `/consultation?test=${encodeURIComponent(testName)}&tier=60P`;
 
   const recommendedFor = [
@@ -82,9 +81,6 @@ export default function OpicBookPage({ language, languageLabel }: OpicBookPagePr
             <div className="flex flex-wrap gap-2.5">
               <Link href={consultHref} className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
-              </Link>
-              <Link href={buyHref} className="btn-secondary px-7 text-sm font-medium">
-                80,000원 바로 구매
               </Link>
             </div>
           </div>
@@ -175,9 +171,6 @@ export default function OpicBookPage({ language, languageLabel }: OpicBookPagePr
             <div className="flex flex-wrap gap-2.5">
               <Link href={consultHref} className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
-              </Link>
-              <Link href={buyHref} className="btn-secondary px-7 text-sm font-medium">
-                80,000원 바로 구매
               </Link>
             </div>
           </div>

@@ -42,7 +42,6 @@ export default async function AddOnDetailPage({
   const recommendedFor = getRecommendedForAddOn(addOn);
   const otherAddOns = getAddOnsForTest(slug).filter((a) => a.id !== addOn.id);
 
-  const buyHref = `/pricing?test=${encodeURIComponent(addOn.name)}&price=${addOn.price}&label=${encodeURIComponent(`${addOn.name} · ${addOn.badge}`)}#direct-purchase`;
   const consultHref = `/consultation?test=${encodeURIComponent(addOn.name)}`;
 
   return (
@@ -94,9 +93,6 @@ export default async function AddOnDetailPage({
             <div className="flex flex-wrap gap-2.5">
               <Link href={consultHref} className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
-              </Link>
-              <Link href={buyHref} className="btn-secondary px-7 text-sm font-medium">
-                {formatPrice(addOn.price)} 바로 구매
               </Link>
             </div>
           </div>

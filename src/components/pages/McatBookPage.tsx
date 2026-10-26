@@ -144,12 +144,6 @@ export default function McatBookPage() {
               <Link href="/consultation?test=MCAT" className="btn-primary px-7 text-sm font-medium">
                 상품 문의
               </Link>
-              <Link
-                href="/pricing?test=MCAT&price=390000&label=MCAT%20Complete%20400P&plans=6%20Week%20Plan,12%20Week%20Plan#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                390,000원 바로 구매
-              </Link>
             </div>
           </div>
         </Container>
@@ -429,12 +423,6 @@ export default function McatBookPage() {
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=MCAT" className="btn-primary px-7 text-sm font-medium">
                 상품 문의
-              </Link>
-              <Link
-                href="/pricing?test=MCAT&price=390000&label=MCAT%20Complete%20400P&plans=6%20Week%20Plan,12%20Week%20Plan#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                390,000원 바로 구매
               </Link>
             </div>
           </div>

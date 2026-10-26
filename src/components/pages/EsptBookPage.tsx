@@ -73,12 +73,6 @@ export default function EsptBookPage() {
               <Link href="/consultation?test=ESPT&tier=60P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
               </Link>
-              <Link
-                href="/pricing?test=ESPT&price=80000&label=ESPT%20%C2%B7%2060P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                80,000원 바로 구매
-              </Link>
             </div>
           </div>
         </Container>
@@ -168,12 +162,6 @@ export default function EsptBookPage() {
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=ESPT&tier=60P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
-              </Link>
-              <Link
-                href="/pricing?test=ESPT&price=80000&label=ESPT%20%C2%B7%2060P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                80,000원 바로 구매
               </Link>
             </div>
           </div>

@@ -73,12 +73,6 @@ export default function TepsSpeakingBookPage() {
               <Link href="/consultation?test=TEPS%20Speaking&tier=60P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
               </Link>
-              <Link
-                href="/pricing?test=TEPS%20Speaking&price=80000&label=TEPS%20Speaking%20%C2%B7%2060P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                80,000원 바로 구매
-              </Link>
             </div>
           </div>
         </Container>
@@ -168,12 +162,6 @@ export default function TepsSpeakingBookPage() {
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=TEPS%20Speaking&tier=60P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
-              </Link>
-              <Link
-                href="/pricing?test=TEPS%20Speaking&price=80000&label=TEPS%20Speaking%20%C2%B7%2060P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                80,000원 바로 구매
               </Link>
             </div>
           </div>

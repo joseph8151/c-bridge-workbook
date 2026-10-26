@@ -32,16 +32,15 @@ export default function HomeHero() {
               className="inline-flex min-h-[48px] items-center justify-center text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--color-bronze)] md:min-h-[52px] md:justify-start"
               style={{ color: "var(--color-ink)" }}
             >
-              구성 상담하기 <span className="arrow-slide ml-1.5">→</span>
-            </Link>
-            <Link
-              href="/pricing#direct-purchase"
-              className="inline-flex min-h-[48px] items-center justify-center text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--color-bronze)] md:min-h-[52px] md:justify-start"
-              style={{ color: "var(--color-ink)" }}
-            >
-              상담 없이 바로 구매 <span className="arrow-slide ml-1.5">→</span>
+              ⚡ 빠른 상담하기 <span className="arrow-slide ml-1.5">→</span>
             </Link>
           </div>
+          <p
+            className="hero-fade-up mt-3 text-xs font-medium"
+            style={{ animationDelay: "100ms", color: "var(--color-muted)" }}
+          >
+            상담 신청 후 30분 이내 문자 또는 전화로 연락드립니다.
+          </p>
           <ul
             className="hero-fade-up mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium md:mt-10"
             style={{ animationDelay: "140ms" }}

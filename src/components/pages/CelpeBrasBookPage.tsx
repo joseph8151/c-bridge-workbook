@@ -73,12 +73,6 @@ export default function CelpeBrasBookPage() {
               <Link href="/consultation?test=CELPE-Bras&tier=100P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
               </Link>
-              <Link
-                href="/pricing?test=CELPE-Bras&price=129000&label=CELPE-Bras%20%C2%B7%20100P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                129,000원 바로 구매
-              </Link>
             </div>
           </div>
         </Container>
@@ -168,12 +162,6 @@ export default function CelpeBrasBookPage() {
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=CELPE-Bras&tier=100P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
-              </Link>
-              <Link
-                href="/pricing?test=CELPE-Bras&price=129000&label=CELPE-Bras%20%C2%B7%20100P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                129,000원 바로 구매
               </Link>
             </div>
           </div>

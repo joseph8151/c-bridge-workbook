@@ -76,12 +76,6 @@ export default function VersantBookPage() {
               <Link href="/consultation?test=Versant&tier=100P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
               </Link>
-              <Link
-                href="/pricing?test=Versant&price=129000&label=Versant%20%C2%B7%20100P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                129,000원 바로 구매
-              </Link>
             </div>
           </div>
         </Container>
@@ -171,12 +165,6 @@ export default function VersantBookPage() {
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=Versant&tier=100P" className="btn-primary px-7 text-sm font-medium">
                 구성 상담하기
-              </Link>
-              <Link
-                href="/pricing?test=Versant&price=129000&label=Versant%20%C2%B7%20100P#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                129,000원 바로 구매
               </Link>
             </div>
           </div>

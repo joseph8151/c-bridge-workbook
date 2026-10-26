@@ -110,12 +110,6 @@ export default function OatBookPage() {
               <Link href="/consultation?test=OAT" className="btn-primary px-7 text-sm font-medium">
                 상품 문의
               </Link>
-              <Link
-                href="/pricing?test=OAT&price=340000&label=OAT%20Complete%20350P&plans=6%20Week%20Plan,10%20Week%20Plan#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                340,000원 바로 구매
-              </Link>
             </div>
           </div>
         </Container>
@@ -402,12 +396,6 @@ export default function OatBookPage() {
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=OAT" className="btn-primary px-7 text-sm font-medium">
                 상품 문의
-              </Link>
-              <Link
-                href="/pricing?test=OAT&price=340000&label=OAT%20Complete%20350P&plans=6%20Week%20Plan,10%20Week%20Plan#direct-purchase"
-                className="btn-secondary px-7 text-sm font-medium"
-              >
-                340,000원 바로 구매
               </Link>
             </div>
           </div>

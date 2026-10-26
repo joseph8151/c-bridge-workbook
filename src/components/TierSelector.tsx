@@ -37,7 +37,6 @@ export default function TierSelector({ test }: { test: Test }) {
     target,
     ...(focusLabels.length ? { focus: focusLabels.join(", ") } : {}),
   }).toString();
-  const purchaseQuery = new URLSearchParams({ test: test.name, tier: meta.label }).toString();
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -171,17 +170,11 @@ export default function TierSelector({ test }: { test: Test }) {
             href={`/consultation?${consultQuery}`}
             className="btn-primary mt-7 flex items-center justify-center rounded-sm py-3.5 text-sm font-bold tracking-[0.08em]"
           >
-            구성 상담 받기
-          </Link>
-          <Link
-            href={`/pricing?${purchaseQuery}#direct-purchase`}
-            className="mt-2.5 flex items-center justify-center text-xs font-medium text-ink/50 underline decoration-ink/20 underline-offset-4 hover:text-ink/80"
-          >
-            상담 없이 바로 구매
+            ⚡ 빠른 상담 받기
           </Link>
           <p className="mt-3 text-center text-xs text-ink/40">
             위 가격을 먼저 확인하신 후, 충분한 상담을 통해 목표와 집중 영역에 맞는 구성으로
-            안내해드립니다.
+            안내해드립니다. 신청 후 30분 이내 문자 또는 전화로 연락드립니다.
           </p>
         </div>
       </div>

@@ -164,15 +164,12 @@ export default function TradeEnglishBookPage() {
           </p>
 
           <p className="mt-2 text-xs" style={{ color: "var(--color-muted)" }}>
-            계좌이체로 바로 구매하시거나, 상담 후 구성을 확정하실 수 있습니다.
+            상담을 통해 필요한 구성을 확정해드립니다. 신청 후 30분 이내 연락드립니다.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-2.5">
             <Link href="/consultation?test=Trade%20English&tier=200P" className="btn-primary px-7 text-sm font-medium">
               구성 상담
-            </Link>
-            <Link href="/pricing?test=Trade%20English&tier=200P#direct-purchase" className="btn-secondary px-7 text-sm font-medium">
-              바로 구매
             </Link>
           </div>
         </Container>

@@ -90,7 +90,7 @@ export default function ConsultationForm() {
         <p className="font-serif text-2xl font-bold text-ink">
           상담 신청이 접수되었습니다.
         </p>
-        <p className="mt-2 text-sm text-ink/60">빠른 시간 내에 연락드리겠습니다.</p>
+        <p className="mt-2 text-sm text-ink/60">30분 이내에 문자 또는 전화로 연락드리겠습니다.</p>
       </div>
     );
   }
@@ -98,9 +98,10 @@ export default function ConsultationForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
-        <p className="text-sm font-semibold text-ink">교재를 먼저 고르지 않으셔도 됩니다.</p>
+        <p className="text-sm font-semibold text-ink">⚡ 빠른 상담 — 신청 후 30분 이내 연락드립니다.</p>
         <p className="mt-1 text-xs leading-relaxed text-ink/60">
-          시험과 목표를 알려주시면 필요한 구성을 안내해드립니다.
+          교재를 먼저 고르지 않으셔도 됩니다. 시험과 목표를 알려주시면 필요한 구성을
+          안내해드립니다.
         </p>
       </div>
 
@@ -125,7 +126,7 @@ export default function ConsultationForm() {
       <div>
         <span className="text-xs font-bold tracking-[0.1em] text-ink/60">선호하는 연락 방법</span>
         <p className="mt-1 text-xs leading-relaxed text-ink/50">
-          문자·전화 상담을 권장합니다. 더 빠르고 정확하게 안내해드릴 수 있습니다.
+          문자 또는 전화 상담을 권장합니다. 더 빠르고 정확하게 안내해드릴 수 있습니다.
         </p>
         <div role="radiogroup" aria-label="선호하는 연락 방법" className="mt-3 grid grid-cols-2 gap-2">
           {contactMethods.map((m) => (
