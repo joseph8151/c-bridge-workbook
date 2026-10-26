@@ -41,8 +41,9 @@ const quantSample: ScienceReviewedQuestion = {
   subject: "Quantitative Reasoning",
   topic: "Algebra · Quantitative Comparison",
   difficulty: "Medium",
-  prompt: "x > 0일 때, Quantity A: x² + 1, Quantity B: 2x 중 어느 쪽이 더 큰가?",
-  correctAnswer: "두 수량이 같다고 단정할 수 없음 (x=1일 때만 같음, 그 외에는 A가 큼)",
+  prompt: "If x > 0, Quantity A: x² + 1, Quantity B: 2x — which quantity is greater?",
+  correctAnswer:
+    "The relationship cannot be determined from the information given (the quantities are equal only when x = 1; for all other x > 0, Quantity A is greater).",
   explanation:
     "x² + 1 - 2x = (x-1)² ≥ 0이므로 항상 A ≥ B이며, x=1일 때만 두 값이 같습니다. x>0 범위 전체에서 '항상 같다'고 단정할 수 없으므로, 주어진 정보만으로는 대소 관계를 하나로 확정할 수 없습니다.",
   formulaUsed: "(x-1)² = x² - 2x + 1",
@@ -271,7 +272,7 @@ export default function GreBookPage() {
             </p>
 
             <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              질문: 빈칸에 들어갈 가장 적절한 단어를 고르시오.
+              Question: Choose the word that best completes the blank.
             </p>
 
             <div className="mt-4 space-y-2.5">
@@ -307,8 +308,9 @@ export default function GreBookPage() {
               ANALYTICAL WRITING · ISSUE TASK (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;어떤 사람들은 성공이 대부분 개인의 노력에서 비롯된다고 믿는 반면, 다른 사람들은 외부
-              환경이 더 큰 역할을 한다고 믿는다. 이 주제에 대한 자신의 입장을 논하시오.&rdquo;
+              &ldquo;Some people believe that success results mainly from individual effort, while others
+              believe that external circumstances play a larger role. Discuss your position on this
+              issue.&rdquo;
             </p>
             <p className="mt-5 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
               고득점 답안 구조 예시

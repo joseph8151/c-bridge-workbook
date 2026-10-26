@@ -50,32 +50,32 @@ const writingIncludes = [
 ];
 
 const lrOptions = [
-  { key: "A", text: "시 의회가 예산안을 전부 승인할 것이다.", correct: false },
-  { key: "B", text: "신규 공원 부지의 토양 오염도가 기준치 이하일 것이다.", correct: true },
-  { key: "C", text: "주민 설문조사 참여율이 예년보다 높을 것이다.", correct: false },
-  { key: "D", text: "인근 상권의 임대료가 하락할 것이다.", correct: false },
+  { key: "A", text: "The city council will approve the entire budget proposal.", correct: false },
+  { key: "B", text: "The soil contamination level at the new park site is below the regulatory threshold.", correct: true },
+  { key: "C", text: "Resident survey participation this year is higher than in previous years.", correct: false },
+  { key: "D", text: "Rents in the surrounding commercial district will decline.", correct: false },
 ];
 
 const rcOptions = [
-  { key: "A", text: "재생사업은 고용을 전혀 창출하지 못한다.", correct: false },
+  { key: "A", text: "Redevelopment creates no jobs whatsoever.", correct: false },
   {
     key: "B",
-    text: "재생사업의 경제적 효과 평가가 임대료 상승에 따른 기존 주민 이탈을 간과할 수 있다는 것",
+    text: "Evaluations of redevelopment's economic effects may overlook the displacement of existing residents caused by rising rents.",
     correct: true,
   },
-  { key: "C", text: "재생사업은 반드시 중단되어야 한다는 것", correct: false },
-  { key: "D", text: "노후 산업단지는 재생사업 대상이 될 수 없다는 것", correct: false },
+  { key: "C", text: "Redevelopment projects must always be halted.", correct: false },
+  { key: "D", text: "Aging industrial districts should never be targeted for redevelopment.", correct: false },
 ];
 
 const assumptionOptions = [
   {
     key: "A",
-    text: "집중도가 높아진 원인이 스트레칭 자체이지, 그 그룹이 가진 다른 공통 특성(수면시간 등) 때문이 아니다.",
+    text: "The increase in focus was caused by the stretching itself, rather than some other characteristic shared by that group (such as sleep duration).",
     correct: true,
   },
-  { key: "B", text: "모든 직장인이 스트레칭을 좋아한다.", correct: false },
-  { key: "C", text: "스트레칭은 10분보다 길게 할수록 효과가 크다.", correct: false },
-  { key: "D", text: "기업은 직원 건강에 책임이 있다.", correct: false },
+  { key: "B", text: "All employees enjoy stretching.", correct: false },
+  { key: "C", text: "Stretching becomes more effective the longer it is performed beyond ten minutes.", correct: false },
+  { key: "D", text: "Companies are responsible for their employees' health.", correct: false },
 ];
 
 const explanationFields = [
@@ -290,12 +290,13 @@ export default function LsatBookPage() {
               LOGICAL REASONING · STRENGTHEN (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;시 당국은 폐공장 부지에 신규 공원을 조성하면 주민 건강이 개선될 것이라고 발표했다. 따라서
-              시 의회는 이 계획에 예산을 배정해야 한다.&rdquo;
+              &ldquo;City officials announced that converting the site of a defunct factory into a new park
+              would improve residents&rsquo; health. Therefore, the city council should allocate funding for
+              this plan.&rdquo;
             </p>
 
             <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              질문: 다음 중 위 논증을 가장 강화하는 것은?
+              Question: Which of the following, if true, most strengthens the argument above?
             </p>
 
             <div className="mt-4 space-y-2.5">
@@ -321,8 +322,8 @@ export default function LsatBookPage() {
 
             <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
               WHY — 논증의 결론(예산 배정)은 공원 조성이 실제로 가능하다는 전제에 의존합니다. 토양 오염도가
-              기준치 이하라는 사실은 이 전제를 뒷받침하므로 논증을 강화합니다. 나머지 선택지는 결론과 직접
-              연결되지 않는 정보입니다.
+              기준치 이하라는 사실(B)은 이 전제를 뒷받침하므로 논증을 강화합니다. 나머지 선택지는 결론과
+              직접 연결되지 않는 정보입니다.
             </p>
           </div>
 
@@ -331,15 +332,17 @@ export default function LsatBookPage() {
               READING COMPREHENSION · SOCIAL SCIENCE (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-base leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              최근 여러 도시에서는 노후 산업단지를 재생해 복합 문화공간으로 전환하는 사업을 추진하고 있다.
-              지지자들은 이러한 사업이 지역 경제를 활성화하고 고용을 창출한다고 주장한다. 그러나 일부
-              연구자들은 재생사업 이후 임대료 상승으로 기존 주민과 소상공인이 오히려 지역을 떠나는 현상이
-              나타난다고 지적한다. 이 연구자들은 재생사업의 경제적 효과를 평가할 때 고용 창출 수치만이
-              아니라 기존 거주자의 정주 여부도 함께 살펴봐야 한다고 제안한다.
+              In recent years, many cities have pursued projects that redevelop aging industrial districts
+              into mixed-use cultural spaces. Proponents argue that such projects revitalize local economies
+              and create jobs. Some researchers, however, point out that rising rents following redevelopment
+              often drive existing residents and small business owners out of the area. These researchers
+              suggest that evaluating the economic effects of redevelopment should account not only for
+              job-creation figures but also for whether existing residents remain in the community.
             </p>
 
             <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              질문: 위 글에서 일부 연구자들이 제기하는 핵심 우려는 무엇인가?
+              Question: Which of the following best describes the central concern raised by the researchers
+              in the passage?
             </p>
 
             <div className="mt-4 space-y-2.5">
@@ -364,10 +367,10 @@ export default function LsatBookPage() {
             </div>
 
             <p className="mt-5 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
-              WHY — 지문은 재생사업이 &ldquo;전혀&rdquo; 효과가 없다거나 &ldquo;반드시&rdquo; 중단되어야 한다는
-              극단적 주장을 하지 않습니다. 연구자들의 핵심 지적은 효과 평가 시 고용 수치 외에 기존 거주자의
-              정주 여부도 함께 봐야 한다는 것이므로 정답은 B입니다. 지문에 없는 극단적 표현이 포함된
-              선택지는 대부분 오답입니다.
+              WHY — 지문은 재생사업이 &ldquo;whatsoever&rdquo; 효과가 없다거나 &ldquo;must always&rdquo;
+              중단되어야 한다는 극단적 주장을 하지 않습니다. 연구자들의 핵심 지적은 효과 평가 시 고용 수치
+              외에 기존 거주자의 정주 여부도 함께 봐야 한다는 것이므로 정답은 B입니다. 지문에 없는 극단적
+              표현이 포함된 선택지는 대부분 오답입니다.
             </p>
           </div>
 
@@ -376,12 +379,13 @@ export default function LsatBookPage() {
               LOGICAL REASONING · ASSUMPTION (자체 제작 예시)
             </p>
             <p className="mt-4 break-keep font-serif text-base italic leading-relaxed" style={{ color: "var(--color-ink)" }}>
-              &ldquo;한 연구에 따르면 매일 아침 10분간 스트레칭을 한 직장인 그룹은 그렇지 않은 그룹보다 하루
-              업무 집중도가 더 높았다. 따라서 모든 기업은 출근 직후 스트레칭 시간을 의무화해야 한다.&rdquo;
+              &ldquo;According to one study, employees who stretched for ten minutes every morning reported
+              higher workday focus than those who did not. Therefore, every company should make a stretching
+              period mandatory immediately after employees arrive at work.&rdquo;
             </p>
 
             <p className="mt-6 text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
-              질문: 위 논증이 성립하기 위해 반드시 전제되어야 하는 것은?
+              Question: Which of the following is an assumption required for the argument above to be valid?
             </p>
 
             <div className="mt-4 space-y-2.5">
