@@ -10,9 +10,9 @@ const bodyLines = [
 const includes = ["듣기·읽기·쓰기·말하기(병동)", "한국어 해설", "모의", "Final Review"];
 
 const prices = [
-  { label: "Pflege 100P", price: "₩119,000" },
-  { label: "Pflege 200P", price: "₩220,000" },
-  { label: "Pflege 300P", price: "₩332,000" },
+  { label: "Pflege 100P", price: "₩129,000" },
+  { label: "Pflege 200P", price: "₩199,000" },
+  { label: "Pflege 300P", price: "₩279,000" },
 ];
 
 const lookInsideExamples = [
