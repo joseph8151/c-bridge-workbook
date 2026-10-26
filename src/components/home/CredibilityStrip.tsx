@@ -7,23 +7,26 @@ export default function CredibilityStrip() {
   return (
     <div className="border-y" style={{ borderColor: "var(--color-border)" }}>
       <Container>
-        <div className="flex justify-center pt-5 md:pt-6">
+        <div className="flex flex-col items-center gap-2.5 pb-6 pt-7 text-center md:gap-3 md:pt-8">
+          <p className="eyebrow">MADE BY EXPERTS</p>
           <p
-            className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border px-4 py-2 text-center text-xs leading-relaxed min-[361px]:px-5 md:px-6 md:py-2.5 md:text-sm"
-            style={{ borderColor: "var(--color-bronze)", background: "var(--color-paper-dark)", color: "var(--color-ink)" }}
+            className="max-w-md break-keep text-sm leading-relaxed md:max-w-lg md:text-base"
+            style={{ color: "var(--color-ink)" }}
           >
-            <span aria-hidden="true" style={{ color: "var(--color-bronze)" }}>
-              ✓
-            </span>
-            <span className="font-semibold">각 과목 전문 강사진</span>
-            <span>이 직접 제작하고 검수 · 과목당</span>
-            <span className="font-bold" style={{ color: "var(--color-bronze)" }}>
+            각 과목 전문 강사진이 직접 제작하고 검수합니다. 과목당{" "}
+            <span
+              className="whitespace-nowrap font-serif text-base font-bold md:text-lg"
+              style={{ color: "var(--color-bronze)" }}
+            >
               5명 이상
             </span>
-            <span>이 협업해 만든 액기스 교재</span>
+            이 협업해 만든 액기스 교재.
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 py-6 md:justify-between">
+        <div
+          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 border-t py-6 md:justify-between"
+          style={{ borderColor: "var(--color-border)" }}
+        >
           {exams.map((name) => (
             <span
               key={name}
