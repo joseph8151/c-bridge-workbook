@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Sans } from "next/font/google";
+import { Instrument_Sans, Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -25,6 +25,16 @@ const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+// [BRITISH GREEN REDESIGN — Step 1] 영문 디스플레이/히어로/가격 전용 세리프.
+// 아직 어떤 컴포넌트에서도 사용하지 않음 — Step 2(공통 컴포넌트 리팩터)에서 연결 예정.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal"],
   display: "swap",
 });
 
@@ -87,7 +97,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ko" className={`${pretendard.variable} ${instrumentSans.variable} h-full antialiased`}>
+    <html
+      lang="ko"
+      className={`${pretendard.variable} ${instrumentSans.variable} ${fraunces.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col bg-ivory text-ink font-sans">
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>

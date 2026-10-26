@@ -127,6 +127,49 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ============================================================
+   BRITISH GREEN REDESIGN — NEW DESIGN TOKENS (Step 1 of 3)
+   Colors, typography, spacing, radius, motion for the upcoming
+   full visual redesign. NOT YET wired into any component or
+   page — nothing below changes how the live site looks today.
+   Step 2 will refactor shared components (Header, buttons,
+   section label, card, cover mockup, price card, FAQ, footer)
+   to consume these tokens; Step 3 will roll them out page by
+   page (Home → book template → PRICING → EXAMS).
+   ============================================================ */
+:root {
+  /* Color */
+  --bg-ink: #12312a;
+  --bg-ink-soft: #1e4339;
+  --bg-ink-deep: #0b221d;
+  --bg-paper: #f6f4ee;
+  --bg-surface: #ffffff;
+  --bg-line: #e2ded3;
+  --bg-text: #1c1c1a;
+  --bg-muted: #6a6a64;
+  --bg-accent: #c29a4b; /* gold — used sparingly, 2–3 spots per screen */
+  --bg-accent-soft: #f2ead8;
+  --bg-signal: #2f5d8a; /* blue — links/info only, never a CTA color */
+
+  /* Typography — Pretendard still carries Korean everywhere;
+     Fraunces is English display/hero/price only, never body copy. */
+  --bg-font-display: var(--font-fraunces), Georgia, serif;
+
+  /* Spacing / grid */
+  --bg-section-pad-desktop: 120px;
+  --bg-section-pad-mobile: 72px;
+  --bg-grid-max-width: 1200px;
+  --bg-grid-columns: 12;
+
+  /* Radius / shadow */
+  --bg-radius: 4px;
+  --bg-shadow: 0 1px 2px rgba(18, 49, 42, 0.06);
+
+  /* Motion — scroll-reveal */
+  --bg-reveal-duration: 0.4s;
+  --bg-reveal-distance: 12px;
+}
+
 :root {
   --ease-pub: cubic-bezier(0.22, 1, 0.36, 1);
 }
