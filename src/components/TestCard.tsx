@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { Test } from "@/lib/tests";
-import { priceSummaryCompact, tierMeta, tierOrder } from "@/lib/products";
+import { tierMeta, tierOrder } from "@/lib/products";
 
 // 텍스트 리스트 행 — 아이콘·표지 이미지 없이 시험명·설명·가격만.
 export default function TestCard({ test }: { test: Test }) {
   const availableTiers = test.availableTiers ?? tierOrder;
+  // 이 시험이 실제로 파는 분량의 가격만 "·"로 이어붙입니다 (전체 시험 공용
+  // priceSummaryCompact는 항상 100P·200P·300P 전체를 가리켜, 분량이 제한된
+  // 시험에서는 팔지 않는 분량의 가격까지 보여주는 문제가 있었습니다).
   const priceText =
-    test.priceOverride ??
-    (availableTiers.length === 1 ? `${tierMeta[availableTiers[0]].price.toLocaleString()}원` : priceSummaryCompact);
+    test.priceOverride ?? availableTiers.map((t) => `${tierMeta[t].price.toLocaleString()}원`).join(" · ");
 
   return (
     <Link

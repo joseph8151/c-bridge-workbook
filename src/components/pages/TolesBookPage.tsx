@@ -10,6 +10,7 @@ const bodyLines = [
 const includes = ["계약·조항 독해", "협상 메일", "답·해설", "모의 3회", "Final Review"];
 
 const prices = [
+  { label: "TOLES Higher 100P", price: "₩119,000" },
   { label: "TOLES Higher 200P", price: "₩220,000" },
   { label: "TOLES Higher 300P", price: "₩332,000" },
 ];
@@ -139,7 +140,7 @@ export default function TolesBookPage() {
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">PACKAGE & PRICE</p>
-          <div className="mt-8 grid gap-6 border-t pt-8 sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
+          <div className="mt-8 grid gap-6 border-t pt-8 sm:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
             {prices.map((p) => (
               <div key={p.label}>
                 <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>

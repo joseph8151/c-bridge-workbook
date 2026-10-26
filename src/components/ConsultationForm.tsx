@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { siteConfig } from "@/lib/config";
+import { tierOrder, tierMeta } from "@/lib/products";
 
 const testGroups: { label: string; items: string[] }[] = [
   {
@@ -42,7 +43,6 @@ const testGroups: { label: string; items: string[] }[] = [
 ];
 
 const weakAreaOptions = ["듣기", "읽기", "쓰기", "말하기", "전체"];
-const volumeOptions = ["200P", "300P"];
 
 const contactMethods = ["문자", "전화"] as const;
 
@@ -239,22 +239,25 @@ export default function ConsultationForm() {
 
       <div>
         <span className="text-xs font-bold tracking-[0.1em] text-ink/60">분량</span>
-        <div role="radiogroup" aria-label="분량" className="mt-3 grid grid-cols-2 gap-2">
-          {volumeOptions.map((v, i) => (
-            <label
-              key={v}
-              className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
-            >
-              <input
-                type="radio"
-                name="volume"
-                value={v}
-                defaultChecked={prefillTier ? v === prefillTier : i === 0}
-                className="sr-only"
-              />
-              {v}
-            </label>
-          ))}
+        <div role="radiogroup" aria-label="분량" className="mt-3 grid grid-cols-3 gap-2">
+          {tierOrder.map((t, i) => {
+            const v = tierMeta[t].label;
+            return (
+              <label
+                key={v}
+                className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+              >
+                <input
+                  type="radio"
+                  name="volume"
+                  value={v}
+                  defaultChecked={prefillTier ? v === prefillTier : i === 1}
+                  className="sr-only"
+                />
+                {v}
+              </label>
+            );
+          })}
         </div>
       </div>
 

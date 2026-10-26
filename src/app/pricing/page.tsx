@@ -10,14 +10,14 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "가격 안내 | C-BRIDGE",
-  description: "C-BRIDGE 시험 대비 패키지 200P(COMPLETE)·300P(INTENSIVE) 구성과 가격을 확인하세요.",
+  description: "C-BRIDGE 시험 대비 패키지 100P(STARTER)·200P(COMPLETE)·300P(INTENSIVE) 구성과 가격을 확인하세요.",
   alternates: { canonical: "/pricing" },
 };
 
 export default function PricingPage() {
   return (
     <section className="py-14 min-[361px]:py-16 md:py-28" style={{ background: "var(--color-paper)" }}>
-      <Container className="max-w-[760px] text-center">
+      <Container className="max-w-[960px] text-center">
         <p className="eyebrow">PACKAGE &amp; PRICE</p>
         <h1
           className="mx-auto mt-4 break-keep font-serif text-[28px] font-bold leading-[1.3] min-[361px]:mt-5 min-[361px]:text-4xl md:text-5xl md:leading-[1.35]"
@@ -32,7 +32,7 @@ export default function PricingPage() {
 
         <div className="mt-8 border-t min-[361px]:mt-10" style={{ borderColor: "var(--color-border)" }} />
 
-        <div className="mx-auto mt-10 grid max-w-2xl border sm:grid-cols-2 md:mt-12" style={{ borderColor: "var(--color-border)" }}>
+        <div className="mx-auto mt-10 grid max-w-4xl border sm:grid-cols-3 md:mt-12" style={{ borderColor: "var(--color-border)" }}>
           {tierOrder.map((t, i) => {
             const meta = tierMeta[t];
             return (

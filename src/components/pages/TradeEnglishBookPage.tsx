@@ -10,6 +10,7 @@ const bodyLines = [
 const includes = ["영문해석", "영작(클레임·회신)", "짧은 한국어 해설", "모의 3회"];
 
 const prices = [
+  { label: "L/C·클레임 100P", price: "₩119,000" },
   { label: "L/C·클레임 200P", price: "₩220,000" },
   { label: "L/C·클레임 300P", price: "₩332,000" },
 ];
@@ -145,7 +146,7 @@ export default function TradeEnglishBookPage() {
       <section className="border-t py-14 md:py-20" style={{ borderColor: "var(--color-border)" }}>
         <Container>
           <p className="eyebrow">PACKAGE & PRICE</p>
-          <div className="mt-8 grid gap-6 border-t pt-8 sm:grid-cols-2" style={{ borderColor: "var(--color-border)" }}>
+          <div className="mt-8 grid gap-6 border-t pt-8 sm:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
             {prices.map((p) => (
               <div key={p.label}>
                 <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>

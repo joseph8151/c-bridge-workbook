@@ -1,4 +1,4 @@
-export type Tier = "COMPLETE" | "PREMIUM";
+export type Tier = "STARTER" | "COMPLETE" | "PREMIUM";
 
 export interface TierMeta {
   tier: Tier;
@@ -16,6 +16,33 @@ export interface TierMeta {
 
 // 모든 시험 동일 가격. 시험 종류에 따라 금액이 달라지지 않습니다.
 export const tierMeta: Record<Tier, TierMeta> = {
+  STARTER: {
+    tier: "STARTER",
+    label: "100P",
+    pages: 100,
+    price: 119000,
+    mockTestsLabel: "2회",
+    name: "STARTER",
+    shortDesc: "가볍게 먼저 시작하거나, 핵심 유형만 빠르게 확인하고 싶을 때 적합한 입문 구성.",
+    recommendedFor: [
+      "가볍게 먼저 시작해보고 싶은 경우",
+      "시험일까지 2~4주",
+      "핵심 유형만 빠르게 확인하고 싶은 경우",
+    ],
+    ctaLabel: "100P 입문 패키지 보기",
+    includes: [
+      "문제집 100P",
+      "상세 해설집",
+      "실전 모의고사 2회",
+      "시험 직전 Final Review",
+      "4주 학습 플랜",
+      "오답노트",
+      "평생 소장 (다운로드 기한 없음)",
+      "입금 확인 후 3~10시간 이내 발송 (영업시간 내)",
+      "구매 후 카카오톡 질문 지원 1회",
+      "요청 시 실물 교재 제작 발송 (국내·해외)",
+    ],
+  },
   COMPLETE: {
     tier: "COMPLETE",
     label: "200P",
@@ -85,7 +112,7 @@ export const tierMeta: Record<Tier, TierMeta> = {
   },
 };
 
-export const tierOrder: Tier[] = ["COMPLETE", "PREMIUM"];
+export const tierOrder: Tier[] = ["STARTER", "COMPLETE", "PREMIUM"];
 export const defaultTier: Tier = "COMPLETE";
 
 export function getTierPrice(tier: Tier): number {
@@ -94,7 +121,7 @@ export function getTierPrice(tier: Tier): number {
 
 // 홈·시험 페이지·상담 폼 등에서 가격을 설명할 때 쓰는 통일된 한 줄 카피.
 export const priceSummaryLine =
-  "페이지 수에 따라 구성이 달라집니다. 200페이지 220,000원, 300페이지 332,000원.";
+  "페이지 수에 따라 구성이 달라집니다. 100페이지 119,000원, 200페이지 220,000원, 300페이지 332,000원.";
 
 // 카드처럼 공간이 좁은 곳에서 쓰는 축약형.
-export const priceSummaryCompact = `${tierMeta.COMPLETE.price.toLocaleString()}원 · ${tierMeta.PREMIUM.price.toLocaleString()}원`;
+export const priceSummaryCompact = `${tierMeta.STARTER.price.toLocaleString()}원 · ${tierMeta.COMPLETE.price.toLocaleString()}원 · ${tierMeta.PREMIUM.price.toLocaleString()}원`;

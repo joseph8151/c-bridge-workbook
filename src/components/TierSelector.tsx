@@ -4,14 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import BookCover from "./BookCover";
 import { Test, groupMeta, getLevelOptions } from "@/lib/tests";
-import { Tier, tierMeta, tierOrder, getTierPrice } from "@/lib/products";
+import { Tier, tierMeta, tierOrder, defaultTier, getTierPrice } from "@/lib/products";
 import { getIncludesForTier, getBonusContent, getBookSet } from "@/lib/productDetail";
 import { focusAreas } from "@/lib/focusAreas";
 
 export default function TierSelector({ test }: { test: Test }) {
   const levelOptions = getLevelOptions(test);
   const availableTiers = test.availableTiers ?? tierOrder;
-  const [tier, setTier] = useState<Tier>(availableTiers[0]);
+  const [tier, setTier] = useState<Tier>(availableTiers.includes(defaultTier) ? defaultTier : availableTiers[0]);
   const [target, setTarget] = useState<string>(levelOptions[Math.floor(levelOptions.length / 2)]);
   const [focus, setFocus] = useState<Set<string>>(new Set());
 
@@ -76,7 +76,7 @@ export default function TierSelector({ test }: { test: Test }) {
         {availableTiers.length > 1 && (
           <>
             <p className="mt-6 text-[11px] font-bold tracking-[0.14em] text-ink/40">02 · 분량 선택</p>
-            <div className="mt-3 grid grid-cols-2 gap-3">
+            <div className={`mt-3 grid gap-3 ${availableTiers.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
               {availableTiers.map((t) => {
                 const m = tierMeta[t];
                 const active = t === tier;
@@ -84,7 +84,7 @@ export default function TierSelector({ test }: { test: Test }) {
                   <button
                     key={t}
                     onClick={() => setTier(t)}
-                    className="relative border px-4 py-5 text-center transition-colors"
+                    className="relative border px-2.5 py-5 text-center transition-colors min-[361px]:px-4"
                     style={
                       active
                         ? { borderColor: "var(--color-rust)", background: "var(--color-rust)", color: "var(--color-paper)" }

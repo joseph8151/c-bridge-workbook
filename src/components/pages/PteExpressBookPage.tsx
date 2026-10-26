@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import TierSelector from "@/components/TierSelector";
 import AddOnSection from "@/components/AddOnSection";
 import { getTestBySlug } from "@/lib/tests";
-import { tierMeta, tierOrder } from "@/lib/products";
+import { tierMeta } from "@/lib/products";
 
 const factRows = [
   { label: "시험 시간", value: "약 1시간" },
@@ -234,7 +234,7 @@ export default function PteExpressBookPage() {
         <Container>
           <p className="eyebrow">WORKBOOK OPTIONS</p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-ink)" }}>
-            {tierMeta[tierOrder[0]].label}는 한 영역 또는 취약 영역을 집중적으로, {tierMeta[tierOrder[1]].label}
+            {tierMeta.COMPLETE.label}는 한 영역 또는 취약 영역을 집중적으로, {tierMeta.PREMIUM.label}
             는 Reading · Writing · Listening · Speaking 전 영역을 충분한 문제량으로 준비할 수 있도록
             구성됩니다.
           </p>

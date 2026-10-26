@@ -29,6 +29,7 @@ export function getBonusContent(test: Test) {
 }
 
 const bookSets: Record<Tier, string[]> = {
+  STARTER: ["Main Workbook", "Answer Guide", "Mock Test", "Final Review"],
   COMPLETE: ["Main Workbook", "Answer Guide", "Mock Test Book", "Final Review", "Bonus Book"],
   PREMIUM: [
     "Main Workbook 01",

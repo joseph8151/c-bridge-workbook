@@ -72,6 +72,7 @@ export default function RecommendPage() {
               시험을 고르고 약한 영역을 알려주시면, 그 시험·목표에 맞춘 구성으로 상담을 이어갑니다.
             </p>
             <div className="mt-6 space-y-2 text-sm text-ink/60">
+              <p>100페이지는 가볍게 입문.</p>
               <p>200페이지는 한 영역 집중.</p>
               <p>300페이지는 전 영역.</p>
             </div>

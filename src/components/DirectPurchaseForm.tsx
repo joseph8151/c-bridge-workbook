@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { finderGroups } from "@/lib/finderTests";
-import { tierMeta, tierOrder, type Tier } from "@/lib/products";
+import { tierMeta, tierOrder, defaultTier, type Tier } from "@/lib/products";
 import { siteConfig } from "@/lib/config";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -31,7 +31,7 @@ export default function DirectPurchaseForm() {
     : [];
 
   const [status, setStatus] = useState<Status>("idle");
-  const [tier, setTier] = useState<Tier>(matchedTier ?? tierOrder[0]);
+  const [tier, setTier] = useState<Tier>(matchedTier ?? defaultTier);
   const [selectedTests, setSelectedTests] = useState<string[]>(prefillTest ? [prefillTest] : []);
   const [selectionError, setSelectionError] = useState(false);
   const [studyPlan, setStudyPlan] = useState<string>(planOptions[0] ?? "");
@@ -120,7 +120,7 @@ export default function DirectPurchaseForm() {
             <p className="mt-1 text-xs leading-relaxed text-ink/50">
               선택하신 구성이 희망 문제집 전체에 동일하게 적용됩니다.
             </p>
-            <div role="radiogroup" aria-label="구성" className="mt-3 grid grid-cols-2 gap-2">
+            <div role="radiogroup" aria-label="구성" className={`mt-3 grid gap-2 ${tierOrder.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
               {tierOrder.map((t) => {
                 const m = tierMeta[t];
                 return (

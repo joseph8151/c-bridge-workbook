@@ -39,10 +39,10 @@ export interface Test {
   featured?: boolean;
   badges?: string[];
   keywords?: string[];
-  // 공용 200P/300P 가격표와 다른 고정가 단일 상품(전문대학원 시험 등)의 카드 표시용 가격.
-  // 지정하지 않으면 기존처럼 priceSummaryCompact(공용 가격 범위)를 보여줍니다.
+  // 공용 100P/200P/300P 가격표와 다른 고정가 단일 상품(전문대학원 시험 등)의 카드 표시용 가격.
+  // 지정하지 않으면 availableTiers에 해당하는 분량의 가격을 "·"로 이어붙여 보여줍니다.
   priceOverride?: string;
-  // 기본은 200P/300P 둘 다 판매(tierOrder). AZ-900/AI-900처럼 200P 단일 분량만 판매할 때만 지정합니다.
+  // 기본은 100P/200P/300P 전부 판매(tierOrder). AZ-900/AI-900처럼 일부 분량만 판매할 때만 지정합니다.
   availableTiers?: Tier[];
   // 주관 기관(AWS, Microsoft, CompTIA, PMI 등). 비공식 자료임을 분명히 하기 위한 표기용이며
   // 공식 제휴를 의미하지 않습니다.
@@ -1127,7 +1127,7 @@ export const tests: Test[] = [
       "Azure 핵심 개념, 서비스, 거버넌스, 요금제를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["AZ-900", "Azure Fundamentals", "Azure 자격증"],
     provider: "Microsoft",
-    availableTiers: ["COMPLETE"],
+    availableTiers: ["STARTER", "COMPLETE"],
   },
   {
     id: "ai-900",
@@ -1140,7 +1140,7 @@ export const tests: Test[] = [
       "AI·ML 기본 개념과 Azure AI 서비스를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["AI-900", "Azure AI Fundamentals", "AI 자격증"],
     provider: "Microsoft",
-    availableTiers: ["COMPLETE"],
+    availableTiers: ["STARTER", "COMPLETE"],
   },
   {
     id: "comptia-security-plus",
@@ -1164,7 +1164,7 @@ export const tests: Test[] = [
     description:
       "ITIL의 핵심 개념, 원칙, Practice를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["ITIL Foundation", "ITIL 자격증", "IT서비스관리 자격증"],
-    availableTiers: ["COMPLETE"],
+    availableTiers: ["STARTER", "COMPLETE"],
   },
 
   // ---------------- PROJECT_MANAGEMENT ----------------
@@ -1191,7 +1191,7 @@ export const tests: Test[] = [
       "프로젝트 관리 기본 개념과 프로세스를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["CAPM", "CAPM 자격증", "PMI 입문 자격증"],
     provider: "PMI",
-    availableTiers: ["COMPLETE"],
+    availableTiers: ["STARTER", "COMPLETE"],
   },
   {
     id: "prince2-foundation",
@@ -1203,7 +1203,7 @@ export const tests: Test[] = [
     description:
       "PRINCE2의 원칙, 테마, 프로세스를 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["PRINCE2 Foundation", "PRINCE2 자격증", "프로젝트 관리 방법론"],
-    availableTiers: ["COMPLETE"],
+    availableTiers: ["STARTER", "COMPLETE"],
   },
   {
     id: "psm-1",
@@ -1216,7 +1216,7 @@ export const tests: Test[] = [
       "Scrum Guide 기반 원칙, 역할, 이벤트, 산출물을 문제풀이 중심으로 준비하는 Self-Study 구성입니다.",
     keywords: ["PSM I", "PSM1", "Professional Scrum Master", "스크럼 마스터 자격증"],
     provider: "Scrum.org",
-    availableTiers: ["COMPLETE"],
+    availableTiers: ["STARTER", "COMPLETE"],
   },
 ];
 
