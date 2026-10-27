@@ -22,7 +22,7 @@ const BORDER_CLASSES = [
 
 export default function ValueStack() {
   return (
-    <section className="border-t py-24 md:py-32" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-24 md:py-32" style={{ borderColor: "var(--bg-line)" }} data-reveal>
       <Container className="grid gap-12 lg:grid-cols-[1fr_320px] lg:items-start lg:gap-16">
         <div>
           <SectionHeader
@@ -32,16 +32,16 @@ export default function ValueStack() {
             size="lg"
           />
 
-          <div className="mt-10 grid border-y sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
+          <div className="mt-10 grid border-y sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: "var(--bg-line)" }}>
             {items.map((item, i) => (
-              <div key={item.no} className={`p-6 min-[361px]:p-8 ${BORDER_CLASSES[i]}`} style={{ borderColor: "var(--color-border)" }}>
-                <span className="text-2xl font-bold" style={{ color: "var(--color-bronze)" }}>
+              <div key={item.no} className={`p-6 min-[361px]:p-8 ${BORDER_CLASSES[i]}`} style={{ borderColor: "var(--bg-line)" }}>
+                <span className="text-2xl font-bold" style={{ color: "var(--bg-accent)" }}>
                   {item.no}
                 </span>
-                <p className="mt-3 text-sm font-bold tracking-[0.04em]" style={{ color: "var(--color-ink)" }}>
+                <p className="mt-3 text-sm font-bold tracking-[0.04em]" style={{ color: "var(--bg-ink)" }}>
                   {item.title}
                 </p>
-                <p className="mt-1.5 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+                <p className="mt-1.5 break-keep text-sm leading-relaxed" style={{ color: "var(--bg-muted)" }}>
                   {item.desc}
                 </p>
               </div>

@@ -25,7 +25,7 @@ export default function SectionHeader({
       {title && (
         <h2
           className={`mt-3 break-keep font-medium leading-[1.2] tracking-[-0.03em] md:mt-4 ${titleSizeClasses[size]}`}
-          style={{ color: "var(--color-ink)" }}
+          style={{ color: "var(--bg-ink)" }}
         >
           {title}
         </h2>
@@ -33,7 +33,7 @@ export default function SectionHeader({
       {description && (
         <p
           className={`mt-3 max-w-[650px] break-keep text-base leading-[1.7] md:mt-4 ${align === "center" ? "mx-auto" : "text-left"}`}
-          style={{ color: "var(--color-muted)" }}
+          style={{ color: "var(--bg-muted)" }}
         >
           {description}
         </p>

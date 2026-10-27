@@ -6,40 +6,40 @@ import { tierMeta } from "@/lib/products";
 
 export default function StudyProfiles() {
   return (
-    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }} data-reveal>
+    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--bg-line)", background: "var(--bg-surface)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="WHO IT'S FOR" title="Sample Study Profiles" />
-        <p className="mt-3 text-sm" style={{ color: "var(--color-muted)" }}>
+        <p className="mt-3 text-sm" style={{ color: "var(--bg-muted)" }}>
           실제 후기가 아닌, 목표에 따라 문제집이 어떻게 구성되는지 보여주는 학습 구성 예시입니다.
         </p>
 
-        <div className="mt-10 grid border-y sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: "var(--color-border)" }}>
+        <div className="mt-10 grid border-y sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: "var(--bg-line)" }}>
           {caseStudies.map((c, i) => (
             <div
               key={c.test}
               className={`flex flex-col justify-between p-8 ${
                 ["", "border-t sm:border-t-0 sm:border-l", "border-t lg:border-t-0 lg:border-l", "border-t sm:border-l lg:border-t-0"][i]
               }`}
-              style={{ borderColor: "var(--color-border)" }}
+              style={{ borderColor: "var(--bg-line)" }}
             >
               <div>
-                <p className="text-xl font-bold" style={{ color: "var(--color-ink)" }}>
+                <p className="text-xl font-bold" style={{ color: "var(--bg-ink)" }}>
                   {c.test}
                 </p>
-                <p className="mt-2 text-sm" style={{ color: "var(--color-muted)" }}>
+                <p className="mt-2 text-sm" style={{ color: "var(--bg-muted)" }}>
                   {c.profile}
                 </p>
-                <p className="mt-4 text-sm font-semibold" style={{ color: "var(--color-bronze)" }}>
+                <p className="mt-4 text-sm font-semibold" style={{ color: "var(--bg-accent)" }}>
                   {c.focus}
                 </p>
-                <p className="mt-1 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-muted)" }}>
+                <p className="mt-1 text-xs font-bold tracking-[0.06em]" style={{ color: "var(--bg-muted)" }}>
                   {tierMeta[c.tier].label} {tierMeta[c.tier].name}
                 </p>
               </div>
               <Link
                 href={`/consultation?test=${encodeURIComponent(c.test)}&tier=${encodeURIComponent(tierMeta[c.tier].label)}`}
                 className="mt-8 inline-block text-xs font-medium tracking-[0.06em]"
-                style={{ color: "var(--color-ink)" }}
+                style={{ color: "var(--bg-ink)" }}
               >
                 이 구성 보기 <span className="arrow-slide">→</span>
               </Link>

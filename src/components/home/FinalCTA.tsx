@@ -3,12 +3,12 @@ import Container from "@/components/Container";
 
 export default function FinalCTA() {
   return (
-    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }} data-reveal>
+    <section className="border-t py-16 md:py-24" style={{ borderColor: "var(--bg-line)", background: "var(--bg-paper)" }} data-reveal>
       <Container>
         <div className="flex flex-col items-start gap-8">
           <p
             className="break-keep text-[26px] font-medium leading-[1.25] tracking-[-0.03em] md:text-[32px]"
-            style={{ color: "var(--color-ink)" }}
+            style={{ color: "var(--bg-ink)" }}
           >
             시험은 정했는데,
             <br />

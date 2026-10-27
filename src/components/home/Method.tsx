@@ -9,24 +9,24 @@ const steps = [
 
 export default function Method() {
   return (
-    <section id="method" className="border-t py-16 md:py-24" style={{ borderColor: "var(--color-border)", background: "var(--color-paper-dark)" }} data-reveal>
+    <section id="method" className="border-t py-16 md:py-24" style={{ borderColor: "var(--bg-line)", background: "var(--bg-surface)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="THE METHOD" title="THE C-BRIDGE METHOD" size="sm" />
 
-        <div className="mt-12 grid border-y sm:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
+        <div className="mt-12 grid border-y sm:grid-cols-3" style={{ borderColor: "var(--bg-line)" }}>
           {steps.map((s, i) => (
             <div
               key={s.no}
               className={`p-8 md:p-10 ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
-              style={{ borderColor: "var(--color-border)" }}
+              style={{ borderColor: "var(--bg-line)" }}
             >
-              <span className="text-5xl font-bold" style={{ color: "var(--color-bronze)" }}>
+              <span className="text-5xl font-bold" style={{ color: "var(--bg-accent)" }}>
                 {s.no}
               </span>
-              <p className="mt-5 text-sm font-semibold tracking-[0.1em]" style={{ color: "var(--color-ink)" }}>
+              <p className="mt-5 text-sm font-semibold tracking-[0.1em]" style={{ color: "var(--bg-ink)" }}>
                 {s.title}
               </p>
-              <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--bg-muted)" }}>
                 {s.desc}
               </p>
             </div>

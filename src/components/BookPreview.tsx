@@ -15,7 +15,7 @@ export default function BookPreview({ testName }: { testName?: string }) {
   const [desktopActive, setDesktopActive] = useState(0);
 
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--bg-line)" }} data-reveal>
       <Container>
         <SectionHeader
           eyebrow="LOOK INSIDE"
@@ -38,13 +38,13 @@ export default function BookPreview({ testName }: { testName?: string }) {
               aria-label={`${page.titleEn} 미리보기 확대`}
             >
               <PreviewCard page={page} detail />
-              <p className="mt-3 text-xs font-medium tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+              <p className="mt-3 text-xs font-medium tracking-[0.06em]" style={{ color: "var(--bg-accent)" }}>
                 {page.no} · {page.eyebrow}
               </p>
-              <p className="text-base font-medium" style={{ color: "var(--color-ink)" }}>
+              <p className="text-base font-medium" style={{ color: "var(--bg-ink)" }}>
                 {page.titleEn}
               </p>
-              <p className="mt-1 break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              <p className="mt-1 break-keep text-xs leading-relaxed" style={{ color: "var(--bg-muted)" }}>
                 {page.desc}
               </p>
             </button>
@@ -61,8 +61,8 @@ export default function BookPreview({ testName }: { testName?: string }) {
           >
             <PreviewCard page={lookInsidePreviews[desktopActive]} detail />
             <span
-              className="absolute bottom-4 right-4 border px-2.5 py-1.5 text-[11px] font-medium tracking-[0.04em] transition-colors group-hover:border-[var(--color-bronze)] group-hover:text-[var(--color-bronze)]"
-              style={{ borderColor: "var(--color-border)", background: "rgba(251,249,244,0.92)", color: "var(--color-ink)" }}
+              className="absolute bottom-4 right-4 border px-2.5 py-1.5 text-[11px] font-medium tracking-[0.04em] transition-colors group-hover:border-[var(--bg-accent)] group-hover:text-[var(--bg-accent)]"
+              style={{ borderColor: "var(--bg-line)", background: "rgba(251,249,244,0.92)", color: "var(--bg-ink)" }}
             >
               클릭하여 확대 ↗
             </span>
@@ -78,18 +78,18 @@ export default function BookPreview({ testName }: { testName?: string }) {
                   onClick={() => setDesktopActive(i)}
                   className="flex cursor-pointer items-center gap-3 border p-2.5 text-left transition-colors"
                   style={{
-                    borderColor: active ? "var(--color-bronze)" : "var(--color-border)",
-                    background: active ? "var(--color-paper-dark)" : "transparent",
+                    borderColor: active ? "var(--bg-accent)" : "var(--bg-line)",
+                    background: active ? "var(--bg-surface)" : "transparent",
                   }}
                 >
                   <div className="w-14 shrink-0">
                     <PreviewCard page={page} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-bold tracking-[0.06em]" style={{ color: "var(--color-bronze)" }}>
+                    <p className="text-[10px] font-bold tracking-[0.06em]" style={{ color: "var(--bg-accent)" }}>
                       {page.no}
                     </p>
-                    <p className="truncate text-xs font-bold" style={{ color: "var(--color-ink)" }}>
+                    <p className="truncate text-xs font-bold" style={{ color: "var(--bg-ink)" }}>
                       {page.titleEn}
                     </p>
                   </div>
@@ -99,14 +99,14 @@ export default function BookPreview({ testName }: { testName?: string }) {
           </div>
         </div>
 
-        <p className="mt-6 text-xs" style={{ color: "var(--color-muted)" }}>
+        <p className="mt-6 text-xs" style={{ color: "var(--bg-muted)" }}>
           ※ 시험과 선택 구성에 따라 제공되는 자료는 달라질 수 있습니다.
         </p>
 
         <Link
           href={ctaHref}
-          className="mt-6 inline-flex text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--color-bronze)]"
-          style={{ color: "var(--color-ink)" }}
+          className="mt-6 inline-flex text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--bg-accent)]"
+          style={{ color: "var(--bg-ink)" }}
         >
           {ctaLabel} <span className="arrow-slide ml-1.5">→</span>
         </Link>

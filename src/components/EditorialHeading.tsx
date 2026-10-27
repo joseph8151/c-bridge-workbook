@@ -22,7 +22,7 @@ export default function EditorialHeading({
   return (
     <Tag
       className={`break-keep font-medium tracking-[-0.03em] ${SIZE_CLASSES[size]} ${className}`}
-      style={{ color: color ?? "var(--color-ink)" }}
+      style={{ color: color ?? "var(--bg-ink)" }}
     >
       {children}
     </Tag>

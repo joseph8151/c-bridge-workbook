@@ -21,20 +21,20 @@ const BORDER_CLASSES = [
 
 export default function ProcessTimeline() {
   return (
-    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--color-border)" }} data-reveal>
+    <section className="border-t py-20 md:py-28" style={{ borderColor: "var(--bg-line)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="HOW IT'S MADE" title="HOW WE BUILD THE BOOK" />
 
-        <div className="mt-12 grid border-y sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: "var(--color-border)" }}>
+        <div className="mt-12 grid border-y sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: "var(--bg-line)" }}>
           {steps.map((s, i) => (
-            <div key={s.no} className={`p-8 ${BORDER_CLASSES[i]}`} style={{ borderColor: "var(--color-border)" }}>
-              <span className="text-3xl font-bold" style={{ color: "var(--color-bronze)" }}>
+            <div key={s.no} className={`p-8 ${BORDER_CLASSES[i]}`} style={{ borderColor: "var(--bg-line)" }}>
+              <span className="text-3xl font-bold" style={{ color: "var(--bg-accent)" }}>
                 {s.no}
               </span>
-              <p className="mt-3 text-lg font-bold" style={{ color: "var(--color-ink)" }}>
+              <p className="mt-3 text-lg font-bold" style={{ color: "var(--bg-ink)" }}>
                 {s.title}
               </p>
-              <p className="mt-2 break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
+              <p className="mt-2 break-keep text-sm leading-relaxed" style={{ color: "var(--bg-muted)" }}>
                 {s.desc}
               </p>
             </div>

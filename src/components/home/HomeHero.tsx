@@ -4,22 +4,22 @@ import Container from "@/components/Container";
 
 export default function HomeHero() {
   return (
-    <section className="w-full" style={{ background: "var(--color-paper)" }}>
+    <section className="w-full" style={{ background: "var(--bg-paper)" }}>
       <Container className="grid items-center gap-10 py-12 min-[361px]:py-14 md:py-24 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-28">
         <div>
           <p className="eyebrow text-[11px] min-[361px]:text-xs">PROFESSIONAL LANGUAGE EXAM SERIES</p>
           <h1
             className="hero-fade-up mt-5 break-keep font-medium leading-[1.15] tracking-[-0.03em]"
-            style={{ color: "var(--color-ink)", fontSize: "clamp(40px, 5vw, 64px)" }}
+            style={{ color: "var(--bg-ink)", fontSize: "clamp(40px, 5vw, 64px)" }}
           >
             필요한 문제를,
             <br />
             충분한 분량으로.
           </h1>
-          <p className="mt-4 max-w-md break-keep text-[15px] leading-[1.6] md:mt-6 md:text-[17px] md:leading-relaxed" style={{ color: "var(--color-muted)" }}>
+          <p className="mt-4 max-w-md break-keep text-[15px] leading-[1.6] md:mt-6 md:text-[17px] md:leading-relaxed" style={{ color: "var(--bg-muted)" }}>
             시험 구조에 맞춘 방대한 문제와 자료로 목표 점수를 준비합니다.
           </p>
-          <p className="mt-3 max-w-md break-keep text-[15px] leading-[1.6] md:text-[17px] md:leading-relaxed" style={{ color: "var(--color-muted)" }}>
+          <p className="mt-3 max-w-md break-keep text-[15px] leading-[1.6] md:text-[17px] md:leading-relaxed" style={{ color: "var(--bg-muted)" }}>
             충분한 문제 경험은 실전에서의 속도와 정확도를 만드는 중요한 과정입니다. C-BRIDGE는
             다양한 유형과 방대한 문제량을 통해 실제 시험에 충분히 대비할 수 있도록 구성합니다.
           </p>
@@ -29,15 +29,15 @@ export default function HomeHero() {
             </Link>
             <Link
               href="/consultation"
-              className="inline-flex min-h-[48px] items-center justify-center text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--color-bronze)] md:min-h-[52px] md:justify-start"
-              style={{ color: "var(--color-ink)" }}
+              className="inline-flex min-h-[48px] items-center justify-center text-sm font-medium tracking-[0.02em] transition-colors hover:text-[var(--bg-accent)] md:min-h-[52px] md:justify-start"
+              style={{ color: "var(--bg-ink)" }}
             >
               ⚡ 빠른 상담하기 <span className="arrow-slide ml-1.5">→</span>
             </Link>
           </div>
           <p
             className="hero-fade-up mt-3 text-xs font-medium"
-            style={{ animationDelay: "100ms", color: "var(--color-muted)" }}
+            style={{ animationDelay: "100ms", color: "var(--bg-muted)" }}
           >
             상담 신청 후 30분 이내 문자 또는 전화로 연락드립니다.
           </p>
@@ -54,8 +54,8 @@ export default function HomeHero() {
               <li key={t.name}>
                 <Link
                   href={t.href}
-                  className="underline decoration-[var(--color-border)] underline-offset-4 transition-colors hover:text-[var(--color-bronze)] hover:decoration-[var(--color-bronze)]"
-                  style={{ color: "var(--color-ink)" }}
+                  className="underline decoration-[var(--bg-line)] underline-offset-4 transition-colors hover:text-[var(--bg-accent)] hover:decoration-[var(--bg-accent)]"
+                  style={{ color: "var(--bg-ink)" }}
                 >
                   {t.name}
                 </Link>

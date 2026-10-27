@@ -18,14 +18,14 @@ const items: ExamIndexItem[] = examCategoryOrder.map((id) => {
 
 export default function ExamIndexSection() {
   return (
-    <section className="py-20 md:py-28" style={{ background: "var(--color-paper-dark)" }} data-reveal>
+    <section className="py-20 md:py-28" style={{ background: "var(--bg-surface)" }} data-reveal>
       <Container>
         <SectionHeader eyebrow="EXAM INDEX" />
         <div className="mt-8">
           <ExamIndex items={items} />
         </div>
-        <p className="mt-10 text-sm" style={{ color: "var(--color-muted)" }}>
-          <Link href="/all-books" className="underline decoration-[var(--color-border)] underline-offset-4 hover:text-[var(--color-bronze)]">
+        <p className="mt-10 text-sm" style={{ color: "var(--bg-muted)" }}>
+          <Link href="/all-books" className="underline decoration-[var(--bg-line)] underline-offset-4 hover:text-[var(--bg-accent)]">
             View all exams in the index
           </Link>
         </p>

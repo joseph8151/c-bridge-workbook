@@ -21,14 +21,14 @@ export default function PackageStack() {
               height: "clamp(120px, 32vw, 160px)",
               left: 0,
               top: offset,
-              background: "var(--color-paper)",
-              borderColor: "var(--color-border)",
+              background: "var(--bg-paper)",
+              borderColor: "var(--bg-line)",
               zIndex: i,
             }}
           >
             <span
               className="text-[10px] font-bold tracking-[0.12em]"
-              style={{ color: i === SHEETS.length - 1 ? "var(--color-bronze)" : "var(--color-muted)" }}
+              style={{ color: i === SHEETS.length - 1 ? "var(--bg-accent)" : "var(--bg-muted)" }}
             >
               {label}
             </span>
