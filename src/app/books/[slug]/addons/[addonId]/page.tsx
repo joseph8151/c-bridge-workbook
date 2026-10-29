@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import { getTestBySlug } from "@/lib/tests";
 import { allAddOns, getAddOn, getAddOnsForTest } from "@/lib/addOnsData";
-import { formatPrice, getIncludesForAddOn, getRecommendedForAddOn } from "@/lib/addOns";
+import { getIncludesForAddOn, getRecommendedForAddOn } from "@/lib/addOns";
 
 export function generateStaticParams() {
   return allAddOns.map((a) => ({ slug: a.testSlug, addonId: a.id }));
@@ -87,14 +87,9 @@ export default async function AddOnDetailPage({
           )}
 
           <div className="mt-8 flex flex-wrap items-center gap-6 border-t pt-6" style={{ borderColor: "var(--color-border)" }}>
-            <p className="font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
-              {formatPrice(addOn.price)}
-            </p>
-            <div className="flex flex-wrap gap-2.5">
-              <Link href={consultHref} className="btn-primary px-7 text-sm font-medium">
-                구성 상담하기
-              </Link>
-            </div>
+            <Link href={consultHref} className="btn-primary px-7 text-sm font-medium">
+              구성 상담하기
+            </Link>
           </div>
 
           <p className="mt-4 max-w-2xl break-keep text-xs leading-relaxed" style={{ color: "var(--color-muted)" }}>
@@ -155,13 +150,10 @@ export default async function AddOnDetailPage({
                   <Link
                     key={a.id}
                     href={`/books/${slug}/addons/${a.id}`}
-                    className="flex items-baseline justify-between gap-4 text-sm hover:text-[var(--color-bronze)]"
+                    className="text-sm hover:text-[var(--color-bronze)]"
                     style={{ color: "var(--color-ink)" }}
                   >
-                    <span>{a.name}</span>
-                    <span className="shrink-0 text-xs" style={{ color: "var(--color-muted)" }}>
-                      {formatPrice(a.price)}
-                    </span>
+                    {a.name}
                   </Link>
                 ))}
               </div>

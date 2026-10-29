@@ -8,9 +8,9 @@ export default function BookSeries() {
     <section className="border-t py-24 md:py-32" style={{ borderColor: "var(--bg-line)" }} data-reveal>
       <Container>
         <SectionHeader
-          eyebrow="PACKAGE & PRICE"
+          eyebrow="PACKAGE OPTIONS"
           title="준비 기간에 맞춰 선택하세요."
-          description="100P는 가볍게 입문, 200P는 핵심 영역 또는 취약 영역 집중, 300P는 전 영역 + 고득점 + 충분한 반복으로 구성됩니다."
+          description="100P는 가볍게 입문, 200P는 핵심 영역 또는 취약 영역 집중, 300P는 전 영역 + 고득점 + 충분한 반복으로 구성됩니다. 구성별 가격은 상담에서 안내해드립니다."
         />
 
         <div className="mt-10 grid border-y sm:mt-12 sm:grid-cols-3" style={{ borderColor: "var(--bg-line)" }}>
@@ -24,9 +24,6 @@ export default function BookSeries() {
               >
                 <p className="text-xs font-bold tracking-[0.16em]" style={{ color: "var(--bg-accent)" }}>
                   {m.name} · {m.label}
-                </p>
-                <p className="mt-3 text-4xl font-medium tracking-[-0.02em] md:text-5xl" style={{ color: "var(--bg-ink)" }}>
-                  ₩{m.price.toLocaleString()}
                 </p>
                 <p className="mt-3 break-keep text-sm leading-relaxed" style={{ color: "var(--bg-muted)" }}>
                   {m.shortDesc}

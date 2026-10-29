@@ -12,7 +12,7 @@ import FAQ from "@/components/FAQ";
 import { tests, getTestBySlug, groupMeta } from "@/lib/tests";
 import { getWhoFor, getSamplePreview } from "@/lib/productDetail";
 import { getGuidesForTest } from "@/lib/guides";
-import { priceSummaryLine, tierMeta, tierOrder } from "@/lib/products";
+import { tierMeta, tierOrder } from "@/lib/products";
 import { getTestIntro, getTestTips } from "@/lib/testContent";
 import { getWhoTakesTestInfo } from "@/lib/whoTakesTest";
 import { siteFaqItems } from "@/lib/faqData";
@@ -129,14 +129,10 @@ export default async function TestDetailPage({
   const group = groupMeta[test.group];
   const availableTiers = test.availableTiers ?? tierOrder;
   const singleTierMeta = availableTiers.length === 1 ? tierMeta[availableTiers[0]] : null;
-  // 이 시험이 실제로 파는 분량만 나열한 가격 문구. 전체 분량(tierOrder)과 다를 때
-  // priceSummaryLine(항상 100P·200P·300P 전체를 언급) 대신 이걸 씁니다.
-  const availablePriceLine =
-    availableTiers.length === tierOrder.length
-      ? priceSummaryLine
-      : `페이지 수에 따라 구성이 달라집니다. ${availableTiers
-          .map((t) => `${tierMeta[t].pages}페이지 ${tierMeta[t].price.toLocaleString()}원`)
-          .join(", ")}.`;
+  // 이 시험이 실제로 파는 분량만 나열한 구성 문구 (가격은 상담을 통해 안내).
+  const availablePriceLine = `페이지 수에 따라 구성이 달라집니다. ${availableTiers
+    .map((t) => `${tierMeta[t].pages}페이지`)
+    .join(", ")} 중 선택 가능합니다. 가격은 상담을 통해 안내해드립니다.`;
   const whoFor = getWhoFor(test);
   const sample = getSamplePreview(test);
   const guides = getGuidesForTest(test.name);
@@ -182,7 +178,7 @@ export default async function TestDetailPage({
             </p>
             <p className="mt-2 max-w-2xl text-sm" style={{ color: "var(--color-muted)" }}>
               {singleTierMeta
-                ? `목표 Level에 따라 충분히 연습할 수 있는 ${singleTierMeta.label} 단일 구성입니다. ${singleTierMeta.price.toLocaleString()}원.`
+                ? `목표 Level에 따라 충분히 연습할 수 있는 ${singleTierMeta.label} 단일 구성입니다. 가격은 상담을 통해 안내해드립니다.`
                 : `목표 Level에 따라 충분히 연습할 수 있도록 ${availableTiers.length}가지 분량을 선택할 수 있습니다. ${availablePriceLine}`}
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold tracking-[0.04em]" style={{ color: "var(--color-ink)" }}>
@@ -428,7 +424,7 @@ export default async function TestDetailPage({
       <section className="border-t py-14 md:py-16" style={{ borderColor: "var(--color-border)" }}>
         <Container className="flex flex-col items-center gap-5 text-center">
           <p className="font-serif text-2xl font-bold md:text-3xl" style={{ color: "var(--color-ink)" }}>
-            {singleTierMeta ? `${singleTierMeta.label} ${singleTierMeta.price.toLocaleString()}원.` : availablePriceLine}
+            {singleTierMeta ? `${singleTierMeta.label} 단일 구성. 가격은 상담을 통해 안내해드립니다.` : availablePriceLine}
           </p>
           <Link href={`/consultation?test=${encodeURIComponent(test.name)}`} className="btn-primary px-7 text-sm font-medium">
             상담

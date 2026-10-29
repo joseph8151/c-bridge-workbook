@@ -65,9 +65,6 @@ export default function TepsSpeakingBookPage() {
               <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 TEPS SPEAKING · 60P
               </p>
-              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
-                80,000원
-              </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=TEPS%20Speaking&tier=60P" className="btn-primary px-7 text-sm font-medium">
@@ -154,9 +151,6 @@ export default function TepsSpeakingBookPage() {
             <div>
               <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 PRICE
-              </p>
-              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
-                80,000원
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">

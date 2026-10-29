@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import { getAddOnsForTest } from "@/lib/addOnsData";
-import { formatPrice } from "@/lib/addOns";
 
 // 메인 200P/300P(또는 전문시험 개별가) 상품 아래, 보조 상품으로만 작게 노출합니다.
 // 해당 시험에 등록된 낱개 상품이 없으면 아무것도 렌더링하지 않습니다.
@@ -34,10 +33,7 @@ export default function AddOnSection({ testSlug }: { testSlug: string }) {
               <p className="mt-2 text-xs font-semibold tracking-[0.02em]" style={{ color: "var(--color-bronze)" }}>
                 {a.badge}
               </p>
-              <p className="mt-4 font-serif text-xl font-bold" style={{ color: "var(--color-ink)" }}>
-                {formatPrice(a.price)}
-              </p>
-              <p className="mt-3 text-xs font-bold tracking-[0.08em]" style={{ color: "var(--color-rust)" }}>
+              <p className="mt-4 text-xs font-bold tracking-[0.08em]" style={{ color: "var(--color-rust)" }}>
                 자세히 보기 →
               </p>
             </Link>

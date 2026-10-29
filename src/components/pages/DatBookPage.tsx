@@ -113,9 +113,6 @@ export default function DatBookPage() {
               <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 DAT COMPLETE · 350P
               </p>
-              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
-                340,000원
-              </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=DAT" className="btn-primary px-7 text-sm font-medium">
@@ -394,9 +391,6 @@ export default function DatBookPage() {
             <div>
               <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 PRICE
-              </p>
-              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
-                340,000원
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">

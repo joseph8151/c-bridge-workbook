@@ -140,9 +140,6 @@ export default function GreBookPage() {
               <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 GRE COMPLETE · 300P
               </p>
-              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
-                290,000원
-              </p>
             </div>
             <div className="flex flex-wrap gap-2.5">
               <Link href="/consultation?test=GRE" className="btn-primary px-7 text-sm font-medium">
@@ -466,9 +463,6 @@ export default function GreBookPage() {
             <div>
               <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                 PRICE
-              </p>
-              <p className="mt-1 font-serif text-4xl font-bold" style={{ color: "var(--color-ink)" }}>
-                290,000원
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5">

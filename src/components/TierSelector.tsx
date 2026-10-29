@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import BookCover from "./BookCover";
 import { Test, groupMeta, getLevelOptions } from "@/lib/tests";
-import { Tier, tierMeta, tierOrder, defaultTier, getTierPrice } from "@/lib/products";
+import { Tier, tierMeta, tierOrder, defaultTier } from "@/lib/products";
 import { getIncludesForTier, getBonusContent, getBookSet } from "@/lib/productDetail";
 import { focusAreas } from "@/lib/focusAreas";
 
@@ -106,7 +106,7 @@ export default function TierSelector({ test }: { test: Test }) {
                       {m.label}
                     </p>
                     <p className="mt-1 text-xs font-bold" style={{ color: active ? "var(--bg-ink)" : "var(--bg-muted)" }}>
-                      {getTierPrice(t).toLocaleString()}원
+                      {m.name}
                     </p>
                   </button>
                 );
@@ -142,11 +142,11 @@ export default function TierSelector({ test }: { test: Test }) {
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
               <p className="text-xs font-bold tracking-[0.14em]" style={{ color: "var(--bg-accent)" }}>
-                {test.name} · {target} · {meta.name}
+                {test.name} · {target}
                 {focusLabels.length > 0 && ` · ${focusLabels.join(" + ")}`}
               </p>
-              <p className="mt-1 text-4xl font-bold" style={{ color: "var(--bg-accent)", fontFamily: "var(--bg-font-display)" }}>
-                {getTierPrice(tier).toLocaleString()}원
+              <p className="mt-1 text-2xl font-bold" style={{ color: "var(--bg-accent)", fontFamily: "var(--bg-font-display)" }}>
+                {meta.label} {meta.name}
               </p>
             </div>
             <p className="text-sm" style={{ color: "rgba(246,244,238,0.55)" }}>
@@ -184,8 +184,8 @@ export default function TierSelector({ test }: { test: Test }) {
             ⚡ 빠른 상담 받기
           </Link>
           <p className="mt-3 text-center text-xs" style={{ color: "rgba(246,244,238,0.45)" }}>
-            위 가격을 먼저 확인하신 후, 충분한 상담을 통해 목표와 집중 영역에 맞는 구성으로
-            안내해드립니다. 신청 후 30분 이내 문자 또는 전화로 연락드립니다.
+            충분한 상담을 통해 목표와 집중 영역에 맞는 구성과 가격을 안내해드립니다. 신청 후 30분
+            이내 문자 또는 전화로 연락드립니다.
           </p>
         </div>
       </div>

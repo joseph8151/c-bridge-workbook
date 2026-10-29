@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { priceSummaryLine } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "OET | C-BRIDGE",
@@ -129,7 +128,7 @@ export default function OetPage() {
             className="max-w-lg break-keep text-base font-semibold leading-relaxed md:text-lg"
             style={{ color: "var(--color-inkstrong)" }}
           >
-            {priceSummaryLine}
+            페이지 수에 따라 구성이 달라집니다. 가격은 상담을 통해 안내해드립니다.
           </p>
           <Link
             href="/consultation?test=OET"

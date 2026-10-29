@@ -226,9 +226,6 @@ export default function SatBookPage() {
                       <p className="text-xs font-semibold tracking-[0.1em]" style={{ color: "var(--color-muted)" }}>
                         {t.label}
                       </p>
-                      <p className="mt-1 font-serif text-2xl font-bold" style={{ color: "var(--color-ink)" }}>
-                        {t.price}
-                      </p>
                     </div>
                   ))}
                 </div>

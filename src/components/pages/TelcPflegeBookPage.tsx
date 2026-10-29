@@ -101,9 +101,6 @@ export default function TelcPflegeBookPage() {
                 <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
                   {p.label}
                 </p>
-                <p className="mt-1 font-serif text-2xl font-bold" style={{ color: "var(--color-ink)" }}>
-                  {p.price}
-                </p>
               </div>
             ))}
           </div>
