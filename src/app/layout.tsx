@@ -95,6 +95,29 @@ export const metadata: Metadata = {
   },
 };
 
+// 사이트 전체 1회만 — 브랜드 지식패널 · 사이트링크 검색창 노출을 위한 기본 구조화 데이터.
+// 페이지별 구조화 데이터(Course · BreadcrumbList · FAQPage 등)는 각 페이지에서 별도로 추가합니다.
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "C-BRIDGE",
+      url: siteUrl,
+      logo: `${siteUrl}/icon.svg`,
+      description: ogDescription,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "C-BRIDGE",
+      url: siteUrl,
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -102,6 +125,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${pretendard.variable} ${instrumentSans.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ivory text-ink font-sans">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>
         <Footer />

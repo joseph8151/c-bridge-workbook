@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "OET | C-BRIDGE",
   description:
     "직군별로 다른 OET Writing·Speaking을 직군에 맞춰 준비하세요. Nursing · Medicine · Pharmacy · Physiotherapy · Dentistry · Radiography · Occupational Therapy.",
+  alternates: { canonical: "/oet" },
 };
 
 const tracks = [

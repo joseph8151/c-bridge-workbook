@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Aviation English (FAA 교신) | C-BRIDGE",
   description: "미국 FAA 라디오 텔레포니 영어평가 Aviation English를 준비하세요.",
+  alternates: { canonical: "/faa-english" },
 };
 
 export default function FaaEnglishPage() {

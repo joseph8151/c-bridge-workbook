@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "SPA (기업 영어 면접) | C-BRIDGE",
   description: "현대차 등 기업이 쓰는 말하기 평가 SPA를 준비하세요.",
+  alternates: { canonical: "/spa" },
 };
 
 export default function SpaPage() {

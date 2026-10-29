@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Privacy Policy | C-BRIDGE",
   description: "C-BRIDGE 개인정보처리방침",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

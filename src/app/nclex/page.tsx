@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "NCLEX | C-BRIDGE",
   description: "미국·캐나다 간호 면허 본시험 NCLEX 문항 유형 연습서를 준비하세요.",
+  alternates: { canonical: "/nclex" },
 };
 
 export default function NclexPage() {

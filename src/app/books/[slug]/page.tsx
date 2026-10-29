@@ -101,30 +101,199 @@ export default async function TestDetailPage({
   const test = getTestBySlug(slug);
   if (!test) notFound();
 
-  if (test.slug === "toles") return <TolesBookPage />;
-  if (test.slug === "marlins") return <MarlinsBookPage />;
-  if (test.slug === "epta") return <EptaBookPage />;
-  if (test.slug === "spa") return <SpaBookPage />;
-  if (test.slug === "versant") return <VersantBookPage />;
-  if (test.slug === "espt") return <EsptBookPage />;
-  if (test.slug === "teps-speaking") return <TepsSpeakingBookPage />;
-  if (test.slug === "opic-english") return <OpicBookPage language="영어" languageLabel="ENGLISH" />;
-  if (test.slug === "opic-chinese") return <OpicBookPage language="중국어" languageLabel="CHINESE" />;
-  if (test.slug === "opic-japanese") return <OpicBookPage language="일본어" languageLabel="JAPANESE" />;
-  if (test.slug === "opic-spanish") return <OpicBookPage language="스페인어" languageLabel="SPANISH" />;
-  if (test.slug === "opic-vietnamese") return <OpicBookPage language="베트남어" languageLabel="VIETNAMESE" />;
-  if (test.slug === "celpe-bras") return <CelpeBrasBookPage />;
-  if (test.slug === "telc-pflege") return <TelcPflegeBookPage />;
-  if (test.slug === "trade-english") return <TradeEnglishBookPage />;
-  if (test.slug === "sat") return <SatBookPage />;
-  if (test.slug === "lsat") return <LsatBookPage />;
-  if (test.slug === "gre") return <GreBookPage />;
-  if (test.slug === "gmat") return <GmatBookPage />;
-  if (test.slug === "mcat") return <McatBookPage />;
-  if (test.slug === "dat") return <DatBookPage />;
-  if (test.slug === "oat") return <OatBookPage />;
-  if (test.slug === "ucat") return <UcatBookPage />;
-  if (test.slug === "pte-express") return <PteExpressBookPage />;
+  // 모든 시험 상세 페이지(일반 템플릿 + 아래 자체 구성 페이지 전부)에 공통으로
+  // 들어가는 구조화 데이터. 가격 필드가 필요한 Product 대신, 가격 없이도 쓸 수
+  // 있는 Course로 표시합니다.
+  const testJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "시험 찾기", item: "https://www.c-bridge.uk/exams" },
+          { "@type": "ListItem", position: 2, name: test.name, item: `https://www.c-bridge.uk/books/${test.slug}` },
+        ],
+      },
+      {
+        "@type": "Course",
+        name: `${test.name} 문제집`,
+        description: test.description,
+        provider: { "@type": "Organization", name: "C-BRIDGE", sameAs: "https://www.c-bridge.uk" },
+      },
+    ],
+  };
+  const testJsonLdScript = (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(testJsonLd) }} />
+  );
+
+  if (test.slug === "toles")
+    return (
+      <>
+        {testJsonLdScript}
+        <TolesBookPage />
+      </>
+    );
+  if (test.slug === "marlins")
+    return (
+      <>
+        {testJsonLdScript}
+        <MarlinsBookPage />
+      </>
+    );
+  if (test.slug === "epta")
+    return (
+      <>
+        {testJsonLdScript}
+        <EptaBookPage />
+      </>
+    );
+  if (test.slug === "spa")
+    return (
+      <>
+        {testJsonLdScript}
+        <SpaBookPage />
+      </>
+    );
+  if (test.slug === "versant")
+    return (
+      <>
+        {testJsonLdScript}
+        <VersantBookPage />
+      </>
+    );
+  if (test.slug === "espt")
+    return (
+      <>
+        {testJsonLdScript}
+        <EsptBookPage />
+      </>
+    );
+  if (test.slug === "teps-speaking")
+    return (
+      <>
+        {testJsonLdScript}
+        <TepsSpeakingBookPage />
+      </>
+    );
+  if (test.slug === "opic-english")
+    return (
+      <>
+        {testJsonLdScript}
+        <OpicBookPage language="영어" languageLabel="ENGLISH" />
+      </>
+    );
+  if (test.slug === "opic-chinese")
+    return (
+      <>
+        {testJsonLdScript}
+        <OpicBookPage language="중국어" languageLabel="CHINESE" />
+      </>
+    );
+  if (test.slug === "opic-japanese")
+    return (
+      <>
+        {testJsonLdScript}
+        <OpicBookPage language="일본어" languageLabel="JAPANESE" />
+      </>
+    );
+  if (test.slug === "opic-spanish")
+    return (
+      <>
+        {testJsonLdScript}
+        <OpicBookPage language="스페인어" languageLabel="SPANISH" />
+      </>
+    );
+  if (test.slug === "opic-vietnamese")
+    return (
+      <>
+        {testJsonLdScript}
+        <OpicBookPage language="베트남어" languageLabel="VIETNAMESE" />
+      </>
+    );
+  if (test.slug === "celpe-bras")
+    return (
+      <>
+        {testJsonLdScript}
+        <CelpeBrasBookPage />
+      </>
+    );
+  if (test.slug === "telc-pflege")
+    return (
+      <>
+        {testJsonLdScript}
+        <TelcPflegeBookPage />
+      </>
+    );
+  if (test.slug === "trade-english")
+    return (
+      <>
+        {testJsonLdScript}
+        <TradeEnglishBookPage />
+      </>
+    );
+  if (test.slug === "sat")
+    return (
+      <>
+        {testJsonLdScript}
+        <SatBookPage />
+      </>
+    );
+  if (test.slug === "lsat")
+    return (
+      <>
+        {testJsonLdScript}
+        <LsatBookPage />
+      </>
+    );
+  if (test.slug === "gre")
+    return (
+      <>
+        {testJsonLdScript}
+        <GreBookPage />
+      </>
+    );
+  if (test.slug === "gmat")
+    return (
+      <>
+        {testJsonLdScript}
+        <GmatBookPage />
+      </>
+    );
+  if (test.slug === "mcat")
+    return (
+      <>
+        {testJsonLdScript}
+        <McatBookPage />
+      </>
+    );
+  if (test.slug === "dat")
+    return (
+      <>
+        {testJsonLdScript}
+        <DatBookPage />
+      </>
+    );
+  if (test.slug === "oat")
+    return (
+      <>
+        {testJsonLdScript}
+        <OatBookPage />
+      </>
+    );
+  if (test.slug === "ucat")
+    return (
+      <>
+        {testJsonLdScript}
+        <UcatBookPage />
+      </>
+    );
+  if (test.slug === "pte-express")
+    return (
+      <>
+        {testJsonLdScript}
+        <PteExpressBookPage />
+      </>
+    );
 
   const group = groupMeta[test.group];
   const availableTiers = test.availableTiers ?? tierOrder;
@@ -149,18 +318,9 @@ export default async function TestDetailPage({
     { label: "활용 국가 · 기관", value: overview.usedIn },
   ].filter((r): r is { label: string; value: string } => r !== null);
 
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "시험 찾기", item: "https://www.c-bridge.uk/exams" },
-      { "@type": "ListItem", position: 2, name: test.name, item: `https://www.c-bridge.uk/books/${test.slug}` },
-    ],
-  };
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {testJsonLdScript}
 
       {/* 01 · Hero */}
       <section className="py-16 md:py-24" style={{ background: "var(--color-paper)" }}>

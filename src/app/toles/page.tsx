@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "TOLES | C-BRIDGE",
   description: "국제 로펌 · 크로스보더 계약 업무를 위한 법률 영어시험 TOLES를 준비하세요.",
+  alternates: { canonical: "/toles" },
 };
 
 export default function TolesPage() {

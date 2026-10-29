@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "MET (미시간영어) | C-BRIDGE",
   description: "미시간 영어시험 MET(Michigan English Test)를 준비하세요. 호주 비자 목록에 오르는 경우가 있습니다.",
+  alternates: { canonical: "/met" },
 };
 
 export default function MetPage() {
