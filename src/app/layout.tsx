@@ -39,9 +39,11 @@ const fraunces = Fraunces({
 });
 
 const siteUrl = "https://www.c-bridge.uk";
-const ogTitle = "C-BRIDGE | 성인 어학시험 전문 문제집";
-const ogDescription =
-  "직군과 나라마다 다른 시험을 정확히 준비하는 성인 어학시험 전문 문제집과 실전 대비 자료";
+const pageTitle = "C-BRIDGE | 공인영어·전문자격증·IT 자격시험 문제집";
+const pageDescription =
+  "C-BRIDGE는 PTE, CELPIP, OET, IELTS, TOEFL, NCLEX, LSAT, GRE, AWS, Azure, CompTIA, SQLD, ADsP 등 공인어학 및 전문자격시험 대비 PDF 문제집을 제공합니다.";
+const ogTitle = "C-BRIDGE | 전문시험 PDF 문제집";
+const ogDescription = "공인영어, 의료, 대학원, 클라우드, IT, 데이터 자격시험별 문제집과 실전 모의고사.";
 
 // 네이버 웹 노출용 주요 키워드 — 검색 유입이 많은 시험명·목적 키워드를 우선순위로 배치
 const mainKeywords = [
@@ -69,9 +71,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: ogTitle,
-  description:
-    "직군과 나라가 다르면 같은 영어가 아닙니다. 취업·이직·승진·유학·이민을 위한 성인 어학시험 전문 문제집과 실전 대비 자료를 C-BRIDGE에서 만나보세요.",
+  title: pageTitle,
+  description: pageDescription,
   keywords: mainKeywords,
   metadataBase: new URL(siteUrl),
   alternates: {
@@ -84,6 +85,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    siteName: "C-BRIDGE",
     url: `${siteUrl}/`,
     title: ogTitle,
     description: ogDescription,
@@ -91,7 +93,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: ogTitle,
-    description: "직군과 나라마다 다른 시험, 정확하게 준비하는 성인 어학시험 전문 문제집",
+    description: ogDescription,
   },
 };
 
