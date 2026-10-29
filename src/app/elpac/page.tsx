@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "ELPAC (항공 관제 영어) | C-BRIDGE",
   description: "유럽 관제 · 항공 교신 영어평가 ELPAC을 준비하세요.",
   alternates: { canonical: "/elpac" },
+  keywords: ["ELPAC", "ELPAC 문제집", "ELPAC 교재"],
 };
 
 export default function ElpacPage() {

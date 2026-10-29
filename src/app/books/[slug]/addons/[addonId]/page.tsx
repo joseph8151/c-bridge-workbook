@@ -18,11 +18,22 @@ export async function generateMetadata({
   const { slug, addonId } = await params;
   const addOn = getAddOn(slug, addonId);
   if (!addOn) return {};
+  const test = getTestBySlug(slug);
   const title = `${addOn.name} | ${addOn.badge} | C-BRIDGE`;
   const description = `${addOn.name}. ${getIncludesForAddOn(addOn).join(", ")}.`;
+  // 네이버 SEO — 낱개 상품도 "OO 문제집"·"OO 교재" 키워드를 포함, 소속 시험명도 같이 노출.
+  const keywords = Array.from(
+    new Set([
+      addOn.name,
+      `${addOn.name} 문제집`,
+      `${addOn.name} 교재`,
+      ...(test ? [test.name, `${test.name} 문제집`, `${test.name} 교재`] : []),
+    ])
+  );
   return {
     title,
     description,
+    keywords,
     alternates: { canonical: `/books/${slug}/addons/${addonId}` },
   };
 }

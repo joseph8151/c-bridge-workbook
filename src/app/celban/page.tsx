@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "CELBAN (셀반) | C-BRIDGE",
   description: "캐나다 간호 등록용 영어시험 CELBAN(셀반)을 준비하세요. OET·CELPIP과 형식이 다릅니다.",
   alternates: { canonical: "/celban" },
+  keywords: ["CELBAN", "CELBAN 문제집", "CELBAN 교재", "셀반", "셀반 문제집", "셀반 교재"],
 };
 
 export default function CelbanPage() {

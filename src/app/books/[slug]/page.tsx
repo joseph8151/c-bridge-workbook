@@ -83,9 +83,15 @@ export async function generateMetadata({
   const test = getTestBySlug(slug);
   if (!test) return {};
   const title = TITLE_OVERRIDES[slug] ?? `${test.name} 교재 | C-BRIDGE`;
+  // 네이버 SEO — 과목(시험)마다 "OO 문제집"·"OO 교재" 키워드를 항상 포함시키고,
+  // 시험별로 따로 등록된 세부 키워드(test.keywords)가 있으면 이어붙입니다.
+  const keywords = Array.from(
+    new Set([test.name, `${test.name} 문제집`, `${test.name} 교재`, ...(test.keywords ?? [])])
+  );
   return {
     title,
     description: test.description,
+    keywords,
     alternates: { canonical: `/books/${slug}` },
     openGraph: { title, description: test.description, url: `/books/${slug}` },
     twitter: { card: "summary", title, description: test.description },

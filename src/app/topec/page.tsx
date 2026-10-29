@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "TOPEC | C-BRIDGE",
   description: "일본 병동에서 사용하는 간호 실무 영어시험 TOPEC을 준비하세요.",
   alternates: { canonical: "/topec" },
+  keywords: ["TOPEC", "TOPEC 문제집", "TOPEC 교재"],
 };
 
 export default function TopecPage() {
