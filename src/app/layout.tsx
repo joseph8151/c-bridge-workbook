@@ -40,8 +40,7 @@ const fraunces = Fraunces({
 
 const siteUrl = "https://www.c-bridge.uk";
 const pageTitle = "C-BRIDGE | 공인영어·전문자격증·IT 자격시험 문제집";
-const pageDescription =
-  "C-BRIDGE는 PTE, CELPIP, OET, IELTS, TOEFL, NCLEX, LSAT, GRE, AWS, Azure, CompTIA, SQLD, ADsP 등 공인어학 및 전문자격시험 대비 PDF 문제집을 제공합니다.";
+const pageDescription = "C-BRIDGE는 PTE·IELTS·NCLEX·LSAT·AWS 등 공인어학·전문자격시험 대비 PDF 문제집 전문 사이트입니다.";
 const ogTitle = "C-BRIDGE | 전문시험 PDF 문제집";
 const ogDescription = "공인영어, 의료, 대학원, 클라우드, IT, 데이터 자격시험별 문제집과 실전 모의고사.";
 
