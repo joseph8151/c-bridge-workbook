@@ -5,7 +5,17 @@ import type { PreviewPage } from "@/lib/lookInsidePreviews";
 // `fixedAspect=false` lets content set its own height instead of being
 // clipped to the shared 3:4 page ratio — used by the denser Passage
 // Breakdown detail card, which doesn't fit the ratio at narrow widths.
-function Page({ no, children, fixedAspect = true }: { no: string; children: React.ReactNode; fixedAspect?: boolean }) {
+function Page({
+  no,
+  children,
+  fixedAspect = true,
+  foldCorner = false,
+}: {
+  no: string;
+  children: React.ReactNode;
+  fixedAspect?: boolean;
+  foldCorner?: boolean;
+}) {
   return (
     <div
       className={`relative flex w-full flex-col border p-4 min-[361px]:p-5 md:p-6 ${
@@ -13,12 +23,25 @@ function Page({ no, children, fixedAspect = true }: { no: string; children: Reac
       }`}
       style={{ borderColor: "var(--bg-line)", background: "var(--bg-surface)" }}
     >
+      {foldCorner && (
+        <span
+          aria-hidden
+          className="absolute right-0 top-0 h-8 w-8"
+          style={{
+            background: "linear-gradient(135deg, var(--bg-accent-soft) 50%, var(--bg-accent) 50%)",
+            clipPath: "polygon(100% 0, 0 0, 100% 100%)",
+          }}
+        />
+      )}
       <div className="flex items-center justify-between border-b pb-2" style={{ borderColor: "var(--bg-line)" }}>
         <span className="text-[10px] font-bold tracking-[0.14em]" style={{ color: "var(--bg-accent)" }}>
           C—BRIDGE
         </span>
-        <span className="text-[10px] font-medium tracking-[0.1em]" style={{ color: "var(--bg-muted)" }}>
-          PAGE {no}
+        <span
+          className="text-sm font-bold"
+          style={{ color: "var(--bg-ink)", fontFamily: "var(--bg-font-display)" }}
+        >
+          {no}
         </span>
       </div>
       <div className="mt-3 flex flex-1 flex-col">{children}</div>
@@ -253,6 +276,18 @@ function DetailAnswer() {
   );
 }
 
+// Small gold-tick section label shared across Passage Breakdown's blocks —
+// the same leading-rule language as the site-wide `.eyebrow` utility, just
+// compact enough to repeat several times inside one card.
+function Tick({ children, muted = false }: { children: React.ReactNode; muted?: boolean }) {
+  return (
+    <p className="flex items-center gap-1.5 text-[9px] font-bold tracking-[0.08em]" style={{ color: muted ? "var(--bg-muted)" : "var(--bg-accent)" }}>
+      <span className="h-[1.5px] w-2.5 shrink-0" style={{ background: "var(--bg-accent)" }} />
+      {children}
+    </p>
+  );
+}
+
 function DetailPassage() {
   return (
     <div className="flex flex-1 flex-col gap-3 text-ink">
@@ -265,21 +300,23 @@ function DetailPassage() {
         </p>
       </div>
 
-      <div className="border-b pb-3" style={{ borderColor: "var(--bg-line)" }}>
-        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-muted)" }}>
-          지문 발췌
-        </p>
-        <p className="mt-1 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-ink)" }}>
-          Many organizations assumed that physical proximity was essential for building trust among
-          team members. However, recent studies on distributed teams suggest otherwise: structured,
-          transparent communication can foster trust even without face-to-face contact.
+      <div
+        className="border-l-2 py-1.5 pl-3"
+        style={{ borderColor: "var(--bg-accent)", background: "var(--bg-accent-soft)" }}
+      >
+        <Tick muted>지문 발췌</Tick>
+        <p
+          className="mt-1 break-keep text-[11px] leading-relaxed"
+          style={{ color: "var(--bg-ink)", fontFamily: "var(--bg-font-display)" }}
+        >
+          &ldquo;Many organizations assumed that physical proximity was essential for building
+          trust among team members. However, recent studies on distributed teams suggest
+          otherwise.&rdquo;
         </p>
       </div>
 
       <div>
-        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-muted)" }}>
-          글의 구성
-        </p>
+        <Tick muted>글의 구성</Tick>
         <div className="mt-1 space-y-1 text-[11px] leading-snug" style={{ color: "var(--bg-muted)" }}>
           <p>
             <span className="font-bold" style={{ color: "var(--bg-ink)" }}>
@@ -304,17 +341,13 @@ function DetailPassage() {
 
       <div className="grid grid-cols-2 gap-x-3 gap-y-2 border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
         <div>
-          <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
-            제목
-          </p>
+          <Tick>제목</Tick>
           <p className="mt-0.5 break-keep text-[11px] leading-snug" style={{ color: "var(--bg-ink)" }}>
             Remote Work and Team Trust
           </p>
         </div>
         <div>
-          <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
-            주제
-          </p>
+          <Tick>주제</Tick>
           <p className="mt-0.5 break-keep text-[11px] leading-snug" style={{ color: "var(--bg-ink)" }}>
             원격근무 시대의 신뢰 구축
           </p>
@@ -322,9 +355,7 @@ function DetailPassage() {
       </div>
 
       <div className="border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
-        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
-          요지
-        </p>
+        <Tick>요지</Tick>
         <p className="mt-1 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-ink)" }}>
           Transparent communication can strengthen, not weaken, trust in remote teams.
         </p>
@@ -334,9 +365,7 @@ function DetailPassage() {
       </div>
 
       <div className="border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
-        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
-          요약
-        </p>
+        <Tick>요약</Tick>
         <p className="mt-1 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-ink)" }}>
           The passage argues that visible, structured communication — not physical proximity —
           sustains trust among distributed teams.
@@ -348,9 +377,7 @@ function DetailPassage() {
       </div>
 
       <div className="mt-auto border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
-        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
-          논리 구조
-        </p>
+        <Tick>논리 구조</Tick>
         <p className="mt-1 break-keep text-[10px] leading-snug" style={{ color: "var(--bg-muted)" }}>
           통념 제시 → 반박 근거 제시 → 사례로 보강 → 결론 도출
         </p>
@@ -489,9 +516,9 @@ const DETAIL: Record<PreviewPage["variant"], () => React.JSX.Element> = {
 
 export default function PreviewCard({ page, detail = false }: { page: PreviewPage; detail?: boolean }) {
   const Content = (detail ? DETAIL : ABSTRACT)[page.variant];
-  const fixedAspect = !(detail && page.variant === "passage");
+  const isPassageDetail = detail && page.variant === "passage";
   return (
-    <Page no={page.no} fixedAspect={fixedAspect}>
+    <Page no={page.no} fixedAspect={!isPassageDetail} foldCorner={isPassageDetail}>
       <Content />
     </Page>
   );
