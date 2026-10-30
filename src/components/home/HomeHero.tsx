@@ -1,6 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/Container";
+import { tests } from "@/lib/tests";
+
+const stats = [
+  { value: `${tests.length}개`, label: "전문 시험 교재" },
+  { value: "300P", label: "최대 교재 분량" },
+  { value: "30분", label: "상담 콜백" },
+];
 
 export default function HomeHero() {
   return (
@@ -10,19 +17,34 @@ export default function HomeHero() {
           <p className="eyebrow text-[11px] min-[361px]:text-xs">PROFESSIONAL LANGUAGE EXAM SERIES</p>
           <h1
             className="hero-fade-up mt-5 break-keep font-medium leading-[1.15] tracking-[-0.03em]"
-            style={{ color: "var(--bg-ink)", fontSize: "clamp(40px, 5vw, 64px)" }}
+            style={{ color: "var(--bg-ink)", fontSize: "clamp(42px, 5.4vw, 70px)" }}
           >
             필요한 문제를,
             <br />
-            충분한 분량으로.
+            <span style={{ color: "var(--bg-accent)" }}>충분한 분량</span>으로.
           </h1>
-          <p className="mt-4 max-w-md break-keep text-[15px] leading-[1.6] md:mt-6 md:text-[17px] md:leading-relaxed" style={{ color: "var(--bg-muted)" }}>
-            시험 구조에 맞춘 방대한 문제와 자료로 목표 점수를 준비합니다.
+          <p className="mt-5 max-w-md break-keep text-[15px] leading-[1.6] md:mt-6 md:text-[17px] md:leading-relaxed" style={{ color: "var(--bg-muted)" }}>
+            시험 구조에 맞춘 방대한 문제와 자료로 목표 점수를 준비합니다. 충분한 문제 경험이
+            실전에서의 속도와 정확도를 만듭니다.
           </p>
-          <p className="mt-3 max-w-md break-keep text-[15px] leading-[1.6] md:text-[17px] md:leading-relaxed" style={{ color: "var(--bg-muted)" }}>
-            충분한 문제 경험은 실전에서의 속도와 정확도를 만드는 중요한 과정입니다. C-BRIDGE는
-            다양한 유형과 방대한 문제량을 통해 실제 시험에 충분히 대비할 수 있도록 구성합니다.
-          </p>
+          <dl
+            className="hero-fade-up mt-8 grid grid-cols-3 gap-3 border-t pt-6 min-[361px]:gap-6 md:mt-10"
+            style={{ borderColor: "var(--bg-line)", animationDelay: "40ms" }}
+          >
+            {stats.map((s) => (
+              <div key={s.label}>
+                <dd
+                  className="text-2xl font-bold leading-none min-[361px]:text-3xl"
+                  style={{ color: "var(--bg-ink)", fontFamily: "var(--bg-font-display)" }}
+                >
+                  {s.value}
+                </dd>
+                <dt className="mt-1.5 break-keep text-xs leading-tight" style={{ color: "var(--bg-muted)" }}>
+                  {s.label}
+                </dt>
+              </div>
+            ))}
+          </dl>
           <div className="hero-fade-up mt-8 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:items-center min-[430px]:gap-4 md:mt-10" style={{ animationDelay: "80ms" }}>
             <Link href="/finder" className="btn-primary px-7 text-sm font-medium">
               내 시험 교재 찾기
