@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   title: "BOOK CONSULTATION | C-BRIDGE",
   description: "현재 준비 상황과 목표를 알려주시면 C-BRIDGE가 시험에 맞는 교재를 안내해드립니다.",
   alternates: { canonical: "/consultation" },
+  openGraph: { title: "BOOK CONSULTATION | C-BRIDGE", description: "현재 준비 상황과 목표를 알려주시면 C-BRIDGE가 시험에 맞는 교재를 안내해드립니다.", url: "/consultation" },
+  twitter: { card: "summary", title: "BOOK CONSULTATION | C-BRIDGE", description: "현재 준비 상황과 목표를 알려주시면 C-BRIDGE가 시험에 맞는 교재를 안내해드립니다." },
 };
 
 const steps = [

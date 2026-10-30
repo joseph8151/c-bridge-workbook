@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description:
     "C-BRIDGE는 취업, 이직, 승진, 유학·이민을 준비하는 분들을 위한 성인 어학시험 전문 문제집 & 실전 대비 플랫폼입니다.",
   alternates: { canonical: "/about" },
+  openGraph: { title: "About C-BRIDGE", description: "C-BRIDGE는 취업, 이직, 승진, 유학·이민을 준비하는 분들을 위한 성인 어학시험 전문 문제집 & 실전 대비 플랫폼입니다.", url: "/about" },
+  twitter: { card: "summary", title: "About C-BRIDGE", description: "C-BRIDGE는 취업, 이직, 승진, 유학·이민을 준비하는 분들을 위한 성인 어학시험 전문 문제집 & 실전 대비 플랫폼입니다." },
 };
 
 const audiences = [

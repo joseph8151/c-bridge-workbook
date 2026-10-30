@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "Privacy Policy | C-BRIDGE",
   description: "C-BRIDGE 개인정보처리방침",
   alternates: { canonical: "/privacy" },
+  openGraph: { title: "Privacy Policy | C-BRIDGE", description: "C-BRIDGE 개인정보처리방침", url: "/privacy" },
+  twitter: { card: "summary", title: "Privacy Policy | C-BRIDGE", description: "C-BRIDGE 개인정보처리방침" },
 };
 
 export default function PrivacyPage() {

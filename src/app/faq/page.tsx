@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: "FAQ | C-BRIDGE",
   description: "C-BRIDGE 구성, 가격, 전달 방식, 상담에 대한 자주 묻는 질문을 확인하세요.",
   alternates: { canonical: "/faq" },
+  openGraph: { title: "FAQ | C-BRIDGE", description: "C-BRIDGE 구성, 가격, 전달 방식, 상담에 대한 자주 묻는 질문을 확인하세요.", url: "/faq" },
+  twitter: { card: "summary", title: "FAQ | C-BRIDGE", description: "C-BRIDGE 구성, 가격, 전달 방식, 상담에 대한 자주 묻는 질문을 확인하세요." },
 };
 
 export default function FaqPage() {

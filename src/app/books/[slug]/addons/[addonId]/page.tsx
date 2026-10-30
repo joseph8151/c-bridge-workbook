@@ -30,11 +30,14 @@ export async function generateMetadata({
       ...(test ? [test.name, `${test.name} 문제집`, `${test.name} 교재`] : []),
     ])
   );
+  const canonical = `/books/${slug}/addons/${addonId}`;
   return {
     title,
     description,
     keywords,
-    alternates: { canonical: `/books/${slug}/addons/${addonId}` },
+    alternates: { canonical },
+    openGraph: { title, description, url: canonical },
+    twitter: { card: "summary", title, description },
   };
 }
 

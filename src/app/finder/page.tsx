@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "FIND YOUR EXAM | C-BRIDGE",
   description: "준비하는 시험, 목표, 집중 영역, 분량을 선택하면 맞는 교재 페이지로 연결해드립니다.",
   alternates: { canonical: "/finder" },
+  openGraph: { title: "FIND YOUR EXAM | C-BRIDGE", description: "준비하는 시험, 목표, 집중 영역, 분량을 선택하면 맞는 교재 페이지로 연결해드립니다.", url: "/finder" },
+  twitter: { card: "summary", title: "FIND YOUR EXAM | C-BRIDGE", description: "준비하는 시험, 목표, 집중 영역, 분량을 선택하면 맞는 교재 페이지로 연결해드립니다." },
 };
 
 export default function FinderPage() {

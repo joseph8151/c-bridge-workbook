@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "Versant | C-BRIDGE",
   description: "기업이 전화 · 컴퓨터로 보는 말하기 평가 Versant를 준비하세요.",
   alternates: { canonical: "/versant" },
+  openGraph: { title: "Versant | C-BRIDGE", description: "기업이 전화 · 컴퓨터로 보는 말하기 평가 Versant를 준비하세요.", url: "/versant" },
+  twitter: { card: "summary", title: "Versant | C-BRIDGE", description: "기업이 전화 · 컴퓨터로 보는 말하기 평가 Versant를 준비하세요." },
   keywords: ["Versant", "Versant 문제집", "Versant 교재"],
 };
 

@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "TOLES | C-BRIDGE",
   description: "국제 로펌 · 크로스보더 계약 업무를 위한 법률 영어시험 TOLES를 준비하세요.",
   alternates: { canonical: "/toles" },
+  openGraph: { title: "TOLES | C-BRIDGE", description: "국제 로펌 · 크로스보더 계약 업무를 위한 법률 영어시험 TOLES를 준비하세요.", url: "/toles" },
+  twitter: { card: "summary", title: "TOLES | C-BRIDGE", description: "국제 로펌 · 크로스보더 계약 업무를 위한 법률 영어시험 TOLES를 준비하세요." },
   keywords: ["TOLES", "TOLES 문제집", "TOLES 교재"],
 };
 

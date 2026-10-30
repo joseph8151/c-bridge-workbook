@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "Terms of Service | C-BRIDGE",
   description: "C-BRIDGE 이용약관",
   alternates: { canonical: "/terms" },
+  openGraph: { title: "Terms of Service | C-BRIDGE", description: "C-BRIDGE 이용약관", url: "/terms" },
+  twitter: { card: "summary", title: "Terms of Service | C-BRIDGE", description: "C-BRIDGE 이용약관" },
 };
 
 export default function TermsPage() {

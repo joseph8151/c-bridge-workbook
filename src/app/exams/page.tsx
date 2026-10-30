@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description:
     "갈 나라와 직군에 맞는 시험을 찾아보세요. PTE, CELPIP, OET, CELBAN, MET, NCLEX, EPTA, ELPAC, SPA, Versant, TOLES, TOPEC.",
   alternates: { canonical: "/exams" },
+  openGraph: { title: "시험 찾기 | C-BRIDGE", description: "갈 나라와 직군에 맞는 시험을 찾아보세요. PTE, CELPIP, OET, CELBAN, MET, NCLEX, EPTA, ELPAC, SPA, Versant, TOLES, TOPEC.", url: "/exams" },
+  twitter: { card: "summary", title: "시험 찾기 | C-BRIDGE", description: "갈 나라와 직군에 맞는 시험을 찾아보세요. PTE, CELPIP, OET, CELBAN, MET, NCLEX, EPTA, ELPAC, SPA, Versant, TOLES, TOPEC." },
 };
 
 const groups: ExamGroup[] = [

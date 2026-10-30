@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description:
     "임직원 평가, 승진시험, 해외 파견, 직무별 어학시험까지 조직의 목적에 맞는 시험 대비 자료를 구성합니다.",
   alternates: { canonical: "/business" },
+  openGraph: { title: "C-BRIDGE FOR BUSINESS | 기업·기관 어학 평가", description: "임직원 평가, 승진시험, 해외 파견, 직무별 어학시험까지 조직의 목적에 맞는 시험 대비 자료를 구성합니다.", url: "/business" },
+  twitter: { card: "summary", title: "C-BRIDGE FOR BUSINESS | 기업·기관 어학 평가", description: "임직원 평가, 승진시험, 해외 파견, 직무별 어학시험까지 조직의 목적에 맞는 시험 대비 자료를 구성합니다." },
 };
 
 const audiences = [

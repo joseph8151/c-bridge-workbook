@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "MET (미시간영어) | C-BRIDGE",
   description: "미시간 영어시험 MET(Michigan English Test)를 준비하세요. 호주 비자 목록에 오르는 경우가 있습니다.",
   alternates: { canonical: "/met" },
+  openGraph: { title: "MET (미시간영어) | C-BRIDGE", description: "미시간 영어시험 MET(Michigan English Test)를 준비하세요. 호주 비자 목록에 오르는 경우가 있습니다.", url: "/met" },
+  twitter: { card: "summary", title: "MET (미시간영어) | C-BRIDGE", description: "미시간 영어시험 MET(Michigan English Test)를 준비하세요. 호주 비자 목록에 오르는 경우가 있습니다." },
   keywords: ["MET", "MET 문제집", "MET 교재", "미시간영어", "미시간영어 문제집", "미시간영어 교재"],
 };
 

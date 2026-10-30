@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description:
     "취업·승진, 일본어, 중국어, FLEX·SNULT, 유학, 이민·비자, 전문직, 해외취업까지 C-BRIDGE의 모든 시험 교재를 검색하고 필터링하세요.",
   alternates: { canonical: "/all-books" },
+  openGraph: { title: "전체 시험 · 교재 보기 | C-BRIDGE", description: "취업·승진, 일본어, 중국어, FLEX·SNULT, 유학, 이민·비자, 전문직, 해외취업까지 C-BRIDGE의 모든 시험 교재를 검색하고 필터링하세요.", url: "/all-books" },
+  twitter: { card: "summary", title: "전체 시험 · 교재 보기 | C-BRIDGE", description: "취업·승진, 일본어, 중국어, FLEX·SNULT, 유학, 이민·비자, 전문직, 해외취업까지 C-BRIDGE의 모든 시험 교재를 검색하고 필터링하세요." },
 };
 
 export default function AllBooksPage() {

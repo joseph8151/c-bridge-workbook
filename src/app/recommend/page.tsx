@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "교재 추천 | C-BRIDGE",
   description: "시험명보다 약한 과제에 맞춘 교재 구성 기준을 확인하고 상담으로 이어가세요.",
   alternates: { canonical: "/recommend" },
+  openGraph: { title: "교재 추천 | C-BRIDGE", description: "시험명보다 약한 과제에 맞춘 교재 구성 기준을 확인하고 상담으로 이어가세요.", url: "/recommend" },
+  twitter: { card: "summary", title: "교재 추천 | C-BRIDGE", description: "시험명보다 약한 과제에 맞춘 교재 구성 기준을 확인하고 상담으로 이어가세요." },
 };
 
 const testGroups: { label: string; items: string[] }[] = [

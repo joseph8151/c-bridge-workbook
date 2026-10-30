@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: "패키지 안내 | C-BRIDGE",
   description: "C-BRIDGE 시험 대비 패키지 100P(STARTER)·200P(COMPLETE)·300P(INTENSIVE) 구성을 확인하세요. 가격은 상담을 통해 안내해드립니다.",
   alternates: { canonical: "/pricing" },
+  openGraph: { title: "패키지 안내 | C-BRIDGE", description: "C-BRIDGE 시험 대비 패키지 100P(STARTER)·200P(COMPLETE)·300P(INTENSIVE) 구성을 확인하세요. 가격은 상담을 통해 안내해드립니다.", url: "/pricing" },
+  twitter: { card: "summary", title: "패키지 안내 | C-BRIDGE", description: "C-BRIDGE 시험 대비 패키지 100P(STARTER)·200P(COMPLETE)·300P(INTENSIVE) 구성을 확인하세요. 가격은 상담을 통해 안내해드립니다." },
 };
 
 export default function PricingPage() {

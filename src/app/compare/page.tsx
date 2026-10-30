@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: "시험 비교 | C-BRIDGE",
   description: "PTE, IELTS, TOEFL, CELPIP, OET 등 주요 어학시험을 비교해 나에게 맞는 시험을 찾아보세요.",
   alternates: { canonical: "/compare" },
+  openGraph: { title: "시험 비교 | C-BRIDGE", description: "PTE, IELTS, TOEFL, CELPIP, OET 등 주요 어학시험을 비교해 나에게 맞는 시험을 찾아보세요.", url: "/compare" },
+  twitter: { card: "summary", title: "시험 비교 | C-BRIDGE", description: "PTE, IELTS, TOEFL, CELPIP, OET 등 주요 어학시험을 비교해 나에게 맞는 시험을 찾아보세요." },
 };
 
 export default function ComparePage() {

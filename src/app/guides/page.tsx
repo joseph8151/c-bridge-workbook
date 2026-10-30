@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "시험 정보 | C-BRIDGE",
   description: "PTE, CELPIP, OET, EPTA, TOLES, TOPEC 등 시험별 준비 정보를 확인하세요.",
   alternates: { canonical: "/guides" },
+  openGraph: { title: "시험 정보 | C-BRIDGE", description: "PTE, CELPIP, OET, EPTA, TOLES, TOPEC 등 시험별 준비 정보를 확인하세요.", url: "/guides" },
+  twitter: { card: "summary", title: "시험 정보 | C-BRIDGE", description: "PTE, CELPIP, OET, EPTA, TOLES, TOPEC 등 시험별 준비 정보를 확인하세요." },
 };
 
 export default function GuidesPage() {

@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "무료자료 | C-BRIDGE",
   description: "PTE, CELPIP, OET, EPTA 샘플 문항을 미리 확인하세요.",
   alternates: { canonical: "/resources" },
+  openGraph: { title: "무료자료 | C-BRIDGE", description: "PTE, CELPIP, OET, EPTA 샘플 문항을 미리 확인하세요.", url: "/resources" },
+  twitter: { card: "summary", title: "무료자료 | C-BRIDGE", description: "PTE, CELPIP, OET, EPTA 샘플 문항을 미리 확인하세요." },
 };
 
 export default function ResourcesPage() {

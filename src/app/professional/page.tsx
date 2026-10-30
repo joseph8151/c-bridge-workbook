@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   title: "전문직 시험 | C-BRIDGE",
   description: "OET, EPTA, ICAO English 등 의료·항공 전문직을 위한 영어시험 교재를 만나보세요.",
   alternates: { canonical: "/professional" },
+  openGraph: { title: "전문직 시험 | C-BRIDGE", description: "OET, EPTA, ICAO English 등 의료·항공 전문직을 위한 영어시험 교재를 만나보세요.", url: "/professional" },
+  twitter: { card: "summary", title: "전문직 시험 | C-BRIDGE", description: "OET, EPTA, ICAO English 등 의료·항공 전문직을 위한 영어시험 교재를 만나보세요." },
   keywords: categoryKeywords,
 };
 

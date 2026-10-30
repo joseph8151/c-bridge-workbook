@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "Aviation English (FAA 교신) | C-BRIDGE",
   description: "미국 FAA 라디오 텔레포니 영어평가 Aviation English를 준비하세요.",
   alternates: { canonical: "/faa-english" },
+  openGraph: { title: "Aviation English (FAA 교신) | C-BRIDGE", description: "미국 FAA 라디오 텔레포니 영어평가 Aviation English를 준비하세요.", url: "/faa-english" },
+  twitter: { card: "summary", title: "Aviation English (FAA 교신) | C-BRIDGE", description: "미국 FAA 라디오 텔레포니 영어평가 Aviation English를 준비하세요." },
   keywords: ["Aviation English", "Aviation English 문제집", "Aviation English 교재", "FAA English", "FAA English 문제집", "FAA English 교재"],
 };
 
