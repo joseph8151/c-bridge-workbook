@@ -311,7 +311,10 @@ function DetailPassage() {
         >
           &ldquo;Many organizations assumed that physical proximity was essential for building
           trust among team members. However, recent studies on distributed teams suggest
-          otherwise.&rdquo;
+          otherwise: structured, transparent communication can foster trust even without
+          face-to-face contact. Daily check-ins, visible task boards, and clearly documented
+          decisions let colleagues predict one another&apos;s behavior — and predictability, not
+          proximity, is what trust actually requires.&rdquo;
         </p>
       </div>
 
@@ -376,10 +379,34 @@ function DetailPassage() {
         </p>
       </div>
 
-      <div className="mt-auto border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
+      <div className="border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
+        <Tick>핵심 어휘</Tick>
+        <div className="mt-1.5 flex flex-wrap gap-1.5">
+          {["Proximity", "Distributed", "Transparent", "Predictability", "Sustain"].map((w) => (
+            <span
+              key={w}
+              className="border px-1.5 py-0.5 text-[9px] font-medium"
+              style={{ borderColor: "var(--bg-line)", color: "var(--bg-ink)" }}
+            >
+              {w}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
         <Tick>논리 구조</Tick>
         <p className="mt-1 break-keep text-[10px] leading-snug" style={{ color: "var(--bg-muted)" }}>
           통념 제시 → 반박 근거 제시 → 사례로 보강 → 결론 도출
+        </p>
+      </div>
+
+      <div className="mt-auto p-3" style={{ background: "var(--bg-ink)" }}>
+        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
+          핵심 주제
+        </p>
+        <p className="mt-1 break-keep text-[11px] font-semibold leading-relaxed" style={{ color: "var(--bg-paper)" }}>
+          원격근무 시대에는 물리적 근접이 아니라 투명하고 구조화된 소통이 팀 신뢰의 핵심이다.
         </p>
       </div>
     </div>
