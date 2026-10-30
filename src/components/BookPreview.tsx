@@ -34,7 +34,7 @@ export default function BookPreview({ testName }: { testName?: string }) {
               type="button"
               onClick={() => setModalIndex(i)}
               className="shrink-0 cursor-pointer text-left"
-              style={{ scrollSnapAlign: "start", width: "78%" }}
+              style={{ scrollSnapAlign: "start", width: "86%" }}
               aria-label={`${page.titleEn} 미리보기 확대`}
             >
               <PreviewCard page={page} detail />
@@ -56,7 +56,7 @@ export default function BookPreview({ testName }: { testName?: string }) {
           <button
             type="button"
             onClick={() => setModalIndex(desktopActive)}
-            className="group relative mx-auto w-full max-w-[360px] cursor-pointer text-left"
+            className="group relative mx-auto w-full max-w-[460px] cursor-pointer text-left"
             aria-label={`${lookInsidePreviews[desktopActive].titleEn} 확대`}
           >
             <PreviewCard page={lookInsidePreviews[desktopActive]} detail />

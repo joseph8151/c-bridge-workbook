@@ -2,10 +2,15 @@ import type { PreviewPage } from "@/lib/lookInsidePreviews";
 
 // The book-page "paper" shell shared by every preview, in both the abstract
 // (thumbnail/carousel) and detailed (main preview/modal) tiers.
-function Page({ no, children }: { no: string; children: React.ReactNode }) {
+// `fixedAspect=false` lets content set its own height instead of being
+// clipped to the shared 3:4 page ratio — used by the denser Passage
+// Breakdown detail card, which doesn't fit the ratio at narrow widths.
+function Page({ no, children, fixedAspect = true }: { no: string; children: React.ReactNode; fixedAspect?: boolean }) {
   return (
     <div
-      className="relative flex aspect-[3/4] w-full flex-col overflow-hidden border p-4 min-[361px]:p-5 md:p-6"
+      className={`relative flex w-full flex-col border p-4 min-[361px]:p-5 md:p-6 ${
+        fixedAspect ? "aspect-[3/4] overflow-hidden" : ""
+      }`}
       style={{ borderColor: "var(--bg-line)", background: "var(--bg-surface)" }}
     >
       <div className="flex items-center justify-between border-b pb-2" style={{ borderColor: "var(--bg-line)" }}>
@@ -252,11 +257,22 @@ function DetailPassage() {
   return (
     <div className="flex flex-1 flex-col gap-3 text-ink">
       <div>
-        <p className="text-[10px] font-bold tracking-[0.12em]" style={{ color: "var(--bg-accent)" }}>
+        <p className="text-[11px] font-bold tracking-[0.12em]" style={{ color: "var(--bg-accent)" }}>
           PASSAGE BREAKDOWN
         </p>
-        <p className="mt-1 text-xs font-bold" style={{ color: "var(--bg-ink)" }}>
+        <p className="mt-1 text-sm font-bold" style={{ color: "var(--bg-ink)" }}>
           Reading Comprehension · 지문 분석 해설
+        </p>
+      </div>
+
+      <div className="border-b pb-3" style={{ borderColor: "var(--bg-line)" }}>
+        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-muted)" }}>
+          지문 발췌
+        </p>
+        <p className="mt-1 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-ink)" }}>
+          Many organizations assumed that physical proximity was essential for building trust among
+          team members. However, recent studies on distributed teams suggest otherwise: structured,
+          transparent communication can foster trust even without face-to-face contact.
         </p>
       </div>
 
@@ -264,24 +280,24 @@ function DetailPassage() {
         <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-muted)" }}>
           글의 구성
         </p>
-        <div className="mt-1 space-y-0.5 text-[10px] leading-snug" style={{ color: "var(--bg-muted)" }}>
+        <div className="mt-1 space-y-1 text-[11px] leading-snug" style={{ color: "var(--bg-muted)" }}>
           <p>
             <span className="font-bold" style={{ color: "var(--bg-ink)" }}>
               서론
             </span>{" "}
-            주제 제시 및 배경 설명
+            물리적 근접이 신뢰의 조건이라는 통념 제시
           </p>
           <p>
             <span className="font-bold" style={{ color: "var(--bg-ink)" }}>
               본론
             </span>{" "}
-            근거와 반론 전개
+            원격 환경에서의 반박 근거와 사례 전개
           </p>
           <p>
             <span className="font-bold" style={{ color: "var(--bg-ink)" }}>
               결론
             </span>{" "}
-            논지 재확인
+            소통 구조의 중요성 재확인
           </p>
         </div>
       </div>
@@ -291,7 +307,7 @@ function DetailPassage() {
           <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
             제목
           </p>
-          <p className="mt-0.5 break-keep text-[10px] leading-snug" style={{ color: "var(--bg-ink)" }}>
+          <p className="mt-0.5 break-keep text-[11px] leading-snug" style={{ color: "var(--bg-ink)" }}>
             Remote Work and Team Trust
           </p>
         </div>
@@ -299,18 +315,35 @@ function DetailPassage() {
           <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
             주제
           </p>
-          <p className="mt-0.5 break-keep text-[10px] leading-snug" style={{ color: "var(--bg-ink)" }}>
+          <p className="mt-0.5 break-keep text-[11px] leading-snug" style={{ color: "var(--bg-ink)" }}>
             원격근무 시대의 신뢰 구축
           </p>
         </div>
       </div>
 
-      <div>
+      <div className="border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
         <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
           요지
         </p>
-        <p className="mt-1 break-keep text-[10px] leading-relaxed" style={{ color: "var(--bg-muted)" }}>
+        <p className="mt-1 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-ink)" }}>
+          Transparent communication can strengthen, not weaken, trust in remote teams.
+        </p>
+        <p className="mt-0.5 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-muted)" }}>
           투명한 소통 구조가 있다면 원격근무에서도 팀 신뢰는 오히려 강화될 수 있다.
+        </p>
+      </div>
+
+      <div className="border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
+        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
+          요약
+        </p>
+        <p className="mt-1 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-ink)" }}>
+          The passage argues that visible, structured communication — not physical proximity —
+          sustains trust among distributed teams.
+        </p>
+        <p className="mt-0.5 break-keep text-[11px] leading-relaxed" style={{ color: "var(--bg-muted)" }}>
+          이 글은 물리적 근접이 아니라 투명하고 구조화된 소통이 분산된 팀의 신뢰를 유지하는 핵심이라고
+          주장한다.
         </p>
       </div>
 
@@ -318,8 +351,8 @@ function DetailPassage() {
         <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
           논리 구조
         </p>
-        <p className="mt-1 break-keep text-[9px] leading-snug" style={{ color: "var(--bg-muted)" }}>
-          통념 제시 → 반박 근거 → 사례 보강 → 결론 도출
+        <p className="mt-1 break-keep text-[10px] leading-snug" style={{ color: "var(--bg-muted)" }}>
+          통념 제시 → 반박 근거 제시 → 사례로 보강 → 결론 도출
         </p>
       </div>
     </div>
@@ -456,8 +489,9 @@ const DETAIL: Record<PreviewPage["variant"], () => React.JSX.Element> = {
 
 export default function PreviewCard({ page, detail = false }: { page: PreviewPage; detail?: boolean }) {
   const Content = (detail ? DETAIL : ABSTRACT)[page.variant];
+  const fixedAspect = !(detail && page.variant === "passage");
   return (
-    <Page no={page.no}>
+    <Page no={page.no} fixedAspect={fixedAspect}>
       <Content />
     </Page>
   );

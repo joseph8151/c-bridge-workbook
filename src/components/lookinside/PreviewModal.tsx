@@ -86,7 +86,7 @@ export default function PreviewModal({
 
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative z-0 mx-12 max-h-[82vh] w-full max-w-[380px] overflow-y-auto min-[430px]:mx-14"
+        className="relative z-0 mx-10 max-h-[88vh] w-full max-w-[480px] overflow-y-auto min-[430px]:mx-14"
         style={{ touchAction: "pinch-zoom" }}
       >
         <PreviewCard page={page} detail />
