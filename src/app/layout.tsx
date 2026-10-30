@@ -44,17 +44,25 @@ const pageDescription = "C-BRIDGE는 PTE·IELTS·NCLEX·LSAT·AWS 등 공인어�
 const ogTitle = "C-BRIDGE | 전문시험 PDF 문제집";
 const ogDescription = "공인영어, 의료, 대학원, 클라우드, IT, 데이터 자격시험별 문제집과 실전 모의고사.";
 
-// 네이버 웹 노출용 주요 키워드 — 검색 유입이 많은 시험명·목적 키워드를 우선순위로 배치
+// 네이버 웹 노출용 주요 키워드 — 검색 유입이 많은 시험명·목적 키워드를 우선순위로 배치.
+// 공인어학 + 전문자격(의료·대학원) + IT/클라우드/데이터 자격까지, 사이트가 다루는
+// 전체 카테고리를 대표하는 키워드로 구성합니다(언어시험에 치우쳤던 이전 목록 갱신).
 const mainKeywords = [
-  "성인 어학시험 문제집",
+  "공인영어시험 문제집",
   "TOEFL 문제집",
   "IELTS 문제집",
   "PTE 문제집",
   "PTE Academic",
   "CELPIP 문제집",
-  "SJPT 문제집",
   "OET 문제집",
-  "EPTA 문제집",
+  "NCLEX 문제집",
+  "LSAT 문제집",
+  "GRE 문제집",
+  "AWS 자격증 문제집",
+  "CompTIA 문제집",
+  "SQLD 문제집",
+  "PMP 문제집",
+  "SJPT 문제집",
   "취업 어학시험",
   "이민 영어시험",
   "유학 영어시험",

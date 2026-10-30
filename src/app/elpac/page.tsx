@@ -10,27 +10,39 @@ export const metadata: Metadata = {
   keywords: ["ELPAC", "ELPAC 문제집", "ELPAC 교재"],
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "시험 찾기", item: "https://www.c-bridge.uk/exams" },
+    { "@type": "ListItem", position: 2, name: "ELPAC (항공 관제 영어)", item: "https://www.c-bridge.uk/elpac" },
+  ],
+};
+
 export default function ElpacPage() {
   return (
-    <section className="bg-paper py-20 md:py-32">
-      <div className="mx-auto max-w-[1040px] px-5 text-center md:px-10">
-        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
-          ELPAC (항공 관제 영어)
-        </p>
-        <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
-          style={{ color: "var(--color-inkstrong)" }}
-        >
-          유럽 관제 · 항공 교신 영어입니다.
-        </h1>
-        <p className="mt-6 text-sm text-ink/50">EPTA · Aviation English(FAA)와는 별개의 시험입니다.</p>
-        <Link
-          href={`/consultation?test=${encodeURIComponent("ELPAC")}`}
-          className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
-        >
-          상담
-        </Link>
-      </div>
-    </section>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <section className="bg-paper py-20 md:py-32">
+        <div className="mx-auto max-w-[1040px] px-5 text-center md:px-10">
+          <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+            ELPAC (항공 관제 영어)
+          </p>
+          <h1
+            className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
+            style={{ color: "var(--color-inkstrong)" }}
+          >
+            유럽 관제 · 항공 교신 영어입니다.
+          </h1>
+          <p className="mt-6 text-sm text-ink/50">EPTA · Aviation English(FAA)와는 별개의 시험입니다.</p>
+          <Link
+            href={`/consultation?test=${encodeURIComponent("ELPAC")}`}
+            className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
+          >
+            상담
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

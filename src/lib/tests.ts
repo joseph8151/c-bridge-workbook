@@ -975,7 +975,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "의학전문대학원(Medical School) 입학시험",
     description:
-      "MCAT Chemical and Physical Foundations, CARS, Biological and Biochemical Foundations, Psychological·Social·Biological Foundations 네 영역 각 100P와 실전 모의고사 3회, 추가 문제 50제를 포함한 C-BRIDGE MCAT Complete 400P.",
+      "MCAT 4개 영역(Chemical/Physical, CARS, Biological, Psychological) 각 100P와 실전 모의고사 3회, 추가 문제 50제를 포함한 C-BRIDGE MCAT Complete 400P.",
     keywords: [
       "MCAT",
       "MCAT 문제집",
@@ -996,7 +996,7 @@ export const tests: Test[] = [
     bonusTypes: ["WRITING"],
     tagline: "치의학전문대학원(Dental School) 입학시험",
     description:
-      "DAT Survey of Natural Sciences 140P, Perceptual Ability Test 90P, Reading Comprehension 60P, Quantitative Reasoning 60P와 실전 모의고사 3회, 추가 문제 40제를 포함한 C-BRIDGE DAT Complete 350P.",
+      "DAT Natural Sciences 140P · PAT 90P · Reading 60P · Quantitative 60P와 실전 모의고사 3회, 추가 문제 40제를 포함한 C-BRIDGE DAT Complete 350P.",
     keywords: [
       "DAT",
       "DAT 문제집",

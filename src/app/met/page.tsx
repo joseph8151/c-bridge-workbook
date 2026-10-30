@@ -10,41 +10,53 @@ export const metadata: Metadata = {
   keywords: ["MET", "MET 문제집", "MET 교재", "미시간영어", "미시간영어 문제집", "미시간영어 교재"],
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "시험 찾기", item: "https://www.c-bridge.uk/exams" },
+    { "@type": "ListItem", position: 2, name: "MET (미시간영어)", item: "https://www.c-bridge.uk/met" },
+  ],
+};
+
 export default function MetPage() {
   return (
-    <section className="bg-paper py-20 md:py-32">
-      <div
-        className="mx-auto max-w-[900px] border p-6 text-center min-[361px]:p-10 md:p-16"
-        style={{ borderColor: "var(--color-line)" }}
-      >
-        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
-          MET (미시간영어)
-        </p>
-        <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
-          style={{ color: "var(--color-inkstrong)" }}
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <section className="bg-paper py-20 md:py-32">
+        <div
+          className="mx-auto max-w-[900px] border p-6 text-center min-[361px]:p-10 md:p-16"
+          style={{ borderColor: "var(--color-line)" }}
         >
-          미시간 영어시험입니다.
-        </h1>
-        <p className="mt-6 text-sm text-ink/50">
-          호주 비자 목록에 오르는 경우가 있습니다.
-        </p>
+          <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+            MET (미시간영어)
+          </p>
+          <h1
+            className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
+            style={{ color: "var(--color-inkstrong)" }}
+          >
+            미시간 영어시험입니다.
+          </h1>
+          <p className="mt-6 text-sm text-ink/50">
+            호주 비자 목록에 오르는 경우가 있습니다.
+          </p>
 
-        <div className="mx-auto mt-10 max-w-md border-t pt-8 text-left" style={{ borderColor: "var(--color-line)" }}>
-          <ul className="space-y-2 text-sm leading-relaxed text-ink/65">
-            <li>듣기 · 읽기 · 말하기 · 쓰기</li>
-            <li>학술 · 이주 목적. PTE · 아이엘츠와 과제가 다름</li>
-            <li>인정 나라는 비자 · 학교마다 다릅니다</li>
-          </ul>
+          <div className="mx-auto mt-10 max-w-md border-t pt-8 text-left" style={{ borderColor: "var(--color-line)" }}>
+            <ul className="space-y-2 text-sm leading-relaxed text-ink/65">
+              <li>듣기 · 읽기 · 말하기 · 쓰기</li>
+              <li>학술 · 이주 목적. PTE · 아이엘츠와 과제가 다름</li>
+              <li>인정 나라는 비자 · 학교마다 다릅니다</li>
+            </ul>
+          </div>
+
+          <Link
+            href={`/consultation?test=${encodeURIComponent("MET (미시간영어)")}`}
+            className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
+          >
+            상담
+          </Link>
         </div>
-
-        <Link
-          href={`/consultation?test=${encodeURIComponent("MET (미시간영어)")}`}
-          className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
-        >
-          상담
-        </Link>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -37,8 +37,33 @@ export default async function GuidePostPage({
   const index = guidePosts.findIndex((p) => p.slug === slug);
   const next = guidePosts[(index + 1) % guidePosts.length];
 
+  const siteUrl = "https://www.c-bridge.uk";
+  const pageUrl = `${siteUrl}/guides/${slug}`;
+  const guideJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "시험 정보", item: `${siteUrl}/guides` },
+          { "@type": "ListItem", position: 2, name: post.title, item: pageUrl },
+        ],
+      },
+      {
+        "@type": "Article",
+        headline: post.title,
+        description: post.excerpt,
+        articleSection: post.category,
+        mainEntityOfPage: pageUrl,
+        author: { "@type": "Organization", name: "C-BRIDGE", url: siteUrl },
+        publisher: { "@type": "Organization", name: "C-BRIDGE", url: siteUrl, logo: `${siteUrl}/icon.svg` },
+      },
+    ],
+  };
+
   return (
     <article className="bg-ivory py-16 md:py-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideJsonLd) }} />
       <div className="mx-auto max-w-[680px] px-4 min-[361px]:px-5 md:px-10">
         <Link href="/guides" className="text-xs font-bold tracking-[0.06em]" style={{ color: "var(--color-rust)" }}>
           ← 시험 정보

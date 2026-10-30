@@ -10,27 +10,39 @@ export const metadata: Metadata = {
   keywords: ["Aviation English", "Aviation English 문제집", "Aviation English 교재", "FAA English", "FAA English 문제집", "FAA English 교재"],
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "시험 찾기", item: "https://www.c-bridge.uk/exams" },
+    { "@type": "ListItem", position: 2, name: "Aviation English (FAA 교신)", item: "https://www.c-bridge.uk/faa-english" },
+  ],
+};
+
 export default function FaaEnglishPage() {
   return (
-    <section className="bg-paper py-20 md:py-32">
-      <div className="mx-auto max-w-[1040px] px-5 text-center md:px-10">
-        <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
-          Aviation English (FAA 교신)
-        </p>
-        <h1
-          className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
-          style={{ color: "var(--color-inkstrong)" }}
-        >
-          미국 FAA 라디오 텔레포니 영어입니다.
-        </h1>
-        <p className="mt-6 text-sm text-ink/50">EPTA · ICAO English와 목적이 다른 시험입니다.</p>
-        <Link
-          href={`/consultation?test=${encodeURIComponent("Aviation English FAA")}`}
-          className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
-        >
-          상담
-        </Link>
-      </div>
-    </section>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <section className="bg-paper py-20 md:py-32">
+        <div className="mx-auto max-w-[1040px] px-5 text-center md:px-10">
+          <p className="text-xs font-bold tracking-[0.24em]" style={{ color: "var(--color-rust)" }}>
+            Aviation English (FAA 교신)
+          </p>
+          <h1
+            className="mx-auto mt-5 max-w-2xl break-keep font-serif text-4xl font-bold leading-[1.25] md:text-5xl"
+            style={{ color: "var(--color-inkstrong)" }}
+          >
+            미국 FAA 라디오 텔레포니 영어입니다.
+          </h1>
+          <p className="mt-6 text-sm text-ink/50">EPTA · ICAO English와 목적이 다른 시험입니다.</p>
+          <Link
+            href={`/consultation?test=${encodeURIComponent("Aviation English FAA")}`}
+            className="btn-primary mt-9 inline-block rounded-sm px-7 py-3.5 text-sm font-bold tracking-[0.08em]"
+          >
+            상담
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

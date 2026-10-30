@@ -3,14 +3,41 @@ import TestCard from "./TestCard";
 import Container from "./Container";
 import { TestGroup, groupMeta, getTestsByGroup } from "@/lib/tests";
 
+const siteUrl = "https://www.c-bridge.uk";
+
 export default function CategoryPageTemplate({ group }: { group: TestGroup }) {
   const meta = groupMeta[group];
   const groupTests = [...getTestsByGroup(group)].sort(
     (a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)),
   );
 
+  // 카테고리 허브 페이지 — 검색 결과 breadcrumb 노출 + 이 그룹에 속한 시험 목록을
+  // 컬렉션으로 인식시키기 위한 구조화 데이터.
+  const categoryJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "시험 찾기", item: `${siteUrl}/exams` },
+          { "@type": "ListItem", position: 2, name: meta.name, item: `${siteUrl}/${meta.slug}` },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: groupTests.map((t, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: t.name,
+          url: `${siteUrl}/books/${t.slug}`,
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }} />
       <section className="border-b py-14 md:py-20" style={{ borderColor: "var(--color-border)", background: "var(--color-paper)" }}>
         <Container>
           <p className="eyebrow" style={{ color: meta.color }}>
