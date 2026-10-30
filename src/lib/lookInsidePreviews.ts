@@ -1,4 +1,4 @@
-export type PreviewVariant = "practice" | "answer" | "mock" | "review" | "plan";
+export type PreviewVariant = "practice" | "answer" | "passage" | "mock" | "review" | "plan";
 
 export interface PreviewPage {
   no: string;
@@ -8,7 +8,7 @@ export interface PreviewPage {
   desc: string;
 }
 
-// LOOK INSIDE 섹션에서 보여주는 5개의 교재 페이지 미리보기.
+// LOOK INSIDE 섹션에서 보여주는 6개의 교재 페이지 미리보기.
 // 실제 시험 문항을 복사하지 않은 C-BRIDGE 자체 데모 콘텐츠이며,
 // 검증되지 않은 시험 시간·문항 수는 사용하지 않습니다.
 export const lookInsidePreviews: PreviewPage[] = [
@@ -28,20 +28,27 @@ export const lookInsidePreviews: PreviewPage[] = [
   },
   {
     no: "03",
+    variant: "passage",
+    eyebrow: "지문 분석 해설",
+    titleEn: "Passage Breakdown",
+    desc: "글의 구성부터 핵심 논리까지 — 혼자서도 지문을 완전히 이해할 수 있도록 밀도 있게 분석합니다.",
+  },
+  {
+    no: "04",
     variant: "mock",
     eyebrow: "실전 모의",
     titleEn: "Mock Test",
     desc: "실제 시험 흐름을 고려해 전체 과정을 연습합니다.",
   },
   {
-    no: "04",
+    no: "05",
     variant: "review",
     eyebrow: "시험 직전 정리",
     titleEn: "Final Review",
     desc: "시험 전에 다시 봐야 할 핵심 내용을 정리합니다.",
   },
   {
-    no: "05",
+    no: "06",
     variant: "plan",
     eyebrow: "학습 계획",
     titleEn: "Study Plan",

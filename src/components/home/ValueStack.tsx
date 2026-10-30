@@ -4,7 +4,7 @@ import PackageStack from "@/components/PackageStack";
 
 const items = [
   { no: "01", title: "MAIN WORKBOOK", desc: "시험 유형별 집중 문제." },
-  { no: "02", title: "ANSWER GUIDE", desc: "정답 · 풀이 · 오답 이유." },
+  { no: "02", title: "ANSWER GUIDE", desc: "정답 · 풀이 · 오답 이유 · 지문 분석까지, 혼자 공부해도 막히지 않을 밀도." },
   { no: "03", title: "MOCK TEST", desc: "실전 시간과 구조에 맞춘 연습." },
   { no: "04", title: "FINAL REVIEW", desc: "시험 직전 핵심 정리." },
   { no: "05", title: "STUDY PLAN", desc: "분량에 맞춘 학습 계획." },

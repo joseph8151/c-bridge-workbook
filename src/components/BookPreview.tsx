@@ -20,7 +20,7 @@ export default function BookPreview({ testName }: { testName?: string }) {
         <SectionHeader
           eyebrow="LOOK INSIDE"
           title="교재를 직접 확인해보세요."
-          description="문제부터 해설, 실전 모의, 시험 직전 정리까지 실제 학습 흐름을 미리 확인해보세요."
+          description="문제부터 지문 분석까지 담은 밀도 있는 해설집, 실전 모의, 시험 직전 정리까지 — 혼자 공부해도 되는 학습 흐름을 미리 확인해보세요."
         />
 
         {/* Mobile: 속지 가로 스크롤 — 카드 1.1장 정도가 보이도록. */}

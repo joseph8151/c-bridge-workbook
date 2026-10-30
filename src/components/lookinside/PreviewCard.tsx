@@ -81,6 +81,35 @@ function AbstractAnswer() {
   );
 }
 
+function AbstractPassage() {
+  return (
+    <div className="flex flex-1 flex-col justify-between">
+      <div>
+        <p className="text-[9px] font-bold tracking-[0.1em]" style={{ color: "var(--bg-accent)" }}>
+          STRUCTURE
+        </p>
+        <div className="mt-2 space-y-1.5">
+          {["서론", "본론", "결론"].map((l) => (
+            <div key={l} className="flex items-center gap-1.5">
+              <span className="text-[8px] font-bold" style={{ color: "var(--bg-ink)" }}>
+                {l}
+              </span>
+              <Bar w={60} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="space-y-1.5">
+        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
+          SUMMARY
+        </p>
+        <Bar w={95} />
+        <Bar w={75} />
+      </div>
+    </div>
+  );
+}
+
 function AbstractMock() {
   return (
     <div className="flex flex-1 flex-col justify-between">
@@ -219,6 +248,84 @@ function DetailAnswer() {
   );
 }
 
+function DetailPassage() {
+  return (
+    <div className="flex flex-1 flex-col gap-3 text-ink">
+      <div>
+        <p className="text-[10px] font-bold tracking-[0.12em]" style={{ color: "var(--bg-accent)" }}>
+          PASSAGE BREAKDOWN
+        </p>
+        <p className="mt-1 text-xs font-bold" style={{ color: "var(--bg-ink)" }}>
+          Reading Comprehension · 지문 분석 해설
+        </p>
+      </div>
+
+      <div>
+        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-muted)" }}>
+          글의 구성
+        </p>
+        <div className="mt-1 space-y-0.5 text-[10px] leading-snug" style={{ color: "var(--bg-muted)" }}>
+          <p>
+            <span className="font-bold" style={{ color: "var(--bg-ink)" }}>
+              서론
+            </span>{" "}
+            주제 제시 및 배경 설명
+          </p>
+          <p>
+            <span className="font-bold" style={{ color: "var(--bg-ink)" }}>
+              본론
+            </span>{" "}
+            근거와 반론 전개
+          </p>
+          <p>
+            <span className="font-bold" style={{ color: "var(--bg-ink)" }}>
+              결론
+            </span>{" "}
+            논지 재확인
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-x-3 gap-y-2 border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
+        <div>
+          <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
+            제목
+          </p>
+          <p className="mt-0.5 break-keep text-[10px] leading-snug" style={{ color: "var(--bg-ink)" }}>
+            Remote Work and Team Trust
+          </p>
+        </div>
+        <div>
+          <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
+            주제
+          </p>
+          <p className="mt-0.5 break-keep text-[10px] leading-snug" style={{ color: "var(--bg-ink)" }}>
+            원격근무 시대의 신뢰 구축
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
+          요지
+        </p>
+        <p className="mt-1 break-keep text-[10px] leading-relaxed" style={{ color: "var(--bg-muted)" }}>
+          투명한 소통 구조가 있다면 원격근무에서도 팀 신뢰는 오히려 강화될 수 있다.
+        </p>
+      </div>
+
+      <div className="mt-auto border-t pt-2" style={{ borderColor: "var(--bg-line)" }}>
+        <p className="text-[9px] font-bold tracking-[0.08em]" style={{ color: "var(--bg-accent)" }}>
+          논리 구조
+        </p>
+        <p className="mt-1 break-keep text-[9px] leading-snug" style={{ color: "var(--bg-muted)" }}>
+          통념 제시 → 반박 근거 → 사례 보강 → 결론 도출
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function DetailMock() {
   return (
     <div className="flex flex-1 flex-col justify-between text-ink">
@@ -332,6 +439,7 @@ function DetailPlan() {
 const ABSTRACT: Record<PreviewPage["variant"], () => React.JSX.Element> = {
   practice: AbstractPractice,
   answer: AbstractAnswer,
+  passage: AbstractPassage,
   mock: AbstractMock,
   review: AbstractReview,
   plan: AbstractPlan,
@@ -340,6 +448,7 @@ const ABSTRACT: Record<PreviewPage["variant"], () => React.JSX.Element> = {
 const DETAIL: Record<PreviewPage["variant"], () => React.JSX.Element> = {
   practice: DetailPractice,
   answer: DetailAnswer,
+  passage: DetailPassage,
   mock: DetailMock,
   review: DetailReview,
   plan: DetailPlan,
