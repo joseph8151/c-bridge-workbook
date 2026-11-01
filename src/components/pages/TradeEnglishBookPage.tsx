@@ -66,7 +66,7 @@ export default function TradeEnglishBookPage() {
             신용장이 안 읽히면 계약이 끝난 것이다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            무역영어 1급. 영문해석·영작·실무 전권이 아니라 L/C와 클레임.
+            무역영어 1급 문제집. 영문해석·영작·실무 전권이 아니라 L/C와 클레임.
           </p>
         </Container>
       </section>

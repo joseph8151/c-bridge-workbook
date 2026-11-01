@@ -55,8 +55,8 @@ export default function VersantBookPage() {
             Versant는 반응 속도를 보는 시험입니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            Versant의 실제 평가 흐름에 맞춰 Speaking과 Listening 중심 과제를 집중적으로 연습하는
-            100페이지 구성입니다.
+            Versant 문제집은 실제 평가 흐름에 맞춰 Speaking과 Listening 중심 과제를 집중적으로
+            연습하는 100페이지 구성입니다.
           </p>
           <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
             짧은 응답, 문장 이해, 반복, 듣기·말하기 반응 속도 등 Versant에서 요구하는 핵심 과제를

@@ -65,8 +65,8 @@ export default function EptaBookPage() {
             관제 영어는 유창함이 아니라 표준 구문입니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            항공영어 Listening과 Speaking 과제를 중심으로 준비하는 직무 특화 100페이지
-            구성입니다.
+            EPTA 문제집은 항공영어 Listening과 Speaking 과제를 중심으로 준비하는 직무 특화
+            100페이지 구성입니다.
           </p>
           <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
             시험 특성에 맞춰 필요한 범위를 100페이지에 집중 구성합니다. 특정 평가 영역의 비중이

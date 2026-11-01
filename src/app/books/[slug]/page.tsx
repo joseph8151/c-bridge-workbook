@@ -337,7 +337,7 @@ export default async function TestDetailPage({
               className="mt-3 break-keep font-serif text-[40px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[56px]"
               style={{ color: "var(--color-ink)" }}
             >
-              {test.name}
+              {test.name} 문제집
             </h1>
             <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
               {test.tagline}

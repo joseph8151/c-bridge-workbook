@@ -63,7 +63,7 @@ export default function SatBookPage() {
             영어와 수학, 필요한 과목만 따로 준비합니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            미국 대학 진학을 위한 SAT. Reading and Writing과 Math을 과목별로 주문합니다.
+            미국 대학 진학을 위한 SAT 문제집. Reading and Writing과 Math을 과목별로 주문합니다.
           </p>
         </Container>
       </section>

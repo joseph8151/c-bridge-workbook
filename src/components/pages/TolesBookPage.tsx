@@ -67,7 +67,7 @@ export default function TolesBookPage() {
             계약문이 읽히지 않으면 협상이 시작되지 않습니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            TOLES Higher. 로펌·해외 파견. 일반 비즈니스 영어가 아닙니다.
+            TOLES Higher 문제집. 로펌·해외 파견. 일반 비즈니스 영어가 아닙니다.
           </p>
         </Container>
       </section>

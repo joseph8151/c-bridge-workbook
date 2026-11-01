@@ -80,7 +80,7 @@ export default function PteExpressBookPage() {
             className="mt-3 max-w-3xl break-keep font-serif text-[36px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[52px]"
             style={{ color: "var(--color-ink)" }}
           >
-            PTE Express
+            PTE Express 문제집
           </h1>
           <p className="mt-2 text-sm font-semibold tracking-[0.02em]" style={{ color: "var(--color-bronze)" }}>
             Online English Test for U.S. Study

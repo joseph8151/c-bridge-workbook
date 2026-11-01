@@ -48,7 +48,7 @@ export default function TelcPflegeBookPage() {
             병동 독일어가 안 되면 B2가 의미가 없습니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            telc B1–B2 Pflege. 독일 간호사 인정. 일반 Goethe B2가 아닙니다.
+            telc B1–B2 Pflege 문제집. 독일 간호사 인정. 일반 Goethe B2가 아닙니다.
           </p>
         </Container>
       </section>

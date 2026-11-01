@@ -52,8 +52,8 @@ export default function TepsSpeakingBookPage() {
             TEPS Speaking은 Speaking 한 영역을 집중적으로 준비하는 시험입니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            TEPS Speaking의 말하기 평가를 중심으로 필요한 질문 유형과 답변 연습을 60페이지에
-            집중 구성합니다.
+            TEPS Speaking 문제집은 말하기 평가를 중심으로 필요한 질문 유형과 답변 연습을
+            60페이지에 집중 구성합니다.
           </p>
           <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
             시험 특성에 맞춰 필요한 범위를 60페이지에 집중 구성합니다. 말하기 중심의 짧은 시험은

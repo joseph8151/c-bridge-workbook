@@ -52,8 +52,8 @@ export default function CelpeBrasBookPage() {
             CELPE-Bras는 포르투갈어 실력을 통합적으로 평가하는 시험입니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            CELPE-Bras의 필기(텍스트 생산 과제)와 구술(인터뷰) 영역을 중심으로 필요한 유형과 답변
-            연습을 100페이지에 집중 구성합니다.
+            CELPE-Bras 문제집은 필기(텍스트 생산 과제)와 구술(인터뷰) 영역을 중심으로 필요한 유형과
+            답변 연습을 100페이지에 집중 구성합니다.
           </p>
           <p className="mt-3 max-w-2xl break-keep text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
             시험 특성에 맞춰 필요한 범위를 100페이지에 집중 구성합니다. 필기와 구술을 함께 평가하는

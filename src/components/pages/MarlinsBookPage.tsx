@@ -62,7 +62,7 @@ export default function MarlinsBookPage() {
             숫자가 들리지 않으면 당직이 불가능합니다.
           </h1>
           <p className="mt-4 max-w-2xl break-keep text-base leading-relaxed md:text-lg" style={{ color: "var(--color-muted)" }}>
-            Marlins English for Seafarers + TOSE. STCW·기국·크루즈 채용.
+            Marlins English for Seafarers + TOSE 문제집. STCW·기국·크루즈 채용.
           </p>
         </Container>
       </section>
