@@ -31,12 +31,12 @@ export default function WhyCBridge() {
           className="mt-4 max-w-2xl break-keep font-medium leading-[1.3] tracking-[-0.03em]"
           style={{ color: "var(--bg-paper)", fontSize: "clamp(24px, 3.2vw, 32px)" }}
         >
-          문제를 많이 주는 것이 목적이 아닙니다.
+          나의 취약한 부분에 맞춘, 나만의 교재를 만들어 드립니다.
         </h2>
         <p className="mt-4 max-w-[650px] break-keep text-base leading-[1.7]" style={{ color: mutedOnDark }}>
-          같은 시험을 준비해도 현재 수준, 목표 점수, 시험일까지 남은 기간, 취약 영역에 따라 필요한
-          문제는 달라집니다. C-BRIDGE는 시험별 구조를 기준으로 필요한 영역을 선택하고 반복해서
-          훈련할 수 있도록 구성합니다.
+          같은 시험을 준비해도 현재 수준, 목표 점수, 시험일까지 남은 기간, 취약 영역은 사람마다
+          다릅니다. C-BRIDGE는 상담에서 파악한 내용을 바탕으로 시험별 구조에 맞춰 필요한 영역을
+          선택하고 반복 훈련할 수 있는 맞춤 교재를 제작합니다.
         </p>
 
         <div className="mt-12 grid border-y sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: lineOnDark }}>
