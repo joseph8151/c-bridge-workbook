@@ -1,9 +1,9 @@
 import Container from "@/components/Container";
 
 const items = [
-  { no: "01", title: "EXAM STRUCTURE", desc: "시험 구조를 기준으로 문제를 구성합니다." },
-  { no: "02", title: "TARGET", desc: "목표 수준에 맞춘 난이도로 훈련합니다." },
-  { no: "03", title: "FOCUS", desc: "Reading · Writing · Speaking 등 취약 영역에 집중합니다." },
+  { no: "01", title: "LEVEL", desc: "목표 레벨과 난이도에 맞춰 문제 수준을 조정합니다." },
+  { no: "02", title: "WEAK AREA", desc: "Reading · Writing · Speaking 등 취약한 영역에 집중합니다." },
+  { no: "03", title: "TYPE", desc: "원하는 문제 유형을 선택해 반복 훈련합니다." },
   { no: "04", title: "FINAL", desc: "실전 모의와 시험 직전 Review로 마무리합니다." },
 ];
 
@@ -34,9 +34,9 @@ export default function WhyCBridge() {
           나의 취약한 부분에 맞춘, 나만의 교재를 만들어 드립니다.
         </h2>
         <p className="mt-4 max-w-[650px] break-keep text-base leading-[1.7]" style={{ color: mutedOnDark }}>
-          같은 시험을 준비해도 현재 수준, 목표 점수, 시험일까지 남은 기간, 취약 영역은 사람마다
-          다릅니다. C-BRIDGE는 상담에서 파악한 내용을 바탕으로 시험별 구조에 맞춰 필요한 영역을
-          선택하고 반복 훈련할 수 있는 맞춤 교재를 제작합니다.
+          레벨과 난이도, 취약한 부분, 원하는 문제 유형까지 사람마다 다릅니다. C-BRIDGE는 상담에서
+          파악한 내용을 바탕으로 목표 레벨에 맞는 난이도와 원하는 유형을 반영해, 반복 훈련할 수
+          있는 나만의 맞춤 교재를 제작합니다.
         </p>
 
         <div className="mt-12 grid border-y sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: lineOnDark }}>
