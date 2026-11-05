@@ -21,6 +21,7 @@ const staticRoutes = [
   "faa-english",
   "faq",
   "finder",
+  "flex-snult",
   "guides",
   "japanese",
   "met",
