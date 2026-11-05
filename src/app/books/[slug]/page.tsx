@@ -533,6 +533,17 @@ export default async function TestDetailPage({
                     <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--color-muted)" }}>
                       {ex.detail}
                     </p>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {ex.keyPhrases.map((kp) => (
+                        <span
+                          key={kp}
+                          className="rounded-full border px-2.5 py-1 text-xs font-medium"
+                          style={{ borderColor: "var(--color-border)", color: "var(--color-bronze)" }}
+                        >
+                          {kp}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
