@@ -36,6 +36,7 @@ import DatBookPage from "@/components/pages/DatBookPage";
 import OatBookPage from "@/components/pages/OatBookPage";
 import UcatBookPage from "@/components/pages/UcatBookPage";
 import PteExpressBookPage from "@/components/pages/PteExpressBookPage";
+import SailBookPage from "@/components/pages/SailBookPage";
 
 export function generateStaticParams() {
   return tests.map((t) => ({ slug: t.slug }));
@@ -62,6 +63,7 @@ const TITLE_OVERRIDES: Record<string, string> = {
   ucat: "UCAT 문제집 300P | Verbal · Decision Making · Quant · SJT | C-BRIDGE",
   "pte-express": "PTE Express 문제집 | 미국 대학 영어시험 대비 | C-BRIDGE",
   spa: "SPA 문제집 100P | Speaking 실전 대비 | C-BRIDGE",
+  sail: "SAIL 시험 문제집 | 삼성 영어 Speaking 평가 대비 | C-BRIDGE",
   epta: "EPTA 문제집 100P | 항공영어 Listening · Speaking 대비 | C-BRIDGE",
   versant: "Versant 문제집 100P | Speaking · Listening 실전 대비 | C-BRIDGE",
   espt: "ESPT 문제집 60P | Speaking 실전 대비 | C-BRIDGE",
@@ -158,6 +160,13 @@ export default async function TestDetailPage({
       <>
         {testJsonLdScript}
         <SpaBookPage />
+      </>
+    );
+  if (test.slug === "sail")
+    return (
+      <>
+        {testJsonLdScript}
+        <SailBookPage />
       </>
     );
   if (test.slug === "versant")

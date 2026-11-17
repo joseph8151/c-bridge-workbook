@@ -287,6 +287,7 @@ export const examGroups: ExamGroupMeta[] = [
     testSlugs: [
       "versant",
       "spa",
+      "sail",
       "espt",
       "teps-speaking",
       "opic-english",

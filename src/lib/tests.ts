@@ -239,6 +239,31 @@ export const tests: Test[] = [
     badges: ["직장인 추천", "말하기 집중"],
     priceOverride: "129,000원",
   },
+  // SAIL(Samsung AI Language Test)은 삼성그룹 사내 영어 Speaking 평가로 알려져 있으나
+  // 외부 공개 정보가 제한적입니다. description은 "활용되는 것으로 알려진"처럼 단정하지 않는
+  // 표현을 유지하고, C-BRIDGE가 삼성 또는 시험 운영기관과 제휴했다는 인상을 주지 않습니다.
+  {
+    id: "sail",
+    slug: "sail",
+    name: "SAIL",
+    group: "EMPLOYMENT",
+    bonusTypes: ["SPEAKING"],
+    tagline: "Samsung AI Language Test",
+    description:
+      "SAIL 영어 Speaking 평가를 경험 설명, 상황 대응, 의견 제시 등 다양한 Speaking 연습과 모의평가로 준비하는 C-BRIDGE 100P Self-Study 자료.",
+    keywords: [
+      "SAIL",
+      "SAIL 시험",
+      "SAIL 영어시험",
+      "삼성 SAIL 시험",
+      "Samsung AI Language Test",
+      "SAIL Speaking",
+      "SAIL 문제집",
+      "SAIL 시험 준비",
+    ],
+    badges: ["기업 Speaking 평가", "말하기 집중"],
+    priceOverride: "129,000원",
+  },
   {
     id: "espt",
     slug: "espt",
