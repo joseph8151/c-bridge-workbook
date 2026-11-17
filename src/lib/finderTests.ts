@@ -41,6 +41,14 @@ export const finderGroups: FinderGroup[] = [
     items: [{ name: "NCLEX", href: "/books/nclex" }],
   },
   {
+    label: "면허시험 (물리치료·약사)",
+    items: [
+      { name: "NPTE (미국 물리치료사)", href: "/books/npte" },
+      { name: "CPTE (캐나다 물리치료사)", href: "/books/cpte" },
+      { name: "NAPLEX (미국 약사)", href: "/books/naplex" },
+    ],
+  },
+  {
     label: "항공",
     items: [
       { name: "EPTA", href: "/books/epta" },
@@ -89,6 +97,13 @@ export const finderGroups: FinderGroup[] = [
     items: [
       { name: "SJPT", href: "/books/sjpt" },
       { name: "BJT", href: "/books/bjt" },
+    ],
+  },
+  {
+    label: "해외 입학시험",
+    items: [
+      { name: "ISEB Pretest (영국)", href: "/books/iseb-pretest" },
+      { name: "Selective School Test (NSW, 호주)", href: "/books/selective-school-nsw" },
     ],
   },
   {

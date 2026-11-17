@@ -12,7 +12,8 @@ export type ExamCategoryId =
   | "employment-aptitude"
   | "data-certification"
   | "cloud-it-certification"
-  | "project-management";
+  | "project-management"
+  | "school-admission";
 
 export interface ExamCategoryMeta {
   id: ExamCategoryId;
@@ -47,6 +48,7 @@ export const examCategoryOrder: ExamCategoryId[] = [
   "data-certification",
   "cloud-it-certification",
   "project-management",
+  "school-admission",
 ];
 
 export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
@@ -97,6 +99,12 @@ export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
     navLabel: "프로젝트·애자일 자격",
     navLabelEn: "Project & Agile",
     description: "PMP, CAPM, PRINCE2, Scrum 등 프로젝트 관리 및 Agile 실무 자격시험",
+  },
+  "school-admission": {
+    id: "school-admission",
+    navLabel: "해외 입학시험",
+    navLabelEn: "School Admission",
+    description: "영국·호주 등 해외 중·고등학교 입학을 위한 자녀 대상 시험",
   },
 };
 
@@ -232,6 +240,15 @@ export const examGroups: ExamGroupMeta[] = [
     label: "기타 의료직 영어시험",
     description: "약사·물리치료사·방사선사·작업치료사 영어시험",
     testSlugs: ["oet-pharmacy", "oet-physiotherapy", "oet-radiography", "oet-occupational-therapy"],
+  },
+  // 위 allied-health은 OET 직군별 "영어"시험이고, 아래는 실제 면허 본시험(영어시험이
+  // 아님)입니다. NCLEX가 nursing 그룹에 들어가 있는 것과 같은 방식입니다.
+  {
+    id: "allied-health-licensure",
+    categoryId: "healthcare-medical",
+    label: "약사·물리치료사 면허시험",
+    description: "미국·캐나다 약사, 물리치료사 면허 본시험 (영어시험이 아님)",
+    testSlugs: ["npte", "cpte", "naplex"],
   },
 
   // ---------------- GRADUATE & PROFESSIONAL ----------------
@@ -387,6 +404,15 @@ export const examGroups: ExamGroupMeta[] = [
     label: "Agile & Scrum",
     description: "Scrum 기반 역할, 이벤트, 원칙을 다루는 애자일 자격시험",
     testSlugs: ["psm-1"],
+  },
+
+  // ---------------- SCHOOL ADMISSION ----------------
+  {
+    id: "uk-australia-school-entry",
+    categoryId: "school-admission",
+    label: "영국·호주 입학시험",
+    description: "영국 사립학교와 호주 셀렉티브 스쿨 입학을 위한 자녀 대상 시험",
+    testSlugs: ["iseb-pretest", "selective-school-nsw"],
   },
 ];
 

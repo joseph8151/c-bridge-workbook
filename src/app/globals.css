@@ -72,6 +72,7 @@
   --color-data-certification: var(--color-bronze);
   --color-cloud-it-certification: var(--color-bronze);
   --color-project-management: var(--color-bronze);
+  --color-school-admission: var(--color-bronze);
 
   --color-inkstrong: var(--color-ink);
   --color-rust: var(--color-bronze);
@@ -102,6 +103,7 @@
   --color-data-certification: var(--color-data-certification);
   --color-cloud-it-certification: var(--color-cloud-it-certification);
   --color-project-management: var(--color-project-management);
+  --color-school-admission: var(--color-school-admission);
 
   --color-paper: var(--color-paper);
   --color-paper-dark: var(--color-paper-dark);

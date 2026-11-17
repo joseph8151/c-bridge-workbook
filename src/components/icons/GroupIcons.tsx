@@ -126,6 +126,7 @@ const iconMap: Record<TestGroup, (props: { className?: string; style?: CSSProper
   DATA_CERTIFICATION: BarChart,
   CLOUD_IT_CERTIFICATION: Cloud,
   PROJECT_MANAGEMENT: Clipboard,
+  SCHOOL_ADMISSION: AcademicCap,
 };
 
 export default function GroupIcon({

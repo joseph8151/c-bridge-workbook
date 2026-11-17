@@ -196,6 +196,48 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     usedIn: "미국·캐나다 각 주(州)의 간호 면허 등록 기관에서 활용됩니다.",
     differenceFromSimilar: "영어시험이 아니라 임상 판단력을 평가하는 면허시험으로, OET·CELBAN 등 영어시험과는 목적이 다릅니다.",
   },
+  npte: {
+    purpose: "미국 물리치료사(PT) 면허를 취득하기 위한 전미 단일 국가시험입니다.",
+    audience: "미국에서 물리치료사 면허를 취득하려는 물리치료학 졸업생 및 해외 물리치료사.",
+    usedIn: "미국 전역 주(州) 물리치료사 면허위원회가 공통으로 요구하며, FSBPT(Federation of State Boards of Physical Therapy)가 주관합니다.",
+    differenceFromSimilar: "캐나다의 CPTE와는 별개의 시험이며, 구술 섹션 없이 컴퓨터 기반 객관식 문항으로만 구성됩니다.",
+    duration: "약 5시간",
+    score: "200–800점 중 600점 이상 합격",
+  },
+  cpte: {
+    purpose: "캐나다 물리치료사 면허 등록을 위한 캐나다 국가통합시험입니다.",
+    audience: "캐나다에서 물리치료사로 등록하려는 캐나다 국내 및 해외 물리치료사.",
+    usedIn:
+      "퀘벡을 제외한 캐나다 각 주(州)의 물리치료사 규제기관이 요구하며, Canadian Alliance of Physiotherapy Regulators(the Alliance)가 주관합니다. 2026년 1월부터 기존 PCE(필기)와 주별 임상시험을 통합한 단일 시험으로 운영됩니다.",
+    differenceFromSimilar: "미국의 NPTE와 달리 객관식 Written Section 외에 구술·시나리오 기반 Oral Section이 포함됩니다.",
+    duration: "총 약 5시간(Written·Oral 각 약 2.5시간)",
+    sections: ["Written Section", "Oral Section"],
+  },
+  naplex: {
+    purpose: "미국 약사 면허를 취득하기 위한 북미 약사면허시험입니다.",
+    audience: "미국에서 약사 면허를 취득하려는 약학대학 졸업생 및 해외 약학 졸업생(FPGEC 인증 이후).",
+    usedIn:
+      "미국 전역의 주(州) 약사위원회가 공통으로 요구하며, NABP(National Association of Boards of Pharmacy)가 주관합니다. 캐나다에서는 사용되지 않으며, 캐나다는 PEBC가 주관하는 별도 시험을 운영합니다.",
+    differenceFromSimilar: "이름에 'North American'이 포함되어 있으나 실제로는 미국 전용 시험이며, 캐나다의 PEBC 시험과는 별개입니다.",
+    duration: "약 6시간",
+  },
+  "iseb-pretest": {
+    purpose: "영국 독립학교(사립학교) 11+·13+ 입학을 위한 사전 평가시험입니다.",
+    audience: "영국 독립학교 진학을 준비하는 Year 6~7(만 10~11세 전후) 학생.",
+    usedIn:
+      "ISEB(Independent Schools Examinations Board) 회원 독립학교들이 입학 전형 자료로 활용하며, GL Assessment 플랫폼으로 응시합니다. 한 번 응시한 성적을 여러 학교에 제출할 수 있습니다.",
+    differenceFromSimilar: "영국 국공립 그래머스쿨의 11+ 시험과는 주관 기관과 응시 대상 학교군이 다릅니다.",
+    sections: ["English", "Mathematics", "Verbal Reasoning", "Non-Verbal Reasoning"],
+  },
+  "selective-school-nsw": {
+    purpose: "호주 뉴사우스웨일스(NSW) 주 셀렉티브 고등학교 배치를 위한 시험입니다.",
+    audience: "NSW 소재 셀렉티브 고등학교 진학을 희망하는 Year 6(한국의 초등학교 6학년 또래) 학생.",
+    usedIn:
+      "NSW 교육부(NSW Department of Education)가 주관하며, NSW 내 셀렉티브 고등학교 입학 전형에 활용됩니다. 호주의 다른 주(빅토리아·퀸즐랜드 등)는 주관 기관과 구성이 다른 별도의 시험을 운영합니다.",
+    differenceFromSimilar: "호주 다른 주(州)에서 쓰이는 유사한 이름의 선발시험들과 혼동하기 쉬우나, 주관 기관과 시험 구성이 주마다 다릅니다.",
+    duration: "총 약 2시간 30분(영역별 약 40분, Writing 약 30분)",
+    sections: ["Reading", "Mathematical Reasoning", "Thinking Skills", "Writing"],
+  },
   elpac: {
     purpose: "유럽 지역 관제·항공 교신을 위한 영어평가입니다.",
     audience: "유럽 관제 업무를 수행하는 항공 종사자.",

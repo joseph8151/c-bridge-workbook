@@ -12,7 +12,8 @@ export type TestGroup =
   | "PROFESSIONAL_GRAD"
   | "DATA_CERTIFICATION"
   | "CLOUD_IT_CERTIFICATION"
-  | "PROJECT_MANAGEMENT";
+  | "PROJECT_MANAGEMENT"
+  | "SCHOOL_ADMISSION";
 
 export type BonusType = "SPEAKING" | "LISTENING" | "WRITING" | "VOCAB" | "PROFESSIONAL";
 
@@ -186,6 +187,17 @@ export const groupMeta: Record<TestGroup, GroupMeta> = {
     description:
       "PMP, CAPM, PRINCE2 등 프로젝트 관리 자격시험을 문제집, 모의고사, 학습 플랜으로 준비하는 자료입니다.",
     color: "var(--color-project-management)",
+  },
+  SCHOOL_ADMISSION: {
+    id: "SCHOOL_ADMISSION",
+    navLabel: "해외 입학시험",
+    name: "해외 입학 시험",
+    slug: "school-admission",
+    eyebrow: "SCHOOL ADMISSION",
+    headline: "영국·호주 입학시험도 준비할 수 있습니다.",
+    description:
+      "영국 사립학교 입학용 ISEB Pretest, 호주 셀렉티브 고등학교 배치시험 등 해외 자녀 입학시험을 문제집과 모의고사로 준비하는 자료입니다.",
+    color: "var(--color-school-admission)",
   },
 };
 
@@ -786,6 +798,42 @@ export const tests: Test[] = [
     badges: ["자료가 부족한 시험 추천"],
   },
   {
+    id: "npte",
+    slug: "npte",
+    name: "NPTE (미국 물리치료사 면허)",
+    group: "PROFESSIONAL",
+    bonusTypes: ["PROFESSIONAL"],
+    tagline: "미국 물리치료사 면허 국가시험",
+    description:
+      "영어시험이 아닙니다. 미국 물리치료사(PT) 면허를 위한 국가시험입니다. 환자 사례 기반 객관식 문항 유형에 맞춘 연습서로 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  // CPTE는 2026년 1월부터 기존 PCE(필기)와 주(州)별 임상시험을 통합한 캐나다의
+  // 신규 단일 물리치료사 국가시험입니다. NPTE(미국)와 달리 구술(Oral) 섹션이
+  // 있어 bonusTypes에 SPEAKING을 함께 둡니다.
+  {
+    id: "cpte",
+    slug: "cpte",
+    name: "CPTE (캐나다 물리치료사 면허)",
+    group: "PROFESSIONAL",
+    bonusTypes: ["SPEAKING", "PROFESSIONAL"],
+    tagline: "캐나다 물리치료사 면허 국가시험",
+    description:
+      "영어시험이 아닙니다. 캐나다 물리치료사 면허를 위한 국가시험입니다. 객관식 Written Section과 구술·시나리오 기반 Oral Section 유형에 맞춘 연습서로 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
+    id: "naplex",
+    slug: "naplex",
+    name: "NAPLEX (미국 약사 면허)",
+    group: "PROFESSIONAL",
+    bonusTypes: ["PROFESSIONAL"],
+    tagline: "미국 약사 면허 국가시험",
+    description:
+      "영어시험이 아닙니다. 미국 약사(Pharmacist) 면허를 위한 국가시험입니다. 객관식·서술형 문항 유형에 맞춘 연습서로 대비합니다.",
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  {
     id: "elpac",
     slug: "elpac",
     name: "ELPAC (항공 관제 영어)",
@@ -1242,6 +1290,35 @@ export const tests: Test[] = [
     keywords: ["PSM I", "PSM1", "Professional Scrum Master", "스크럼 마스터 자격증"],
     provider: "Scrum.org",
     availableTiers: ["STARTER", "COMPLETE"],
+  },
+
+  // ---------------- SCHOOL ADMISSION ----------------
+  {
+    id: "iseb-pretest",
+    slug: "iseb-pretest",
+    name: "ISEB Pretest",
+    group: "SCHOOL_ADMISSION",
+    bonusTypes: ["VOCAB"],
+    tagline: "영국 사립학교 11+·13+ 입학 사전시험",
+    description:
+      "영국 독립학교(사립학교) 11+·13+ 입학을 위한 ISEB Pretest를 English·Maths·Verbal Reasoning·Non-Verbal Reasoning 영역별 문제풀이로 준비하는 Self-Study 구성입니다.",
+    keywords: ["ISEB Pretest", "ISEB 프리테스트", "영국 사립학교 입학시험", "11+ 시험", "13+ 시험"],
+    badges: ["자료가 부족한 시험 추천"],
+  },
+  // 호주는 주(州)마다 선발시험 주관 기관과 구성이 다릅니다. 가장 많이 검색되는
+  // NSW 셀렉티브 고등학교 배치시험을 기준으로 하고, 다른 주와 혼동하지 않도록
+  // 설명에 명시합니다.
+  {
+    id: "selective-school-nsw",
+    slug: "selective-school-nsw",
+    name: "Selective School Test (NSW)",
+    group: "SCHOOL_ADMISSION",
+    bonusTypes: ["WRITING", "VOCAB"],
+    tagline: "호주 뉴사우스웨일스(NSW) 셀렉티브 고등학교 배치시험",
+    description:
+      "호주 뉴사우스웨일스(NSW) 셀렉티브 고등학교 배치를 위한 시험입니다. Reading·Mathematical Reasoning·Thinking Skills·Writing 4개 영역별 문제풀이로 준비하는 Self-Study 구성입니다.",
+    keywords: ["Selective School Test", "셀렉티브 스쿨 시험", "NSW 셀렉티브 고등학교", "호주 선발시험"],
+    badges: ["자료가 부족한 시험 추천"],
   },
 ];
 
