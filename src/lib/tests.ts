@@ -603,6 +603,52 @@ export const tests: Test[] = [
     tagline: "독일 대학 진학 독일어 시험",
     description: "독일 대학·대학원 진학을 위한 독일어 시험. 영역별 실전 문제와 모의고사를 제공합니다.",
   },
+  // 제2외국어 공인 자격시험 4종 — TCF/TEF(캐나다 이민용)·TestDaF(독일 대학 진학용)와 달리
+  // 특정 목적에 한정되지 않는 일반 공인 자격증(레벨 A1–C2 체계)입니다.
+  {
+    id: "delf-dalf",
+    slug: "delf-dalf",
+    name: "DELF · DALF",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "프랑스어 공인 자격시험",
+    description:
+      "France Éducation international이 주관하는 프랑스어 공인 자격시험. DELF(A1–B2)·DALF(C1–C2) 레벨별 Listening·Reading·Writing·Speaking 전 영역을 연습합니다.",
+    keywords: ["DELF", "DALF", "DELF DALF", "프랑스어 자격증", "프랑스어 공인시험"],
+  },
+  {
+    id: "goethe-zertifikat",
+    slug: "goethe-zertifikat",
+    name: "Goethe-Zertifikat",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "독일어 공인 자격시험",
+    description:
+      "Goethe-Institut이 주관하는 독일어 공인 자격시험. 레벨(A1–C2)별 Lesen·Hören·Schreiben·Sprechen 전 영역을 연습합니다.",
+    keywords: ["Goethe-Zertifikat", "괴테 자격증", "독일어 자격증", "독일어 공인시험"],
+  },
+  {
+    id: "dele",
+    slug: "dele",
+    name: "DELE",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "스페인어 공인 자격시험",
+    description:
+      "Instituto Cervantes가 주관하는 스페인어 공인 자격시험. 레벨(A1–C2)별 읽기·듣기·쓰기·말하기 전 영역을 연습합니다.",
+    keywords: ["DELE", "DELE 시험", "스페인어 자격증", "스페인어 공인시험"],
+  },
+  {
+    id: "torfl",
+    slug: "torfl",
+    name: "TORFL (ТРКИ)",
+    group: "STUDY_ABROAD",
+    bonusTypes: ["WRITING"],
+    tagline: "러시아어 공인 자격시험",
+    description:
+      "러시아 교육부 산하 인증 기관이 주관하는 러시아어 공인 자격시험. 레벨(A1–C2)별 어휘·문법, 읽기, 듣기, 쓰기, 말하기 영역을 연습합니다.",
+    keywords: ["TORFL", "ТРКИ", "러시아어 자격증", "러시아어 공인시험"],
+  },
   {
     id: "cambridge-c1-advanced",
     slug: "cambridge-c1-advanced",

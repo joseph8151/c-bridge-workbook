@@ -100,6 +100,15 @@ export const finderGroups: FinderGroup[] = [
     ],
   },
   {
+    label: "제2외국어 (유럽어)",
+    items: [
+      { name: "DELF · DALF (프랑스어)", href: "/books/delf-dalf" },
+      { name: "Goethe-Zertifikat (독일어)", href: "/books/goethe-zertifikat" },
+      { name: "DELE (스페인어)", href: "/books/dele" },
+      { name: "TORFL (러시아어)", href: "/books/torfl" },
+    ],
+  },
+  {
     label: "해외 입학시험",
     items: [
       { name: "ISEB Pretest (영국)", href: "/books/iseb-pretest" },

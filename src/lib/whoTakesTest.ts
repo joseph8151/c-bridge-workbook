@@ -280,6 +280,35 @@ export const whoTakesTest: Record<string, WhoTakesTestInfo> = {
     usedIn: "일부 해외 대학의 입학 요건으로 활용됩니다. 인정 여부는 지원 대학 기준으로 확인이 필요합니다.",
     differenceFromSimilar: "지정 고사장에서 치르는 IELTS·TOEFL과 달리 온라인에서 자유롭게 응시합니다.",
   },
+  "delf-dalf": {
+    purpose: "프랑스어 능력을 공인하는 급수별 자격시험입니다.",
+    audience: "프랑스어권 대학 진학, 이민, 자격 증빙이 필요한 응시자.",
+    usedIn: "France Éducation international(프랑스 교육부 산하)이 주관하며, 전 세계 공인 시험센터에서 응시할 수 있습니다.",
+    differenceFromSimilar: "캐나다 이민용 TCF·TEF와 달리 특정 목적에 한정되지 않는 일반 공인 자격증이며, 한 번 취득하면 유효기간이 없습니다.",
+    sections: ["Listening", "Reading", "Writing", "Speaking"],
+  },
+  "goethe-zertifikat": {
+    purpose: "독일어 능력을 공인하는 급수별 자격시험입니다.",
+    audience: "독일 대학 진학, 이민, 자격 증빙이 필요한 응시자.",
+    usedIn: "Goethe-Institut이 주관하며, 전 세계 Goethe-Institut 지점 및 공인 시험센터에서 응시할 수 있습니다.",
+    differenceFromSimilar: "독일 대학 진학에 특화된 TestDaF와 달리 특정 목적에 한정되지 않는 일반 공인 자격증입니다.",
+    sections: ["Lesen", "Hören", "Schreiben", "Sprechen"],
+  },
+  dele: {
+    purpose: "스페인어 능력을 공인하는 급수별 자격시험입니다.",
+    audience: "스페인어권 대학 진학, 이민, 자격 증빙이 필요한 응시자.",
+    usedIn: "Instituto Cervantes가 스페인 교육부를 대신해 주관하며, 전 세계 공인 시험센터에서 응시할 수 있습니다.",
+    differenceFromSimilar: "레벨별로 시험 구성이 다르며(A1–B2는 4개 영역, C1–C2는 통합형 과제), 한 번 취득하면 유효기간이 없습니다.",
+    sections: ["읽기", "듣기", "쓰기", "말하기"],
+  },
+  torfl: {
+    purpose: "러시아어 능력을 공인하는 급수별 자격시험입니다.",
+    audience: "러시아어권 대학 진학, 이민, 자격 증빙이 필요한 응시자.",
+    usedIn:
+      "러시아 교육부 산하에서 인증하며, 상트페테르부르크 국립대학교·푸시킨 러시아어연구소 등 공인 대학 시험센터에서 응시할 수 있습니다.",
+    differenceFromSimilar: "다른 제2외국어 공인시험과 달리 어휘·문법 영역이 별도로 분리되어 있어 5개 영역으로 구성됩니다.",
+    sections: ["어휘·문법", "읽기", "듣기", "쓰기", "말하기"],
+  },
 };
 
 export function getWhoTakesTestInfo(test: Test): WhoTakesTestInfo {
