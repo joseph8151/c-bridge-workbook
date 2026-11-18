@@ -13,6 +13,7 @@ import WhyCBridge from "@/components/WhyCBridge";
 import BookSeries from "@/components/home/BookSeries";
 import ConsultationSafety from "@/components/home/ConsultationSafety";
 import FinderCTA from "@/components/home/FinderCTA";
+import MockTestPromo from "@/components/home/MockTestPromo";
 import BusinessTeaser from "@/components/home/BusinessTeaser";
 import HomeFAQ from "@/components/home/HomeFAQ";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -22,7 +23,8 @@ import FinalCTA from "@/components/home/FinalCTA";
 // 아닙니다) · 03 Credibility · 04 Specialized Exams · 05 Value Stack(한 권의 PDF가 아닙니다)
 // 06 Look Inside · 07 Method · 08 How it's built · 09 Learning Cases
 // 10 Why C-BRIDGE(가격 직전 설득) · 11 Package & Price · 12 Consultation Safety
-// 13 Finder CTA · 14 Business · 15 FAQ · 16 Final CTA
+// 13 Finder CTA · 13.5 Mock Test Centre(다크 섹션, 심화 홍보) · 14 Business · 15 FAQ
+// 16 Final CTA
 export default function Home() {
   return (
     <>
@@ -41,6 +43,7 @@ export default function Home() {
       <BookSeries />
       <ConsultationSafety />
       <FinderCTA />
+      <MockTestPromo />
       <BusinessTeaser />
       <HomeFAQ />
       <FinalCTA />
