@@ -14,7 +14,7 @@ export default function HomeHero() {
     <section className="w-full" style={{ background: "var(--bg-paper)" }}>
       <Container className="grid items-center gap-10 py-12 min-[361px]:py-14 md:py-24 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-28">
         <div>
-          <p className="eyebrow text-[11px] min-[361px]:text-xs">PROFESSIONAL LANGUAGE EXAM SERIES</p>
+          <p className="eyebrow text-[11px] min-[361px]:text-xs">BOOKS · 문제집 구매</p>
           <h1
             className="hero-fade-up mt-5 break-keep font-medium leading-[1.15] tracking-[-0.03em]"
             style={{ color: "var(--bg-ink)", fontSize: "clamp(42px, 5.4vw, 70px)" }}
