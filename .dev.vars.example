@@ -1,0 +1,4 @@
+# Copy to .dev.vars (gitignored) for local wrangler preview/dev.
+# In production, set the real value with: npx wrangler secret put ADMIN_SECRET
+# Used to gate /api/admin/entitlements (Mock Test Centre 이용권 수동 부여 도구) via HTTP Basic Auth.
+ADMIN_SECRET=change-me
