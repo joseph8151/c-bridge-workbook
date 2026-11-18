@@ -8,7 +8,7 @@ import type { MockTest } from "./types";
 export const ieltsDemo: MockTest = {
   slug: "ielts",
   title: "IELTS 모의고사 (데모)",
-  description: "10문항의 Reading·Writing 데모 문제은행에서 매회 5문항이 무작위로 출제됩니다.",
+  description: "20문항의 Reading·Writing 데모 문제은행에서 매회 5문항이 무작위로 출제됩니다.",
   disclaimer:
     "본 모의고사는 C-BRIDGE가 자체 제작한 데모 샘플 문항이며, 실제 IELTS 기출문항이 아닙니다. British Council, IDP, Cambridge와 제휴 관계가 없으며, 공식 채점 알고리즘을 사용하지 않습니다. 현재는 Reading·Writing 문항만 제공되며, Listening·Speaking 섹션은 준비 중입니다.",
   pricingTiers: DEFAULT_PRICING_TIERS,
@@ -186,6 +186,178 @@ export const ieltsDemo: MockTest = {
         "2": "landfill",
         "3": "dispose of",
       },
+    },
+    {
+      id: "q11-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: True / False / Not Given",
+      instructions: "지문을 읽고 아래 진술이 True / False / Not Given 중 무엇인지 고르세요.",
+      passage:
+        "Community gardens, shared plots of land where local residents grow vegetables and flowers collectively, have grown increasingly common in cities facing limited green space. Beyond providing fresh produce, these gardens often serve as informal meeting points where neighbors who might otherwise rarely interact come to know one another. Municipal governments in several cities now offer small grants to help new community gardens get started, though demand for available plots often exceeds the number of plots on offer in dense neighborhoods.",
+      question: "진술: Community gardens often help neighbors who rarely interact get to know each other.",
+      options: [
+        { id: "a", text: "True" },
+        { id: "b", text: "False" },
+        { id: "c", text: "Not Given" },
+      ],
+      correctOptionId: "a",
+    },
+    {
+      id: "q12-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: True / False / Not Given",
+      instructions: "지문을 읽고 아래 진술이 True / False / Not Given 중 무엇인지 고르세요.",
+      passage:
+        "Many cities are replacing their diesel bus fleets with electric buses, which produce no tailpipe emissions and operate more quietly than diesel models. Early adopters have found that electric buses require different maintenance routines, since mechanics must be trained to handle battery systems rather than traditional engines. While electric buses typically cost more to purchase upfront, some transit agencies report that lower fuel and maintenance costs over the bus's lifetime partially offset the higher initial price. Charging infrastructure remains a significant barrier for agencies with large fleets, since installing enough chargers can take years.",
+      question: "진술: Electric buses require the same maintenance routines as diesel buses.",
+      options: [
+        { id: "a", text: "True" },
+        { id: "b", text: "False" },
+        { id: "c", text: "Not Given" },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q13-mcq-multi",
+      type: "mcq-multi",
+      section: "reading",
+      title: "Reading: Multiple Answer",
+      instructions: "지문을 읽고 질문에 해당하는 답을 모두 고르세요.",
+      passage:
+        "Not all plastics can be recycled using the same process. Plastic items are often marked with a numbered code indicating the type of resin used, and recycling facilities typically sort plastics by this code because different resins melt at different temperatures and cannot be effectively combined. Some codes, such as PET (used in many beverage bottles) and HDPE (used in many detergent bottles), are widely accepted by municipal recycling programs, while other codes are accepted by far fewer facilities due to lower demand for the recycled material. As a result, an item being technically recyclable does not guarantee that a local program will accept it.",
+      question: "Which of the following are supported by the passage?",
+      options: [
+        { id: "a", text: "Different plastic resins can require different melting temperatures." },
+        { id: "b", text: "Every plastic code is accepted by all municipal recycling programs." },
+        { id: "c", text: "Being technically recyclable does not guarantee local acceptance." },
+        { id: "d", text: "PET and HDPE are rarely accepted by municipal programs." },
+      ],
+      correctOptionIds: ["a", "c"],
+    },
+    {
+      id: "q14-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: True / False / Not Given",
+      instructions: "지문을 읽고 아래 진술이 True / False / Not Given 중 무엇인지 고르세요.",
+      passage:
+        "Noise-canceling headphones use microphones to detect incoming ambient sound and generate an inverse sound wave that cancels much of it out before it reaches the listener's ear. This technology works especially well against steady, low-frequency noise, such as the hum of an airplane engine, but is less effective against sudden, irregular sounds, such as a dog barking or a door slamming. Because of this limitation, most noise-canceling headphones are still paired with some passive sound-blocking material, such as padded ear cushions, to reduce higher-frequency and sudden noises as well.",
+      question: "진술: Noise-canceling technology works equally well against sudden sounds and steady low-frequency noise.",
+      options: [
+        { id: "a", text: "True" },
+        { id: "b", text: "False" },
+        { id: "c", text: "Not Given" },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q15-fill-blanks",
+      type: "fill-in-blanks",
+      section: "reading",
+      title: "Reading: Fill in the Blanks",
+      instructions: "각 빈칸에 가장 적절한 단어를 선택하세요.",
+      textWithBlanks:
+        "A 'food desert' refers to an area where residents have limited access to {{1}} food, often because the nearest full-service grocery store is a considerable distance away. Researchers note that residents in such areas may rely more heavily on convenience stores, which typically offer a {{2}} selection of fresh produce. Local governments have tried several approaches to address food deserts, including offering {{3}} to grocery chains willing to open stores in underserved neighborhoods.",
+      blankOptions: {
+        "1": ["affordable and nutritious", "expensive and rare", "contaminated"],
+        "2": ["narrower", "wider", "identical"],
+        "3": ["tax incentives", "parking tickets", "noise complaints"],
+      },
+      correctAnswers: {
+        "1": "affordable and nutritious",
+        "2": "narrower",
+        "3": "tax incentives",
+      },
+    },
+    {
+      id: "q16-mcq-multi",
+      type: "mcq-multi",
+      section: "reading",
+      title: "Reading: Multiple Answer",
+      instructions: "지문을 읽고 질문에 해당하는 답을 모두 고르세요.",
+      passage:
+        "Several companies that shifted to fully remote work during the past decade later adopted hybrid schedules requiring employees to be in the office a set number of days per week. Surveys conducted by these companies found that employees generally valued the flexibility of choosing which days to work from home, though managers in some departments reported more difficulty scheduling meetings that required everyone present at once. A smaller number of companies reverted to fully in-office schedules, citing concerns about maintaining company culture among newly hired employees who had never worked in the office.",
+      question: "Which of the following are supported by the passage?",
+      options: [
+        { id: "a", text: "Some companies that went fully remote later adopted hybrid schedules." },
+        { id: "b", text: "All companies that tried hybrid schedules later reverted to fully in-office work." },
+        { id: "c", text: "Scheduling meetings with everyone present became more difficult in some departments." },
+        { id: "d", text: "New employees always adapt easily to company culture without working in the office." },
+      ],
+      correctOptionIds: ["a", "c"],
+    },
+    {
+      id: "q17-reorder",
+      type: "reorder-paragraphs",
+      section: "reading",
+      title: "Reading: Re-order Paragraphs",
+      instructions: "아래 문단들을 올바른 순서로 배열하세요.",
+      shuffledParagraphs: [
+        {
+          id: "p2",
+          text: "One common method, called the washed process, removes the fruit using water and fermentation tanks before the beans are dried in the sun.",
+        },
+        {
+          id: "p4",
+          text: "These different processing methods are one reason that coffee beans grown in similar conditions can still taste noticeably different once brewed.",
+        },
+        {
+          id: "p1",
+          text: "After coffee cherries are harvested, farmers must quickly separate the outer fruit from the bean inside, since the fruit begins to ferment soon after picking.",
+        },
+        {
+          id: "p3",
+          text: "A different method, called the natural process, instead dries the whole cherry with the fruit still attached, allowing some of the fruit's sugars to be absorbed into the bean during drying.",
+        },
+      ],
+      correctOrder: ["p1", "p2", "p3", "p4"],
+    },
+    {
+      id: "q18-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: True / False / Not Given",
+      instructions: "지문을 읽고 아래 진술이 True / False / Not Given 중 무엇인지 고르세요.",
+      passage:
+        "Many long-distance migratory bird species rely on stopover sites, specific locations along their migration route where they rest and feed before continuing their journey. These sites are critical because birds often arrive with severely depleted fat reserves after flying hundreds of kilometers without stopping. Habitat loss at even a single key stopover site can affect bird populations across an entire migratory route, since birds may have no suitable alternative location to refuel within flying range. Conservation groups have increasingly focused on protecting stopover sites rather than only the birds' breeding or wintering grounds.",
+      question: "진술: Birds can always find a suitable alternative stopover site if one is lost.",
+      options: [
+        { id: "a", text: "True" },
+        { id: "b", text: "False" },
+        { id: "c", text: "Not Given" },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q19-essay",
+      type: "essay",
+      section: "writing",
+      title: "Writing Task 2: 의견 쓰기",
+      instructions:
+        "다음 주제에 대한 본인의 의견을 40~120단어로 작성하세요. 이 문항은 자동 채점되지 않으며, 작성한 답안은 자가 검토를 위해 저장됩니다.",
+      passage:
+        "주제: 온라인 수업이 전통적인 대면 수업을 완전히 대체할 수 있다고 생각하는 사람도 있고, 그렇지 않은 사람도 있습니다. 당신의 의견은 어떻습니까?",
+      minWords: 40,
+      maxWords: 120,
+    },
+    {
+      id: "q20-mcq-multi",
+      type: "mcq-multi",
+      section: "reading",
+      title: "Reading: Multiple Answer",
+      instructions: "지문을 읽고 질문에 해당하는 답을 모두 고르세요.",
+      passage:
+        "Several cities have launched large-scale tree-planting programs aimed at increasing canopy cover along streets and in parks. Beyond providing shade, urban trees can reduce stormwater runoff by absorbing rainfall through their root systems, lowering the burden on municipal drainage systems during heavy rain. Program planners have noted that newly planted trees require consistent watering for the first two to three years before their root systems mature enough to survive on rainfall alone, meaning that programs which plant trees without a watering plan often see high failure rates.",
+      question: "Which of the following are supported by the passage?",
+      options: [
+        { id: "a", text: "Urban trees can help reduce stormwater runoff." },
+        { id: "b", text: "Newly planted trees need no watering once placed in the ground." },
+        { id: "c", text: "A lack of a watering plan can lead to high failure rates for new trees." },
+        { id: "d", text: "Tree root systems mature within the first few weeks after planting." },
+      ],
+      correctOptionIds: ["a", "c"],
     },
   ],
 };

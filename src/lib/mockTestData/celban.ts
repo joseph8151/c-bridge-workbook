@@ -8,7 +8,7 @@ import type { MockTest } from "./types";
 export const celbanDemo: MockTest = {
   slug: "celban",
   title: "CELBAN 모의고사 (데모)",
-  description: "10문항의 Reading·Writing 데모 문제은행에서 매회 5문항이 무작위로 출제됩니다.",
+  description: "20문항의 Reading·Writing 데모 문제은행에서 매회 5문항이 무작위로 출제됩니다.",
   disclaimer:
     "본 모의고사는 C-BRIDGE가 자체 제작한 데모 샘플 문항이며, 실제 CELBAN 기출문항이 아닙니다. CELBAN을 운영하는 기관과 제휴 관계가 없으며, 공식 채점 알고리즘을 사용하지 않습니다. 현재는 Reading·Writing 문항만 제공되며, Listening·Speaking 섹션은 준비 중입니다.",
   pricingTiers: DEFAULT_PRICING_TIERS,
@@ -190,6 +190,182 @@ export const celbanDemo: MockTest = {
         "2": "repeat",
         "3": "re-explain",
       },
+    },
+    {
+      id: "q11-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: Multiple Choice",
+      instructions: "지문을 읽고 질문에 가장 적절한 답을 하나 고르세요.",
+      passage:
+        "Hand hygiene is widely considered one of the most effective ways to prevent the spread of infection in healthcare settings. Guidelines commonly identify several key moments for hand hygiene, including before touching a patient, before a clean or aseptic procedure, after exposure to body fluids, after touching a patient, and after touching a patient's surroundings. Compliance audits in many facilities have found that staff are most likely to miss hand hygiene opportunities before touching a patient, compared with after contact, possibly because the risk to the patient feels less immediate at that moment.",
+      question: "According to the passage, when are staff most likely to miss a hand hygiene opportunity?",
+      options: [
+        { id: "a", text: "After touching a patient's surroundings." },
+        { id: "b", text: "Before touching a patient." },
+        { id: "c", text: "After exposure to body fluids." },
+        { id: "d", text: "After touching a patient." },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q12-mcq-multi",
+      type: "mcq-multi",
+      section: "reading",
+      title: "Reading: Multiple Answer",
+      instructions: "지문을 읽고 질문에 해당하는 답을 모두 고르세요.",
+      passage:
+        "Pain is increasingly treated as the 'fifth vital sign,' assessed and recorded alongside temperature, pulse, respiration, and blood pressure. Many units use a numeric rating scale from 0 to 10, where a patient rates their pain, though nurses are trained to also use observational cues, such as facial expression or guarding behavior, for patients who cannot reliably self-report, such as those with advanced dementia or very young children. Relying on observational cues alone is considered less precise than self-report, so self-report is used whenever the patient is able to provide it.",
+      question: "Which of the following are supported by the passage?",
+      options: [
+        { id: "a", text: "Self-report is preferred over observational cues when a patient can provide it." },
+        { id: "b", text: "Pain is sometimes referred to as the 'fifth vital sign.'" },
+        { id: "c", text: "Observational cues are considered more precise than self-report." },
+        { id: "d", text: "The numeric rating scale is never used in clinical practice." },
+      ],
+      correctOptionIds: ["a", "b"],
+    },
+    {
+      id: "q13-essay",
+      type: "essay",
+      section: "writing",
+      title: "Writing: 환자 교육 메모 작성",
+      instructions:
+        "아래 상황을 바탕으로, 퇴원을 앞둔 환자에게 전달할 복약 교육 메모를 40~120단어로 작성하세요. 이 문항은 자동 채점되지 않으며, 작성한 답안은 자가 검토를 위해 저장됩니다.",
+      passage:
+        "Patient: 58-year-old male, newly prescribed a daily blood pressure medication at discharge. Reports some confusion about whether to take the medication with food. Lives alone and manages his own medications. No known drug allergies noted in chart.",
+      minWords: 40,
+      maxWords: 120,
+    },
+    {
+      id: "q14-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: Multiple Choice",
+      instructions: "지문을 읽고 질문에 가장 적절한 답을 하나 고르세요.",
+      passage:
+        "When a patient's condition changes unexpectedly, many hospitals use a structured communication format, often summarized by the acronym SBAR (Situation, Background, Assessment, Recommendation), to pass information between caregivers clearly and efficiently. Rather than describing events in a loose narrative, the nurse first states the immediate situation, then relevant background, followed by a clinical assessment, and finally a specific recommendation or request. Studies examining handoff communication have found that structured formats like SBAR reduce the likelihood that important details are omitted compared with unstructured verbal reports.",
+      question: "According to the passage, what advantage does the SBAR format offer over unstructured verbal reports?",
+      options: [
+        { id: "a", text: "It takes longer to complete but covers more topics." },
+        { id: "b", text: "It reduces the likelihood that important details are omitted." },
+        { id: "c", text: "It removes the need for any clinical assessment." },
+        { id: "d", text: "It is used only during nursing school training." },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q15-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: Multiple Choice",
+      instructions: "지문을 읽고 질문에 가장 적절한 답을 하나 고르세요.",
+      passage:
+        "Informed consent requires that a patient receive enough information about a proposed procedure, including its purpose, risks, benefits, and alternatives, to make a voluntary decision. Simply having a patient sign a consent form does not, by itself, confirm that genuine informed consent has occurred if the patient did not actually understand the information presented. For this reason, healthcare providers are trained to check a patient's understanding through conversation, rather than relying on the signed document alone as proof of comprehension.",
+      question: "According to the passage, why is a signed consent form alone not sufficient proof of informed consent?",
+      options: [
+        { id: "a", text: "Signed forms are not legally required in most hospitals." },
+        { id: "b", text: "A signature does not confirm the patient actually understood the information." },
+        { id: "c", text: "Consent forms never mention risks or alternatives." },
+        { id: "d", text: "Patients are not allowed to ask questions before signing." },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q16-mcq-multi",
+      type: "mcq-multi",
+      section: "reading",
+      title: "Reading: Multiple Answer",
+      instructions: "지문을 읽고 질문에 해당하는 답을 모두 고르세요.",
+      passage:
+        "Intravenous (IV) sites require regular inspection to catch early signs of complications such as infiltration, where fluid leaks into surrounding tissue, or phlebitis, inflammation of the vein. Common signs nurses are trained to watch for include swelling, redness, warmth, and the patient reporting pain at the site. When such signs appear, the standard response is to stop the infusion and remove or relocate the IV, rather than simply reducing the flow rate and continuing to use the same site.",
+      question: "Which of the following are supported by the passage?",
+      options: [
+        { id: "a", text: "Swelling and redness are signs nurses are trained to watch for at an IV site." },
+        { id: "b", text: "Phlebitis refers to inflammation of the vein." },
+        { id: "c", text: "The standard response to infiltration signs is to reduce the flow rate and keep the same site." },
+        { id: "d", text: "IV sites require no regular inspection once inserted." },
+      ],
+      correctOptionIds: ["a", "b"],
+    },
+    {
+      id: "q17-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: Multiple Choice",
+      instructions: "지문을 읽고 질문에 가장 적절한 답을 하나 고르세요.",
+      passage:
+        "Delegation allows a nurse to assign certain tasks to other members of the care team, such as unregulated care providers, while the nurse retains overall accountability for the patient's care. Before delegating a task, a nurse is expected to consider the stability of the patient, the complexity of the task, and the competence of the person receiving the assignment. A task that would be appropriate to delegate for a stable patient may not be appropriate for a patient whose condition is rapidly changing.",
+      question: "According to the passage, what must a nurse consider before delegating a task?",
+      options: [
+        { id: "a", text: "Only whether the task is enjoyable to perform." },
+        { id: "b", text: "The patient's stability, task complexity, and the delegate's competence." },
+        { id: "c", text: "Whether the task has ever been delegated before at that hospital." },
+        { id: "d", text: "The delegate's personal preference for working shifts." },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q18-reorder",
+      type: "reorder-paragraphs",
+      section: "reading",
+      title: "Reading: Re-order Paragraphs",
+      instructions: "아래 문단들을 올바른 순서로 배열하세요.",
+      shuffledParagraphs: [
+        {
+          id: "p2",
+          text: "Before administering the next scheduled dose, the nurse reviewed the patient's chart and noticed a new allergy entry that had not been there during the previous shift.",
+        },
+        {
+          id: "p1",
+          text: "A patient was admitted overnight and started on a standard antibiotic regimen by the on-call physician.",
+        },
+        {
+          id: "p4",
+          text: "The physician adjusted the order to a different antibiotic, and the updated order was documented before the medication was given.",
+        },
+        {
+          id: "p3",
+          text: "The nurse held the dose and contacted the physician immediately to clarify whether the medication should still be given.",
+        },
+      ],
+      correctOrder: ["p1", "p2", "p3", "p4"],
+    },
+    {
+      id: "q19-fill-blanks",
+      type: "fill-in-blanks",
+      section: "reading",
+      title: "Reading: Fill in the Blanks",
+      instructions: "각 빈칸에 가장 적절한 단어를 선택하세요.",
+      textWithBlanks:
+        "A thorough patient history helps the care team understand not only the current {{1}} but also relevant past conditions, medications, and allergies. When a patient is unable to provide a reliable history, nurses are trained to {{2}} family members or prior records for additional information. Any new allergy discovered after admission should be {{3}} in the chart immediately so that all staff are aware before the next medication is given.",
+      blankOptions: {
+        "1": ["complaint", "weather", "schedule"],
+        "2": ["consult", "ignore", "replace"],
+        "3": ["documented", "forgotten", "guessed"],
+      },
+      correctAnswers: {
+        "1": "complaint",
+        "2": "consult",
+        "3": "documented",
+      },
+    },
+    {
+      id: "q20-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: Multiple Choice",
+      instructions: "지문을 읽고 질문에 가장 적절한 답을 하나 고르세요.",
+      passage:
+        "Therapeutic communication involves techniques such as active listening, open-ended questions, and reflecting a patient's own words back to them to confirm understanding. In contrast, closed questions that invite only a yes or no answer can be useful for gathering specific facts quickly, but relying on them exclusively during an emotionally sensitive conversation may make a patient feel less able to express concerns in their own words.",
+      question: "According to the passage, what is one limitation of relying exclusively on closed questions during a sensitive conversation?",
+      options: [
+        { id: "a", text: "Closed questions always take longer to answer than open-ended ones." },
+        { id: "b", text: "Patients may feel less able to express concerns in their own words." },
+        { id: "c", text: "Closed questions cannot be used to gather specific facts." },
+        { id: "d", text: "Open-ended questions are considered unprofessional." },
+      ],
+      correctOptionId: "b",
     },
   ],
 };

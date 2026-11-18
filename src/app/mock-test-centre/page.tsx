@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "응시할 때마다 같은 문제가 나오나요?",
-    a: "아닙니다. 각 시험은 10문항의 문제은행을 가지고 있으며, 응시할 때마다 그중 5문항이 무작위로 출제됩니다.",
+    a: "아닙니다. 각 시험은 20문항의 문제은행을 가지고 있으며, 응시할 때마다 그중 5문항이 무작위로 출제됩니다.",
   },
   {
     q: "응시 중간에 나가면 기록이 사라지나요?",
@@ -153,7 +153,7 @@ export default async function MockTestCentrePage() {
         <div className="mt-14 border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
           <p className="eyebrow">모의고사 이용권 (횟수제)</p>
           <p className="mt-1 text-sm leading-relaxed text-ink/60">
-            1회·5회·10회권 중 선택해 구매할 수 있습니다. 응시할 때마다 각 시험의 10문항
+            1회·5회·10회권 중 선택해 구매할 수 있습니다. 응시할 때마다 각 시험의 20문항
             문제은행에서 5문항이 무작위로 출제됩니다. 상담 신청 후 결제가 확인되면 이용권이
             부여되어 바로 응시할 수 있습니다.
           </p>
