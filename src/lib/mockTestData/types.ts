@@ -56,12 +56,19 @@ export type MockQuestion =
   | FillInBlanksQuestion
   | EssayQuestion;
 
+export interface PricingTier {
+  count: number; // number of attempts this pass grants
+  price: number; // KRW, shown publicly
+  label: string; // e.g. "5회권"
+}
+
 export interface MockTest {
   slug: string;
   title: string;
   description: string;
   disclaimer: string;
-  price: number; // KRW, shown publicly for this category
+  pricingTiers: PricingTier[];
   totalTimeMinutes: number; // whole-test countdown budget
-  questions: MockQuestion[];
+  questionsPerAttempt: number; // how many questions are drawn from the pool per sitting
+  questions: MockQuestion[]; // the full question pool (bigger than one sitting)
 }

@@ -1,16 +1,19 @@
+import { DEFAULT_PRICING_TIERS } from "./pricing";
 import type { MockTest } from "./types";
 
 // 데모용 샘플 문항 (C-BRIDGE 자체 제작). 실제 PTE Academic 기출문항이 아니며,
 // Pearson의 공식 문항·채점 알고리즘과 무관합니다. Reading·Writing 문항만 포함되어 있고
-// Listening·Speaking 섹션은 준비 중입니다.
+// Listening·Speaking 섹션은 준비 중입니다. 응시할 때마다 아래 문제은행에서 5문항이
+// 무작위로 출제됩니다.
 export const pteAcademicDemo: MockTest = {
   slug: "pte-academic",
   title: "PTE Academic 모의고사 (데모)",
-  description: "Reading·Writing 데모 문항 5개로 구성된 샘플 모의고사입니다.",
+  description: "10문항의 Reading·Writing 데모 문제은행에서 매회 5문항이 무작위로 출제됩니다.",
   disclaimer:
     "본 모의고사는 C-BRIDGE가 자체 제작한 데모 샘플 문항이며, 실제 PTE Academic 기출문항이 아닙니다. Pearson 또는 PTE와 제휴 관계가 없으며, 공식 채점 알고리즘을 사용하지 않습니다. 현재는 Reading·Writing 문항만 제공되며, Listening·Speaking 섹션은 준비 중입니다.",
-  price: 45000,
+  pricingTiers: DEFAULT_PRICING_TIERS,
   totalTimeMinutes: 20,
+  questionsPerAttempt: 5,
   questions: [
     {
       id: "q1-mcq-single",
@@ -100,6 +103,86 @@ export const pteAcademicDemo: MockTest = {
         "아래 지문을 5~75단어의 한 문장으로 요약하세요. 이 문항은 자동 채점되지 않으며, 작성한 답안은 자가 검토를 위해 저장됩니다.",
       passage:
         "Several large-scale workplace studies conducted since 2020 have found mixed effects of remote work on employee productivity. Some roles that require deep, uninterrupted focus, such as software development and writing, often show measurable gains when employees work from home, partly due to fewer interruptions from coworkers. Other roles that depend heavily on spontaneous collaboration, such as early-stage product design, sometimes show reduced output when teams are fully remote, as fewer unplanned conversations occur. Many organizations have responded by adopting hybrid arrangements, intended to preserve the focus benefits of remote work while still allowing in-person collaboration several days a week.",
+      minWords: 5,
+      maxWords: 75,
+    },
+    {
+      id: "q6-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: Multiple Choice, Choose Single Answer",
+      instructions: "지문을 읽고 질문에 가장 적절한 답을 하나 고르세요.",
+      passage:
+        "Vertical farms, which grow crops in stacked layers inside climate-controlled buildings, have been promoted as a way to bring food production closer to cities. Because conditions inside the building are tightly controlled, vertical farms can operate year-round regardless of outdoor weather and typically use far less water than traditional fields. However, the energy required to power artificial lighting and climate control remains high, and most vertical farms have so far focused on fast-growing leafy greens rather than staple crops such as wheat or rice.",
+      question: "What is one limitation of vertical farms mentioned in the passage?",
+      options: [
+        { id: "a", text: "They cannot operate during winter months." },
+        { id: "b", text: "They use significantly more water than traditional farms." },
+        { id: "c", text: "Most have not yet been used to grow staple crops like wheat." },
+        { id: "d", text: "They require outdoor weather conditions to function." },
+      ],
+      correctOptionId: "c",
+    },
+    {
+      id: "q7-mcq-single",
+      type: "mcq-single",
+      section: "reading",
+      title: "Reading: Multiple Choice, Choose Single Answer",
+      instructions: "지문을 읽고 질문에 가장 적절한 답을 하나 고르세요.",
+      passage:
+        "As electric vehicles have become more common, attention has turned to what happens to their batteries once they can no longer hold enough charge for daily driving. Rather than being discarded, many retired EV batteries are now finding a second use in stationary energy storage, where the requirements for charge capacity are less demanding than in a moving vehicle. Only once a battery degrades further are its raw materials typically recovered through recycling.",
+      question: "According to the passage, what often happens to EV batteries before they are recycled?",
+      options: [
+        { id: "a", text: "They are immediately discarded as waste." },
+        { id: "b", text: "They are reused for less demanding stationary energy storage." },
+        { id: "c", text: "They are returned to the original vehicle manufacturer unchanged." },
+        { id: "d", text: "They are used to build new electric vehicles directly." },
+      ],
+      correctOptionId: "b",
+    },
+    {
+      id: "q8-mcq-multi",
+      type: "mcq-multi",
+      section: "reading",
+      title: "Reading: Multiple Choice, Choose Multiple Answers",
+      instructions: "지문을 읽고 질문에 해당하는 답을 모두 고르세요.",
+      passage:
+        "Scientists have proposed several explanations for how migratory birds navigate across thousands of kilometers each year. One leading theory suggests that birds can sense the Earth's magnetic field, allowing them to maintain a consistent direction even over open ocean with no visual landmarks. Other research indicates that some species also rely on the position of the sun and stars, adjusting their course as these reference points shift throughout the day and across seasons. Experiments in which birds were exposed to artificial magnetic fields have supported the magnetic-sensing theory, though researchers note that no single mechanism fully explains navigation in every species studied.",
+      question: "Which of the following are supported by the passage?",
+      options: [
+        { id: "a", text: "Some migratory birds may sense the Earth's magnetic field." },
+        { id: "b", text: "All migratory bird species navigate using exactly the same mechanism." },
+        { id: "c", text: "Some species may use the position of the sun and stars." },
+        { id: "d", text: "Artificial magnetic fields have no effect on bird behavior in experiments." },
+      ],
+      correctOptionIds: ["a", "c"],
+    },
+    {
+      id: "q9-mcq-multi",
+      type: "mcq-multi",
+      section: "reading",
+      title: "Reading: Multiple Choice, Choose Multiple Answers",
+      instructions: "지문을 읽고 질문에 해당하는 답을 모두 고르세요.",
+      passage:
+        "While much early research on microplastic pollution focused on oceans, more recent studies have found that agricultural soils can contain even higher concentrations of microplastic particles in some regions. One major source is plastic mulch film, used by farmers to retain soil moisture and suppress weeds, fragments of which can remain in the soil for years after a growing season ends. Researchers are still investigating whether these particles affect soil organisms or crop growth, and some studies have found measurable effects on earthworm behavior, while effects on plant yield remain less conclusive.",
+      question: "Which of the following are supported by the passage?",
+      options: [
+        { id: "a", text: "Some agricultural soils may contain higher microplastic levels than oceans." },
+        { id: "b", text: "Plastic mulch film is one identified source of soil microplastics." },
+        { id: "c", text: "Researchers have conclusively proven microplastics reduce crop yield." },
+        { id: "d", text: "Microplastics have been shown to have no effect on earthworms." },
+      ],
+      correctOptionIds: ["a", "b"],
+    },
+    {
+      id: "q10-essay",
+      type: "essay",
+      section: "writing",
+      title: "Writing: Summarize Written Text",
+      instructions:
+        "아래 지문을 5~75단어의 한 문장으로 요약하세요. 이 문항은 자동 채점되지 않으며, 작성한 답안은 자가 검토를 위해 저장됩니다.",
+      passage:
+        "Roman engineers built an extensive network of aqueducts to carry fresh water from distant springs and lakes into cities, relying almost entirely on a gentle, continuous downhill gradient rather than pumps. Maintaining a precise slope over long distances, sometimes exceeding 50 kilometers, required careful surveying, and sections that crossed valleys were often carried on raised stone arches to preserve the gradient. Many of these structures remained in use for centuries, and some arched sections still stand today, long after the cities they once supplied have changed dramatically.",
       minWords: 5,
       maxWords: 75,
     },

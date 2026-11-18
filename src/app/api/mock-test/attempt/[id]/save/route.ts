@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import { getOwnedAttempt, saveProgress } from "@/lib/mockTestData/attempts";
-import { getMockTest } from "@/lib/mockTestData/registry";
 import { sanitizeAnswers } from "@/lib/mockTestData/scoring";
 
 // Silent autosave of in-progress answers (does not score or submit).
@@ -18,11 +17,6 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return NextResponse.json({ error: "저장할 수 없는 응시입니다." }, { status: 409 });
   }
 
-  const test = getMockTest(attempt.testSlug);
-  if (!test) {
-    return NextResponse.json({ error: "존재하지 않는 모의고사입니다." }, { status: 404 });
-  }
-
   let body: unknown;
   try {
     body = await request.json();
@@ -31,10 +25,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   }
 
   const rawAnswers = (body as { answers?: unknown } | null)?.answers;
-  const answers = sanitizeAnswers(
-    rawAnswers,
-    test.questions.map((q) => q.id)
-  );
+  const answers = sanitizeAnswers(rawAnswers, attempt.questionIds);
 
   await saveProgress(attempt.id, answers);
   return NextResponse.json({ ok: true });

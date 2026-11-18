@@ -40,7 +40,11 @@ const faqs = [
   },
   {
     q: "다시 응시할 수 있나요?",
-    a: "네. 이용권이 있는 시험은 제한 없이 다시 응시할 수 있습니다. 결과 페이지의 '다시 응시하기' 버튼을 이용하세요.",
+    a: "네. 구매한 이용권 횟수(1회/5회/10회) 내에서 다시 응시할 수 있습니다. 응시할 때마다 문제은행에서 문항이 무작위로 바뀌어 출제됩니다. 횟수가 남아있다면 결과 페이지의 '다시 응시하기' 버튼을 이용하세요.",
+  },
+  {
+    q: "응시할 때마다 같은 문제가 나오나요?",
+    a: "아닙니다. 각 시험은 10문항의 문제은행을 가지고 있으며, 응시할 때마다 그중 5문항이 무작위로 출제됩니다.",
   },
   {
     q: "응시 중간에 나가면 기록이 사라지나요?",
@@ -50,7 +54,7 @@ const faqs = [
 
 export default async function MockTestCentrePage() {
   const user = await getCurrentUser();
-  const entitledSlugs = user ? new Set(await listEntitlementsForUser(user.id)) : new Set<string>();
+  const remainingBySlug = user ? await listEntitlementsForUser(user.id) : {};
 
   const lastAttemptBySlug = new Map<string, MockTestAttempt>();
   if (user) {
@@ -142,16 +146,17 @@ export default async function MockTestCentrePage() {
 
         {/* 이용권 카드 */}
         <div className="mt-14 border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
-          <p className="eyebrow">모의고사 이용권</p>
+          <p className="eyebrow">모의고사 이용권 (횟수제)</p>
           <p className="mt-1 text-sm leading-relaxed text-ink/60">
-            시험당 45,000원 (4~5만원대)으로 온라인 모의고사에 응시할 수 있는 이용권입니다. 상담
-            신청 후 결제가 확인되면 이용권이 부여되어 바로 응시할 수 있습니다.
+            1회·5회·10회권 중 선택해 구매할 수 있습니다. 응시할 때마다 각 시험의 10문항
+            문제은행에서 5문항이 무작위로 출제됩니다. 상담 신청 후 결제가 확인되면 이용권이
+            부여되어 바로 응시할 수 있습니다.
           </p>
         </div>
 
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {mockTests.map((test) => {
-            const entitled = entitledSlugs.has(test.slug);
+            const remaining = remainingBySlug[test.slug] ?? 0;
             const lastAttempt = lastAttemptBySlug.get(test.slug);
             const autoScored = test.questions.filter((q) => q.type !== "essay").length;
             return (
@@ -159,20 +164,16 @@ export default async function MockTestCentrePage() {
                 key={test.slug}
                 className="flex flex-col border border-ink/15 bg-white p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(30,36,28,0.08)]"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-ink/15 text-bronze">
-                    <MonitorCheckIcon />
-                  </div>
-                  <span className="shrink-0 whitespace-nowrap text-sm font-bold text-bronze">
-                    {test.price.toLocaleString("ko-KR")}원
-                  </span>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-ink/15 text-bronze">
+                  <MonitorCheckIcon />
                 </div>
 
                 <h2 className="mt-4 font-serif text-xl font-bold text-ink">{test.title}</h2>
                 <div className="mt-2 flex flex-wrap gap-1.5 text-[11px] font-bold text-ink/45">
-                  <span className="border border-ink/15 px-2 py-0.5">문항 {test.questions.length}개</span>
+                  <span className="border border-ink/15 px-2 py-0.5">문제은행 {test.questions.length}문항</span>
+                  <span className="border border-ink/15 px-2 py-0.5">회당 {test.questionsPerAttempt}문항</span>
                   <span className="border border-ink/15 px-2 py-0.5">{test.totalTimeMinutes}분</span>
-                  <span className="border border-ink/15 px-2 py-0.5">자동채점 {autoScored}개</span>
+                  <span className="border border-ink/15 px-2 py-0.5">자동채점 {autoScored}개 유형</span>
                 </div>
 
                 <p className="mt-3 text-sm leading-relaxed text-ink/60">{test.description}</p>
@@ -188,7 +189,11 @@ export default async function MockTestCentrePage() {
 
                 <p className="mt-3 text-xs leading-relaxed text-ink/45">{test.disclaimer}</p>
 
-                <div className="mt-6">
+                {user && remaining > 0 && (
+                  <p className="mt-4 text-sm font-bold text-bronze">남은 응시 횟수: {remaining}회</p>
+                )}
+
+                <div className="mt-4">
                   {!user ? (
                     <Link
                       href="/mock-test-centre/login"
@@ -196,14 +201,35 @@ export default async function MockTestCentrePage() {
                     >
                       로그인 후 응시하기
                     </Link>
-                  ) : entitled ? (
+                  ) : remaining > 0 ? (
                     <StartTestButton slug={test.slug} label={lastAttempt?.status === "in_progress" ? "이어서 응시하기" : "응시 시작"} />
-                  ) : (
+                  ) : null}
+
+                  {(!user || remaining === 0) && (
+                    <div className={user ? "" : "mt-3"}>
+                      {user && <p className="mb-2 text-xs font-bold text-ink/45">이용권 구매</p>}
+                      <div className="flex flex-wrap gap-2">
+                        {test.pricingTiers.map((tier) => (
+                          <Link
+                            key={tier.count}
+                            href={`/consultation?goal=${encodeURIComponent(
+                              `모의고사 ${tier.label} 구매 신청 (${test.title})`
+                            )}`}
+                            className="border border-ink/20 px-3 py-2 text-xs font-bold text-ink/70 transition-colors hover:border-[var(--color-rust)] hover:text-ink"
+                          >
+                            {tier.label} {tier.price.toLocaleString("ko-KR")}원
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {user && remaining > 0 && (
                     <Link
-                      href={`/consultation?goal=${encodeURIComponent(`모의고사 이용권 구매 신청 (${test.title})`)}`}
-                      className="btn-primary inline-block rounded-sm px-6 py-3 text-sm font-bold tracking-[0.04em]"
+                      href={`/consultation?goal=${encodeURIComponent(`모의고사 이용권 추가 구매 (${test.title})`)}`}
+                      className="btn-text mt-3 block text-xs"
                     >
-                      구매 상담 신청
+                      이용권 추가 구매
                     </Link>
                   )}
                 </div>

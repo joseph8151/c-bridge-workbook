@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import { createAttempt, getInProgressAttempt } from "@/lib/mockTestData/attempts";
-import { hasEntitlement } from "@/lib/mockTestData/entitlements";
+import { consumeAttempt } from "@/lib/mockTestData/entitlements";
 import { getMockTest } from "@/lib/mockTestData/registry";
+import { pickRandomQuestionIds } from "@/lib/mockTestData/selection";
 
 export async function POST(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -16,19 +17,20 @@ export async function POST(_request: Request, { params }: { params: Promise<{ sl
     return NextResponse.json({ error: "로그인이 필요합니다." }, { status: 401 });
   }
 
-  const entitled = await hasEntitlement(user.id, slug);
-  if (!entitled) {
-    return NextResponse.json(
-      { error: "이용권 구매가 필요합니다. 상담을 신청해주세요.", requiresPurchase: true },
-      { status: 403 }
-    );
-  }
-
   const existing = await getInProgressAttempt(user.id, slug);
   if (existing) {
     return NextResponse.json({ attemptId: existing.id, resumed: true });
   }
 
-  const attempt = await createAttempt(user.id, slug);
+  const consumed = await consumeAttempt(user.id, slug);
+  if (!consumed) {
+    return NextResponse.json(
+      { error: "응시 가능 횟수가 없습니다. 이용권을 구매해주세요.", requiresPurchase: true },
+      { status: 403 }
+    );
+  }
+
+  const questionIds = pickRandomQuestionIds(test, test.questionsPerAttempt);
+  const attempt = await createAttempt(user.id, slug, questionIds);
   return NextResponse.json({ attemptId: attempt.id, resumed: false });
 }

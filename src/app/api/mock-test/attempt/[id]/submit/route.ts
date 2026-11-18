@@ -3,6 +3,7 @@ import { getCurrentUser } from "@/lib/auth/sessions";
 import { getOwnedAttempt, submitAttempt } from "@/lib/mockTestData/attempts";
 import { getMockTest } from "@/lib/mockTestData/registry";
 import { sanitizeAnswers, scoreAttempt } from "@/lib/mockTestData/scoring";
+import { selectQuestions } from "@/lib/mockTestData/selection";
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -20,10 +21,11 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return NextResponse.json({ error: "이미 제출된 응시입니다." }, { status: 409 });
   }
 
-  const test = getMockTest(attempt.testSlug);
-  if (!test) {
+  const fullTest = getMockTest(attempt.testSlug);
+  if (!fullTest) {
     return NextResponse.json({ error: "존재하지 않는 모의고사입니다." }, { status: 404 });
   }
+  const test = selectQuestions(fullTest, attempt.questionIds);
 
   let body: unknown;
   try {

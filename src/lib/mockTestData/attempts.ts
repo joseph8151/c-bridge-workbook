@@ -9,6 +9,7 @@ export interface MockTestAttempt {
   status: "in_progress" | "submitted";
   answers: AnswersMap;
   result: ScoreSummary | null;
+  questionIds: string[];
   startedAt: number;
   submittedAt: number | null;
 }
@@ -20,6 +21,7 @@ interface AttemptRow {
   status: string;
   answers_json: string;
   result_json: string | null;
+  question_ids_json: string;
   started_at: number;
   submitted_at: number | null;
 }
@@ -32,17 +34,18 @@ function toAttempt(row: AttemptRow): MockTestAttempt {
     status: row.status as MockTestAttempt["status"],
     answers: JSON.parse(row.answers_json) as AnswersMap,
     result: row.result_json ? (JSON.parse(row.result_json) as ScoreSummary) : null,
+    questionIds: row.question_ids_json ? (JSON.parse(row.question_ids_json) as string[]) : [],
     startedAt: row.started_at,
     submittedAt: row.submitted_at,
   };
 }
 
-export async function createAttempt(userId: string, testSlug: string): Promise<MockTestAttempt> {
+export async function createAttempt(userId: string, testSlug: string, questionIds: string[]): Promise<MockTestAttempt> {
   const db = await getDb();
   const id = generateId();
   await db
-    .prepare("INSERT INTO mock_test_attempts (id, user_id, test_slug) VALUES (?, ?, ?)")
-    .bind(id, userId, testSlug)
+    .prepare("INSERT INTO mock_test_attempts (id, user_id, test_slug, question_ids_json) VALUES (?, ?, ?, ?)")
+    .bind(id, userId, testSlug, JSON.stringify(questionIds))
     .run();
   return {
     id,
@@ -51,6 +54,7 @@ export async function createAttempt(userId: string, testSlug: string): Promise<M
     status: "in_progress",
     answers: {},
     result: null,
+    questionIds,
     startedAt: Math.floor(Date.now() / 1000),
     submittedAt: null,
   };
