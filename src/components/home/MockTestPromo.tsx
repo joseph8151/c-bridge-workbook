@@ -62,7 +62,7 @@ export default function MockTestPromo() {
             </p>
             <p className="mt-4 max-w-md text-sm leading-relaxed" style={{ color: "var(--bg-paper)", opacity: 0.7 }}>
               {mockTests.length}개 시험을 온라인으로 바로 응시할 수 있습니다. 로그인 한 번이면
-              결과가 계정에 저장되고, 이용권 하나로 제한 없이 다시 응시할 수 있습니다.
+              결과가 계정에 저장되고, 1회·5회·10회권 중 선택해 구매할 수 있습니다.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/mock-test-centre" className="btn-primary-on-dark px-7 text-sm font-medium">
@@ -73,7 +73,7 @@ export default function MockTestPromo() {
                 className="inline-flex min-h-[48px] items-center justify-center text-sm font-medium tracking-[0.02em] transition-colors"
                 style={{ color: "var(--bg-paper)", opacity: 0.8 }}
               >
-                45,000원대 이용권 보기 <span className="arrow-slide ml-1.5">→</span>
+                1회 15,000원부터 보기 <span className="arrow-slide ml-1.5">→</span>
               </Link>
             </div>
           </div>
