@@ -38,8 +38,10 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium tracking-[0.08em] transition-colors hover:text-[var(--bg-accent)]"
-              style={{ color: "var(--bg-ink)", opacity: 0.85 }}
+              className={`text-[13px] tracking-[0.08em] transition-colors hover:text-[var(--bg-accent)] ${
+                link.featured ? "font-bold" : "font-medium"
+              }`}
+              style={{ color: link.featured ? "var(--bg-accent)" : "var(--bg-ink)", opacity: link.featured ? 1 : 0.85 }}
             >
               {link.label}
             </Link>
@@ -96,8 +98,8 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="py-3.5 text-sm font-medium tracking-[0.04em]"
-                style={{ color: "var(--bg-ink)", borderColor: "var(--bg-line)" }}
+                className={`py-3.5 text-sm tracking-[0.04em] ${link.featured ? "font-bold" : "font-medium"}`}
+                style={{ color: link.featured ? "var(--bg-accent)" : "var(--bg-ink)", borderColor: "var(--bg-line)" }}
               >
                 {link.label}
               </Link>

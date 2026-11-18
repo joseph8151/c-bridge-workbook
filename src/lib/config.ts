@@ -15,14 +15,13 @@ export const siteConfig = {
   shippingTurnaround: "영업시간 내 입금 확인 후 3~10시간 이내 발송",
 };
 
+// 투탑: 문제집(BOOKS)과 모의고사(MOCK TEST)를 가장 먼저, 눈에 띄게 노출합니다.
+// 나머지 메뉴는 꼭 필요한 것만 남겨 전체 개수를 줄였습니다 (EXAMS/COMPARE/HOW IT
+// WORKS/BUSINESS는 footer와 홈페이지 내 섹션에서 계속 연결됩니다).
 export const navLinks = [
-  { label: "EXAMS", href: "/exams" },
-  { label: "BOOKS", href: "/all-books" },
+  { label: "BOOKS", href: "/all-books", featured: true },
+  { label: "MOCK TEST", href: "/mock-test-centre", featured: true },
   { label: "PRICING", href: "/pricing" },
-  { label: "COMPARE", href: "/compare" },
-  { label: "HOW IT WORKS", href: "/#method" },
-  { label: "MOCK TEST", href: "/mock-test-centre" },
-  { label: "BUSINESS", href: "/business" },
   { label: "ABOUT", href: "/about" },
 ];
 
