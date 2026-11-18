@@ -26,14 +26,11 @@
 	},
 	"d1_databases": [
 		{
-			// Mock Test Centre: users / sessions / mock_test_attempts.
-			// PLACEHOLDER database_id — replace after running:
-			//   npx wrangler login
-			//   npx wrangler d1 create c-bridge-mock-test-centre
-			// then paste the real database_id below before deploying to production.
+			// Mock Test Centre: users / sessions / mock_test_attempts / mock_test_entitlements.
+			// Real production database, created via Cloudflare MCP; migrations 0001-0002 applied.
 			"binding": "DB",
 			"database_name": "c-bridge-mock-test-centre",
-			"database_id": "00000000-0000-0000-0000-000000000000",
+			"database_id": "c9378610-a233-4cd2-ab9b-f52071e696b5",
 			"migrations_dir": "migrations"
 		}
 	]
