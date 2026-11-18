@@ -73,7 +73,7 @@ export default function MockTestPromo() {
                 className="inline-flex min-h-[48px] items-center justify-center text-sm font-medium tracking-[0.02em] transition-colors"
                 style={{ color: "var(--bg-paper)", opacity: 0.8 }}
               >
-                1회 15,000원부터 보기 <span className="arrow-slide ml-1.5">→</span>
+                1회 45,000원부터 보기 <span className="arrow-slide ml-1.5">→</span>
               </Link>
             </div>
           </div>

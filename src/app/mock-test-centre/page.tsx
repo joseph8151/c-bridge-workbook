@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import LogoutButton from "@/components/mockTestCentre/LogoutButton";
 import StartTestButton from "@/components/mockTestCentre/StartTestButton";
+import ExamPreviewGraphic from "@/components/mockTestCentre/ExamPreviewGraphic";
 import { listAttemptsForUser } from "@/lib/mockTestData/attempts";
 import { listEntitlementsForUser } from "@/lib/mockTestData/entitlements";
 import { mockTests } from "@/lib/mockTestData/registry";
@@ -67,37 +68,41 @@ export default async function MockTestCentrePage() {
   return (
     <section className="py-16 md:py-24" style={{ background: "var(--color-paper)" }}>
       <Container>
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <p className="eyebrow">MOCK TEST CENTRE</p>
-            <h1 className="mt-4 break-keep font-serif text-4xl font-bold leading-tight text-ink md:text-5xl">
-              모의고사 센터
-            </h1>
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-ink/60">
-              실제 시험과 비슷한 환경에서 온라인으로 응시하고, 결과를 계정에 저장해 언제든
-              다시 확인할 수 있습니다.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2 text-xs font-bold text-ink/50">
-              <span className="border border-ink/15 bg-white px-3 py-1.5">{mockTests.length}개 시험</span>
-              <span className="border border-ink/15 bg-white px-3 py-1.5">자동 채점</span>
-              <span className="border border-ink/15 bg-white px-3 py-1.5">결과 영구 저장</span>
-              <span className="border border-ink/15 bg-white px-3 py-1.5">자동 저장 · 이어하기</span>
-            </div>
-          </div>
-
-          {user && (
-            <div className="flex flex-col items-end gap-2 text-sm text-ink/70">
-              <span>
-                <span className="font-semibold text-ink">{user.name}</span>님, 환영합니다.
-              </span>
-              <div className="flex items-center gap-4">
-                <Link href="/mock-test-centre/results" className="btn-text text-sm">
-                  내 응시 기록
-                </Link>
-                <LogoutButton />
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-14">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="eyebrow">MOCK TEST CENTRE</p>
+              <h1 className="mt-4 break-keep font-serif text-4xl font-bold leading-tight text-ink md:text-5xl">
+                모의고사 센터
+              </h1>
+              <p className="mt-4 max-w-lg text-base leading-relaxed text-ink/60">
+                실제 시험과 비슷한 환경에서 온라인으로 응시하고, 결과를 계정에 저장해 언제든
+                다시 확인할 수 있습니다.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-xs font-bold text-ink/50">
+                <span className="border border-ink/15 bg-white px-3 py-1.5">{mockTests.length}개 시험</span>
+                <span className="border border-ink/15 bg-white px-3 py-1.5">자동 채점</span>
+                <span className="border border-ink/15 bg-white px-3 py-1.5">결과 영구 저장</span>
+                <span className="border border-ink/15 bg-white px-3 py-1.5">자동 저장 · 이어하기</span>
               </div>
             </div>
-          )}
+
+            {user && (
+              <div className="flex flex-col items-end gap-2 text-sm text-ink/70">
+                <span>
+                  <span className="font-semibold text-ink">{user.name}</span>님, 환영합니다.
+                </span>
+                <div className="flex items-center gap-4">
+                  <Link href="/mock-test-centre/results" className="btn-text text-sm">
+                    내 응시 기록
+                  </Link>
+                  <LogoutButton />
+                </div>
+              </div>
+            )}
+          </div>
+
+          <ExamPreviewGraphic />
         </div>
 
         {!user && (
