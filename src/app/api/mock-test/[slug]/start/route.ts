@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import { createAttempt } from "@/lib/mockTestData/attempts";
-import { getMockTest } from "@/lib/mockTestData/pteAcademic";
+import { getMockTest } from "@/lib/mockTestData/registry";
 
 export async function POST(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

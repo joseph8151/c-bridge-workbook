@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import Container from "@/components/Container";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import { listAttemptsForUser } from "@/lib/mockTestData/attempts";
-import { getMockTest } from "@/lib/mockTestData/pteAcademic";
+import { getMockTest } from "@/lib/mockTestData/registry";
 
 export const metadata: Metadata = {
   title: "내 응시 기록 | Mock Test Centre | C-BRIDGE",

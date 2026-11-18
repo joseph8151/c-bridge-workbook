@@ -318,7 +318,9 @@ function EssayBody({
 
   return (
     <div>
-      <p className="border border-ink/15 bg-paper p-4 text-sm leading-relaxed text-ink/80">{question.passage}</p>
+      {question.passage && (
+        <p className="border border-ink/15 bg-paper p-4 text-sm leading-relaxed text-ink/80">{question.passage}</p>
+      )}
       <textarea
         rows={6}
         value={text}

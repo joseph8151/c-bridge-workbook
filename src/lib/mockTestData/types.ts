@@ -44,7 +44,7 @@ export interface FillInBlanksQuestion extends BaseQuestion {
 
 export interface EssayQuestion extends BaseQuestion {
   type: "essay";
-  passage: string;
+  passage?: string;
   minWords: number;
   maxWords: number;
 }
@@ -61,5 +61,6 @@ export interface MockTest {
   title: string;
   description: string;
   disclaimer: string;
+  price: number; // KRW, shown publicly for this category
   questions: MockQuestion[];
 }

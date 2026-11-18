@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import { getOwnedAttempt, submitAttempt } from "@/lib/mockTestData/attempts";
-import { getMockTest } from "@/lib/mockTestData/pteAcademic";
+import { getMockTest } from "@/lib/mockTestData/registry";
 import { scoreAttempt, type AnswersMap } from "@/lib/mockTestData/scoring";
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {

@@ -9,6 +9,7 @@ export const pteAcademicDemo: MockTest = {
   description: "Reading·Writing 데모 문항 5개로 구성된 샘플 모의고사입니다.",
   disclaimer:
     "본 모의고사는 C-BRIDGE가 자체 제작한 데모 샘플 문항이며, 실제 PTE Academic 기출문항이 아닙니다. Pearson 또는 PTE와 제휴 관계가 없으며, 공식 채점 알고리즘을 사용하지 않습니다. 현재는 Reading·Writing 문항만 제공되며, Listening·Speaking 섹션은 준비 중입니다.",
+  price: 45000,
   questions: [
     {
       id: "q1-mcq-single",
@@ -103,11 +104,3 @@ export const pteAcademicDemo: MockTest = {
     },
   ],
 };
-
-export const mockTestsBySlug: Record<string, MockTest> = {
-  "pte-academic": pteAcademicDemo,
-};
-
-export function getMockTest(slug: string): MockTest | null {
-  return mockTestsBySlug[slug] ?? null;
-}

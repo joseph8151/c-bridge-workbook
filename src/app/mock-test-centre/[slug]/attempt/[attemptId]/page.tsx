@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import TestRunner from "@/components/mockTestCentre/TestRunner";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import { getOwnedAttempt } from "@/lib/mockTestData/attempts";
-import { getMockTest } from "@/lib/mockTestData/pteAcademic";
+import { getMockTest } from "@/lib/mockTestData/registry";
 
 export default async function AttemptPage({
   params,
