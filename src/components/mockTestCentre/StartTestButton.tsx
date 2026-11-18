@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function StartTestButton({ slug }: { slug: string }) {
+export default function StartTestButton({ slug, label = "응시 시작" }: { slug: string; label?: string }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -34,7 +34,7 @@ export default function StartTestButton({ slug }: { slug: string }) {
         disabled={loading}
         className="btn-primary rounded-sm px-6 py-3 text-sm font-bold tracking-[0.04em] disabled:opacity-60"
       >
-        {loading ? "준비 중" : "응시 시작"}
+        {loading ? "준비 중" : label}
       </button>
       {error && <p className="mt-2 text-xs text-chinese">{error}</p>}
     </div>

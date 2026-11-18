@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import Container from "@/components/Container";
+import StartTestButton from "@/components/mockTestCentre/StartTestButton";
 import { getCurrentUser } from "@/lib/auth/sessions";
 import { getOwnedAttempt } from "@/lib/mockTestData/attempts";
 import { getMockTest } from "@/lib/mockTestData/registry";
+
+const SECTION_LABEL: Record<string, string> = { reading: "Reading", writing: "Writing" };
 
 export const metadata: Metadata = {
   title: "응시 결과 | Mock Test Centre | C-BRIDGE",
@@ -25,6 +28,19 @@ export default async function ResultDetailPage({ params }: { params: Promise<{ a
   const test = getMockTest(attempt.testSlug);
   const result = attempt.result;
 
+  const sectionBySlug = new Map(test?.questions.map((q) => [q.id, q.section]) ?? []);
+  const bySection = new Map<string, { earned: number; possible: number }>();
+  if (result) {
+    for (const r of result.results) {
+      const section = sectionBySlug.get(r.questionId) ?? "reading";
+      const entry = bySection.get(section) ?? { earned: 0, possible: 0 };
+      entry.earned += r.pointsEarned;
+      entry.possible += r.pointsPossible;
+      bySection.set(section, entry);
+    }
+  }
+  const sectionBreakdown = [...bySection.entries()].filter(([, v]) => v.possible > 0);
+
   return (
     <section className="py-16 md:py-24" style={{ background: "var(--color-paper)" }}>
       <Container className="max-w-[720px]">
@@ -42,6 +58,21 @@ export default async function ResultDetailPage({ params }: { params: Promise<{ a
           <p className="mt-1 text-xs text-ink/50">
             작문(Writing) 서술형 문항은 자동 채점되지 않으며, 자가 검토용으로 저장됩니다.
           </p>
+
+          {sectionBreakdown.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-6 border-t border-ink/10 pt-5">
+              {sectionBreakdown.map(([section, v]) => (
+                <div key={section}>
+                  <p className="text-xs font-bold tracking-[0.08em] text-ink/50">
+                    {SECTION_LABEL[section] ?? section.toUpperCase()}
+                  </p>
+                  <p className="mt-1 text-lg font-bold text-ink">
+                    {v.earned} <span className="text-sm font-normal text-ink/40">/ {v.possible}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="mt-6 divide-y divide-ink/10 border border-ink/15 bg-white">
@@ -59,7 +90,8 @@ export default async function ResultDetailPage({ params }: { params: Promise<{ a
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap items-center gap-6">
+          {test && <StartTestButton slug={test.slug} label="다시 응시하기" />}
           <Link href="/mock-test-centre/results" className="btn-text text-sm">
             ← 전체 응시 기록 보기
           </Link>

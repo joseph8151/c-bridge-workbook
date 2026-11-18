@@ -25,7 +25,7 @@ export default async function AttemptPage({
   return (
     <section className="py-12 md:py-16" style={{ background: "var(--color-paper)" }}>
       <Container className="max-w-[720px]">
-        <TestRunner test={test} attemptId={attempt.id} />
+        <TestRunner test={test} attemptId={attempt.id} initialAnswers={attempt.answers} startedAt={attempt.startedAt} />
       </Container>
     </section>
   );

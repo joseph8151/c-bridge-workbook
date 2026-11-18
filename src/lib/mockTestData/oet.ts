@@ -10,6 +10,7 @@ export const oetDemo: MockTest = {
   disclaimer:
     "본 모의고사는 C-BRIDGE가 자체 제작한 데모 샘플 문항이며, 실제 OET 기출문항이 아닙니다. OET를 운영하는 기관과 제휴 관계가 없으며, 공식 채점 알고리즘을 사용하지 않습니다. 특정 직군(간호·의학 등)에 한정하지 않은 공통 문항이며, 현재는 Reading·Writing 문항만 제공되고 Listening·Speaking 섹션은 준비 중입니다.",
   price: 45000,
+  totalTimeMinutes: 15,
   questions: [
     {
       id: "q1-mcq-single",

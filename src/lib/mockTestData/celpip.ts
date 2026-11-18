@@ -10,6 +10,7 @@ export const celpipDemo: MockTest = {
   disclaimer:
     "본 모의고사는 C-BRIDGE가 자체 제작한 데모 샘플 문항이며, 실제 CELPIP 기출문항이 아닙니다. Paragon Testing Enterprises와 제휴 관계가 없으며, 공식 채점 알고리즘을 사용하지 않습니다. 현재는 Reading·Writing 문항만 제공되며, Listening·Speaking 섹션은 준비 중입니다.",
   price: 45000,
+  totalTimeMinutes: 15,
   questions: [
     {
       id: "q1-mcq-single",

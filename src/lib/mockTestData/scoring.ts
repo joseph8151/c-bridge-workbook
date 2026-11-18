@@ -25,6 +25,43 @@ export type AnswerValue =
 
 export type AnswersMap = Record<string, AnswerValue>;
 
+export function sanitizeAnswers(raw: unknown, validQuestionIds: string[]): AnswersMap {
+  const out: AnswersMap = {};
+  if (!raw || typeof raw !== "object") return out;
+  const rawObj = raw as Record<string, unknown>;
+
+  for (const qId of validQuestionIds) {
+    const entry = rawObj[qId];
+    if (!entry || typeof entry !== "object") continue;
+    const e = entry as Record<string, unknown>;
+    const type = e.type;
+
+    if (type === "mcq-single" && typeof e.optionId === "string") {
+      out[qId] = { type: "mcq-single", optionId: e.optionId };
+    } else if (type === "mcq-multi" && Array.isArray(e.optionIds)) {
+      out[qId] = {
+        type: "mcq-multi",
+        optionIds: e.optionIds.filter((v): v is string => typeof v === "string"),
+      };
+    } else if (type === "reorder-paragraphs" && Array.isArray(e.order)) {
+      out[qId] = {
+        type: "reorder-paragraphs",
+        order: e.order.filter((v): v is string => typeof v === "string"),
+      };
+    } else if (type === "fill-in-blanks" && e.answers && typeof e.answers === "object") {
+      const cleaned: Record<string, string> = {};
+      for (const [k, v] of Object.entries(e.answers as Record<string, unknown>)) {
+        if (typeof v === "string") cleaned[k] = v;
+      }
+      out[qId] = { type: "fill-in-blanks", answers: cleaned };
+    } else if (type === "essay" && typeof e.text === "string") {
+      out[qId] = { type: "essay", text: e.text.slice(0, 5000) };
+    }
+  }
+
+  return out;
+}
+
 export function scoreAttempt(test: MockTest, answers: AnswersMap): ScoreSummary {
   const results: QuestionResult[] = [];
   let totalScore = 0;

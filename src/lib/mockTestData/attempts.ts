@@ -71,6 +71,25 @@ export async function getOwnedAttempt(id: string, userId: string): Promise<MockT
   return attempt;
 }
 
+export async function getInProgressAttempt(userId: string, testSlug: string): Promise<MockTestAttempt | null> {
+  const db = await getDb();
+  const row = await db
+    .prepare(
+      "SELECT * FROM mock_test_attempts WHERE user_id = ? AND test_slug = ? AND status = 'in_progress' ORDER BY started_at DESC LIMIT 1"
+    )
+    .bind(userId, testSlug)
+    .first<AttemptRow>();
+  return row ? toAttempt(row) : null;
+}
+
+export async function saveProgress(id: string, answers: AnswersMap): Promise<void> {
+  const db = await getDb();
+  await db
+    .prepare("UPDATE mock_test_attempts SET answers_json = ? WHERE id = ? AND status = 'in_progress'")
+    .bind(JSON.stringify(answers), id)
+    .run();
+}
+
 export async function submitAttempt(id: string, answers: AnswersMap, result: ScoreSummary): Promise<void> {
   const db = await getDb();
   await db

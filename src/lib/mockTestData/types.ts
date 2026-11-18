@@ -62,5 +62,6 @@ export interface MockTest {
   description: string;
   disclaimer: string;
   price: number; // KRW, shown publicly for this category
+  totalTimeMinutes: number; // whole-test countdown budget
   questions: MockQuestion[];
 }

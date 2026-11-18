@@ -21,6 +21,12 @@ export default function MockTestSignupPage() {
           계정을 만들면 모의고사 응시 결과가 저장되어 나중에 다시 확인할 수 있습니다.
         </p>
 
+        <ul className="mt-5 space-y-1.5 text-xs text-ink/50">
+          <li>✓ 응시 중 자동 저장 — 창을 닫아도 이어서 응시</li>
+          <li>✓ 자동 채점 결과 영구 저장, 언제든 다시 확인</li>
+          <li>✓ 이용권이 있는 시험은 제한 없이 다시 응시</li>
+        </ul>
+
         <div className="mt-8 border border-ink/15 bg-white p-6 min-[361px]:p-8">
           <AuthForm mode="signup" />
         </div>

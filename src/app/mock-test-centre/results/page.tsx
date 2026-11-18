@@ -37,11 +37,17 @@ export default async function ResultsListPage() {
               return (
                 <div key={a.id} className="flex flex-wrap items-center justify-between gap-4 p-5">
                   <div>
-                    <p className="text-sm font-semibold text-ink">{test?.title ?? a.testSlug}</p>
-                    <p className="mt-1 text-xs text-ink/50">
-                      {new Date(a.startedAt * 1000).toLocaleString("ko-KR")} ·{" "}
-                      {a.status === "submitted" ? "제출 완료" : "진행 중"}
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-semibold text-ink">{test?.title ?? a.testSlug}</p>
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                          a.status === "submitted" ? "bg-bronze text-white" : "border border-ink/20 text-ink/50"
+                        }`}
+                      >
+                        {a.status === "submitted" ? "제출 완료" : "진행 중"}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-ink/50">{new Date(a.startedAt * 1000).toLocaleString("ko-KR")}</p>
                   </div>
                   <div className="flex items-center gap-4">
                     {a.status === "submitted" && a.result && (

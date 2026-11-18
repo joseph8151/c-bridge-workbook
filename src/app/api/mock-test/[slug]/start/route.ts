@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth/sessions";
-import { createAttempt } from "@/lib/mockTestData/attempts";
+import { createAttempt, getInProgressAttempt } from "@/lib/mockTestData/attempts";
 import { hasEntitlement } from "@/lib/mockTestData/entitlements";
 import { getMockTest } from "@/lib/mockTestData/registry";
 
@@ -24,6 +24,11 @@ export async function POST(_request: Request, { params }: { params: Promise<{ sl
     );
   }
 
+  const existing = await getInProgressAttempt(user.id, slug);
+  if (existing) {
+    return NextResponse.json({ attemptId: existing.id, resumed: true });
+  }
+
   const attempt = await createAttempt(user.id, slug);
-  return NextResponse.json({ attemptId: attempt.id });
+  return NextResponse.json({ attemptId: attempt.id, resumed: false });
 }
