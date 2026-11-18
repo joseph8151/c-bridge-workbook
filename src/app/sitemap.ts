@@ -27,6 +27,7 @@ const staticRoutes = [
   "iseb-pretest",
   "japanese",
   "met",
+  "mock-test-centre",
   "naplex",
   "nclex",
   "npte",

@@ -21,6 +21,7 @@ export const navLinks = [
   { label: "PRICING", href: "/pricing" },
   { label: "COMPARE", href: "/compare" },
   { label: "HOW IT WORKS", href: "/#method" },
+  { label: "MOCK TEST", href: "/mock-test-centre" },
   { label: "BUSINESS", href: "/business" },
   { label: "ABOUT", href: "/about" },
 ];
@@ -31,6 +32,7 @@ export const footerLinks = {
     { label: "BOOKS", href: "/all-books" },
     { label: "PRICING", href: "/pricing" },
     { label: "COMPARE", href: "/compare" },
+    { label: "MOCK TEST CENTRE", href: "/mock-test-centre" },
     { label: "BUSINESS", href: "/business" },
     { label: "CONSULTATION", href: "/consultation" },
   ],
