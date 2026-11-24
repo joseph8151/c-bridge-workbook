@@ -218,6 +218,7 @@ function CategorySection({
   if (isSearching && visibleGroups.length === 0) return null;
 
   const categoryCount = new Set(visibleGroups.flatMap((g) => g.tests.map((t) => t.slug))).size;
+  const hasSummaryOnly = categoryCount === 0 && visibleGroups.some((g) => g.group.summaryLink);
   const expanded = isOpen || isSearching;
 
   return (
@@ -241,7 +242,7 @@ function CategorySection({
         </span>
         <span className="flex shrink-0 items-center gap-3 pt-1">
           <span className="text-xs font-semibold" style={{ color: "var(--color-muted)" }}>
-            {categoryCount > 0 ? `${categoryCount}개 시험` : "준비 중"}
+            {categoryCount > 0 ? `${categoryCount}개 시험` : hasSummaryOnly ? "바로가기" : "준비 중"}
           </span>
           <span
             className="text-lg leading-none transition-transform"

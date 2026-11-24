@@ -44,6 +44,7 @@ const staticRoutes = [
   "terms",
   "toles",
   "topec",
+  "tutoring",
   "versant",
 ];
 

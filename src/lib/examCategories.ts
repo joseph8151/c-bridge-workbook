@@ -13,7 +13,8 @@ export type ExamCategoryId =
   | "data-certification"
   | "cloud-it-certification"
   | "project-management"
-  | "school-admission";
+  | "school-admission"
+  | "video-tutoring";
 
 export interface ExamCategoryMeta {
   id: ExamCategoryId;
@@ -49,6 +50,7 @@ export const examCategoryOrder: ExamCategoryId[] = [
   "cloud-it-certification",
   "project-management",
   "school-admission",
+  "video-tutoring",
 ];
 
 export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
@@ -105,6 +107,12 @@ export const examCategoryMeta: Record<ExamCategoryId, ExamCategoryMeta> = {
     navLabel: "해외 입학시험",
     navLabelEn: "School Admission",
     description: "영국·호주 등 해외 중·고등학교 입학을 위한 자녀 대상 시험",
+  },
+  "video-tutoring": {
+    id: "video-tutoring",
+    navLabel: "화상과외",
+    navLabelEn: "Live Tutoring",
+    description: "전문 튜터와 1:1로 진행하는 실시간 화상과외",
   },
 };
 
@@ -427,6 +435,22 @@ export const examGroups: ExamGroupMeta[] = [
     label: "영국·호주 입학시험",
     description: "영국 사립학교와 호주 셀렉티브 스쿨 입학을 위한 자녀 대상 시험",
     testSlugs: ["iseb-pretest", "selective-school-nsw"],
+  },
+
+  // ---------------- VIDEO TUTORING ----------------
+  // PDF 문제집이 아닌 서비스 상품이라 tests.ts에 Test로 등록하지 않고, testSlugs 없이
+  // summaryLink만으로 /tutoring 안내 페이지로 바로 연결합니다.
+  {
+    id: "live-video-tutoring",
+    categoryId: "video-tutoring",
+    label: "실시간 화상과외",
+    description: "목표 시험과 약점에 맞춘 1:1 맞춤 커리큘럼",
+    testSlugs: [],
+    summaryLink: {
+      href: "/tutoring",
+      label: "화상과외 안내 보기",
+      desc: "레벨과 목표 시험에 맞춰 커리큘럼을 구성하는 1:1 실시간 화상 수업입니다.",
+    },
   },
 ];
 
