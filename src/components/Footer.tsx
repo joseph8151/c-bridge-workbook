@@ -35,6 +35,12 @@ export default function Footer() {
               <p className="mt-5 max-w-xs text-sm leading-relaxed" style={{ color: mutedOnDark }}>
                 {siteConfig.brandSub}
               </p>
+              <p className="mt-5 text-sm font-semibold" style={{ color: "var(--bg-paper)" }}>
+                {siteConfig.phone}
+              </p>
+              <p className="mt-1 text-xs" style={{ color: mutedOnDark }}>
+                문자·전화 상담 가능 · 365일
+              </p>
               <Link href="/consultation" className="btn-primary-on-dark mt-6 px-6 text-xs font-medium tracking-[0.08em]">
                 교재 상담
               </Link>

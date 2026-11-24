@@ -33,9 +33,9 @@ const satPrices = [
 
 export default function PriceSheetPage() {
   return (
-    <div style={{ background: "#f6f1e8", color: "#1e241c", minHeight: "100vh" }}>
+    <div style={{ background: "#e7f1de", color: "#1e241c", minHeight: "100vh" }}>
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "48px 24px" }}>
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.12em", color: "#5f7f52" }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.12em", color: "#03c75a" }}>
           INTERNAL — NOT LINKED FROM NAVIGATION
         </p>
         <h1 style={{ marginTop: 10, fontSize: 32, fontWeight: 700 }}>C-BRIDGE 가격표</h1>
@@ -51,8 +51,8 @@ export default function PriceSheetPage() {
             {tierOrder.map((t) => {
               const m = tierMeta[t];
               return (
-                <div key={t} style={{ border: "1px solid #e4ddd0", borderRadius: 6, padding: 20, background: "#fff" }}>
-                  <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: "#5f7f52" }}>
+                <div key={t} style={{ border: "1px solid #cfe3c2", borderRadius: 6, padding: 20, background: "#fff" }}>
+                  <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: "#03c75a" }}>
                     {m.name} · {m.label}
                   </p>
                   <p style={{ marginTop: 6, fontSize: 28, fontWeight: 700 }}>₩{m.price.toLocaleString()}</p>
@@ -73,7 +73,7 @@ export default function PriceSheetPage() {
           </p>
           <ul style={{ marginTop: 10, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 6 }}>
             {entryLevelTests.map((t) => (
-              <li key={t.id} style={{ fontSize: 14, padding: "6px 0", borderBottom: "1px solid #e4ddd0" }}>
+              <li key={t.id} style={{ fontSize: 14, padding: "6px 0", borderBottom: "1px solid #cfe3c2" }}>
                 {t.name}
               </li>
             ))}
@@ -83,7 +83,7 @@ export default function PriceSheetPage() {
         {/* 고정가 단일 상품 */}
         <section style={{ marginTop: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700 }}>고정가 단일 구성 시험</h2>
-          <div style={{ marginTop: 12, border: "1px solid #e4ddd0", borderRadius: 6, overflow: "hidden", background: "#fff" }}>
+          <div style={{ marginTop: 12, border: "1px solid #cfe3c2", borderRadius: 6, overflow: "hidden", background: "#fff" }}>
             {fixedPriceTests.map((t, i) => (
               <div
                 key={t.id}
@@ -91,7 +91,7 @@ export default function PriceSheetPage() {
                   display: "flex",
                   justifyContent: "space-between",
                   padding: "10px 16px",
-                  borderTop: i > 0 ? "1px solid #e4ddd0" : undefined,
+                  borderTop: i > 0 ? "1px solid #cfe3c2" : undefined,
                   fontSize: 14,
                 }}
               >
@@ -107,7 +107,7 @@ export default function PriceSheetPage() {
           <h2 style={{ fontSize: 18, fontWeight: 700 }}>자체 구성 시험 (표준과 동일 가격)</h2>
           <div style={{ marginTop: 12, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
             {bespokeTests.map((b) => (
-              <div key={b.name} style={{ border: "1px solid #e4ddd0", borderRadius: 6, padding: 16, background: "#fff" }}>
+              <div key={b.name} style={{ border: "1px solid #cfe3c2", borderRadius: 6, padding: 16, background: "#fff" }}>
                 <p style={{ fontWeight: 700, fontSize: 14 }}>{b.name}</p>
                 <ul style={{ marginTop: 6 }}>
                   {b.prices.map((p) => (
@@ -129,7 +129,7 @@ export default function PriceSheetPage() {
           </p>
           <div style={{ marginTop: 10, display: "flex", gap: 16, flexWrap: "wrap" }}>
             {satPrices.map((p) => (
-              <div key={p.label} style={{ border: "1px solid #e4ddd0", borderRadius: 6, padding: "12px 20px", background: "#fff" }}>
+              <div key={p.label} style={{ border: "1px solid #cfe3c2", borderRadius: 6, padding: "12px 20px", background: "#fff" }}>
                 <p style={{ fontSize: 12, color: "#5e6558" }}>{p.label}</p>
                 <p style={{ fontSize: 18, fontWeight: 700 }}>{p.price}</p>
               </div>

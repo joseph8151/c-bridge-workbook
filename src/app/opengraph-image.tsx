@@ -15,11 +15,11 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#f6f1e8",
+          background: "#e7f1de",
           color: "#1e241c",
         }}
       >
-        <div style={{ display: "flex", fontSize: 30, fontWeight: 600, letterSpacing: 6, color: "#5f7f52" }}>
+        <div style={{ display: "flex", fontSize: 30, fontWeight: 600, letterSpacing: 6, color: "#03c75a" }}>
           C—BRIDGE
         </div>
         <div style={{ display: "flex", marginTop: 28, fontSize: 68, fontWeight: 500, lineHeight: 1.15 }}>

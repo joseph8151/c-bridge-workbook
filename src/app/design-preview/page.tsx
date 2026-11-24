@@ -12,13 +12,13 @@ const swatches: { name: string; varName: string; hex: string; role: string }[] =
   { name: "Ink", varName: "--bg-ink", hex: "#12312A", role: "다크 섹션 배경 · 기본 CTA" },
   { name: "Ink Soft", varName: "--bg-ink-soft", hex: "#1E4339", role: "다크 섹션 보조 면" },
   { name: "Ink Deep", varName: "--bg-ink-deep", hex: "#0B221D", role: "표지 목업 배경 · 가장 어두운 강조" },
-  { name: "Paper", varName: "--bg-paper", hex: "#F6F4EE", role: "기본 페이지 배경" },
-  { name: "Surface", varName: "--bg-surface", hex: "#FFFFFF", role: "카드 · 입력 필드 면" },
-  { name: "Line", varName: "--bg-line", hex: "#E2DED3", role: "구분선 · 보더" },
+  { name: "Paper", varName: "--bg-paper", hex: "#E7F1DE", role: "기본 페이지 배경 — 피스타치오 그린" },
+  { name: "Surface", varName: "--bg-surface", hex: "#FFFFFF", role: "카드 · 입력 필드 면 — 화이트" },
+  { name: "Line", varName: "--bg-line", hex: "#CFE3C2", role: "구분선 · 보더" },
   { name: "Text", varName: "--bg-text", hex: "#1C1C1A", role: "본문 글자" },
   { name: "Muted", varName: "--bg-muted", hex: "#6A6A64", role: "보조 글자" },
-  { name: "Accent (Gold)", varName: "--bg-accent", hex: "#C29A4B", role: "포인트 — 화면당 2~3곳만" },
-  { name: "Accent Soft", varName: "--bg-accent-soft", hex: "#F2EAD8", role: "선택된 카드 배경" },
+  { name: "Accent (Naver Green)", varName: "--bg-accent", hex: "#03C75A", role: "포인트 — 화면당 2~3곳만" },
+  { name: "Accent Soft", varName: "--bg-accent-soft", hex: "#DFF6E6", role: "선택된 카드 배경" },
   { name: "Signal (Blue)", varName: "--bg-signal", hex: "#2F5D8A", role: "링크·정보 전용, CTA 색으로 쓰지 않음" },
 ];
 

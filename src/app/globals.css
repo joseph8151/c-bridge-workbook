@@ -2,18 +2,18 @@
 
 :root {
   /* ============================================================
-     C-BRIDGE publisher palette — 하늘색 전면 제거, 아래 8개 값만 사용.
-     포인트(피스타치오)는 버튼 배경 · 현재 메뉴 · 가는 밑줄에만.
+     C-BRIDGE palette — 네이버 그린 · 피스타치오 그린 · 화이트, 아래 8개
+     값만 사용. 포인트(네이버 그린)는 버튼 배경 · 현재 메뉴 · 가는 밑줄에만.
      ============================================================ */
-  --color-paper: #f6f1e8; /* 배경 */
-  --color-paper-dark: #fbf8f3; /* 면 — 카드/대체 섹션 표면 (호버 아님) */
+  --color-paper: #e7f1de; /* 배경 — 피스타치오 그린 */
+  --color-paper-dark: #ffffff; /* 면 — 카드/대체 섹션 표면 (호버 아님), 화이트 */
   --color-ink: #1e241c; /* 글자 */
   --color-muted: #5e6558; /* 보조 글자 */
-  --color-bronze: #5f7f52; /* 포인트 — 버튼 배경 · 현재 메뉴 · 가는 밑줄 전용 */
-  --color-bronze-dark: #4e6843; /* 포인트 버튼 호버 시 살짝 어둡게 */
-  --color-border: #e4ddd0; /* 선 */
-  --color-pistachio: #5f7f52;
-  --color-hover-surface: #e7efe2; /* 호버 면 — 보더/텍스트 버튼의 :hover 배경 전용 */
+  --color-bronze: #03c75a; /* 포인트 — 버튼 배경 · 현재 메뉴 · 가는 밑줄 전용, 네이버 그린 */
+  --color-bronze-dark: #02a94c; /* 포인트 버튼 호버 시 살짝 어둡게 */
+  --color-border: #cfe3c2; /* 선 */
+  --color-pistachio: #03c75a;
+  --color-hover-surface: #dcefd6; /* 호버 면 — 보더/텍스트 버튼의 :hover 배경 전용 */
   --color-disabled: #c9c4b6;
 
   /* 하단 띠(footer)도 동일한 크림 — 다크 섹션 없음 */
@@ -140,17 +140,17 @@ html {
    page (Home → book template → PRICING → EXAMS).
    ============================================================ */
 :root {
-  /* Color */
+  /* Color — 네이버 그린 · 피스타치오 그린 · 화이트 */
   --bg-ink: #12312a;
   --bg-ink-soft: #1e4339;
   --bg-ink-deep: #0b221d;
-  --bg-paper: #f6f4ee;
+  --bg-paper: #e7f1de;
   --bg-surface: #ffffff;
-  --bg-line: #e2ded3;
+  --bg-line: #cfe3c2;
   --bg-text: #1c1c1a;
   --bg-muted: #6a6a64;
-  --bg-accent: #c29a4b; /* gold — used sparingly, 2–3 spots per screen */
-  --bg-accent-soft: #f2ead8;
+  --bg-accent: #03c75a; /* 네이버 그린 — 포인트, 화면당 2~3곳만 */
+  --bg-accent-soft: #dff6e6;
   --bg-signal: #2f5d8a; /* blue — links/info only, never a CTA color */
 
   /* Typography — Pretendard still carries Korean everywhere;
@@ -224,9 +224,9 @@ a:hover .arrow-slide {
 /* Button system: exactly ONE filled variant (.btn-primary) site-wide.
    Everything else is either a 1px border or plain underlined text — no
    drop shadows, no gradients, no second fill color.
-   [BRITISH GREEN REDESIGN — Step 2] Repointed to the new --bg-* tokens:
-   ink-filled primary, gold reserved for focus rings / hover tints / the
-   dark-section counterpart below, never the default button fill. */
+   Ink-filled primary; Naver green (--bg-accent) reserved for focus rings /
+   hover tints / the dark-section counterpart below, never the default
+   button fill. */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -255,8 +255,8 @@ a:hover .arrow-slide {
 }
 
 /* Dark-section counterpart — same shape/weight as .btn-primary, polarity
-   reversed (gold fill, deep-ink text) for use on an --bg-ink background,
-   per the alternating light/dark section rhythm. */
+   reversed (Naver-green fill, deep-ink text) for use on an --bg-ink
+   background, per the alternating light/dark section rhythm. */
 .btn-primary-on-dark {
   display: inline-flex;
   align-items: center;
@@ -271,8 +271,8 @@ a:hover .arrow-slide {
   transition: background-color 180ms var(--ease-pub), border-color 180ms var(--ease-pub);
 }
 .btn-primary-on-dark:hover {
-  background-color: #d4ad63;
-  border-color: #d4ad63;
+  background-color: #1ed973;
+  border-color: #1ed973;
 }
 .btn-primary-on-dark:focus-visible {
   outline: 1px solid var(--bg-accent-soft);
@@ -280,7 +280,7 @@ a:hover .arrow-slide {
 }
 
 /* Secondary buttons: 1px border, ink text, no fill. Hover tint is the
-   gold-soft token — one of the "gold used sparingly" touches. */
+   accent-soft token — one of the "accent used sparingly" touches. */
 .btn-secondary {
   display: inline-flex;
   align-items: center;

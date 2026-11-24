@@ -51,18 +51,18 @@ async function renderPage(message: string | null): Promise<string> {
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mock Test Centre Admin</title>
 <style>
-  body { font-family: -apple-system, system-ui, sans-serif; background:#f6f1e8; color:#1e241c; margin:0; padding:40px 20px; }
+  body { font-family: -apple-system, system-ui, sans-serif; background:#e7f1de; color:#1e241c; margin:0; padding:40px 20px; }
   .wrap { max-width:820px; margin:0 auto; }
   h1 { font-size:22px; margin-bottom:4px; }
   p.sub { color:#5e6558; font-size:13px; margin-top:0; }
-  .card { background:#fff; border:1px solid #e4ddd0; padding:24px; margin-top:24px; }
+  .card { background:#fff; border:1px solid #cfe3c2; padding:24px; margin-top:24px; }
   label { display:block; font-size:12px; font-weight:700; letter-spacing:.05em; color:#5e6558; margin-bottom:6px; }
   input[type=email], select { width:100%; padding:10px; border:1px solid #c9c4b6; margin-bottom:16px; font-size:14px; box-sizing:border-box; }
-  button { background:#5f7f52; color:#fff; border:none; padding:10px 18px; font-size:13px; font-weight:700; cursor:pointer; }
+  button { background:#03c75a; color:#fff; border:none; padding:10px 18px; font-size:13px; font-weight:700; cursor:pointer; }
   button.secondary { background:#9a958a; padding:6px 12px; }
   table { width:100%; border-collapse:collapse; margin-top:16px; font-size:13px; }
-  th, td { text-align:left; padding:8px; border-bottom:1px solid #e4ddd0; }
-  .msg { background:#e7efe2; border:1px solid #5f7f52; padding:10px 14px; font-size:13px; margin-top:16px; }
+  th, td { text-align:left; padding:8px; border-bottom:1px solid #cfe3c2; }
+  .msg { background:#dcefd6; border:1px solid #03c75a; padding:10px 14px; font-size:13px; margin-top:16px; }
   .row { display:flex; gap:16px; }
   .row > div { flex: 1; }
 </style>
