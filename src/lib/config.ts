@@ -17,8 +17,9 @@ export const siteConfig = {
 
 // 모의고사 센터(Mock Test Centre)는 일단 비공개 처리 — 문제집 판매만 노출합니다.
 // 기능 자체는 코드에 그대로 남아있고, 나중에 다시 켤 때는 nav/footer 링크만
-// 되살리면 됩니다. 나머지 메뉴는 꼭 필요한 것만 남겨 전체 개수를 줄였습니다
-// (EXAMS/COMPARE/HOW IT WORKS/BUSINESS는 footer와 홈페이지 내 섹션에서 계속 연결됩니다).
+// 되살리면 됩니다. 기업 문의(BUSINESS)는 수요가 없어 footer/홈페이지 노출을
+// 중단했습니다 (페이지 자체는 남아있습니다). 나머지 메뉴는 꼭 필요한 것만 남겨
+// 전체 개수를 줄였습니다 (EXAMS/COMPARE는 footer와 홈페이지 내 섹션에서 계속 연결됩니다).
 export const navLinks = [
   { label: "BOOKS", href: "/all-books", featured: true },
   { label: "PRICING", href: "/pricing" },
@@ -29,9 +30,9 @@ export const footerLinks = {
   SITE: [
     { label: "EXAMS", href: "/exams" },
     { label: "BOOKS", href: "/all-books" },
+    { label: "TUTORING", href: "/tutoring" },
     { label: "PRICING", href: "/pricing" },
     { label: "COMPARE", href: "/compare" },
-    { label: "BUSINESS", href: "/business" },
     { label: "CONSULTATION", href: "/consultation" },
   ],
   LEGAL: [
