@@ -39,6 +39,7 @@ const testGroups: { label: string; items: string[] }[] = [
   { label: "법률", items: ["TOLES"] },
   { label: "일본 간호", items: ["TOPEC"] },
   { label: "FLEX · SNULT", items: ["FLEX · SNULT (언어는 상담)"] },
+  { label: "서비스", items: ["화상과외"] },
   { label: "기타", items: ["기타"] },
 ];
 
@@ -58,6 +59,7 @@ export default function ConsultationForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [test, setTest] = useState(prefillTest);
   const [contactMethod, setContactMethod] = useState<(typeof contactMethods)[number]>("문자");
+  const isTutoring = test === "화상과외";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -100,8 +102,9 @@ export default function ConsultationForm() {
       <div className="border-l-2 pl-4" style={{ borderColor: "var(--color-bronze)" }}>
         <p className="text-sm font-semibold text-ink">⚡ 빠른 상담 — 신청 후 30분 이내 연락드립니다.</p>
         <p className="mt-1 text-xs leading-relaxed text-ink/60">
-          교재를 먼저 고르지 않으셔도 됩니다. 시험과 목표를 알려주시면 필요한 구성을
-          안내해드립니다.
+          {isTutoring
+            ? "교재를 먼저 고르지 않으셔도 됩니다. 목표와 원하는 일정을 알려주시면 맞는 튜터를 안내해드립니다."
+            : "교재를 먼저 고르지 않으셔도 됩니다. 시험과 목표를 알려주시면 필요한 구성을 안내해드립니다."}
         </p>
       </div>
 
@@ -238,29 +241,31 @@ export default function ConsultationForm() {
         </div>
       </div>
 
-      <div>
-        <span className="text-xs font-bold tracking-[0.1em] text-ink/60">분량</span>
-        <div role="radiogroup" aria-label="분량" className="mt-3 grid grid-cols-3 gap-2">
-          {tierOrder.map((t, i) => {
-            const v = tierMeta[t].label;
-            return (
-              <label
-                key={v}
-                className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
-              >
-                <input
-                  type="radio"
-                  name="volume"
-                  value={v}
-                  defaultChecked={prefillTier ? v === prefillTier : i === 1}
-                  className="sr-only"
-                />
-                {v}
-              </label>
-            );
-          })}
+      {!isTutoring && (
+        <div>
+          <span className="text-xs font-bold tracking-[0.1em] text-ink/60">분량</span>
+          <div role="radiogroup" aria-label="분량" className="mt-3 grid grid-cols-3 gap-2">
+            {tierOrder.map((t, i) => {
+              const v = tierMeta[t].label;
+              return (
+                <label
+                  key={v}
+                  className="flex cursor-pointer items-center justify-center rounded-none border border-ink/20 py-3 text-xs font-bold text-ink/70 transition-colors has-[:checked]:border-[var(--color-rust)] has-[:checked]:text-[var(--color-rust)]"
+                >
+                  <input
+                    type="radio"
+                    name="volume"
+                    value={v}
+                    defaultChecked={prefillTier ? v === prefillTier : i === 1}
+                    className="sr-only"
+                  />
+                  {v}
+                </label>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       <div>
         <label htmlFor="cf-message" className="text-xs font-bold tracking-[0.1em] text-ink/60">

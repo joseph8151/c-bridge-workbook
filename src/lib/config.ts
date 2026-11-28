@@ -22,6 +22,7 @@ export const siteConfig = {
 // 전체 개수를 줄였습니다 (EXAMS/COMPARE는 footer와 홈페이지 내 섹션에서 계속 연결됩니다).
 export const navLinks = [
   { label: "BOOKS", href: "/all-books", featured: true },
+  { label: "TUTORING", href: "/tutoring", featured: true },
   { label: "PRICING", href: "/pricing" },
   { label: "ABOUT", href: "/about" },
 ];
